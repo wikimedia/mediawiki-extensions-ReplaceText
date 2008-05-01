@@ -13,6 +13,7 @@ $messages = array();
 $messages['en'] = array(
 	// user messages
 	'replacetext' => 'Replace text',
+	'replacetext-desc' => 'Provides a special page to allow administrators to do a global string find-and-replace on all the content pages of a wiki',
 	'replacetext_docu' => 'To replace one text string with another across all data pages on this wiki, you can enter the two pieces of text here and then hit \'Replace\'. Your name will appear in page histories as the user responsible for the changes.',
 	'replacetext_note' => 'Note: this will not replace text in "Talk" pages and project pages, and it will not replace text in page titles themselves.',
 	'replacetext_originaltext' => 'Original text',
@@ -33,6 +34,7 @@ $messages['en'] = array(
  */
 $messages['fr'] = array(
 	'replacetext'                 => 'Remplacer le texte',
+	'replacetext-desc'            => 'Fournit une page spéciale permettant aux administrateurs de remplacer des chaînes de caractères par d’autres sur l’ensemble du wiki',
 	'replacetext_docu'            => "Pour remplacer une chaîne de caractères avec une autre sur l'ensemble des données des pages de ce wiki, vous pouvez entrez les deux textes ici et cliquer sur « Remplacer ». Votre nom apparaîtra dans l'historique des pages tel un utilisateur auteur des changements.",
 	'replacetext_note'            => 'Note : ceci ne remplacera pas le texte dans les pages de discussion ainsi que dans les pages « projet ». Il ne remplacera pas, non plus, le texte dans le titre lui-même.',
 	'replacetext_originaltext'    => 'Texte original',
