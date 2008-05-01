@@ -27,3 +27,23 @@ $messages['en'] = array(
 	// content messages
 	'replacetext_editsummary' => 'Text replace - \'$1\' to \'$2\'',
 );
+
+/** French (Français)
+ * @author Grondin
+ */
+$messages['fr'] = array(
+	'replacetext'                 => 'Remplacer le texte',
+	'replacetext_docu'            => "Pour remplacer une chaîne de caractères avec une autre sur l'ensemble des données des pages de ce wiki, vous pouvez entrez les deux textes ici et cliquer sur « Remplacer ». Votre nom apparaîtra dans l'historique des pages tel un utilisateur auteur des changements.",
+	'replacetext_note'            => 'Note : ceci ne remplacera pas le texte dans les pages de discussion ainsi que dans les pages « projet ». Il ne remplacera pas, non plus, le texte dans le titre lui-même.',
+	'replacetext_originaltext'    => 'Texte original',
+	'replacetext_replacementtext' => 'Nouveau texte',
+	'replacetext_replace'         => 'Remplacer',
+	'replacetext_success'         => 'A remplacé « $1 » par « $2 » dans « $3 » fichiers.',
+	'replacetext_noreplacement'   => 'Aucun remplacemet n’a été effectué ; aucun fichier contenant la chaîne « $1 » n’a été trouvé.',
+	'replacetext_warning'         => 'Il y a $1 fichiers qui contient la chaîne de remplacement « $2 » ; si vous effectuer cette substitution, vous ne pourrez pas séparer vos changements à partir de ces chaînes. Voulez-vous continuez ces substitutions ?',
+	'replacetext_blankwarning'    => 'Parce que la chaîne de remplacement est vide, cette opération sera irréversible ; voulez-vous continuer ?',
+	'replacetext_continue'        => 'Continuer',
+	'replacetext_cancel'          => "(cliquez sur le bouton  « Retour » pour annuler l'opération.)",
+	'replacetext_editsummary'     => 'Remplacement du texte — « $1 » par « $2 »',
+);
+
