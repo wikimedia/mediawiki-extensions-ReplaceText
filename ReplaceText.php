@@ -42,11 +42,12 @@ function grSetupExtension() {
 
 	// credits
 	$wgExtensionCredits['specialpage'][] = array(
-	    'name' => 'Replace Text',
-	    'version' => '0.1',
-	    'author' => 'Yaron Koren',
-	    'url' => 'http://www.mediawiki.org/wiki/Extension:Text_Replace',
-	    'description' => 'A special page that lets administrators run a global search-and-replace',
+		'name' => 'Replace Text',
+		'version' => '0.1',
+		'author' => 'Yaron Koren',
+		'url' => 'http://www.mediawiki.org/wiki/Extension:Text_Replace',
+		'description' => 'A special page that lets administrators run a global search-and-replace',
+		'descriptionmsg'  => 'replacetext-desc',
 	);
 
 	// the 'delete' specifies that only users who can delete pages
