@@ -13,7 +13,7 @@ $messages = array();
 $messages['en'] = array(
 	// user messages
 	'replacetext' => 'Replace text',
-	'replacetext-desc' => 'Provides a special page to allow administrators to do a global string find-and-replace on all the content pages of a wiki',
+	'replacetext-desc' => 'Provides a [[Special:ReplaceText|special page]] to allow administrators to do a global string find-and-replace on all the content pages of a wiki',
 	'replacetext_docu' => 'To replace one text string with another across all data pages on this wiki, you can enter the two pieces of text here and then hit \'Replace\'. Your name will appear in page histories as the user responsible for the changes.',
 	'replacetext_note' => 'Note: this will not replace text in "Talk" pages and project pages, and it will not replace text in page titles themselves.',
 	'replacetext_originaltext' => 'Original text',
