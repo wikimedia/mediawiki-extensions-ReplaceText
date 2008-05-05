@@ -65,6 +65,7 @@ $messages['fr'] = array(
 $messages['jv'] = array(
 	'replacetext'              => 'Ganti tèks',
 	'replacetext_originaltext' => 'Tèks asli',
+	'replacetext_continue'     => 'Banjurna',
 );
 
 /** Malayalam (മലയാളം)
