@@ -276,3 +276,23 @@ $messages['th'] = array(
 	'replacetext_originaltext' => 'ข้อความดั้งเดิม',
 );
 
+/** Traditional Chinese (‪中文(繁體)‬)
+ * @author Roc michael
+ */
+$messages['zh-hant'] = array(
+	'replacetext'                 => '取代文字',
+	'replacetext-desc'            => '提供[[Special:ReplaceText|特殊頁面]]以利管理員以「尋找及取代」的方式更改所有文章頁面內的內容。',
+	'replacetext_docu'            => '取代儲存在此Wiki系統內所有頁面上的文字字串，請將「原始文字」及「取代的文字」分別填入下面的兩個欄位之中，按下「取代按鈕」後生效，您所作的修改會顯示在「歷史」頁面上，以對您自己編輯行為負責。',
+	'replacetext_note'            => '注意：在所有討論頁面及其他系統的計劃頁面上的文字不會被修改，此外，頁面名稱裡的文字亦不會被修改。',
+	'replacetext_originaltext'    => '原始文字',
+	'replacetext_replacementtext' => '取代文字',
+	'replacetext_replace'         => '取代',
+	'replacetext_success'         => '已在 $3 個檔案內的「$1」取代為「$2」。',
+	'replacetext_noreplacement'   => '無執行取代文字，因無任何頁面內含有「$1」。',
+	'replacetext_warning'         => '僅有$1檔案內包含取代文字「$2」，如果您執行了取代作業，則可能會造成兩個相同字串相連，而難以分開，您要繼續執行取代作業嗎？',
+	'replacetext_blankwarning'    => '因為取代字串是空白的，這將造成難以復原的結果！您要繼續嗎？',
+	'replacetext_continue'        => '繼續',
+	'replacetext_cancel'          => '(按下 "返回" 按鈕以取消本次操作)',
+	'replacetext_editsummary'     => '取代文字 - 「$1」 取代為 「$2」',
+);
+
