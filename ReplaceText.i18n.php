@@ -39,6 +39,28 @@ $messages['ar'] = array(
 	'replacetext_replace'         => 'استبدل',
 );
 
+/** German (Deutsch)
+ * @author Raimond Spekking
+ */
+$messages['de'] = array(
+	// user messages
+	'replacetext'                 => 'Text ersetzen',
+	'replacetext-desc'            => 'Ergänzt eine [[Special:ReplaceText|Spezialseiten]], die es Administratoren ermöglicht, eine globale Text suchen-und-ersetzen Operation in allen Inhaltseiten des Wikis durchzuführen',
+	'replacetext_docu'            => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, gib die beiden Textteile hier ein und klicke auf die Ersetzen-Schaltfläche. Dein Benutzername wird in der Versionsgeschichte aufgenommen.',
+	'replacetext_note'            => 'Bitte beachten: es wird kein Text auf Diskussions- und Projektseiten ausgetauscht. Auch Text in Artikelnamen wird nicht ausgetauscht.',
+	'replacetext_originaltext'    => 'Originaltext',
+	'replacetext_replacementtext' => 'Neuer Text',
+	'replacetext_replace'         => 'Ersetzen',
+	'replacetext_success'         => 'Ersetzte „$1“ durch „$2“ in $3 Seiten.',
+	'replacetext_noreplacement'   => 'Es wurden keine Textersetzungen vorgenommen. Keine Seite enthält den Text „$1“.',
+	'replacetext_warning'         => '$1 Seiten enthalten bereits den zu ersetzenden Textteil „$2“; eine Trennug der Ersetzungen mit den bereits vorhandenen Textteilen ist nicht möglich. Möchtest du weitermachen?',
+	'replacetext_blankwarning'    => 'Der zu ersetzende Textteil ist leer, die Operation kann nicht rückgängig gemacht werden, trotzdem fortfahren?',
+	'replacetext_continue'        => 'Fortfahren',
+	'replacetext_cancel'          => '(Klicke auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
+	// content messages
+	'replacetext_editsummary'     => 'Textersetzung - „$1“ durch „$2“',
+);
+
 /** فارسی (فارسی)
  * @author Huji
  */
