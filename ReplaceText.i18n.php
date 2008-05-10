@@ -61,6 +61,20 @@ $messages['de'] = array(
 	'replacetext_editsummary'     => 'Textersetzung - „$1“ durch „$2“',
 );
 
+/** Esperanto (Esperanto)
+ * @author Yekrats
+ */
+$messages['eo'] = array(
+	'replacetext'                 => 'Anstataŭigi tekston',
+	'replacetext_originaltext'    => 'Originala teksto',
+	'replacetext_replacementtext' => 'Anstataŭigita teksto',
+	'replacetext_replace'         => 'Anstataŭigi',
+	'replacetext_success'         => "Anstataŭigis tekston '$1' kun '$2' en $3 paĝoj.",
+	'replacetext_noreplacement'   => "Neniu anstataŭigo estis farita; neniuj paĝoj estis trovitaj enhavantaj la ĉenon '$1'.",
+	'replacetext_continue'        => 'Reaktivigi',
+	'replacetext_editsummary'     => "Teksta anstataŭigo - '$1' al '$2'",
+);
+
 /** فارسی (فارسی)
  * @author Huji
  */
@@ -108,6 +122,18 @@ $messages['jv'] = array(
 	'replacetext'              => 'Ganti tèks',
 	'replacetext_originaltext' => 'Tèks asli',
 	'replacetext_continue'     => 'Banjurna',
+);
+
+/** Khmer (ភាសាខ្មែរ)
+ * @author គីមស៊្រុន
+ */
+$messages['km'] = array(
+	'replacetext'                 => 'ជំនួសអត្ថបទ',
+	'replacetext_originaltext'    => 'អត្ថបទដើម',
+	'replacetext_replacementtext' => 'អត្ថបទជំនួស',
+	'replacetext_replace'         => 'ជំនួស',
+	'replacetext_success'         => "បានជំនួស '$1' ដោយ '$2' ក្នុង $3 ទំព័រ។",
+	'replacetext_continue'        => 'បន្ត',
 );
 
 /** Malayalam (മലയാളം)
