@@ -14,10 +14,11 @@ $messages['en'] = array(
 	// user messages
 	'replacetext' => 'Replace text',
 	'replacetext-desc' => 'Provides a [[Special:ReplaceText|special page]] to allow administrators to do a global string find-and-replace on all the content pages of a wiki',
-	'replacetext_docu' => 'To replace one text string with another across all data pages on this wiki, you can enter the two pieces of text here and then hit \'Replace\'. Your name will appear in page histories as the user responsible for the changes.',
+	'replacetext_docu' => 'To replace one text string with another across all regular pages on this wiki, enter the two pieces of text here and then hit \'Continue\'. You will then be shown a list of pages that contain the search text, and you can choose the ones in which you want to replace it. Your name will appear in page histories as the user responsible for any changes.',
 	'replacetext_note' => 'Note: this will not replace text in "Talk" pages and project pages, and it will not replace text in page titles themselves.',
 	'replacetext_originaltext' => 'Original text',
 	'replacetext_replacementtext' => 'Replacement text',
+	'replacetext_choosepages' => 'Please select the pages for which you want to replace \'$1\' with \'$2\':',
 	'replacetext_replace' => 'Replace',
 	'replacetext_success' => 'Replaced \'$1\' with \'$2\' in $3 pages.',
 	'replacetext_noreplacement' => 'No replacements were made; no pages were found containing the string \'$1\'.',
