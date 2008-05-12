@@ -40,6 +40,14 @@ $messages['ar'] = array(
 	'replacetext_replace'         => 'استبدل',
 );
 
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'replacetext_continue' => 'Продължаване',
+	'replacetext_cancel'   => '(натиснете бутона „Back“ за прекратяване на действието.)',
+);
+
 /** German (Deutsch)
  * @author Raimond Spekking
  */
@@ -137,6 +145,21 @@ $messages['km'] = array(
 	'replacetext_continue'        => 'បន្ត',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'replacetext'                 => 'Text ersetzen',
+	'replacetext-desc'            => "Weist eng [[Special:ReplaceText|Spezialsäit]] déi Administrateuren et erlaabt eng Rei vun Textzeechen op alle Contenu-säiten vun enger Wiki ze gesinn an z'ersetzen",
+	'replacetext_note'            => "'''Oppassen''': Den Text gëtt net an \"Diskussiounssäiten\" a Projetssäiten ersat, an den Text an de Säitenimm gëtt och net ersat.",
+	'replacetext_originaltext'    => 'Originaltext',
+	'replacetext_replacementtext' => 'Neien Text',
+	'replacetext_replace'         => 'Ersetzen',
+	'replacetext_success'         => "Ersetz '$1' duerch '$2' op $3 Säiten.",
+	'replacetext_continue'        => 'Weiderfueren',
+	'replacetext_editsummary'     => "Text ersat - '$1' duerch '$2'",
+);
+
 /** Malayalam (മലയാളം)
  * @author Shijualex
  */
@@ -171,10 +194,13 @@ $messages['mr'] = array(
 $messages['nl'] = array(
 	'replacetext'                 => 'Tekst vervangen',
 	'replacetext-desc'            => "Beheerders kunnen via een [[Special:ReplaceText|speciale pagina]] tekst zoeken en vervangen in alle pagina's",
-	'replacetext_docu'            => "Om een stuk tekst te vervangen door een ander stuk tekst in alle pagina's van de wiki, kunt u hier deze twee tekstdelen ingeven en daarna op 'Vervangen' klikken. Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke voor de wijzigingen.",
+	'replacetext_docu'            => "Om een stuk tekst te vervangen door een ander stuk tekst in alle pagina's van de wiki, kunt u hier deze twee tekstdelen ingeven en daarna op 'Vervangen' klikken.
+U krijgt dan een lijst met pagina's te zien waar uw te vervangen tekstdeel in voorkomt, en u kunt kiezen in welke pagina's u de tekst ook echt wilt vervangen.
+Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke voor de wijzigingen.",
 	'replacetext_note'            => "Nota bene: de tekst wordt niet vevangen in overlegpagina's en projectpagina's. Paginanamen worden ook niet aangepast.",
 	'replacetext_originaltext'    => 'Oorspronkelijke tekst',
 	'replacetext_replacementtext' => 'Vervangende tekst',
+	'replacetext_choosepages'     => "Selecteer de pagina's waar u '$1' door '$2' wilt vervangen:",
 	'replacetext_replace'         => 'Vervangen',
 	'replacetext_success'         => "'$1' is vervangen door '$2' in $3 pagina's.",
 	'replacetext_noreplacement'   => "Er is niets vangen. Er waren geen pagina's die de tekst '$1' bevatten.",
