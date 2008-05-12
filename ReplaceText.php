@@ -16,7 +16,7 @@
  * the page provides a warning prompt to the user before doing the
  * replacement, since it is not easily reversible.
  *
- * @version 0.1.1
+ * @version 0.2
  * @author Yaron Koren
  */
 
@@ -34,6 +34,11 @@ if (version_compare($wgVersion, '1.11', '>=')) {
 	$wgExtensionFunctions[] = 'grfLoadMessagesManually';
 }
 
+$wgJobClasses['replaceText'] = 'ReplaceTextJob';
+
+require_once( "$IP/includes/JobQueue.php" );
+require_once($grIP . '/ReplaceTextJob.php');
+
 function grSetupExtension() {
 	global $wgVersion, $wgExtensionCredits;
 
@@ -43,7 +48,7 @@ function grSetupExtension() {
 	// credits
 	$wgExtensionCredits['specialpage'][] = array(
 		'name' => 'Replace Text',
-		'version' => '0.1.1',
+		'version' => '0.2',
 		'author' => 'Yaron Koren',
 		'url' => 'http://www.mediawiki.org/wiki/Extension:Text_Replace',
 		'description' => 'A special page that lets administrators run a global search-and-replace',
@@ -86,12 +91,10 @@ function displayConfirmForm($message) {
 	$replacement_str = $wgRequest->getVal('replacement_str');
 	$continue_label = wfMsg('replacetext_continue');
 	$cancel_label = wfMsg('replacetext_cancel');
-	$replace_label = wfMsg('replacetext_replace');
 	$text =<<<END
 	<form method="post" action="">
 	<input type="hidden" name="target_str" value="$target_str">
 	<input type="hidden" name="replacement_str" value="$replacement_str">
-	<input type="hidden" name="replace" value="$replace_label">
 	<p>$message</p>
 	<p><input type="Submit" name="confirm" value="$continue_label"></p>
 	<p>$cancel_label</p>
@@ -105,6 +108,33 @@ function doReplaceText() {
   global $wgUser, $wgOut, $wgRequest;
 
   if ($wgRequest->getCheck('replace')) {
+    $target_str = $wgRequest->getVal('target_str');
+    $replacement_str = $wgRequest->getVal('replacement_str');
+    $replacement_params = array();
+    $replacement_params['user_id'] = $wgUser->getId();
+    $replacement_params['target_str'] = $target_str;
+    $replacement_params['replacement_str'] = $replacement_str;
+    $replacement_params['edit_summary'] = wfMsgForContent('replacetext_editsummary', $target_str, $replacement_str);
+    foreach ($wgRequest->getValues() as $key => $value) {
+      if ($value == 'on') {
+        $title = Title::newFromId($key);
+/*
+      $num_matches;
+      $new_text = str_replace($target_str, $replacement_str, $article_text, $num_matches);
+      // if there's at least one replacement, modify the page, using an edit
+      // summary in the language of the wiki
+      if ($num_matches > 0) {
+        $edit_summary = wfMsgForContent('replacetext_editsummary', $target_str, $replacement_str);
+        $article->doEdit($new_text, $edit_summary);
+      }
+*/
+        $jobs[] = new ReplaceTextJob( $title, $replacement_params );
+      }
+    }
+    Job::batchInsert( $jobs );
+    $num_modified_pages = count($jobs);
+    $wgOut->addHTML(wfMsg('replacetext_success', $target_str, $replacement_str, $num_modified_pages));
+  } elseif ($wgRequest->getCheck('target_str')) {
     $dbr =& wfGetDB( DB_SLAVE );
     $fname = 'doReplaceText';
     $target_str = $wgRequest->getVal('target_str');
@@ -135,60 +165,88 @@ function doReplaceText() {
         $wgOut->addHTML(displayConfirmForm($text));
         return;
       } else {
-        $num_files_with_replacement_str = 0;
+        $num_pages_with_replacement_str = 0;
         foreach ($titles as $title) {
           $article = new Article($title);
           $article_text = $article->fetchContent();
           if (strpos($article_text, $replacement_str)) {
-            $num_files_with_replacement_str++;
+            $num_pages_with_replacement_str++;
           }
         }
-        if ($num_files_with_replacement_str > 0) {
-          $text = wfMsg('replacetext_warning', $num_files_with_replacement_str, $replacement_str);
+        if ($num_pages_with_replacement_str > 0) {
+          $text = wfMsg('replacetext_warning', $num_pages_with_replacement_str, $replacement_str);
           $wgOut->addHTML(displayConfirmForm($text));
           return;
         }
       }
     }
 
-    $num_modified_files = 0;
+    $jobs = array();
+    $num_modified_pages = 0;
+    $found_titles = array();
+    $angle_brackets = array('<', '>');
+    $escaped_angle_brackets = array('&lt;', '&gt;');
     foreach ($titles as $title) {
       $article = new Article($title);
       $article_text = $article->fetchContent();
-      $num_matches;
-      $new_text = str_replace($target_str, $replacement_str, $article_text, $num_matches);
-      // if there's at least one replacement, modify the page, using an edit
-      // summary in the language of the wiki
-      if ($num_matches > 0) {
-        $edit_summary = wfMsgForContent('replacetext_editsummary', $target_str, $replacement_str);
-        $article->doEdit($new_text, $edit_summary);
-        $num_modified_files++;
+      if ($target_pos = strpos($article_text, $target_str)) {
+        $left_padding = min($target_pos, 30);
+        $right_padding = min(strlen($article_text) - $target_pos, 30);
+        $len = strlen($article_text);
+        $context_str = "";
+        if ($left_padding == 30)
+          $context_str .= "... ";
+        $context_str .= str_replace($angle_brackets, $escaped_angle_brackets, substr($article_text, $target_pos - $left_padding, $left_padding)) . "<span class=\"searchmatch\">" . str_replace($angle_brackets, $escaped_angle_brackets, substr($article_text, $target_pos, strlen($target_str))) . "</span>" . str_replace($angle_brackets, $escaped_angle_brackets, substr($article_text, $target_pos + strlen($target_str), $right_padding));
+        if ($right_padding == 30)
+          $context_str .= " ...";
+        $found_titles[] = array($title, $context_str);
+        $num_modified_pages++;
       }
     }
 
-    if ($num_modified_files == 0)
+    if ($num_modified_pages == 0)
       $wgOut->addHTML(wfMsg('replacetext_noreplacement', $target_str));
-    else
-      $wgOut->addHTML(wfMsg('replacetext_success', $target_str, $replacement_str, $num_modified_files));
+    else {
+      $replace_label = wfMsg('replacetext_replace');
+      $choose_pages_label = wfMsg('replacetext_choosepages', $target_str, $replacement_str);
+      $skin = $wgUser->getSkin();
+      $text =<<<END
+	<p>$choose_pages_label</p>
+	<form method="post">
+	<input type="hidden" name="target_str" value="$target_str">
+	<input type="hidden" name="replacement_str" value="$replacement_str">
+
+END;
+      foreach ($found_titles as $value_pair) {
+        list($title, $context_str) = $value_pair;
+        $text .= "<input type=\"checkbox\" name=\"{$title->getArticleID()}\" checked /> {$skin->makeLinkObj( $title, $title->prefix($title->getText()) )} - <small>$context_str</small><br />\n";
+      }
+      $text .=<<<END
+	<p><input type="Submit" name="replace" value="$replace_label"></p>
+	</form>
+
+END;
+      $wgOut->addHTML($text);
+    }
   } else {
     $replacement_label = wfMsg('replacetext_docu');
     $replacement_note = wfMsg('replacetext_note');
     $original_text_label = wfMsg('replacetext_originaltext');
     $replacement_text_label = wfMsg('replacetext_replacementtext');
-    $replace_label = wfMsg('replacetext_replace');
+    $continue_label = wfMsg('replacetext_continue');
     $text =<<<END
-	<form method="post" action="">
+	<form method="get" action="">
 	<p>$replacement_label</p>
 	<p>$replacement_note</p>
 	<br />
 	<p>$original_text_label: <input type="text" length="10" name="target_str">
 	&nbsp;
 	$replacement_text_label: <input type="text" length="10" name="replacement_str"></p>
-	<p><input type="Submit" name="replace" value="$replace_label"></p>
+	<p><input type="Submit" value="$continue_label"></p>
 	</form>
 
 END;
+    $wgOut->addHTML($text);
   }
 
-  $wgOut->addHTML($text);
 }
