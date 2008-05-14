@@ -16,7 +16,7 @@
  * the page provides a warning prompt to the user before doing the
  * replacement, since it is not easily reversible.
  *
- * @version 0.2
+ * @version 0.2.1
  * @author Yaron Koren
  */
 
@@ -48,7 +48,7 @@ function grSetupExtension() {
 	// credits
 	$wgExtensionCredits['specialpage'][] = array(
 		'name' => 'Replace Text',
-		'version' => '0.2',
+		'version' => '0.2.1',
 		'author' => 'Yaron Koren',
 		'url' => 'http://www.mediawiki.org/wiki/Extension:Text_Replace',
 		'description' => 'A special page that lets administrators run a global search-and-replace',
@@ -105,7 +105,7 @@ END;
 }
 
 function doReplaceText() {
-  global $wgUser, $wgOut, $wgRequest;
+  global $wgUser, $wgOut, $wgRequest, $wgContLang;
 
   if ($wgRequest->getCheck('replace')) {
     $target_str = $wgRequest->getVal('target_str');
@@ -118,16 +118,6 @@ function doReplaceText() {
     foreach ($wgRequest->getValues() as $key => $value) {
       if ($value == 'on') {
         $title = Title::newFromId($key);
-/*
-      $num_matches;
-      $new_text = str_replace($target_str, $replacement_str, $article_text, $num_matches);
-      // if there's at least one replacement, modify the page, using an edit
-      // summary in the language of the wiki
-      if ($num_matches > 0) {
-        $edit_summary = wfMsgForContent('replacetext_editsummary', $target_str, $replacement_str);
-        $article->doEdit($new_text, $edit_summary);
-      }
-*/
         $jobs[] = new ReplaceTextJob( $title, $replacement_params );
       }
     }
@@ -140,22 +130,6 @@ function doReplaceText() {
     $target_str = $wgRequest->getVal('target_str');
     $replacement_str = $wgRequest->getVal('replacement_str');
 
-    // create an array of all the page titles for the wiki
-    $res = $dbr->select( 'page',
-	array( 'page_title', 'page_namespace' ),
-	array( 'page_is_redirect' => false ),
-	$fname
-    );
-
-    $titles = array();
-    while( $s = $dbr->fetchObject( $res ) ) {
-      // ignore pages in Talk and MediaWiki namespaces
-      if (($s->page_namespace != NS_TALK) && ($s->page_namespace != NS_MEDIAWIKI)) {
-        $title = Title::newFromText($s->page_title, $s->page_namespace);
-        $titles[] = $title;
-      }
-    }
-
     if (! $wgRequest->getCheck('confirm')) {
       // display a page to make the user confirm the replacement, if the
       // replacement string is either blank or found elsewhere on the wiki
@@ -165,14 +139,25 @@ function doReplaceText() {
         $wgOut->addHTML(displayConfirmForm($text));
         return;
       } else {
-        $num_pages_with_replacement_str = 0;
-        foreach ($titles as $title) {
-          $article = new Article($title);
-          $article_text = $article->fetchContent();
-          if (strpos($article_text, $replacement_str)) {
-            $num_pages_with_replacement_str++;
-          }
-        }
+        // get the number of pages in which the replacement string appears
+        $page_table = $dbr->tableName('page');
+        $revision_table = $dbr->tableName('revision');
+        $text_table = $dbr->tableName('text');
+        $talk_ns = NS_TALK;
+        $usertalk_ns = NS_USER_TALK;
+        $mediawiki_ns = NS_MEDIAWIKI;	
+        $sql = "SELECT count(*)
+	FROM $page_table p
+	JOIN $revision_table r ON p.page_latest = r.rev_id
+	JOIN $text_table t ON r.rev_text_id = t.old_id
+	WHERE t.old_text LIKE '%$replacement_str%'
+	AND p.page_namespace != $talk_ns
+	AND p.page_namespace != $usertalk_ns
+	AND p.page_namespace != $mediawiki_ns";
+        $res = $dbr->query($sql);
+        $row = $dbr->fetchRow($res);
+        $num_pages_with_replacement_str = $row[0];
+        // if there are any, the user most confirm the replacement
         if ($num_pages_with_replacement_str > 0) {
           $text = wfMsg('replacetext_warning', $num_pages_with_replacement_str, $replacement_str);
           $wgOut->addHTML(displayConfirmForm($text));
@@ -186,19 +171,32 @@ function doReplaceText() {
     $found_titles = array();
     $angle_brackets = array('<', '>');
     $escaped_angle_brackets = array('&lt;', '&gt;');
-    foreach ($titles as $title) {
-      $article = new Article($title);
-      $article_text = $article->fetchContent();
+
+    // get the set of pages that contain the target string, and display
+    // the name and "context" (the text around the string) of each
+    $page_table = $dbr->tableName('page');
+    $revision_table = $dbr->tableName('revision');
+    $text_table = $dbr->tableName('text');
+    $talk_ns = NS_TALK;
+    $usertalk_ns = NS_USER_TALK;
+    $mediawiki_ns = NS_MEDIAWIKI;	
+    $sql = "SELECT p.page_title AS title, p.page_namespace AS namespace, t.old_text AS text
+	FROM $page_table p
+	JOIN $revision_table r ON p.page_latest = r.rev_id
+	JOIN $text_table t ON r.rev_text_id = t.old_id
+	WHERE t.old_text LIKE '%$target_str%'
+	AND p.page_namespace != $talk_ns
+	AND p.page_namespace != $usertalk_ns
+	AND p.page_namespace != $mediawiki_ns";
+    $res = $dbr->query($sql);
+    $contextchars = $wgUser->getOption( 'contextchars', 40 );
+    while( $row = $dbr->fetchObject( $res ) ) {
+      $title = Title::newFromText($row->title, $row->namespace);
+      $article_text = $row->text;
       if ($target_pos = strpos($article_text, $target_str)) {
-        $left_padding = min($target_pos, 30);
-        $right_padding = min(strlen($article_text) - $target_pos, 30);
-        $len = strlen($article_text);
-        $context_str = "";
-        if ($left_padding == 30)
-          $context_str .= "... ";
-        $context_str .= str_replace($angle_brackets, $escaped_angle_brackets, substr($article_text, $target_pos - $left_padding, $left_padding)) . "<span class=\"searchmatch\">" . str_replace($angle_brackets, $escaped_angle_brackets, substr($article_text, $target_pos, strlen($target_str))) . "</span>" . str_replace($angle_brackets, $escaped_angle_brackets, substr($article_text, $target_pos + strlen($target_str), $right_padding));
-        if ($right_padding == 30)
-          $context_str .= " ...";
+        $context_str = $wgContLang->truncate(substr($article_text, 0, $target_pos), -$contextchars, '...' );
+        $context_str .= "<span class=\"searchmatch\">" . str_replace($angle_brackets, $escaped_angle_brackets, substr($article_text, $target_pos, strlen($target_str))) . "</span>";
+        $context_str .= $wgContLang->truncate(substr($article_text, $target_pos + strlen($target_str)), $contextchars, '...' );
         $found_titles[] = array($title, $context_str);
         $num_modified_pages++;
       }
