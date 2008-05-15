@@ -222,6 +222,7 @@ $messages['no'] = array(
 	'replacetext_note'            => 'Merk: dette vil ikke erstatte tekst på diskusjonssider og prosjektsider, og vil ikke erstatte tekst i sidetitler.',
 	'replacetext_originaltext'    => 'Originaltekst',
 	'replacetext_replacementtext' => 'Erstatningstekst',
+	'replacetext_choosepages'     => 'Velg hvilke sider du ønsker å erstatte «$1» med «$2» i:',
 	'replacetext_replace'         => 'Erstatt',
 	'replacetext_success'         => 'Erstattet «$1» med «$2» på $3 sider.',
 	'replacetext_noreplacement'   => 'Ingen erstatninger ble gjort; ingen sider ble funnet med strengen «$1».',
