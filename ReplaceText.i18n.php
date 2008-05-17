@@ -243,6 +243,7 @@ $messages['oc'] = array(
 	'replacetext_note'            => 'Nòta : aquò remplaçarà pas lo tèxt dins las paginas de discussion ni mai dins las paginas « projècte ». Remplaçarà pas, tanpauc, lo tèxt dins lo títol ele meteis.',
 	'replacetext_originaltext'    => 'Tèxt original',
 	'replacetext_replacementtext' => 'Tèxt novèl',
+	'replacetext_choosepages'     => 'Seleccionatz las paginas sus lasqualas volètz remplaçar « $1 » per « $2 » :',
 	'replacetext_replace'         => 'Remplaçar',
 	'replacetext_success'         => 'A remplaçat « $1 » per « $2 » dins « $3 » fichièrs.',
 	'replacetext_noreplacement'   => 'Cap de remplaçamet es pas estat efectuat ; cap de fichièr que conten la cadena « $1 » es pas estat trobat.',
