@@ -166,6 +166,7 @@ $messages['lb'] = array(
  */
 $messages['ml'] = array(
 	'replacetext_continue' => 'തുടരുക',
+	'replacetext_cancel'   => '(ഈ പ്രവര്‍ത്തനം നിരാകരിക്കുവാന്‍ "തിരിച്ചു പോവുക" ബട്ടണ്‍ ഞെക്കുക)',
 );
 
 /** Marathi (मराठी)
