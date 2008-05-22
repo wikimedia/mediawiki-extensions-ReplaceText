@@ -179,6 +179,7 @@ $messages['mr'] = array(
 	'replacetext_note'            => 'सूचना: ह्यामुळे "चर्चा" पाने तसेच प्रकल्प पाने यांच्यावर बदल होणार नाहीत, तसेच शीर्षके सुद्धा बदलली जाणार नाहीत.',
 	'replacetext_originaltext'    => 'मूळ मजकूर',
 	'replacetext_replacementtext' => 'बदलण्यासाठीचा मजकूर',
+	'replacetext_choosepages'     => "ज्या पानांवर तुम्ही  '$1' ला '$2' ने बदलू इच्छिता ती पाने निवडा:",
 	'replacetext_replace'         => 'पुनर्लेखन करा',
 	'replacetext_success'         => "'$1' ला '$2' ने $3 पानांवर बदलले.",
 	'replacetext_noreplacement'   => "एकही पुनर्लेखन केलेले नाही; '$1' मजकूर असणारे एकही पान सापडले नाही.",
@@ -327,6 +328,13 @@ $messages['sv'] = array(
 	'replacetext_continue'        => 'Fortsätt',
 	'replacetext_cancel'          => '(Klicka på "Tillbaka"-knappen för att avbryta handlingen.)',
 	'replacetext_editsummary'     => 'Textersättning - "$1" till "$2"',
+);
+
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'replacetext_continue' => 'కొనసాగించు',
 );
 
 /** Thai (ไทย)
