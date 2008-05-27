@@ -16,7 +16,7 @@
  * the page provides a warning prompt to the user before doing the
  * replacement, since it is not easily reversible.
  *
- * @version 0.2.1
+ * @version 0.2.2
  * @author Yaron Koren
  */
 
@@ -48,7 +48,7 @@ function grSetupExtension() {
 	// credits
 	$wgExtensionCredits['specialpage'][] = array(
 		'name' => 'Replace Text',
-		'version' => '0.2.1',
+		'version' => '0.2.2',
 		'author' => 'Yaron Koren',
 		'url' => 'http://www.mediawiki.org/wiki/Extension:Text_Replace',
 		'description' => 'A special page that lets administrators run a global search-and-replace',
@@ -146,11 +146,12 @@ function doReplaceText() {
         $talk_ns = NS_TALK;
         $usertalk_ns = NS_USER_TALK;
         $mediawiki_ns = NS_MEDIAWIKI;	
+        $sql_replacement_str = str_replace("'", "\'", $replacement_str);
         $sql = "SELECT count(*)
 	FROM $page_table p
 	JOIN $revision_table r ON p.page_latest = r.rev_id
 	JOIN $text_table t ON r.rev_text_id = t.old_id
-	WHERE t.old_text LIKE '%$replacement_str%'
+	WHERE t.old_text LIKE '%$sql_replacement_str%'
 	AND p.page_namespace != $talk_ns
 	AND p.page_namespace != $usertalk_ns
 	AND p.page_namespace != $mediawiki_ns";
@@ -180,26 +181,27 @@ function doReplaceText() {
     $talk_ns = NS_TALK;
     $usertalk_ns = NS_USER_TALK;
     $mediawiki_ns = NS_MEDIAWIKI;	
+    $sql_target_str = str_replace("'", "\'", $target_str);
     $sql = "SELECT p.page_title AS title, p.page_namespace AS namespace, t.old_text AS text
 	FROM $page_table p
 	JOIN $revision_table r ON p.page_latest = r.rev_id
 	JOIN $text_table t ON r.rev_text_id = t.old_id
-	WHERE t.old_text LIKE '%$target_str%'
+	WHERE t.old_text LIKE '%$sql_target_str%'
 	AND p.page_namespace != $talk_ns
 	AND p.page_namespace != $usertalk_ns
-	AND p.page_namespace != $mediawiki_ns";
+	AND p.page_namespace != $mediawiki_ns
+	ORDER BY p.page_namespace, p.page_title";
     $res = $dbr->query($sql);
     $contextchars = $wgUser->getOption( 'contextchars', 40 );
     while( $row = $dbr->fetchObject( $res ) ) {
       $title = Title::newFromText($row->title, $row->namespace);
       $article_text = $row->text;
-      if ($target_pos = strpos($article_text, $target_str)) {
-        $context_str = $wgContLang->truncate(substr($article_text, 0, $target_pos), -$contextchars, '...' );
-        $context_str .= "<span class=\"searchmatch\">" . str_replace($angle_brackets, $escaped_angle_brackets, substr($article_text, $target_pos, strlen($target_str))) . "</span>";
-        $context_str .= $wgContLang->truncate(substr($article_text, $target_pos + strlen($target_str)), $contextchars, '...' );
-        $found_titles[] = array($title, $context_str);
-        $num_modified_pages++;
-      }
+      $target_pos = strpos($article_text, $target_str);
+      $context_str = $wgContLang->truncate(substr($article_text, 0, $target_pos), -$contextchars, '...' );
+      $context_str .= "<span class=\"searchmatch\">" . str_replace($angle_brackets, $escaped_angle_brackets, substr($article_text, $target_pos, strlen($target_str))) . "</span>";
+      $context_str .= $wgContLang->truncate(substr($article_text, $target_pos + strlen($target_str)), $contextchars, '...' );
+      $found_titles[] = array($title, $context_str);
+      $num_modified_pages++;
     }
 
     if ($num_modified_pages == 0)
