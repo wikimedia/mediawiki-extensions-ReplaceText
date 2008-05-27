@@ -39,6 +39,7 @@ $messages['ar'] = array(
 	'replacetext_originaltext'    => 'النص الأصلي',
 	'replacetext_replacementtext' => 'نص الاستبدال',
 	'replacetext_replace'         => 'استبدل',
+	'replacetext_success'         => "استبدل '$1' ب'$2' في صفحات $3.",
 	'replacetext_continue'        => 'استمر',
 );
 
@@ -46,8 +47,19 @@ $messages['ar'] = array(
  * @author DCLXVI
  */
 $messages['bg'] = array(
-	'replacetext_continue' => 'Продължаване',
-	'replacetext_cancel'   => '(натиснете бутона „Back“ за прекратяване на действието.)',
+	'replacetext'                 => 'Заместване на текст',
+	'replacetext-desc'            => 'Предоставя [[Special:ReplaceText|специална страница]], чрез която администраторите могат да извършват глобално откриване-и-заместване на низове в страниците на уикито',
+	'replacetext_note'            => 'Забележка: този метод няма да замести текста в дискусионните страници и проектните страници, както няма да го замести и в заглавията на страниците.',
+	'replacetext_originaltext'    => 'Оригинален текст',
+	'replacetext_replacementtext' => 'Текст за заместване',
+	'replacetext_choosepages'     => "Изберете страници, в които желаете да замените '$1' с '$2':",
+	'replacetext_replace'         => 'Заместване',
+	'replacetext_success'         => "Заместване на '$1' с '$2' в $3 страници.",
+	'replacetext_noreplacement'   => "Не беше извършено заместване; не бяха открити страници, съдържащи низа '$1'.",
+	'replacetext_blankwarning'    => 'Тъй като низът за заместване е празен, процесът на заместване е необратим; продължаване?',
+	'replacetext_continue'        => 'Продължаване',
+	'replacetext_cancel'          => '(натиснете бутона „Back“ за прекратяване на действието.)',
+	'replacetext_editsummary'     => "Заместване на текст - '$1' на '$2'",
 );
 
 /** German (Deutsch)
