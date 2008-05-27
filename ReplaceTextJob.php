@@ -44,7 +44,8 @@ class ReplaceTextJob extends Job {
 			global $wgUser;
 			$wgUser = User::newFromId($this->params['user_id']);
 			$edit_summary = $this->params['edit_summary'];
-			$article->doEdit($new_text, $edit_summary);
+			$flags = EDIT_MINOR;
+			$article->doEdit($new_text, $edit_summary, $flags);
 		}
 		wfProfileOut( __METHOD__.'-replace' );
 		wfProfileOut( __METHOD__ );
