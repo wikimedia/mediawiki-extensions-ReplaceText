@@ -251,6 +251,7 @@ $messages['no'] = array(
 
 /** Occitan (Occitan)
  * @author Cedric31
+ * @author Siebrand
  */
 $messages['oc'] = array(
 	'replacetext'                 => 'Remplaçar lo tèxt',
@@ -261,7 +262,7 @@ $messages['oc'] = array(
 	'replacetext_replacementtext' => 'Tèxt novèl',
 	'replacetext_choosepages'     => 'Seleccionatz las paginas sus lasqualas volètz remplaçar « $1 » per « $2 » :',
 	'replacetext_replace'         => 'Remplaçar',
-	'replacetext_success'         => 'A remplaçat « $1 » per « $2 » dins « $3 » fichièrs.',
+	'replacetext_success'         => '« $1 » es estat remplaçat per « $2 » dins « $3 » paginas.',
 	'replacetext_noreplacement'   => 'Cap de fichièr que conten la cadena « $1 » es pas estat trobat.',
 	'replacetext_warning'         => "I a $1 fichièrs que conten(on) la cadena de remplaçament « $2 » ; se efectuatz aquesta substitucion, poiretz pas separar vòstres cambiaments a partir d'aquestas cadenas. Volètz contunhar aquestas substitucions ?",
 	'replacetext_blankwarning'    => 'Perque la cadena de remplaçament es voida, aquesta operacion serà irreversibla ; volètz contunhar ?',
