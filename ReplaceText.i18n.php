@@ -139,6 +139,15 @@ $messages['fr'] = array(
 	'replacetext_editsummary'     => 'Remplacement du texte — « $1 » par « $2 »',
 );
 
+/** Galician (Galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'replacetext_continue'    => 'Continuar',
+	'replacetext_cancel'      => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
+	'replacetext_editsummary' => 'Reemprazo de texto - de "$1" a "$2"',
+);
+
 /** Javanese (Basa Jawa)
  * @author Meursault2004
  */
@@ -185,6 +194,7 @@ $messages['ml'] = array(
 
 /** Marathi (मराठी)
  * @author Kaustubh
+ * @author Siebrand
  */
 $messages['mr'] = array(
 	'replacetext'                 => 'मजकूरावर पुनर्लेखन करा',
@@ -195,7 +205,7 @@ $messages['mr'] = array(
 	'replacetext_replacementtext' => 'बदलण्यासाठीचा मजकूर',
 	'replacetext_choosepages'     => "ज्या पानांवर तुम्ही  '$1' ला '$2' ने बदलू इच्छिता ती पाने निवडा:",
 	'replacetext_replace'         => 'पुनर्लेखन करा',
-	'replacetext_success'         => "'$1' ला '$2' ने $3 पानांवर बदलले.",
+	'replacetext_success'         => "'$1' ला '$2' ने $3 पानांवर बदलले जाईल.",
 	'replacetext_noreplacement'   => "'$1' मजकूर असणारे एकही पान सापडले नाही.",
 	'replacetext_warning'         => "अगोदरच $1 पानांवर '$2' हा बदलण्यासाठीचा मजकूर आहे; जर तुम्ही पुनर्लेखन केले तर तुम्ही केलेले बदल तुम्ही या पानांपासून वेगळे करू शकणार नाही. पुनर्लेखन करायचे का?",
 	'replacetext_blankwarning'    => 'बदलण्यासाठीचा मजकूर रिकामा असल्यामुळे ही क्रिया उलटविता येणार नाही; पुढे जायचे का?',
@@ -273,6 +283,7 @@ $messages['oc'] = array(
 
 /** Portuguese (Português)
  * @author 555
+ * @author Siebrand
  */
 $messages['pt'] = array(
 	'replacetext'                 => 'Substituir texto',
@@ -283,7 +294,7 @@ $messages['pt'] = array(
 	'replacetext_replacementtext' => 'Novo texto',
 	'replacetext_choosepages'     => "Seleccione as páginas nas quais deseja substituir '$1' por '$2':",
 	'replacetext_replace'         => 'Substituir',
-	'replacetext_success'         => "'$1' foi substituído por '$2' em $3 páginas.",
+	'replacetext_success'         => "'$1' será substituído por '$2' em $3 páginas.",
 	'replacetext_noreplacement'   => 'Não foram encontradas páginas contendo a "string" \'$1\'.',
 	'replacetext_warning'         => 'Há $1 páginas que atualmente já possuem a "string" de substituição (\'$2\'); se você prosseguir, não será possível distinguir as substituições feitas por você desse texto já existente. Deseja prosseguir?',
 	'replacetext_blankwarning'    => 'Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
