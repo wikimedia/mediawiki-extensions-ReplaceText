@@ -143,9 +143,12 @@ $messages['fr'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
-	'replacetext_continue'    => 'Continuar',
-	'replacetext_cancel'      => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
-	'replacetext_editsummary' => 'Reemprazo de texto - de "$1" a "$2"',
+	'replacetext_originaltext' => 'Texto orixinal',
+	'replacetext_replace'      => 'Reemprazar',
+	'replacetext_success'      => "'$1' será reemprazado con '$2' en $3 páxinas.",
+	'replacetext_continue'     => 'Continuar',
+	'replacetext_cancel'       => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
+	'replacetext_editsummary'  => 'Reemprazo de texto - de "$1" a "$2"',
 );
 
 /** Javanese (Basa Jawa)
