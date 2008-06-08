@@ -45,6 +45,7 @@ $messages['ar'] = array(
 
 /** Bulgarian (Български)
  * @author DCLXVI
+ * @author Siebrand
  */
 $messages['bg'] = array(
 	'replacetext'                 => 'Заместване на текст',
@@ -284,7 +285,9 @@ $messages['oc'] = array(
 	'replacetext_editsummary'     => 'Remplaçament del tèxt — « $1 » per « $2 »',
 );
 
-/** Polish (Polski) */
+/** Polish (Polski)
+ * @author Sp5uhe
+ */
 $messages['pl'] = array(
 	'replacetext'                 => 'Zastąp tekst',
 	'replacetext-desc'            => 'Dodaje [[Special:ReplaceText|stronę specjalną]], pozwalającą administratorom na wyszukanie i zamianę zadanego tekstu w treści wszystkich stron wiki',
