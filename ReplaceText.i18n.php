@@ -284,6 +284,25 @@ $messages['oc'] = array(
 	'replacetext_editsummary'     => 'Remplaçament del tèxt — « $1 » per « $2 »',
 );
 
+/** Polish (Polski) */
+$messages['pl'] = array(
+	'replacetext'                 => 'Zastąp tekst',
+	'replacetext-desc'            => 'Dodaje [[Special:ReplaceText|stronę specjalną]], pozwalającą administratorom na wyszukanie i zamianę zadanego tekstu w treści wszystkich stron wiki',
+	'replacetext_docu'            => 'Możesz zastąpić jeden ciąg znaków innym, w treści wszystkich stron tej wiki. W tym celu wprowadź dwa fragmenty tekstu i naciśnij „Kontynuuj”. Zostanie pokazana lista stron, które zawierają wyszukiwany tekst. Będziesz mógł wybrać te strony, na których chcesz ten tekst zamienić na nowy. W historii zmian stron, do opisu autora edycji, zostanie użyta Twoja nazwa użytkownika.',
+	'replacetext_note'            => 'Uwaga: wyszukiwanie i zastępowanie nie dotyczy stron dyskusji, stron projektów oraz tytułów stron.',
+	'replacetext_originaltext'    => 'Znajdź',
+	'replacetext_replacementtext' => 'Zamień na',
+	'replacetext_choosepages'     => 'Wybierz strony, na których chcesz „$1” zmienić na „$2”',
+	'replacetext_replace'         => 'Zastąp',
+	'replacetext_success'         => '„$1” zostanie zastąpiony przez „$2” na $3 {{PLURAL:$3|stronie|stronach}}.',
+	'replacetext_noreplacement'   => 'Nie znaleziono stron zawierających tekst „$1”.',
+	'replacetext_warning'         => 'Jest $1 {{PLURAL:$1|strona|stron}} zawierających tekst „$2”, którym chcesz zastępować. Jeśli wykonasz zastępowanie nie będzie możliwe odseparowanie tych stron od wykonanych zastąpień. Czy mam kontynuować zastępowanie?',
+	'replacetext_blankwarning'    => 'Ponieważ ciąg znaków, którym ma być wykonane zastępowanie jest pusty, operacja będzie nieodwracalna. Czy kontynuować?',
+	'replacetext_continue'        => 'Kontynuuj',
+	'replacetext_cancel'          => '(Wciśnij klawisz „Wstecz” aby przerwać operację)',
+	'replacetext_editsummary'     => 'zamienił w treści „$1” na „$2”',
+);
+
 /** Portuguese (Português)
  * @author 555
  * @author Siebrand
