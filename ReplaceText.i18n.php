@@ -385,7 +385,9 @@ $messages['sv'] = array(
  * @author Veeven
  */
 $messages['te'] = array(
-	'replacetext_continue' => 'కొనసాగించు',
+	'replacetext_originaltext'    => 'అసలు పాఠ్యం',
+	'replacetext_replacementtext' => 'మార్పిడి పాఠ్యం',
+	'replacetext_continue'        => 'కొనసాగించు',
 );
 
 /** Thai (ไทย)
@@ -393,6 +395,27 @@ $messages['te'] = array(
  */
 $messages['th'] = array(
 	'replacetext_originaltext' => 'ข้อความดั้งเดิม',
+);
+
+/** Vietnamese (Tiếng Việt)
+ * @author Vinhtantran
+ */
+$messages['vi'] = array(
+	'replacetext'                 => 'Thay thế văn bản',
+	'replacetext-desc'            => 'Cung cấp một [[Special:ReplaceText|trang đặc biệt]] để cho phép bảo quản viên thực hiện tìm-kiếm-và-thay-thế thống nhất trên tất cả các trang có nội dung tại một wiki',
+	'replacetext_docu'            => "Để thay thế một chuỗi ký tự bằng một chuỗi khác trên toàn bộ các trang thông thường tại wiki này, hãy gõ vào hai đoạn văn bản ở đây và sau đó nhấn 'Tiếp tục'. Khi đó bạn thấy một danh sách các trang có chứa đoạn ký tự được tìm, và bạn có thể chọn những trang mà bạn muốn thay thế. Tên của bạn sẽ xuất hiện trong lịch sử trang như một thành viên chịu trách nhiệm về bất kỳ thay đổi nào.",
+	'replacetext_note'            => 'Chú ý: điều này sẽ không thay thế văn bản trong những trang "Thảo luận" và trang dự án, và nó sẽ không thay thế văn bản trong chính tựa đề trang.',
+	'replacetext_originaltext'    => 'Văn bản nguồn',
+	'replacetext_replacementtext' => 'Văn bản thay thế',
+	'replacetext_choosepages'     => 'Xin hãy chọn những trang mà bạn muốn thay   ‘$1’ bằng ‘$2’:',
+	'replacetext_replace'         => 'Thay thế',
+	'replacetext_success'         => '‘$1’ sẽ được thay bằng ‘$2’ trong ‘$3’ trang.',
+	'replacetext_noreplacement'   => 'Không tìm thấy trang nào có chứa chuỗi ‘$1’.',
+	'replacetext_warning'         => 'Có $1 trang đã có chứa chuỗi thay thế, ‘$2’; nếu bạn thực hiện thay thế này bạn sẽ không thể phân biệt sự thay thế của bạn với những chuỗi này. Tiếp tục thay thế chứ?',
+	'replacetext_blankwarning'    => 'Vì chuỗi thay thế là khoảng trắng, tác vụ này sẽ không thể hồi lại được; tiếp tục?',
+	'replacetext_continue'        => 'Tiếp tục',
+	'replacetext_cancel'          => '(Nhấn vào nút "Lùi" để hủy tác vụ.)',
+	'replacetext_editsummary'     => 'Thay thế văn bản - ‘$1’ thành ‘$2’',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
