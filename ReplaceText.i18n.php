@@ -33,13 +33,14 @@ $messages['en'] = array(
 /** Arabic (العربية)
  * @author Alnokta
  * @author OsamaK
+ * @author Meno25
  */
 $messages['ar'] = array(
 	'replacetext'                 => 'استبدل النص',
 	'replacetext_originaltext'    => 'النص الأصلي',
 	'replacetext_replacementtext' => 'نص الاستبدال',
 	'replacetext_replace'         => 'استبدل',
-	'replacetext_success'         => "استبدل '$1' ب'$2' في صفحات $3.",
+	'replacetext_success'         => "'$2' سيتم استبدالها ب'$1' في $3 صفحة.",
 	'replacetext_continue'        => 'استمر',
 );
 
@@ -121,6 +122,7 @@ $messages['fa'] = array(
 
 /** French (Français)
  * @author Grondin
+ * @author Verdy p
  */
 $messages['fr'] = array(
 	'replacetext'                 => 'Remplacer le texte',
@@ -129,7 +131,7 @@ $messages['fr'] = array(
 	'replacetext_note'            => 'Note : ceci ne remplacera pas le texte dans les pages de discussion ainsi que dans les pages « projet ». Il ne remplacera pas, non plus, le texte dans le titre lui-même.',
 	'replacetext_originaltext'    => 'Texte original',
 	'replacetext_replacementtext' => 'Nouveau texte',
-	'replacetext_choosepages'     => 'Veuillez sélectionnez les pages sur lesquelles vous voulez remplacer « $1 » par « $2 » :',
+	'replacetext_choosepages'     => 'Veuillez sélectionner les pages dans lesquelles vous voulez remplacer « $1 » par « $2 » :',
 	'replacetext_replace'         => 'Remplacer',
 	'replacetext_success'         => 'A remplacé « $1 » par « $2 » dans « $3 » fichiers.',
 	'replacetext_noreplacement'   => 'Aucun fichier contenant la chaîne « $1 » n’a été trouvé.',
@@ -144,12 +146,14 @@ $messages['fr'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
-	'replacetext_originaltext' => 'Texto orixinal',
-	'replacetext_replace'      => 'Reemprazar',
-	'replacetext_success'      => "'$1' será reemprazado con '$2' en $3 páxinas.",
-	'replacetext_continue'     => 'Continuar',
-	'replacetext_cancel'       => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
-	'replacetext_editsummary'  => 'Reemprazo de texto - de "$1" a "$2"',
+	'replacetext'                 => 'Reemprazar un texto',
+	'replacetext_originaltext'    => 'Texto orixinal',
+	'replacetext_replacementtext' => 'Reemprazo de texto',
+	'replacetext_replace'         => 'Reemprazar',
+	'replacetext_success'         => "'$1' será reemprazado con '$2' en $3 páxinas.",
+	'replacetext_continue'        => 'Continuar',
+	'replacetext_cancel'          => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
+	'replacetext_editsummary'     => 'Reemprazo de texto - de "$1" a "$2"',
 );
 
 /** Javanese (Basa Jawa)
