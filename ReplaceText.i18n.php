@@ -64,6 +64,19 @@ $messages['bg'] = array(
 	'replacetext_editsummary'     => "Заместване на текст - '$1' на '$2'",
 );
 
+/** Czech (Česky)
+ * @author Matěj Grabovský
+ */
+$messages['cs'] = array(
+	'replacetext'                 => 'Nahradit text',
+	'replacetext_originaltext'    => 'Původní text',
+	'replacetext_replacementtext' => 'Nahradit textem',
+	'replacetext_replace'         => 'Nahradit',
+	'replacetext_continue'        => 'Pokračovat',
+	'replacetext_cancel'          => '(Operaci zrušíte kliknutím na tlačítko „Zpět“ ve vašem prohlížeči.)',
+	'replacetext_editsummary'     => 'Nahrazení textu „$1“ textem „$2“',
+);
+
 /** German (Deutsch)
  * @author Raimond Spekking
  */
