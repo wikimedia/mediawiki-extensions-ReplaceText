@@ -16,7 +16,7 @@
  * the page provides a warning prompt to the user before doing the
  * replacement, since it is not easily reversible.
  *
- * @version 0.2.2
+ * @version 0.2.3
  * @author Yaron Koren
  */
 
@@ -48,7 +48,7 @@ function grSetupExtension() {
 	// credits
 	$wgExtensionCredits['specialpage'][] = array(
 		'name' => 'Replace Text',
-		'version' => '0.2.2',
+		'version' => '0.2.3',
 		'author' => 'Yaron Koren',
 		'url' => 'http://www.mediawiki.org/wiki/Extension:Text_Replace',
 		'description' => 'A special page that lets administrators run a global search-and-replace',
@@ -89,6 +89,9 @@ function displayConfirmForm($message) {
 	global $wgRequest;
 	$target_str = $wgRequest->getVal('target_str');
 	$replacement_str = $wgRequest->getVal('replacement_str');
+	// escape quotes for inclusion in HTML
+	$target_str = str_replace('"', '&quot;', $target_str);
+	$replacement_str = str_replace('"', '&quot;', $replacement_str);
 	$continue_label = wfMsg('replacetext_continue');
 	$cancel_label = wfMsg('replacetext_cancel');
 	$text =<<<END
@@ -210,6 +213,9 @@ function doReplaceText() {
       $replace_label = wfMsg('replacetext_replace');
       $choose_pages_label = wfMsg('replacetext_choosepages', $target_str, $replacement_str);
       $skin = $wgUser->getSkin();
+      // escape quotes for inclusion in HTML
+      $target_str = str_replace('"', '&quot;', $target_str);
+      $replacement_str = str_replace('"', '&quot;', $replacement_str);
       $text =<<<END
 	<p>$choose_pages_label</p>
 	<form method="post">
