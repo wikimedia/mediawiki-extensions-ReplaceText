@@ -42,6 +42,7 @@ $messages['ar'] = array(
 	'replacetext_replace'         => 'استبدل',
 	'replacetext_success'         => "'$2' سيتم استبدالها ب'$1' في $3 صفحة.",
 	'replacetext_continue'        => 'استمر',
+	'replacetext_editsummary'     => "استبدال النص - '$1' ب'$2'",
 );
 
 /** Bulgarian (Български)
@@ -162,8 +163,10 @@ $messages['gl'] = array(
 	'replacetext'                 => 'Reemprazar un texto',
 	'replacetext_originaltext'    => 'Texto orixinal',
 	'replacetext_replacementtext' => 'Reemprazo de texto',
+	'replacetext_choosepages'     => "Por favor, seleccione as páxinas na que quere substituír '$1' por '$2':",
 	'replacetext_replace'         => 'Reemprazar',
 	'replacetext_success'         => "'$1' será reemprazado con '$2' en $3 páxinas.",
+	'replacetext_noreplacement'   => "Non foi atopada ningunha páxina que contivese a cadea '$1'.",
 	'replacetext_continue'        => 'Continuar',
 	'replacetext_cancel'          => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
 	'replacetext_editsummary'     => 'Reemprazo de texto - de "$1" a "$2"',
