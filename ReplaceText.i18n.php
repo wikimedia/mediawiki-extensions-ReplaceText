@@ -160,13 +160,18 @@ $messages['fr'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
-	'replacetext'                 => 'Reemprazar un texto',
+	'replacetext'                 => 'Substituír un texto',
+	'replacetext-desc'            => 'Proporciona unha [[Special:ReplaceText|páxina especial]] para que os administradores poidan facer unha cadea global para atopar e substituír un texto no contido de todas as páxinas dun wiki',
+	'replacetext_docu'            => 'Para substituír unha cadea de texto por outra en todas as páxinas regulares deste wiki, teclee aquí as dúas pezas do texto e logo prema en "Continuar". Despois amosaráselle unha lista das páxinas que conteñen o texto buscado e pode elixir en cales quere substituílo. O seu nome aparecerá nos histotiais das páxinas como o usuario responsable de calquera cambio.',
+	'replacetext_note'            => 'Nota: isto non substituirá o texto nas páxinas de "Conversa" nin nas páxinas do proxecto, nin tampouco no texto dos títulos.',
 	'replacetext_originaltext'    => 'Texto orixinal',
 	'replacetext_replacementtext' => 'Reemprazo de texto',
 	'replacetext_choosepages'     => "Por favor, seleccione as páxinas na que quere substituír '$1' por '$2':",
 	'replacetext_replace'         => 'Reemprazar',
 	'replacetext_success'         => "'$1' será reemprazado con '$2' en $3 páxinas.",
 	'replacetext_noreplacement'   => "Non foi atopada ningunha páxina que contivese a cadea '$1'.",
+	'replacetext_warning'         => "Hai $1 páxinas que xa conteñen a cadea de substitución '$2'; se fai esta substitución non poderá separar os seus reemprazamentos destas cadeas. Quere continuar coa substitución?",
+	'replacetext_blankwarning'    => 'Debido a que a cadea de substitución está baleira, esta operación non será reversible; quere continuar?',
 	'replacetext_continue'        => 'Continuar',
 	'replacetext_cancel'          => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
 	'replacetext_editsummary'     => 'Reemprazo de texto - de "$1" a "$2"',
