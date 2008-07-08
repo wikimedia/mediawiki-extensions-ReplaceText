@@ -24,12 +24,11 @@ if (!defined('MEDIAWIKI')) die();
 
 global $IP;
 require_once( "$IP/includes/SpecialPage.php" );
-$grIP = $IP . '/extensions/ReplaceText';
 
 $wgExtensionFunctions[] = 'grSetupExtension';
 
 if (version_compare($wgVersion, '1.11', '>=')) {
-	$wgExtensionMessagesFiles['ReplaceText'] = $grIP . '/ReplaceText.i18n.php';
+	$wgExtensionMessagesFiles['ReplaceText'] = dirname( __FILE__ ) . '/ReplaceText.i18n.php';
 } else {
 	$wgExtensionFunctions[] = 'grfLoadMessagesManually';
 }
@@ -37,7 +36,7 @@ if (version_compare($wgVersion, '1.11', '>=')) {
 $wgJobClasses['replaceText'] = 'ReplaceTextJob';
 
 require_once( "$IP/includes/JobQueue.php" );
-require_once($grIP . '/ReplaceTextJob.php');
+require_once( dirname( __FILE__ ) . '/ReplaceTextJob.php');
 
 function grSetupExtension() {
 	global $wgVersion, $wgExtensionCredits;
@@ -55,9 +54,9 @@ function grSetupExtension() {
 		'descriptionmsg'  => 'replacetext-desc',
 	);
 
-	// the 'delete' specifies that only users who can delete pages
-	// (usually, sysops) can access this page
-	SpecialPage::addPage(new SpecialPage('ReplaceText', 'delete', true, 'doReplaceText', false));
+	// you need to set the right 'replacetext' for a group,
+	// e.g.  $wgGroupPermissions['sysop']['replacetext'] = true;  for sysops
+	SpecialPage::addPage(new SpecialPage('ReplaceText', 'replacetext', true, 'doReplaceText', false));
 }
 
 /**
@@ -240,16 +239,21 @@ END;
     $original_text_label = wfMsg('replacetext_originaltext');
     $replacement_text_label = wfMsg('replacetext_replacementtext');
     $continue_label = wfMsg('replacetext_continue');
+    $legendmsg = wfMsg( 'replacetext');
     $text =<<<END
+    <p>$replacement_label</p>
+    <fieldset>
+    <legend>$legendmsg</legend>
 	<form method="get" action="">
-	<p>$replacement_label</p>
 	<p>$replacement_note</p>
-	<br />
-	<p>$original_text_label: <input type="text" length="10" name="target_str">
-	&nbsp;
-	$replacement_text_label: <input type="text" length="10" name="replacement_str"></p>
+	<table><tr>
+	<td>$original_text_label &nbsp;</td><td><input type="text" length="20" style="width:300px;" name="target_str"></td>
+	</tr><tr>
+	<td>$replacement_text_label &nbsp;</td><td><input type="text" length="20" style="width:300px;" name="replacement_str"></td>
+	</tr></table>
 	<p><input type="Submit" value="$continue_label"></p>
 	</form>
+	</fieldset>
 
 END;
     $wgOut->addHTML($text);
