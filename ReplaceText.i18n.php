@@ -82,7 +82,6 @@ $messages['cs'] = array(
  * @author Raimond Spekking
  */
 $messages['de'] = array(
-	// user messages
 	'replacetext'                 => 'Text ersetzen',
 	'replacetext-desc'            => 'Ergänzt eine [[Special:ReplaceText|Spezialseiten]], die es Administratoren ermöglicht, eine globale Text suchen-und-ersetzen Operation in allen Inhaltseiten des Wikis durchzuführen',
 	'replacetext_docu'            => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, gib die beiden Textteile hier ein und klicke auf die Ersetzen-Schaltfläche. Dein Benutzername wird in der Versionsgeschichte aufgenommen.',
@@ -96,7 +95,6 @@ $messages['de'] = array(
 	'replacetext_blankwarning'    => 'Der zu ersetzende Textteil ist leer, die Operation kann nicht rückgängig gemacht werden, trotzdem fortfahren?',
 	'replacetext_continue'        => 'Fortfahren',
 	'replacetext_cancel'          => '(Klicke auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
-	// content messages
 	'replacetext_editsummary'     => 'Textersetzung - „$1“ durch „$2“',
 );
 
@@ -114,7 +112,7 @@ $messages['eo'] = array(
 	'replacetext_editsummary'     => "Teksta anstataŭigo - '$1' al '$2'",
 );
 
-/** فارسی (فارسی)
+/** Persian (فارسی)
  * @author Huji
  */
 $messages['fa'] = array(
