@@ -41,11 +41,16 @@ class ReplaceTextJob extends Job {
 		// if there's at least one replacement, modify the page,
 		// using the passed-in edit summary
 		if ($num_matches > 0) {
+			// change global $wgUser variable to the one
+			// specified by the job only for the extent of this
+			// replacement
 			global $wgUser;
+			$actual_user = $wgUser;
 			$wgUser = User::newFromId($this->params['user_id']);
 			$edit_summary = $this->params['edit_summary'];
 			$flags = EDIT_MINOR;
 			$article->doEdit($new_text, $edit_summary, $flags);
+			$wgUser = $actual_user;
 		}
 		wfProfileOut( __METHOD__.'-replace' );
 		wfProfileOut( __METHOD__ );
