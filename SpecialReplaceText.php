@@ -18,7 +18,7 @@ class ReplaceText extends SpecialPage {
 	}
 
 	function displayConfirmForm($message) {
-		global $wgRequest;
+		global $wgRequest, $wgContLang;
 		$target_str = $wgRequest->getVal('target_str');
 		$replacement_str = $wgRequest->getVal('replacement_str');
 		// escape quotes for inclusion in HTML
@@ -26,8 +26,12 @@ class ReplaceText extends SpecialPage {
 		$replacement_str = str_replace('"', '&quot;', $replacement_str);
 		$continue_label = wfMsg('replacetext_continue');
 		$cancel_label = wfMsg('replacetext_cancel');
+		// set 'title' as hidden field, in case there's no URL niceness
+		$mw_namespace_labels = $wgContLang->getNamespaces();
+		$special_namespace = $mw_namespace_labels[NS_SPECIAL];
 		$text =<<<END
 	<form method="post" action="">
+	<input type="hidden" name="title" value="$special_namespace:ReplaceText">
 	<input type="hidden" name="target_str" value="$target_str">
 	<input type="hidden" name="replacement_str" value="$replacement_str">
 	<p>$message</p>
@@ -42,6 +46,10 @@ END;
 
 function doSpecialReplaceText() {
   global $wgUser, $wgOut, $wgRequest, $wgContLang;
+
+  // set 'title' as hidden field, in case there's no URL niceness
+  $mw_namespace_labels = $wgContLang->getNamespaces();
+  $special_namespace = $mw_namespace_labels[NS_SPECIAL];
 
   if ($wgRequest->getCheck('replace')) {
     $target_str = $wgRequest->getVal('target_str');
@@ -170,6 +178,7 @@ END;
       $text =<<<END
 	<p>$choose_pages_label</p>
 	<form id="choose_pages" method="post">
+	<input type="hidden" name="title" value="$special_namespace:ReplaceText">
 	<input type="hidden" name="target_str" value="$target_str">
 	<input type="hidden" name="replacement_str" value="$replacement_str">
 
@@ -195,6 +204,7 @@ END;
     $continue_label = wfMsg('replacetext_continue');
     $text =<<<END
 	<form method="get" action="">
+	<input type="hidden" name="title" value="$special_namespace:ReplaceText">
 	<p>$replacement_label</p>
 	<p>$replacement_note</p>
 	<table>
