@@ -19,6 +19,7 @@ $messages['en'] = array(
 	'replacetext_originaltext' => 'Original text',
 	'replacetext_replacementtext' => 'Replacement text',
 	'replacetext_choosepages' => 'Please select the pages for which you want to replace \'$1\' with \'$2\':',
+	'replacetext_invertselections' => 'Invert selections',
 	'replacetext_replace' => 'Replace',
 	'replacetext_success' => '\'$1\' will be replaced with \'$2\' in $3 pages.',
 	'replacetext_noreplacement' => 'No pages were found containing the string \'$1\'.',
