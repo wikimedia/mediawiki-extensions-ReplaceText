@@ -255,23 +255,24 @@ $messages['mr'] = array(
  * @author SPQRobin
  */
 $messages['nl'] = array(
-	'replacetext'                 => 'Tekst vervangen',
-	'replacetext-desc'            => "Beheerders kunnen via een [[Special:ReplaceText|speciale pagina]] tekst zoeken en vervangen in alle pagina's",
-	'replacetext_docu'            => "Om een stuk tekst te vervangen door een ander stuk tekst in alle pagina's van de wiki, kunt u hier deze twee tekstdelen ingeven en daarna op 'Vervangen' klikken.
+	'replacetext'                  => 'Tekst vervangen',
+	'replacetext-desc'             => "Beheerders kunnen via een [[Special:ReplaceText|speciale pagina]] tekst zoeken en vervangen in alle pagina's",
+	'replacetext_docu'             => "Om een stuk tekst te vervangen door een ander stuk tekst in alle pagina's van de wiki, kunt u hier deze twee tekstdelen ingeven en daarna op 'Vervangen' klikken.
 U krijgt dan een lijst met pagina's te zien waar uw te vervangen tekstdeel in voorkomt, en u kunt kiezen in welke pagina's u de tekst ook echt wilt vervangen.
 Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke voor de wijzigingen.",
-	'replacetext_note'            => "Nota bene: de tekst wordt niet vevangen in overlegpagina's en projectpagina's. Paginanamen worden ook niet aangepast.",
-	'replacetext_originaltext'    => 'Oorspronkelijke tekst',
-	'replacetext_replacementtext' => 'Vervangende tekst',
-	'replacetext_choosepages'     => "Selecteer de pagina's waar u '$1' door '$2' wilt vervangen:",
-	'replacetext_replace'         => 'Vervangen',
-	'replacetext_success'         => "'$1' wordt in $3 pagina's vervangen door '$2'.",
-	'replacetext_noreplacement'   => "Er waren geen pagina's die de tekst '$1' bevatten.",
-	'replacetext_warning'         => "Er zijn $1 pagina's die het te vervangen tesktdeel al '$2' al bevatten. Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken. Wilt u doorgaan?",
-	'replacetext_blankwarning'    => 'Omdat u tekst vervangt door niets, kan deze handeling niet ongedaan gemaakt worden. Wilt u doorgaan?',
-	'replacetext_continue'        => 'Doorgaan',
-	'replacetext_cancel'          => '(Klik op de knop "Terug" om deze handeling te annuleren)',
-	'replacetext_editsummary'     => "Tekst vervangen - '$1' door '$2'",
+	'replacetext_note'             => "Nota bene: de tekst wordt niet vevangen in overlegpagina's en projectpagina's. Paginanamen worden ook niet aangepast.",
+	'replacetext_originaltext'     => 'Oorspronkelijke tekst',
+	'replacetext_replacementtext'  => 'Vervangende tekst',
+	'replacetext_choosepages'      => "Selecteer de pagina's waar u '$1' door '$2' wilt vervangen:",
+	'replacetext_invertselections' => 'Selecties omkeren',
+	'replacetext_replace'          => 'Vervangen',
+	'replacetext_success'          => "'$1' wordt in $3 pagina's vervangen door '$2'.",
+	'replacetext_noreplacement'    => "Er waren geen pagina's die de tekst '$1' bevatten.",
+	'replacetext_warning'          => "Er zijn $1 pagina's die het te vervangen tesktdeel al '$2' al bevatten. Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken. Wilt u doorgaan?",
+	'replacetext_blankwarning'     => 'Omdat u tekst vervangt door niets, kan deze handeling niet ongedaan gemaakt worden. Wilt u doorgaan?',
+	'replacetext_continue'         => 'Doorgaan',
+	'replacetext_cancel'           => '(Klik op de knop "Terug" om deze handeling te annuleren)',
+	'replacetext_editsummary'      => "Tekst vervangen - '$1' door '$2'",
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
