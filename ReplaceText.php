@@ -38,3 +38,4 @@ $wgJobClasses['replaceText'] = 'ReplaceTextJob';
 // This extension uses its own permission type, 'replacetext'
 $wgSpecialPages['ReplaceText'] = array('ReplaceText', 'replacetext');
 $wgAutoloadClasses['ReplaceText'] = dirname( __FILE__ ) . '/SpecialReplaceText.php';
+$wgAutoloadClasses['ReplaceTextJob'] = dirname( __FILE__ ) . '/ReplaceTextJob.php';
