@@ -80,7 +80,7 @@ function doSpecialReplaceText() {
       // (since undoing the replacement would be difficult in either case)
       if ($replacement_str == '') {
         $text = wfMsg('replacetext_blankwarning');
-        $wgOut->addHTML(displayConfirmForm($text));
+        $wgOut->addHTML(ReplaceText::displayConfirmForm($text));
         return;
       } else {
         // get the number of pages in which the replacement string appears
