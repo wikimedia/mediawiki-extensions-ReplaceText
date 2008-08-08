@@ -389,21 +389,22 @@ $messages['pt-br'] = array(
  * @author Helix84
  */
 $messages['sk'] = array(
-	'replacetext'                 => 'Nahradiť text',
-	'replacetext-desc'            => 'Poskytuje [[Special:ReplaceText|špeciálnu stránku]], ktorá správcom umožňuje globálne nájsť a nahradiť text na všetkých stránkach celej wiki.',
-	'replacetext_docu'            => 'Nájsť text na všetkých stránkach tejto wiki a nahradiť ho iným textom môžete tak, že sem napíšete texty a stlačíte „Pokračovať”. Potom sa vám zobrazí zoznam stránok obsahujúcich hľadaný text a môžete si zvoliť tie, na ktorých ho chcete nahradiť. V histórii úprav sa zaznamená vaše meno.',
-	'replacetext_note'            => 'Pozn.: Týmto nemožno nahradiť text na diskusných a projektových stránkach ani text v samotných názvoch stránok.',
-	'replacetext_originaltext'    => 'Pôvodný text',
-	'replacetext_replacementtext' => 'Nahradiť textom',
-	'replacetext_choosepages'     => 'Prosím, vyberte stránky, na ktorých chcete nahradiť „$1“ za „$2“:',
-	'replacetext_replace'         => 'Nahradiť',
-	'replacetext_success'         => 'Text „$1” bude nahradený textom „$2” na {{PLURAL:$3|$3 stránke|$3 stránkach}}.',
-	'replacetext_noreplacement'   => 'Nenašli sa žiadne stránky obsahujúce text „$1”.',
-	'replacetext_warning'         => '$1 stránok už obsahuje text „$2”, ktorým chcete text nahradiť; ak budete pokračovať a text nahradíte, nebudete môcť odlíšiť vaše nahradenia od existujúceho textu, ktorý tento reťazec už obsahuje. Pokračovať?',
-	'replacetext_blankwarning'    => 'Pretože text, ktorým text chcete nahradiť je prázdny, operácia bude nevratná. Pokračovať?',
-	'replacetext_continue'        => 'Pokračovať',
-	'replacetext_cancel'          => '(Operáciu zrušíte stlačením tlačidla „Späť” vo vašom prehliadači.)',
-	'replacetext_editsummary'     => 'Nahradenie textu „$1” textom „$2”',
+	'replacetext'                  => 'Nahradiť text',
+	'replacetext-desc'             => 'Poskytuje [[Special:ReplaceText|špeciálnu stránku]], ktorá správcom umožňuje globálne nájsť a nahradiť text na všetkých stránkach celej wiki.',
+	'replacetext_docu'             => 'Nájsť text na všetkých stránkach tejto wiki a nahradiť ho iným textom môžete tak, že sem napíšete texty a stlačíte „Pokračovať”. Potom sa vám zobrazí zoznam stránok obsahujúcich hľadaný text a môžete si zvoliť tie, na ktorých ho chcete nahradiť. V histórii úprav sa zaznamená vaše meno.',
+	'replacetext_note'             => 'Pozn.: Týmto nemožno nahradiť text na diskusných a projektových stránkach ani text v samotných názvoch stránok.',
+	'replacetext_originaltext'     => 'Pôvodný text',
+	'replacetext_replacementtext'  => 'Nahradiť textom',
+	'replacetext_choosepages'      => 'Prosím, vyberte stránky, na ktorých chcete nahradiť „$1“ za „$2“:',
+	'replacetext_invertselections' => 'Invertovať výber',
+	'replacetext_replace'          => 'Nahradiť',
+	'replacetext_success'          => 'Text „$1” bude nahradený textom „$2” na {{PLURAL:$3|$3 stránke|$3 stránkach}}.',
+	'replacetext_noreplacement'    => 'Nenašli sa žiadne stránky obsahujúce text „$1”.',
+	'replacetext_warning'          => '$1 stránok už obsahuje text „$2”, ktorým chcete text nahradiť; ak budete pokračovať a text nahradíte, nebudete môcť odlíšiť vaše nahradenia od existujúceho textu, ktorý tento reťazec už obsahuje. Pokračovať?',
+	'replacetext_blankwarning'     => 'Pretože text, ktorým text chcete nahradiť je prázdny, operácia bude nevratná. Pokračovať?',
+	'replacetext_continue'         => 'Pokračovať',
+	'replacetext_cancel'           => '(Operáciu zrušíte stlačením tlačidla „Späť” vo vašom prehliadači.)',
+	'replacetext_editsummary'      => 'Nahradenie textu „$1” textom „$2”',
 );
 
 /** Serbian Cyrillic ekavian (ћирилица)
