@@ -33,6 +33,7 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author McMonster
+ * @author Nike
  */
 $messages['qqq'] = array(
 	'replacetext' => "This message is displayed as a title of this extension's special page.",
