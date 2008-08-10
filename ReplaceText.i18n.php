@@ -100,6 +100,7 @@ $messages['cs'] = array(
 );
 
 /** German (Deutsch)
+ * @author Leithian
  * @author Raimond Spekking
  */
 $messages['de'] = array(
@@ -109,6 +110,8 @@ $messages['de'] = array(
 	'replacetext_note' => 'Bitte beachten: es wird kein Text auf Diskussions- und Projektseiten ausgetauscht. Auch Text in Artikelnamen wird nicht ausgetauscht.',
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Neuer Text',
+	'replacetext_choosepages' => "Bitte Seiten auswählen, bei denen du '$1' durch '$2' ersetzen möchtest:",
+	'replacetext_invertselections' => 'Auswahl umkehren',
 	'replacetext_replace' => 'Ersetzen',
 	'replacetext_success' => '„$1“ wird durch „$2“ in $3 Seiten ersetzt.',
 	'replacetext_noreplacement' => 'Es wurde keine Seite gefunden, die den Text „$1“ enthält.',
