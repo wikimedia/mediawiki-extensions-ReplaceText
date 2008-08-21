@@ -324,6 +324,7 @@ $messages['oc'] = array(
 	'replacetext_originaltext' => 'Tèxt original',
 	'replacetext_replacementtext' => 'Tèxt novèl',
 	'replacetext_choosepages' => 'Seleccionatz las paginas sus lasqualas volètz remplaçar « $1 » per « $2 » :',
+	'replacetext_invertselections' => 'Inversar las seleccions',
 	'replacetext_replace' => 'Remplaçar',
 	'replacetext_success' => '« $1 » es estat remplaçat per « $2 » dins « $3 » paginas.',
 	'replacetext_noreplacement' => 'Cap de fichièr que conten la cadena « $1 » es pas estat trobat.',
