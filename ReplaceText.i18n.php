@@ -367,6 +367,7 @@ $messages['pt'] = array(
 	'replacetext_originaltext' => 'Texto original',
 	'replacetext_replacementtext' => 'Novo texto',
 	'replacetext_choosepages' => "Seleccione as páginas nas quais deseja substituir '$1' por '$2':",
+	'replacetext_invertselections' => 'Inverter selecções',
 	'replacetext_replace' => 'Substituir',
 	'replacetext_success' => "'$1' será substituído por '$2' em $3 páginas.",
 	'replacetext_noreplacement' => 'Não foram encontradas páginas contendo a "string" \'$1\'.',
