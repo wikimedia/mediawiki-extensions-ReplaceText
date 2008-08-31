@@ -231,9 +231,12 @@ $messages['lb'] = array(
 	'replacetext_note' => "'''Oppassen''': Den Text gëtt net an \"Diskussiounssäiten\" a Projetssäiten ersat, an den Text an de Säitenimm gëtt och net ersat.",
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Neien Text',
+	'replacetext_choosepages' => 'Wielt w.e.g. d\'Säiten op denen Dir "$1" duerch "$2" ersetze wëllt:',
+	'replacetext_invertselections' => 'Auswiel ëmdréinen',
 	'replacetext_replace' => 'Ersetzen',
 	'replacetext_success' => "'$1' gëtt duerch '$2' op $3 Säiten ersat.",
 	'replacetext_continue' => 'Weiderfueren',
+	'replacetext_cancel' => '(Klickt op de Knäppchen "Zréck" fir d\'Operatioun ofzebriechen)',
 	'replacetext_editsummary' => "Text ersat - '$1' duerch '$2'",
 );
 
