@@ -125,7 +125,9 @@ function doSpecialReplaceText() {
     $talk_ns = NS_TALK;
     $usertalk_ns = NS_USER_TALK;
     $mediawiki_ns = NS_MEDIAWIKI;	
-    $sql_target_str = str_replace("'", "\'", $target_str);
+    // escape single quote and backslash for SQL - for some reason, the
+    // backslash needs to be escaped twice (plus once for PHP)
+    $sql_target_str = str_replace(array("'", "\\"), array("\'", "\\\\\\\\"), $target_str);
     $sql = "SELECT p.page_title AS title, p.page_namespace AS namespace, t.old_text AS text
 	FROM $page_table p
 	JOIN $revision_table r ON p.page_latest = r.rev_id
@@ -187,13 +189,19 @@ END;
         list($title, $context_str) = $value_pair;
         $text .= "<input type=\"checkbox\" name=\"{$title->getArticleID()}\" checked /> {$skin->makeLinkObj( $title, $title->prefix($title->getText()) )} - <small>$context_str</small><br />\n";
       }
-      $invert_selections_label = wfMsg('replacetext_invertselections');
       $text .=<<<END
 	<p><input type="Submit" name="replace" value="$replace_label"></p>
-	<p><strong><a href="javascript:;" onclick="invertSelections(); return false;">$invert_selections_label</a></strong></p>
-	</form>
 
 END;
+      // only show "invert selections" link if there are more than five pages
+      if (count($found_titles) > 5) {
+        $invert_selections_label = wfMsg('replacetext_invertselections');
+        $text .=<<<END
+	<p><strong><a href="javascript:;" onclick="invertSelections(); return false;">$invert_selections_label</a></strong></p>
+
+END;
+      }
+      $text .= "	</form>\n";
       $wgOut->addHTML($text);
     }
   } else {
