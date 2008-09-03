@@ -191,6 +191,7 @@ $messages['gl'] = array(
 	'replacetext_originaltext' => 'Texto orixinal',
 	'replacetext_replacementtext' => 'Reemprazo de texto',
 	'replacetext_choosepages' => "Por favor, seleccione as páxinas na que quere substituír '$1' por '$2':",
+	'replacetext_invertselections' => 'Invertir as seleccións',
 	'replacetext_replace' => 'Reemprazar',
 	'replacetext_success' => "'$1' será reemprazado con '$2' en $3 páxinas.",
 	'replacetext_noreplacement' => "Non foi atopada ningunha páxina que contivese a cadea '$1'.",
