@@ -16,7 +16,7 @@
  * the page provides a warning prompt to the user before doing the
  * replacement, since it is not easily reversible.
  *
- * @version 0.2.5
+ * @version 0.2.6
  * @author Yaron Koren
  */
 
@@ -25,17 +25,19 @@ if (!defined('MEDIAWIKI')) die();
 // credits
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Replace Text',
-	'version' => '0.2.5',
+	'version' => '0.2.6',
 	'author' => 'Yaron Koren',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'description' => 'A special page that lets administrators run a global search-and-replace',
 	'descriptionmsg'  => 'replacetext-desc',
 );
 
-$wgExtensionMessagesFiles['ReplaceText'] = dirname( __FILE__ ) . '/ReplaceText.i18n.php';
+$dir = dirname(__FILE__) . '/';
+$wgExtensionMessagesFiles['ReplaceText'] = $dir . 'ReplaceText.i18n.php';
+$wgExtensionAliasesFiles['ReplaceText'] = $dir . 'ReplaceText.alias.php';
 $wgJobClasses['replaceText'] = 'ReplaceTextJob';
 
 // This extension uses its own permission type, 'replacetext'
 $wgSpecialPages['ReplaceText'] = array('ReplaceText', 'replacetext');
-$wgAutoloadClasses['ReplaceText'] = dirname( __FILE__ ) . '/SpecialReplaceText.php';
-$wgAutoloadClasses['ReplaceTextJob'] = dirname( __FILE__ ) . '/ReplaceTextJob.php';
+$wgAutoloadClasses['ReplaceText'] = $dir . 'SpecialReplaceText.php';
+$wgAutoloadClasses['ReplaceTextJob'] = $dir . 'ReplaceTextJob.php';
