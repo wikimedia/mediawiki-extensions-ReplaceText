@@ -13,12 +13,16 @@ $aliases['en'] = array(
 	'ReplaceText' => array( 'ReplaceText' ),
 );
 
-/** Arabic (العربية) */
+/** Arabic (العربية)
+ * @author Meno25
+ */
 $aliases['ar'] = array(
 	'ReplaceText' => array( 'استبدال_نص' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Meno25
+ */
 $aliases['arz'] = array(
 	'ReplaceText' => array( 'استبدال_نص' ),
 );
