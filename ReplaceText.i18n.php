@@ -234,6 +234,7 @@ $messages['jv'] = array(
 );
 
 /** Khmer (ភាសាខ្មែរ)
+ * @author Lovekhmer
  * @author គីមស៊្រុន
  */
 $messages['km'] = array(
@@ -241,7 +242,7 @@ $messages['km'] = array(
 	'replacetext_originaltext' => 'អត្ថបទដើម',
 	'replacetext_replacementtext' => 'អត្ថបទជំនួស',
 	'replacetext_replace' => 'ជំនួស',
-	'replacetext_success' => "បានជំនួស '$1' ដោយ '$2' ក្នុង $3 ទំព័រ។",
+	'replacetext_success' => "'$1'នឹងត្រូវបានជំនួសដោយ '$2' ក្នុង$3ទំព័រ។",
 	'replacetext_continue' => 'បន្ត',
 );
 
