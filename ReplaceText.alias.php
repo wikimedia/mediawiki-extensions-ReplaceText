@@ -27,6 +27,11 @@ $aliases['arz'] = array(
 	'ReplaceText' => array( 'استبدال_نص' ),
 );
 
+/** French (Français) */
+$aliases['fr'] = array(
+	'ReplaceText' => array( 'Remplacer texte', 'RemplacerTexte' ),
+);
+
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
 	'ReplaceText' => array( 'TekstVervangen' ),
