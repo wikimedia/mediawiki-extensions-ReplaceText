@@ -32,6 +32,11 @@ $aliases['fr'] = array(
 	'ReplaceText' => array( 'Remplacer texte', 'RemplacerTexte' ),
 );
 
+/** Luxembourgish (Lëtzebuergesch) */
+$aliases['lb'] = array(
+	'ReplaceText' => array( 'Text ersetzen' ),
+);
+
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
 	'ReplaceText' => array( 'TekstVervangen' ),
