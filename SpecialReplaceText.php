@@ -7,12 +7,19 @@ class ReplaceText extends SpecialPage {
 	/**
 	 * Constructor
 	 */
-	function ReplaceText() {
-		SpecialPage::SpecialPage('ReplaceText');
+	public function __construct() {
+		parent::__construct('ReplaceText', 'replacetext');
 		wfLoadExtensionMessages('ReplaceText');
 	}
 
 	function execute() {
+		global $wgUser, $wgOut;
+
+		if ( ! $wgUser->isAllowed('replacetext') ) {
+			$wgOut->permissionRequired('replacetext');
+			return;
+		}
+
 		$this->setHeaders();
 		doSpecialReplaceText();
 	}
