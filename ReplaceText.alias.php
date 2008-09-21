@@ -37,8 +37,18 @@ $aliases['lb'] = array(
 	'ReplaceText' => array( 'Text ersetzen' ),
 );
 
+/** Nedersaksisch (Nedersaksisch) */
+$aliases['nds-nl'] = array(
+	'ReplaceText' => array( 'Tekse_vervangen' ),
+);
+
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
 	'ReplaceText' => array( 'TekstVervangen' ),
+);
+
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
+$aliases['no'] = array(
+	'ReplaceText' => array( 'Teksterstatning' ),
 );
 
