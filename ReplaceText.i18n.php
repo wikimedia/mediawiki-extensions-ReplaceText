@@ -183,7 +183,9 @@ $messages['fa'] = array(
 
 /** French (Français)
  * @author Grondin
+ * @author McDutchie
  * @author Verdy p
+ * @author Zetud
  */
 $messages['fr'] = array(
 	'replacetext' => 'Remplacer le texte',
@@ -195,9 +197,9 @@ $messages['fr'] = array(
 	'replacetext_choosepages' => 'Veuillez sélectionner les pages dans lesquelles vous voulez remplacer « $1 » par « $2 » :',
 	'replacetext_invertselections' => 'Inverser les sélections',
 	'replacetext_replace' => 'Remplacer',
-	'replacetext_success' => 'A remplacé « $1 » par « $2 » dans « $3 » fichiers.',
+	'replacetext_success' => '« $1 » sera remplacé par « $2 » dans $3 fichiers.',
 	'replacetext_noreplacement' => 'Aucun fichier contenant la chaîne « $1 » n’a été trouvé.',
-	'replacetext_warning' => 'Il y a $1 fichiers qui contient la chaîne de remplacement « $2 » ; si vous effectuer cette substitution, vous ne pourrez pas séparer vos changements à partir de ces chaînes. Voulez-vous continuez ces substitutions ?',
+	'replacetext_warning' => 'Il y a $1 fichiers qui contiennent la chaîne de remplacement « $2 » ; si vous effectuez cette substitution, vous ne pourrez pas séparer vos changements à partir de ces chaînes. Voulez-vous continuer ces substitutions ?',
 	'replacetext_blankwarning' => 'Parce que la chaîne de remplacement est vide, cette opération sera irréversible ; voulez-vous continuer ?',
 	'replacetext_continue' => 'Continuer',
 	'replacetext_cancel' => "(cliquez sur le bouton  « Retour » pour annuler l'opération.)",
@@ -224,6 +226,28 @@ $messages['gl'] = array(
 	'replacetext_continue' => 'Continuar',
 	'replacetext_cancel' => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
 	'replacetext_editsummary' => 'Reemprazo de texto - de "$1" a "$2"',
+);
+
+/** Interlingua (Interlingua)
+ * @author McDutchie
+ */
+$messages['ia'] = array(
+	'replacetext' => 'Reimplaciar texto',
+	'replacetext-desc' => 'Forni un [[Special:ReplaceText|pagina special]] que permitte al administratores cercar e reimplaciar globalmente un catena de characteres in tote le paginas de contento de un wiki',
+	'replacetext_docu' => "Pro reimplaciar un catena de characteres per un altere trans tote le paginas regular in iste wiki, entra le duo pecias de texto hic e clicca super 'Continuar'. Postea se monstrara un lista de paginas que contine le texto cercate, e tu potera seliger in quales tu vole reimplaciar lo. Tu nomine figurara in le historias del paginas como le usator responsabile de omne modificationes.",
+	'replacetext_note' => 'Nota: isto non reimplaciara le texto in paginas de discussion o de projecto, ni in le titulos del paginas mesme.',
+	'replacetext_originaltext' => 'Texto original',
+	'replacetext_replacementtext' => 'Nove texto',
+	'replacetext_choosepages' => "Per favor selige le paginas in le quales tu vole reimplaciar '$1' per '$2':",
+	'replacetext_invertselections' => 'Inverter selectiones',
+	'replacetext_replace' => 'Reimplaciar',
+	'replacetext_success' => "'$1' essera reimplaciate per '$2' in $3 paginas.",
+	'replacetext_noreplacement' => "Nulle pagina esseva trovate que contine le catena de characteres '$1'.",
+	'replacetext_warning' => "Il ha $1 paginas que contine ja le nove texto, '$2'; si tu face iste reimplaciamento, tu non potera distinguer inter tu reimplaciamentos e iste texto ja existente. Continuar le reimplaciamento?",
+	'replacetext_blankwarning' => 'Post que le nove texto es vacue, iste operation non essera reversibile; continuar?',
+	'replacetext_continue' => 'Continuar',
+	'replacetext_cancel' => '(Clicca le button Retro pro cancellar le operation.)',
+	'replacetext_editsummary' => "Reimplaciamento de texto - '$1' per '$2'",
 );
 
 /** Javanese (Basa Jawa)
