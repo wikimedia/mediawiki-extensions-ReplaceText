@@ -134,7 +134,7 @@ function doSpecialReplaceText() {
     $mediawiki_ns = NS_MEDIAWIKI;	
     // escape single quote and backslash for SQL - for some reason, the
     // backslash needs to be escaped twice (plus once for PHP)
-    $sql_target_str = str_replace(array("'", "\\"), array("\'", "\\\\\\\\"), $target_str);
+    $sql_target_str = str_replace(array("\\", "'"), array("\\\\\\\\", "\'"), $target_str);
     $sql = "SELECT p.page_title AS title, p.page_namespace AS namespace, t.old_text AS text
 	FROM $page_table p
 	JOIN $revision_table r ON p.page_latest = r.rev_id
@@ -204,7 +204,7 @@ END;
       if (count($found_titles) > 5) {
         $invert_selections_label = wfMsg('replacetext_invertselections');
         $text .=<<<END
-	<p><strong><a href="javascript:;" onclick="invertSelections(); return false;">$invert_selections_label</a></strong></p>
+	<p><a href="javascript:;" onclick="invertSelections(); return false;">$invert_selections_label</a></p>
 
 END;
       }
