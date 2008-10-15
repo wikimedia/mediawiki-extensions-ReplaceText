@@ -228,6 +228,28 @@ $messages['gl'] = array(
 	'replacetext_editsummary' => 'Reemprazo de texto - de "$1" a "$2"',
 );
 
+/** Croatian (Hrvatski)
+ * @author Dalibor Bosits
+ */
+$messages['hr'] = array(
+	'replacetext' => 'Zamjeni tekst',
+	'replacetext-desc' => 'Dodaje [[Special:ReplaceText|posebnu stranicu]] koja omogućava administratorima globalnu zamjenu teksta na principu nađi-zamjeni na svim stranicama wikija.',
+	'replacetext_docu' => "Za zamjenu jednog teksta s drugim na svim stranicama wikija, upišite ciljani i zamjenski tekst ovdje i pritisnite 'Dalje'. Pokazati će vam se popis stranica koje sadrže ciljani tekst, i moći ćete odabrati u kojima od njih želite izvršiti zamjenu. Vaše ime će se pojaviti u povijesti stranice kao suradnik odgovoran za promjenu.",
+	'replacetext_note' => 'Napomena: ovo neće zamijeniti tekst na stranicama za "razgovor" i stranicama projekta, i neće zamijeniti tekst u naslovu samih stranica.',
+	'replacetext_originaltext' => 'Izvorni tekst',
+	'replacetext_replacementtext' => 'Zamjenski tekst',
+	'replacetext_choosepages' => "Molimo odaberite stranice na kojima želite zamijeniti '$1' za '$2':",
+	'replacetext_invertselections' => 'Izvrni odabir',
+	'replacetext_replace' => 'Zamjeni',
+	'replacetext_success' => "'$1' će biti zamijenjen za '$2' na $3 stranica.",
+	'replacetext_noreplacement' => "Nije pronađena ni jedna stranica koja sadrži '$1'.",
+	'replacetext_warning' => "Ukupno je $1 stranica koje već sadrže zamjenski tekst, '$2'; ako napravite ovu zamjenu nećete moći odvojiti svoju zamjenu od ovog teksta. Nastaviti sa zamjenom?",
+	'replacetext_blankwarning' => 'Zato što je zamjenski tekst prazan, ovaj postupak se neće moći vratiti; nastaviti?',
+	'replacetext_continue' => 'Dalje',
+	'replacetext_cancel' => '(Pritisnite tipku "Nazad" za zaustavljanje postupka.)',
+	'replacetext_editsummary' => "Zamjena teksta - '$1' u '$2'",
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */
