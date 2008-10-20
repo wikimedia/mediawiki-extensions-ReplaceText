@@ -32,6 +32,21 @@ $aliases['fr'] = array(
 	'ReplaceText' => array( 'Remplacer texte', 'RemplacerTexte' ),
 );
 
+/** Hebrew (עברית) */
+$aliases['he'] = array(
+	'ReplaceText' => array( 'החלפת_טקסט' ),
+);
+
+/** Croatian (Hrvatski) */
+$aliases['hr'] = array(
+	'ReplaceText' => array( 'Zamjeni_tekst' ),
+);
+
+/** Khmer (ភាសាខ្មែរ) */
+$aliases['km'] = array(
+	'ReplaceText' => array( 'ជំនួសអត្ថបទ' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
 	'ReplaceText' => array( 'Text ersetzen' ),
@@ -50,5 +65,10 @@ $aliases['nl'] = array(
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
 $aliases['no'] = array(
 	'ReplaceText' => array( 'Teksterstatning' ),
+);
+
+/** Occitan (Occitan) */
+$aliases['oc'] = array(
+	'ReplaceText' => array( 'Remplaçar tèxt', 'RemplaçarTèxte' ),
 );
 
