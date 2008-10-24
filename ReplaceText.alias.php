@@ -42,6 +42,11 @@ $aliases['hr'] = array(
 	'ReplaceText' => array( 'Zamjeni_tekst' ),
 );
 
+/** Upper Sorbian (Hornjoserbsce) */
+$aliases['hsb'] = array(
+	'ReplaceText' => array( 'Tekst narunać' ),
+);
+
 /** Khmer (ភាសាខ្មែរ) */
 $aliases['km'] = array(
 	'ReplaceText' => array( 'ជំនួសអត្ថបទ' ),
