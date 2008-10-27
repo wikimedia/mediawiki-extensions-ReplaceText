@@ -52,6 +52,11 @@ $aliases['km'] = array(
 	'ReplaceText' => array( 'ជំនួសអត្ថបទ' ),
 );
 
+/** Ripoarisch (Ripoarisch) */
+$aliases['ksh'] = array(
+	'ReplaceText' => array( 'Tex tuusche' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $aliases['lb'] = array(
 	'ReplaceText' => array( 'Text ersetzen' ),
