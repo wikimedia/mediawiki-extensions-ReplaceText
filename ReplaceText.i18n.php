@@ -407,7 +407,7 @@ $messages['oc'] = array(
 	'replacetext_note' => 'Nòta : aquò remplaçarà pas lo tèxt dins las paginas de discussion ni mai dins las paginas « projècte ». Remplaçarà pas, tanpauc, lo tèxt dins lo títol ele meteis.',
 	'replacetext_originaltext' => 'Tèxt original',
 	'replacetext_replacementtext' => 'Tèxt novèl',
-	'replacetext_choosepages' => 'Seleccionatz las paginas sus lasqualas volètz remplaçar « $1 » per « $2 » :',
+	'replacetext_choosepages' => 'Seleccionatz las paginas sus lasquinas volètz remplaçar « $1 » per « $2 » :',
 	'replacetext_invertselections' => 'Inversar las seleccions',
 	'replacetext_replace' => 'Remplaçar',
 	'replacetext_success' => '« $1 » es estat remplaçat per « $2 » dins « $3 » paginas.',
@@ -481,6 +481,15 @@ $messages['pt-br'] = array(
 	'replacetext_continue' => 'Prosseguir',
 	'replacetext_cancel' => '(pressione o botão "voltar" de seu navegador para cancelar a operação.)',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
+);
+
+/** Russian (Русский)
+ * @author Ferrer
+ */
+$messages['ru'] = array(
+	'replacetext_originaltext' => 'Оригинальный текст',
+	'replacetext_continue' => 'Завершить',
+	'replacetext_editsummary' => "Текст заменён - '$1' на '$2'",
 );
 
 /** Slovak (Slovenčina)

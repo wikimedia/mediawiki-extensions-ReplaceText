@@ -79,6 +79,6 @@ $aliases['no'] = array(
 
 /** Occitan (Occitan) */
 $aliases['oc'] = array(
-	'ReplaceText' => array( 'Remplaçar tèxt', 'RemplaçarTèxte' ),
+	'ReplaceText' => array( 'Remplaçar tèxt', 'RemplaçarTèxt' ),
 );
 
