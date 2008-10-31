@@ -485,11 +485,12 @@ $messages['pt-br'] = array(
 
 /** Russian (Русский)
  * @author Ferrer
+ * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'replacetext_originaltext' => 'Оригинальный текст',
-	'replacetext_continue' => 'Завершить',
-	'replacetext_editsummary' => "Текст заменён - '$1' на '$2'",
+	'replacetext_continue' => 'Продолжить',
+	'replacetext_editsummary' => 'Текст заменён — «$1» на «$2»',
 );
 
 /** Slovak (Slovenčina)
