@@ -59,7 +59,7 @@ function doSpecialReplaceText() {
 	$special_namespace = $mw_namespace_labels[NS_SPECIAL];
 
 	if ($wgRequest->getCheck('replace')) {
-    	$target_str = $wgRequest->getVal('target_str');
+		$target_str = $wgRequest->getVal('target_str');
 		$replacement_str = $wgRequest->getVal('replacement_str');
 		$replacement_params = array();
 		$replacement_params['user_id'] = $wgUser->getId();
@@ -68,8 +68,14 @@ function doSpecialReplaceText() {
 		$replacement_params['edit_summary'] = wfMsgForContent('replacetext_editsummary', $target_str, $replacement_str);
 		foreach ($wgRequest->getValues() as $key => $value) {
 			if ($value == 'on') {
-				$title = Title::newFromId($key);
-				$jobs[] = new ReplaceTextJob( $title, $replacement_params );
+				if (strpos($key, 'move-') !== false) {
+					$title = Title::newFromId(substr($key, 5));
+					$replacement_params['move_page'] = true;
+				} else {
+					$title = Title::newFromId($key);
+				}
+				if ($title !== null)
+					$jobs[] = new ReplaceTextJob( $title, $replacement_params );
 			}
 		}
 		Job::batchInsert( $jobs );
@@ -120,6 +126,8 @@ function doSpecialReplaceText() {
 		$jobs = array();
 		$num_modified_pages = 0;
 		$found_titles = array();
+		$titles_for_move = array();
+		$unmoveable_titles = array();
 		$angle_brackets = array('<', '>');
 		$escaped_angle_brackets = array('&lt;', '&gt;');
 		
@@ -155,6 +163,28 @@ function doSpecialReplaceText() {
 			$found_titles[] = array($title, $context_str);
 			$num_modified_pages++;
 		}
+		if ($wgRequest->getCheck('move_pages')) {
+			$sql_target_str2 = str_replace(' ', '_', $sql_target_str);
+			$sql2 = "SELECT p.page_title AS title, p.page_namespace AS namespace
+	FROM $page_table p
+	WHERE p.page_title LIKE '%$sql_target_str2%'
+	ORDER BY p.page_namespace, p.page_title";
+			$res = $dbr->query($sql2);
+			while( $row = $dbr->fetchObject( $res ) ) {
+				$title = Title::newFromText($row->title, $row->namespace);
+				// see if this move can happen
+				$cur_page_name = str_replace('_', ' ', $row->title);
+				$new_page_name = str_replace($target_str, $replacement_str, $cur_page_name);
+				$new_title = Title::newFromText($new_page_name, $row->namespace);
+				$err = $title->isValidMoveOperation($new_title);
+				if ($title->userCanMove(true) && (! is_array($err))) {
+					$titles_for_move[] = $title;
+					$num_modified_pages++;
+				} else {
+					$unmoveable_titles[] = $title;
+				}
+			}
+		}
 		if ($num_modified_pages == 0) {
 			$wgOut->addHTML(wfMsg('replacetext_noreplacement', $target_str));
 		} else {
@@ -178,6 +208,8 @@ END;
 		$wgOut->addScript($javascript_text);
 		$replace_label = wfMsg('replacetext_replace');
 		$choose_pages_label = wfMsg('replacetext_choosepages', $target_str, $replacement_str);
+		$choose_pages_for_move_label = wfMsg('replacetext_choosepagesformove');
+		$cannot_move_pages_label = wfMsg('replacetext_cannotmove', $target_str, $replacement_str);
 		$skin = $wgUser->getSkin();
 		// escape quotes for inclusion in HTML
 		$target_str = str_replace('"', '&quot;', $target_str);
@@ -194,27 +226,42 @@ END;
 			list($title, $context_str) = $value_pair;
 			$text .= "<input type=\"checkbox\" name=\"{$title->getArticleID()}\" checked /> {$skin->makeLinkObj( $title, $title->prefix($title->getText()) )} - <small>$context_str</small><br />\n";
   		}
+		if (count($titles_for_move) > 0) {
+			$text .= "<p>$choose_pages_for_move_label</p>\n";
+			foreach ($titles_for_move as $title) {
+				$text .= "<input type=\"checkbox\" name=\"move-{$title->getArticleID()}\" checked /> {$skin->makeLinkObj( $title, $title->prefix($title->getText()) )}<br />\n";
+ 	 		}
+		}
 		$text .=<<<END
 	<p><input type="Submit" name="replace" value="$replace_label"></p>
 
 END;
 		// only show "invert selections" link if there are more than five pages
-		if (count($found_titles) > 5) {
-		$invert_selections_label = wfMsg('replacetext_invertselections');
-		$text .=<<<END
+		if (count($found_titles) + count($titles_for_move) > 5) {
+			$invert_selections_label = wfMsg('replacetext_invertselections');
+			$text .=<<<END
 	<p><a href="javascript:;" onclick="invertSelections(); return false;">$invert_selections_label</a></p>
 
 END;
   		}
 		$text .= "	</form>\n";
-		$wgOut->addHTML($text);
+		if (count($unmoveable_titles) > 0) {
+			$text .= "<p>$cannot_move_pages_label</p>\n";
+			$text .= "<ul>\n";
+			foreach ($unmoveable_titles as $title) {
+				$text .= "<li>{$skin->makeLinkObj( $title, $title->prefix($title->getText()) )}<br />\n";
+  			}
+			$text .= "</ul>\n";
 		}
+		$wgOut->addHTML($text);
+	}
 	} // end elseif
 	else {
 		$replacement_label = wfMsg('replacetext_docu');
 		$replacement_note = wfMsg('replacetext_note');
 		$original_text_label = wfMsg('replacetext_originaltext');
 		$replacement_text_label = wfMsg('replacetext_replacementtext');
+		$move_pages_label = wfMsg('replacetext_movepages');
 		$continue_label = wfMsg('replacetext_continue');
 		$text =<<<END
 	<form method="get" action="">
@@ -231,6 +278,7 @@ END;
 	<td><input type="text" length="10" name="replacement_str"></td>
 	</tr>
 	</table>
+	<p><input type="checkbox" name="move_pages"> $move_pages_label</p>
 	<p><input type="Submit" value="$continue_label"></p>
 	</form>
 
