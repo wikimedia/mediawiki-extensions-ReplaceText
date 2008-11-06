@@ -135,7 +135,7 @@ $messages['de'] = array(
 	'replacetext' => 'Text ersetzen',
 	'replacetext-desc' => 'Ergänzt eine [[Special:ReplaceText|Spezialseite]], die es Administratoren ermöglicht, eine globale Text suchen-und-ersetzen Operation in allen Inhaltseiten des Wikis durchzuführen',
 	'replacetext_docu' => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, gib die beiden Textteile hier ein und klicke auf die Ersetzen-Schaltfläche. Dein Benutzername wird in der Versionsgeschichte aufgenommen.',
-	'replacetext_note' => 'Bitte beachten: es wird kein Text auf Diskussions- und Projektseiten ausgetauscht. Auch Text in Artikelnamen wird nicht ausgetauscht.',
+	'replacetext_note' => 'Bitte beachten: es wird kein Text auf Diskussions- und Projektseiten ausgetauscht.',
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Neuer Text',
 	'replacetext_choosepages' => "Bitte Seiten auswählen, bei denen du '$1' durch '$2' ersetzen möchtest:",
@@ -310,7 +310,7 @@ $messages['ksh'] = array(
 $messages['lb'] = array(
 	'replacetext' => 'Text ersetzen',
 	'replacetext-desc' => "Weist eng [[Special:ReplaceText|Spezialsäit]] déi Administrateuren et erlaabt eng Rei vun Textzeechen op alle Contenu-säiten vun enger Wiki ze gesinn an z'ersetzen",
-	'replacetext_note' => "'''Oppassen''': Den Text gëtt net an \"Diskussiounssäiten\" a Projetssäiten ersat, an den Text an de Säitenimm gëtt och net ersat.",
+	'replacetext_note' => "'''Oppassen''': Dëst ersetzt net den Text op \"Diskussiounssäiten\" a Projetssäiten.",
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Neien Text',
 	'replacetext_choosepages' => 'Wielt w.e.g. d\'Säiten op denen Dir "$1" duerch "$2" ersetze wëllt:',
@@ -363,10 +363,13 @@ $messages['nl'] = array(
 	'replacetext_docu' => "Om een stuk tekst te vervangen door een ander stuk tekst in alle pagina's van de wiki, kunt u hier deze twee tekstdelen ingeven en daarna op 'Vervangen' klikken.
 U krijgt dan een lijst met pagina's te zien waar uw te vervangen tekstdeel in voorkomt, en u kunt kiezen in welke pagina's u de tekst ook echt wilt vervangen.
 Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke voor de wijzigingen.",
-	'replacetext_note' => "Nota bene: de tekst wordt niet vevangen in overlegpagina's en projectpagina's. Paginanamen worden ook niet aangepast.",
+	'replacetext_note' => "Nota bene: de tekst wordt niet vevangen in overlegpagina's en projectpagina's.",
 	'replacetext_originaltext' => 'Oorspronkelijke tekst',
 	'replacetext_replacementtext' => 'Vervangende tekst',
+	'replacetext_movepages' => 'De tekst als mogelijk ook vervangen in paginanamen',
 	'replacetext_choosepages' => "Selecteer de pagina's waar u '$1' door '$2' wilt vervangen:",
+	'replacetext_choosepagesformove' => 'De tekst vervangen in de volgende paginanamen:',
+	'replacetext_cannotmove' => "De volgende pagina's kunnen niet hernoemd worden:",
 	'replacetext_invertselections' => 'Selecties omkeren',
 	'replacetext_replace' => 'Vervangen',
 	'replacetext_success' => "'$1' wordt in $3 pagina's vervangen door '$2'.",
@@ -607,7 +610,7 @@ $messages['zh-hant'] = array(
 	'replacetext_editsummary' => '取代文字 - 「$1」 取代為 「$2」',
 );
 
-/** Taiwan Chinese (‪中文(台灣)‬)
+/** Chinese (Taiwan) (‪中文(台灣)‬)
  * @author Roc michael
  */
 $messages['zh-tw'] = array(

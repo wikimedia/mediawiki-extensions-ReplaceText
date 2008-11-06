@@ -27,6 +27,11 @@ $aliases['arz'] = array(
 	'ReplaceText' => array( 'استبدال_نص' ),
 );
 
+/** Bosnian (Bosanski) */
+$aliases['bs'] = array(
+	'ReplaceText' => array( 'ZamjenaTeksta' ),
+);
+
 /** French (Français) */
 $aliases['fr'] = array(
 	'ReplaceText' => array( 'Remplacer texte', 'RemplacerTexte' ),
