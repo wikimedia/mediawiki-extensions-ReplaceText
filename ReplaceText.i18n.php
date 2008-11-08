@@ -186,6 +186,7 @@ $messages['fa'] = array(
 
 /** French (Français)
  * @author Grondin
+ * @author IAlex
  * @author McDutchie
  * @author Verdy p
  * @author Zetud
@@ -194,10 +195,13 @@ $messages['fr'] = array(
 	'replacetext' => 'Remplacer le texte',
 	'replacetext-desc' => 'Fournit une page spéciale permettant aux administrateurs de remplacer des chaînes de caractères par d’autres sur l’ensemble du wiki',
 	'replacetext_docu' => "Pour remplacer une chaîne de caractères avec une autre sur l'ensemble des données des pages de ce wiki, vous pouvez entrez les deux textes ici et cliquer sur « Remplacer ». Votre nom apparaîtra dans l'historique des pages tel un utilisateur auteur des changements.",
-	'replacetext_note' => 'Note : ceci ne remplacera pas le texte dans les pages de discussion ainsi que dans les pages « projet ». Il ne remplacera pas, non plus, le texte dans le titre lui-même.',
+	'replacetext_note' => 'Note : ceci ne remplacera pas le texte dans les pages de discussion ainsi que dans les pages « projet ».',
 	'replacetext_originaltext' => 'Texte original',
 	'replacetext_replacementtext' => 'Nouveau texte',
+	'replacetext_movepages' => 'Remplacer le texte dans le titre des pages, si possible',
 	'replacetext_choosepages' => 'Veuillez sélectionner les pages dans lesquelles vous voulez remplacer « $1 » par « $2 » :',
+	'replacetext_choosepagesformove' => 'Remplacer le texte dans les noms des pages suivantes :',
+	'replacetext_cannotmove' => "Les pages suivantes n'ont pas pu être renommées :",
 	'replacetext_invertselections' => 'Inverser les sélections',
 	'replacetext_replace' => 'Remplacer',
 	'replacetext_success' => '« $1 » sera remplacé par « $2 » dans $3 fichiers.',
@@ -410,10 +414,13 @@ $messages['oc'] = array(
 	'replacetext' => 'Remplaçar lo tèxt',
 	'replacetext-desc' => 'Provesís una [[Special:ReplaceText|pagina especiala]] que permet als administrators de remplaçar de cadenas de caractèrs per d’autras sus l’ensemble del wiki',
 	'replacetext_docu' => "Per remplaçar una cadena de caractèrs amb una autra sus l'ensemble de las donadas de las paginas d'aqueste wiki, podètz picar los dos tèxtes aicí e clicar sus 'Remplaçar'. Vòstre nom apareiserà dins l'istoric de las paginas tal coma un utilizaire autor dels cambiaments.",
-	'replacetext_note' => 'Nòta : aquò remplaçarà pas lo tèxt dins las paginas de discussion ni mai dins las paginas « projècte ». Remplaçarà pas, tanpauc, lo tèxt dins lo títol ele meteis.',
+	'replacetext_note' => 'Nòta : aquò remplaçarà pas lo tèxt dins las paginas de discussion ni mai dins las paginas « projècte ».',
 	'replacetext_originaltext' => 'Tèxt original',
 	'replacetext_replacementtext' => 'Tèxt novèl',
+	'replacetext_movepages' => 'Remplaçar lo tèxt dins lo títol de las paginas, se possible',
 	'replacetext_choosepages' => 'Seleccionatz las paginas sus lasquinas volètz remplaçar « $1 » per « $2 » :',
+	'replacetext_choosepagesformove' => 'Remplaçar lo tèxt dins los noms de las paginas seguentas :',
+	'replacetext_cannotmove' => 'Las paginas seguentas an pas pogut èsser renomenadas :',
 	'replacetext_invertselections' => 'Inversar las seleccions',
 	'replacetext_replace' => 'Remplaçar',
 	'replacetext_success' => '« $1 » es estat remplaçat per « $2 » dins « $3 » paginas.',
@@ -426,13 +433,14 @@ $messages['oc'] = array(
 );
 
 /** Polish (Polski)
+ * @author Maikking
  * @author Sp5uhe
  */
 $messages['pl'] = array(
 	'replacetext' => 'Zastąp tekst',
 	'replacetext-desc' => 'Dodaje [[Special:ReplaceText|stronę specjalną]], pozwalającą administratorom na wyszukanie i zamianę zadanego tekstu w treści wszystkich stron wiki',
 	'replacetext_docu' => 'Możesz zastąpić jeden ciąg znaków innym, w treści wszystkich stron tej wiki. W tym celu wprowadź dwa fragmenty tekstu i naciśnij „Kontynuuj”. Zostanie pokazana lista stron, które zawierają wyszukiwany tekst. Będziesz mógł wybrać te strony, na których chcesz ten tekst zamienić na nowy. W historii zmian stron, do opisu autora edycji, zostanie użyta Twoja nazwa użytkownika.',
-	'replacetext_note' => 'Uwaga: wyszukiwanie i zastępowanie nie dotyczy stron dyskusji, stron projektów oraz tytułów stron.',
+	'replacetext_note' => 'Uwaga: nie zastąpi tekstu na stronach dyskusji i stronach projektu.',
 	'replacetext_originaltext' => 'Znajdź',
 	'replacetext_replacementtext' => 'Zamień na',
 	'replacetext_choosepages' => 'Wybierz strony, na których chcesz „$1” zmienić na „$2”',
@@ -506,10 +514,13 @@ $messages['sk'] = array(
 	'replacetext' => 'Nahradiť text',
 	'replacetext-desc' => 'Poskytuje [[Special:ReplaceText|špeciálnu stránku]], ktorá správcom umožňuje globálne nájsť a nahradiť text na všetkých stránkach celej wiki.',
 	'replacetext_docu' => 'Nájsť text na všetkých stránkach tejto wiki a nahradiť ho iným textom môžete tak, že sem napíšete texty a stlačíte „Pokračovať”. Potom sa vám zobrazí zoznam stránok obsahujúcich hľadaný text a môžete si zvoliť tie, na ktorých ho chcete nahradiť. V histórii úprav sa zaznamená vaše meno.',
-	'replacetext_note' => 'Pozn.: Týmto nemožno nahradiť text na diskusných a projektových stránkach ani text v samotných názvoch stránok.',
+	'replacetext_note' => 'Pozn.: Týmto nemožno nahradiť text na diskusných a projektových stránkach.',
 	'replacetext_originaltext' => 'Pôvodný text',
 	'replacetext_replacementtext' => 'Nahradiť textom',
+	'replacetext_movepages' => 'Nahradiť text aj v názvoch stránok, ak je to možné',
 	'replacetext_choosepages' => 'Prosím, vyberte stránky, na ktorých chcete nahradiť „$1“ za „$2“:',
+	'replacetext_choosepagesformove' => 'Nahradiť text v názvoch nasledovných stránok:',
+	'replacetext_cannotmove' => 'Nasledovné stránky nemožno presunúť:',
 	'replacetext_invertselections' => 'Invertovať výber',
 	'replacetext_replace' => 'Nahradiť',
 	'replacetext_success' => 'Text „$1” bude nahradený textom „$2” na {{PLURAL:$3|$3 stránke|$3 stránkach}}.',
@@ -576,7 +587,7 @@ $messages['vi'] = array(
 	'replacetext' => 'Thay thế văn bản',
 	'replacetext-desc' => 'Cung cấp một [[Special:ReplaceText|trang đặc biệt]] để cho phép bảo quản viên thực hiện tìm-kiếm-và-thay-thế thống nhất trên tất cả các trang có nội dung tại một wiki',
 	'replacetext_docu' => "Để thay thế một chuỗi ký tự bằng một chuỗi khác trên toàn bộ các trang thông thường tại wiki này, hãy gõ vào hai đoạn văn bản ở đây và sau đó nhấn 'Tiếp tục'. Khi đó bạn thấy một danh sách các trang có chứa đoạn ký tự được tìm, và bạn có thể chọn những trang mà bạn muốn thay thế. Tên của bạn sẽ xuất hiện trong lịch sử trang như một thành viên chịu trách nhiệm về bất kỳ thay đổi nào.",
-	'replacetext_note' => 'Chú ý: điều này sẽ không thay thế văn bản trong những trang "Thảo luận" và trang dự án, và nó sẽ không thay thế văn bản trong chính tựa đề trang.',
+	'replacetext_note' => 'Chú ý: tác vụ này sẽ không thay thế văn bản trong những trang "Thảo luận" và trang dự án.',
 	'replacetext_originaltext' => 'Văn bản nguồn',
 	'replacetext_replacementtext' => 'Văn bản thay thế',
 	'replacetext_choosepages' => 'Xin hãy chọn những trang mà bạn muốn thay   ‘$1’ bằng ‘$2’:',
