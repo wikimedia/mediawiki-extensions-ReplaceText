@@ -545,12 +545,13 @@ $messages['sr-ec'] = array(
 
 /** Swedish (Svenska)
  * @author M.M.S.
+ * @author Najami
  */
 $messages['sv'] = array(
 	'replacetext' => 'Ersätt text',
 	'replacetext-desc' => 'Låter administratörer [[Special:ReplaceText|ersätta text]] på alla innehållssidor på en wiki',
 	'replacetext_docu' => 'För att ersätta en textträng med en annan på alla datasidor på den här wikin kan du skriva in de två texterna här och klicka på "Ersätt". Du kommer sedan att visas på en lista över sidor som innehåller söktexten, och du kan välja en av dom som du vill ersätta. Ditt namn kommer visas i sidhistoriken som den som är ansvarig för ändringarna.',
-	'replacetext_note' => 'Notera: detta kommer inte ersätta text på diskussionssidor och projektsidor, och kommer inte ersätts text i sidtitlar.',
+	'replacetext_note' => 'Notera: det här kommer inte ersätta text på "Diskussion"-sidor och projektsidor.',
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Ersättningstext',
 	'replacetext_choosepages' => 'Var god ange för vilka sidor du vill ersätta "$1" med "$2":',
