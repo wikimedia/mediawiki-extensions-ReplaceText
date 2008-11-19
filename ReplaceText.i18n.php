@@ -317,6 +317,7 @@ $messages['lb'] = array(
 	'replacetext_note' => "'''Oppassen''': Dëst ersetzt net den Text op \"Diskussiounssäiten\" a Projetssäiten.",
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Neien Text',
+	'replacetext_movepages' => 'Text och an den Titele vun de Säiten ersetzen, wa méiglech',
 	'replacetext_choosepages' => 'Wielt w.e.g. d\'Säiten op denen Dir "$1" duerch "$2" ersetze wëllt:',
 	'replacetext_invertselections' => 'Auswiel ëmdréinen',
 	'replacetext_replace' => 'Ersetzen',
