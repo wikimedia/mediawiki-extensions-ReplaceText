@@ -52,6 +52,11 @@ $aliases['hsb'] = array(
 	'ReplaceText' => array( 'Tekst narunać' ),
 );
 
+/** Hungarian (Magyar) */
+$aliases['hu'] = array(
+	'ReplaceText' => array( 'Szöveg csere' ),
+);
+
 /** Khmer (ភាសាខ្មែរ) */
 $aliases['km'] = array(
 	'ReplaceText' => array( 'ជំនួសអត្ថបទ' ),

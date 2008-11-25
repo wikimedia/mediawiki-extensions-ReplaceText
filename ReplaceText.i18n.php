@@ -157,6 +157,7 @@ $messages['eo'] = array(
 	'replacetext' => 'Anstataŭigi tekston',
 	'replacetext_originaltext' => 'Originala teksto',
 	'replacetext_replacementtext' => 'Anstataŭigita teksto',
+	'replacetext_invertselections' => 'Inversigi selektojn',
 	'replacetext_replace' => 'Anstataŭigi',
 	'replacetext_success' => "'$1' estos anstataŭigita de '$2' en $3 paĝoj.",
 	'replacetext_noreplacement' => "Neniuj paĝoj estis trovitaj enhavantaj la ĉenon '$1'.",
