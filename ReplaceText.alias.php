@@ -92,3 +92,8 @@ $aliases['oc'] = array(
 	'ReplaceText' => array( 'Remplaçar tèxt', 'RemplaçarTèxt' ),
 );
 
+/** Swahili (Kiswahili) */
+$aliases['sw'] = array(
+	'ReplaceText' => array( 'PandikiziaMatini' ),
+);
+
