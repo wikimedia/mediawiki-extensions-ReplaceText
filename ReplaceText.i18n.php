@@ -224,7 +224,10 @@ $messages['gl'] = array(
 	'replacetext_note' => 'Nota: isto non substituirá o texto nas páxinas de "Conversa" nin nas páxinas do proxecto.',
 	'replacetext_originaltext' => 'Texto orixinal',
 	'replacetext_replacementtext' => 'Reemprazo de texto',
+	'replacetext_movepages' => 'Substituír tamén o texto nos títulos das páxinas, cando sexa posible',
 	'replacetext_choosepages' => "Por favor, seleccione as páxinas na que quere substituír '$1' por '$2':",
+	'replacetext_choosepagesformove' => 'Substituír o texto nos nomes das seguintes páxinas:',
+	'replacetext_cannotmove' => 'As seguintes páxinas non poden ser movidas:',
 	'replacetext_invertselections' => 'Invertir as seleccións',
 	'replacetext_replace' => 'Reemprazar',
 	'replacetext_success' => "'$1' será reemprazado con '$2' en $3 páxinas.",
@@ -320,6 +323,7 @@ $messages['lb'] = array(
 	'replacetext_replacementtext' => 'Neien Text',
 	'replacetext_movepages' => 'Text och an den Titele vun de Säiten ersetzen, wa méiglech',
 	'replacetext_choosepages' => 'Wielt w.e.g. d\'Säiten op denen Dir "$1" duerch "$2" ersetze wëllt:',
+	'replacetext_cannotmove' => 'Dës Säite kënne net geréckelt ginn:',
 	'replacetext_invertselections' => 'Auswiel ëmdréinen',
 	'replacetext_replace' => 'Ersetzen',
 	'replacetext_success' => "'$1' gëtt duerch '$2' op $3 Säiten ersat.",
@@ -458,15 +462,19 @@ $messages['pl'] = array(
 
 /** Portuguese (Português)
  * @author 555
+ * @author Waldir
  */
 $messages['pt'] = array(
 	'replacetext' => 'Substituir texto',
 	'replacetext-desc' => 'Provê uma [[Special:ReplaceText|página especial]] que permite que administradores procurem e substituam uma "string" global em todas as páginas de conteúdo de uma wiki.',
 	'replacetext_docu' => 'Para substituir uma "string" de texto por outra em todas as páginas desta wiki você precisa fornecer as duas peças de texto a seguir, pressionando o botão \'Substituir\'. Será exibida uma lista de páginas que contenham o termo pesquisado, sendo possível selecionar em quais você deseja realizar substituições. Seu nome de utilizador aparecerá nos históricos de páginas como o responsável por ter feito as alterações.',
-	'replacetext_note' => 'Nota: isto não substituirá textos em páginas de discussão e organizacionais do projeto, além de não substituir texto nos títulos de páginas.',
+	'replacetext_note' => 'Nota: isto não substituirá textos em páginas de discussão e páginas do projeto.',
 	'replacetext_originaltext' => 'Texto original',
 	'replacetext_replacementtext' => 'Novo texto',
+	'replacetext_movepages' => 'Substituir texto nos títulos das páginas também, quando possível',
 	'replacetext_choosepages' => "Seleccione as páginas nas quais deseja substituir '$1' por '$2':",
+	'replacetext_choosepagesformove' => 'Substituir texto nos nomes das seguintes páginas:',
+	'replacetext_cannotmove' => 'As seguintes páginas não podem ser movidas:',
 	'replacetext_invertselections' => 'Inverter selecções',
 	'replacetext_replace' => 'Substituir',
 	'replacetext_success' => "'$1' será substituído por '$2' em $3 páginas.",
