@@ -509,10 +509,13 @@ $messages['pt-br'] = array(
 
 /** Russian (Русский)
  * @author Ferrer
+ * @author Rubin
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
+	'replacetext' => 'Заменить текст',
 	'replacetext_originaltext' => 'Оригинальный текст',
+	'replacetext_replace' => 'Заменить',
 	'replacetext_continue' => 'Продолжить',
 	'replacetext_editsummary' => 'Текст заменён — «$1» на «$2»',
 );
