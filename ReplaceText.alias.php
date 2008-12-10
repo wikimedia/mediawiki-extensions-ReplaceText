@@ -37,6 +37,11 @@ $aliases['fr'] = array(
 	'ReplaceText' => array( 'Remplacer texte', 'RemplacerTexte' ),
 );
 
+/** Swiss German (Alemannisch) */
+$aliases['gsw'] = array(
+	'ReplaceText' => array( 'Täxt ersetze' ),
+);
+
 /** Hebrew (עברית) */
 $aliases['he'] = array(
 	'ReplaceText' => array( 'החלפת_טקסט' ),
