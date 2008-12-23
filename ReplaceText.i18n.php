@@ -261,6 +261,31 @@ $messages['hr'] = array(
 	'replacetext_editsummary' => "Zamjena teksta - '$1' u '$2'",
 );
 
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'replacetext' => 'Tekst narunać',
+	'replacetext-desc' => 'Steji [[Special:ReplaceText|specialnu stronu]] k dispoziciji, kotraž administratoram zmóžnja, globalne pytanje a narunanje teksta na wšěch wobsahowych stronach wikija přewjesć',
+	'replacetext_docu' => "Zo by tekst přez druhi tekst na wšěch regularnych stronach tutoho wikija narunał, zapodaj wobaj tekstowej dźělej a klikń potom na 'Dale'. Budźeš potom lisćinu stronow widźeć, kotrež pytany tekst wobsahuja a móžeš jednu z nich wubrać, w kotrejž chceš tekst narunać. Twoje mjeno zjewi so w stawiznach strony jako wužiwar, kotryž je zamołwity za změny.",
+	'replacetext_note' => 'Kedźbu: tekst w diskusijnych a projektowych stronach so njenarunuje.',
+	'replacetext_originaltext' => 'Originalny tekst',
+	'replacetext_replacementtext' => 'Narunanski tekst',
+	'replacetext_movepages' => 'Tekst w titulach stronow tež narunać, jeli móžno',
+	'replacetext_choosepages' => "Prošu wubjer strony, z kotrež chceš '$1' přez '$2' narunać:",
+	'replacetext_choosepagesformove' => 'Tekst w mjenach slědowacych stronow narunać:',
+	'replacetext_cannotmove' => 'Slědowace strony njehodźa so přesunyć:',
+	'replacetext_invertselections' => 'Wuběry wobroćić',
+	'replacetext_replace' => 'Narunać',
+	'replacetext_success' => "'$1' so w $3 {{PLURAL:$3|stronje|stronomaj|stronach|stronach}} přez '$2' naruna.",
+	'replacetext_noreplacement' => "Njejsu so žane strony namakali, kotrež wuraz '$1' wobsahuja.",
+	'replacetext_warning' => "{{PLURAL:$1|Je hižo $1 strona, kotraž wobsahuje|Stej hižo $1 stronje, kotejž wobsahujetej|Su hižo $1 strony, kotrež wobsahuja|Je hižo $1 stronow, kotrež wobsahuje}} narunanski tekst, '$2'; jeli tute narunanje činiš, njemóžeš swoje narunanja wot tutoho teksta rozdźělić. Z narunanjom pokročować?",
+	'replacetext_blankwarning' => 'Narunanski dźěl je prózdny, tohodla operacija njeda so cofnyć; njedźiwajo na to pokročować?',
+	'replacetext_continue' => 'Dale',
+	'replacetext_cancel' => '(Klikń na tłóčatko "Wróćo", zo by operaciju přetrohnył.)',
+	'replacetext_editsummary' => "Tekstowe narunanje - '$1' do '$2'",
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */

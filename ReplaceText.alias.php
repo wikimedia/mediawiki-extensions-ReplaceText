@@ -77,6 +77,11 @@ $aliases['lb'] = array(
 	'ReplaceText' => array( 'Text ersetzen' ),
 );
 
+/** Macedonian (Македонски) */
+$aliases['mk'] = array(
+	'ReplaceText' => array( 'ЗамениТекст' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $aliases['nds-nl'] = array(
 	'ReplaceText' => array( 'Tekse_vervangen' ),
