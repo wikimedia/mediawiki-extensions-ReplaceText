@@ -239,6 +239,15 @@ $messages['gl'] = array(
 	'replacetext_editsummary' => 'Reemprazo de texto - de "$1" a "$2"',
 );
 
+/** Hebrew (עברית)
+ * @author Rotemliss
+ * @author YaronSh
+ */
+$messages['he'] = array(
+	'replacetext' => 'החלפת טקסט',
+	'replacetext-desc' => 'אספקת [[Special:ReplaceText|דף מיוחד]] כדי לאפשר למפעילים לבצע חיפוש והחלפה של מחרוזות בכל דפי התוכן בוויקי',
+);
+
 /** Croatian (Hrvatski)
  * @author Dalibor Bosits
  */
