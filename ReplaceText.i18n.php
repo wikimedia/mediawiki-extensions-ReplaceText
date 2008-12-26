@@ -190,12 +190,13 @@ $messages['fa'] = array(
 );
 
 /** Finnish (Suomi)
+ * @author Nike
  * @author Str4nd
  */
 $messages['fi'] = array(
 	'replacetext_originaltext' => 'Alkuperäinen teksti',
 	'replacetext_replacementtext' => 'Korvaava teksti',
-	'replacetext_movepages' => 'Korvaa teksti myös otsikoista jos mahdollista',
+	'replacetext_movepages' => 'Korvaa teksti myös otsikoista, jos mahdollista',
 	'replacetext_cannotmove' => 'Seuraavia sivuja ei voi siirtää:',
 	'replacetext_invertselections' => 'Käänteinen valinta',
 	'replacetext_replace' => 'Korvaa',
