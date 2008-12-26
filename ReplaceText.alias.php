@@ -32,6 +32,11 @@ $aliases['bs'] = array(
 	'ReplaceText' => array( 'ZamjenaTeksta' ),
 );
 
+/** Divehi (ދިވެހިބަސް) */
+$aliases['dv'] = array(
+	'ReplaceText' => array( 'ލިޔުން ބަދަލުކުރައްވާ' ),
+);
+
 /** French (Français) */
 $aliases['fr'] = array(
 	'ReplaceText' => array( 'Remplacer texte', 'RemplacerTexte' ),

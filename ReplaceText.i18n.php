@@ -129,6 +129,7 @@ $messages['cs'] = array(
 
 /** German (Deutsch)
  * @author Leithian
+ * @author Melancholie
  * @author Raimond Spekking
  */
 $messages['de'] = array(
@@ -138,7 +139,10 @@ $messages['de'] = array(
 	'replacetext_note' => 'Bitte beachten: es wird kein Text auf Diskussions- und Projektseiten ausgetauscht.',
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Neuer Text',
+	'replacetext_movepages' => 'Ersetze Text auch in Seitentiteln, wenn möglich',
 	'replacetext_choosepages' => "Bitte Seiten auswählen, bei denen du '$1' durch '$2' ersetzen möchtest:",
+	'replacetext_choosepagesformove' => 'Ersetze Text in den Namen der folgenden Seiten:',
+	'replacetext_cannotmove' => 'Die folgenden Seiten können nicht verschoben werden:',
 	'replacetext_invertselections' => 'Auswahl umkehren',
 	'replacetext_replace' => 'Ersetzen',
 	'replacetext_success' => '„$1“ wird durch „$2“ in $3 Seiten ersetzt.',
@@ -183,6 +187,19 @@ $messages['fa'] = array(
 	'replacetext_continue' => 'ادامه',
 	'replacetext_cancel' => '(دکمهٔ «بازگشت» را بزنید تا عمل را لغو کنید.)',
 	'replacetext_editsummary' => "جایگزینی متن - '$1' به '$2'",
+);
+
+/** Finnish (Suomi)
+ * @author Str4nd
+ */
+$messages['fi'] = array(
+	'replacetext_originaltext' => 'Alkuperäinen teksti',
+	'replacetext_replacementtext' => 'Korvaava teksti',
+	'replacetext_movepages' => 'Korvaa teksti myös otsikoista jos mahdollista',
+	'replacetext_cannotmove' => 'Seuraavia sivuja ei voi siirtää:',
+	'replacetext_invertselections' => 'Käänteinen valinta',
+	'replacetext_replace' => 'Korvaa',
+	'replacetext_continue' => 'Jatka',
 );
 
 /** French (Français)
