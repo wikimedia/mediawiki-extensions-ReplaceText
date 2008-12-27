@@ -169,6 +169,14 @@ $messages['eo'] = array(
 	'replacetext_editsummary' => "Teksta anstataŭigo - '$1' al '$2'",
 );
 
+/** Spanish (Español)
+ * @author Imre
+ */
+$messages['es'] = array(
+	'replacetext' => 'Reemplazar texto',
+	'replacetext_replace' => 'Reemplazar',
+);
+
 /** Persian (فارسی)
  * @author Huji
  */
@@ -557,6 +565,13 @@ $messages['pt-br'] = array(
 	'replacetext_continue' => 'Prosseguir',
 	'replacetext_cancel' => '(pressione o botão "voltar" de seu navegador para cancelar a operação.)',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
+);
+
+/** Romanian (Română)
+ * @author KlaudiuMihaila
+ */
+$messages['ro'] = array(
+	'replacetext_originaltext' => 'Text original',
 );
 
 /** Russian (Русский)
