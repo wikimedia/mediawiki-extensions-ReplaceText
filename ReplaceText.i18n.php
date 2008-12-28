@@ -53,6 +53,7 @@ $messages['qqq'] = array(
  * @author Alnokta
  * @author Meno25
  * @author OsamaK
+ * @author Ouda
  */
 $messages['ar'] = array(
 	'replacetext' => 'استبدل النص',
@@ -61,7 +62,10 @@ $messages['ar'] = array(
 	'replacetext_note' => 'ملاحظة: هذا لن يستبدل النص في صفحات "Talk" وصفحات المشروع، ولن يستبدل النص في عناوين الصفحات أنفسهم.',
 	'replacetext_originaltext' => 'النص الأصلي',
 	'replacetext_replacementtext' => 'نص الاستبدال',
+	'replacetext_movepages' => 'أستبدل نص في عناوين الصفحة ، عندما يكون ممكنا',
 	'replacetext_choosepages' => "من فضلك اختر الصفحات التي فيها تريد استبدال ب'$1' '$2':",
+	'replacetext_choosepagesformove' => ': أستبدل نص في اسماء الصفحات التالية',
+	'replacetext_cannotmove' => ':الصفحات التالية لا يمكن نقلها',
 	'replacetext_invertselections' => 'عكس الاختيارات',
 	'replacetext_replace' => 'استبدل',
 	'replacetext_success' => "'$2' سيتم استبدالها ب'$1' في $3 صفحة.",
@@ -328,7 +332,7 @@ $messages['ia'] = array(
 	'replacetext' => 'Reimplaciar texto',
 	'replacetext-desc' => 'Forni un [[Special:ReplaceText|pagina special]] que permitte al administratores cercar e reimplaciar globalmente un catena de characteres in tote le paginas de contento de un wiki',
 	'replacetext_docu' => "Pro reimplaciar un catena de characteres per un altere trans tote le paginas regular in iste wiki, entra le duo pecias de texto hic e clicca super 'Continuar'. Postea se monstrara un lista de paginas que contine le texto cercate, e tu potera seliger in quales tu vole reimplaciar lo. Tu nomine figurara in le historias del paginas como le usator responsabile de omne modificationes.",
-	'replacetext_note' => 'Nota: isto non reimplaciara le texto in paginas de discussion o de projecto, ni in le titulos del paginas mesme.',
+	'replacetext_note' => 'Nota: isto non reimplaciara texto paginas de discussion e de projecto.',
 	'replacetext_originaltext' => 'Texto original',
 	'replacetext_replacementtext' => 'Nove texto',
 	'replacetext_choosepages' => "Per favor selige le paginas in le quales tu vole reimplaciar '$1' per '$2':",
