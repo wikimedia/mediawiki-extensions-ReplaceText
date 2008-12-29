@@ -147,14 +147,16 @@ $messages['de'] = array(
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Neuer Text',
 	'replacetext_movepages' => 'Ersetze Text auch in Seitentiteln, wenn möglich',
-	'replacetext_choosepages' => "Bitte Seiten auswählen, bei denen du '$1' durch '$2' ersetzen möchtest:",
-	'replacetext_choosepagesformove' => 'Ersetze Text in den Namen der folgenden Seiten:',
-	'replacetext_cannotmove' => 'Die folgenden Seiten können nicht verschoben werden:',
+	'replacetext_choosepages' => 'Bitte die {{PLURAL:$3|Seite|Seiten}} auswählen, bei denen du „$1“ durch „$2“ ersetzen möchtest:',
+	'replacetext_choosepagesformove' => 'Ersetze Text {{PLURAL:$1|im Namen der folgenden Seite|in den Namen der folgenden Seiten}}:',
+	'replacetext_cannotmove' => 'Die {{PLURAL:$1|folgende Seite kann|folgenden Seiten können}} nicht verschoben werden:',
 	'replacetext_invertselections' => 'Auswahl umkehren',
 	'replacetext_replace' => 'Ersetzen',
-	'replacetext_success' => '„$1“ wird durch „$2“ in $3 Seiten ersetzt.',
+	'replacetext_success' => '„$1“ wird durch „$2“ in $3 {{PLURAL:$3|Seite|Seiten}} ersetzt.',
 	'replacetext_noreplacement' => 'Es wurde keine Seite gefunden, die den Text „$1“ enthält.',
-	'replacetext_warning' => '$1 Seiten enthalten bereits den zu ersetzenden Textteil „$2“; eine Trennug der Ersetzungen mit den bereits vorhandenen Textteilen ist nicht möglich. Möchtest du weitermachen?',
+	'replacetext_warning' => '$1 {{PLURAL:$1|Seite enthält|Seiten enthalten}} bereits den zu ersetzenden Textteil „$2“.
+Eine Trennung der Ersetzungen mit den bereits vorhandenen Textteilen ist nicht möglich.
+Möchtest du weitermachen?',
 	'replacetext_blankwarning' => 'Der zu ersetzende Textteil ist leer, die Operation kann nicht rückgängig gemacht werden, trotzdem fortfahren?',
 	'replacetext_continue' => 'Fortfahren',
 	'replacetext_cancel' => '(Klicke auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
@@ -220,6 +222,7 @@ $messages['fi'] = array(
 );
 
 /** French (Français)
+ * @author Crochet.david
  * @author Grondin
  * @author IAlex
  * @author McDutchie
@@ -234,17 +237,19 @@ $messages['fr'] = array(
 	'replacetext_originaltext' => 'Texte original',
 	'replacetext_replacementtext' => 'Nouveau texte',
 	'replacetext_movepages' => 'Remplacer le texte dans le titre des pages, si possible',
-	'replacetext_choosepages' => 'Veuillez sélectionner les pages dans lesquelles vous voulez remplacer « $1 » par « $2 » :',
-	'replacetext_choosepagesformove' => 'Remplacer le texte dans les noms des pages suivantes :',
-	'replacetext_cannotmove' => "Les pages suivantes n'ont pas pu être renommées :",
+	'replacetext_choosepages' => 'Veuillez sélectionner {{PLURAL:$3|la pages|les pages}} dans {{PLURAL:$3|laquelle|lesquelles}} vous voulez remplacer « $1 » par « $2 » :',
+	'replacetext_choosepagesformove' => 'Remplacer le texte dans {{PLURAL:$1|le nom de la page suivante|les noms des pages suivantes}} :',
+	'replacetext_cannotmove' => "{{PLURAL:$1|La page suivante n'a pas pu être renommée|Les pages suivantes n'ont pas pu être renommées}} :",
 	'replacetext_invertselections' => 'Inverser les sélections',
 	'replacetext_replace' => 'Remplacer',
-	'replacetext_success' => '« $1 » sera remplacé par « $2 » dans $3 fichiers.',
+	'replacetext_success' => '« $1 » sera remplacé par « $2 » dans $3 fichier{{PLURAL:$3||s}}.',
 	'replacetext_noreplacement' => 'Aucun fichier contenant la chaîne « $1 » n’a été trouvé.',
-	'replacetext_warning' => 'Il y a $1 fichiers qui contiennent la chaîne de remplacement « $2 » ; si vous effectuez cette substitution, vous ne pourrez pas séparer vos changements à partir de ces chaînes. Voulez-vous continuer ces substitutions ?',
+	'replacetext_warning' => 'Il y a $1 fichier{{PLURAL:$1| qui contient|s qui contiennent}} la chaîne de remplacement « $2 ».
+Si vous effectuez cette substitution, vous ne pourrez pas séparer vos changements à partir de ces chaînes.
+Voulez-vous continuer ces substitutions ?',
 	'replacetext_blankwarning' => 'Parce que la chaîne de remplacement est vide, cette opération sera irréversible ; voulez-vous continuer ?',
 	'replacetext_continue' => 'Continuer',
-	'replacetext_cancel' => "(cliquez sur le bouton  « Retour » pour annuler l'opération.)",
+	'replacetext_cancel' => "(Cliquez sur le bouton  « Retour » de votre navigateur pour annuler l'opération.)",
 	'replacetext_editsummary' => 'Remplacement du texte — « $1 » par « $2 »',
 );
 
@@ -259,14 +264,16 @@ $messages['gl'] = array(
 	'replacetext_originaltext' => 'Texto orixinal',
 	'replacetext_replacementtext' => 'Reemprazo de texto',
 	'replacetext_movepages' => 'Substituír tamén o texto nos títulos das páxinas, cando sexa posible',
-	'replacetext_choosepages' => "Por favor, seleccione as páxinas na que quere substituír '$1' por '$2':",
-	'replacetext_choosepagesformove' => 'Substituír o texto nos nomes das seguintes páxinas:',
-	'replacetext_cannotmove' => 'As seguintes páxinas non poden ser movidas:',
+	'replacetext_choosepages' => 'Por favor, seleccione {{PLURAL:$3|a páxina na|as páxinas nas}} que quere substituír "$1" por "$2":',
+	'replacetext_choosepagesformove' => 'Substituír o texto {{PLURAL:$1|no nome da seguinte páxina|nos nomes das seguintes páxinas}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte páxina|As seguintes páxinas}} non {{PLURAL:$1|pode|poden}} ser {{PLURAL:$1|movida|movidas}}:',
 	'replacetext_invertselections' => 'Invertir as seleccións',
 	'replacetext_replace' => 'Reemprazar',
-	'replacetext_success' => "'$1' será reemprazado con '$2' en $3 páxinas.",
+	'replacetext_success' => '"$1" será substituído por "$2" {{PLURAL:$3|nunha páxina|en $3 páxinas}}.',
 	'replacetext_noreplacement' => "Non foi atopada ningunha páxina que contivese a cadea '$1'.",
-	'replacetext_warning' => "Hai $1 páxinas que xa conteñen a cadea de substitución '$2'; se fai esta substitución non poderá separar os seus reemprazamentos destas cadeas. Quere continuar coa substitución?",
+	'replacetext_warning' => 'Hai {{PLURAL:$1|unha páxina|$1 páxinas}} que xa {{PLURAL:$1|contén|conteñen}} a cadea de substitución "$2".
+Se fai esta substitución non poderá separar as súas substitucións destas cadeas.
+Quere continuar coa substitución?',
 	'replacetext_blankwarning' => 'Debido a que a cadea de substitución está baleira, esta operación non será reversible; quere continuar?',
 	'replacetext_continue' => 'Continuar',
 	'replacetext_cancel' => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
@@ -402,7 +409,36 @@ $messages['km'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
+	'replacetext' => 'Täx-Shtöcksher ußtuusche',
 	'replacetext-desc' => 'Deit en [[Special:ReplaceText|Söndersigg]] en et Wiki, womet {{int:group-sysop}} aanjefbaa Täx-Shtöcksher en alle Atikelle em Wiki söke un ußtuusche künne.',
+	'replacetext_docu' => 'Öm ene Täx en alle nomaale Sigge em Wiki ze söke un ußzetuusche, jif hee
+zwei Täx-Shtöcksher en, un donn dann op „{{int:replacetext continue}}“ klecke.
+Dann süühß De en Leß met Sigge, wo dö dä jesoohte Täx dren enthallde es,
+un De kanns Der erußsöke, en wat för enne dovun dat De dä och jetuusch
+han wells. Dinge Name als Metmaacher weed met dä neu veränderte Versione
+fun dä Sigge faßjehallde als dä Schriiver, dä et jemaat hät.',
+	'replacetext_note' => 'Opjepaß: Hee met don mer keine Täxstöcker op {{NS:talk}}-Sigge udder op {{NS:project}}-Sigge söke udder tuusche.',
+	'replacetext_originaltext' => 'Dä ojinaal Täx för zem Ußtuusche',
+	'replacetext_replacementtext' => 'Dä neue Täx zom erin tuusche',
+	'replacetext_movepages' => 'Donn dä Täx en de Sigge ier Tittel ußtuusche, wan et jeiht',
+	'replacetext_choosepages' => 'Don {{PLURAL:$3|en Sigg|die Sigge|nix aan Sigge}} ußsöke, en dänne De „$1“ jääje „$2“ jetuusch han wells:',
+	'replacetext_choosepagesformove' => 'Donn dä Täx en hee dä {{PLURAL:$1|Sigg|Sigge|nix}} ußtuusche:',
+	'replacetext_cannotmove' => 'Hee die {{PLURAL:$3|Sigg kann|Sigge künne|nix kann}} nit ömjenannt wäde:',
+	'replacetext_invertselections' => 'De Ußwahl ömdrieje',
+	'replacetext_replace' => 'Tuusche',
+	'replacetext_success' => '„$1“ soll en {{PLURAL:$3|eine Sigg|$3 Sigge|nix}} dorsch „$2“ ußjetuusch wääde.',
+	'replacetext_noreplacement' => 'Kein Sigge jefonge met däm Täxstöck „$1“ dren.',
+	'replacetext_warning' => '
+{{PLURAL:$1|Ein Sigg enthält|$1 Sigge enthallde}} ald dat Täxstöck „$2“, wat bemm Tuusche ennjeföch wääde sull.
+Wenn De dat jemaat häs, dokam_mer die Änderong nit esu leich automattesch retuur maache, weil mer die ald do woore,
+un de ennjetuuschte Tästöcker nit ungerscheide kann.
+Wells De trozdämm wigger maache?',
+	'replacetext_blankwarning' => 'Dat Täxstöck, wat beim Tuusche ennjfööch weed, is leddich,
+dröm kam_mer die Änderong nit esu leich automattesch retuur maache.
+Wells De trozdämm wigger maache?',
+	'replacetext_continue' => 'Wiggermaache',
+	'replacetext_cancel' => '(Kleck dä „Zerök“- ov „Retuur“-Knopp, öm dä Förjang afzebreche)',
+	'replacetext_editsummary' => 'Täx-Shtöcker tuusche — vun „$1“ noh „$2“',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -470,17 +506,19 @@ Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke v
 	'replacetext_originaltext' => 'Oorspronkelijke tekst',
 	'replacetext_replacementtext' => 'Vervangende tekst',
 	'replacetext_movepages' => 'De tekst als mogelijk ook vervangen in paginanamen',
-	'replacetext_choosepages' => "Selecteer de pagina's waar u '$1' door '$2' wilt vervangen:",
-	'replacetext_choosepagesformove' => 'De tekst vervangen in de volgende paginanamen:',
-	'replacetext_cannotmove' => "De volgende pagina's kunnen niet hernoemd worden:",
+	'replacetext_choosepages' => "Selecteer de {{PLURAL:$3|pagina|pagina's}} waar u '$1' door '$2' wilt vervangen:",
+	'replacetext_choosepagesformove' => 'De tekst vervangen in de volgende {{PLURAL:$1|paginanaam|paginanamen}}:',
+	'replacetext_cannotmove' => "De volgende {{PLURAL:$1|pagina kan|pagina's kunnen}} niet hernoemd worden:",
 	'replacetext_invertselections' => 'Selecties omkeren',
 	'replacetext_replace' => 'Vervangen',
-	'replacetext_success' => "'$1' wordt in $3 pagina's vervangen door '$2'.",
+	'replacetext_success' => '"$1" wordt in $3 {{PLURAL:$3|pagina|pagina\'s}} vervangen door "$2".',
 	'replacetext_noreplacement' => "Er waren geen pagina's die de tekst '$1' bevatten.",
-	'replacetext_warning' => "Er zijn $1 pagina's die het te vervangen tesktdeel al '$2' al bevatten. Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken. Wilt u doorgaan?",
+	'replacetext_warning' => "Er {{PLURAL:$1|is $1 pagina|zijn $1 pagina's}} die het te vervangen tesktdeel al '$2' al {{PLURAL:$1|bevat|bevatten}}.
+Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.
+Wilt u doorgaan met vervangen?",
 	'replacetext_blankwarning' => 'Omdat u tekst vervangt door niets, kan deze handeling niet ongedaan gemaakt worden. Wilt u doorgaan?',
 	'replacetext_continue' => 'Doorgaan',
-	'replacetext_cancel' => '(Klik op de knop "Terug" om deze handeling te annuleren)',
+	'replacetext_cancel' => '(Klik op de knop "Terug" in uw webbrowser om deze handeling te annuleren)',
 	'replacetext_editsummary' => "Tekst vervangen - '$1' door '$2'",
 );
 
