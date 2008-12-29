@@ -19,17 +19,20 @@ $messages['en'] = array(
 	'replacetext_originaltext' => 'Original text',
 	'replacetext_replacementtext' => 'Replacement text',
 	'replacetext_movepages' => 'Replace text in page titles as well, when possible',
-	'replacetext_choosepages' => 'Please select the pages for which you want to replace \'$1\' with \'$2\':',
-	'replacetext_choosepagesformove' => 'Replace text in the names of the following pages:',
-	'replacetext_cannotmove' => 'The following pages cannot be moved:',
+	'replacetext_choosepages' => 'Please select the {{PLURAL:$3|page|pages}} for which you want to replace \'$1\' with \'$2\':',
+	'replacetext_choosepagesformove' => 'Replace text in the {{PLURAL:$1|name of the following page|names of the following pages}}:',
+	'replacetext_cannotmove' => 'The following {{PLURAL:$1|page|pages}} cannot be moved:',
 	'replacetext_invertselections' => 'Invert selections',
 	'replacetext_replace' => 'Replace',
-	'replacetext_success' => '\'$1\' will be replaced with \'$2\' in $3 pages.',
+	'replacetext_success' => '\'$1\' will be replaced with \'$2\' in $3 {{PLURAL:$3|page|pages}}.',
 	'replacetext_noreplacement' => 'No pages were found containing the string \'$1\'.',
-	'replacetext_warning' => 'There are $1 pages that already contain the replacement string, \'$2\'; if you make this replacement you will not be able to separate your replacements from these strings. Continue with the replacement?',
-	'replacetext_blankwarning' => 'Because the replacement string is blank, this operation will not be reversible; continue?',
+	'replacetext_warning' => 'There {{PLURAL:$1|is $1 page that already contains|are $1 pages that already contain}} the replacement string, \'$2\'.
+If you make this replacement you will not be able to separate your replacements from these strings.
+Continue with the replacement?',
+	'replacetext_blankwarning' => 'Because the replacement string is blank, this operation will not be reversible.
+Do you want to continue?',
 	'replacetext_continue' => 'Continue',
-	'replacetext_cancel' => '(Hit the "Back" button to cancel the operation.)',
+	'replacetext_cancel' => '(Click the "Back" button in your browser to cancel the operation.)',
 	// content messages
 	'replacetext_editsummary' => 'Text replace - \'$1\' to \'$2\'',
 );

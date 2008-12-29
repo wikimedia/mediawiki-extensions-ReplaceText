@@ -24,7 +24,7 @@ if (!defined('MEDIAWIKI')) die();
 // credits
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Replace Text',
-	'version' => '0.3',
+	'version' => '0.4',
 	'author' => 'Yaron Koren',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'description' => 'A special page that lets administrators run a global search-and-replace',
@@ -38,5 +38,6 @@ $wgJobClasses['replaceText'] = 'ReplaceTextJob';
 
 // This extension uses its own permission type, 'replacetext'
 $wgSpecialPages['ReplaceText'] = array('ReplaceText', 'replacetext');
+$wgSpecialPageGroups['ReplaceText'] = 'wiki';
 $wgAutoloadClasses['ReplaceText'] = $dir . 'SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = $dir . 'ReplaceTextJob.php';

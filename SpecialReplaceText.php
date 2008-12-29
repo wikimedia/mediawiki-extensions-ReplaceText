@@ -12,7 +12,7 @@ class ReplaceText extends SpecialPage {
 		wfLoadExtensionMessages('ReplaceText');
 	}
 
-	function execute() {
+	function execute( $para ) {
 		global $wgUser, $wgOut;
 
 		if ( ! $wgUser->isAllowed('replacetext') ) {
@@ -80,7 +80,7 @@ function doSpecialReplaceText() {
 		}
 		Job::batchInsert( $jobs );
 		$num_modified_pages = count($jobs);
-		$wgOut->addHTML(wfMsg('replacetext_success', $target_str, $replacement_str, $num_modified_pages));
+		$wgOut->addHTML( wfMsgExt( 'replacetext_success', array( 'escape', 'parsemag' ), $target_str, $replacement_str, $num_modified_pages) );
 	} elseif ( $wgRequest->getCheck('target_str') ) { // very long elseif, look for "end elseif"
 		$dbr =& wfGetDB( DB_SLAVE );
 		$fname = 'doSpecialReplaceText';
@@ -117,7 +117,7 @@ function doSpecialReplaceText() {
 				$num_pages_with_replacement_str = $row[0];
 				// if there are any, the user most confirm the replacement
 				if ($num_pages_with_replacement_str > 0) {
-  					$text = wfMsg('replacetext_warning', $num_pages_with_replacement_str, $replacement_str);
+  					$text = wfMsgExt( 'replacetext_warning', array( 'escape', 'parsemag' ), $num_pages_with_replacement_str, $replacement_str );
 					$wgOut->addHTML(ReplaceText::displayConfirmForm($text));
 					return;
 				}
@@ -142,6 +142,7 @@ function doSpecialReplaceText() {
 		// escape single quote and backslash for SQL - for some reason, the
 		// backslash needs to be escaped twice (plus once for PHP)
 		$sql_target_str = str_replace(array("\\", "'"), array("\\\\\\\\", "\'"), $target_str);
+		# FIXME: suggestions for improvement at http://www.mediawiki.org/wiki/Special:Code/MediaWiki/43239#c608
 		$sql = "SELECT p.page_title AS title, p.page_namespace AS namespace, t.old_text AS text
 			FROM $page_table p
 			JOIN $revision_table r ON p.page_latest = r.rev_id
@@ -207,9 +208,9 @@ function invertSelections() {
 END;
 		$wgOut->addScript($javascript_text);
 		$replace_label = wfMsg('replacetext_replace');
-		$choose_pages_label = wfMsg('replacetext_choosepages', $target_str, $replacement_str);
-		$choose_pages_for_move_label = wfMsg('replacetext_choosepagesformove');
-		$cannot_move_pages_label = wfMsg('replacetext_cannotmove', $target_str, $replacement_str);
+		$choose_pages_label = wfMsgExt('replacetext_choosepages', array( 'escape', 'parsemag' ), $target_str, $replacement_str, count( $found_titles ) );
+		$choose_pages_for_move_label = wfMsgExt( 'replacetext_choosepagesformove', array( 'escape', 'parsemag' ), count( $titles_for_move ) );
+		$cannot_move_pages_label = wfMsgExt( 'replacetext_cannotmove', array( 'escape', 'parsemag' ), count( $unmoveable_titles ) );
 		$skin = $wgUser->getSkin();
 		// escape quotes for inclusion in HTML
 		$target_str = str_replace('"', '&quot;', $target_str);
