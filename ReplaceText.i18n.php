@@ -59,7 +59,7 @@ $messages['ar'] = array(
 	'replacetext' => 'استبدل النص',
 	'replacetext-desc' => 'يوفر [[Special:ReplaceText|صفحة خاصة]] للسماح للإداريين للقيام بعملية أوجد واستبدل على نص في كل صفحات المحتوى لويكي',
 	'replacetext_docu' => "لاستبدال سلسلة نص بأخرى عبر كل الصفحات العادية في هذا الويكي، أدخل قطعتي النص هنا ثم اضغط 'استمرار'. سيعرض عليك بعد ذلك قائمة بالصفحات التي تحتوي على نص البحث، ويمكنك اختيار اللواتي تريد الاستبدال فيها. اسمك سيظهر في تواريخ الصفحات كالمستخدم المسؤول عن أية تغييرات.",
-	'replacetext_note' => 'ملاحظة: هذا لن يستبدل النص في صفحات "Talk" وصفحات المشروع، ولن يستبدل النص في عناوين الصفحات أنفسهم.',
+	'replacetext_note' => 'ملاحظة: هذا لن يستبدل النص في صفحات "النقاش" وصفحات المشروع.',
 	'replacetext_originaltext' => 'النص الأصلي',
 	'replacetext_replacementtext' => 'نص الاستبدال',
 	'replacetext_movepages' => 'أستبدل نص في عناوين الصفحة ، عندما يكون ممكنا',
@@ -165,6 +165,7 @@ $messages['eo'] = array(
 	'replacetext' => 'Anstataŭigi tekston',
 	'replacetext_originaltext' => 'Originala teksto',
 	'replacetext_replacementtext' => 'Anstataŭigita teksto',
+	'replacetext_movepages' => 'Anstataŭigi tekston en paĝaj titoloj ankaŭ, kiam eble',
 	'replacetext_invertselections' => 'Inversigi selektojn',
 	'replacetext_replace' => 'Anstataŭigi',
 	'replacetext_success' => "'$1' estos anstataŭigita de '$2' en $3 paĝoj.",
@@ -276,6 +277,21 @@ $messages['gl'] = array(
 $messages['he'] = array(
 	'replacetext' => 'החלפת טקסט',
 	'replacetext-desc' => 'אספקת [[Special:ReplaceText|דף מיוחד]] כדי לאפשר למפעילים לבצע חיפוש והחלפה של מחרוזות בכל דפי התוכן בוויקי',
+	'replacetext_note' => 'הערה: פעולה זו לא תחליף טקסט בדפי שיחה ובדפי המיזם.',
+	'replacetext_originaltext' => 'הטקסט המקורי',
+	'replacetext_replacementtext' => 'טקסט ההחלפה',
+	'replacetext_movepages' => 'החלפת טקסט גם בכותרות הדפים, כשניתן',
+	'replacetext_choosepages' => "אנא בחרו את הדפים בהם ברצונם להחליף את '$1' ב־'$2':",
+	'replacetext_choosepagesformove' => 'החלפת טקסט בשמות הדפים הבאים:',
+	'replacetext_cannotmove' => 'לא ניתן להעביר את הדפים הבאים:',
+	'replacetext_invertselections' => 'הפיכת הבחירות',
+	'replacetext_replace' => 'החלפה',
+	'replacetext_success' => "'$1' יוחלף ב־'$2' ב־$3 דפים.",
+	'replacetext_noreplacement' => "לא נמצאו דפים המכילים את המחרוזת '$1'.",
+	'replacetext_blankwarning' => 'כיוון שמחרוזת ההחלפה ריקה, לא ניתן יהיה לבטל פעולה זו; להמשיך?',
+	'replacetext_continue' => 'המשך',
+	'replacetext_cancel' => '(לחצו על הלחצן "חזרה" כדי לבטל את הפעולה.)',
+	'replacetext_editsummary' => "החלפת טקסט - $1 ל־'$2'",
 );
 
 /** Croatian (Hrvatski)
@@ -335,7 +351,10 @@ $messages['ia'] = array(
 	'replacetext_note' => 'Nota: isto non reimplaciara texto paginas de discussion e de projecto.',
 	'replacetext_originaltext' => 'Texto original',
 	'replacetext_replacementtext' => 'Nove texto',
+	'replacetext_movepages' => 'Reimplaciar texto etiam in titulos de paginas, si possibile',
 	'replacetext_choosepages' => "Per favor selige le paginas in le quales tu vole reimplaciar '$1' per '$2':",
+	'replacetext_choosepagesformove' => 'Reimplaciar texto in le nomines del sequente paginas:',
+	'replacetext_cannotmove' => 'Le sequente paginas non pote esser renominate:',
 	'replacetext_invertselections' => 'Inverter selectiones',
 	'replacetext_replace' => 'Reimplaciar',
 	'replacetext_success' => "'$1' essera reimplaciate per '$2' in $3 paginas.",
@@ -358,15 +377,22 @@ $messages['jv'] = array(
 
 /** Khmer (ភាសាខ្មែរ)
  * @author Lovekhmer
+ * @author Thearith
  * @author គីមស៊្រុន
  */
 $messages['km'] = array(
 	'replacetext' => 'ជំនួសអត្ថបទ',
 	'replacetext_originaltext' => 'អត្ថបទដើម',
 	'replacetext_replacementtext' => 'អត្ថបទជំនួស',
+	'replacetext_movepages' => 'ជំនួស​អត្ថបទ​នៅក្នុង​ចំណងជើង​ទំព័រ​ឱ្យ​បាន​ល្អ នៅពេល​ដែល​អាច​ធ្វើ​បាន',
+	'replacetext_choosepages' => "សូម​ជ្រើសរើស​ទំព័រ​សម្រាប់​អ្វី​ដែល​អ្បក​ចង់​ជំនួស '$1' ដោយ '$2':",
+	'replacetext_choosepagesformove' => 'ជំនួស​អត្ថបទ​នៅក្នុង​ឈ្មោះ​ទំព័រ​ដូចតទៅ:',
+	'replacetext_invertselections' => 'ដាក់បញ្ច្រាស​ជម្រើស',
 	'replacetext_replace' => 'ជំនួស',
 	'replacetext_success' => "'$1'នឹងត្រូវបានជំនួសដោយ '$2' ក្នុង$3ទំព័រ។",
+	'replacetext_noreplacement' => "រក​មិន​ឃើញ​ទំព័រ​ដែល​មាន​ខ្សែអក្សរ (string) '$1' ។",
 	'replacetext_continue' => 'បន្ត',
+	'replacetext_editsummary' => "អត្ថបទជំនួស - '$1' ទៅ '$2'",
 );
 
 /** Ripoarisch (Ripoarisch)
