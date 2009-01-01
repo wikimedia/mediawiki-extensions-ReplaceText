@@ -81,6 +81,7 @@ $messages['ar'] = array(
 );
 
 /** Egyptian Spoken Arabic (مصرى)
+ * @author Ghaly
  * @author Meno25
  */
 $messages['arz'] = array(
@@ -90,7 +91,7 @@ $messages['arz'] = array(
 	'replacetext_note' => 'ملاحظة: هذا لن يستبدل النص فى صفحات "Talk" وصفحات المشروع، ولن يستبدل النص فى عناوين الصفحات أنفسهم.',
 	'replacetext_originaltext' => 'النص الأصلي',
 	'replacetext_replacementtext' => 'نص الاستبدال',
-	'replacetext_choosepages' => "من فضلك اختر الصفحات التى فيها تريد استبدال ب'$1' '$2':",
+	'replacetext_choosepages' => "من فضلك اختار الصفحات اللى فيها عايز تستبدل ب'$1' '$2':",
 	'replacetext_invertselections' => 'عكس الاختيارات',
 	'replacetext_replace' => 'استبدل',
 	'replacetext_success' => "'$2' سيتم استبدالها ب'$1' فى $3 صفحة.",
@@ -311,18 +312,22 @@ $messages['hr'] = array(
 	'replacetext' => 'Zamjeni tekst',
 	'replacetext-desc' => 'Dodaje [[Special:ReplaceText|posebnu stranicu]] koja omogućava administratorima globalnu zamjenu teksta na principu nađi-zamjeni na svim stranicama wikija.',
 	'replacetext_docu' => "Za zamjenu jednog teksta s drugim na svim stranicama wikija, upišite ciljani i zamjenski tekst ovdje i pritisnite 'Dalje'. Pokazati će vam se popis stranica koje sadrže ciljani tekst, i moći ćete odabrati u kojima od njih želite izvršiti zamjenu. Vaše ime će se pojaviti u povijesti stranice kao suradnik odgovoran za promjenu.",
-	'replacetext_note' => 'Napomena: ovo neće zamijeniti tekst na stranicama za "razgovor" i stranicama projekta, i neće zamijeniti tekst u naslovu samih stranica.',
+	'replacetext_note' => 'Napomena: ovo neće zamijeniti tekst na stranicama za "razgovor" i stranicama projekta.',
 	'replacetext_originaltext' => 'Izvorni tekst',
 	'replacetext_replacementtext' => 'Zamjenski tekst',
-	'replacetext_choosepages' => "Molimo odaberite stranice na kojima želite zamijeniti '$1' za '$2':",
+	'replacetext_movepages' => 'Zamijeni i tekst u naslovima stranica, ako je moguće',
+	'replacetext_choosepages' => "Molimo odaberite {{PLURAL:$3|stranicu|stranice}} na kojima želite zamijeniti '$1' za '$2':",
+	'replacetext_choosepagesformove' => 'Zamijeni tekst u {{PLURAL:$1|naslovu sljedeće stranice|naslovima sljedećih stranica}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Sljedeća stranica|Sljedeće stranice}} ne mogu biti premještene:',
 	'replacetext_invertselections' => 'Izvrni odabir',
 	'replacetext_replace' => 'Zamjeni',
-	'replacetext_success' => "'$1' će biti zamijenjen za '$2' na $3 stranica.",
+	'replacetext_success' => "'$1' će biti zamijenjen za '$2' na $3 {{PLURAL:$3|stranici|stranice|stranica}}.",
 	'replacetext_noreplacement' => "Nije pronađena ni jedna stranica koja sadrži '$1'.",
-	'replacetext_warning' => "Ukupno je $1 stranica koje već sadrže zamjenski tekst, '$2'; ako napravite ovu zamjenu nećete moći odvojiti svoju zamjenu od ovog teksta. Nastaviti sa zamjenom?",
+	'replacetext_warning' => "Postoji {{PLURAL:$1|$1 stranica koja već sadrži|$1 stranica koje već sadrže}} zamjenski tekst, '$2'. 
+Ako napravite ovu zamjenu nećete moći odvojiti svoju zamjenu od ovog teksta. Nastaviti sa zamjenom?",
 	'replacetext_blankwarning' => 'Zato što je zamjenski tekst prazan, ovaj postupak se neće moći vratiti; nastaviti?',
 	'replacetext_continue' => 'Dalje',
-	'replacetext_cancel' => '(Pritisnite tipku "Nazad" za zaustavljanje postupka.)',
+	'replacetext_cancel' => '(Pritisnite tipku "Nazad" u svom pregledniku za zaustavljanje postupka.)',
 	'replacetext_editsummary' => "Zamjena teksta - '$1' u '$2'",
 );
 
@@ -524,6 +529,34 @@ Wilt u doorgaan met vervangen?",
 	'replacetext_editsummary' => "Tekst vervangen - '$1' door '$2'",
 );
 
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Harald Khan
+ */
+$messages['nn'] = array(
+	'replacetext' => 'Byt ut tekst',
+	'replacetext-desc' => 'Gjev ei [[Special:ReplaceText|spesialsida]] som lèt administratorar søkja etter og byta ut tekst på alle innhaldssidene på ein wiki.',
+	'replacetext_docu' => 'For å byta éin tekststreng med ein annan på alle datasidene på denne wikien kan du skriva inn dei to tekstane her og trykkja «Hald fram». Du vil då bli førd til ei lista over sidene som inneheld søkjestrengen, og du kan velja kva sider du ønskjer å byta han ut i. Namnet ditt vil stå i sidehistorikkane som han som er ansvarleg for endringane.',
+	'replacetext_note' => 'Merk: dette vil ikkje byta ut tekst på diskusjons- og prosjektsider.',
+	'replacetext_originaltext' => 'Originaltekst',
+	'replacetext_replacementtext' => 'Ny tekst',
+	'replacetext_movepages' => 'Byt òg ut tekst i sidetitlar der dette er mogleg',
+	'replacetext_choosepages' => 'Vel {{PLURAL:$3|sida|sidene}} der du ønskjer å byta ut «$1» med «$2»:',
+	'replacetext_choosepagesformove' => 'Byt ut tekst i {{PLURAL:$1|namnet på den følgjande sida|namna på dei følgjande sidene}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Den følgjande sida|Dei følgjande sidene}} kan ikkje bli flytta:',
+	'replacetext_invertselections' => 'Inverter val',
+	'replacetext_replace' => 'Byt ut',
+	'replacetext_success' => '$1» blir byta ut med «$2» på {{PLURAL:$3|éi sida|$3 sider}}.',
+	'replacetext_noreplacement' => 'Fann ingen sider som inneheldt søkjestrengen «$1».',
+	'replacetext_warning' => 'Det finst {{PLURAL:$1|éi sida|$1 sider}} som allereie inneheld strengen som skal bli sett inn, «$2».
+Om du utfører denne utbytinga vil du ikkje vera i stand til å skilja utbytingane dine frå desse strengane.
+Halda fram med utbytinga?',
+	'replacetext_blankwarning' => 'Av di teksten som skal bli sett inn er tom, vil ikkje denne handlinga kunna bli køyrt omvendt.
+Vil du halda fram?',
+	'replacetext_continue' => 'Hald fram',
+	'replacetext_cancel' => '(Trykk på «Attende»-knappen i nettlesaren din for å avbryta handlinga.)',
+	'replacetext_editsummary' => 'Utbyting av tekst - «$1» til «$2»',
+);
+
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  */
@@ -572,6 +605,7 @@ $messages['oc'] = array(
 );
 
 /** Polish (Polski)
+ * @author Derbeth
  * @author Maikking
  * @author Sp5uhe
  */
@@ -582,14 +616,15 @@ $messages['pl'] = array(
 	'replacetext_note' => 'Uwaga: nie zastąpi tekstu na stronach dyskusji i stronach projektu.',
 	'replacetext_originaltext' => 'Znajdź',
 	'replacetext_replacementtext' => 'Zamień na',
-	'replacetext_choosepages' => 'Wybierz strony, na których chcesz „$1” zmienić na „$2”',
+	'replacetext_choosepages' => 'Wybierz {{PLURAL:$3|stronę|strony}}, na których chcesz „$1” zastąpić „$2”',
 	'replacetext_replace' => 'Zastąp',
 	'replacetext_success' => '„$1” zostanie zastąpiony przez „$2” na $3 {{PLURAL:$3|stronie|stronach}}.',
 	'replacetext_noreplacement' => 'Nie znaleziono stron zawierających tekst „$1”.',
-	'replacetext_warning' => 'Jest $1 {{PLURAL:$1|strona|stron}} zawierających tekst „$2”, którym chcesz zastępować. Jeśli wykonasz zastępowanie nie będzie możliwe odseparowanie tych stron od wykonanych zastąpień. Czy mam kontynuować zastępowanie?',
+	'replacetext_warning' => '{{PLURAL:$1|Jest $1 strona|Są $1 strony|Jest $1 stron}} zawierających tekst „$2”, którym chcesz zastępować. Jeśli wykonasz zastępowanie nie będzie możliwe odseparowanie tych stron od wykonanych zastąpień.
+Czy kontynuować zastępowanie?',
 	'replacetext_blankwarning' => 'Ponieważ ciąg znaków, którym ma być wykonane zastępowanie jest pusty, operacja będzie nieodwracalna. Czy kontynuować?',
 	'replacetext_continue' => 'Kontynuuj',
-	'replacetext_cancel' => '(Wciśnij klawisz „Wstecz” aby przerwać operację)',
+	'replacetext_cancel' => '(Wciśnij klawisz „Wstecz” w przeglądarce, aby przerwać operację.)',
 	'replacetext_editsummary' => 'zamienił w treści „$1” na „$2”',
 );
 
