@@ -83,23 +83,24 @@ $messages['ar'] = array(
 /** Egyptian Spoken Arabic (مصرى)
  * @author Ghaly
  * @author Meno25
+ * @author Ramsis II
  */
 $messages['arz'] = array(
 	'replacetext' => 'استبدل النص',
 	'replacetext-desc' => 'يوفر [[Special:ReplaceText|صفحة خاصة]] للسماح للإداريين للقيام بعملية أوجد واستبدل على نص فى كل صفحات المحتوى لويكي',
 	'replacetext_docu' => "لاستبدال سلسلة نص بأخرى عبر كل الصفحات العادية فى هذا الويكي، أدخل قطعتى النص هنا ثم اضغط 'استمرار'. سيعرض عليك بعد ذلك قائمة بالصفحات التى تحتوى على نص البحث، ويمكنك اختيار اللواتى تريد الاستبدال فيها. اسمك سيظهر فى تواريخ الصفحات كالمستخدم المسؤول عن أية تغييرات.",
-	'replacetext_note' => 'ملاحظة: هذا لن يستبدل النص فى صفحات "Talk" وصفحات المشروع، ولن يستبدل النص فى عناوين الصفحات أنفسهم.',
+	'replacetext_note' => 'ملاحظة: ده مش هايستبدل النص فى صفحات "Talk" و صفحات المشروع، و مش هايستبدل النص فى عناوين الصفحات نفسها.',
 	'replacetext_originaltext' => 'النص الأصلي',
 	'replacetext_replacementtext' => 'نص الاستبدال',
 	'replacetext_choosepages' => "من فضلك اختار الصفحات اللى فيها عايز تستبدل ب'$1' '$2':",
 	'replacetext_invertselections' => 'عكس الاختيارات',
 	'replacetext_replace' => 'استبدل',
-	'replacetext_success' => "'$2' سيتم استبدالها ب'$1' فى $3 صفحة.",
+	'replacetext_success' => "'$1' ح تتبدل بـ '$2' في $3 {{PLURAL:$3|صفحه|صفحات}}.",
 	'replacetext_noreplacement' => "لا صفحات تم العثور عليها تحتوى على السلسلة '$1'.",
-	'replacetext_warning' => "توجد $1 صفحة تحتوى بالفعل على سلسلة الاستبدال، '$2'؛ لو أنك قمت بهذا الاستبدال فلن تصبح قادرا على فصل استبدالاتك من هذه السلاسل. استمرار مع الاستبدال؟",
+	'replacetext_warning' => "فيه $1 صفحة فيها سلسلة الاستبدال، '$2'؛ لو أنك قمت بالاستبدال ده مش  هاتقدر تفصل استبدالاتك من السلاسل دى. استمرار مع الاستبدال؟",
 	'replacetext_blankwarning' => 'لأن سلسلة الاستبدال فارغة، هذه العملية لن تكون عكسية؛ استمر؟',
 	'replacetext_continue' => 'استمر',
-	'replacetext_cancel' => '(اضغط زر "رجوع" لإلغاء العملية.)',
+	'replacetext_cancel' => '(اضغط زر "رجوع" علشان إلغاء العملية.)',
 	'replacetext_editsummary' => "استبدال النص - '$1' ب'$2'",
 );
 
@@ -745,9 +746,13 @@ $messages['sv'] = array(
 	'replacetext_note' => 'Notera: det här kommer inte ersätta text på "Diskussion"-sidor och projektsidor.',
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Ersättningstext',
-	'replacetext_choosepages' => 'Var god ange för vilka sidor du vill ersätta "$1" med "$2":',
+	'replacetext_movepages' => 'Ersätt text i sidtitlar när det är möjligt',
+	'replacetext_choosepages' => "Var god ange för {{PLURAL:$3|vilken sida|vilka sidor}} du vill ersätta '$1' med '$2':",
+	'replacetext_choosepagesformove' => 'Ersätt text i {{PLURAL:$1|namnet på den följande sidan|namnen på de följande sidorna}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Den följande sidan|De följande sidorna}} kan inte flyttas:',
+	'replacetext_invertselections' => 'Invertera val',
 	'replacetext_replace' => 'Ersätt',
-	'replacetext_success' => '"$1" kommer ersättas med "$2" på $3 sidor.',
+	'replacetext_success' => "'$1' kommer att ersättas med '$2' på $3 {{PLURAL:$3|sida|sidor}}.",
 	'replacetext_noreplacement' => 'Inga sidor hittades med strängen "$1".',
 	'replacetext_warning' => 'Det finns $1 sidor som redan har ersättningssträngen "$2". Om du gör den här ersättningen kommer du inte kunna separera dina ersättningar från den här texten. Vill du fortsätta med ersättningen?',
 	'replacetext_blankwarning' => 'Eftersom ersättningstexten är tom kommer den här handlingen inte kunna upphävas; vill du fortsätta?',
@@ -770,6 +775,34 @@ $messages['te'] = array(
  */
 $messages['th'] = array(
 	'replacetext_originaltext' => 'ข้อความดั้งเดิม',
+);
+
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'replacetext' => 'Palitan ang teksto',
+	'replacetext-desc' => 'Nagbibigay ng isang [[Special:ReplaceText|natatanging pahina]] upang mapahintulutan ang mga tagapangasiwa na makagawa ng isang baging na pandaidigang hanapin-at-palitan sa ibabaw ng lahat ng mga pahina ng nilalaman ng isang wiki',
+	'replacetext_docu' => "Upang mapalitan ang isang bagting ng teksto ng iba pang nasa kahabaan ng lahat ng pangkaraniwang mga pahinang nasa ibabaw ng wiking ito, ipasok ang dalawang piraso ng teksto dito at pindutin pagkatapos ang 'Magpatuloy'. Susunod na ipapakita naman sa iyo ang isang talaan ng mga pahinang naglalaman ng teksto ng paghanap, at mapipili mo ang mga maaari mong ipamalit dito. Lilitaw ang pangalan mo sa mga kasaysayan ng pahina bilang tagagamit na umaako sa anumang mga pagbabago.",
+	'replacetext_note' => 'Paunawa: hindi nito papalitan ang tekstong nasa loob ng mga pahina ng "Usapan" at mga pahina ng proyekto.',
+	'replacetext_originaltext' => 'Orihinal na teksto',
+	'replacetext_replacementtext' => 'Pamalit na teksto',
+	'replacetext_movepages' => 'Palitan din ang tekstong nasa loob ng mga pamagat ng pahina, kung kailan maaari',
+	'replacetext_choosepages' => "Pakipili ang {{PLURAL:$3|pahina|mga pahina}} kung saan mo naisa na palitan ang '$1' ng '$2':",
+	'replacetext_choosepagesformove' => 'Palitan ang tekstong nasa loob ng {{PLURAL:$1|pangalan ng sumusunod na pahina|mga pangalan ng sumusunod na mga pahina}}:',
+	'replacetext_cannotmove' => 'Hindi maililipat ang sumusunod na {{PLURAL:$1|pahina|mga pahina}}:',
+	'replacetext_invertselections' => 'Baligtarin ang mga pagpipilian',
+	'replacetext_replace' => 'Palitan',
+	'replacetext_success' => "Ang '$1' ay mapapalitan ng '$2' sa loob ng $3 {{PLURAL:$3|pahina|mga pahina}}.",
+	'replacetext_noreplacement' => "Walang natagpuang mga pahinang naglalaman ng bagting na '$1'.",
+	'replacetext_warning' => "Mayroong {{PLURAL:$1|$1 pahinang naglalaman na|$1 mga pahinang naglalaman na}} ng pamalit na bagting, '$2'.
+Kapag ginawa mo ang pagpapalit na ito hindi mo na maihihiwalay ang mga pamalit mo mula sa mga bagting na ito.
+Ipagpapatuloy pa rin ba ang pagpapalit?",
+	'replacetext_blankwarning' => 'Dahil sa walang laman ang bagting ng pamalit, hindi na maibabalik pa sa dati ang gawaing ito/
+Naisa mo bang magpatuloy pa?',
+	'replacetext_continue' => 'Magpatuloy',
+	'replacetext_cancel' => "(Pindutin ang pinduting \"Magbalik\" sa iyong pantingin-tingin o ''browser'' upang huwag nang maipagpatuloy ang gawain.)",
+	'replacetext_editsummary' => "Palitan ang tekso - '$1' papunta sa '$2'",
 );
 
 /** Vietnamese (Tiếng Việt)

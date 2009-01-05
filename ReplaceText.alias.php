@@ -87,6 +87,11 @@ $aliases['mk'] = array(
 	'ReplaceText' => array( 'ЗамениТекст' ),
 );
 
+/** Maltese (Malti) */
+$aliases['mt'] = array(
+	'ReplaceText' => array( 'BiddelTest' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $aliases['nds-nl'] = array(
 	'ReplaceText' => array( 'Tekse_vervangen' ),
