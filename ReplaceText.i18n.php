@@ -189,6 +189,22 @@ $messages['es'] = array(
 	'replacetext_replace' => 'Reemplazar',
 );
 
+/** Basque (Euskara)
+ * @author Kobazulo
+ */
+$messages['eu'] = array(
+	'replacetext' => 'Testua ordezkatu',
+	'replacetext_originaltext' => 'Jatorrizko testua',
+	'replacetext_movepages' => 'Posiblea denean, orrialdeen izenburuetan ere testua ordezkatzen du',
+	'replacetext_cannotmove' => 'Hurrengo {{PLURAL:$1|orrialdea ezin da mugitu:|orrialdeak ezin dira mugitu:}}',
+	'replacetext_invertselections' => 'Hautaketak alderantzikatu',
+	'replacetext_replace' => 'Ordezkatu',
+	'replacetext_noreplacement' => "Ez da aurkitu '$1' karaktere-katea duen orrialderik.",
+	'replacetext_continue' => 'Jarraitu',
+	'replacetext_cancel' => '(Zure nabigatzailearen atzerako botoia sakatu ekintza deuseztatzeko.)',
+	'replacetext_editsummary' => "Testu aldaketa - '$1'(e)tik '$2'(e)ra.",
+);
+
 /** Persian (فارسی)
  * @author Huji
  */
@@ -591,17 +607,19 @@ $messages['oc'] = array(
 	'replacetext_originaltext' => 'Tèxt original',
 	'replacetext_replacementtext' => 'Tèxt novèl',
 	'replacetext_movepages' => 'Remplaçar lo tèxt dins lo títol de las paginas, se possible',
-	'replacetext_choosepages' => 'Seleccionatz las paginas sus las qualas volètz remplaçar « $1 » per « $2 » :',
-	'replacetext_choosepagesformove' => 'Remplaçar lo tèxt dins los noms de las paginas seguentas :',
-	'replacetext_cannotmove' => 'Las paginas seguentas an pas pogut èsser renomenadas :',
+	'replacetext_choosepages' => 'Seleccionatz {{PLURAL:$3|la pagina|las paginas}} dins {{PLURAL:$3|la quala|las qualas}} volètz remplaçar « $1 » per « $2 » :',
+	'replacetext_choosepagesformove' => 'Remplaçar lo tèxt dins {{PLURAL:$1|lo nom de las pagina seguenta|los noms de las paginas seguentas}} :',
+	'replacetext_cannotmove' => '{{PLURAL:$1|La pagina seguenta a pas pogut èsser renomenada|Las paginas seguentas an pas pogut èsser renomenadas}} :',
 	'replacetext_invertselections' => 'Inversar las seleccions',
 	'replacetext_replace' => 'Remplaçar',
-	'replacetext_success' => '« $1 » es estat remplaçat per « $2 » dins « $3 » paginas.',
+	'replacetext_success' => '« $1 » es estat remplaçat per « $2 » dins $3 fichièr{{PLURAL:$3||s}}.',
 	'replacetext_noreplacement' => 'Cap de fichièr que conten la cadena « $1 » es pas estat trobat.',
-	'replacetext_warning' => "I a $1 fichièrs que conten(on) la cadena de remplaçament « $2 » ; se efectuatz aquesta substitucion, poiretz pas separar vòstres cambiaments a partir d'aquestas cadenas. Volètz contunhar aquestas substitucions ?",
+	'replacetext_warning' => "I a $1 fichièr{{PLURAL:$1| que conten|s que contenon}} la cadena de remplaçament « $2 ».
+Se efectuatz aquesta substitucion, poiretz pas separar vòstres cambiaments a partir d'aquestas cadenas.
+Volètz contunhar aquestas substitucions ?",
 	'replacetext_blankwarning' => 'Perque la cadena de remplaçament es voida, aquesta operacion serà irreversibla ; volètz contunhar ?',
 	'replacetext_continue' => 'Contunhar',
-	'replacetext_cancel' => "(clicatz sul boton  « Retorn » per anullar l'operacion.)",
+	'replacetext_cancel' => "(Clicatz sul boton  « Retorn » de vòstre navigador per anullar l'operacion.)",
 	'replacetext_editsummary' => 'Remplaçament del tèxt — « $1 » per « $2 »',
 );
 
@@ -654,7 +672,7 @@ Se você prosseguir com a substituição, não será possível distinguir as sub
 Deseja prosseguir com a substituição?",
 	'replacetext_blankwarning' => 'Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
 	'replacetext_continue' => 'Prosseguir',
-	'replacetext_cancel' => '(pressione o botão "voltar" de seu navegador para cancelar a operação.)',
+	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
 );
 
@@ -824,6 +842,25 @@ $messages['vi'] = array(
 	'replacetext_continue' => 'Tiếp tục',
 	'replacetext_cancel' => '(Nhấn vào nút "Lùi" để hủy tác vụ.)',
 	'replacetext_editsummary' => 'Thay thế văn bản - ‘$1’ thành ‘$2’',
+);
+
+/** Volapük (Volapük)
+ * @author Smeira
+ */
+$messages['vo'] = array(
+	'replacetext' => 'Plaädön vödemi',
+	'replacetext_note' => 'Noet: vödem in bespikapads ed in proyegapads no poplaädon.',
+	'replacetext_originaltext' => 'Rigavödem',
+	'replacetext_replacementtext' => 'Plaädamavödem',
+	'replacetext_movepages' => 'Plaädön vödemi i pö padatiäds, ven mögos',
+	'replacetext_choosepages' => 'Välolös {{PLURAL:$3|padi, su kel|padis, su kels}} vilol plaädön vödemi: „$1“ me vödem: „$2“:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Pad|Pads}} fovik no kanons patopätükön:',
+	'replacetext_replace' => 'Plaädön',
+	'replacetext_success' => 'Vödem: „$1“ poplaädon dub vödem: „$2“ su {{PLURAL:$3|pad bal|pads $3}}.',
+	'replacetext_noreplacement' => 'Pads nonik labü vödem: „$1“ petuvons.',
+	'replacetext_blankwarning' => 'Bi plaädamavödem binon vägik, dun at no kanon pasädunön. Vilol-li fümiko ledunön plaädami?',
+	'replacetext_continue' => 'Ledunön',
+	'replacetext_editsummary' => 'Vödemiplaädam - „$1“ ad „$2“',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
