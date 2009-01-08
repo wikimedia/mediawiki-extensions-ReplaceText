@@ -12,7 +12,7 @@ class ReplaceText extends SpecialPage {
 		wfLoadExtensionMessages('ReplaceText');
 	}
 
-	function execute( $para ) {
+	function execute( $query ) {
 		global $wgUser, $wgOut;
 
 		if ( ! $wgUser->isAllowed('replacetext') ) {
@@ -155,7 +155,7 @@ function doSpecialReplaceText() {
 		$res = $dbr->query($sql);
 		$contextchars = $wgUser->getOption( 'contextchars', 40 );
 		while( $row = $dbr->fetchObject( $res ) ) {
-			$title = Title::newFromText($row->title, $row->namespace);
+			$title = Title::makeTitleSafe($row->namespace, $row->title);
 			$article_text = $row->text;
 			$target_pos = strpos($article_text, $target_str);
 			$context_str = str_replace($angle_brackets, $escaped_angle_brackets, $wgContLang->truncate(substr($article_text, 0, $target_pos), -$contextchars, '...' ));
@@ -172,11 +172,11 @@ function doSpecialReplaceText() {
 	ORDER BY p.page_namespace, p.page_title";
 			$res = $dbr->query($sql2);
 			while( $row = $dbr->fetchObject( $res ) ) {
-				$title = Title::newFromText($row->title, $row->namespace);
+				$title = Title::makeTitleSafe($row->namespace, $row->title);
 				// see if this move can happen
 				$cur_page_name = str_replace('_', ' ', $row->title);
 				$new_page_name = str_replace($target_str, $replacement_str, $cur_page_name);
-				$new_title = Title::newFromText($new_page_name, $row->namespace);
+				$new_title = Title::makeTitleSafe($row->namespace, $new_page_name);
 				$err = $title->isValidMoveOperation($new_title);
 				if ($title->userCanMove(true) && (! is_array($err))) {
 					$titles_for_move[] = $title;
@@ -225,12 +225,14 @@ END;
 END;
 		foreach ($found_titles as $value_pair) {
 			list($title, $context_str) = $value_pair;
-			$text .= "<input type=\"checkbox\" name=\"{$title->getArticleID()}\" checked /> {$skin->makeLinkObj( $title, $title->prefix($title->getText()) )} - <small>$context_str</small><br />\n";
+			$text .= Xml::check($title->getArticleID(), true);
+			$text .= " " . $skin->makeLinkObj( $title, $title->prefix($title->getText()) ) . " - <small>$context_str</small><br />\n";
   		}
 		if (count($titles_for_move) > 0) {
 			$text .= "<p>$choose_pages_for_move_label</p>\n";
 			foreach ($titles_for_move as $title) {
-				$text .= "<input type=\"checkbox\" name=\"move-{$title->getArticleID()}\" checked /> {$skin->makeLinkObj( $title, $title->prefix($title->getText()) )}<br />\n";
+				$text .= Xml::check('move-' . $title->getArticleID(), true);
+				$text .= " " . $skin->makeLinkObj( $title, $title->prefix($title->getText()) ) . "<br />\n";
  	 		}
 		}
 		$text .=<<<END
