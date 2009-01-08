@@ -194,12 +194,12 @@ $messages['es'] = array(
  * @author Kobazulo
  */
 $messages['eu'] = array(
-	'replacetext' => 'Testua ordezkatu',
+	'replacetext' => 'Testua ordeztu',
 	'replacetext_originaltext' => 'Jatorrizko testua',
-	'replacetext_movepages' => 'Posiblea denean, orrialdeen izenburuetan ere testua ordezkatzen du',
+	'replacetext_movepages' => 'Posiblea denean, orrialdeen izenburuetan ere testua ordezten du',
 	'replacetext_cannotmove' => 'Hurrengo {{PLURAL:$1|orrialdea ezin da mugitu:|orrialdeak ezin dira mugitu:}}',
 	'replacetext_invertselections' => 'Hautaketak alderantzikatu',
-	'replacetext_replace' => 'Ordezkatu',
+	'replacetext_replace' => 'Ordeztu',
 	'replacetext_noreplacement' => "Ez da aurkitu '$1' karaktere-katea duen orrialderik.",
 	'replacetext_continue' => 'Jarraitu',
 	'replacetext_cancel' => '(Zure nabigatzailearen atzerako botoia sakatu ekintza deuseztatzeko.)',
@@ -270,6 +270,7 @@ Voulez-vous continuer ces substitutions ?',
 	'replacetext_continue' => 'Continuer',
 	'replacetext_cancel' => "(Cliquez sur le bouton  « Retour » de votre navigateur pour annuler l'opération.)",
 	'replacetext_editsummary' => 'Remplacement du texte — « $1 » par « $2 »',
+	'right-replacetext' => 'Faire des remplacements de texte dans tout le wiki',
 );
 
 /** Galician (Galego)
@@ -297,6 +298,7 @@ Quere continuar coa substitución?',
 	'replacetext_continue' => 'Continuar',
 	'replacetext_cancel' => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
 	'replacetext_editsummary' => 'Reemprazo de texto - de "$1" a "$2"',
+	'right-replacetext' => 'Facer substitucións de cordas no wiki enteiro',
 );
 
 /** Hebrew (עברית)
@@ -306,20 +308,24 @@ Quere continuar coa substitución?',
 $messages['he'] = array(
 	'replacetext' => 'החלפת טקסט',
 	'replacetext-desc' => 'אספקת [[Special:ReplaceText|דף מיוחד]] כדי לאפשר למפעילים לבצע חיפוש והחלפה של מחרוזות בכל דפי התוכן בוויקי',
+	'replacetext_docu' => "כדי להחליף מחרוזת טקסט אחת באחרת בכל הדפים הרגילים בוויקי זה, הזינו את הטקסט בשני חלקים ולחצו על 'המשך'. אז תוצג בפניכם רשימת דפים המכילים את הטקסט אחריו חיפשתם, ותוכלו לבחור את הדפים בהם תרצו להחליף את הטקסט האמור. שמכם יופיע בהיסטוריית הגרסאות של כל דף בתור המשתמש האחראי לשינויים שבוצעו.",
 	'replacetext_note' => 'הערה: פעולה זו לא תחליף טקסט בדפי שיחה ובדפי המיזם.',
 	'replacetext_originaltext' => 'הטקסט המקורי',
 	'replacetext_replacementtext' => 'טקסט ההחלפה',
 	'replacetext_movepages' => 'החלפת טקסט גם בכותרות הדפים, כשניתן',
-	'replacetext_choosepages' => "אנא בחרו את הדפים בהם ברצונם להחליף את '$1' ב־'$2':",
-	'replacetext_choosepagesformove' => 'החלפת טקסט בשמות הדפים הבאים:',
-	'replacetext_cannotmove' => 'לא ניתן להעביר את הדפים הבאים:',
+	'replacetext_choosepages' => "אנא בחרו את {{PLURAL:$3|הדף בו|הדפים בהם}} ברצונכם להחליף את '$1' ב־'$2':",
+	'replacetext_choosepagesformove' => 'החלפת טקסט ב{{PLURAL:$1|שם הדף הבא|שמות הדפים הבאים}}:',
+	'replacetext_cannotmove' => 'לא ניתן להעביר את {{PLURAL:$1|הדף הבא|הדפים הבאים}}:',
 	'replacetext_invertselections' => 'הפיכת הבחירות',
 	'replacetext_replace' => 'החלפה',
-	'replacetext_success' => "'$1' יוחלף ב־'$2' ב־$3 דפים.",
+	'replacetext_success' => "'$1' יוחלף ב־'$2' ב־{{PLURAL:$3|דף אחד|$3 דפים}}.",
 	'replacetext_noreplacement' => "לא נמצאו דפים המכילים את המחרוזת '$1'.",
+	'replacetext_warning' => "יש {{PLURAL:$1|דף אחד שכבר מכיל|$1 דפים שכבר מכילים}} את מחרוזת ההחלפה, '$2'.
+אם תבצעו החלפה זו, לא תוכלו להבדיל בין המחרוזות שלכם לבין מחרוזות אלו.
+להמשיך בהחלפה?",
 	'replacetext_blankwarning' => 'כיוון שמחרוזת ההחלפה ריקה, לא ניתן יהיה לבטל פעולה זו; להמשיך?',
 	'replacetext_continue' => 'המשך',
-	'replacetext_cancel' => '(לחצו על הלחצן "חזרה" כדי לבטל את הפעולה.)',
+	'replacetext_cancel' => '(לחצו על הלחצן "חזרה" בדפדפן שלכם כדי לבטל את הפעולה.)',
 	'replacetext_editsummary' => "החלפת טקסט - $1 ל־'$2'",
 );
 
@@ -372,6 +378,7 @@ $messages['hsb'] = array(
 	'replacetext_continue' => 'Dale',
 	'replacetext_cancel' => '(Klikń na tłóčatko "Wróćo" w swojim wobhladowaku, zo by operaciju přetrohnył.)',
 	'replacetext_editsummary' => "Tekstowe narunanje - '$1' do '$2'",
+	'right-replacetext' => 'Tekstowe narunanja na cyłym wikiju činić',
 );
 
 /** Interlingua (Interlingua)
@@ -464,6 +471,7 @@ Wells De trozdämm wigger maache?',
 	'replacetext_continue' => 'Wiggermaache',
 	'replacetext_cancel' => '(Kleck dä „Zerök“- ov „Retuur“-Knopp, öm dä Förjang afzebreche)',
 	'replacetext_editsummary' => 'Täx-Shtöcker tuusche — vun „$1“ noh „$2“',
+	'right-replacetext' => 'Donn Täx-Shtöcksher em janze Wiki ußtuusche',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -545,6 +553,7 @@ Wilt u doorgaan met vervangen?",
 	'replacetext_continue' => 'Doorgaan',
 	'replacetext_cancel' => '(Klik op de knop "Terug" in uw webbrowser om deze handeling te annuleren)',
 	'replacetext_editsummary' => "Tekst vervangen - '$1' door '$2'",
+	'right-replacetext' => 'Tekst vervangen in de hele wiki',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
