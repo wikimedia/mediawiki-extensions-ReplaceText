@@ -35,6 +35,7 @@ Do you want to continue?',
 	'replacetext_cancel' => '(Click the "Back" button in your browser to cancel the operation.)',
 	// content messages
 	'replacetext_editsummary' => 'Text replace - \'$1\' to \'$2\'',
+	'right-replacetext' => 'Do string replacements on the entire wiki',
 );
 
 /** Message documentation (Message documentation)

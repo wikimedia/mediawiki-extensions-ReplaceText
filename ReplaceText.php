@@ -35,9 +35,10 @@ $dir = dirname(__FILE__) . '/';
 $wgExtensionMessagesFiles['ReplaceText'] = $dir . 'ReplaceText.i18n.php';
 $wgExtensionAliasesFiles['ReplaceText'] = $dir . 'ReplaceText.alias.php';
 $wgJobClasses['replaceText'] = 'ReplaceTextJob';
+$wgAvailableRights[] = 'replacetext';
 
 // This extension uses its own permission type, 'replacetext'
-$wgSpecialPages['ReplaceText'] = array('ReplaceText', 'replacetext');
+$wgSpecialPages['ReplaceText'] = 'ReplaceText';
 $wgSpecialPageGroups['ReplaceText'] = 'wiki';
 $wgAutoloadClasses['ReplaceText'] = $dir . 'SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = $dir . 'ReplaceTextJob.php';
