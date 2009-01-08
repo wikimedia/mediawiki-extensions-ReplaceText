@@ -4,7 +4,7 @@
  * allow administrators to do a global string find-and-replace on all the
  * content pages of a wiki.
  *
- * http://www.mediawiki.org/wiki/Extension:Text_Replace
+ * http://www.mediawiki.org/wiki/Extension:Replace_Text
  *
  * The special page created is 'Special:ReplaceText', and it provides
  * a form to do a global search-and-replace, with the changes to every
@@ -24,7 +24,7 @@ if (!defined('MEDIAWIKI')) die();
 // credits
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Replace Text',
-	'version' => '0.4',
+	'version' => '0.3.1',
 	'author' => 'Yaron Koren',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'description' => 'A special page that lets administrators run a global search-and-replace',

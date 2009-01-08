@@ -1,6 +1,6 @@
 Replace Text Extension
 
-        Version 0.4
+        Version 0.3.1
         Yaron Koren
 
 This is free software licenced under the GNU General Public Licence. Please
@@ -11,7 +11,7 @@ full text and terms of the licence.
 
 Replace Text is an extension to MediaWiki that creates a new special page,
 Special:ReplaceText, available to administrators only (defined as anyone
-who has 'delete' privileges on pages), that does a text find-and-replace
+who has the 'replacetext' privilege), that does a text find-and-replace
 on all pages in the wiki, except the Talk pages and the ones in the wiki's
 own project namespace. Both the contents of pages and their titles can be
 modified. The search is case-sensitive.
