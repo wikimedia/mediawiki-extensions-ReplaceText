@@ -164,6 +164,7 @@ Möchtest du weitermachen?',
 	'replacetext_continue' => 'Fortfahren',
 	'replacetext_cancel' => '(Klicke auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
 	'replacetext_editsummary' => 'Textersetzung - „$1“ durch „$2“',
+	'right-replacetext' => 'Führe eine Textersetzung für das gesamte Wiki durch',
 );
 
 /** Esperanto (Esperanto)
@@ -327,6 +328,7 @@ $messages['he'] = array(
 	'replacetext_continue' => 'המשך',
 	'replacetext_cancel' => '(לחצו על הלחצן "חזרה" בדפדפן שלכם כדי לבטל את הפעולה.)',
 	'replacetext_editsummary' => "החלפת טקסט - $1 ל־'$2'",
+	'right-replacetext' => 'ביצוע החלפת מחרוזות באתר הוויקי כולו',
 );
 
 /** Croatian (Hrvatski)
@@ -582,6 +584,7 @@ Vil du halda fram?',
 	'replacetext_continue' => 'Hald fram',
 	'replacetext_cancel' => '(Trykk på «Attende»-knappen i nettlesaren din for å avbryta handlinga.)',
 	'replacetext_editsummary' => 'Utbyting av tekst - «$1» til «$2»',
+	'right-replacetext' => 'Gjennomfør utbyting av tekst på heile wikien',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -631,11 +634,13 @@ Volètz contunhar aquestas substitucions ?",
 	'replacetext_continue' => 'Contunhar',
 	'replacetext_cancel' => "(Clicatz sul boton  « Retorn » de vòstre navigador per anullar l'operacion.)",
 	'replacetext_editsummary' => 'Remplaçament del tèxt — « $1 » per « $2 »',
+	'right-replacetext' => 'Far de remplaçaments de tèxt dins tot lo wiki',
 );
 
 /** Polish (Polski)
  * @author Derbeth
  * @author Maikking
+ * @author Matma Rex
  * @author Sp5uhe
  */
 $messages['pl'] = array(
@@ -645,7 +650,11 @@ $messages['pl'] = array(
 	'replacetext_note' => 'Uwaga: nie zastąpi tekstu na stronach dyskusji i stronach projektu.',
 	'replacetext_originaltext' => 'Znajdź',
 	'replacetext_replacementtext' => 'Zamień na',
+	'replacetext_movepages' => 'Zamień tekst także w tytułach stron, gdy to możliwe',
 	'replacetext_choosepages' => 'Wybierz {{PLURAL:$3|stronę|strony}}, na których chcesz „$1” zastąpić „$2”',
+	'replacetext_choosepagesformove' => 'Zamień tekst w nazw{{PLURAL:$1|ie poniższej strony|ach poniższych stron}}:',
+	'replacetext_cannotmove' => 'Poniższ{{PLURAL:$1|a strona nie może być przeniesiona|e strony nie mogą być przeniesione}}:',
+	'replacetext_invertselections' => 'Odwróć zaznaczenie',
 	'replacetext_replace' => 'Zastąp',
 	'replacetext_success' => '„$1” zostanie zastąpiony przez „$2” na $3 {{PLURAL:$3|stronie|stronach}}.',
 	'replacetext_noreplacement' => 'Nie znaleziono stron zawierających tekst „$1”.',
@@ -655,6 +664,7 @@ Czy kontynuować zastępowanie?',
 	'replacetext_continue' => 'Kontynuuj',
 	'replacetext_cancel' => '(Wciśnij klawisz „Wstecz” w przeglądarce, aby przerwać operację.)',
 	'replacetext_editsummary' => 'zamienił w treści „$1” na „$2”',
+	'right-replacetext' => 'Wykonaj zamianę tekstu na całej wiki',
 );
 
 /** Portuguese (Português)
@@ -684,6 +694,7 @@ Deseja prosseguir com a substituição?",
 	'replacetext_continue' => 'Prosseguir',
 	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
+	'right-replacetext' => 'Faça substituições de "strings" no wiki inteiro',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
@@ -750,6 +761,7 @@ $messages['sk'] = array(
 	'replacetext_continue' => 'Pokračovať',
 	'replacetext_cancel' => '(Operáciu zrušíte stlačením tlačidla „Späť” vo vašom prehliadači.)',
 	'replacetext_editsummary' => 'Nahradenie textu „$1” textom „$2”',
+	'right-replacetext' => 'Vykonať náhradu reťazcov na celej wiki',
 );
 
 /** Serbian Cyrillic ekavian (ћирилица)
@@ -831,6 +843,7 @@ Naisa mo bang magpatuloy pa?',
 	'replacetext_continue' => 'Magpatuloy',
 	'replacetext_cancel' => "(Pindutin ang pinduting \"Magbalik\" sa iyong pantingin-tingin o ''browser'' upang huwag nang maipagpatuloy ang gawain.)",
 	'replacetext_editsummary' => "Palitan ang tekso - '$1' papunta sa '$2'",
+	'right-replacetext' => 'Gumawa ng pagpapalit ng bagting sa buong wiki',
 );
 
 /** Vietnamese (Tiếng Việt)
@@ -859,6 +872,7 @@ $messages['vi'] = array(
  */
 $messages['vo'] = array(
 	'replacetext' => 'Plaädön vödemi',
+	'replacetext-desc' => 'Jafön [[Special:ReplaceText|padi patik]] ad mögükön guvanes sukami e plaädami valöpikis, ninädapadis valik vüka seimik tefölis.',
 	'replacetext_note' => 'Noet: vödem in bespikapads ed in proyegapads no poplaädon.',
 	'replacetext_originaltext' => 'Rigavödem',
 	'replacetext_replacementtext' => 'Plaädamavödem',
@@ -871,6 +885,7 @@ $messages['vo'] = array(
 	'replacetext_blankwarning' => 'Bi plaädamavödem binon vägik, dun at no kanon pasädunön. Vilol-li fümiko ledunön plaädami?',
 	'replacetext_continue' => 'Ledunön',
 	'replacetext_editsummary' => 'Vödemiplaädam - „$1“ ad „$2“',
+	'right-replacetext' => 'Ledunön vödemiplaädami in vük lölik',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
