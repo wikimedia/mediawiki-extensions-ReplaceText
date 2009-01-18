@@ -39,13 +39,16 @@ Do you want to continue?',
 );
 
 /** Message documentation (Message documentation)
+ * @author Fryed-peach
  * @author McMonster
  * @author Nike
  * @author Purodha
  */
 $messages['qqq'] = array(
 	'replacetext' => "This message is displayed as a title of this extension's special page.",
-	'replacetext-desc' => 'Short description of this extension, shown in [[Special:Version]]. Do not translate or change links.',
+	'replacetext-desc' => 'Short description of this extension, shown in [[Special:Version]]. Do not translate or change links.
+
+{{Identical|Content page}}',
 	'replacetext_docu' => "Description of how to use this extension, displayed on the extension's special page ([[Special:ReplaceText]]).",
 	'replacetext_note' => 'This message appears just under the [[MediaWiki:Replacetext]] docu on the [[Special:ReplaceText]] page.',
 	'replacetext_originaltext' => 'Label of the text field, where user enters original piece of text, which would be replaced.',

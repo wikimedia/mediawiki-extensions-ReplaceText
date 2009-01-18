@@ -32,6 +32,11 @@ $aliases['bs'] = array(
 	'ReplaceText' => array( 'ZamjenaTeksta' ),
 );
 
+/** German (Deutsch) */
+$aliases['de'] = array(
+	'ReplaceText' => array( 'Text ersetzen' ),
+);
+
 /** Divehi (ދިވެހިބަސް) */
 $aliases['dv'] = array(
 	'ReplaceText' => array( 'ލިޔުން ބަދަލުކުރައްވާ' ),
@@ -40,6 +45,11 @@ $aliases['dv'] = array(
 /** French (Français) */
 $aliases['fr'] = array(
 	'ReplaceText' => array( 'Remplacer texte', 'RemplacerTexte' ),
+);
+
+/** Galician (Galego) */
+$aliases['gl'] = array(
+	'ReplaceText' => array( 'Substituír o texto' ),
 );
 
 /** Swiss German (Alemannisch) */
