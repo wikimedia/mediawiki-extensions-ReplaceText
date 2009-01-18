@@ -77,6 +77,11 @@ $aliases['hu'] = array(
 	'ReplaceText' => array( 'Szöveg csere' ),
 );
 
+/** Japanese (日本語) */
+$aliases['ja'] = array(
+	'ReplaceText' => array( '文字列の置換' ),
+);
+
 /** Khmer (ភាសាខ្មែរ) */
 $aliases['km'] = array(
 	'ReplaceText' => array( 'ជំនួសអត្ថបទ' ),
