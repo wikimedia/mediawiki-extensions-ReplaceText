@@ -82,6 +82,10 @@ function doSpecialReplaceText() {
 		Job::batchInsert( $jobs );
 		$num_modified_pages = count($jobs);
 		$wgOut->addHTML( wfMsgExt( 'replacetext_success', array( 'escape', 'parsemag' ), $target_str, $replacement_str, $num_modified_pages) );
+		// link back to starting form
+		$rt_title = Title::makeTitleSafe( NS_SPECIAL, 'ReplaceText' );
+		$sk = $wgUser->getSkin();
+		$wgOut->addHTML( '<p>' . $sk->makeKnownLinkObj( $rt_title, wfMsg( 'replacetext_return' ) ) . '</p>' );
 	} elseif ( $wgRequest->getCheck('target_str') ) { // very long elseif, look for "end elseif"
 		$dbr =& wfGetDB( DB_SLAVE );
 		$fname = 'doSpecialReplaceText';
