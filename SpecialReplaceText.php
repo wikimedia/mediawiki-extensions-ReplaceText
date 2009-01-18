@@ -66,8 +66,9 @@ function doSpecialReplaceText() {
 		$replacement_params['target_str'] = $target_str;
 		$replacement_params['replacement_str'] = $replacement_str;
 		$replacement_params['edit_summary'] = wfMsgForContent('replacetext_editsummary', $target_str, $replacement_str);
+		$jobs = array();
 		foreach ($wgRequest->getValues() as $key => $value) {
-			if ($value == 'on') {
+			if ($value == '1') {
 				if (strpos($key, 'move-') !== false) {
 					$title = Title::newFromId(substr($key, 5));
 					$replacement_params['move_page'] = true;
