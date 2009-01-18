@@ -193,6 +193,10 @@ function doSpecialReplaceText() {
 		}
 		if ($num_modified_pages == 0) {
 			$wgOut->addHTML(wfMsg('replacetext_noreplacement', $target_str));
+			// link back to starting form
+			$rt_title = Title::makeTitleSafe( NS_SPECIAL, 'ReplaceText' );
+			$sk = $wgUser->getSkin();
+			$wgOut->addHTML( '<p>' . $sk->makeKnownLinkObj( $rt_title, wfMsg( 'replacetext_return' ) ) . '</p>' );
 		} else {
 		$javascript_text =<<<END
 <script type="text/javascript">
