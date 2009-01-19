@@ -72,18 +72,22 @@ $messages['ar'] = array(
 	'replacetext_originaltext' => 'النص الأصلي',
 	'replacetext_replacementtext' => 'نص الاستبدال',
 	'replacetext_movepages' => 'أستبدل نص في عناوين الصفحة ، عندما يكون ممكنا',
-	'replacetext_choosepages' => "من فضلك اختر الصفحات التي فيها تريد استبدال ب'$1' '$2':",
-	'replacetext_choosepagesformove' => ': أستبدل نص في اسماء الصفحات التالية',
-	'replacetext_cannotmove' => ':الصفحات التالية لا يمكن نقلها',
+	'replacetext_choosepages' => "من فضلك اختر {{PLURAL:$3|الصفحة|الصفحات}} التي فيها تريد استبدال ب'$1' '$2':",
+	'replacetext_choosepagesformove' => 'استبدل النص في {{PLURAL:$1|اسم الصفحة التالية|أسماء الصفحات التالية}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|الصفحة|الصفحات}} التالية لا يمكن نقلها:',
 	'replacetext_invertselections' => 'عكس الاختيارات',
 	'replacetext_replace' => 'استبدل',
-	'replacetext_success' => "'$2' سيتم استبدالها ب'$1' في $3 صفحة.",
+	'replacetext_success' => "'$2' سيتم استبدالها ب'$1' في $3 {{PLURAL:$3|صفحة|صفحة}}.",
 	'replacetext_noreplacement' => "لا صفحات تم العثور عليها تحتوي على السلسلة '$1'.",
-	'replacetext_warning' => "توجد $1 صفحة تحتوي بالفعل على سلسلة الاستبدال، '$2'؛ لو أنك قمت بهذا الاستبدال فلن تصبح قادرا على فصل استبدالاتك من هذه السلاسل. استمرار مع الاستبدال؟",
+	'replacetext_return' => 'رجوع إلى الإستمارة',
+	'replacetext_warning' => "توجد {{PLURAL:$1|$1 صفحة|$1 صفحة}} تحتوي بالفعل على سلسلة الاستبدال، '$2'.
+لو أنك قمت بهذا الاستبدال فلن تصبح قادرا على فصل استبدالاتك عن هذه السلاسل.
+استمرار مع الاستبدال؟",
 	'replacetext_blankwarning' => 'لأن سلسلة الاستبدال فارغة، هذه العملية لن تكون عكسية؛ استمر؟',
 	'replacetext_continue' => 'استمر',
-	'replacetext_cancel' => '(اضغط زر "رجوع" لإلغاء العملية.)',
+	'replacetext_cancel' => '(اضغط زر "رجوع" في متصفحك لإلغاء العملية.)',
 	'replacetext_editsummary' => "استبدال النص - '$1' ب'$2'",
+	'right-replacetext' => 'القيام باستبدال للسلاسل في الويكي بأكمله',
 );
 
 /** Egyptian Spoken Arabic (مصرى)
@@ -300,6 +304,7 @@ $messages['fr'] = array(
 	'replacetext_replace' => 'Remplacer',
 	'replacetext_success' => '« $1 » sera remplacé par « $2 » dans $3 fichier{{PLURAL:$3||s}}.',
 	'replacetext_noreplacement' => 'Aucun fichier contenant la chaîne « $1 » n’a été trouvé.',
+	'replacetext_return' => 'Revenir au formulaire.',
 	'replacetext_warning' => 'Il y a $1 fichier{{PLURAL:$1| qui contient|s qui contiennent}} la chaîne de remplacement « $2 ».
 Si vous effectuez cette substitution, vous ne pourrez pas séparer vos changements à partir de ces chaînes.
 Voulez-vous continuer ces substitutions ?',
@@ -328,6 +333,7 @@ $messages['gl'] = array(
 	'replacetext_replace' => 'Reemprazar',
 	'replacetext_success' => '"$1" será substituído por "$2" {{PLURAL:$3|nunha páxina|en $3 páxinas}}.',
 	'replacetext_noreplacement' => "Non foi atopada ningunha páxina que contivese a cadea '$1'.",
+	'replacetext_return' => 'Voltar ao formulario.',
 	'replacetext_warning' => 'Hai {{PLURAL:$1|unha páxina|$1 páxinas}} que xa {{PLURAL:$1|contén|conteñen}} a cadea de substitución "$2".
 Se fai esta substitución non poderá separar as súas substitucións destas cadeas.
 Quere continuar coa substitución?',
@@ -357,6 +363,7 @@ $messages['he'] = array(
 	'replacetext_replace' => 'החלפה',
 	'replacetext_success' => "'$1' יוחלף ב־'$2' ב־{{PLURAL:$3|דף אחד|$3 דפים}}.",
 	'replacetext_noreplacement' => "לא נמצאו דפים המכילים את המחרוזת '$1'.",
+	'replacetext_return' => 'חזרה לטופס.',
 	'replacetext_warning' => "יש {{PLURAL:$1|דף אחד שכבר מכיל|$1 דפים שכבר מכילים}} את מחרוזת ההחלפה, '$2'.
 אם תבצעו החלפה זו, לא תוכלו להבדיל בין המחרוזות שלכם לבין מחרוזות אלו.
 להמשיך בהחלפה?",
@@ -465,6 +472,7 @@ $messages['ja'] = array(
 	'replacetext_replace' => '置換',
 	'replacetext_success' => '$3個のページで「$1」が「$2」に置換されます。',
 	'replacetext_noreplacement' => '文字列「$1」を含むページは見つかりませんでした。',
+	'replacetext_return' => 'フォームに戻る',
 	'replacetext_warning' => '置換後文字列「$2」を既に含んだページが $1個あります。この置換を実行すると、これらの文字列と実際に置換された箇所を区別できなくなります。置換を続行しますか？',
 	'replacetext_blankwarning' => '置換後文字列が空であるため、この操作は実行後の取り消しができなくなります。続行しますか？',
 	'replacetext_continue' => '続行',
@@ -525,6 +533,7 @@ fun dä Sigge faßjehallde als dä Schriiver, dä et jemaat hät.',
 	'replacetext_replace' => 'Tuusche',
 	'replacetext_success' => '„$1“ soll en {{PLURAL:$3|eine Sigg|$3 Sigge|nix}} dorsch „$2“ ußjetuusch wääde.',
 	'replacetext_noreplacement' => 'Kein Sigge jefonge met däm Täxstöck „$1“ dren.',
+	'replacetext_return' => 'Jangk retuur op dat Fommulaa.',
 	'replacetext_warning' => '
 {{PLURAL:$1|Ein Sigg enthält|$1 Sigge enthallde}} ald dat Täxstöck „$2“, wat bemm Tuusche ennjeföch wääde sull.
 Wenn De dat jemaat häs, dokam_mer die Änderong nit esu leich automattesch retuur maache, weil mer die ald do woore,
