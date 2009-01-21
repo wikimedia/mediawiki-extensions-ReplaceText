@@ -701,6 +701,7 @@ $messages['oc'] = array(
 	'replacetext_replace' => 'Remplaçar',
 	'replacetext_success' => '« $1 » es estat remplaçat per « $2 » dins $3 fichièr{{PLURAL:$3||s}}.',
 	'replacetext_noreplacement' => 'Cap de fichièr que conten la cadena « $1 » es pas estat trobat.',
+	'replacetext_return' => 'Tornar al formulari.',
 	'replacetext_warning' => "I a $1 fichièr{{PLURAL:$1| que conten|s que contenon}} la cadena de remplaçament « $2 ».
 Se efectuatz aquesta substitucion, poiretz pas separar vòstres cambiaments a partir d'aquestas cadenas.
 Volètz contunhar aquestas substitucions ?",
@@ -831,6 +832,7 @@ $messages['sk'] = array(
 	'replacetext_replace' => 'Nahradiť',
 	'replacetext_success' => 'Text „$1” bude nahradený textom „$2” na $3 {{PLURAL:$3|stránke|stránkach}}.',
 	'replacetext_noreplacement' => 'Nenašli sa žiadne stránky obsahujúce text „$1”.',
+	'replacetext_return' => 'Späť na formulár.',
 	'replacetext_warning' => '$1 {{PLURAL:$1|stránka|stránok}} už obsahuje text „$2”, ktorým chcete text nahradiť; ak budete pokračovať a text nahradíte, nebudete môcť odlíšiť vaše nahradenia od existujúceho textu, ktorý tento reťazec už obsahuje. Pokračovať v nahradení?',
 	'replacetext_blankwarning' => 'Pretože text, ktorým text chcete nahradiť je prázdny, operácia bude nevratná. Pokračovať?',
 	'replacetext_continue' => 'Pokračovať',
