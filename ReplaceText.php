@@ -24,7 +24,7 @@ if (!defined('MEDIAWIKI')) die();
 // credits
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Replace Text',
-	'version' => '0.3.2',
+	'version' => '0.4',
 	'author' => 'Yaron Koren',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'description' => 'A special page that lets administrators run a global search-and-replace',
