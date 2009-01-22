@@ -22,6 +22,7 @@ $messages['en'] = array(
 	'replacetext_choosepages' => 'Please select the {{PLURAL:$3|page|pages}} for which you want to replace \'$1\' with \'$2\':',
 	'replacetext_choosepagesformove' => 'Replace text in the {{PLURAL:$1|name of the following page|names of the following pages}}:',
 	'replacetext_cannotmove' => 'The following {{PLURAL:$1|page|pages}} cannot be moved:',
+	'replacetext_savemovedpages' => 'For moved pages, save the old titles as redirects to the new titles',
 	'replacetext_invertselections' => 'Invert selections',
 	'replacetext_replace' => 'Replace',
 	'replacetext_success' => '\'$1\' will be replaced with \'$2\' in $3 {{PLURAL:$3|page|pages}}.',
