@@ -66,6 +66,12 @@ function doSpecialReplaceText() {
 		$replacement_params['target_str'] = $target_str;
 		$replacement_params['replacement_str'] = $replacement_str;
 		$replacement_params['edit_summary'] = wfMsgForContent('replacetext_editsummary', $target_str, $replacement_str);
+		$replacement_params['create_redirect'] = false;
+		foreach ($wgRequest->getValues() as $key => $value) {
+			if ($key == 'create-redirect' && $value == '1') {
+				$replacement_params['create_redirect'] = true;
+			}
+		}
 		$jobs = array();
 		foreach ($wgRequest->getValues() as $key => $value) {
 			if ($value == '1') {
@@ -238,11 +244,13 @@ END;
 			$text .= " " . $skin->makeLinkObj( $title, $title->prefix($title->getText()) ) . " - <small>$context_str</small><br />\n";
   		}
 		if (count($titles_for_move) > 0) {
-			$text .= "<p>$choose_pages_for_move_label</p>\n";
+			$text .= "<br />\n<p>$choose_pages_for_move_label</p>\n";
 			foreach ($titles_for_move as $title) {
 				$text .= Xml::check('move-' . $title->getArticleID(), true);
 				$text .= " " . $skin->makeLinkObj( $title, $title->prefix($title->getText()) ) . "<br />\n";
  	 		}
+			$text .= '<p>' . wfMsg('replacetext_savemovedpages') . wfMsg('colon-separator');
+			$text .= Xml::check('create-redirect', true) . "</p>\n";
 		}
 		$text .=<<<END
 	<p><input type="Submit" name="replace" value="$replace_label"></p>
