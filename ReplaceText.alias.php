@@ -127,6 +127,11 @@ $aliases['oc'] = array(
 	'ReplaceText' => array( 'Remplaçar tèxt', 'RemplaçarTèxt' ),
 );
 
+/** Albanian (Shqip) */
+$aliases['sq'] = array(
+	'ReplaceText' => array( 'ZëvendësoTekstin' ),
+);
+
 /** Swahili (Kiswahili) */
 $aliases['sw'] = array(
 	'ReplaceText' => array( 'PandikiziaMatini' ),
