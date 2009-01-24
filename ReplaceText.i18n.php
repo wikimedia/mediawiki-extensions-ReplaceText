@@ -164,6 +164,7 @@ $messages['de'] = array(
 	'replacetext_choosepages' => 'Bitte die {{PLURAL:$3|Seite|Seiten}} auswählen, bei denen du „$1“ durch „$2“ ersetzen möchtest:',
 	'replacetext_choosepagesformove' => 'Ersetze Text {{PLURAL:$1|im Namen der folgenden Seite|in den Namen der folgenden Seiten}}:',
 	'replacetext_cannotmove' => 'Die {{PLURAL:$1|folgende Seite kann|folgenden Seiten können}} nicht verschoben werden:',
+	'replacetext_savemovedpages' => 'Eine Weiterleitung für eine verschobende Seite anlegen',
 	'replacetext_invertselections' => 'Auswahl umkehren',
 	'replacetext_replace' => 'Ersetzen',
 	'replacetext_success' => '„$1“ wird durch „$2“ in $3 {{PLURAL:$3|Seite|Seiten}} ersetzt.',
@@ -226,11 +227,13 @@ $messages['eo'] = array(
 );
 
 /** Spanish (Español)
+ * @author Crazymadlover
  * @author Imre
  */
 $messages['es'] = array(
 	'replacetext' => 'Reemplazar texto',
 	'replacetext_replace' => 'Reemplazar',
+	'replacetext_continue' => 'Continuar',
 );
 
 /** Basque (Euskara)
@@ -332,6 +335,7 @@ $messages['gl'] = array(
 	'replacetext_choosepages' => 'Por favor, seleccione {{PLURAL:$3|a páxina na|as páxinas nas}} que quere substituír "$1" por "$2":',
 	'replacetext_choosepagesformove' => 'Substituír o texto {{PLURAL:$1|no nome da seguinte páxina|nos nomes das seguintes páxinas}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte páxina|As seguintes páxinas}} non {{PLURAL:$1|pode|poden}} ser {{PLURAL:$1|movida|movidas}}:',
+	'replacetext_savemovedpages' => 'Para as páxinas movidas, garde os títulos vellos como redireccións cara aos títulos novos',
 	'replacetext_invertselections' => 'Invertir as seleccións',
 	'replacetext_replace' => 'Reemprazar',
 	'replacetext_success' => '"$1" será substituído por "$2" {{PLURAL:$3|nunha páxina|en $3 páxinas}}.',
@@ -535,6 +539,8 @@ fun dä Sigge faßjehallde als dä Schriiver, dä et jemaat hät.',
 	'replacetext_choosepages' => 'Don {{PLURAL:$3|en Sigg|die Sigge|nix aan Sigge}} ußsöke, en dänne De „$1“ jääje „$2“ jetuusch han wells:',
 	'replacetext_choosepagesformove' => 'Donn dä Täx en hee dä {{PLURAL:$1|Sigg|Sigge|nix}} ußtuusche:',
 	'replacetext_cannotmove' => 'Hee die {{PLURAL:$3|Sigg kann|Sigge künne|nix kann}} nit ömjenannt wäde:',
+	'replacetext_savemovedpages' => 'Donn der ahle Tittel faßallde un en Ömleidung op de neue druß maache,
+wann en Sigg ömjenannt wood.',
 	'replacetext_invertselections' => 'De Ußwahl ömdrieje',
 	'replacetext_replace' => 'Tuusche',
 	'replacetext_success' => '„$1“ soll en {{PLURAL:$3|eine Sigg|$3 Sigge|nix}} dorsch „$2“ ußjetuusch wääde.',
@@ -917,10 +923,12 @@ $messages['tl'] = array(
 	'replacetext_choosepages' => "Pakipili ang {{PLURAL:$3|pahina|mga pahina}} kung saan mo naisa na palitan ang '$1' ng '$2':",
 	'replacetext_choosepagesformove' => 'Palitan ang tekstong nasa loob ng {{PLURAL:$1|pangalan ng sumusunod na pahina|mga pangalan ng sumusunod na mga pahina}}:',
 	'replacetext_cannotmove' => 'Hindi maililipat ang sumusunod na {{PLURAL:$1|pahina|mga pahina}}:',
+	'replacetext_savemovedpages' => 'Para sa inilipat na mga pahina, sagipin ang lumang mga pamagat bilang mga nakaturo patungo sa bagong mga pamagat.',
 	'replacetext_invertselections' => 'Baligtarin ang mga pagpipilian',
 	'replacetext_replace' => 'Palitan',
 	'replacetext_success' => "Ang '$1' ay mapapalitan ng '$2' sa loob ng $3 {{PLURAL:$3|pahina|mga pahina}}.",
 	'replacetext_noreplacement' => "Walang natagpuang mga pahinang naglalaman ng bagting na '$1'.",
+	'replacetext_return' => 'Bumalik sa pormularyo.',
 	'replacetext_warning' => "Mayroong {{PLURAL:$1|$1 pahinang naglalaman na|$1 mga pahinang naglalaman na}} ng pamalit na bagting, '$2'.
 Kapag ginawa mo ang pagpapalit na ito hindi mo na maihihiwalay ang mga pamalit mo mula sa mga bagting na ito.
 Ipagpapatuloy pa rin ba ang pagpapalit?",
