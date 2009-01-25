@@ -710,6 +710,7 @@ $messages['oc'] = array(
 	'replacetext_choosepages' => 'Seleccionatz {{PLURAL:$3|la pagina|las paginas}} dins {{PLURAL:$3|la quala|las qualas}} volètz remplaçar « $1 » per « $2 » :',
 	'replacetext_choosepagesformove' => 'Remplaçar lo tèxt dins {{PLURAL:$1|lo nom de las pagina seguenta|los noms de las paginas seguentas}} :',
 	'replacetext_cannotmove' => '{{PLURAL:$1|La pagina seguenta a pas pogut èsser renomenada|Las paginas seguentas an pas pogut èsser renomenadas}} :',
+	'replacetext_savemovedpages' => 'Per las paginas desplaçadas, enregistratz los títols ancians coma redireccions cap als títols novèls.',
 	'replacetext_invertselections' => 'Inversar las seleccions',
 	'replacetext_replace' => 'Remplaçar',
 	'replacetext_success' => '« $1 » es estat remplaçat per « $2 » dins $3 fichièr{{PLURAL:$3||s}}.',
