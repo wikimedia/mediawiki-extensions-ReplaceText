@@ -37,6 +37,11 @@ $aliases['de'] = array(
 	'ReplaceText' => array( 'Text ersetzen' ),
 );
 
+/** Lower Sorbian (Dolnoserbski) */
+$aliases['dsb'] = array(
+	'ReplaceText' => array( 'Tekst wuměniś' ),
+);
+
 /** Divehi (ދިވެހިބަސް) */
 $aliases['dv'] = array(
 	'ReplaceText' => array( 'ލިޔުން ބަދަލުކުރައްވާ' ),
