@@ -169,9 +169,9 @@ function doSpecialReplaceText() {
 			$title = Title::makeTitleSafe($row->namespace, $row->title);
 			$article_text = $row->text;
 			$target_pos = strpos($article_text, $target_str);
-			$context_str = str_replace($angle_brackets, $escaped_angle_brackets, $wgContLang->truncate(substr($article_text, 0, $target_pos), -$contextchars, '...' ));
+			$context_str = str_replace($angle_brackets, $escaped_angle_brackets, $wgContLang->truncate(substr($article_text, 0, $target_pos), -$contextchars ) );
 			$context_str .= "<span class=\"searchmatch\">" . str_replace($angle_brackets, $escaped_angle_brackets, substr($article_text, $target_pos, strlen($target_str))) . "</span>";
-			$context_str .= str_replace($angle_brackets, $escaped_angle_brackets, $wgContLang->truncate(substr($article_text, $target_pos + strlen($target_str)), $contextchars, '...' ));
+			$context_str .= str_replace($angle_brackets, $escaped_angle_brackets, $wgContLang->truncate(substr($article_text, $target_pos + strlen($target_str)), $contextchars ) );
 			$found_titles[] = array($title, $context_str);
 			$num_modified_pages++;
 		}
