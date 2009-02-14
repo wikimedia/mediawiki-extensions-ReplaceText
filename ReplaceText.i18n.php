@@ -797,24 +797,34 @@ Deseja prosseguir com a substituição?",
 );
 
 /** Brazilian Portuguese (Português do Brasil)
+ * @author Eduardo.mps
  * @author Enqd
  */
 $messages['pt-br'] = array(
 	'replacetext' => 'Substituir texto',
 	'replacetext-desc' => 'Fornece uma [[Special:ReplaceText|página especial]] que permite que administradores procurem e substituam uma "string" global em todas as páginas de conteúdo de uma wiki.',
 	'replacetext_docu' => 'Para substituir uma "string" de texto por outra em todas as páginas desta wiki você precisa fornecer o texto a ser substituído e o novo texto, logo em seguida pressione o botão \'Substituir\'. Será exibida uma lista de páginas que contenham o termo pesquisado, sendo possível selecionar em quais você deseja realizar substituições. Seu nome de utilizador aparecerá nos históricos de páginas como o responsável por ter feito as alterações.',
-	'replacetext_note' => 'Nota: isto não substituirá textos em páginas de discussão e organizacionais do projeto, além de não substituir texto nos títulos de páginas.',
+	'replacetext_note' => 'Nota: isto não substituirá textos em páginas de discussão e páginas do projeto.',
 	'replacetext_originaltext' => 'Texto original',
 	'replacetext_replacementtext' => 'Novo texto',
-	'replacetext_choosepages' => "Selecione as páginas nas quais deseja substituir '$1' por '$2':",
+	'replacetext_movepages' => 'Substituir texto nos títulos das páginas também, quando possível',
+	'replacetext_choosepages' => "Por favor, seleccione {{PLURAL:$3|a página na qual|as páginas nas quais}} deseja substituir '$1' por '$2':",
+	'replacetext_choosepagesformove' => 'Substituir texto {{PLURAL:$1|no nome da seguinte página|nos nomes das seguintes páginas}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte página não pode ser movida|As seguintes páginas não podem ser movidas}}:',
+	'replacetext_savemovedpages' => 'Para páginas movidas, gravar os títulos anteriores como redirecionamentos para os novos títulos',
+	'replacetext_invertselections' => 'Inverter seleções',
 	'replacetext_replace' => 'Substituir',
-	'replacetext_success' => "'$1' será substituído por '$2' em $3 páginas.",
+	'replacetext_success' => "'$1' será substituído por '$2' em $3 {{PLURAL:$3|página|páginas}}.",
 	'replacetext_noreplacement' => 'Não foram encontradas páginas contendo a "string" \'$1\'.',
-	'replacetext_warning' => 'Há $1 páginas que atualmente já possuem a "string" de substituição (\'$2\'); se você prosseguir, não será possível distinguir as substituições feitas por você desse texto já existente. Deseja prosseguir?',
+	'replacetext_return' => 'Voltar ao formulário.',
+	'replacetext_warning' => "Há {{PLURAL:$1|$1 página que já possui|$1 páginas que já possuem}} a cadeia de caracteres de substituição, '$2'.
+Se você prosseguir com a substituição, não será possível distinguir as suas substituições do texto já existente.
+Deseja prosseguir com a substituição?",
 	'replacetext_blankwarning' => 'Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
 	'replacetext_continue' => 'Prosseguir',
-	'replacetext_cancel' => '(pressione o botão "voltar" de seu navegador para cancelar a operação.)',
+	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
+	'right-replacetext' => 'Faça substituições de cadeias de caracteres no wiki inteiro',
 );
 
 /** Romanian (Română)
