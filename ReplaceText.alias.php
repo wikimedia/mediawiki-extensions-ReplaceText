@@ -142,3 +142,8 @@ $aliases['sw'] = array(
 	'ReplaceText' => array( 'PandikiziaMatini' ),
 );
 
+/** Tagalog (Tagalog) */
+$aliases['tl'] = array(
+	'ReplaceText' => array( 'Palitan ang teksto' ),
+);
+
