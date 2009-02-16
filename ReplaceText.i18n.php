@@ -907,10 +907,10 @@ $messages['sv'] = array(
 	'replacetext_replace' => 'Ersätt',
 	'replacetext_success' => "'$1' kommer att ersättas med '$2' på $3 {{PLURAL:$3|sida|sidor}}.",
 	'replacetext_noreplacement' => 'Inga sidor hittades med strängen "$1".',
-	'replacetext_warning' => 'Det finns $1 sidor som redan har ersättningssträngen "$2". Om du gör den här ersättningen kommer du inte kunna separera dina ersättningar från den här texten. Vill du fortsätta med ersättningen?',
+	'replacetext_warning' => 'Det finns {{PLURAL:$1|$1 sida|$1 sidor}} som redan har ersättningssträngen "$2". Om du gör den här ersättningen kommer du inte kunna separera dina ersättningar från den här texten. Vill du fortsätta med ersättningen?',
 	'replacetext_blankwarning' => 'Eftersom ersättningstexten är tom kommer den här handlingen inte kunna upphävas; vill du fortsätta?',
 	'replacetext_continue' => 'Fortsätt',
-	'replacetext_cancel' => '(Klicka på "Tillbaka"-knappen för att avbryta handlingen.)',
+	'replacetext_cancel' => '(Klicka på "Tillbaka"-knappen i din webbläsare för att avbryta handlingen.)',
 	'replacetext_editsummary' => 'Textersättning - "$1" till "$2"',
 );
 
