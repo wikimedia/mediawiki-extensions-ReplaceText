@@ -459,10 +459,12 @@ $messages['ia'] = array(
 	'replacetext_choosepages' => "Per favor selige le {{PLURAL:$3|pagina in le qual|paginas in le quales}} tu vole reimplaciar '$1' per '$2':",
 	'replacetext_choosepagesformove' => 'Reimplaciar texto in le {{PLURAL:$1|nomine del sequente pagina|nomines del sequente paginas}}:',
 	'replacetext_cannotmove' => 'Le sequente {{PLURAL:$1|pagina|paginas}} non pote esser renominate:',
+	'replacetext_savemovedpages' => 'Pro le paginas renominate, preservar le ancian titulos como redirectiones verso le nove titulos',
 	'replacetext_invertselections' => 'Inverter selectiones',
 	'replacetext_replace' => 'Reimplaciar',
 	'replacetext_success' => "'$1' essera reimplaciate per '$2' in $3 {{PLURAL:$3|pagina|paginas}}.",
 	'replacetext_noreplacement' => "Nulle pagina esseva trovate que contine le catena de characteres '$1'.",
+	'replacetext_return' => 'Retornar al formulario.',
 	'replacetext_warning' => "Il ha $1 {{PLURAL:$1|pagina|paginas}} que contine ja le nove texto, '$2'.
 Si tu face iste reimplaciamento, tu non potera distinguer inter tu reimplaciamentos e iste texto ja existente.
 Continuar le reimplaciamento?",
@@ -470,6 +472,7 @@ Continuar le reimplaciamento?",
 	'replacetext_continue' => 'Continuar',
 	'replacetext_cancel' => '(Clicca le button "Retro" in tu navigator pro cancellar le operation.)',
 	'replacetext_editsummary' => "Reimplaciamento de texto - '$1' per '$2'",
+	'right-replacetext' => 'Facer reimplaciamentos de texto in le wiki integre',
 );
 
 /** Japanese (日本語)
