@@ -82,6 +82,11 @@ $aliases['hu'] = array(
 	'ReplaceText' => array( 'Szöveg csere' ),
 );
 
+/** Interlingua (Interlingua) */
+$aliases['ia'] = array(
+	'ReplaceText' => array( 'Reimplaciar texto' ),
+);
+
 /** Japanese (日本語) */
 $aliases['ja'] = array(
 	'ReplaceText' => array( '文字列の置換' ),
