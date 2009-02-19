@@ -143,6 +143,20 @@ $messages['bg'] = array(
 	'replacetext_editsummary' => "Заместване на текст - '$1' на '$2'",
 );
 
+/** Bosnian (Bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'replacetext' => 'Zamijeni tekst',
+	'replacetext_originaltext' => 'Prvobitni tekst',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Slijedeća stranica|Slijedeće stranice}} se ne mogu premjestiti:',
+	'replacetext_invertselections' => 'Preokreni odabir',
+	'replacetext_replace' => 'Zamijeni',
+	'replacetext_noreplacement' => "Nije pronađena nijedna stranica koja sadrži '$1'.",
+	'replacetext_return' => 'Nazad na obrazac.',
+	'replacetext_continue' => 'Nastavi',
+);
+
 /** Czech (Česky)
  * @author Matěj Grabovský
  */
