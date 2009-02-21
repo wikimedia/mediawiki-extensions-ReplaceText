@@ -780,7 +780,7 @@ Czy kontynuować zastępowanie?',
 	'replacetext_continue' => 'Kontynuuj',
 	'replacetext_cancel' => '(Wciśnij klawisz „Wstecz” w przeglądarce, aby przerwać operację.)',
 	'replacetext_editsummary' => 'zamienił w treści „$1” na „$2”',
-	'right-replacetext' => 'Wykonaj zastępowanie tekstu w całej wiki',
+	'right-replacetext' => 'Wykonywanie zastępowania tekstu w całej wiki',
 );
 
 /** Portuguese (Português)
