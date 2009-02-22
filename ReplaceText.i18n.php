@@ -255,6 +255,9 @@ $messages['eo'] = array(
  */
 $messages['es'] = array(
 	'replacetext' => 'Reemplazar texto',
+	'replacetext_originaltext' => 'Texto original',
+	'replacetext_movepages' => 'Reemplazar texto en títulos de página también, cuando sea posible',
+	'replacetext_invertselections' => 'Invertir selecciones',
 	'replacetext_replace' => 'Reemplazar',
 	'replacetext_continue' => 'Continuar',
 );
@@ -597,11 +600,14 @@ $messages['lb'] = array(
 	'replacetext_replacementtext' => 'Neien Text',
 	'replacetext_movepages' => 'Text och an den Titele vun de Säiten ersetzen, wa méiglech',
 	'replacetext_choosepages' => 'Wielt w.e.g. d\'{{PLURAL:$3|Säit op däer|Säiten op denen}} Dir "$1" duerch "$2" ersetze wëllt:',
+	'replacetext_choosepagesformove' => 'Den Text am Numm vun {{PLURAL:$1|dëser Säit|dëse Säiten}} ersetzen:',
 	'replacetext_cannotmove' => 'Dës {{PLURAL:$1|Säit kann|Säite kënne}} net geréckelt ginn:',
+	'replacetext_savemovedpages' => 'Fir geréckelt Säiten den alen Titel als Viruleedung op den neien Titel späicheren',
 	'replacetext_invertselections' => 'Auswiel ëmdréinen',
 	'replacetext_replace' => 'Ersetzen',
 	'replacetext_success' => "'$1' gëtt duerch '$2' op $3 {{PLURAL:$3|Säit|Säiten}} ersat.",
 	'replacetext_noreplacement' => "Et goufe keng Säite mam Text '$1' fonnt.",
+	'replacetext_return' => 'Zréck op de Formulaire',
 	'replacetext_blankwarning' => 'Well den Textdeel mat dem de gesichten Text ersat gi soll eidel ass, kann dës Aktioun net réckgängeg gemaach ginn; wëllt Dir awer weiderfueren?',
 	'replacetext_continue' => 'Weiderfueren',
 	'replacetext_cancel' => '(Klickt op de Knäppchen "Zréck" an Ärem Browser fir d\'Operatioun ofzebriechen)',
