@@ -1032,22 +1032,31 @@ $messages['vo'] = array(
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Roc michael
+ * @author Sheepy
  */
 $messages['zh-hant'] = array(
 	'replacetext' => '取代文字',
 	'replacetext-desc' => '提供[[Special:ReplaceText|特殊頁面]]以利管理員以「尋找及取代」的方式更改所有文章頁面內的內容。',
-	'replacetext_docu' => '取代儲存在此Wiki系統內所有頁面上的文字字串，請將「原始文字」及「取代的文字」分別填入下面的兩個欄位之中，按下「取代按鈕」後生效，您所作的修改會顯示在「歷史」頁面上，以對您自己編輯行為負責。',
-	'replacetext_note' => '注意：在所有討論頁面及其他系統的計劃頁面上的文字不會被修改，此外，頁面名稱裡的文字亦不會被修改。',
+	'replacetext_docu' => '要取代此維基內所有頁面文字的字串，請將「原始文字」及「取代的文字」分別填入下面的兩個欄位之中，然後按「繼續」。接下來所有內含原始文字的頁面會被列出，你可以選擇要在那一些頁面進行取代。頁面的改動歷史會顯示你是負責進行這次改動的用戶。',
+	'replacetext_note' => '注意：討論頁面及計劃頁面上的文字不會被修改。',
 	'replacetext_originaltext' => '原始文字',
 	'replacetext_replacementtext' => '取代文字',
+	'replacetext_movepages' => '如果可以的話，也取代頁面名稱的字串。',
+	'replacetext_choosepages' => '請選擇你想將「$1」取代成「$2」的頁面。',
+	'replacetext_choosepagesformove' => '對以下頁面的名稱進行取代：',
+	'replacetext_cannotmove' => '以下頁面無法被移動：',
+	'replacetext_savemovedpages' => '保留被移動的頁面的舊名字，將它們重導向到新名字。',
+	'replacetext_invertselections' => '倒選',
 	'replacetext_replace' => '取代',
-	'replacetext_success' => '已在 $3 個檔案內的「$1」取代為「$2」。',
+	'replacetext_success' => '已將 $3 個頁面內的「$1」取代為「$2」。',
 	'replacetext_noreplacement' => '因無任何頁面內含有「$1」。',
-	'replacetext_warning' => '僅有$1檔案內包含取代文字「$2」，如果您執行了取代作業，則可能會造成兩個相同字串相連，而難以分開，您要繼續執行取代作業嗎？',
+	'replacetext_return' => '返回表格。',
+	'replacetext_warning' => '有 $1 個頁面已經包含文字「$2」。如果您執行了取代作業，被替代的文字會跟它們混在一起，變得難以分開原來的文字和被替代的文字。要繼續執行取代作業嗎？',
 	'replacetext_blankwarning' => '因為取代字串是空白的，這將造成難以復原的結果！您要繼續嗎？',
 	'replacetext_continue' => '繼續',
-	'replacetext_cancel' => '(按下 "返回" 按鈕以取消本次操作)',
+	'replacetext_cancel' => '(按下瀏覽器上的 "返回" 按鈕可以取消操作)',
 	'replacetext_editsummary' => '取代文字 - 「$1」 取代為 「$2」',
+	'right-replacetext' => '對整個維基進行文字替換。',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
@@ -1064,7 +1073,6 @@ $messages['zh-tw'] = array(
 	'replacetext_replace' => '取代',
 	'replacetext_success' => '已將 $3 個頁面內的「$1」取代為「$2」。',
 	'replacetext_noreplacement' => '因無任何頁面內含有「$1」。',
-	'replacetext_warning' => '僅有$1檔案內包含取代文字「$2」，如果您執行了取代作業，則可能會造成兩個相同字串相連，而難以分開，您要繼續執行取代作業嗎？',
 	'replacetext_blankwarning' => '因為取代字串是空白的，這將造成難以復原的結果！您要繼續嗎？',
 	'replacetext_continue' => '繼續',
 	'replacetext_cancel' => '(按下 "返回" 按鈕以取消本次操作)',
