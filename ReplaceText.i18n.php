@@ -612,10 +612,14 @@ $messages['lb'] = array(
 	'replacetext_success' => "'$1' gëtt duerch '$2' op $3 {{PLURAL:$3|Säit|Säiten}} ersat.",
 	'replacetext_noreplacement' => "Et goufe keng Säite mam Text '$1' fonnt.",
 	'replacetext_return' => 'Zréck op de Formulaire',
+	'replacetext_warning' => "Et gëtt schonn {{PLURAL:$1|eng Säit op däer|$1 Säiten op deenen}} wou d'Zeecherei '$2' schonn drann ass.
+Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säiten op deenen Dir Ännerunge gemaach huet vun de Säiten z'ënnerscheeden wou elo d'Zeecherei '$2' schonn drann ass.
+Wëllt Dir mat der Ännerung weiderfueren?",
 	'replacetext_blankwarning' => 'Well den Textdeel mat dem de gesichten Text ersat gi soll eidel ass, kann dës Aktioun net réckgängeg gemaach ginn; wëllt Dir awer weiderfueren?',
 	'replacetext_continue' => 'Weiderfueren',
 	'replacetext_cancel' => '(Klickt op de Knäppchen "Zréck" an Ärem Browser fir d\'Operatioun ofzebriechen)',
 	'replacetext_editsummary' => "Text ersat - '$1' duerch '$2'",
+	'right-replacetext' => 'Ersetzen vun enger Rei vun Textzeechen op der ganzer Wiki',
 );
 
 /** Malayalam (മലയാളം)
