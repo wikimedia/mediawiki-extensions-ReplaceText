@@ -124,6 +124,13 @@ $messages['arz'] = array(
 	'right-replacetext' => 'القيام باستبدال للسلاسل فى الويكى بأكمله',
 );
 
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+ * @author Jim-by
+ */
+$messages['be-tarask'] = array(
+	'replacetext' => 'Замяніць тэкст',
+);
+
 /** Bulgarian (Български)
  * @author DCLXVI
  */
@@ -571,7 +578,7 @@ fun dä Sigge faßjehallde als dä Schriiver, dä et jemaat hät.',
 	'replacetext_movepages' => 'Donn dä Täx en de Sigge ier Tittel ußtuusche, wan et jeiht',
 	'replacetext_choosepages' => 'Don {{PLURAL:$3|en Sigg|die Sigge|nix aan Sigge}} ußsöke, en dänne De „$1“ jääje „$2“ jetuusch han wells:',
 	'replacetext_choosepagesformove' => 'Donn dä Täx en hee dä {{PLURAL:$1|Sigg|Sigge|nix}} ußtuusche:',
-	'replacetext_cannotmove' => 'Hee die {{PLURAL:$3|Sigg kann|Sigge künne|nix kann}} nit ömjenannt wäde:',
+	'replacetext_cannotmove' => 'Hee die {{PLURAL:$1|Sigg kann|Sigge künne|nix kann}} nit ömjenannt wäde:',
 	'replacetext_savemovedpages' => 'Donn der ahle Tittel faßallde un en Ömleidung op de neue druß maache,
 wann en Sigg ömjenannt wood.',
 	'replacetext_invertselections' => 'De Ußwahl ömdrieje',
