@@ -291,11 +291,21 @@ $messages['eo'] = array(
  */
 $messages['es'] = array(
 	'replacetext' => 'Reemplazar texto',
+	'replacetext_note' => 'Nota: Esto no reemplazará texto en las páginas de "discusión" y páginas de proyectos.',
 	'replacetext_originaltext' => 'Texto original',
+	'replacetext_replacementtext' => 'Texto de reemplazo',
 	'replacetext_movepages' => 'Reemplazar texto en títulos de página también, cuando sea posible',
+	'replacetext_choosepages' => "Por favor seleccione las {{PLURAL:$3|página|páginas}} para las cuales desea reemplazar '$1' con '$2':",
+	'replacetext_choosepagesformove' => 'Reemplazar texto en los {{PLURAL:$1|nombre de la siguiente página|nombres de las siguientes páginas}}:',
+	'replacetext_cannotmove' => 'Las siguientes {{PLURAL:$1|página|páginas}} no pueden ser movidas:',
+	'replacetext_savemovedpages' => 'Para páginas movidas, grabar los títulos antiguos como redirecciones a los nuevos títulos',
 	'replacetext_invertselections' => 'Invertir selecciones',
 	'replacetext_replace' => 'Reemplazar',
+	'replacetext_success' => "'$1' será reemplazado con '$2' en $3 {{PLURAL:$3|página|páginas}}.",
+	'replacetext_return' => 'Retornar al formulario.',
 	'replacetext_continue' => 'Continuar',
+	'replacetext_cancel' => '(Haga click en el botón "retroceder" en su navegador para cancelar la operación.)',
+	'replacetext_editsummary' => "Texto reemplaza - '$1' a '$2'",
 );
 
 /** Basque (Euskara)
