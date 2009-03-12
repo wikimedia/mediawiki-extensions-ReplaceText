@@ -81,7 +81,7 @@ $messages['ar'] = array(
 	'replacetext_replace' => 'استبدل',
 	'replacetext_success' => "'$2' سيتم استبدالها ب'$1' في $3 {{PLURAL:$3|صفحة|صفحة}}.",
 	'replacetext_noreplacement' => "لا صفحات تم العثور عليها تحتوي على السلسلة '$1'.",
-	'replacetext_return' => 'رجوع إلى الإستمارة',
+	'replacetext_return' => 'رجوع إلى الاستمارة',
 	'replacetext_warning' => "توجد {{PLURAL:$1|$1 صفحة|$1 صفحة}} تحتوي بالفعل على سلسلة الاستبدال، '$2'.
 لو أنك قمت بهذا الاستبدال فلن تصبح قادرا على فصل استبدالاتك عن هذه السلاسل.
 استمرار مع الاستبدال؟",
@@ -819,7 +819,7 @@ $messages['pl'] = array(
 	'replacetext' => 'Zastąp tekst',
 	'replacetext-desc' => 'Dodaje [[Special:ReplaceText|stronę specjalną]], pozwalającą administratorom na wyszukanie i zamianę zadanego tekstu w treści wszystkich stron wiki',
 	'replacetext_docu' => 'Możesz zastąpić jeden ciąg znaków innym, w treści wszystkich stron tej wiki. W tym celu wprowadź dwa fragmenty tekstu i naciśnij „Kontynuuj”. Zostanie pokazana lista stron, które zawierają wyszukiwany tekst. Będziesz mógł wybrać te strony, na których chcesz ten tekst zamienić na nowy. W historii zmian stron, do opisu autora edycji, zostanie użyta Twoja nazwa użytkownika.',
-	'replacetext_note' => 'Uwaga: nie zastąpi tekstu na stronach dyskusji i stronach projektu.',
+	'replacetext_note' => 'Uwaga – zastępowanie nie dotyczy tekstów na stronach dyskusji i stronach projektu.',
 	'replacetext_originaltext' => 'Znajdź',
 	'replacetext_replacementtext' => 'Zamień na',
 	'replacetext_movepages' => 'Zastąp tekst jeśli to możliwe także w tytułach stron',
