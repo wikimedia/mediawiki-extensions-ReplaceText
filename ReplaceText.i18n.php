@@ -811,6 +811,7 @@ Volètz contunhar aquestas substitucions ?",
 
 /** Polish (Polski)
  * @author Derbeth
+ * @author Leinad
  * @author Maikking
  * @author Matma Rex
  * @author Sp5uhe
@@ -826,10 +827,12 @@ $messages['pl'] = array(
 	'replacetext_choosepages' => 'Wybierz {{PLURAL:$3|stronę|strony}}, na których chcesz „$1” zastąpić „$2”',
 	'replacetext_choosepagesformove' => 'Zastąp tekst w {{PLURAL:$1|nazwie strony|nazwach następujących stron:}}',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Poniższa strona nie może zostać przeniesiona|Poniższe strony nie mogą zostać przeniesione}}:',
+	'replacetext_savemovedpages' => 'Po przeniesieniu stron utwórz pod starymi tytułami przekierowania do nowych tytułów',
 	'replacetext_invertselections' => 'Odwróć zaznaczenie',
 	'replacetext_replace' => 'Zastąp',
 	'replacetext_success' => '„$1” zostanie zastąpiony przez „$2” na $3 {{PLURAL:$3|stronie|stronach}}.',
 	'replacetext_noreplacement' => 'Nie znaleziono stron zawierających tekst „$1”.',
+	'replacetext_return' => 'Powrót do formularza.',
 	'replacetext_warning' => '{{PLURAL:$1|Jest $1 strona|Są $1 strony|Jest $1 stron}} zawierających tekst „$2”, którym chcesz zastępować. Jeśli wykonasz zastępowanie nie będzie możliwe odseparowanie tych stron od wykonanych zastąpień.
 Czy kontynuować zastępowanie?',
 	'replacetext_blankwarning' => 'Ponieważ ciąg znaków, którym ma być wykonane zastępowanie jest pusty, operacja będzie nieodwracalna. Czy kontynuować?',
