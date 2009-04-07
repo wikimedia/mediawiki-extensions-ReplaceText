@@ -28,9 +28,9 @@ class ReplaceText extends SpecialPage {
 		global $wgRequest, $wgContLang;
 		$target_str = $wgRequest->getVal('target_str');
 		$replacement_str = $wgRequest->getVal('replacement_str');
-		// escape quotes for inclusion in HTML
-		$target_str = str_replace('"', '&quot;', $target_str);
-		$replacement_str = str_replace('"', '&quot;', $replacement_str);
+		// HTML-escape strings before passing them in the form
+		$target_str = htmlentities($target_str);
+		$replacement_str = htmlentities($replacement_str);
 		$continue_label = wfMsg('replacetext_continue');
 		$cancel_label = wfMsg('replacetext_cancel');
 		// set 'title' as hidden field, in case there's no URL niceness
@@ -227,9 +227,9 @@ END;
 		$choose_pages_for_move_label = wfMsgExt( 'replacetext_choosepagesformove', array( 'escape', 'parsemag' ), count( $titles_for_move ) );
 		$cannot_move_pages_label = wfMsgExt( 'replacetext_cannotmove', array( 'escape', 'parsemag' ), count( $unmoveable_titles ) );
 		$skin = $wgUser->getSkin();
-		// escape quotes for inclusion in HTML
-		$target_str = str_replace('"', '&quot;', $target_str);
-		$replacement_str = str_replace('"', '&quot;', $replacement_str);
+		// HTML-escape strings before passing them in the form
+		$target_str = htmlentities($target_str);
+		$replacement_str = htmlentities($replacement_str);
 		$text =<<<END
 	<p>$choose_pages_label</p>
 	<form id="choose_pages" method="post">
