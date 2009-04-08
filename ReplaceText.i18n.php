@@ -641,6 +641,7 @@ Wells De trozdämm wigger maache?',
 $messages['lb'] = array(
 	'replacetext' => 'Text ersetzen',
 	'replacetext-desc' => "Weist eng [[Special:ReplaceText|Spezialsäit]] déi Administrateuren et erlaabt eng Rei vun Textzeechen op alle Contenu-säiten vun enger Wiki ze gesinn an z'ersetzen",
+	'replacetext_docu' => "Fir en Text duerch en aneren Text op allen Inhaltssäiten vun dëser Wiki z'ersetzen, gitt w.e.g. déi zwee Texter hei ana klickt op 'Weider'. Dir gesitt dann eng Lëscht vu Säiten op denen de gesichten Text dran ass, an Dir kënnt déi eraussichen op denen Dir den Text ersetze wëllt. Äre Numm steet an der Lëscht vun de Versiounen als Auteur vun all denen Ännerungen.",
 	'replacetext_note' => "'''Oppassen''': Dëst ersetzt net den Text op \"Diskussiounssäiten\" a Projetssäiten.",
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Neien Text',
