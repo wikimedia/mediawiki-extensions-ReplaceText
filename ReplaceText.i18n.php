@@ -423,6 +423,35 @@ Quere continuar coa substitución?',
 	'right-replacetext' => 'Facer substitucións de cordas no wiki enteiro',
 );
 
+/** Swiss German (Alemannisch)
+ * @author Als-Holder
+ */
+$messages['gsw'] = array(
+	'replacetext' => 'Täxt ersetze',
+	'replacetext-desc' => 'Ergänzt e [[Special:ReplaceText|Spezialsyte]], wu s Ammanne megli macht, e wältwyti Täxt-suechen-un-ersetze-Operation in allene Inhaltsyte vum Wiki durzfiere',
+	'replacetext_docu' => 'Go ne Täxt dur e andere Täxt uf allene Inhaltssyte z ersetze, gib di bede Täxtteil doo yy un druck uf Ersetze-Schaltflächi. Dir wird derno ne Lischt vu dr Syte zeigt, wu s dr gsuecht Täxt din het, un Du chasch die uuswehle, wu Du dr Täxt witt din ersetze. Dyy Benutzername wird in d Versionsgschicht ufgnuh',
+	'replacetext_note' => 'Obacht: e wird kei Täxt uf Diskussions- un Projäktsyten uustuscht.',
+	'replacetext_originaltext' => 'Originaltäxt',
+	'replacetext_replacementtext' => 'Neje Täxt',
+	'replacetext_movepages' => 'Ersetz Täxt au in Sytetitel, wänn s goht',
+	'replacetext_choosepages' => 'Bitte d {{PLURAL:$3|Syten|Syten}} uuswehle, wu Du „$1“ dur „$2“ wetsch ersetzen:',
+	'replacetext_choosepagesformove' => 'Ersetz Täxt {{PLURAL:$1|im Name vu däre Syte|in dr Näme vu däne Syte}}:',
+	'replacetext_cannotmove' => 'Die {{PLURAL:$1|Syte cha|Syte chenne}} nit verschobe wäre:',
+	'replacetext_savemovedpages' => 'E Wyterleitig fir e verschobeni Syten aalege',
+	'replacetext_invertselections' => 'Uuswahl umchehre',
+	'replacetext_replace' => 'Ersetze',
+	'replacetext_success' => '„$1“ wird dur „$2“ in $3 {{PLURAL:$3|Syten|Syten}} ersetzt.',
+	'replacetext_noreplacement' => 'S isch kei Syte gfunde wore, wu s dr Täxt „$1“ din het.',
+	'replacetext_return' => 'Zrugg zum Formular.',
+	'replacetext_warning' => 'In $1 {{PLURAL:$1|Syte het s|Seite het s}} dr Täxtteil „$2“, wu ersetzt soll wäre, scho.
+E Trännig vu dr Ersetzige mit dr Täxtteil, wu s scho het, sich nit megli. Mechtsch einewäg wytermache?',
+	'replacetext_blankwarning' => 'Dr Täxtteil, wu soll ersetzt wären, isch läär. D Operation cha nit ruckgängig gmacht wäre, einewäg wytermache?',
+	'replacetext_continue' => 'Wytermache',
+	'replacetext_cancel' => '(Druck uf d „Zrugg“-Schaltflächi go d Operation abbräche.)',
+	'replacetext_editsummary' => 'Täxtersetzig - „$1“ dur „$2“',
+	'right-replacetext' => 'Mach e Täxtersetzig fir s gsamt Wiki',
+);
+
 /** Hebrew (עברית)
  * @author Rotemliss
  * @author YaronSh
