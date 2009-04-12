@@ -269,6 +269,13 @@ Coš dalej wuměniś?",
 	'right-replacetext' => 'Tekst na cełem wikiju wuměniś',
 );
 
+/** Greek (Ελληνικά)
+ * @author Consta
+ */
+$messages['el'] = array(
+	'replacetext_continue' => 'Συνέχεια',
+);
+
 /** Esperanto (Esperanto)
  * @author Yekrats
  */
