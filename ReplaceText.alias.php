@@ -87,6 +87,11 @@ $aliases['ia'] = array(
 	'ReplaceText' => array( 'Reimplaciar texto' ),
 );
 
+/** Italian (Italiano) */
+$aliases['it'] = array(
+	'ReplaceText' => array( 'SostituisciTesto' ),
+);
+
 /** Japanese (日本語) */
 $aliases['ja'] = array(
 	'ReplaceText' => array( '文字列の置換' ),
