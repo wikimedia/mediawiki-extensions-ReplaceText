@@ -992,12 +992,13 @@ $messages['sk'] = array(
 
 /** Serbian Cyrillic ekavian (ћирилица)
  * @author Sasa Stefanovic
+ * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
 	'replacetext_originaltext' => 'Оригинални текст',
 	'replacetext_replacementtext' => 'Текст за преснимавање',
 	'replacetext_replace' => 'Пресними',
-	'replacetext_success' => "Преснимљен '$1' са '$2' на $3 страница.",
+	'replacetext_success' => "'$1' ће бити замењено са '$2' у $3 {{PLURAL:$3|страни|страна}}.",
 	'replacetext_continue' => 'Настави',
 );
 
