@@ -132,7 +132,7 @@ $messages['be-tarask'] = array(
 	'replacetext' => 'Замяніць тэкст',
 	'replacetext-desc' => 'Дадае [[Special:ReplaceText|спэцыяльную старонку]], якая дазваляе адміністратарам глябальны пошук і замену тэксту ва усіх старонках вікі',
 	'replacetext_docu' => "Каб замяніць адзін радок на іншы ва ўсіх звычайных старонках {{GRAMMAR:родны|{{SITENAME}}}}, увядзіце два радкі тут, а потым націсьніце 'Працягваць'. Будзе паказаны сьпіс старонак, якія ўтрымліваюць тэкст, які Вы шукалі, і Вы зможаце выбраць старонкі, дзе Вы жадаеце зрабіць замену. Ваша імя будзе запісанае ў гісторыю старонкі, таму што ўдзельнікі адказныя за ўсе зробленыя зьмены.",
-	'replacetext_note' => 'Увага: замена не адбудзецца на старонках размоваў і службовых старонках праекту.',
+	'replacetext_note' => 'Увага: замена не адбудзецца на старонках абмеркаваньняў і службовых старонках праекту.',
 	'replacetext_originaltext' => 'Арыгінальны тэкст',
 	'replacetext_replacementtext' => 'Тэкст на замену',
 	'replacetext_movepages' => 'Замяніць тэкст таксама ў назвах старонак, калі гэта магчыма',
@@ -826,9 +826,9 @@ $messages['oc'] = array(
 	'replacetext_note' => 'Nòta : aquò remplaçarà pas lo tèxte dins las paginas de discussion ni mai dins las paginas « projècte ».',
 	'replacetext_originaltext' => 'Tèxte original',
 	'replacetext_replacementtext' => 'Tèxte novèl',
-	'replacetext_movepages' => 'Remplaçar lo tèxt dins lo títol de las paginas, se possible',
+	'replacetext_movepages' => 'Remplaçar lo tèxte dins lo títol de las paginas, se possible',
 	'replacetext_choosepages' => 'Seleccionatz {{PLURAL:$3|la pagina|las paginas}} dins {{PLURAL:$3|la quala|las qualas}} volètz remplaçar « $1 » per « $2 » :',
-	'replacetext_choosepagesformove' => 'Remplaçar lo tèxt dins {{PLURAL:$1|lo nom de las pagina seguenta|los noms de las paginas seguentas}} :',
+	'replacetext_choosepagesformove' => 'Remplaçar lo tèxte dins {{PLURAL:$1|lo nom de las pagina seguenta|los noms de las paginas seguentas}} :',
 	'replacetext_cannotmove' => '{{PLURAL:$1|La pagina seguenta a pas pogut èsser renomenada|Las paginas seguentas an pas pogut èsser renomenadas}} :',
 	'replacetext_savemovedpages' => 'Per las paginas desplaçadas, enregistratz los títols ancians coma redireccions cap als títols novèls.',
 	'replacetext_invertselections' => 'Inversar las seleccions',
@@ -843,7 +843,7 @@ Volètz contunhar aquestas substitucions ?",
 	'replacetext_continue' => 'Contunhar',
 	'replacetext_cancel' => "(Clicatz sul boton  « Retorn » de vòstre navigador per anullar l'operacion.)",
 	'replacetext_editsummary' => 'Remplaçament del tèxte — « $1 » per « $2 »',
-	'right-replacetext' => 'Far de remplaçaments de tèxt dins tot lo wiki',
+	'right-replacetext' => 'Far de remplaçaments de tèxte dins tot lo wiki',
 );
 
 /** Polish (Polski)
@@ -957,30 +957,30 @@ $messages['ro'] = array(
  */
 $messages['ru'] = array(
 	'replacetext' => 'Заменить текст',
-	'replacetext-desc' => 'Добавляет специальную страницу [[Special:ReplaceText|special page]] которая позволяет администраторам осуществлять глобальную замену указанного текста во всех стандартных страницах вики',
-	'replacetext_docu' => "Для того чтобы заменить один текст на другой во всех обычных страницах вики вам надо ввести желаемый текст здесь и нажать на кнопку \\'Продолжить\\'. После этого вам будет предложен список всех страниц, содержащих заменяемый текст, в котором вы можете выбрать все или по-отдельности каждую. Ваше имя появится в истории страниц, в которых осуществлялась замена текста, как лицо отвечающее за внесенные изменения.",
-	'replacetext_note' => 'Внимание: замена текста не произойдет на страницах обсуждений и служебных страницах.',
+	'replacetext-desc' => 'Добавляет [[Special:ReplaceText|служебную страницу]], позволяющую администраторам осуществлять повсеместную замену указанного текста на всех обычных страницах вики',
+	'replacetext_docu' => 'Для того, чтобы заменить один текст на другой во всех обычных страницах вики, вам необходимо ввести желаемый текст здесь и нажать на кнопку «Продолжить». После этого вам будет предложен список всех страниц, содержащих заменяемый текст, и вы сможете из них те, в которых нужно произвести замены. Ваше имя появится в истории страниц, в которых произойдёт замена текста, как лицо отвечающее за внесённые изменения.',
+	'replacetext_note' => 'Замечание. Замена текста не производится на страницах обсуждений и страницах проекта.',
 	'replacetext_originaltext' => 'Оригинальный текст',
 	'replacetext_replacementtext' => 'Текст для замены',
-	'replacetext_movepages' => 'Так же, где возможно, заменить текст в названиях страниц',
-	'replacetext_choosepages' => "Пожалуйста выберите {{PLURAL:$3|страницу в которой|страницы в которых}} вы хотите осуществить замену с '$1' на '$2':",
-	'replacetext_choosepagesformove' => 'Заменить текст в {{PLURAL:$1|название следующей страницы|названиях следующих страниц}}:',
-	'replacetext_cannotmove' => 'Следующ{{PLURAL:$1|ая страница|ие страницы}} не могут быть перемещены:',
-	'replacetext_savemovedpages' => 'Сохранить старые названия в виде ссылок на новые, для страниц, которые были перемещены',
+	'replacetext_movepages' => 'Заменить также текст в названиях страниц, если это возможно',
+	'replacetext_choosepages' => 'Пожалуйста, выберите {{PLURAL:$3|страницу, в которой|страницы, в которых}} вы хотите осуществить замену «$1» на «$2»:',
+	'replacetext_choosepagesformove' => 'Заменить текст в {{PLURAL:$1|названии следующей страницы|названиях следующих страниц}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Следующая страница не может быть переименована|Следующие страницы не могут быть переименованы}}:',
+	'replacetext_savemovedpages' => 'Сохранить для переименовываемых страниц старые названия как перенаправления на новые',
 	'replacetext_invertselections' => 'Инвертировать выбор',
 	'replacetext_replace' => 'Заменить',
-	'replacetext_success' => "'$1' будет заменен на '$2' в $3 {{PLURAL:$3|странице|страницах}}.",
-	'replacetext_noreplacement' => "Не было найдено ни одной страницы содержащей '$1'.",
-	'replacetext_return' => 'Вернуться обратно к форме.',
-	'replacetext_warning' => "Имеется {{PLURAL:$1|одна страница содержащая|$1 страниц содержащих}} текст для замены, '$2'.
-Если вы продолжите замену, то не сможете отделить уже существующие записи от новых, которые появятся после замены.
-Продолжить замену?",
-	'replacetext_blankwarning' => 'Из-за того что текст для замены пустой, операция по замене не сможет быть отменена.
-Вы точно хотите продолжить?',
+	'replacetext_success' => '«$1» будет заменён на «$2» на $3 {{PLURAL:$3|странице|страницах|страницах}}.',
+	'replacetext_noreplacement' => 'Не найдено ни одной страницы, содержащей «$1».',
+	'replacetext_return' => 'Вернуться к форме.',
+	'replacetext_warning' => 'Найдена {{PLURAL:$1|$1 страница, содержащая|$1 страницы, содержащие|$1 страниц, содержащих}} текст для замены, «$2».
+Если вы продолжите операцию замены, то не сможете отделить уже существующие записи от тех, которые появятся после замены.
+Продолжить замену?',
+	'replacetext_blankwarning' => 'Из-за того, что текст для замены пуст, операция по замене не сможет быть отменена.
+Вы хотите продолжить?',
 	'replacetext_continue' => 'Продолжить',
-	'replacetext_cancel' => '(Нажмите кнопку "Назад" в вашем веб браузере для отмены текущей операции.)',
-	'replacetext_editsummary' => "Текст заменён — с '$1' на '$2'",
-	'right-replacetext' => 'Заменить текст во всей вики',
+	'replacetext_cancel' => '(Нажмите кнопку «Назад» в вашем браузере для отмены текущей операции.)',
+	'replacetext_editsummary' => 'Замена текста — «$1» на «$2»',
+	'right-replacetext' => 'Выполнение замен текста во всей вики',
 );
 
 /** Slovak (Slovenčina)
