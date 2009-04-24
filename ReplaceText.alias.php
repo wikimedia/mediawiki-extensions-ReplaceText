@@ -52,6 +52,11 @@ $aliases['fr'] = array(
 	'ReplaceText' => array( 'Remplacer texte', 'RemplacerTexte' ),
 );
 
+/** Franco-Provençal (Arpetan) */
+$aliases['frp'] = array(
+	'ReplaceText' => array( 'Remplaciér lo tèxte', 'RemplaciérLoTèxte' ),
+);
+
 /** Galician (Galego) */
 $aliases['gl'] = array(
 	'ReplaceText' => array( 'Substituír o texto' ),
