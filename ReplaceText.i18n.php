@@ -41,6 +41,7 @@ Do you want to continue?',
 );
 
 /** Message documentation (Message documentation)
+ * @author Darth Kule
  * @author Fryed-peach
  * @author McMonster
  * @author Nike
@@ -57,6 +58,7 @@ $messages['qqq'] = array(
 	'replacetext_choosepages' => 'Displayed over the list of pages where the given text was found.',
 	'replacetext_replace' => 'Label of the button, which triggers the begin of replacment.',
 	'replacetext_continue' => '{{Identical|Continue}}',
+	'right-replacetext' => '{{doc-right}}',
 );
 
 /** Arabic (العربية)
@@ -572,6 +574,34 @@ Continuar le reimplaciamento?",
 	'replacetext_cancel' => '(Clicca le button "Retro" in tu navigator pro cancellar le operation.)',
 	'replacetext_editsummary' => "Reimplaciamento de texto - '$1' per '$2'",
 	'right-replacetext' => 'Facer reimplaciamentos de texto in le wiki integre',
+);
+
+/** Italian (Italiano)
+ * @author Darth Kule
+ */
+$messages['it'] = array(
+	'replacetext' => 'Sostituzione testo',
+	'replacetext-desc' => 'Fornisce una [[Special:ReplaceText|pagina speciale]] per permettere agli amministratori di effettuare una ricerca e sostituzione globale di testo su tutte le pagine di contenuti di un sito',
+	'replacetext_docu' => "Per sostituire una stringa di testo con un'altra su tutte le pagine del sito, inserire qui due pezzi di testo e poi premere 'Continua'. Verrà quindi mostrato un elenco delle pagine che contengono il testo cercato, e sarà possibile scegliere quelle in cui si desidera sostituirlo. Il proprio nome verrà visualizzato nella pagina della cronologia come l'utente responsabile delle eventuali modifiche.",
+	'replacetext_note' => 'Nota: ciò non sostituirà testo nelle pagine di "Discussione" e nelle pagine relative al progetto.',
+	'replacetext_originaltext' => 'Testo originale',
+	'replacetext_replacementtext' => 'Testo sostituito',
+	'replacetext_movepages' => 'Sostituisci il testo anche nei titoli delle pagine, quando possibile',
+	'replacetext_choosepages' => "Selezionare {{PLURAL:$3|la pagina per la quale|le pagine per le quali}} si desidera sostituire '$1' con '$2':",
+	'replacetext_choosepagesformove' => 'Sostituire il testo {{PLURAL:$1|nel nome della pagina seguente|nei nomi delle pagine seguenti}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|La pagina seguente non può essere spostata|Le pagine seguenti non possono essere spostate}}:',
+	'replacetext_savemovedpages' => 'Per le pagine spostate, conservare i vecchi titoli come redirect al nuovo titolo',
+	'replacetext_invertselections' => 'Inverti selezione',
+	'replacetext_replace' => 'Sostituisci',
+	'replacetext_success' => "'$1' sarà sostituito con '$2' in $3 {{PLURAL:$3|pagina|pagine}}.",
+	'replacetext_noreplacement' => "Non sono state trovate pagine contenenti il testo '$1'.",
+	'replacetext_return' => 'Torna al modulo.',
+	'replacetext_warning' => "{{PLURAL:$1|C'è già $1 pagina che contiene|Ci sono già $1 pagine che contengono}} il testo di sostituzione, '$2'. Se si effettua questa sostituzione non si sarà in grado di separare le sostituzioni da questi testi. Continuare con la sostituzione?",
+	'replacetext_blankwarning' => "Poiché il testo di sostituzione è vuoto, l'operazione non sarà reversibile. Si desidera continuare?",
+	'replacetext_continue' => 'Continua',
+	'replacetext_cancel' => '(Fare clic sul pulsante "Indietro" nel proprio browser per annullare l\'operazione.)',
+	'replacetext_editsummary' => "Sostituzione testo - '$1' con '$2'",
+	'right-replacetext' => 'Esegue sostituzioni di testo in tutto il sito',
 );
 
 /** Japanese (日本語)
@@ -1095,6 +1125,22 @@ Naisa mo bang magpatuloy pa?',
 	'replacetext_cancel' => "(Pindutin ang pinduting \"Magbalik\" sa iyong pantingin-tingin o ''browser'' upang huwag nang maipagpatuloy ang gawain.)",
 	'replacetext_editsummary' => "Palitan ang tekso - '$1' papunta sa '$2'",
 	'right-replacetext' => 'Gumawa ng pagpapalit ng bagting sa buong wiki',
+);
+
+/** Turkish (Türkçe)
+ * @author Joseph
+ */
+$messages['tr'] = array(
+	'replacetext' => 'Metni değiştir',
+	'replacetext-desc' => 'Yöneticilere, bir vikideki tüm içerik sayfalarında bir küresel dizi bul-ve-değiştir yapmalarına izin veren bir [[Special:ReplaceText|özel sayfa]] sağlar',
+	'replacetext_originaltext' => 'Orijinal metin',
+	'replacetext_replacementtext' => 'Yerine konulacak metin',
+	'replacetext_movepages' => 'Sayfa başlıklarında da metni değiştir, mümkün olduğunda',
+	'replacetext_choosepages' => "Lütfen, '$1' yerine '$2' koymak istediğiniz {{PLURAL:$3|sayfayı|sayfaları}} seçin:",
+	'replacetext_choosepagesformove' => 'Aşağıdaki {{PLURAL:$1|sayfanın adında|sayfaların adlarında}} metni değiştir:',
+	'replacetext_cannotmove' => 'Aşağıdaki {{PLURAL:$1|sayfa|sayfalar}} taşınamaz:',
+	'replacetext_savemovedpages' => 'Taşınan sayfalar için, eski başlıkları yeni başlıklara yönlendirmeler olarak sakla',
+	'replacetext_invertselections' => 'Seçimleri ters çevir',
 );
 
 /** Vietnamese (Tiếng Việt)
