@@ -25,7 +25,7 @@ class ReplaceText extends SpecialPage {
 		$this->doSpecialReplaceText();
 	}
 
-	function displayConfirmForm( $message, $target, $replacement ) {
+	function displayConfirmForm( $message, $target, $replacement, $edit_pages, $move_pages ) {
 		global $wgOut;
 
 		$formOpts = array( 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
@@ -35,6 +35,8 @@ class ReplaceText extends SpecialPage {
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Xml::hidden( 'target', $target ) .
 			Xml::hidden( 'replacement', $replacement ) .
+			Xml::hidden( 'edit_pages', $edit_pages ) .
+			Xml::hidden( 'move_pages', $move_pages ) .
 			Xml::hidden( 'confirm', 1 )
 		);
 		$wgOut->wrapWikiMsg( '$1', $message );
@@ -99,7 +101,9 @@ class ReplaceText extends SpecialPage {
 
 			// first, check that either editing or moving pages
 			// has been selected
-			if ( ! $wgRequest->getCheck( 'edit_pages' ) && ! $wgRequest->getCheck( 'move_pages') ) {
+			$edit_pages = $wgRequest->getCheck( 'edit_pages' );
+			$move_pages = $wgRequest->getCheck( 'move_pages' );
+			if ( ! $edit_pages && ! $move_pages ) {
 				$this->showForm( 'replacetext_editormove' );
 				return;
 			}
@@ -109,32 +113,39 @@ class ReplaceText extends SpecialPage {
 			$titles_for_move = array();
 			$unmoveable_titles = array();
 
-			// if user is replacing text within pages...
-			if ( $wgRequest->getCheck( 'edit_pages' ) ) {
-				// display a page to make the user confirm the
-				// replacement, if the replacement string is
-				// either blank or found elsewhere on the wiki
-				// (since undoing the replacement would be
-				// difficult in either case)
-				if ( !$wgRequest->getCheck( 'confirm' ) ) {
+			// display a page to make the user confirm the
+			// replacement, if the replacement string is
+			// either blank or found elsewhere on the wiki
+			// (since undoing the replacement would be
+			// difficult in either case)
+			if ( !$wgRequest->getCheck( 'confirm' ) ) {
 
-					$message = false;
+				$message = false;
 
-					if ( $replacement === '' ) {
-						$message = 'replacetext_blankwarning';
-					} else {
-						$res = $this->doSearchQuery( $replacement );
-						$count = $res->numRows();
-						if ( $count ) {
-							$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $replacement );
-						}
+				if ( $replacement === '' ) {
+					$message = 'replacetext_blankwarning';
+				} elseif ( $edit_pages ) {
+					$res = $this->doSearchQuery( $replacement );
+					$count = $res->numRows();
+					if ( $count > 0 ) {
+						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $replacement );
 					}
-
-					if ( $message ) {
-						$this->displayConfirmForm( $message, $target, $replacement );
-						return;
+				} elseif ( $move_pages ) {
+					$res = $this->getMoveTitles( $target );
+					$count = $res->numRows();
+					if ( $count > 0 ) {
+						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $replacement );
 					}
 				}
+
+				if ( $message ) {
+					$this->displayConfirmForm( $message, $target, $replacement, $edit_pages, $move_pages );
+					return;
+				}
+			}
+
+			// if user is replacing text within pages...
+			if ( $edit_pages ) {
 				$res = $this->doSearchQuery( $target );
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
@@ -142,7 +153,7 @@ class ReplaceText extends SpecialPage {
 					$titles_for_edit[] = array( $title, $context );
 				}
 			}
-			if ( $wgRequest->getCheck( 'move_pages' ) ) {
+			if ( $move_pages ) {
 				$res = $this->getMoveTitles( $target );
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
@@ -157,7 +168,10 @@ class ReplaceText extends SpecialPage {
 				}
 			}
 			if ( count($titles_for_edit) == 0 && count($titles_for_move) == 0 ) {
-				$wgOut->addWikiMsg( 'replacetext_noreplacement', $target );
+				if ( $edit_pages )
+					$wgOut->addWikiMsg( 'replacetext_noreplacement', $target );
+				if ( $move_pages )
+					$wgOut->addWikiMsg( 'replacetext_nomove', $target );
 				// link back to starting form
 				$sk = $this->user->getSkin();
 				$wgOut->addHTML( '<p>' . $sk->makeKnownLinkObj( $this->getTitle(), wfMsg( 'replacetext_return' ) ) . '</p>' );
