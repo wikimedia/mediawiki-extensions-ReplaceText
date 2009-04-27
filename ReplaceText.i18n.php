@@ -510,7 +510,7 @@ $messages['hr'] = array(
 	'replacetext_replace' => 'Zamjeni',
 	'replacetext_success' => "'$1' će biti zamijenjen za '$2' na $3 {{PLURAL:$3|stranici|stranice|stranica}}.",
 	'replacetext_noreplacement' => "Nije pronađena ni jedna stranica koja sadrži '$1'.",
-	'replacetext_warning' => "Postoji {{PLURAL:$1|$1 stranica koja već sadrži|$1 stranica koje već sadrže}} zamjenski tekst, '$2'. 
+	'replacetext_warning' => "Postoji {{PLURAL:$1|$1 stranica koja već sadrži|$1 stranica koje već sadrže}} zamjenski tekst, '$2'.
 Ako napravite ovu zamjenu nećete moći odvojiti svoju zamjenu od ovog teksta. Nastaviti sa zamjenom?",
 	'replacetext_blankwarning' => 'Zato što je zamjenski tekst prazan, ovaj postupak se neće moći vratiti; nastaviti?',
 	'replacetext_continue' => 'Dalje',
@@ -1233,4 +1233,3 @@ $messages['zh-tw'] = array(
 	'replacetext_cancel' => '(按下 "返回" 按鈕以取消本次操作)',
 	'replacetext_editsummary' => '取代文字 - 「$1」 取代為 「$2」',
 );
-

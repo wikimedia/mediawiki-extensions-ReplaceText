@@ -19,7 +19,7 @@
  * @author Yaron Koren
  */
 
-if (!defined('MEDIAWIKI')) die();
+if ( !defined( 'MEDIAWIKI' ) ) die();
 
 // credits
 $wgExtensionCredits['specialpage'][] = array(
@@ -32,7 +32,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'descriptionmsg'  => 'replacetext-desc',
 );
 
-$rtgIP = dirname(__FILE__) . '/';
+$rtgIP = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['ReplaceText'] = $rtgIP . 'ReplaceText.i18n.php';
 $wgExtensionAliasesFiles['ReplaceText'] = $rtgIP . 'ReplaceText.alias.php';
 $wgJobClasses['replaceText'] = 'ReplaceTextJob';
