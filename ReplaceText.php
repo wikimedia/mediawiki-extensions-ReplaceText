@@ -15,8 +15,6 @@
  * If the replacement string is blank, or is already found in the wiki,
  * the page provides a warning prompt to the user before doing the
  * replacement, since it is not easily reversible.
- *
- * @author Yaron Koren
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
