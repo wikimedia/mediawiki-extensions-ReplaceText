@@ -23,6 +23,7 @@ if (!defined('MEDIAWIKI')) die();
 
 // credits
 $wgExtensionCredits['specialpage'][] = array(
+	'path' => __FILE__,
 	'name' => 'Replace Text',
 	'version' => '0.4.1',
 	'author' => 'Yaron Koren',
