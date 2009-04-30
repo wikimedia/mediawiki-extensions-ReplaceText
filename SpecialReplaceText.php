@@ -25,7 +25,7 @@ class ReplaceText extends SpecialPage {
 		$this->doSpecialReplaceText();
 	}
 
-	function displayConfirmForm( $message, $target, $replacement, $edit_pages, $move_pages ) {
+	function displayConfirmForm( $message ) {
 		global $wgOut;
 
 		$formOpts = array( 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
@@ -33,10 +33,10 @@ class ReplaceText extends SpecialPage {
 		$wgOut->addHTML(
 			Xml::openElement( 'form', $formOpts ) .
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Xml::hidden( 'target', $target ) .
-			Xml::hidden( 'replacement', $replacement ) .
-			Xml::hidden( 'edit_pages', $edit_pages ) .
-			Xml::hidden( 'move_pages', $move_pages ) .
+			Xml::hidden( 'target', $this->target ) .
+			Xml::hidden( 'replacement', $this->replacement ) .
+			Xml::hidden( 'edit_pages', $this->edit_pages ) .
+			Xml::hidden( 'move_pages', $this->move_pages ) .
 			Xml::hidden( 'confirm', 1 )
 		);
 		$wgOut->wrapWikiMsg( '$1', $message );
@@ -51,22 +51,24 @@ class ReplaceText extends SpecialPage {
 	function doSpecialReplaceText() {
 		global $wgUser, $wgOut, $wgRequest, $wgLang;
 
-		$target = $wgRequest->getText( 'target' );
-		$replacement = $wgRequest->getText( 'replacement' );
+		$this->target = $wgRequest->getText( 'target' );
+		$this->replacement = $wgRequest->getText( 'replacement' );
+		$this->edit_pages = $wgRequest->getCheck( 'edit_pages' );
+		$this->move_pages = $wgRequest->getCheck( 'move_pages' );
 
-		if ( $target === '' ) {
-			if ( !$wgRequest->wasPosted() ) $this->showForm( 'replacetext_docu' );
-			else $this->showForm( 'replacetext_givetarget' );
-			return;
+		if ( $wgRequest->getCheck( 'continue' ) ) {
+			if ( $this->target === '' ) {
+				$this->showForm( 'replacetext_givetarget' );
+				return;
+			}
 		}
-
 
 		if ( $wgRequest->getCheck( 'replace' ) ) {
 			$replacement_params = array();
 			$replacement_params['user_id'] = $wgUser->getId();
-			$replacement_params['target_str'] = $target;
-			$replacement_params['replacement_str'] = $replacement;
-			$replacement_params['edit_summary'] = wfMsgForContent( 'replacetext_editsummary', $target, $replacement );
+			$replacement_params['target_str'] = $this->target;
+			$replacement_params['replacement_str'] = $this->replacement;
+			$replacement_params['edit_summary'] = wfMsgForContent( 'replacetext_editsummary', $this->target, $this->replacement );
 			$replacement_params['create_redirect'] = false;
 			$replacement_params['watch_page'] = false;
 			foreach ( $wgRequest->getValues() as $key => $value ) {
@@ -92,7 +94,7 @@ class ReplaceText extends SpecialPage {
 			Job::batchInsert( $jobs );
 
 			$count =  $wgLang->formatNum( count( $jobs ) );
-			$wgOut->addWikiMsg( 'replacetext_success', $target, $replacement, $count );
+			$wgOut->addWikiMsg( 'replacetext_success', $this->target, $this->replacement, $count );
 
 			// Link back
 			$sk = $this->user->getSkin();
@@ -101,9 +103,7 @@ class ReplaceText extends SpecialPage {
 
 			// first, check that either editing or moving pages
 			// has been selected
-			$edit_pages = $wgRequest->getCheck( 'edit_pages' );
-			$move_pages = $wgRequest->getCheck( 'move_pages' );
-			if ( ! $edit_pages && ! $move_pages ) {
+			if ( ! $this->edit_pages && ! $this->move_pages ) {
 				$this->showForm( 'replacetext_editormove' );
 				return;
 			}
@@ -122,43 +122,43 @@ class ReplaceText extends SpecialPage {
 
 				$message = false;
 
-				if ( $replacement === '' ) {
+				if ( $this->replacement === '' ) {
 					$message = 'replacetext_blankwarning';
-				} elseif ( $edit_pages ) {
-					$res = $this->doSearchQuery( $replacement );
+				} elseif ( $this->edit_pages ) {
+					$res = $this->doSearchQuery( $this->replacement );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
-						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $replacement );
+						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $this->replacement );
 					}
-				} elseif ( $move_pages ) {
-					$res = $this->getMoveTitles( $target );
+				} elseif ( $this->move_pages ) {
+					$res = $this->getMatchingTitles( $this->replacement );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
-						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $replacement );
+						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $this->replacement );
 					}
 				}
 
 				if ( $message ) {
-					$this->displayConfirmForm( $message, $target, $replacement, $edit_pages, $move_pages );
+					$this->displayConfirmForm( $message );
 					return;
 				}
 			}
 
 			// if user is replacing text within pages...
-			if ( $edit_pages ) {
-				$res = $this->doSearchQuery( $target );
+			if ( $this->edit_pages ) {
+				$res = $this->doSearchQuery( $this->target );
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
-					$context = $this->extractContext( $row->old_text, $target );
+					$context = $this->extractContext( $row->old_text, $this->target );
 					$titles_for_edit[] = array( $title, $context );
 				}
 			}
-			if ( $move_pages ) {
-				$res = $this->getMoveTitles( $target );
+			if ( $this->move_pages ) {
+				$res = $this->getMatchingTitles( $this->target );
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 					// see if this move can happen
-					$new_title = Title::makeTitleSafe( $row->page_namespace, str_replace( $target, $replacement, $row->page_title ) );
+					$new_title = Title::makeTitleSafe( $row->page_namespace, str_replace( $this->target, $this->replacement, $row->page_title ) );
 					$err = $title->isValidMoveOperation( $new_title );
 					if ( $title->userCanMove( true ) && !is_array( $err ) ) {
 						$titles_for_move[] = $title;
@@ -168,35 +168,42 @@ class ReplaceText extends SpecialPage {
 				}
 			}
 			if ( count($titles_for_edit) == 0 && count($titles_for_move) == 0 ) {
-				if ( $edit_pages )
-					$wgOut->addWikiMsg( 'replacetext_noreplacement', $target );
-				if ( $move_pages )
-					$wgOut->addWikiMsg( 'replacetext_nomove', $target );
+				if ( $this->edit_pages )
+					$wgOut->addWikiMsg( 'replacetext_noreplacement', $this->target );
+				if ( $this->move_pages )
+					$wgOut->addWikiMsg( 'replacetext_nomove', $this->target );
 				// link back to starting form
 				$sk = $this->user->getSkin();
 				$wgOut->addHTML( '<p>' . $sk->makeKnownLinkObj( $this->getTitle(), wfMsg( 'replacetext_return' ) ) . '</p>' );
 			} else {
-				$this->pageListForm( $target, $replacement, $titles_for_edit, $titles_for_move, $unmoveable_titles );
+				$this->pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles );
 			}
+			return;
 		}
+
+		// if we're still here, show the starting form
+		$this->showForm( 'replacetext_docu' );
 	}
 
 	function showForm( $message ) {
 		global  $wgOut;
 		$wgOut->addHTML(
 			Xml::openElement( 'form', array( 'action' => $this->getTitle()->getFullUrl(), 'method' => 'post' ) ) .
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() )
+			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Xml::hidden( 'continue', 1 )
 		);
 		$wgOut->addWikiMsg( $message );
 		$wgOut->addWikiMsg( 'replacetext_note' );
-		$wgOut->addHTML( '<table><tr><td>' );
+		$wgOut->addHTML( '<table><tr><td style="vertical-align: top;">' );
 		$wgOut->addWikiMsg( 'replacetext_originaltext' );
 		$wgOut->addHTML( '</td><td>' );
-		$wgOut->addHTML( Xml::input( 'target', 10 ) );
-		$wgOut->addHTML( '</td></tr><tr><td>' );
+		$wgOut->addHTML( Xml::textarea( 'target', $this->target, 50, 2 ) );
+		$wgOut->addHTML( Xml::closeElement( 'textarea' ) );
+		$wgOut->addHTML( '</td></tr><tr><td style="vertical-align: top;">' );
 		$wgOut->addWikiMsg( 'replacetext_replacementtext' );
 		$wgOut->addHTML( '</td><td>' );
-		$wgOut->addHTML( Xml::input( 'replacement', 10 ) );
+		$wgOut->addHTML( Xml::textarea( 'replacement', $this->replacement, 50, 2 ) );
+		$wgOut->addHTML( Xml::closeElement( 'textarea' ) );
 		$wgOut->addHTML( '</td></tr></table>' );
 		$wgOut->addHTML(
 			Xml::checkLabel( wfMsg( 'replacetext_editpages' ), 'edit_pages', 'edit_pages', true ) . '<br />' .
@@ -206,7 +213,7 @@ class ReplaceText extends SpecialPage {
 		);
 	}
 
-	function pageListForm( $target, $replacement, $titles_for_edit, $titles_for_move, $unmoveable_titles ) {
+	function pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles ) {
 		global $wgOut, $wgLang, $wgScript;
 
 		$skin = $this->user->getSkin();
@@ -215,16 +222,16 @@ class ReplaceText extends SpecialPage {
 		$wgOut->addHTML(
 			Xml::openElement( 'form', $formOpts ) .
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Xml::hidden( 'target', $target ) .
-			Xml::hidden( 'replacement', $replacement )
+			Xml::hidden( 'target', $this->target ) .
+			Xml::hidden( 'replacement', $this->replacement )
 		);
 
-		if ( count( $titles_for_edit ) > 0 ) {
-			$js = file_get_contents( dirname( __FILE__ ) . '/ReplaceText.js' );
-			$js = '<script type="text/javascript">' . $js . '</script>';
-			$wgOut->addScript( $js );
+		$js = file_get_contents( dirname( __FILE__ ) . '/ReplaceText.js' );
+		$js = '<script type="text/javascript">' . $js . '</script>';
+		$wgOut->addScript( $js );
 
-			$wgOut->addWikiMsg( 'replacetext_choosepagesforedit', $target, $replacement,
+		if ( count( $titles_for_edit ) > 0 ) {
+			$wgOut->addWikiMsg( 'replacetext_choosepagesforedit', $this->target, $this->replacement,
 				$wgLang->formatNum( count( $titles_for_edit ) ) );
 
 			foreach ( $titles_for_edit as $title_and_context ) {
@@ -238,7 +245,7 @@ class ReplaceText extends SpecialPage {
 		}
 
 		if ( count( $titles_for_move ) > 0 ) {
-			$wgOut->addWikiMsg( 'replacetext_choosepagesformove', $target, $replacement, $wgLang->formatNum( count( $titles_for_move ) ) );
+			$wgOut->addWikiMsg( 'replacetext_choosepagesformove', $this->target, $this->replacement, $wgLang->formatNum( count( $titles_for_move ) ) );
 			foreach ( $titles_for_move as $title ) {
 				$wgOut->addHTML(
 					Xml::check( 'move-' . $title->getArticleID(), true ) .
@@ -342,17 +349,17 @@ class ReplaceText extends SpecialPage {
 		return $msg;
 	}
 
-	function getMoveTitles( $target ) {
-		$title = Title::newFromText( $target );
+	function getMatchingTitles( $str) {
+		$title = Title::newFromText( $str );
 		if ( !$title ) return array();
 
 		$dbr = wfGetDB( DB_SLAVE );
-		$target = $dbr->escapeLike( $title->getDbKey() );
+		$sql_str = $dbr->escapeLike( $title->getDbKey() );
 
 		return $dbr->select(
 			'page',
 			array( 'page_title', 'page_namespace' ),
-			"page_title like '%$target%'",
+			"page_title like '%$sql_str%'",
 			__METHOD__,
 			array( 'ORDER BY' => 'page_namespace, page_title' )
 		);
