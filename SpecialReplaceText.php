@@ -158,7 +158,9 @@ class ReplaceText extends SpecialPage {
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 					// see if this move can happen
-					$new_title = Title::makeTitleSafe( $row->page_namespace, str_replace( $this->target, $this->replacement, $row->page_title ) );
+					$cur_page_name = str_replace('_', ' ', $row->page_title);
+					$new_page_name = str_replace( $this->target, $this->replacement, $cur_page_name );
+					$new_title = Title::makeTitleSafe( $row->page_namespace, $new_page_name );
 					$err = $title->isValidMoveOperation( $new_title );
 					if ( $title->userCanMove( true ) && !is_array( $err ) ) {
 						$titles_for_move[] = $title;
