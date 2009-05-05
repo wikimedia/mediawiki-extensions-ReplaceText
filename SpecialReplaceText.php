@@ -99,6 +99,7 @@ class ReplaceText extends SpecialPage {
 			// Link back
 			$sk = $this->user->getSkin();
 			$wgOut->addHTML( $sk->link( $this->getTitle(), wfMsgHtml( 'replacetext_return' ) ) );
+			return;
 		} elseif ( $wgRequest->getCheck( 'target' ) ) { // very long elseif, look for "end elseif"
 
 			// first, check that either editing or moving pages
@@ -258,7 +259,7 @@ class ReplaceText extends SpecialPage {
 			$wgOut->addWikiMsg( 'replacetext_formovedpages' );
 			$wgOut->addHTML(
 				Xml::checkLabel( wfMsg( 'replacetext_savemovedpages' ), 'create-redirect', 'create-redirect', true ) . "<br />\n" .
-				Xml::checkLabel( wfMsg( 'replacetext_watchmovedpages' ), 'watch-pages', 'watch-pages', true )
+				Xml::checkLabel( wfMsg( 'replacetext_watchmovedpages' ), 'watch-pages', 'watch-pages', false )
 			);
 			$wgOut->addHTML( '<br />' );
 		}
@@ -371,6 +372,7 @@ class ReplaceText extends SpecialPage {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$search = $dbr->escapeLike( $search );
+		$search = str_replace('\\', '\\\\',  $search);
 		$exemptNS = $dbr->makeList( array( NS_TALK, NS_USER_TALK ) );
 
 		$tables = array( 'page', 'revision', 'text' );
