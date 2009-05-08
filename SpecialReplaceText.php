@@ -98,7 +98,7 @@ class ReplaceText extends SpecialPage {
 
 			// Link back
 			$sk = $this->user->getSkin();
-			$wgOut->addHTML( $sk->link( $this->getTitle(), wfMsgHtml( 'replacetext_return' ) ) );
+			$wgOut->addHTML( $sk->makeKnownLinkObj( $this->getTitle(), wfMsgHtml( 'replacetext_return' ) ) );
 			return;
 		} elseif ( $wgRequest->getCheck( 'target' ) ) { // very long elseif, look for "end elseif"
 
@@ -172,9 +172,9 @@ class ReplaceText extends SpecialPage {
 			}
 			if ( count($titles_for_edit) == 0 && count($titles_for_move) == 0 ) {
 				if ( $this->edit_pages )
-					$wgOut->addWikiMsg( 'replacetext_noreplacement', $this->target );
+					$wgOut->addWikiMsg( 'replacetext_noreplacement', "<tt><nowiki>{$this->target}</nowiki></tt>" );
 				if ( $this->move_pages )
-					$wgOut->addWikiMsg( 'replacetext_nomove', $this->target );
+					$wgOut->addWikiMsg( 'replacetext_nomove', "<tt><nowiki>{$this->target}</nowiki></tt>" );
 				// link back to starting form
 				$sk = $this->user->getSkin();
 				$wgOut->addHTML( '<p>' . $sk->makeKnownLinkObj( $this->getTitle(), wfMsg( 'replacetext_return' ) ) . '</p>' );
@@ -234,7 +234,7 @@ class ReplaceText extends SpecialPage {
 		$wgOut->addScript( $js );
 
 		if ( count( $titles_for_edit ) > 0 ) {
-			$wgOut->addWikiMsg( 'replacetext_choosepagesforedit', $this->target, $this->replacement,
+			$wgOut->addWikiMsg( 'replacetext_choosepagesforedit', "<tt><nowiki>{$this->target}</nowiki></tt>", "<tt><nowiki>{$this->replacement}</nowiki></tt>",
 				$wgLang->formatNum( count( $titles_for_edit ) ) );
 
 			foreach ( $titles_for_edit as $title_and_context ) {
@@ -372,7 +372,7 @@ class ReplaceText extends SpecialPage {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$search = $dbr->escapeLike( $search );
-		$search = str_replace('\\', '\\\\',  $search);
+		$search = str_replace(array("\\", "'"), array("\\\\", "\'"),  $search);
 		$exemptNS = $dbr->makeList( array( NS_TALK, NS_USER_TALK ) );
 
 		$tables = array( 'page', 'revision', 'text' );
