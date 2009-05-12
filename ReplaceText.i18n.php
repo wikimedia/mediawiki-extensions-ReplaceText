@@ -1124,6 +1124,7 @@ $messages['ro'] = array(
 );
 
 /** Russian (Русский)
+ * @author AlexSm
  * @author Ferrer
  * @author Normalex
  * @author Rubin
@@ -1140,7 +1141,7 @@ $messages['ru'] = array(
 	'replacetext_choosepagesforedit' => 'Пожалуйста, выберите {{PLURAL:$3|страницу, в которой|страницы, в которых}} вы хотите осуществить замену «$1» на «$2»:',
 	'replacetext_choosepagesformove' => 'Заменить текст в {{PLURAL:$1|названии следующей страницы|названиях следующих страниц}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Следующая страница не может быть переименована|Следующие страницы не могут быть переименованы}}:',
-	'replacetext_formovedpages' => 'Для переименовываемых страниц:',
+	'replacetext_formovedpages' => 'Для переименованных страниц:',
 	'replacetext_savemovedpages' => 'Сохранить старые названия как перенаправления на новые',
 	'replacetext_watchmovedpages' => 'Наблюдать эти страницы',
 	'replacetext_invertselections' => 'Инвертировать выбор',
