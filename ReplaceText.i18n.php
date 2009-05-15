@@ -201,6 +201,7 @@ $messages['bg'] = array(
 $messages['bs'] = array(
 	'replacetext' => 'Zamijeni tekst',
 	'replacetext-desc' => 'Dodaje [[Special:ReplaceText|posebnu stranicu]] koja omogućava administratorima da izvrše globalnu pretragu nađi-i-zamijeni na svim stranicama sadržaja na wikiju.',
+	'replacetext_docu' => "Da bi ste zamijenili jedan tekst s drugim po svim regularnim stranicama na ovom wikiju, unesite dva dijela teksta ovdje i kliknite 'Nastavi'. Prikazat će Vam se spisak stranica koje sadrže traženi tekst, i možete odabrati one kod kojih želite taj tekst zamijeniti. Vaše ime će se prikazati na historiji izmjena stranice kao korisnika koji je odgovoran za sve promjene.",
 	'replacetext_note' => 'Napomena: ovo neće zamijeniti tekst u stranicama za "Razgovor" i stranicama projekta.',
 	'replacetext_originaltext' => 'Prvobitni tekst:',
 	'replacetext_replacementtext' => 'Tekst za zamjenu:',
@@ -220,9 +221,15 @@ $messages['bs'] = array(
 	'replacetext_noreplacement' => "Nije pronađena nijedna stranica koja sadrži '$1'.",
 	'replacetext_nomove' => "Nijedna stranica nije pronađena čiji naslov sadrži '$1'.",
 	'replacetext_return' => 'Nazad na obrazac.',
+	'replacetext_warning' => "{{PLURAL:$1|Postoji $1 stranica koja već sadrži|Postoje $1 stranice koje već sadrže|Postoji $1 stranica koje već sadrže}} zamjenski tekst '$2'.
+Ako želite napraviti ovu zamjenu nećete biti u mogućnosti da razdvojite Vaše zamjene od ovih tekstova.
+Nastaviti sa zamjenom?",
+	'replacetext_blankwarning' => 'Pošto je zamjenski tekst prazan, ovu operaciju neće biti moguće vratiti.
+Da li želite nastaviti?',
 	'replacetext_continue' => 'Nastavi',
 	'replacetext_cancel' => '(Kliknite na dugme "Nazad" u Vašem pregledniku da bi zaustavili operaciju.)',
 	'replacetext_editsummary' => "Zamjena teksta - '$1' u '$2'",
+	'right-replacetext' => 'Pravljenje zamjene teksta na cijelom wikiju',
 );
 
 /** Czech (Česky)
