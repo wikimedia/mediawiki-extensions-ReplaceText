@@ -58,8 +58,8 @@ class ReplaceTextJob extends Job {
 			// using the passed-in edit summary
 			if ( $num_matches > 0 ) {
 				// change global $wgUser variable to the one
-				// specified by the job only for the extent of this
-				// replacement
+				// specified by the job only for the extent of
+				// this replacement
 				global $wgUser;
 				$actual_user = $wgUser;
 				$wgUser = User::newFromId( $this->params['user_id'] );
