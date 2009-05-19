@@ -48,6 +48,18 @@ class ReplaceText extends SpecialPage {
 		$wgOut->addHTML( Xml::closeElement( 'form' ) );
 	}
 
+	static function getSelectedNamespaces() {
+		global $wgRequest;
+		$all_namespaces = SearchEngine::searchableNamespaces();
+		$selected_namespaces = array();
+		foreach ($all_namespaces as $ns => $name) {
+			if ($wgRequest->getCheck('ns' . $ns)) {
+				$selected_namespaces[] = $ns;
+			}
+		}
+		return $selected_namespaces;
+	}
+
 	function doSpecialReplaceText() {
 		global $wgUser, $wgOut, $wgRequest, $wgLang;
 
@@ -81,11 +93,13 @@ class ReplaceText extends SpecialPage {
 			$jobs = array();
 			foreach ( $wgRequest->getValues() as $key => $value ) {
 				if ( $value == '1' ) {
-					if ( strpos( $key, 'move-' ) !== false ) {
-						$title = Title::newFromId( substr( $key, 5 ) );
+					if ($key === 'replace') {
+						// ignore this value
+					} elseif ( strpos( $key, 'move-' ) !== false ) {
+						$title = Title::newFromID( substr( $key, 5 ) );
 						$replacement_params['move_page'] = true;
 					} else {
-						$title = Title::newFromId( $key );
+						$title = Title::newFromID( $key );
 					}
 					if ( $title !== null )
 						$jobs[] = new ReplaceTextJob( $title, $replacement_params );
@@ -126,13 +140,15 @@ class ReplaceText extends SpecialPage {
 				if ( $this->replacement === '' ) {
 					$message = 'replacetext_blankwarning';
 				} elseif ( $this->edit_pages ) {
-					$res = $this->doSearchQuery( $this->replacement );
+					$selected_namespaces = self::getSelectedNamespaces();
+					$res = $this->doSearchQuery( $this->replacement, $selected_namespaces );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
 						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $this->replacement );
 					}
 				} elseif ( $this->move_pages ) {
-					$res = $this->getMatchingTitles( $this->replacement );
+					$selected_namespaces = self::getSelectedNamespaces();
+					$res = $this->getMatchingTitles( $this->replacement, $selected_namespaces );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
 						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $this->replacement );
@@ -147,7 +163,8 @@ class ReplaceText extends SpecialPage {
 
 			// if user is replacing text within pages...
 			if ( $this->edit_pages ) {
-				$res = $this->doSearchQuery( $this->target );
+				$selected_namespaces = self::getSelectedNamespaces();
+				$res = $this->doSearchQuery( $this->target, $selected_namespaces );
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 					$context = $this->extractContext( $row->old_text, $this->target );
@@ -155,7 +172,8 @@ class ReplaceText extends SpecialPage {
 				}
 			}
 			if ( $this->move_pages ) {
-				$res = $this->getMatchingTitles( $this->target );
+				$selected_namespaces = self::getSelectedNamespaces();
+				$res = $this->getMatchingTitles( $this->target, $selected_namespaces );
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 					// see if this move can happen
@@ -208,6 +226,11 @@ class ReplaceText extends SpecialPage {
 		$wgOut->addHTML( Xml::textarea( 'replacement', $this->replacement, 50, 2 ) );
 		$wgOut->addHTML( Xml::closeElement( 'textarea' ) );
 		$wgOut->addHTML( '</td></tr></table>' );
+
+		$search_label = wfMsg('powersearch-ns');
+                $namespaces = SearchEngine::searchableNamespaces();
+                $tables = $this->namespaceTables( $namespaces );
+		$wgOut->addHTML( "<fieldset>\n<p>$search_label</p\n>$tables\n</fieldset>" );
 		$wgOut->addHTML(
 			Xml::checkLabel( wfMsg( 'replacetext_editpages' ), 'edit_pages', 'edit_pages', true ) . '<br />' .
 			Xml::checkLabel( wfMsg( 'replacetext_movepages' ), 'move_pages', 'move_pages' ) . '<br /><br />' .
@@ -215,6 +238,48 @@ class ReplaceText extends SpecialPage {
 			Xml::closeElement( 'form' )
 		);
 	}
+
+	/**
+	 * Copied almost exactly from MediaWiki's SpecialSearch class, i.e.
+	 * the search page
+	 */
+        function namespaceTables( $namespaces, $rowsPerTable = 3 ) {
+                global $wgContLang;
+                // Group namespaces into rows according to subject.
+                // Try not to make too many assumptions about namespace numbering.
+                $rows = array();
+                $tables = "";
+                foreach( $namespaces as $ns => $name ) {
+                        $subj = MWNamespace::getSubject( $ns );
+                        if( !array_key_exists( $subj, $rows ) ) {
+                                $rows[$subj] = "";
+                        }
+                        $name = str_replace( '_', ' ', $name );
+                        if( '' == $name ) {
+                                $name = wfMsg( 'blanknamespace' );
+                        }
+                        $rows[$subj] .= Xml::openElement( 'td', array( 'style' => 'white-space: nowrap' ) ) .
+                                Xml::checkLabel( $name, "ns{$ns}", "mw-search-ns{$ns}", in_array( $ns, $namespaces ) ) .
+                                Xml::closeElement( 'td' ) . "\n";
+                }
+                $rows = array_values( $rows );
+                $numRows = count( $rows );
+                // Lay out namespaces in multiple floating two-column tables so they'll
+                // be arranged nicely while still accommodating different screen widths
+                // Float to the right on RTL wikis
+                $tableStyle = $wgContLang->isRTL() ?
+                        'float: right; margin: 0 0 0em 1em' : 'float: left; margin: 0 1em 0em 0';
+                // Build the final HTML table...
+                for( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
+                        $tables .= Xml::openElement( 'table', array( 'style' => $tableStyle ) );
+                        for( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
+                                $tables .= "<tr>\n" . $rows[$j] . "</tr>";
+                        }
+                        $tables .= Xml::closeElement( 'table' ) . "\n";
+                }
+                return $tables;
+        }
+
 
 	function pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles ) {
 		global $wgOut, $wgLang, $wgScript;
@@ -306,7 +371,7 @@ class ReplaceText extends SpecialPage {
 
 		// Get all indexes
 		$targetq = preg_quote( $target, '/' );
-		preg_match_all( "/$targetq/i", $text, $matches, PREG_OFFSET_CAPTURE );
+		preg_match_all( "/$targetq/", $text, $matches, PREG_OFFSET_CAPTURE );
 
 		$poss = array();
 		foreach ( $matches[0] as $_ ) {
@@ -352,34 +417,35 @@ class ReplaceText extends SpecialPage {
 		return $msg;
 	}
 
-	function getMatchingTitles( $str) {
+	function getMatchingTitles( $str, $namespaces ) {
 		$title = Title::newFromText( $str );
 		if ( !$title ) return array();
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$sql_str = $dbr->escapeLike( $title->getDbKey() );
+		$include_ns = $dbr->makeList( $namespaces );
 
 		return $dbr->select(
 			'page',
 			array( 'page_title', 'page_namespace' ),
-			"page_title like '%$sql_str%'",
+			"page_title LIKE '%$sql_str%' AND page_namespace IN ($include_ns)",
 			__METHOD__,
 			array( 'ORDER BY' => 'page_namespace, page_title' )
 		);
 	}
 
-	function doSearchQuery( $search ) {
+	function doSearchQuery( $search, $namespaces ) {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$search = $dbr->escapeLike( $search );
 		$search = str_replace(array("\\", "'"), array("\\\\", "\'"),  $search);
-		$exemptNS = $dbr->makeList( array( NS_TALK, NS_USER_TALK ) );
+		$include_ns = $dbr->makeList( $namespaces );
 
 		$tables = array( 'page', 'revision', 'text' );
 		$vars = array( 'page_id', 'page_namespace', 'page_title', 'old_text' );
 		$conds = array(
 			"old_text like '%$search%'",
-			"page_namespace not in ($exemptNS)",
+			"page_namespace in ($include_ns)",
 			'rev_id = page_latest',
 			'rev_text_id = old_id'
 		);
