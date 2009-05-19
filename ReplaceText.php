@@ -23,7 +23,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'Replace Text',
-	'version' => '0.5.3',
+	'version' => '0.6',
 	'author' => array( 'Yaron Koren', 'Niklas Laxström' ),
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'description' => 'A special page that lets administrators run a global search-and-replace',
@@ -35,9 +35,22 @@ $wgExtensionMessagesFiles['ReplaceText'] = $rtgIP . 'ReplaceText.i18n.php';
 $wgExtensionAliasesFiles['ReplaceText'] = $rtgIP . 'ReplaceText.alias.php';
 $wgJobClasses['replaceText'] = 'ReplaceTextJob';
 $wgAvailableRights[] = 'replacetext';
+$wgHooks['AdminLinks'][] = 'rtAddToAdminLinks';
 
 // This extension uses its own permission type, 'replacetext'
 $wgSpecialPages['ReplaceText'] = 'ReplaceText';
 $wgSpecialPageGroups['ReplaceText'] = 'wiki';
 $wgAutoloadClasses['ReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = $rtgIP . 'ReplaceTextJob.php';
+
+// This function should really go into a "ReplaceText_body.php" file...
+function rtAddToAdminLinks(&$admin_links_tree) {
+	$general_section = $admin_links_tree->getSection(wfMsg('adminlinks_general'));
+        $extensions_row = $general_section->getRow('extensions');
+	if (is_null($extensions_row)) {
+		$extensions_row = new ALRow('extensions');
+		$general_section->addRow($extensions_row);
+	}
+	$extensions_row->addItem(ALItem::newFromSpecialPage('ReplaceText'));
+	return true;
+}
