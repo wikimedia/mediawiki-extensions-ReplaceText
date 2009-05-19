@@ -108,7 +108,7 @@ class ReplaceText extends SpecialPage {
 			Job::batchInsert( $jobs );
 
 			$count =  $wgLang->formatNum( count( $jobs ) );
-			$wgOut->addWikiMsg( 'replacetext_success', $this->target, $this->replacement, $count );
+			$wgOut->addWikiMsg( 'replacetext_success', "<tt><nowiki>{$this->target}</nowiki></tt>", "<tt><nowiki>{$this->replacement}</nowiki></tt>", $count );
 
 			// Link back
 			$sk = $this->user->getSkin();
@@ -144,7 +144,7 @@ class ReplaceText extends SpecialPage {
 					$res = $this->doSearchQuery( $this->replacement, $selected_namespaces );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
-						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $this->replacement );
+						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), "<tt><nowiki>{$this->replacement}</nowiki></tt>" );
 					}
 				} elseif ( $this->move_pages ) {
 					$selected_namespaces = self::getSelectedNamespaces();
@@ -449,8 +449,9 @@ class ReplaceText extends SpecialPage {
 			'rev_id = page_latest',
 			'rev_text_id = old_id'
 		);
+		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
 
-		return $dbr->select( $tables, $vars, $conds, __METHOD__ );
+		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
 	}
 
 }
