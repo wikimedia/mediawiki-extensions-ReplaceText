@@ -31,14 +31,19 @@ class ReplaceText extends SpecialPage {
 		$formOpts = array( 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
 
 		$wgOut->addHTML(
-			Xml::openElement( 'form', $formOpts ) .
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Xml::hidden( 'target', $this->target ) .
-			Xml::hidden( 'replacement', $this->replacement ) .
-			Xml::hidden( 'edit_pages', $this->edit_pages ) .
-			Xml::hidden( 'move_pages', $this->move_pages ) .
-			Xml::hidden( 'confirm', 1 )
+			Xml::openElement( 'form', $formOpts ) . "\n".
+			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) . "\n".
+			Xml::hidden( 'target', $this->target ) . "\n".
+			Xml::hidden( 'replacement', $this->replacement ) . "\n".
+			Xml::hidden( 'edit_pages', $this->edit_pages ) . "\n".
+			Xml::hidden( 'move_pages', $this->move_pages ) . "\n".
+			Xml::hidden( 'confirm', 1 ) . "\n"
 		);
+		foreach ($this->selected_namespaces as $ns) {
+			$wgOut->addHTML(
+				Xml::hidden( 'ns' . $ns, 1 ) . "\n"
+			);
+		}
 		$wgOut->wrapWikiMsg( '$1', $message );
 		$wgOut->addHTML(
 			Xml::submitButton( wfMsg( 'replacetext_continue' ) )
@@ -67,6 +72,7 @@ class ReplaceText extends SpecialPage {
 		$this->replacement = $wgRequest->getText( 'replacement' );
 		$this->edit_pages = $wgRequest->getCheck( 'edit_pages' );
 		$this->move_pages = $wgRequest->getCheck( 'move_pages' );
+		$this->selected_namespaces = self::getSelectedNamespaces();
 
 		if ( $wgRequest->getCheck( 'continue' ) ) {
 			if ( $this->target === '' ) {
@@ -116,8 +122,13 @@ class ReplaceText extends SpecialPage {
 			return;
 		} elseif ( $wgRequest->getCheck( 'target' ) ) { // very long elseif, look for "end elseif"
 
-			// first, check that either editing or moving pages
+			// first, check that at least one namespace has been
+			// picked, and that either editing or moving pages
 			// has been selected
+			if ( count( $this->selected_namespaces ) == 0 ) {
+				$this->showForm( 'replacetext_nonamespace' );
+				return;
+			}
 			if ( ! $this->edit_pages && ! $this->move_pages ) {
 				$this->showForm( 'replacetext_editormove' );
 				return;
@@ -140,15 +151,13 @@ class ReplaceText extends SpecialPage {
 				if ( $this->replacement === '' ) {
 					$message = 'replacetext_blankwarning';
 				} elseif ( $this->edit_pages ) {
-					$selected_namespaces = self::getSelectedNamespaces();
-					$res = $this->doSearchQuery( $this->replacement, $selected_namespaces );
+					$res = $this->doSearchQuery( $this->replacement, $this->selected_namespaces );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
 						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), "<tt><nowiki>{$this->replacement}</nowiki></tt>" );
 					}
 				} elseif ( $this->move_pages ) {
-					$selected_namespaces = self::getSelectedNamespaces();
-					$res = $this->getMatchingTitles( $this->replacement, $selected_namespaces );
+					$res = $this->getMatchingTitles( $this->replacement, $this->selected_namespaces );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
 						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $this->replacement );
@@ -163,8 +172,7 @@ class ReplaceText extends SpecialPage {
 
 			// if user is replacing text within pages...
 			if ( $this->edit_pages ) {
-				$selected_namespaces = self::getSelectedNamespaces();
-				$res = $this->doSearchQuery( $this->target, $selected_namespaces );
+				$res = $this->doSearchQuery( $this->target, $this->selected_namespaces );
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 					$context = $this->extractContext( $row->old_text, $this->target );
@@ -172,8 +180,7 @@ class ReplaceText extends SpecialPage {
 				}
 			}
 			if ( $this->move_pages ) {
-				$selected_namespaces = self::getSelectedNamespaces();
-				$res = $this->getMatchingTitles( $this->target, $selected_namespaces );
+				$res = $this->getMatchingTitles( $this->target, $this->selected_namespaces );
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 					// see if this move can happen
