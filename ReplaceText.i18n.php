@@ -21,6 +21,7 @@ $messages['en'] = array(
 	'replacetext_editpages' => 'Replace text in page contents',
 	'replacetext_movepages' => 'Replace text in page titles, when possible',
 	'replacetext_givetarget' => 'You must specify the string to be replaced.',
+	'replacetext_nonamespace' => 'You must select at least one namespace.',
 	'replacetext_editormove' => 'You must select at least one of the replacement options.',
 	'replacetext_choosepagesforedit' => 'Replace \'$1\' with \'$2\' in the text of the following {{PLURAL:$3|page|pages}}:',
 	'replacetext_choosepagesformove' => 'Replace \'$1\' with \'$2\' in the {{PLURAL:$3|name of the following page|names of the following pages}}:',
