@@ -423,13 +423,14 @@ $messages['fa'] = array(
 );
 
 /** Finnish (Suomi)
+ * @author Crt
  * @author Nike
  * @author Str4nd
  */
 $messages['fi'] = array(
 	'replacetext_originaltext' => 'Alkuperäinen teksti',
 	'replacetext_replacementtext' => 'Korvaava teksti',
-	'replacetext_movepages' => 'Korvaa teksti myös otsikoista, jos mahdollista',
+	'replacetext_movepages' => 'Korvaa teksti otsikoista, jos mahdollista',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Seuraavaa sivua|Seuraavia sivuja}} ei voi siirtää:',
 	'replacetext_invertselections' => 'Käänteinen valinta',
 	'replacetext_replace' => 'Korvaa',
@@ -656,6 +657,7 @@ $messages['ia'] = array(
 	'replacetext_editpages' => 'Reimplaciar texto in contento de pagina',
 	'replacetext_movepages' => 'Reimplaciar texto in titulos de paginas, quando possibile',
 	'replacetext_givetarget' => 'Tu debe specificar le texto a esser reimplaciate.',
+	'replacetext_nonamespace' => 'Tu debe seliger al minus un spatio de nomines.',
 	'replacetext_editormove' => 'Tu debe seliger al minus un del optiones de reimplaciamento.',
 	'replacetext_choosepagesforedit' => "Per favor selige le {{PLURAL:$3|pagina in le qual|paginas in le quales}} tu vole reimplaciar '$1' per '$2':",
 	'replacetext_choosepagesformove' => "Reimplaciar '$1' per '$2' in le {{PLURAL:$3|nomine del sequente pagina|nomines del sequente paginas}}:",
