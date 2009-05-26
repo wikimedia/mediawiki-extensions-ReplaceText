@@ -228,6 +228,13 @@ Da li želite nastaviti?',
 	'right-replacetext' => 'Pravljenje zamjene teksta na cijelom wikiju',
 );
 
+/** Catalan (Català)
+ * @author Solde
+ */
+$messages['ca'] = array(
+	'replacetext_continue' => 'Continua',
+);
+
 /** Czech (Česky)
  * @author Matěj Grabovský
  */
@@ -437,7 +444,7 @@ $messages['fi'] = array(
 $messages['fr'] = array(
 	'replacetext' => 'Remplacer le texte',
 	'replacetext-desc' => 'Fournit une page spéciale permettant aux administrateurs de remplacer des chaînes de caractères par d’autres sur l’ensemble du wiki',
-	'replacetext_docu' => "Pour remplacer une chaîne de caractères avec une autre sur l'ensemble des données des pages de ce wiki, vous pouvez entrez les deux textes ici et cliquer sur « Remplacer ». Votre nom apparaîtra dans l'historique des pages tel un utilisateur auteur des changements.",
+	'replacetext_docu' => 'Pour remplacer une chaîne de caractères avec une autre sur l’ensemble des données des pages de ce wiki, vous pouvez entrez les deux textes ici et cliquer sur « Remplacer ». Votre nom apparaîtra dans l’historique des pages tel un utilisateur auteur des changements.',
 	'replacetext_originaltext' => 'Texte original :',
 	'replacetext_replacementtext' => 'Texte de remplacement :',
 	'replacetext_editpages' => 'Remplacer le texte dans le contenu dans la page',
@@ -447,7 +454,7 @@ $messages['fr'] = array(
 	'replacetext_editormove' => 'Vous devez choisir au moins une option de remplacement.',
 	'replacetext_choosepagesforedit' => 'Veuillez sélectionner {{PLURAL:$3|la pages|les pages}} dans {{PLURAL:$3|laquelle|lesquelles}} vous voulez remplacer « $1 » par « $2 » :',
 	'replacetext_choosepagesformove' => 'Remplacer « $1 » par « $2 » dans {{PLURAL:$3|le nom de la page suivante|les noms des pages suivantes}} :',
-	'replacetext_cannotmove' => "{{PLURAL:$1|La page suivante n'a pas pu être renommée|Les pages suivantes n'ont pas pu être renommées}} :",
+	'replacetext_cannotmove' => '{{PLURAL:$1|La page suivante n’a pas pu être renommée|Les pages suivantes n’ont pas pu être renommées}} :',
 	'replacetext_formovedpages' => 'Pour les pages renommées :',
 	'replacetext_savemovedpages' => 'Enregistrer les anciens titres comme redirections vers les nouveaux titres',
 	'replacetext_watchmovedpages' => 'Suivre ces pages',
@@ -462,7 +469,7 @@ Si vous effectuez cette substitution, vous ne pourrez pas séparer vos changemen
 Voulez-vous continuer ces substitutions ?',
 	'replacetext_blankwarning' => 'Parce que la chaîne de remplacement est vide, cette opération sera irréversible ; voulez-vous continuer ?',
 	'replacetext_continue' => 'Continuer',
-	'replacetext_cancel' => "(Cliquez sur le bouton  « Retour » de votre navigateur pour annuler l'opération.)",
+	'replacetext_cancel' => '(Cliquez sur le bouton  « Retour » de votre navigateur pour annuler l’opération.)',
 	'replacetext_editsummary' => 'Remplacement du texte — « $1 » par « $2 »',
 	'right-replacetext' => 'Faire des remplacements de texte dans tout le wiki',
 );
