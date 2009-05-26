@@ -221,7 +221,6 @@ class ReplaceText extends SpecialPage {
 			Xml::hidden( 'continue', 1 )
 		);
 		$wgOut->addWikiMsg( $message );
-		$wgOut->addWikiMsg( 'replacetext_note' );
 		$wgOut->addHTML( '<table><tr><td style="vertical-align: top;">' );
 		$wgOut->addWikiMsg( 'replacetext_originaltext' );
 		$wgOut->addHTML( '</td><td>' );
