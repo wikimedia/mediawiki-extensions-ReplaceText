@@ -224,13 +224,14 @@ class ReplaceText extends SpecialPage {
 		$wgOut->addHTML( '<table><tr><td style="vertical-align: top;">' );
 		$wgOut->addWikiMsg( 'replacetext_originaltext' );
 		$wgOut->addHTML( '</td><td>' );
-		$wgOut->addHTML( Xml::textarea( 'target', $this->target, 50, 2 ) );
-		$wgOut->addHTML( Xml::closeElement( 'textarea' ) );
+		// 'width: auto' style is needed to override MediaWiki's
+		// normal 'width: 100%', which causes the textarea to get
+		// zero width in IE
+		$wgOut->addHTML( Xml::textarea( 'target', $this->target, 50, 2, array( 'style' => 'width: auto;' ) ) );
 		$wgOut->addHTML( '</td></tr><tr><td style="vertical-align: top;">' );
 		$wgOut->addWikiMsg( 'replacetext_replacementtext' );
 		$wgOut->addHTML( '</td><td>' );
-		$wgOut->addHTML( Xml::textarea( 'replacement', $this->replacement, 50, 2 ) );
-		$wgOut->addHTML( Xml::closeElement( 'textarea' ) );
+		$wgOut->addHTML( Xml::textarea( 'replacement', $this->replacement, 50, 2, array( 'style' => 'width: auto;' ) ) );
 		$wgOut->addHTML( '</td></tr></table>' );
 
 		$search_label = wfMsg('powersearch-ns');
