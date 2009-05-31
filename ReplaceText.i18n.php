@@ -266,7 +266,7 @@ $messages['de'] = array(
 	'replacetext_givetarget' => 'Du musst eine Zeichenkette angeben, die ersetzt werden soll.',
 	'replacetext_nonamespace' => 'Mindestens ein Namensraum muss ausgewählt werden.',
 	'replacetext_editormove' => 'Du musst mindestens eine Ersetzungsoption wählen.',
-	'replacetext_choosepagesforedit' => 'Bitte die {{PLURAL:$3|Seite|Seiten}} auswählen, bei denen du „$1“ durch „$2“ ersetzen möchtest:',
+	'replacetext_choosepagesforedit' => 'Ersetzen von „$1“ durch „$2“ im Text der {{PLURAL:$3|Seite|Seiten}}:',
 	'replacetext_choosepagesformove' => 'Ersetze Text „$1“ durch „$2“ {{PLURAL:$3|im Namen der folgenden Seite|in den Namen der folgenden Seiten}}:',
 	'replacetext_cannotmove' => 'Die {{PLURAL:$1|folgende Seite kann|folgenden Seiten können}} nicht verschoben werden:',
 	'replacetext_formovedpages' => 'Für verschobene Seiten:',
@@ -672,6 +672,7 @@ Continuar le reimplaciamento?",
 
 /** Italian (Italiano)
  * @author Darth Kule
+ * @author Marco 27
  */
 $messages['it'] = array(
 	'replacetext' => 'Sostituzione testo',
@@ -682,6 +683,7 @@ $messages['it'] = array(
 	'replacetext_editpages' => 'Sostituire il testo nella pagina di contenuti',
 	'replacetext_movepages' => 'Sostituisci il testo nei titoli delle pagine, quando possibile',
 	'replacetext_givetarget' => 'È necessario specificare il testo da sostituire.',
+	'replacetext_nonamespace' => 'È necessario selezionare almeno un namespace',
 	'replacetext_editormove' => 'È necessario selezionare almeno una delle opzioni di sostituzione.',
 	'replacetext_choosepagesforedit' => "Selezionare {{PLURAL:$3|la pagina per la quale|le pagine per le quali}} si desidera sostituire '$1' con '$2':",
 	'replacetext_choosepagesformove' => "Sostituire '$1' con '$2' {{PLURAL:$3|nel nome della pagina seguente|nei nomi delle pagine seguenti}}:",
@@ -717,7 +719,7 @@ $messages['ja'] = array(
 	'replacetext_givetarget' => '置換される対象となる文字列を指定しなければなりません。',
 	'replacetext_nonamespace' => '最低でも1つは名前空間を選択しなければなりません。',
 	'replacetext_editormove' => '置換オプションのうち最低でも1つを選択してください。',
-	'replacetext_choosepagesforedit' => '「$1」を「$2」で置換したいページを選択してください:',
+	'replacetext_choosepagesforedit' => '以下のページの本文中の「$1」を「$2」に置換する:',
 	'replacetext_choosepagesformove' => '以下のページの名前中の文字列「$1」を「$2」に置換する:',
 	'replacetext_cannotmove' => '以下のページは移動できません:',
 	'replacetext_formovedpages' => '移動したページについて:',
@@ -817,8 +819,8 @@ Wells De trozdämm wigger maache?',
  */
 $messages['lb'] = array(
 	'replacetext' => 'Text ersetzen',
-	'replacetext-desc' => "Weist eng [[Special:ReplaceText|Spezialsäit]] déi Administrateuren et erlaabt eng Rei vun Textzeechen op alle Contenu-säiten vun enger Wiki ze gesinn an z'ersetzen",
-	'replacetext_docu' => "Fir en Text duerch en aneren Text op allen Inhaltssäiten vun dëser Wiki z'ersetzen, gitt w.e.g. déi zwee Texter hei ana klickt op 'Weider'. Dir gesitt dann eng Lëscht vu Säiten op denen de gesichten Text dran ass, an Dir kënnt déi eraussichen op denen Dir den Text ersetze wëllt. Äre Numm steet an der Lëscht vun de Versiounen als Auteur vun all denen Ännerungen.",
+	'replacetext-desc' => "Weist eng [[Special:ReplaceText|Spezialsäit]] déi Administrateuren et erlaabt eng Rei vun Textzeechen op alle Contenu-säite vun enger Wiki ze gesinn an z'ersetzen",
+	'replacetext_docu' => "Fir en Text duerch en aneren Text op allen Inhaltssäite vun dëser Wiki z'ersetzen, gitt w.e.g. déi zwee Texter hei ana klickt op 'Weider'. Dir gesitt dann eng Lëscht vu Säiten op denen de gesichten Text dran ass, an Dir kënnt déi eraussichen op denen Dir den Text ersetze wëllt. Äre Numm steet an der Lëscht vun de Versiounen als Auteur vun all denen Ännerungen.",
 	'replacetext_originaltext' => 'Originaltext:',
 	'replacetext_replacementtext' => 'Neien Text:',
 	'replacetext_editpages' => 'Den Text a Säiteninhalter ersetzen',
@@ -826,7 +828,7 @@ $messages['lb'] = array(
 	'replacetext_givetarget' => 'Dir musst déi Zeechen uginn déi ersat solle ginn.',
 	'replacetext_nonamespace' => 'Dir musst mindestens een Nummraum eraussichen.',
 	'replacetext_editormove' => 'Dir musst mindestens eng vun den Optioune vum Ersetzen eraussichen.',
-	'replacetext_choosepagesforedit' => 'Wielt w.e.g. d\'{{PLURAL:$3|Säit op däer|Säiten op denen}} Dir "$1" duerch "$2" ersetze wëllt:',
+	'replacetext_choosepagesforedit' => 'Wielt w.e.g. d\'{{PLURAL:$3|Säit op däer|Säiten op deenen}} Dir "$1" duerch "$2" ersetze wëllt:',
 	'replacetext_choosepagesformove' => "'$1' duerch '$2' am Numm vun {{PLURAL:$3|dëser Säit|dëse Säiten}} ersetzen:",
 	'replacetext_cannotmove' => 'Dës {{PLURAL:$1|Säit kann|Säite kënne}} net geréckelt ginn:',
 	'replacetext_formovedpages' => 'Fir geréckelt Säiten:',
@@ -845,7 +847,7 @@ Wëllt Dir mat der Ännerung weiderfueren?",
 	'replacetext_continue' => 'Weiderfueren',
 	'replacetext_cancel' => '(Klickt op de Knäppchen "Zréck" an Ärem Browser fir d\'Operatioun ofzebriechen)',
 	'replacetext_editsummary' => "Text ersat - '$1' duerch '$2'",
-	'right-replacetext' => 'Ersetzen vun enger Rei vun Textzeechen op der ganzer Wiki',
+	'right-replacetext' => 'Ersetze vun enger Rei vun Textzeechen op der ganzer Wiki',
 );
 
 /** Malayalam (മലയാളം)
