@@ -1046,6 +1046,7 @@ Czy kontynuować zastępowanie?',
 /** Portuguese (Português)
  * @author 555
  * @author Crazymadlover
+ * @author Lijealso
  * @author Malafaya
  * @author Waldir
  */
@@ -1058,6 +1059,7 @@ $messages['pt'] = array(
 	'replacetext_editpages' => 'Substituir texto no conteúdo da página',
 	'replacetext_movepages' => 'Substituir texto em títulos de páginas, quando possível',
 	'replacetext_givetarget' => 'Você deve especificar o texto a ser substituído.',
+	'replacetext_nonamespace' => 'Deverá seleccionar pelo menos um espaço nominal.',
 	'replacetext_editormove' => 'Você deve selecionar pelo menos uma das opções de substituição.',
 	'replacetext_choosepagesforedit' => "Por favor, seleccione {{PLURAL:$3|a página na qual|as páginas nas quais}} deseja substituir '$1' por '$2':",
 	'replacetext_choosepagesformove' => "Substituir '$1' por '$2' {{PLURAL:$3|no nome da seguinte página|nos nomes das seguintes páginas}}:",
