@@ -425,11 +425,8 @@ class ReplaceText extends SpecialPage {
 	}
 
 	function getMatchingTitles( $str, $namespaces ) {
-		$title = Title::newFromText( $str );
-		if ( !$title ) return array();
-
 		$dbr = wfGetDB( DB_SLAVE );
-		$sql_str = $dbr->escapeLike( $title->getDbKey() );
+		$sql_str = $dbr->escapeLike( $str );
 		$include_ns = $dbr->makeList( $namespaces );
 
 		return $dbr->select(
