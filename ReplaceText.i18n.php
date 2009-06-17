@@ -81,6 +81,7 @@ $messages['ar'] = array(
 	'replacetext_editpages' => 'استبدل النص في محتويات الصفحة',
 	'replacetext_movepages' => 'استبدل النص في عناوين الصفحات، عندما يكون ممكنا',
 	'replacetext_givetarget' => 'لابد أن تحدد السلسلة التي تريد استبدالها',
+	'replacetext_nonamespace' => 'يجب أن تختار على الأقل نطاقا واحدا.',
 	'replacetext_editormove' => 'لابد أن تختار خيار واحد على الأقل من خيارات الاستبدال.',
 	'replacetext_choosepagesforedit' => "من فضلك اختر {{PLURAL:$3|الصفحة|الصفحات}} التي فيها تريد استبدال ب'$1' '$2':",
 	'replacetext_choosepagesformove' => "استبدل '$1' ب '$2' في {{PLURAL:$3|اسم الصفحة التالية|أسماء الصفحات التالية}}:",
