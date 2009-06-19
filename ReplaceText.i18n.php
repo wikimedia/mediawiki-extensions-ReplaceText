@@ -671,6 +671,17 @@ Continuar le reimplaciamento?",
 	'right-replacetext' => 'Facer reimplaciamentos de texto in le wiki integre',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author Rex
+ */
+$messages['id'] = array(
+	'replacetext' => 'Mengganti teks',
+	'replacetext_docu' => "Untuk mengganti suatu teks kalimat dengan kalimat lain di antara semua halaman-halaman regular wiki ini, masukkan kedua teks di sini dan klik 'Lanjutkan'. Anda akan mendapatkan tampilan daftar halaman yang berisikan teks yang dicari, dan Anda dapat memilih yang mana saja yang ingin digantikan. Nama Anda akan tampil di versi terdahulu halaman sebagai pengguna yang melakukan perubahan.",
+	'replacetext_originaltext' => 'Teks asli:',
+	'replacetext_replacementtext' => 'Teks pengganti:',
+	'right-replacetext' => 'Melakukan penggantian seluruh teks kalimat di wiki ini',
+);
+
 /** Italian (Italiano)
  * @author Darth Kule
  * @author Marco 27
@@ -1012,6 +1023,13 @@ Volètz contunhar aquestas substitucions ?",
 	'right-replacetext' => 'Far de remplaçaments de tèxte dins tot lo wiki',
 );
 
+/** Deitsch (Deitsch)
+ * @author Xqt
+ */
+$messages['pdc'] = array(
+	'replacetext_continue' => 'Weiter',
+);
+
 /** Polish (Polski)
  * @author Derbeth
  * @author Leinad
@@ -1143,6 +1161,9 @@ $messages['ru'] = array(
 	'replacetext_replacementtext' => 'Текст для замены:',
 	'replacetext_editpages' => 'Замена текста в содержимом страниц',
 	'replacetext_movepages' => 'Заменить текст в названиях страниц, если это возможно',
+	'replacetext_givetarget' => 'Вы должны указать строку, которую нужно заменить.',
+	'replacetext_nonamespace' => 'Вы должны выбрать по крайней мере одно пространство имён.',
+	'replacetext_editormove' => 'Вы должны выбрать по крайней мере, один из вариантов замены.',
 	'replacetext_choosepagesforedit' => 'Пожалуйста, выберите {{PLURAL:$3|страницу, в которой|страницы, в которых}} вы хотите осуществить замену «$1» на «$2»:',
 	'replacetext_choosepagesformove' => 'Заменить «$1» с «$2» в {{PLURAL:$3|названии следующей страницы|названиях следующих страниц}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Следующая страница не может быть переименована|Следующие страницы не могут быть переименованы}}:',
