@@ -718,6 +718,7 @@ $messages['it'] = array(
 );
 
 /** Japanese (日本語)
+ * @author Aotake
  * @author Fryed-peach
  */
 $messages['ja'] = array(
@@ -731,19 +732,19 @@ $messages['ja'] = array(
 	'replacetext_givetarget' => '置換される対象となる文字列を指定しなければなりません。',
 	'replacetext_nonamespace' => '最低でも1つは名前空間を選択しなければなりません。',
 	'replacetext_editormove' => '置換オプションのうち最低でも1つを選択してください。',
-	'replacetext_choosepagesforedit' => '以下のページの本文中の「$1」を「$2」に置換する:',
-	'replacetext_choosepagesformove' => '以下のページの名前中の文字列「$1」を「$2」に置換する:',
-	'replacetext_cannotmove' => '以下のページは移動できません:',
+	'replacetext_choosepagesforedit' => '以下の{{PLURAL:$3|ページ}}の本文中の「$1」を「$2」に置換する:',
+	'replacetext_choosepagesformove' => '以下の{{PLURAL:$3|ページの名前}}中の文字列「$1」を「$2」に置換する:',
+	'replacetext_cannotmove' => '以下の{{PLURAL:$1|ページ}}は移動できません:',
 	'replacetext_formovedpages' => '移動したページについて:',
 	'replacetext_savemovedpages' => '古いページ名を新しいページへのリダイレクトとして残す',
 	'replacetext_watchmovedpages' => 'これらのページをウォッチ',
 	'replacetext_invertselections' => '選択を反転',
 	'replacetext_replace' => '置換',
-	'replacetext_success' => '$3個のページで「$1」が「$2」に置換されます。',
+	'replacetext_success' => '$3{{PLURAL:$3|ページ}}で「$1」が「$2」に置換されます。',
 	'replacetext_noreplacement' => '文字列「$1」を含むページは見つかりませんでした。',
 	'replacetext_nomove' => '「$1」を名前に含むページは見つかりませんでした。',
 	'replacetext_return' => 'フォームに戻る',
-	'replacetext_warning' => '置換後文字列「$2」を既に含んだページが $1個あります。この置換を実行すると、これらの文字列と実際に置換された箇所を区別できなくなります。置換を続行しますか？',
+	'replacetext_warning' => '置換後文字列「$2」を既に含んだページが $1{{PLURAL:$1|ページ}}あります。この置換を実行すると、これらの文字列と実際に置換された箇所を区別できなくなります。置換を続行しますか？',
 	'replacetext_blankwarning' => '置換後文字列が空であるため、この操作は実行後の取り消しができなくなります。続行しますか？',
 	'replacetext_continue' => '続行',
 	'replacetext_cancel' => '(操作を中止するにはブラウザの「戻る」ボタンをクリックしてください)',
