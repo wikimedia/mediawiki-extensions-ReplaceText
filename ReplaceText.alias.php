@@ -99,7 +99,7 @@ $aliases['it'] = array(
 
 /** Japanese (日本語) */
 $aliases['ja'] = array(
-	'ReplaceText' => array( '文字列の置換' ),
+	'ReplaceText' => array( '文字列置換', '文字列の置換' ),
 );
 
 /** Khmer (ភាសាខ្មែរ) */
