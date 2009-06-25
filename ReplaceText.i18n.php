@@ -83,21 +83,21 @@ $messages['ar'] = array(
 	'replacetext_givetarget' => 'لابد أن تحدد السلسلة التي تريد استبدالها',
 	'replacetext_nonamespace' => 'يجب أن تختار على الأقل نطاقا واحدا.',
 	'replacetext_editormove' => 'لابد أن تختار خيار واحد على الأقل من خيارات الاستبدال.',
-	'replacetext_choosepagesforedit' => "من فضلك اختر {{PLURAL:$3|الصفحة|الصفحات}} التي فيها تريد استبدال ب'$1' '$2':",
-	'replacetext_choosepagesformove' => "استبدل '$1' ب '$2' في {{PLURAL:$3|اسم الصفحة التالية|أسماء الصفحات التالية}}:",
-	'replacetext_cannotmove' => '{{PLURAL:$1|الصفحة|الصفحات}} التالية لا يمكن نقلها:',
+	'replacetext_choosepagesforedit' => "استبدال ب'$1' '$2' في نص {{PLURAL:$3||الصفحة التالية|الصفحتين التاليتين|الصفحات التالية}}:",
+	'replacetext_choosepagesformove' => "استبدل '$1' ب'$2' في {{PLURAL:$3||اسم الصفحة التالية|اسمي الصفحات التالية|أسماء الصفحات التالية}}:",
+	'replacetext_cannotmove' => 'لا يمكن نقل {{PLURAL:$1||الصفحة التالية|الصفحتين التاليتين|الصفحات التالية}}:',
 	'replacetext_formovedpages' => 'للصفحات المنقولة:',
 	'replacetext_savemovedpages' => 'احفظ العناوين القديمة كتحويلات للعناوين الجديدة',
 	'replacetext_watchmovedpages' => 'راقب هذه الصفحات',
 	'replacetext_invertselections' => 'عكس الاختيارات',
 	'replacetext_replace' => 'استبدل',
-	'replacetext_success' => "'$2' سيتم استبدالها ب'$1' في $3 {{PLURAL:$3|صفحة|صفحة}}.",
+	'replacetext_success' => "سوف تستبدل '$2' ب'$1' في {{PLURAL:$3||صفحة واحدة|صفحتين|$3 صفحات|$3 صفحة}}.",
 	'replacetext_noreplacement' => "لا صفحات تم العثور عليها تحتوي على السلسلة '$1'.",
 	'replacetext_nomove' => "لم توجد صفحات تحتوي عناوينها '$1'.",
 	'replacetext_return' => 'رجوع إلى الاستمارة',
-	'replacetext_warning' => "توجد {{PLURAL:$1|$1 صفحة|$1 صفحة}} تحتوي بالفعل على سلسلة الاستبدال، '$2'.
-لو أنك قمت بهذا الاستبدال فلن تصبح قادرا على فصل استبدالاتك عن هذه السلاسل.
-استمرار مع الاستبدال؟",
+	'replacetext_warning' => "توجد {{PLURAL:$1||صفحة واحدة تحتوي|صفحتان تحتويان|$1 صفحات تحتوي|$1 صفحة تحتوي}} بالفعل على سلسلة الاستبدال '$2'.
+إذا قمت بهذا الاستبدال فلن تصبح قادرًا على فصل استبدالاتك عن هذه السلاسل.
+أأستمر في الاستبدال؟",
 	'replacetext_blankwarning' => 'لأن سلسلة الاستبدال فارغة، هذه العملية لن تكون عكسية؛ استمر؟',
 	'replacetext_continue' => 'استمر',
 	'replacetext_cancel' => '(اضغط زر "رجوع" في متصفحك لإلغاء العملية.)',
@@ -672,6 +672,7 @@ Continuar le reimplaciamento?",
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Bennylin
  * @author Rex
  */
 $messages['id'] = array(
@@ -679,6 +680,7 @@ $messages['id'] = array(
 	'replacetext_docu' => "Untuk mengganti suatu teks kalimat dengan kalimat lain di antara semua halaman-halaman regular wiki ini, masukkan kedua teks di sini dan klik 'Lanjutkan'. Anda akan mendapatkan tampilan daftar halaman yang berisikan teks yang dicari, dan Anda dapat memilih yang mana saja yang ingin digantikan. Nama Anda akan tampil di versi terdahulu halaman sebagai pengguna yang melakukan perubahan.",
 	'replacetext_originaltext' => 'Teks asli:',
 	'replacetext_replacementtext' => 'Teks pengganti:',
+	'replacetext_continue' => 'Lanjutkan',
 	'right-replacetext' => 'Melakukan penggantian seluruh teks kalimat di wiki ini',
 );
 

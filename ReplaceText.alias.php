@@ -144,7 +144,7 @@ $aliases['no'] = array(
 
 /** Occitan (Occitan) */
 $aliases['oc'] = array(
-	'ReplaceText' => array( 'Remplaçar tèxt', 'RemplaçarTèxt' ),
+	'ReplaceText' => array( 'Remplaçar tèxte', 'RemplaçarTèxte' ),
 );
 
 /** Albanian (Shqip) */
