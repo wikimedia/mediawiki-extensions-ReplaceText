@@ -426,7 +426,7 @@ class ReplaceText extends SpecialPage {
 
 	function getMatchingTitles( $str, $namespaces ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$sql_str = $dbr->escapeLike( $str );
+		$sql_str = $dbr->escapeLike( str_replace( ' ', '_', $str ) );
 		$include_ns = $dbr->makeList( $namespaces );
 
 		return $dbr->select(
