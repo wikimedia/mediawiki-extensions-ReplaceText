@@ -971,19 +971,20 @@ Vil du halda fram?',
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
+ * @author Laaknor
  */
 $messages['no'] = array(
 	'replacetext' => 'Erstatt tekst',
 	'replacetext-desc' => 'Lar administratorer kunne [[Special:ReplaceText|erstatte tekst]] på alle innholdssider på en wiki.',
 	'replacetext_docu' => 'For å erstatte én tekststreng med en annen på alle datasider på denne wikien kan du skrive inn de to tekstene her og trykke «Erstatt». Du vil da bli ført til en liste over sider som inneholder søketeksten, og du kan velge hvilke sider du ønsker å erstatte den i. Navnet ditt vil stå i sidehistorikkene som den som er ansvarlig for endringene.',
-	'replacetext_originaltext' => 'Originaltekst',
-	'replacetext_replacementtext' => 'Erstatningstekst',
+	'replacetext_originaltext' => 'Originaltekst:',
+	'replacetext_replacementtext' => 'Erstatningstekst:',
 	'replacetext_choosepagesforedit' => 'Velg hvilke sider du ønsker å erstatte «$1» med «$2» i:',
 	'replacetext_invertselections' => 'Inverter valg',
 	'replacetext_replace' => 'Erstatt',
 	'replacetext_success' => '«$1» blir erstattet med «$2» på {{PLURAL:$3|én side|$3 sider}}.',
 	'replacetext_noreplacement' => 'Ingen sider ble funnet med strengen «$1».',
-	'replacetext_warning' => 'Det er $1 sider som allerede har erstatningsteksten «$2». Om du gjør denne erstatningen vil du ikke kunne skille ut dine erstatninger fra denne teksten. Fortsette med erstattingen?',
+	'replacetext_warning' => 'Det er {{PLURAL:$1|en side|$1 sider}} som allerede har erstatningsteksten «$2». Om du gjør denne erstatningen vil du ikke kunne skille ut dine erstatninger fra denne teksten. Fortsette med erstattingen?',
 	'replacetext_blankwarning' => 'Fordi erstatningsteksten er tom vil denne handlingen ikke kunne angres automatisk; fortsette?',
 	'replacetext_continue' => 'Fortsett',
 	'replacetext_cancel' => '(Trykk på «Tilbake»-knappen for å avbryte handlingen.)',

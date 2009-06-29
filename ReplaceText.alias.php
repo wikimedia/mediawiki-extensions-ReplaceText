@@ -92,6 +92,11 @@ $aliases['ia'] = array(
 	'ReplaceText' => array( 'Reimplaciar texto' ),
 );
 
+/** Indonesian (Bahasa Indonesia) */
+$aliases['id'] = array(
+	'ReplaceText' => array( 'Ganti teks', 'GantiTeks' ),
+);
+
 /** Italian (Italiano) */
 $aliases['it'] = array(
 	'ReplaceText' => array( 'SostituisciTesto' ),
