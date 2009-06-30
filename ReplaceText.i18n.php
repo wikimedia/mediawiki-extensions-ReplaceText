@@ -756,10 +756,11 @@ $messages['ja'] = array(
 
 /** Javanese (Basa Jawa)
  * @author Meursault2004
+ * @author Pras
  */
 $messages['jv'] = array(
 	'replacetext' => 'Ganti tèks',
-	'replacetext_originaltext' => 'Tèks asli',
+	'replacetext_originaltext' => 'Tèks asli:',
 	'replacetext_continue' => 'Banjurna',
 );
 
@@ -1144,10 +1145,11 @@ Deseja prosseguir com a substituição?",
 );
 
 /** Romanian (Română)
+ * @author Firilacroco
  * @author KlaudiuMihaila
  */
 $messages['ro'] = array(
-	'replacetext_originaltext' => 'Text original',
+	'replacetext_originaltext' => 'Text original:',
 );
 
 /** Russian (Русский)
