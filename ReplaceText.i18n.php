@@ -578,16 +578,17 @@ $messages['he'] = array(
 
 /** Croatian (Hrvatski)
  * @author Dalibor Bosits
+ * @author Suradnik13
  */
 $messages['hr'] = array(
 	'replacetext' => 'Zamjeni tekst',
 	'replacetext-desc' => 'Dodaje [[Special:ReplaceText|posebnu stranicu]] koja omogućava administratorima globalnu zamjenu teksta na principu nađi-zamjeni na svim stranicama wikija.',
 	'replacetext_docu' => "Za zamjenu jednog teksta s drugim na svim stranicama wikija, upišite ciljani i zamjenski tekst ovdje i pritisnite 'Dalje'. Pokazati će vam se popis stranica koje sadrže ciljani tekst, i moći ćete odabrati u kojima od njih želite izvršiti zamjenu. Vaše ime će se pojaviti u povijesti stranice kao suradnik odgovoran za promjenu.",
-	'replacetext_originaltext' => 'Izvorni tekst',
-	'replacetext_replacementtext' => 'Zamjenski tekst',
-	'replacetext_movepages' => 'Zamijeni i tekst u naslovima stranica, ako je moguće',
+	'replacetext_originaltext' => 'Izvorni tekst:',
+	'replacetext_replacementtext' => 'Zamjenski tekst:',
+	'replacetext_movepages' => 'Zamijeni tekst u naslovima stranica, ako je moguće',
 	'replacetext_choosepagesforedit' => "Molimo odaberite {{PLURAL:$3|stranicu|stranice}} na kojima želite zamijeniti '$1' za '$2':",
-	'replacetext_choosepagesformove' => 'Zamijeni tekst u {{PLURAL:$1|naslovu sljedeće stranice|naslovima sljedećih stranica}}:',
+	'replacetext_choosepagesformove' => "Zamijeni '$1' s '$2' u {{PLURAL:$1|naslovu sljedeće stranice|naslovima sljedećih stranica}}:",
 	'replacetext_cannotmove' => '{{PLURAL:$1|Sljedeća stranica|Sljedeće stranice}} ne mogu biti premještene:',
 	'replacetext_invertselections' => 'Izvrni odabir',
 	'replacetext_replace' => 'Zamjeni',
