@@ -359,6 +359,7 @@ $messages['eo'] = array(
 /** Spanish (Español)
  * @author Crazymadlover
  * @author Imre
+ * @author Locos epraix
  */
 $messages['es'] = array(
 	'replacetext' => 'Reemplazar texto',
@@ -366,6 +367,7 @@ $messages['es'] = array(
 	'replacetext_replacementtext' => 'Texto de reemplazo:',
 	'replacetext_editpages' => 'Reemplazar textos en los contenidos de la página',
 	'replacetext_movepages' => 'Reemplazar texto en títulos de página, cuando sea posible',
+	'replacetext_nonamespace' => 'Debes seleccionar al menos un espacio de nombres.',
 	'replacetext_editormove' => 'Debes seleccionar al menos una de las opciones de reemplazo.',
 	'replacetext_choosepagesforedit' => "Por favor seleccione las {{PLURAL:$3|página|páginas}} para las cuales desea reemplazar '$1' con '$2':",
 	'replacetext_choosepagesformove' => "Reemplazar '$1' con '$2' en los {{PLURAL:$3|nombre de la siguiente página|nombres de las siguientes páginas}}:",
