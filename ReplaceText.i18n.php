@@ -105,6 +105,15 @@ $messages['ar'] = array(
 	'right-replacetext' => 'القيام باستبدال للسلاسل في الويكي بأكمله',
 );
 
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'replacetext_originaltext' => 'ܟܬܒܬܐ ܫܪܫܝܬܐ:',
+	'replacetext_watchmovedpages' => 'ܪܗܝ ܦܐܬܬ̈ܐ ܗܠܝܢ',
+	'replacetext_invertselections' => 'ܐܗܦܟ ܠܓܘܒܝ̈ܐ',
+);
+
 /** Egyptian Spoken Arabic (مصرى)
  * @author Ghaly
  * @author Meno25
@@ -511,6 +520,13 @@ Quere continuar coa substitución?',
 	'replacetext_cancel' => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
 	'replacetext_editsummary' => 'Substitución de texto - de "$1" a "$2"',
 	'right-replacetext' => 'Facer substitucións de cordas no wiki enteiro',
+);
+
+/** Ancient Greek (Ἀρχαία ἑλληνικὴ)
+ * @author Crazymadlover
+ */
+$messages['grc'] = array(
+	'replacetext_continue' => 'Συνεχίζειν',
 );
 
 /** Swiss German (Alemannisch)
@@ -1042,6 +1058,7 @@ Volètz contunhar aquestas substitucions ?",
  * @author Xqt
  */
 $messages['pdc'] = array(
+	'replacetext_noreplacement' => 'Ken Blatt gfunne mit „$1“.',
 	'replacetext_continue' => 'Weiter',
 );
 
