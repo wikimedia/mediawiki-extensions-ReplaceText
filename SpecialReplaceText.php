@@ -98,10 +98,8 @@ class ReplaceText extends SpecialPage {
 			}
 			$jobs = array();
 			foreach ( $wgRequest->getValues() as $key => $value ) {
-				if ( $value == '1' ) {
-					if ($key === 'replace') {
-						// ignore this value
-					} elseif ( strpos( $key, 'move-' ) !== false ) {
+				if ( $value == '1' && $key !== 'replace' ) {
+					if ( strpos( $key, 'move-' ) !== false ) {
 						$title = Title::newFromID( substr( $key, 5 ) );
 						$replacement_params['move_page'] = true;
 					} else {
