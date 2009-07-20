@@ -70,8 +70,8 @@ class ReplaceText extends SpecialPage {
 
 		$this->target = $wgRequest->getText( 'target' );
 		$this->replacement = $wgRequest->getText( 'replacement' );
-		$this->edit_pages = $wgRequest->getCheck( 'edit_pages' );
-		$this->move_pages = $wgRequest->getCheck( 'move_pages' );
+		$this->edit_pages = ($wgRequest->getVal( 'edit_pages' ) == 1);
+		$this->move_pages = ($wgRequest->getVal( 'move_pages' ) == 1);
 		$this->selected_namespaces = self::getSelectedNamespaces();
 
 		if ( $wgRequest->getCheck( 'continue' ) ) {
@@ -440,7 +440,6 @@ class ReplaceText extends SpecialPage {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$search = $dbr->escapeLike( $search );
-		$search = str_replace(array("\\", "'"), array("\\\\", "\'"),  $search);
 		$include_ns = $dbr->makeList( $namespaces );
 
 		$tables = array( 'page', 'revision', 'text' );
