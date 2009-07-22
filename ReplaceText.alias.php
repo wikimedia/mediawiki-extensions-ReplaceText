@@ -152,6 +152,11 @@ $aliases['oc'] = array(
 	'ReplaceText' => array( 'Remplaçar tèxte', 'RemplaçarTèxte' ),
 );
 
+/** Slovak (Slovenčina) */
+$aliases['sk'] = array(
+	'ReplaceText' => array( 'NahradiťText' ),
+);
+
 /** Albanian (Shqip) */
 $aliases['sq'] = array(
 	'ReplaceText' => array( 'ZëvendësoTekstin' ),

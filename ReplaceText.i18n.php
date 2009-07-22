@@ -55,7 +55,7 @@ Do you want to continue?',
  */
 $messages['qqq'] = array(
 	'replacetext' => "This message is displayed as a title of this extension's special page.",
-	'replacetext-desc' => 'Short description of this extension, shown in [[Special:Version]]. Do not translate or change links.
+	'replacetext-desc' => '{{desc}}
 
 {{Identical|Content page}}',
 	'replacetext_docu' => "Description of how to use this extension, displayed on the extension's special page ([[Special:ReplaceText]]).",
