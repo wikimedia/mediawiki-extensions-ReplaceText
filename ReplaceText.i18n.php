@@ -857,6 +857,7 @@ Wells De trozdämm wigger maache?',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
+ * @author Les Meloures
  * @author Robby
  */
 $messages['lb'] = array(
@@ -882,8 +883,8 @@ $messages['lb'] = array(
 	'replacetext_noreplacement' => "Et goufe keng Säite mam Text '$1' fonnt.",
 	'replacetext_nomove' => "Keng Säite fonnt wou '$1' am Titel drasteet.",
 	'replacetext_return' => 'Zréck op de Formulaire',
-	'replacetext_warning' => "Et gëtt schonn {{PLURAL:$1|eng Säit op däer|$1 Säiten op deenen}} wou d'Zeecherei '$2' schonn drann ass.
-Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säiten op deenen Dir Ännerunge gemaach huet vun de Säiten z'ënnerscheeden wou elo d'Zeecherei '$2' schonn drann ass.
+	'replacetext_warning' => "Et gëtt schonn {{PLURAL:$1|eng Säit op däer|$1 Säiten op deenen}} d'Zeecherei '$2' schonn dran ass.
+Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säiten op deenen Dir Ännerunge gemaach hutt vun de Säiten z'ënnerscheeden wou elo d'Zeecherei '$2' schonn dran ass.
 Wëllt Dir mat der Ännerung weiderfueren?",
 	'replacetext_blankwarning' => 'Well den Textdeel mat dem de gesichten Text ersat gi soll eidel ass, kann dës Aktioun net réckgängeg gemaach ginn; wëllt Dir awer weiderfueren?',
 	'replacetext_continue' => 'Weiderfueren',
