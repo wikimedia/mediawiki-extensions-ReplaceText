@@ -1260,10 +1260,24 @@ $messages['sk'] = array(
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
-	'replacetext_originaltext' => 'Оригинални текст',
-	'replacetext_replacementtext' => 'Текст за преснимавање',
+	'replacetext_originaltext' => 'Оригинални текст:',
+	'replacetext_replacementtext' => 'Текст којим се замењује:',
+	'replacetext_editpages' => 'Замени текст у садржају стране',
+	'replacetext_movepages' => 'Замени текст у насловима страна, уколико је могуће',
+	'replacetext_givetarget' => 'Морате навести стринг кога треба заменити.',
+	'replacetext_nonamespace' => 'Морате изабрати најмање један именски простор.',
+	'replacetext_editormove' => 'Морате изабрати макар једну од опција замене.',
+	'replacetext_choosepagesforedit' => "Замени '$1' са '$2' у тексту {{PLURAL:$3|следеће стране|следећих страна}}:",
+	'replacetext_cannotmove' => '{{PLURAL:$1|Следећа страна не може бити премештена|Следеће стране не могу бити премештене}}:',
+	'replacetext_formovedpages' => 'За премештене стране:',
+	'replacetext_savemovedpages' => 'Сними старе наслове као преусмерења ка новим насловима',
+	'replacetext_watchmovedpages' => 'Надгледај ове стране',
+	'replacetext_invertselections' => 'Инвертуј избор',
 	'replacetext_replace' => 'Пресними',
 	'replacetext_success' => "'$1' ће бити замењено са '$2' у $3 {{PLURAL:$3|страни|страна}}.",
+	'replacetext_noreplacement' => "Није нађена ни једна страна која садржи стринг '$1'.",
+	'replacetext_nomove' => "Није нађена ни једна страна чији наслов садржи '$1'.",
+	'replacetext_return' => 'Врати се на форму.',
 	'replacetext_continue' => 'Настави',
 	'replacetext_editsummary' => "Замена текста - '$1' у '$2'",
 );
