@@ -436,10 +436,12 @@ $messages['fa'] = array(
  * @author Str4nd
  */
 $messages['fi'] = array(
+	'replacetext' => 'Korvaa teksti',
 	'replacetext_originaltext' => 'Alkuperäinen teksti',
 	'replacetext_replacementtext' => 'Korvaava teksti',
 	'replacetext_movepages' => 'Korvaa teksti otsikoista, jos mahdollista',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Seuraavaa sivua|Seuraavia sivuja}} ei voi siirtää:',
+	'replacetext_watchmovedpages' => 'Tarkkaile näitä sivuja',
 	'replacetext_invertselections' => 'Käänteinen valinta',
 	'replacetext_replace' => 'Korvaa',
 	'replacetext_continue' => 'Jatka',
@@ -797,9 +799,9 @@ $messages['jv'] = array(
  */
 $messages['km'] = array(
 	'replacetext' => 'ជំនួសអត្ថបទ',
-	'replacetext_originaltext' => 'អត្ថបទដើម',
-	'replacetext_replacementtext' => 'អត្ថបទជំនួស',
-	'replacetext_movepages' => 'ជំនួស​អត្ថបទ​នៅក្នុង​ចំណងជើង​ទំព័រ​ឱ្យ​បាន​ល្អ នៅពេល​ដែល​អាច​ធ្វើ​បាន',
+	'replacetext_originaltext' => 'អត្ថបទដើម៖',
+	'replacetext_replacementtext' => 'អត្ថបទជំនួស៖',
+	'replacetext_movepages' => 'ជំនួស​អត្ថបទ​នៅក្នុង​ចំណងជើង​ទំព័រ​បើអាច',
 	'replacetext_choosepagesforedit' => "សូម​ជ្រើសរើស {{PLURAL:$3|ទំព័រ|ទំព័រ}} សម្រាប់​អ្វី​ដែល​អ្នក​ចង់​ជំនួស '$1' ដោយ '$2':",
 	'replacetext_choosepagesformove' => 'ជំនួស​អត្ថបទ​នៅក្នុង {{PLURAL:$1|ឈ្មោះ​ទំព័រ​ដូចតទៅ|ឈ្មោះ​ទំព័រ​ដូចតទៅ}}:',
 	'replacetext_invertselections' => 'ដាក់បញ្ច្រាស​ជម្រើស',
@@ -1149,6 +1151,7 @@ $messages['pt-br'] = array(
 	'replacetext_editpages' => 'Substituir texto no conteúdo da página',
 	'replacetext_movepages' => 'Substituir texto nos títulos das páginas, quando possível',
 	'replacetext_givetarget' => 'Você deve especificar um texto a ser substituido.',
+	'replacetext_nonamespace' => 'Deverá seleccionar pelo menos um domínio.',
 	'replacetext_editormove' => 'Você deve selecionar pelo menos uma das opções de substituição',
 	'replacetext_choosepagesforedit' => "Por favor, seleccione {{PLURAL:$3|a página na qual|as páginas nas quais}} deseja substituir '$1' por '$2':",
 	'replacetext_choosepagesformove' => "Substituir '$1' por '$2' {{PLURAL:$3|no nome da seguinte página|nos nomes das seguintes páginas}}:",
