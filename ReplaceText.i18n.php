@@ -433,6 +433,7 @@ $messages['fa'] = array(
 /** Finnish (Suomi)
  * @author Crt
  * @author Nike
+ * @author Silvonen
  * @author Str4nd
  */
 $messages['fi'] = array(
@@ -440,11 +441,14 @@ $messages['fi'] = array(
 	'replacetext_originaltext' => 'Alkuperäinen teksti',
 	'replacetext_replacementtext' => 'Korvaava teksti',
 	'replacetext_movepages' => 'Korvaa teksti otsikoista, jos mahdollista',
+	'replacetext_nonamespace' => 'Sinun täytyy valita vähintään yksi nimiavaruus.',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Seuraavaa sivua|Seuraavia sivuja}} ei voi siirtää:',
 	'replacetext_watchmovedpages' => 'Tarkkaile näitä sivuja',
 	'replacetext_invertselections' => 'Käänteinen valinta',
 	'replacetext_replace' => 'Korvaa',
+	'replacetext_return' => 'Palaa lomakkeeseen.',
 	'replacetext_continue' => 'Jatka',
+	'right-replacetext' => 'Tehdä merkkijonojen korvauksia koko wikin laajuudella',
 );
 
 /** French (Français)
@@ -1181,6 +1185,7 @@ Deseja prosseguir com a substituição?",
  */
 $messages['ro'] = array(
 	'replacetext_originaltext' => 'Text original:',
+	'replacetext_continue' => 'Continuare',
 );
 
 /** Russian (Русский)
@@ -1283,6 +1288,32 @@ $messages['sr-ec'] = array(
 	'replacetext_return' => 'Врати се на форму.',
 	'replacetext_continue' => 'Настави',
 	'replacetext_editsummary' => "Замена текста - '$1' у '$2'",
+);
+
+/** latinica (latinica)
+ * @author Michaello
+ */
+$messages['sr-el'] = array(
+	'replacetext_originaltext' => 'Originalni tekst:',
+	'replacetext_replacementtext' => 'Tekst kojim se zamenjuje:',
+	'replacetext_editpages' => 'Zameni tekst u sadržaju strane',
+	'replacetext_movepages' => 'Zameni tekst u naslovima strana, ukoliko je moguće',
+	'replacetext_givetarget' => 'Morate navesti string koga treba zameniti.',
+	'replacetext_nonamespace' => 'Morate izabrati najmanje jedan imenski prostor.',
+	'replacetext_editormove' => 'Morate izabrati makar jednu od opcija zamene.',
+	'replacetext_choosepagesforedit' => "Zameni '$1' sa '$2' u tekstu {{PLURAL:$3|sledeće strane|sledećih strana}}:",
+	'replacetext_cannotmove' => '{{PLURAL:$1|Sledeća strana ne može biti premeštena|Sledeće strane ne mogu biti premeštene}}:',
+	'replacetext_formovedpages' => 'Za premeštene strane:',
+	'replacetext_savemovedpages' => 'Snimi stare naslove kao preusmerenja ka novim naslovima',
+	'replacetext_watchmovedpages' => 'Nadgledaj ove strane',
+	'replacetext_invertselections' => 'Invertuj izbor',
+	'replacetext_replace' => 'Presnimi',
+	'replacetext_success' => "'$1' će biti zamenjeno sa '$2' u $3 {{PLURAL:$3|strani|strana}}.",
+	'replacetext_noreplacement' => "Nije nađena ni jedna strana koja sadrži string '$1'.",
+	'replacetext_nomove' => "Nije nađena ni jedna strana čiji naslov sadrži '$1'.",
+	'replacetext_return' => 'Vrati se na formu.',
+	'replacetext_continue' => 'Nastavi',
+	'replacetext_editsummary' => "Zamena teksta - '$1' u '$2'",
 );
 
 /** Swedish (Svenska)
