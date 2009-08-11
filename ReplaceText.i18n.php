@@ -444,7 +444,9 @@ $messages['fi'] = array(
 	'replacetext' => 'Korvaa teksti',
 	'replacetext_originaltext' => 'Alkuperäinen teksti',
 	'replacetext_replacementtext' => 'Korvaava teksti',
+	'replacetext_editpages' => 'Korvaa teksti sivujen sisällöstä',
 	'replacetext_movepages' => 'Korvaa teksti otsikoista, jos mahdollista',
+	'replacetext_givetarget' => 'Sinun tulee määrittää korvattava merkkijono.',
 	'replacetext_nonamespace' => 'Sinun täytyy valita vähintään yksi nimiavaruus.',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Seuraavaa sivua|Seuraavia sivuja}} ei voi siirtää:',
 	'replacetext_watchmovedpages' => 'Tarkkaile näitä sivuja',
@@ -452,6 +454,7 @@ $messages['fi'] = array(
 	'replacetext_replace' => 'Korvaa',
 	'replacetext_return' => 'Palaa lomakkeeseen.',
 	'replacetext_continue' => 'Jatka',
+	'replacetext_editsummary' => 'Tekstin korvaus – ”$1” muotoon ”$2”',
 	'right-replacetext' => 'Tehdä merkkijonojen korvauksia koko wikin laajuudella',
 );
 
@@ -534,8 +537,16 @@ Quere continuar coa substitución?',
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
  * @author Crazymadlover
+ * @author Omnipaedista
  */
 $messages['grc'] = array(
+	'replacetext' => 'Ἀντικαθιστάναι κείμενον',
+	'replacetext_originaltext' => 'Πρωτότυπον κείμενον:',
+	'replacetext_replacementtext' => 'Κείμενον ἀντικαταστάσεως:',
+	'replacetext_formovedpages' => 'Περὶ μετακεκινημένων δέλτων:',
+	'replacetext_watchmovedpages' => 'Ἐφορᾶν τάσδε τὰς δέλτους',
+	'replacetext_replace' => 'Ἀντικαθιστάναι',
+	'replacetext_return' => 'Ἐπανιέναι εἰς τὸν τύπον.',
 	'replacetext_continue' => 'Συνεχίζειν',
 );
 
@@ -1105,6 +1116,13 @@ Czy kontynuować zastępowanie?',
 	'right-replacetext' => 'Wykonywanie zastępowania tekstu w całej wiki',
 );
 
+/** Pontic (Ποντιακά)
+ * @author Omnipaedista
+ */
+$messages['pnt'] = array(
+	'replacetext_originaltext' => 'Πρωτότυπον κείμενον:',
+);
+
 /** Portuguese (Português)
  * @author 555
  * @author Crazymadlover
@@ -1190,7 +1208,9 @@ Deseja prosseguir com a substituição?",
 $messages['ro'] = array(
 	'replacetext_originaltext' => 'Text original:',
 	'replacetext_watchmovedpages' => 'Urmăreşte aceste pagini',
+	'replacetext_nomove' => "Nu a fost găsită nici o pagină al cărei titlu să conţină '$1'.",
 	'replacetext_continue' => 'Continuare',
+	'replacetext_editsummary' => "Înlocuire de text - '$1' în '$2'",
 );
 
 /** Russian (Русский)
@@ -1470,6 +1490,7 @@ $messages['vo'] = array(
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Roc michael
  * @author Sheepy
+ * @author Wrightbus
  */
 $messages['zh-hant'] = array(
 	'replacetext' => '取代文字',
@@ -1478,6 +1499,7 @@ $messages['zh-hant'] = array(
 	'replacetext_originaltext' => '原始文字',
 	'replacetext_replacementtext' => '取代文字',
 	'replacetext_movepages' => '如果可以的話，也取代頁面名稱的字串。',
+	'replacetext_nonamespace' => '您必須選擇最少一個名字空間。',
 	'replacetext_choosepagesforedit' => '請選擇你想將「$1」取代成「$2」的頁面。',
 	'replacetext_choosepagesformove' => '對以下頁面的名稱進行取代：',
 	'replacetext_cannotmove' => '以下頁面無法被移動：',
