@@ -344,8 +344,12 @@ Coš dalej wuměniś?",
 
 /** Greek (Ελληνικά)
  * @author Consta
+ * @author ZaDiak
  */
 $messages['el'] = array(
+	'replacetext_originaltext' => 'Αρχικό κείμενο:',
+	'replacetext_replace' => 'Αντικατάσταση',
+	'replacetext_return' => 'Επιστροφή στη φόρμα.',
 	'replacetext_continue' => 'Συνέχεια',
 );
 
@@ -1185,6 +1189,7 @@ Deseja prosseguir com a substituição?",
  */
 $messages['ro'] = array(
 	'replacetext_originaltext' => 'Text original:',
+	'replacetext_watchmovedpages' => 'Urmăreşte aceste pagini',
 	'replacetext_continue' => 'Continuare',
 );
 
