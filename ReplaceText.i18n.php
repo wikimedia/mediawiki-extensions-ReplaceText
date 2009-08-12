@@ -48,6 +48,7 @@ Do you want to continue?',
 
 /** Message documentation (Message documentation)
  * @author Darth Kule
+ * @author EugeneZelenko
  * @author Fryed-peach
  * @author McMonster
  * @author Nike
@@ -61,7 +62,9 @@ $messages['qqq'] = array(
 	'replacetext_docu' => "Description of how to use this extension, displayed on the extension's special page ([[Special:ReplaceText]]).",
 	'replacetext_originaltext' => 'Label of the text field, where user enters original piece of text, which would be replaced.',
 	'replacetext_choosepagesforedit' => 'Displayed over the list of pages where the given text was found.',
-	'replacetext_replace' => 'Label of the button, which triggers the begin of replacment.',
+	'replacetext_replace' => 'Label of the button, which triggers the begin of replacment.
+
+{{Identical|Replace}}',
 	'replacetext_continue' => '{{Identical|Continue}}',
 	'right-replacetext' => '{{doc-right}}',
 );
@@ -347,7 +350,11 @@ Coš dalej wuměniś?",
  * @author ZaDiak
  */
 $messages['el'] = array(
+	'replacetext' => 'Αντικατάσταση κειμένου',
 	'replacetext_originaltext' => 'Αρχικό κείμενο:',
+	'replacetext_replacementtext' => 'Κείμενο αντικατάστασης:',
+	'replacetext_formovedpages' => 'Για μετακινούμενες σελίδες:',
+	'replacetext_watchmovedpages' => 'Παρακολούθηση αυτών των σελίδων',
 	'replacetext_replace' => 'Αντικατάσταση',
 	'replacetext_return' => 'Επιστροφή στη φόρμα.',
 	'replacetext_continue' => 'Συνέχεια',
@@ -435,6 +442,7 @@ $messages['fa'] = array(
 );
 
 /** Finnish (Suomi)
+ * @author Cimon Avaro
  * @author Crt
  * @author Nike
  * @author Silvonen
@@ -442,6 +450,7 @@ $messages['fa'] = array(
  */
 $messages['fi'] = array(
 	'replacetext' => 'Korvaa teksti',
+	'replacetext_docu' => "Korvataksesi yhden merkkijonon toisella kaikissa tämän wikin tavallisissa sivuissa, syötä molemmat kaksi tekstinpätkää tänne ja sitten napsauta kohtaa 'Jatka'. Tämän jälkeen sinulle näytetään luettelo sivuista, jotka sisältävät haetun tekstin, ja voit valita ne, joihin haluat korvata sen. Oma nimesi näkyy sivun historiassa käyttäjänä joka on vastuussa kaikista tehdyistä muutoksista.",
 	'replacetext_originaltext' => 'Alkuperäinen teksti',
 	'replacetext_replacementtext' => 'Korvaava teksti',
 	'replacetext_editpages' => 'Korvaa teksti sivujen sisällöstä',
@@ -1344,6 +1353,7 @@ $messages['sr-el'] = array(
 /** Swedish (Svenska)
  * @author M.M.S.
  * @author Najami
+ * @author Rotsee
  */
 $messages['sv'] = array(
 	'replacetext' => 'Ersätt text',
@@ -1352,18 +1362,27 @@ $messages['sv'] = array(
 	'replacetext_originaltext' => 'Originaltext',
 	'replacetext_replacementtext' => 'Ersättningstext',
 	'replacetext_movepages' => 'Ersätt text i sidtitlar när det är möjligt',
+	'replacetext_givetarget' => 'Du måste ange en textsträng som ska ersättas.',
+	'replacetext_nonamespace' => 'Du måste ange minst en namnrymd.',
+	'replacetext_editormove' => 'Du måste ange minst ett alternativ för ersättning.',
 	'replacetext_choosepagesforedit' => "Var god ange för {{PLURAL:$3|vilken sida|vilka sidor}} du vill ersätta '$1' med '$2':",
 	'replacetext_choosepagesformove' => 'Ersätt text i {{PLURAL:$3|namnet på den följande sidan|namnen på de följande sidorna}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Den följande sidan|De följande sidorna}} kan inte flyttas:',
+	'replacetext_formovedpages' => 'För flyttade sidor:',
+	'replacetext_savemovedpages' => 'Spara de gamla artikeltitlarna som omdirigeringar till de nya',
+	'replacetext_watchmovedpages' => 'Bevaka de här sidorna',
 	'replacetext_invertselections' => 'Invertera val',
 	'replacetext_replace' => 'Ersätt',
 	'replacetext_success' => "'$1' kommer att ersättas med '$2' på $3 {{PLURAL:$3|sida|sidor}}.",
 	'replacetext_noreplacement' => 'Inga sidor hittades med strängen "$1".',
+	'replacetext_nomove' => 'Inga sidor hittades som innehåller "$1" i titeln.',
+	'replacetext_return' => 'Tillbaka till formuläret.',
 	'replacetext_warning' => 'Det finns {{PLURAL:$1|$1 sida|$1 sidor}} som redan har ersättningssträngen "$2". Om du gör den här ersättningen kommer du inte kunna separera dina ersättningar från den här texten. Vill du fortsätta med ersättningen?',
 	'replacetext_blankwarning' => 'Eftersom ersättningstexten är tom kommer den här handlingen inte kunna upphävas; vill du fortsätta?',
 	'replacetext_continue' => 'Fortsätt',
 	'replacetext_cancel' => '(Klicka på "Tillbaka"-knappen i din webbläsare för att avbryta handlingen.)',
 	'replacetext_editsummary' => 'Textersättning - "$1" till "$2"',
+	'right-replacetext' => 'Genomför textersättningar på hela wikin',
 );
 
 /** Telugu (తెలుగు)
