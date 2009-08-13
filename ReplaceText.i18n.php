@@ -302,11 +302,14 @@ Möchtest du weitermachen?',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
+ * @author Imre
  * @author Umherirrender
  */
 $messages['de-formal'] = array(
+	'replacetext_docu' => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, geben Sie die beiden Textteile hier ein und klicken Sie auf die Ersetzen-Schaltfläche. Ihr Benutzername wird in der Versionsgeschichte aufgenommen.',
 	'replacetext_givetarget' => 'Sie müssen eine Zeichenkette angeben, die ersetzt werden soll.',
 	'replacetext_editormove' => 'Sie müssen mindestens eine Ersetzungsoption wählen.',
+	'replacetext_cancel' => '(Klicken Sie auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
 );
 
 /** Lower Sorbian (Dolnoserbski)
