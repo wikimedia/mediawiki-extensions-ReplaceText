@@ -245,10 +245,10 @@ class ReplaceText extends SpecialPage {
 		$prefix_search_label = wfMsg('replacetext_prefixsearch');
 		$wgOut->addHTML(
 			"<fieldset>\n" .
-			"<p>$optional_filters_label:</p>\n" .
-			"<p>$category_search_label:\n" .
+			"<p>$optional_filters_label</p>\n" .
+			"<p>$category_search_label\n" .
 			Xml::input( 'category', 20, $this->category ) . '</p>' .
-			"<p>$prefix_search_label:\n" .
+			"<p>$prefix_search_label\n" .
 			Xml::input( 'prefix', 20, $this->prefix ) . '</p>' .
 			"</fieldset>\n" .
 			Xml::checkLabel( wfMsg( 'replacetext_editpages' ), 'edit_pages', 'edit_pages', true ) . '<br />' .
