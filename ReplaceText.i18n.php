@@ -312,6 +312,9 @@ $messages['de-formal'] = array(
 	'replacetext_docu' => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, geben Sie die beiden Textteile hier ein und klicken Sie auf die Ersetzen-Schaltfläche. Ihr Benutzername wird in der Versionsgeschichte aufgenommen.',
 	'replacetext_givetarget' => 'Sie müssen eine Zeichenkette angeben, die ersetzt werden soll.',
 	'replacetext_editormove' => 'Sie müssen mindestens eine Ersetzungsoption wählen.',
+	'replacetext_warning' => '$1 {{PLURAL:$1|Seite enthält|Seiten enthalten}} bereits den zu ersetzenden Textteil „$2“.
+Eine Trennung der Ersetzungen mit den bereits vorhandenen Textteilen ist nicht möglich.
+Möchten Sie weitermachen?',
 	'replacetext_cancel' => '(Klicken Sie auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
 );
 
@@ -969,6 +972,9 @@ U krijgt dan een lijst met pagina's te zien waar uw te vervangen tekstdeel in vo
 Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke voor de wijzigingen.",
 	'replacetext_originaltext' => 'Oorspronkelijke tekst:',
 	'replacetext_replacementtext' => 'Vervangende tekst:',
+	'replacetext_optionalfilters' => 'Optionele filters:',
+	'replacetext_categorysearch' => 'Alleen in de volgende categorie vervangen:',
+	'replacetext_prefixsearch' => "Alleen in pagina's met het volgende voorvoegsel vervangen:",
 	'replacetext_editpages' => 'Tekst vervangen in de pagina-inhoud',
 	'replacetext_movepages' => 'Tekst vervangen in paginanamen als mogelijk',
 	'replacetext_givetarget' => 'U moet de te vervangen tekst opgeven.',
@@ -1241,6 +1247,8 @@ $messages['ru'] = array(
 	'replacetext_docu' => 'Для того, чтобы заменить один текст на другой во всех обычных страницах вики, вам необходимо ввести желаемый текст здесь и нажать на кнопку «Продолжить». После этого вам будет предложен список всех страниц, содержащих заменяемый текст, и вы сможете из них те, в которых нужно произвести замены. Ваше имя появится в истории страниц, в которых произойдёт замена текста, как лицо отвечающее за внесённые изменения.',
 	'replacetext_originaltext' => 'Исходный текст:',
 	'replacetext_replacementtext' => 'Текст для замены:',
+	'replacetext_categorysearch' => 'Заменить только в категории:',
+	'replacetext_prefixsearch' => 'Заменить только в страницах с приставкой:',
 	'replacetext_editpages' => 'Замена текста в содержимом страниц',
 	'replacetext_movepages' => 'Заменить текст в названиях страниц, если это возможно',
 	'replacetext_givetarget' => 'Вы должны указать строку, которую нужно заменить.',
