@@ -64,11 +64,9 @@ class ReplaceTextJob extends Job {
 				$actual_user = $wgUser;
 				$wgUser = User::newFromId( $this->params['user_id'] );
 				$edit_summary = $this->params['edit_summary'];
-				if ($wgUser->isAllowed('bot')) {
-					$flags = EDIT_MINOR | EDIT_FORCE_BOT;
-				} else {
-					$flags = EDIT_MINOR;
-				}
+				$flags = EDIT_MINOR;
+				if ($wgUser->isAllowed('bot'))
+					$flags |= EDIT_FORCE_BOT;
 				$article->doEdit( $new_text, $edit_summary, $flags );
 				$wgUser = $actual_user;
 			}
