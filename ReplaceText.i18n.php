@@ -72,6 +72,13 @@ $messages['qqq'] = array(
 	'right-replacetext' => '{{doc-right}}',
 );
 
+/** Afrikaans (Afrikaans)
+ * @author Naudefj
+ */
+$messages['af'] = array(
+	'replacetext_replace' => 'Vervang',
+);
+
 /** Arabic (العربية)
  * @author Alnokta
  * @author Meno25
@@ -84,6 +91,8 @@ $messages['ar'] = array(
 	'replacetext_docu' => "لاستبدال سلسلة نص بأخرى عبر كل الصفحات العادية في هذا الويكي، أدخل قطعتي النص هنا ثم اضغط 'استمرار'. سيعرض عليك بعد ذلك قائمة بالصفحات التي تحتوي على نص البحث، ويمكنك اختيار اللواتي تريد الاستبدال فيها. اسمك سيظهر في تواريخ الصفحات كالمستخدم المسؤول عن أية تغييرات.",
 	'replacetext_originaltext' => 'النص الأصلي:',
 	'replacetext_replacementtext' => 'نص الاستبدال:',
+	'replacetext_optionalfilters' => 'مرشحات اختيارية:',
+	'replacetext_categorysearch' => 'استبدل فقط في التصنيف:',
 	'replacetext_editpages' => 'استبدل النص في محتويات الصفحة',
 	'replacetext_movepages' => 'استبدل النص في عناوين الصفحات، عندما يكون ممكنا',
 	'replacetext_givetarget' => 'لابد أن تحدد السلسلة التي تريد استبدالها',
@@ -371,6 +380,7 @@ $messages['el'] = array(
 	'replacetext_optionalfilters' => 'Προαιρετικά φίλτρα:',
 	'replacetext_categorysearch' => 'Αντικατάσταση μόνο στην κατηγορία:',
 	'replacetext_editpages' => 'Αντικατάσταση κειμένου στα περιεχόμενα σελίδας',
+	'replacetext_nonamespace' => 'Πρέπει να επιλέξεις τουλάχιστον μια περιοχή.',
 	'replacetext_formovedpages' => 'Για μετακινούμενες σελίδες:',
 	'replacetext_watchmovedpages' => 'Παρακολούθηση αυτών των σελίδων',
 	'replacetext_invertselections' => 'Αναστροφή επιλογών',
@@ -387,11 +397,16 @@ $messages['eo'] = array(
 	'replacetext' => 'Anstataŭigi tekston',
 	'replacetext_originaltext' => 'Originala teksto',
 	'replacetext_replacementtext' => 'Anstataŭigita teksto',
+	'replacetext_optionalfilters' => 'Nedevigaj filtriloj:',
+	'replacetext_categorysearch' => 'Anstataŭigi nur en kategorio:',
 	'replacetext_movepages' => 'Anstataŭigi tekston en paĝaj titoloj ankaŭ, kiam eble',
+	'replacetext_nonamespace' => 'Vi devas elekti almenaŭ unu nomspacon.',
+	'replacetext_watchmovedpages' => 'Atenti ĉi tiujn paĝojn',
 	'replacetext_invertselections' => 'Inversigi selektojn',
 	'replacetext_replace' => 'Anstataŭigi',
 	'replacetext_success' => "'$1' estos anstataŭigita de '$2' en $3 paĝoj.",
 	'replacetext_noreplacement' => "Neniuj paĝoj estis trovitaj enhavantaj la ĉenon '$1'.",
+	'replacetext_return' => 'Reiri al formularo.',
 	'replacetext_continue' => 'Reaktivigi',
 	'replacetext_editsummary' => "Teksta anstataŭigo - '$1' al '$2'",
 );
@@ -492,6 +507,7 @@ $messages['fi'] = array(
  * @author Grondin
  * @author IAlex
  * @author McDutchie
+ * @author PieRRoMaN
  * @author Verdy p
  * @author Zetud
  */
@@ -501,6 +517,9 @@ $messages['fr'] = array(
 	'replacetext_docu' => 'Pour remplacer une chaîne de caractères avec une autre sur l’ensemble des données des pages de ce wiki, vous pouvez entrez les deux textes ici et cliquer sur « Remplacer ». Votre nom apparaîtra dans l’historique des pages tel un utilisateur auteur des changements.',
 	'replacetext_originaltext' => 'Texte original :',
 	'replacetext_replacementtext' => 'Texte de remplacement :',
+	'replacetext_optionalfilters' => 'Filtres optionnels :',
+	'replacetext_categorysearch' => 'Remplacer seulement dans la catégorie :',
+	'replacetext_prefixsearch' => 'Remplacer seulement dans les pages ayant le préfixe :',
 	'replacetext_editpages' => 'Remplacer le texte dans le contenu dans la page',
 	'replacetext_movepages' => 'Remplacer le texte dans le titre des pages, si possible',
 	'replacetext_givetarget' => 'Vous devez spécifier la chaîne à remplacer.',
@@ -627,6 +646,9 @@ $messages['he'] = array(
 	'replacetext_docu' => "כדי להחליף מחרוזת טקסט אחת באחרת בכל הדפים הרגילים בוויקי זה, הזינו את הטקסט בשני חלקים ולחצו על 'המשך'. אז תוצג בפניכם רשימת דפים המכילים את הטקסט אחריו חיפשתם, ותוכלו לבחור את הדפים בהם תרצו להחליף את הטקסט האמור. שמכם יופיע בהיסטוריית הגרסאות של כל דף בתור המשתמש האחראי לשינויים שבוצעו.",
 	'replacetext_originaltext' => 'הטקסט המקורי:',
 	'replacetext_replacementtext' => 'טקסט ההחלפה:',
+	'replacetext_optionalfilters' => 'מסננים זמינים:',
+	'replacetext_categorysearch' => 'החלפה רק בקטגוריה:',
+	'replacetext_prefixsearch' => 'החלפה רק בדפים בעלי הקידומת:',
 	'replacetext_editpages' => 'החלפת טקסט בתוכן הדפים',
 	'replacetext_movepages' => 'החלפת טקסט בכותרות הדפים, כשניתן',
 	'replacetext_givetarget' => 'יש לציין את המחרוזת שתוחלף.',
@@ -931,6 +953,9 @@ $messages['lb'] = array(
 	'replacetext_docu' => "Fir en Text duerch en aneren Text op allen Inhaltssäite vun dëser Wiki z'ersetzen, gitt w.e.g. déi zwee Texter hei ana klickt op 'Weider'. Dir gesitt dann eng Lëscht vu Säiten op denen de gesichten Text dran ass, an Dir kënnt déi eraussichen op denen Dir den Text ersetze wëllt. Äre Numm steet an der Lëscht vun de Versiounen als Auteur vun all denen Ännerungen.",
 	'replacetext_originaltext' => 'Originaltext:',
 	'replacetext_replacementtext' => 'Neien Text:',
+	'replacetext_optionalfilters' => 'Optional Filteren:',
+	'replacetext_categorysearch' => 'Ersetz nëmmen an der Kategorie:',
+	'replacetext_prefixsearch' => 'Ersetz nëmmen a Säite mam Prefix:',
 	'replacetext_editpages' => 'Den Text a Säiteninhalter ersetzen',
 	'replacetext_movepages' => 'Text an den Titele vun de Säiten ersetzen, wa méiglech',
 	'replacetext_givetarget' => 'Dir musst déi Zeechen uginn déi ersat solle ginn.',
@@ -1068,6 +1093,7 @@ Vil du halda fram?',
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  * @author Laaknor
+ * @author Simny
  */
 $messages['no'] = array(
 	'replacetext' => 'Erstatt tekst',
@@ -1076,10 +1102,13 @@ $messages['no'] = array(
 	'replacetext_originaltext' => 'Originaltekst:',
 	'replacetext_replacementtext' => 'Erstatningstekst:',
 	'replacetext_choosepagesforedit' => 'Velg hvilke sider du ønsker å erstatte «$1» med «$2» i:',
+	'replacetext_formovedpages' => 'For flyttede sider:',
+	'replacetext_watchmovedpages' => 'Overvåk disse sidene',
 	'replacetext_invertselections' => 'Inverter valg',
 	'replacetext_replace' => 'Erstatt',
 	'replacetext_success' => '«$1» blir erstattet med «$2» på {{PLURAL:$3|én side|$3 sider}}.',
 	'replacetext_noreplacement' => 'Ingen sider ble funnet med strengen «$1».',
+	'replacetext_nomove' => 'Ingen sider ble funnet der tittelen inneholder «$1».',
 	'replacetext_warning' => 'Det er {{PLURAL:$1|en side|$1 sider}} som allerede har erstatningsteksten «$2». Om du gjør denne erstatningen vil du ikke kunne skille ut dine erstatninger fra denne teksten. Fortsette med erstattingen?',
 	'replacetext_blankwarning' => 'Fordi erstatningsteksten er tom vil denne handlingen ikke kunne angres automatisk; fortsette?',
 	'replacetext_continue' => 'Fortsett',
@@ -1096,6 +1125,9 @@ $messages['oc'] = array(
 	'replacetext_docu' => "Per remplaçar una cadena de caractèrs amb una autra sus l'ensemble de las donadas de las paginas d'aqueste wiki, podètz picar los dos tèxtes aicí e clicar sus 'Remplaçar'. Vòstre nom apareiserà dins l'istoric de las paginas tal coma un utilizaire autor dels cambiaments.",
 	'replacetext_originaltext' => 'Tèxte original :',
 	'replacetext_replacementtext' => 'Tèxte novèl :',
+	'replacetext_optionalfilters' => 'Filtres opcionals :',
+	'replacetext_categorysearch' => 'Remplaçar solament dins la categoria :',
+	'replacetext_prefixsearch' => "Remplaçar solament dins las paginas qu'an lo prefix :",
 	'replacetext_editpages' => 'Remplaçar lo tèxte dins lo contengut dins la pagina',
 	'replacetext_movepages' => 'Remplaçar lo tèxte dins lo títol de las paginas, se possible',
 	'replacetext_givetarget' => 'Vos cal especificar la cadena de remplaçar.',
@@ -1137,6 +1169,7 @@ $messages['pdc'] = array(
  * @author Maikking
  * @author Matma Rex
  * @author Sp5uhe
+ * @author ToSter
  */
 $messages['pl'] = array(
 	'replacetext' => 'Zastąp tekst',
@@ -1144,15 +1177,25 @@ $messages['pl'] = array(
 	'replacetext_docu' => 'Możesz zastąpić jeden ciąg znaków innym, w treści wszystkich stron tej wiki. W tym celu wprowadź dwa fragmenty tekstu i naciśnij „Kontynuuj”. Zostanie pokazana lista stron, które zawierają wyszukiwany tekst. Będziesz mógł wybrać te strony, na których chcesz ten tekst zamienić na nowy. W historii zmian stron, do opisu autora edycji, zostanie użyta Twoja nazwa użytkownika.',
 	'replacetext_originaltext' => 'Wyszukiwany tekst',
 	'replacetext_replacementtext' => 'Zamień na',
+	'replacetext_optionalfilters' => 'Dodatkowe filtry:',
+	'replacetext_categorysearch' => 'Zamień tylko w kategorii:',
+	'replacetext_prefixsearch' => 'Zamień tylko na stronach z prefiksem:',
+	'replacetext_editpages' => 'Zamień tekst w zawartości stron',
 	'replacetext_movepages' => 'Jeśli to możliwe wykonaj zastępowanie również w tytułach stron',
+	'replacetext_givetarget' => 'Musisz podać łańcuch znaków, który ma zostać zamieniony.',
+	'replacetext_nonamespace' => 'Musisz wybrać co najmniej jedną przestrzeń nazw.',
+	'replacetext_editormove' => 'Musisz wybrać co najmniej jedną opcję zamiany.',
 	'replacetext_choosepagesforedit' => 'Wybierz {{PLURAL:$3|stronę|strony}}, na których chcesz „$1” zastąpić „$2”',
 	'replacetext_choosepagesformove' => 'Zastąp „$1” tekstem „$2” w {{PLURAL:$3|nazwie strony|nazwach następujących stron:}}',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Poniższa strona nie może zostać przeniesiona|Poniższe strony nie mogą zostać przeniesione}}:',
+	'replacetext_formovedpages' => 'Dla przeniesionych stron:',
 	'replacetext_savemovedpages' => 'Zapisz stare tytuły jako przekierowania do nowych',
+	'replacetext_watchmovedpages' => 'Obserwuj te strony',
 	'replacetext_invertselections' => 'Odwróć zaznaczenie',
 	'replacetext_replace' => 'Zastąp',
 	'replacetext_success' => '„$1” zostanie zastąpiony przez „$2” na $3 {{PLURAL:$3|stronie|stronach}}.',
 	'replacetext_noreplacement' => 'Nie znaleziono stron zawierających tekst „$1”.',
+	'replacetext_nomove' => 'Nie znaleziono żadnych stron o tytule zawierającym "$1".',
 	'replacetext_return' => 'Powrót do formularza.',
 	'replacetext_warning' => '{{PLURAL:$1|Jest $1 strona|Są $1 strony|Jest $1 stron}} zawierających tekst „$2”, którym chcesz zastępować. Jeśli wykonasz zastępowanie nie będzie możliwe odseparowanie tych stron od wykonanych zastąpień.
 Czy kontynuować zastępowanie?',
@@ -1221,6 +1264,9 @@ $messages['pt-br'] = array(
 	'replacetext_docu' => 'Para substituir uma "string" de texto por outra em todas as páginas desta wiki você precisa fornecer o texto a ser substituído e o novo texto, logo em seguida pressione o botão \'Substituir\'. Será exibida uma lista de páginas que contenham o termo pesquisado, sendo possível selecionar em quais você deseja realizar substituições. Seu nome de utilizador aparecerá nos históricos de páginas como o responsável por ter feito as alterações.',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Texto substitutivo:',
+	'replacetext_optionalfilters' => 'Filtros opcionais:',
+	'replacetext_categorysearch' => 'Substituir apenas na categoria:',
+	'replacetext_prefixsearch' => 'Substituir apenas em páginas com o prefixo:',
 	'replacetext_editpages' => 'Substituir texto no conteúdo da página',
 	'replacetext_movepages' => 'Substituir texto nos títulos das páginas, quando possível',
 	'replacetext_givetarget' => 'Você deve especificar um texto a ser substituido.',
@@ -1313,6 +1359,9 @@ $messages['sk'] = array(
 	'replacetext_docu' => 'Nájsť text na všetkých stránkach tejto wiki a nahradiť ho iným textom môžete tak, že sem napíšete texty a stlačíte „Pokračovať”. Potom sa vám zobrazí zoznam stránok obsahujúcich hľadaný text a môžete si zvoliť tie, na ktorých ho chcete nahradiť. V histórii úprav sa zaznamená vaše meno.',
 	'replacetext_originaltext' => 'Pôvodný text:',
 	'replacetext_replacementtext' => 'Nahradiť textom:',
+	'replacetext_optionalfilters' => 'Nepovinné filtre:',
+	'replacetext_categorysearch' => 'Nahradiť iba v kategórii:',
+	'replacetext_prefixsearch' => 'Nahradiť iba v stránkach s predponou:',
 	'replacetext_editpages' => 'Nahradiť text v obsahu stránok',
 	'replacetext_movepages' => 'Nahradiť text v názvoch stránok, keď je to možné',
 	'replacetext_givetarget' => 'Musíte zadať reťazec, ktorý sa má nahradiť.',
