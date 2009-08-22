@@ -77,6 +77,7 @@ $messages['qqq'] = array(
  */
 $messages['af'] = array(
 	'replacetext_replace' => 'Vervang',
+	'replacetext_continue' => 'Gaan voort',
 );
 
 /** Arabic (العربية)
@@ -412,6 +413,7 @@ $messages['eo'] = array(
 );
 
 /** Spanish (Español)
+ * @author Antur
  * @author Crazymadlover
  * @author Imre
  * @author Locos epraix
@@ -420,8 +422,12 @@ $messages['es'] = array(
 	'replacetext' => 'Reemplazar texto',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Texto de reemplazo:',
+	'replacetext_optionalfilters' => 'Filtros opcionales:',
+	'replacetext_categorysearch' => 'Reemplace sólo en la categoría:',
+	'replacetext_prefixsearch' => 'Reemplaza solamente en páginas con el prefijo:',
 	'replacetext_editpages' => 'Reemplazar textos en los contenidos de la página',
 	'replacetext_movepages' => 'Reemplazar texto en títulos de página, cuando sea posible',
+	'replacetext_givetarget' => 'Debe especificar la cadena de caracteres a reemplazar.',
 	'replacetext_nonamespace' => 'Debes seleccionar al menos un espacio de nombres.',
 	'replacetext_editormove' => 'Debes seleccionar al menos una de las opciones de reemplazo.',
 	'replacetext_choosepagesforedit' => "Por favor seleccione las {{PLURAL:$3|página|páginas}} para las cuales desea reemplazar '$1' con '$2':",
@@ -433,10 +439,15 @@ $messages['es'] = array(
 	'replacetext_invertselections' => 'Invertir selecciones',
 	'replacetext_replace' => 'Reemplazar',
 	'replacetext_success' => "'$1' será reemplazado con '$2' en $3 {{PLURAL:$3|página|páginas}}.",
+	'replacetext_noreplacement' => "No se hallaron páginas que contengan la cadena de caracteres '$1'.",
+	'replacetext_nomove' => "No se hallaron páginas cuyo título contenga '$1'.",
 	'replacetext_return' => 'Retornar al formulario.',
+	'replacetext_blankwarning' => 'Como la cadena de reemplazo está vacía, esta operación no podrá revertirse.
+¿ Desea continuar ?',
 	'replacetext_continue' => 'Continuar',
 	'replacetext_cancel' => '(Haga click en el botón "retroceder" en su navegador para cancelar la operación.)',
 	'replacetext_editsummary' => "Texto reemplaza - '$1' a '$2'",
+	'right-replacetext' => 'Reemplaza cadenas de caracteres en toda la wiki',
 );
 
 /** Basque (Euskara)
@@ -1309,6 +1320,7 @@ $messages['ro'] = array(
 /** Russian (Русский)
  * @author AlexSm
  * @author Ferrer
+ * @author Kv75
  * @author Normalex
  * @author Rubin
  * @author Александр Сигачёв
@@ -1316,7 +1328,7 @@ $messages['ro'] = array(
 $messages['ru'] = array(
 	'replacetext' => 'Заменить текст',
 	'replacetext-desc' => 'Добавляет [[Special:ReplaceText|служебную страницу]], позволяющую администраторам осуществлять повсеместную замену указанного текста на всех обычных страницах вики',
-	'replacetext_docu' => 'Для того, чтобы заменить один текст на другой во всех обычных страницах вики, вам необходимо ввести желаемый текст здесь и нажать на кнопку «Продолжить». После этого вам будет предложен список всех страниц, содержащих заменяемый текст, и вы сможете из них те, в которых нужно произвести замены. Ваше имя появится в истории страниц, в которых произойдёт замена текста, как лицо отвечающее за внесённые изменения.',
+	'replacetext_docu' => 'Для того, чтобы заменить один текст на другой на всех страницах вики, вам необходимо ввести здесь желаемый текст и нажать на кнопку «Продолжить». После этого вам будет предложен список всех страниц, содержащих заменяемый текст, и вы сможете выбрать из них те, в которых нужно произвести замены. В качестве лица, отвечающего за внесённые изменения, в истории правок страниц, в которых произойдёт замена текста, будете указаны вы.',
 	'replacetext_originaltext' => 'Исходный текст:',
 	'replacetext_replacementtext' => 'Текст для замены:',
 	'replacetext_optionalfilters' => 'Необязательные фильтры:',
