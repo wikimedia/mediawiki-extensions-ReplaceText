@@ -1399,7 +1399,7 @@ $messages['sk'] = array(
 	'right-replacetext' => 'Vykonať náhradu reťazcov na celej wiki',
 );
 
-/** Serbian Cyrillic ekavian (ћирилица)
+/** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Sasa Stefanovic
  * @author Михајло Анђелковић
  */
@@ -1426,7 +1426,7 @@ $messages['sr-ec'] = array(
 	'replacetext_editsummary' => "Замена текста - '$1' у '$2'",
 );
 
-/** latinica (latinica)
+/** Serbian Latin ekavian (Srpski (latinica))
  * @author Michaello
  */
 $messages['sr-el'] = array(
@@ -1645,6 +1645,7 @@ $messages['zh-hant'] = array(
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
  * @author Roc michael
+ * @author Sheepy
  */
 $messages['zh-tw'] = array(
 	'replacetext' => '取代文字',
