@@ -857,7 +857,7 @@ $messages['ja'] = array(
 	'replacetext_docu' => 'ある文字列をこのウィキ上のすべての標準ページで別のものに置換するには、必要な2つの文字列をここに入力し「続行」を押します。次に検索した文字列を含むページが一覧表示され、置換を行いたいページを選択できます。置換後には、あなたの名前がページ履歴にその編集を担当した利用者として表示されます。',
 	'replacetext_originaltext' => '置換前の文字列:',
 	'replacetext_replacementtext' => '置換後の文字列:',
-	'replacetext_optionalfilters' => '追加のフィルター （任意）:',
+	'replacetext_optionalfilters' => '追加のフィルター (任意):',
 	'replacetext_categorysearch' => '以下のカテゴリにあるもののみを置換:',
 	'replacetext_prefixsearch' => '以下の文字列から始まるページ内のもののみを置換:',
 	'replacetext_editpages' => 'ページ本文中の文字列を置換',
@@ -880,7 +880,7 @@ $messages['ja'] = array(
 	'replacetext_warning' => '置換後文字列「$2」を既に含んだページが $1{{PLURAL:$1|ページ}}あります。この置換を実行すると、これらの文字列と実際に置換された箇所を区別できなくなります。置換を続行しますか？',
 	'replacetext_blankwarning' => '置換後文字列が空であるため、この操作は実行後の取り消しができなくなります。続行しますか？',
 	'replacetext_continue' => '続行',
-	'replacetext_cancel' => '（操作を中止するにはブラウザの「戻る」ボタンをクリックしてください）',
+	'replacetext_cancel' => '(操作を中止するにはブラウザの「戻る」ボタンをクリックしてください)',
 	'replacetext_editsummary' => '文字列「$1」を「$2」に置換',
 	'right-replacetext' => 'ウィキ全体で文字列の置換を実行する',
 );
