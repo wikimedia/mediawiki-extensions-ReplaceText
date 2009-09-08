@@ -36,6 +36,7 @@ $messages['en'] = array(
 	'replacetext_success' => '\'$1\' will be replaced with \'$2\' in $3 {{PLURAL:$3|page|pages}}.',
 	'replacetext_noreplacement' => 'No pages were found containing the string \'$1\'.',
 	'replacetext_nomove' => 'No pages were found whose title contains \'$1\'.',
+	'replacetext_nosuchcategory' => "No category exists with the name '$1'.",
 	'replacetext_return' => 'Return to form.',
 	'replacetext_warning' => 'There {{PLURAL:$1|is $1 page that already contains|are $1 pages that already contain}} the replacement string, \'$2\'.
 If you make this replacement you will not be able to separate your replacements from these strings.
