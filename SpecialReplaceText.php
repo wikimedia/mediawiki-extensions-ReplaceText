@@ -197,13 +197,24 @@ class ReplaceText extends SpecialPage {
 					}
 				}
 			}
+			// if no results were found, check to see if a bad
+			// category name was entered
 			if ( count($titles_for_edit) == 0 && count($titles_for_move) == 0 ) {
-				if ( $this->edit_pages )
-					$wgOut->addWikiMsg( 'replacetext_noreplacement', "<tt><nowiki>{$this->target}</nowiki></tt>" );
-				if ( $this->move_pages )
-					$wgOut->addWikiMsg( 'replacetext_nomove', "<tt><nowiki>{$this->target}</nowiki></tt>" );
-				// link back to starting form
 				$sk = $this->user->getSkin();
+				$bad_cat_name = false;
+				if (! empty($this->category)) {
+					$category_title = Title::makeTitleSafe(NS_CATEGORY, $this->category);
+					if (! $category_title->exists()) $bad_cat_name = true;
+				}
+				if ($bad_cat_name) {
+					$wgOut->addHTML(wfMsg('replacetext_nosuchcategory', $sk->link($category_title, ucfirst($this->category))));
+				} else {
+					if ( $this->edit_pages )
+						$wgOut->addWikiMsg( 'replacetext_noreplacement', "<tt><nowiki>{$this->target}</nowiki></tt>" );
+					if ( $this->move_pages )
+						$wgOut->addWikiMsg( 'replacetext_nomove', "<tt><nowiki>{$this->target}</nowiki></tt>" );
+				}
+				// link back to starting form
 				$wgOut->addHTML( '<p>' . $sk->makeKnownLinkObj( $this->getTitle(), wfMsg( 'replacetext_return' ) ) . '</p>' );
 			} else {
 				$this->pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles );
@@ -262,42 +273,42 @@ class ReplaceText extends SpecialPage {
 	 * Copied almost exactly from MediaWiki's SpecialSearch class, i.e.
 	 * the search page
 	 */
-	function namespaceTables( $namespaces, $rowsPerTable = 3 ) {
-		global $wgContLang;
-		// Group namespaces into rows according to subject.
-		// Try not to make too many assumptions about namespace numbering.
-		$rows = array();
-		$tables = "";
-		foreach( $namespaces as $ns => $name ) {
-			$subj = MWNamespace::getSubject( $ns );
-			if( !array_key_exists( $subj, $rows ) ) {
-				$rows[$subj] = "";
-			}
-			$name = str_replace( '_', ' ', $name );
-			if( '' == $name ) {
-				$name = wfMsg( 'blanknamespace' );
-			}
-			$rows[$subj] .= Xml::openElement( 'td', array( 'style' => 'white-space: nowrap' ) ) .
-				Xml::checkLabel( $name, "ns{$ns}", "mw-search-ns{$ns}", in_array( $ns, $namespaces ) ) .
-				Xml::closeElement( 'td' ) . "\n";
-		}
-		$rows = array_values( $rows );
-		$numRows = count( $rows );
-		// Lay out namespaces in multiple floating two-column tables so they'll
-		// be arranged nicely while still accommodating different screen widths
-		// Float to the right on RTL wikis
-		$tableStyle = $wgContLang->isRTL() ?
-			'float: right; margin: 0 0 0em 1em' : 'float: left; margin: 0 1em 0em 0';
-		// Build the final HTML table...
-		for( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
-			$tables .= Xml::openElement( 'table', array( 'style' => $tableStyle ) );
-			for( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
-				$tables .= "<tr>\n" . $rows[$j] . "</tr>";
-			}
-			$tables .= Xml::closeElement( 'table' ) . "\n";
-		}
-		return $tables;
-	}
+        function namespaceTables( $namespaces, $rowsPerTable = 3 ) {
+                global $wgContLang;
+                // Group namespaces into rows according to subject.
+                // Try not to make too many assumptions about namespace numbering.
+                $rows = array();
+                $tables = "";
+                foreach( $namespaces as $ns => $name ) {
+                        $subj = MWNamespace::getSubject( $ns );
+                        if( !array_key_exists( $subj, $rows ) ) {
+                                $rows[$subj] = "";
+                        }
+                        $name = str_replace( '_', ' ', $name );
+                        if( '' == $name ) {
+                                $name = wfMsg( 'blanknamespace' );
+                        }
+                        $rows[$subj] .= Xml::openElement( 'td', array( 'style' => 'white-space: nowrap' ) ) .
+                                Xml::checkLabel( $name, "ns{$ns}", "mw-search-ns{$ns}", in_array( $ns, $namespaces ) ) .
+                                Xml::closeElement( 'td' ) . "\n";
+                }
+                $rows = array_values( $rows );
+                $numRows = count( $rows );
+                // Lay out namespaces in multiple floating two-column tables so they'll
+                // be arranged nicely while still accommodating different screen widths
+                // Float to the right on RTL wikis
+                $tableStyle = $wgContLang->isRTL() ?
+                        'float: right; margin: 0 0 0em 1em' : 'float: left; margin: 0 1em 0em 0';
+                // Build the final HTML table...
+                for( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
+                        $tables .= Xml::openElement( 'table', array( 'style' => $tableStyle ) );
+                        for( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
+                                $tables .= "<tr>\n" . $rows[$j] . "</tr>";
+                        }
+                        $tables .= Xml::closeElement( 'table' ) . "\n";
+                }
+                return $tables;
+        }
 
 
 	function pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles ) {
@@ -447,6 +458,7 @@ class ReplaceText extends SpecialPage {
 			"page_namespace IN ($include_ns)",
 		);
 		if (! empty($category)) {
+			$category = str_replace( ' ', '_', $dbr->escapeLike( $category ) );
 			$tables[] = 'categorylinks';
 			$conds[] = 'page_id = cl_from';
 			$conds[] = "cl_to = '$category'";
@@ -480,6 +492,7 @@ class ReplaceText extends SpecialPage {
 			'rev_text_id = old_id'
 		);
 		if (! empty($category)) {
+			$category = str_replace( ' ', '_', $dbr->escapeLike( $category ) );
 			$tables[] = 'categorylinks';
 			$conds[] = 'page_id = cl_from';
 			$conds[] = "cl_to = '$category'";
