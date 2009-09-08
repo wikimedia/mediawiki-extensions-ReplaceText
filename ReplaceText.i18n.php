@@ -221,6 +221,13 @@ $messages['bg'] = array(
 	'replacetext_editsummary' => "Заместване на текст - '$1' на '$2'",
 );
 
+/** Bengali (বাংলা)
+ * @author Bellayet
+ */
+$messages['bn'] = array(
+	'replacetext' => 'লেখা প্রতিস্থাপন',
+);
+
 /** Bosnian (Bosanski)
  * @author CERminator
  */
@@ -363,6 +370,7 @@ $messages['dsb'] = array(
 	'replacetext_success' => "'$1' wuměnja se pśez '$2' na $3 {{PLURAL:$3|boku|bokoma|bokach|bokach}}.",
 	'replacetext_noreplacement' => "Njejsu se namakali žedne boki, kótarež wopśimuju tekst '$1'.",
 	'replacetext_nomove' => "Boki, kótarychž titel wopśimujo '$1', njejsu se namakali.",
+	'replacetext_nosuchcategory' => 'Kategorija z mjenim "$1" njeeksistěrujo.',
 	'replacetext_return' => 'Slědk k formularoju.',
 	'replacetext_warning' => "{{PLURAL:$1|Jo $1 bok, kótaryž južo wopśimujo|stej $1 boka, kótarejž južo wopśimujotej|su $1 boki, kótarež južo wopśimuju|jo $1 bokow, kótarež južo wopśimujo}} tekst, kótaryž ma se wuměniś, '$2'.
 Jolic wuwjedujoš toś tu wuměnu, njamóžoš rozeznaś swóje wuměny wót toś togo teksta.
@@ -748,6 +756,7 @@ $messages['hsb'] = array(
 	'replacetext_success' => "'$1' so w $3 {{PLURAL:$3|stronje|stronomaj|stronach|stronach}} přez '$2' naruna.",
 	'replacetext_noreplacement' => "Njejsu so žane strony namakali, kotrež wuraz '$1' wobsahuja.",
 	'replacetext_nomove' => "Strony, kotrychž titul '$1' wobsahuje, njebuchu namakane.",
+	'replacetext_nosuchcategory' => 'Kategorija z mjenom "$1" njeeksistuje.',
 	'replacetext_return' => 'Wróćo k formularej',
 	'replacetext_warning' => "{{PLURAL:$1|Je hižo $1 strona, kotraž wobsahuje|Stej hižo $1 stronje, kotejž wobsahujetej|Su hižo $1 strony, kotrež wobsahuja|Je hižo $1 stronow, kotrež wobsahuje}} narunanski tekst, '$2'. Jeli tute narunanje činiš, njemóžeš swoje narunanja wot tutoho teksta rozdźělić. Z narunanjom pokročować?",
 	'replacetext_blankwarning' => 'Narunanski dźěl je prózdny, tohodla operacija njeda so cofnyć; njedźiwajo na to pokročować?',
@@ -950,6 +959,7 @@ wann en Sigg ömjenannt woode es.',
 	'replacetext_success' => '„$1“ soll en {{PLURAL:$3|eine Sigg|$3 Sigge|nix}} dorsch „$2“ ußjetuusch wääde.',
 	'replacetext_noreplacement' => 'Kein Sigge jefonge met däm Täxstöck „$1“ dren.',
 	'replacetext_nomove' => 'Mer han kei Sigge jefonge, woh „$1“ em Tittel dren förkütt.',
+	'replacetext_nosuchcategory' => 'Mer han kein Saachjropp met dämm Name „$1“.',
 	'replacetext_return' => 'Jangk retuur op dat Fommulaa.',
 	'replacetext_warning' => '
 {{PLURAL:$1|Ein Sigg enthält|$1 Sigge enthallde}} ald dat Täxstöck „$2“, wat bemm Tuusche ennjeföch wääde sull.
@@ -1064,6 +1074,7 @@ Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke v
 	'replacetext_success' => '"$1" wordt in $3 {{PLURAL:$3|pagina|pagina\'s}} vervangen door "$2".',
 	'replacetext_noreplacement' => "Er waren geen pagina's die de tekst '$1' bevatten.",
 	'replacetext_nomove' => 'Er zijn geen pagina\'s gevonden met "$1" in de naam.',
+	'replacetext_nosuchcategory' => 'De categorie "$1" bestaat niet.',
 	'replacetext_return' => 'Terugkeren naar het formulier.',
 	'replacetext_warning' => "Er {{PLURAL:$1|is $1 pagina|zijn $1 pagina's}} die het te vervangen tesktdeel al '$2' al {{PLURAL:$1|bevat|bevatten}}.
 Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.
@@ -1361,6 +1372,7 @@ $messages['ru'] = array(
 	'replacetext_success' => '«$1» будет заменён на «$2» на $3 {{PLURAL:$3|странице|страницах|страницах}}.',
 	'replacetext_noreplacement' => 'Не найдено ни одной страницы, содержащей «$1».',
 	'replacetext_nomove' => 'Не удалось найти страницы, заголовок которых содержит «$1».',
+	'replacetext_nosuchcategory' => 'Не существует категории с именем «$1».',
 	'replacetext_return' => 'Вернуться к форме.',
 	'replacetext_warning' => 'Найдена {{PLURAL:$1|$1 страница, содержащая|$1 страницы, содержащие|$1 страниц, содержащих}} текст для замены, «$2».
 Если вы продолжите операцию замены, то не сможете отделить уже существующие записи от тех, которые появятся после замены.
