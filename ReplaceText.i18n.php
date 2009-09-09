@@ -193,6 +193,7 @@ $messages['be-tarask'] = array(
 	'replacetext_success' => '«$1» будзе заменены на «$2» ў $3 {{PLURAL:$3|старонцы|старонках|старонках}}.',
 	'replacetext_noreplacement' => 'Старонак, якія ўтрымліваюць тэкст «$1» ня знойдзена.',
 	'replacetext_nomove' => 'Ня знойдзена старонак, у назвах якіх утрымліваецца «$1».',
+	'replacetext_nosuchcategory' => 'Не існуе катэгорыі з назвай «$1».',
 	'replacetext_return' => 'Вярнуцца да формы.',
 	'replacetext_warning' => 'Існуе $1 {{PLURAL:$1|старонка, якая ўтрымлівае|старонкі, якія ўтрымліваюць|старонак, якія ўтрымліваюць}} тэкст на замену «$2».
 Калі Вы зробіце гэту замену, Вы ня зможаце аддзяліць Вашыя замены ад гэтых тэкстаў.
@@ -561,6 +562,7 @@ $messages['fr'] = array(
 	'replacetext_success' => '« $1 » sera remplacé par « $2 » dans $3 fichier{{PLURAL:$3||s}}.',
 	'replacetext_noreplacement' => 'Aucun fichier contenant la chaîne « $1 » n’a été trouvé.',
 	'replacetext_nomove' => 'Aucune page n’a été trouvée dont le titre contient « $1 ».',
+	'replacetext_nosuchcategory' => "Il n'existe pas de catégorie nommée « $1 ».",
 	'replacetext_return' => 'Revenir au formulaire.',
 	'replacetext_warning' => 'Il y a $1 fichier{{PLURAL:$1| qui contient|s qui contiennent}} la chaîne de remplacement « $2 ».
 Si vous effectuez cette substitution, vous ne pourrez pas séparer vos changements à partir de ces chaînes.
@@ -600,6 +602,7 @@ $messages['gl'] = array(
 	'replacetext_success' => '"$1" será substituído por "$2" {{PLURAL:$3|nunha páxina|en $3 páxinas}}.',
 	'replacetext_noreplacement' => "Non foi atopada ningunha páxina que contivese a cadea '$1'.",
 	'replacetext_nomove' => 'Non se atopou ningún artigo cuxo título conteña "$1".',
+	'replacetext_nosuchcategory' => 'Non existe ningunha categoría co nome "$1".',
 	'replacetext_return' => 'Voltar ao formulario.',
 	'replacetext_warning' => 'Hai {{PLURAL:$1|unha páxina|$1 páxinas}} que xa {{PLURAL:$1|contén|conteñen}} a cadea de substitución "$2".
 Se fai esta substitución non poderá separar as súas substitucións destas cadeas.
@@ -693,6 +696,7 @@ $messages['he'] = array(
 	'replacetext_success' => "'$1' יוחלף ב־'$2' ב־{{PLURAL:$3|דף אחד|$3 דפים}}.",
 	'replacetext_noreplacement' => "לא נמצאו דפים המכילים את המחרוזת '$1'.",
 	'replacetext_nomove' => "לא נמצאו דפים ששמם מכיל '$1'.",
+	'replacetext_nosuchcategory' => "לא קיימת קטגוריה בשם '$1'.",
 	'replacetext_return' => 'חזרה לטופס.',
 	'replacetext_warning' => "יש {{PLURAL:$1|דף אחד שכבר מכיל|$1 דפים שכבר מכילים}} את מחרוזת ההחלפה, '$2'.
 אם תבצעו החלפה זו, לא תוכלו להבדיל בין המחרוזות שלכם לבין מחרוזות אלו.
@@ -796,6 +800,7 @@ $messages['ia'] = array(
 	'replacetext_success' => "'$1' essera reimplaciate per '$2' in $3 {{PLURAL:$3|pagina|paginas}}.",
 	'replacetext_noreplacement' => "Nulle pagina esseva trovate que contine le catena de characteres '$1'.",
 	'replacetext_nomove' => "Nulle pagina esseva trovate con un titulo que contine '$1'.",
+	'replacetext_nosuchcategory' => "Nulle categoria existe con le nomine '$1'.",
 	'replacetext_return' => 'Retornar al formulario.',
 	'replacetext_warning' => "Il ha $1 {{PLURAL:$1|pagina|paginas}} que contine ja le nove texto, '$2'.
 Si tu face iste reimplaciamento, tu non potera distinguer inter tu reimplaciamentos e iste texto ja existente.
@@ -888,6 +893,7 @@ $messages['ja'] = array(
 	'replacetext_success' => '$3{{PLURAL:$3|ページ}}で「$1」が「$2」に置換されます。',
 	'replacetext_noreplacement' => '文字列「$1」を含むページは見つかりませんでした。',
 	'replacetext_nomove' => '「$1」を名前に含むページは見つかりませんでした。',
+	'replacetext_nosuchcategory' => '「$1」という名前のカテゴリーは存在しません。',
 	'replacetext_return' => 'フォームに戻る',
 	'replacetext_warning' => '置換後文字列「$2」を既に含んだページが $1{{PLURAL:$1|ページ}}あります。この置換を実行すると、これらの文字列と実際に置換された箇所を区別できなくなります。置換を続行しますか？',
 	'replacetext_blankwarning' => '置換後文字列が空であるため、この操作は実行後の取り消しができなくなります。続行しますか？',
