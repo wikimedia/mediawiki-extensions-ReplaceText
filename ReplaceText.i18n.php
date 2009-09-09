@@ -14,7 +14,9 @@ $messages['en'] = array(
 	// user messages
 	'replacetext' => 'Replace text',
 	'replacetext-desc' => 'Provides a [[Special:ReplaceText|special page]] to allow administrators to do a global string find-and-replace on all the content pages of a wiki',
-	'replacetext_docu' => 'To replace one text string with another across all regular pages on this wiki, enter the two pieces of text here and then hit \'Continue\'. You will then be shown a list of pages that contain the search text, and you can choose the ones in which you want to replace it. Your name will appear in page histories as the user responsible for any changes.',
+	'replacetext_docu' => 'To replace one text string with another across all regular pages on this wiki, enter the two pieces of text here and then hit \'Continue\'.
+You will then be shown a list of pages that contain the search text, and you can choose the ones in which you want to replace it.
+Your name will appear in page histories as the user responsible for any changes.',
 	'replacetext_originaltext' => 'Original text:',
 	'replacetext_replacementtext' => 'Replacement text:',
 	'replacetext_optionalfilters' => 'Optional filters:',
@@ -25,20 +27,20 @@ $messages['en'] = array(
 	'replacetext_givetarget' => 'You must specify the string to be replaced.',
 	'replacetext_nonamespace' => 'You must select at least one namespace.',
 	'replacetext_editormove' => 'You must select at least one of the replacement options.',
-	'replacetext_choosepagesforedit' => 'Replace \'$1\' with \'$2\' in the text of the following {{PLURAL:$3|page|pages}}:',
-	'replacetext_choosepagesformove' => 'Replace \'$1\' with \'$2\' in the {{PLURAL:$3|name of the following page|names of the following pages}}:',
+	'replacetext_choosepagesforedit' => 'Replace "$1" with "$2" in the text of the following {{PLURAL:$3|page|pages}}:',
+	'replacetext_choosepagesformove' => 'Replace "$1" with "$2" in the {{PLURAL:$3|name of the following page|names of the following pages}}:',
 	'replacetext_cannotmove' => 'The following {{PLURAL:$1|page|pages}} cannot be moved:',
 	'replacetext_formovedpages' => 'For moved pages:',
 	'replacetext_savemovedpages' => 'Save the old titles as redirects to the new titles',
 	'replacetext_watchmovedpages' => 'Watch these pages',
 	'replacetext_invertselections' => 'Invert selections',
 	'replacetext_replace' => 'Replace',
-	'replacetext_success' => '\'$1\' will be replaced with \'$2\' in $3 {{PLURAL:$3|page|pages}}.',
-	'replacetext_noreplacement' => 'No pages were found containing the string \'$1\'.',
-	'replacetext_nomove' => 'No pages were found whose title contains \'$1\'.',
-	'replacetext_nosuchcategory' => "No category exists with the name '$1'.",
+	'replacetext_success' => '"$1" will be replaced with "$2" in $3 {{PLURAL:$3|page|pages}}.',
+	'replacetext_noreplacement' => 'No pages were found containing the string "$1".',
+	'replacetext_nomove' => 'No pages were found whose title contains "$1".',
+	'replacetext_nosuchcategory' => 'No category exists with the name "$1".',
 	'replacetext_return' => 'Return to form.',
-	'replacetext_warning' => 'There {{PLURAL:$1|is $1 page that already contains|are $1 pages that already contain}} the replacement string, \'$2\'.
+	'replacetext_warning' => 'There {{PLURAL:$1|is $1 page that already contains|are $1 pages that already contain}} the replacement string, "$2".
 If you make this replacement you will not be able to separate your replacements from these strings.
 Continue with the replacement?',
 	'replacetext_blankwarning' => 'Because the replacement string is blank, this operation will not be reversible.
@@ -46,7 +48,7 @@ Do you want to continue?',
 	'replacetext_continue' => 'Continue',
 	'replacetext_cancel' => '(Click the "Back" button in your browser to cancel the operation.)',
 	// content messages
-	'replacetext_editsummary' => 'Text replace - \'$1\' to \'$2\'',
+	'replacetext_editsummary' => 'Text replace - "$1" to "$2"',
 	'right-replacetext' => 'Do string replacements on the entire wiki',
 );
 
