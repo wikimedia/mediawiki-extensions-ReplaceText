@@ -696,7 +696,7 @@ $messages['he'] = array(
 	'replacetext_success' => "'$1' יוחלף ב־'$2' ב־{{PLURAL:$3|דף אחד|$3 דפים}}.",
 	'replacetext_noreplacement' => "לא נמצאו דפים המכילים את המחרוזת '$1'.",
 	'replacetext_nomove' => "לא נמצאו דפים ששמם מכיל '$1'.",
-	'replacetext_nosuchcategory' => "לא קיימת קטגוריה בשם '$1'.",
+	'replacetext_nosuchcategory' => 'לא קיימת קטגוריה בשם "$1".',
 	'replacetext_return' => 'חזרה לטופס.',
 	'replacetext_warning' => "יש {{PLURAL:$1|דף אחד שכבר מכיל|$1 דפים שכבר מכילים}} את מחרוזת ההחלפה, '$2'.
 אם תבצעו החלפה זו, לא תוכלו להבדיל בין המחרוזות שלכם לבין מחרוזות אלו.
