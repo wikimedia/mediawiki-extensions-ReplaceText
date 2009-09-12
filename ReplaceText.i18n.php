@@ -657,6 +657,7 @@ $messages['gsw'] = array(
 	'replacetext_success' => '„$1“ wird dur „$2“ in $3 {{PLURAL:$3|Syten|Syten}} ersetzt.',
 	'replacetext_noreplacement' => 'S isch kei Syte gfunde wore, wu s dr Täxt „$1“ din het.',
 	'replacetext_nomove' => "S sin kei Syte gfunde wore, wu '$1' im Titel hän",
+	'replacetext_nosuchcategory' => 'S git kei Kategorii mit em Name „$1“.',
 	'replacetext_return' => 'Zrugg zum Formular.',
 	'replacetext_warning' => 'In $1 {{PLURAL:$1|Syte het s|Seite het s}} dr Täxtteil „$2“, wu ersetzt soll wäre, scho.
 E Trännig vu dr Ersetzige mit dr Täxtteil, wu s scho het, sich nit megli. Mechtsch einewäg wytermache?',
@@ -1421,6 +1422,7 @@ $messages['sk'] = array(
 	'replacetext_success' => 'Text „$1” bude nahradený textom „$2” na $3 {{PLURAL:$3|stránke|stránkach}}.',
 	'replacetext_noreplacement' => 'Nenašli sa žiadne stránky obsahujúce text „$1”.',
 	'replacetext_nomove' => 'Neboli nájdené žiadne stránky, ktorých názov obsahuje „$1“.',
+	'replacetext_nosuchcategory' => 'Žiadna kategória s názvom „$1“ neexistuje.',
 	'replacetext_return' => 'Späť na formulár.',
 	'replacetext_warning' => '$1 {{PLURAL:$1|stránka|stránok}} už obsahuje text „$2”, ktorým chcete text nahradiť; ak budete pokračovať a text nahradíte, nebudete môcť odlíšiť vaše nahradenia od existujúceho textu, ktorý tento reťazec už obsahuje. Pokračovať v nahradení?',
 	'replacetext_blankwarning' => 'Pretože text, ktorým text chcete nahradiť je prázdny, operácia bude nevratná. Pokračovať?',
@@ -1585,6 +1587,15 @@ $messages['tr'] = array(
 	'replacetext_savemovedpages' => 'Eski başlıkları yeni başlıklara yönlendirmeler olarak sakla',
 	'replacetext_watchmovedpages' => 'Bu sayfaları izle',
 	'replacetext_invertselections' => 'Seçimleri ters çevir',
+);
+
+/** Veps (Vepsan kel')
+ * @author Игорь Бродский
+ */
+$messages['vep'] = array(
+	'replacetext_originaltext' => 'Originaline tekst',
+	'replacetext_watchmovedpages' => 'Kacelta nened lehtpoled',
+	'replacetext_return' => 'Pörtas formannoks.',
 );
 
 /** Vietnamese (Tiếng Việt)
