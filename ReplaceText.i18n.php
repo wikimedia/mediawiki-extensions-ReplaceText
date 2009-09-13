@@ -1013,6 +1013,7 @@ $messages['lb'] = array(
 	'replacetext_success' => "'$1' gëtt duerch '$2' op $3 {{PLURAL:$3|Säit|Säiten}} ersat.",
 	'replacetext_noreplacement' => "Et goufe keng Säite mam Text '$1' fonnt.",
 	'replacetext_nomove' => "Keng Säite fonnt wou '$1' am Titel drasteet.",
+	'replacetext_nosuchcategory' => 'Et gëtt keng Kategorie mam Numm "$1".',
 	'replacetext_return' => 'Zréck op de Formulaire',
 	'replacetext_warning' => "Et gëtt schonn {{PLURAL:$1|eng Säit op däer|$1 Säiten op deenen}} d'Zeecherei '$2' schonn dran ass.
 Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säiten op deenen Dir Ännerunge gemaach hutt vun de Säiten z'ënnerscheeden wou elo d'Zeecherei '$2' schonn dran ass.
