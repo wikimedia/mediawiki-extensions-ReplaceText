@@ -259,6 +259,7 @@ $messages['bs'] = array(
 	'replacetext_success' => "'$1' će biti zamijenjeno sa '$2' na $3 {{PLURAL:$3|stranici|stranice|stranica}}.",
 	'replacetext_noreplacement' => "Nije pronađena nijedna stranica koja sadrži '$1'.",
 	'replacetext_nomove' => "Nijedna stranica nije pronađena čiji naslov sadrži '$1'.",
+	'replacetext_nosuchcategory' => 'Ne postoji nijedna kategorija pod nazivom "$1".',
 	'replacetext_return' => 'Nazad na obrazac.',
 	'replacetext_warning' => "{{PLURAL:$1|Postoji $1 stranica koja već sadrži|Postoje $1 stranice koje već sadrže|Postoji $1 stranica koje već sadrže}} zamjenski tekst '$2'.
 Ako želite napraviti ovu zamjenu nećete biti u mogućnosti da razdvojite Vaše zamjene od ovih tekstova.
@@ -1300,6 +1301,7 @@ Deseja prosseguir com a substituição?",
  * @author Crazymadlover
  * @author Eduardo.mps
  * @author Enqd
+ * @author Luckas Blade
  */
 $messages['pt-br'] = array(
 	'replacetext' => 'Substituir texto',
@@ -1326,6 +1328,7 @@ $messages['pt-br'] = array(
 	'replacetext_success' => "'$1' será substituído por '$2' em $3 {{PLURAL:$3|página|páginas}}.",
 	'replacetext_noreplacement' => 'Não foram encontradas páginas contendo a "string" \'$1\'.',
 	'replacetext_nomove' => "Não foram encontradas páginas com títulos contendo '$1'.",
+	'replacetext_nosuchcategory' => 'Não existe categoria com o nome "$1".',
 	'replacetext_return' => 'Voltar ao formulário.',
 	'replacetext_warning' => "Há {{PLURAL:$1|$1 página que já possui|$1 páginas que já possuem}} a cadeia de caracteres de substituição, '$2'.
 Se você prosseguir com a substituição, não será possível distinguir as suas substituições do texto já existente.
