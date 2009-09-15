@@ -774,6 +774,13 @@ $messages['hsb'] = array(
 	'right-replacetext' => 'Tekstowe narunanja na cyłym wikiju činić',
 );
 
+/** Hungarian (Magyar)
+ * @author Glanthor Reviol
+ */
+$messages['hu'] = array(
+	'replacetext_continue' => 'Folytatás',
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */
