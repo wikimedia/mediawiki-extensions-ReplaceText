@@ -1195,6 +1195,7 @@ $messages['oc'] = array(
 	'replacetext_success' => '« $1 » es estat remplaçat per « $2 » dins $3 fichièr{{PLURAL:$3||s}}.',
 	'replacetext_noreplacement' => 'Cap de fichièr que conten la cadena « $1 » es pas estat trobat.',
 	'replacetext_nomove' => 'Cap de pagina es pas estada trobada amb lo títol que conten « $1 ».',
+	'replacetext_nosuchcategory' => 'Existís pas de categoria nomenada « $1 ».',
 	'replacetext_return' => 'Tornar al formulari.',
 	'replacetext_warning' => "I a $1 fichièr{{PLURAL:$1| que conten|s que contenon}} la cadena de remplaçament « $2 ».
 Se efectuatz aquesta substitucion, poiretz pas separar vòstres cambiaments a partir d'aquestas cadenas.
