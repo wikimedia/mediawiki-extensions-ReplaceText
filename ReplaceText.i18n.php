@@ -778,7 +778,15 @@ $messages['hsb'] = array(
  * @author Glanthor Reviol
  */
 $messages['hu'] = array(
+	'replacetext' => 'Szöveg cseréje',
+	'replacetext_originaltext' => 'Eredeti szöveg:',
+	'replacetext_optionalfilters' => 'Választható szűrők:',
+	'replacetext_watchmovedpages' => 'Figyeld ezeket a lapokat',
+	'replacetext_invertselections' => 'Kijelölések megfordítása',
+	'replacetext_replace' => 'Csere',
 	'replacetext_continue' => 'Folytatás',
+	'replacetext_editsummary' => 'Szöveg cseréje – „$1” → „$2”',
+	'right-replacetext' => 'szövegcserék végrehajtása az egész wikin',
 );
 
 /** Interlingua (Interlingua)
