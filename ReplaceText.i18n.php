@@ -1041,6 +1041,15 @@ Wëllt Dir mat der Ännerung weiderfueren?",
 	'right-replacetext' => 'Ersetze vun enger Rei vun Textzeechen op der ganzer Wiki',
 );
 
+/** Lithuanian (Lietuvių)
+ * @author Homo
+ */
+$messages['lt'] = array(
+	'replacetext' => 'Keisti tekstą',
+	'replacetext_continue' => 'Tęsti',
+	'replacetext_editsummary' => 'Teksto pakeitimas - "$1" į "$2"',
+);
+
 /** Malayalam (മലയാളം)
  * @author Shijualex
  */
