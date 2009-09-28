@@ -281,15 +281,21 @@ $messages['ca'] = array(
 
 /** Czech (Česky)
  * @author Matěj Grabovský
+ * @author Mormegil
  */
 $messages['cs'] = array(
 	'replacetext' => 'Nahradit text',
-	'replacetext_originaltext' => 'Původní text',
-	'replacetext_replacementtext' => 'Nahradit textem',
+	'replacetext-desc' => 'Poskytuje [[Special:ReplaceText|speciální stránku]], která správcům umožňuje globálně najít a nahradit nějaký text na všech obsahových stránkách wiki',
+	'replacetext_docu' => 'Pro nahrazení jednoho textového řetězce jiným na všech běžných stránkách této wiki sem zadejte ony dva texty a klikněte na „Pokračovat“.
+Zobrazí se seznam stránek obsahujících hledaný text, ze kterých si budete moci vybrat ty, na kterých chcete provést nahrazení.
+Vaše jméno se objeví v historiích stránek jako osoba zodpovědná za příslušné změny.',
+	'replacetext_originaltext' => 'Původní text:',
+	'replacetext_replacementtext' => 'Nahradit textem:',
 	'replacetext_replace' => 'Nahradit',
 	'replacetext_continue' => 'Pokračovat',
 	'replacetext_cancel' => '(Operaci zrušíte kliknutím na tlačítko „Zpět“ ve vašem prohlížeči.)',
 	'replacetext_editsummary' => 'Nahrazení textu „$1“ textem „$2“',
+	'right-replacetext' => 'Hledání a nahrazování textu na celé wiki',
 );
 
 /** German (Deutsch)
@@ -781,10 +787,18 @@ $messages['hu'] = array(
 	'replacetext' => 'Szöveg cseréje',
 	'replacetext_originaltext' => 'Eredeti szöveg:',
 	'replacetext_optionalfilters' => 'Választható szűrők:',
+	'replacetext_categorysearch' => 'Csere csak ebben a kategóriában:',
+	'replacetext_prefixsearch' => 'Csere csak a következő előtaggal rendelkező lapokon:',
+	'replacetext_editpages' => 'Szöveg cseréje a lap tartalmában',
+	'replacetext_movepages' => 'Szöveg cseréje a lapok címeiben, ha lehetséges',
+	'replacetext_givetarget' => 'Meg kell adnod a cserélendő szöveget.',
+	'replacetext_nonamespace' => 'Ki kell választanod legalább egy névteret.',
 	'replacetext_watchmovedpages' => 'Figyeld ezeket a lapokat',
 	'replacetext_invertselections' => 'Kijelölések megfordítása',
 	'replacetext_replace' => 'Csere',
+	'replacetext_return' => 'Visszatérés az űrlapra.',
 	'replacetext_continue' => 'Folytatás',
+	'replacetext_cancel' => '(Kattints a böngésződ „vissza” gombjára a művelet megszakításához)',
 	'replacetext_editsummary' => 'Szöveg cseréje – „$1” → „$2”',
 	'right-replacetext' => 'szövegcserék végrehajtása az egész wikin',
 );
