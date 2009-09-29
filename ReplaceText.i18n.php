@@ -1279,6 +1279,7 @@ $messages['pl'] = array(
 	'replacetext_success' => '„$1” zostanie zastąpiony przez „$2” na $3 {{PLURAL:$3|stronie|stronach}}.',
 	'replacetext_noreplacement' => 'Nie znaleziono stron zawierających tekst „$1”.',
 	'replacetext_nomove' => 'Nie znaleziono żadnych stron o tytule zawierającym „$1”.',
+	'replacetext_nosuchcategory' => 'Kategoria „$1” nie istnieje.',
 	'replacetext_return' => 'Powrót do formularza.',
 	'replacetext_warning' => '{{PLURAL:$1|Jest $1 strona|Są $1 strony|Jest $1 stron}} zawierających tekst „$2”, którym chcesz zastępować. Jeśli wykonasz zastępowanie nie będzie możliwe odseparowanie tych stron od wykonanych zastąpień.
 Czy kontynuować zastępowanie?',
