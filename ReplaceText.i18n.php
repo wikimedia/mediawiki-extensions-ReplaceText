@@ -1652,6 +1652,9 @@ $messages['vi'] = array(
 	'replacetext_docu' => "Để thay thế một chuỗi ký tự bằng một chuỗi khác trên toàn bộ các trang thông thường tại wiki này, hãy gõ vào hai đoạn văn bản ở đây và sau đó nhấn 'Tiếp tục'. Khi đó bạn thấy một danh sách các trang có chứa đoạn ký tự được tìm, và bạn có thể chọn những trang mà bạn muốn thay thế. Tên của bạn sẽ xuất hiện trong lịch sử trang như một thành viên chịu trách nhiệm về bất kỳ thay đổi nào.",
 	'replacetext_originaltext' => 'Văn bản nguồn:',
 	'replacetext_replacementtext' => 'Văn bản thay thế:',
+	'replacetext_optionalfilters' => 'Bộ lọc tùy ý:',
+	'replacetext_categorysearch' => 'Chỉ thay trong thể loại:',
+	'replacetext_prefixsearch' => 'Chỉ thay trong những trang với tiền tố:',
 	'replacetext_editpages' => 'Thay thế văn bản trong nội dung trang',
 	'replacetext_movepages' => 'Thay văn bản trong tên trang nếu có thể',
 	'replacetext_givetarget' => 'Bạn cần phải định rõ văn bản để thay thế.',
@@ -1668,6 +1671,7 @@ $messages['vi'] = array(
 	'replacetext_success' => '“$1” sẽ được thay bằng “$2” trong $3 {{PLURAL:$3|trang|trang}}.',
 	'replacetext_noreplacement' => 'Không tìm thấy trang nào có chứa chuỗi ‘$1’.',
 	'replacetext_nomove' => 'Không tìm thấy trang nào với “$1” trong tên.',
+	'replacetext_nosuchcategory' => 'Không có thể loại với tên “$1”.',
 	'replacetext_return' => 'Trở lại biểu mẫu.',
 	'replacetext_warning' => 'Có $1 {{PLURAL:$1|trang|trang}} đã có chứa chuỗi thay thế, “$2”.
 Nếu bạn thực hiện thay thế này bạn sẽ không thể phân biệt sự thay thế của bạn với những chuỗi này.
