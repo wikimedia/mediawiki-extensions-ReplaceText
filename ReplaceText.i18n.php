@@ -335,7 +335,7 @@ Möchtest du weitermachen?',
 	'replacetext_continue' => 'Fortfahren',
 	'replacetext_cancel' => '(Klicke auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
 	'replacetext_editsummary' => 'Textersetzung - „$1“ durch „$2“',
-	'right-replacetext' => 'Führe eine Textersetzung für das gesamte Wiki durch',
+	'right-replacetext' => 'Textersetzung für das gesamte Wiki durchführen',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
