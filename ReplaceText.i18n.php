@@ -28,7 +28,7 @@ Your name will appear in page histories as the user responsible for any changes.
 	'replacetext_nonamespace' => 'You must select at least one namespace.',
 	'replacetext_editormove' => 'You must select at least one of the replacement options.',
 	'replacetext_choosepagesforedit' => 'Replace "$1" with "$2" in the text of the following {{PLURAL:$3|page|pages}}:',
-	'replacetext_choosepagesformove' => 'Replace "$1" with "$2" in the {{PLURAL:$3|name of the following page|names of the following pages}}:',
+	'replacetext_choosepagesformove' => 'Replace "$1" with "$2" in the title of the following {{PLURAL:$3|page|pages}}:',
 	'replacetext_cannotmove' => 'The following {{PLURAL:$1|page|pages}} cannot be moved:',
 	'replacetext_formovedpages' => 'For moved pages:',
 	'replacetext_savemovedpages' => 'Save the old titles as redirects to the new titles',
