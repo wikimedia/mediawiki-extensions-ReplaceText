@@ -1538,6 +1538,7 @@ $messages['sr-el'] = array(
  * @author Fluff
  * @author M.M.S.
  * @author Najami
+ * @author Per
  * @author Rotsee
  */
 $messages['sv'] = array(
@@ -1565,6 +1566,7 @@ $messages['sv'] = array(
 	'replacetext_success' => "'$1' kommer att ersättas med '$2' på $3 {{PLURAL:$3|sida|sidor}}.",
 	'replacetext_noreplacement' => 'Inga sidor hittades med strängen "$1".',
 	'replacetext_nomove' => 'Inga sidor hittades som innehåller "$1" i titeln.',
+	'replacetext_nosuchcategory' => 'Det exisgterar inte någon kategori med namnet "$1".',
 	'replacetext_return' => 'Tillbaka till formuläret.',
 	'replacetext_warning' => 'Det finns {{PLURAL:$1|$1 sida|$1 sidor}} som redan har ersättningssträngen "$2". Om du gör den här ersättningen kommer du inte kunna separera dina ersättningar från den här texten. Vill du fortsätta med ersättningen?',
 	'replacetext_blankwarning' => 'Eftersom ersättningstexten är tom kommer den här handlingen inte kunna upphävas; vill du fortsätta?',
