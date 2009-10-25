@@ -444,6 +444,7 @@ $messages['eo'] = array(
  * @author Crazymadlover
  * @author Imre
  * @author Locos epraix
+ * @author Translationista
  */
 $messages['es'] = array(
 	'replacetext' => 'Reemplazar texto',
@@ -468,6 +469,7 @@ $messages['es'] = array(
 	'replacetext_success' => "'$1' será reemplazado con '$2' en $3 {{PLURAL:$3|página|páginas}}.",
 	'replacetext_noreplacement' => "No se hallaron páginas que contengan la cadena de caracteres '$1'.",
 	'replacetext_nomove' => "No se hallaron páginas cuyo título contenga '$1'.",
+	'replacetext_nosuchcategory' => 'No existen categorías con el nombre "$1".',
 	'replacetext_return' => 'Retornar al formulario.',
 	'replacetext_blankwarning' => 'Como la cadena de reemplazo está vacía, esta operación no podrá revertirse.
 ¿ Desea continuar ?',
@@ -790,6 +792,10 @@ $messages['hsb'] = array(
  */
 $messages['hu'] = array(
 	'replacetext' => 'Szöveg cseréje',
+	'replacetext-desc' => '[[Special:ReplaceText|Speciális lap]] adminisztrátorok részére szövegek globális keresés-és-cseréjére a wiki összes tartalom oldalán',
+	'replacetext_docu' => 'Hogy lecserélj egy szöveget egy másikra az összes tartalom lapon a wikin, add meg a keresendő és a cél szöveget, majd kattints a „Folytatás”-ra.
+Ezután kapsz egy listát azokról a lapokról, amelyek tartalmazzák a cserélendő szöveget, és kiválaszthatod azokat, amelyekben végre szeretnéd hajtani a cserét.
+A neved szerepelni fog a laptörténetekben, mint aki a változtatásokat végezte.',
 	'replacetext_originaltext' => 'Eredeti szöveg:',
 	'replacetext_replacementtext' => 'Új szöveg:',
 	'replacetext_optionalfilters' => 'Választható szűrők:',
@@ -799,13 +805,23 @@ $messages['hu'] = array(
 	'replacetext_movepages' => 'Szöveg cseréje a lapok címeiben, ha lehetséges',
 	'replacetext_givetarget' => 'Meg kell adnod a cserélendő szöveget.',
 	'replacetext_nonamespace' => 'Ki kell választanod legalább egy névteret.',
+	'replacetext_editormove' => 'Ki kell választanod legalább egyet a csere lehetőségek közül.',
+	'replacetext_choosepagesforedit' => '„$1” cseréje „$2” kifejezésre a következő {{PLURAL:$3|lap|lapok}} szövegében:',
+	'replacetext_choosepagesformove' => '„$1” cseréje „$2” kifejezésre a következő {{PLURAL:$3|lap címében|lapok címeiben}}:',
+	'replacetext_cannotmove' => 'A következő {{PLURAL:$1|lap|lapok}} nem nevezhetőek át:',
 	'replacetext_formovedpages' => 'Az átnevezett lapokhoz:',
+	'replacetext_savemovedpages' => 'A régi címek megtartása átirányításként az új címekre',
 	'replacetext_watchmovedpages' => 'Figyeld ezeket a lapokat',
 	'replacetext_invertselections' => 'Kijelölések megfordítása',
 	'replacetext_replace' => 'Csere',
+	'replacetext_success' => '„$1” cseréje $3 lapon erre: „$2”.',
+	'replacetext_noreplacement' => 'Egy lap sem tartalmazza a(z) „$1” szöveget.',
 	'replacetext_nomove' => 'Nem található olyan lap, melynek címe tartalmazza a(z) „$1” keresőkifejezést.',
 	'replacetext_nosuchcategory' => 'Nincs „$1” nevű kategória.',
 	'replacetext_return' => 'Visszatérés az űrlapra.',
+	'replacetext_warning' => '{{PLURAL:$1|Egy|$1}} lap már tartalmazza a szöveget, amire cserélni szeretnél („$2”).
+Ha folytatod a cserét, utólag nem fogod tudni megkülönböztetni az újonnan bekerült szövegeket a már előtte is meglevő előfordulásoktól.
+Folytatod a cserét?',
 	'replacetext_blankwarning' => 'Mivel az új szöveg üres, ez a művelet nem lesz visszavonható.
 Biztosan folytatni szeretnéd?',
 	'replacetext_continue' => 'Folytatás',
