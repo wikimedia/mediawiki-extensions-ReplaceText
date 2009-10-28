@@ -1328,6 +1328,7 @@ $messages['pnt'] = array(
 /** Portuguese (Português)
  * @author 555
  * @author Crazymadlover
+ * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
  * @author Waldir
@@ -1362,7 +1363,7 @@ Deseja prosseguir com a substituição?",
 	'replacetext_continue' => 'Prosseguir',
 	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
-	'right-replacetext' => 'Faça substituições de "strings" no wiki inteiro',
+	'right-replacetext' => "Substituir ''strings'' em toda a wiki",
 );
 
 /** Brazilian Portuguese (Português do Brasil)
