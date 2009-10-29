@@ -442,12 +442,14 @@ $messages['eo'] = array(
 /** Spanish (Español)
  * @author Antur
  * @author Crazymadlover
+ * @author Dferg
  * @author Imre
  * @author Locos epraix
  * @author Translationista
  */
 $messages['es'] = array(
 	'replacetext' => 'Reemplazar texto',
+	'replacetext-desc' => 'Provee a los administradores de una [[Special:ReplaceText|página especial]] para realizar una búsqueda y reemplazo global de una expresión en todas las páginas de una wiki.',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Texto de reemplazo:',
 	'replacetext_optionalfilters' => 'Filtros opcionales:',
@@ -1336,7 +1338,8 @@ $messages['pnt'] = array(
 $messages['pt'] = array(
 	'replacetext' => 'Substituir texto',
 	'replacetext-desc' => 'Provê uma [[Special:ReplaceText|página especial]] que permite que administradores procurem e substituam uma "string" global em todas as páginas de conteúdo de uma wiki.',
-	'replacetext_docu' => 'Para substituir uma "string" de texto por outra em todas as páginas desta wiki você precisa fornecer as duas peças de texto a seguir, pressionando o botão \'Substituir\'. Será exibida uma lista de páginas que contenham o termo pesquisado, sendo possível selecionar em quais você deseja realizar substituições. Seu nome de utilizador aparecerá nos históricos de páginas como o responsável por ter feito as alterações.',
+	'replacetext_docu' => 'Para substituir um texto por outro texto em todas as páginas desta wiki, introduza os dois textos e clique o botão "Substituir". Serão listadas as páginas que contêm o texto a substituir e poderá selecionar em quais deseja proceder à substituição.
+O seu nome aparecerá no histórico dessas páginas como o utilizador responsável pelas alterações.',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Novo texto:',
 	'replacetext_editpages' => 'Substituir texto no conteúdo da página',
