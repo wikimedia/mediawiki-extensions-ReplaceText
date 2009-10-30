@@ -1613,10 +1613,11 @@ $messages['te'] = array(
 );
 
 /** Thai (ไทย)
+ * @author Ans
  * @author Passawuth
  */
 $messages['th'] = array(
-	'replacetext_originaltext' => 'ข้อความดั้งเดิม',
+	'replacetext_originaltext' => 'ข้อความดั้งเดิม:',
 );
 
 /** Tagalog (Tagalog)
