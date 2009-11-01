@@ -1344,9 +1344,9 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_replacementtext' => 'Novo texto:',
 	'replacetext_editpages' => 'Substituir texto no conteúdo da página',
 	'replacetext_movepages' => 'Substituir texto em títulos de páginas, quando possível',
-	'replacetext_givetarget' => 'Você deve especificar o texto a ser substituído.',
+	'replacetext_givetarget' => 'Deve especificar o texto que será substituído.',
 	'replacetext_nonamespace' => 'Deverá seleccionar pelo menos um espaço nominal.',
-	'replacetext_editormove' => 'Você deve selecionar pelo menos uma das opções de substituição.',
+	'replacetext_editormove' => 'Deve seleccionar pelo menos uma das opções de substituição.',
 	'replacetext_choosepagesforedit' => "Por favor, seleccione {{PLURAL:$3|a página na qual|as páginas nas quais}} deseja substituir '$1' por '$2':",
 	'replacetext_choosepagesformove' => "Substituir '$1' por '$2' {{PLURAL:$3|no nome da seguinte página|nos nomes das seguintes páginas}}:",
 	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte página não pode ser movida|As seguintes páginas não podem ser movidas}}:',
@@ -1359,9 +1359,9 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_noreplacement' => 'Não foram encontradas páginas contendo a "string" \'$1\'.',
 	'replacetext_nomove' => "Não foram encontradas páginas cujo título contenha '$1'",
 	'replacetext_return' => 'Voltar ao formulário.',
-	'replacetext_warning' => "Há {{PLURAL:$1|$1 página que já possui|$1 páginas que já possuem}} a cadeia de caracteres de substituição, '$2'.
-Se você prosseguir com a substituição, não será possível distinguir as substituições feitas por si do texto já existente.
-Deseja prosseguir com a substituição?",
+	'replacetext_warning' => "Há $1 {{PLURAL:$1|página que já contém|páginas que já contêm}} o texto de substituição: '$2'.
+Se prosseguir, não será possível distinguir o texto que vai agora inserir {{PLURAL:$1|do texto já existente|dos textos já existentes}}, pelo que não poderá desfazer a operação com uma simples substituição em ordem inversa.
+Deseja prosseguir a substituição?",
 	'replacetext_blankwarning' => 'Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
 	'replacetext_continue' => 'Prosseguir',
 	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
