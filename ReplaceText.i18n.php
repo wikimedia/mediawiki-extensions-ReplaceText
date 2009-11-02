@@ -1668,6 +1668,13 @@ $messages['tr'] = array(
 	'replacetext_invertselections' => 'Seçimleri ters çevir',
 );
 
+/** Ukrainian (Українська)
+ * @author Prima klasy4na
+ */
+$messages['uk'] = array(
+	'replacetext_continue' => 'Продовжити',
+);
+
 /** Veps (Vepsan kel')
  * @author Игорь Бродский
  */
