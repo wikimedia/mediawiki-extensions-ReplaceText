@@ -232,6 +232,15 @@ $messages['bn'] = array(
 	'replacetext' => 'লেখা প্রতিস্থাপন',
 );
 
+/** Breton (Brezhoneg)
+ * @author Fohanno
+ */
+$messages['br'] = array(
+	'replacetext_originaltext' => 'Testenn orin :',
+	'replacetext_replace' => "Erlec'hiañ",
+	'replacetext_continue' => "Kenderc'hel",
+);
+
 /** Bosnian (Bosanski)
  * @author CERminator
  */
