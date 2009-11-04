@@ -883,15 +883,44 @@ Continuar le reimplaciamento?",
 
 /** Indonesian (Bahasa Indonesia)
  * @author Bennylin
+ * @author IvanLanin
  * @author Rex
  */
 $messages['id'] = array(
 	'replacetext' => 'Mengganti teks',
+	'replacetext-desc' => 'Menyediakan [[Special:ReplaceText|halaman istimewa]] untuk memungkinkan pengurus untuk melakukan pencarian-dan-penggantian untaian secara global pada semua halaman isi dari suatu wiki',
 	'replacetext_docu' => "Untuk mengganti suatu teks kalimat dengan kalimat lain di antara semua halaman-halaman regular wiki ini, masukkan kedua teks di sini dan klik 'Lanjutkan'. Anda akan mendapatkan tampilan daftar halaman yang berisikan teks yang dicari, dan Anda dapat memilih yang mana saja yang ingin digantikan. Nama Anda akan tampil di versi terdahulu halaman sebagai pengguna yang melakukan perubahan.",
 	'replacetext_originaltext' => 'Teks asli:',
 	'replacetext_replacementtext' => 'Teks pengganti:',
+	'replacetext_optionalfilters' => 'Filter opsional:',
+	'replacetext_categorysearch' => 'Hanya ganti pada kategori:',
+	'replacetext_prefixsearch' => 'Hanya ganti pada halaman dengan awalan:',
+	'replacetext_editpages' => 'Ganti teks pada isi halaman',
+	'replacetext_movepages' => 'Ganti teks pada judul halaman, jika mungkin',
+	'replacetext_givetarget' => 'Anda harus menyebutkan untaian yang akan diganti.',
+	'replacetext_nonamespace' => 'Anda harus memilih paling tidak satu ruang nama.',
+	'replacetext_editormove' => 'Anda harus memilih paling tidak salah satu opsi penggantian.',
+	'replacetext_choosepagesforedit' => 'Ganti "$1" dengan "$2" pada teks dari {{PLURAL:$3|halaman|halaman}} berikut:',
+	'replacetext_choosepagesformove' => 'Ganti "$1" dengan "$2" pada {{PLURAL:$3|judul halaman berikut|judul halaman berikut}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Halaman|Halaman}} berikut tidak dapat dipindahkan:',
+	'replacetext_formovedpages' => 'Untuk halaman yang dipindahkan:',
+	'replacetext_savemovedpages' => 'Simpan judul lama sebagai pengalihan ke judul baru',
+	'replacetext_watchmovedpages' => 'Pantau halaman-halaman ini',
+	'replacetext_invertselections' => 'Balikkan pilihan',
 	'replacetext_replace' => 'Gantikan',
+	'replacetext_success' => '"$1" akan diganti dengan "$2" pada $3 {{PLURAL:$3|halaman|halaman}}.',
+	'replacetext_noreplacement' => 'Tidak ada halaman yang ditemukan yang mengandung untaian "$1".',
+	'replacetext_nomove' => 'Tidak ada halaman yang ditemukan yang judulnya mengandung "$1".',
+	'replacetext_nosuchcategory' => 'Tidak ditemukan kategori bernama "$1".',
+	'replacetext_return' => 'Kembali ke isian.',
+	'replacetext_warning' => 'Ada {{PLURAL:$1|$1 halaman|$1 halaman}} yang telah berisi untaian pengganti, "$2".
+Jika Anda melakukan penggantian ini Anda tidak akan dapat memisahkan pengganti Anda dari untaian ini.
+Lanjutkan penggantian?',
+	'replacetext_blankwarning' => 'Karena untaian pengganti kosong, operasi ini tidak dapat dikembalikan.
+Apakah ingin dilanjutkan?',
 	'replacetext_continue' => 'Lanjutkan',
+	'replacetext_cancel' => '(Klik tombol "Back" pada penjelajah Anda untuk membatalkan operasi.)',
+	'replacetext_editsummary' => 'Penggantian teks - "$1" menjadi "$2"',
 	'right-replacetext' => 'Melakukan penggantian seluruh teks kalimat di wiki ini',
 );
 
@@ -1375,7 +1404,7 @@ Deseja prosseguir a substituição?",
 	'replacetext_continue' => 'Prosseguir',
 	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
-	'right-replacetext' => "Substituir ''strings'' em toda a wiki",
+	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
