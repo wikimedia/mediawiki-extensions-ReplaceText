@@ -236,8 +236,15 @@ $messages['bn'] = array(
  * @author Fohanno
  */
 $messages['br'] = array(
+	'replacetext' => "Erlec'hiañ an destenn",
 	'replacetext_originaltext' => 'Testenn orin :',
+	'replacetext_optionalfilters' => 'Siloù diret :',
+	'replacetext_categorysearch' => "Erlec'hiañ er rummad hepken :",
+	'replacetext_formovedpages' => "Evit ar pajennoù dilec'hiet :",
+	'replacetext_watchmovedpages' => 'Evezhiañ ar pajennoù-mañ',
+	'replacetext_invertselections' => 'Eilpennañ an diuzadennoù',
 	'replacetext_replace' => "Erlec'hiañ",
+	'replacetext_return' => "Distreiñ d'ar furmskrid.",
 	'replacetext_continue' => "Kenderc'hel",
 );
 
