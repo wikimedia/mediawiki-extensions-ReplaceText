@@ -1717,6 +1717,7 @@ $messages['tr'] = array(
  * @author Prima klasy4na
  */
 $messages['uk'] = array(
+	'replacetext-desc' => 'Додає [[Special:ReplaceText|спеціальну сторінку]], що дозволяє адміністраторам робити глобальну заміну зазначеного тексту на всіх звичайних сторінках вікі',
 	'replacetext_continue' => 'Продовжити',
 );
 
