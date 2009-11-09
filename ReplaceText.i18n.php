@@ -1383,7 +1383,7 @@ $messages['pnt'] = array(
  */
 $messages['pt'] = array(
 	'replacetext' => 'Substituir texto',
-	'replacetext-desc' => 'Provê uma [[Special:ReplaceText|página especial]] que permite que administradores procurem e substituam uma "string" global em todas as páginas de conteúdo de uma wiki.',
+	'replacetext-desc' => "[[Special:ReplaceText|Página especial]] que permite a administradores fazer substituições globais de texto ''(string find-and-replace)'' em todas as páginas de conteúdo de uma wiki.",
 	'replacetext_docu' => 'Para substituir um texto por outro texto em todas as páginas desta wiki, introduza os dois textos e clique o botão "Substituir". Serão listadas as páginas que contêm o texto a substituir e poderá selecionar em quais deseja proceder à substituição.
 O seu nome aparecerá no histórico dessas páginas como o utilizador responsável pelas alterações.',
 	'replacetext_originaltext' => 'Texto original:',
