@@ -1470,6 +1470,16 @@ $messages['ro'] = array(
 	'replacetext_editsummary' => "Înlocuire de text - '$1' în '$2'",
 );
 
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'replacetext' => "Sostituisce 'u teste",
+	'replacetext_originaltext' => 'Teste origgenale:',
+	'replacetext_replace' => 'Sostituisce',
+	'replacetext_continue' => 'Condinue',
+);
+
 /** Russian (Русский)
  * @author AlexSm
  * @author Ferrer
