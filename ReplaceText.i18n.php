@@ -1388,13 +1388,16 @@ $messages['pt'] = array(
 O seu nome aparecerá no histórico dessas páginas como o utilizador responsável pelas alterações.',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Novo texto:',
+	'replacetext_optionalfilters' => 'Filtros opcionais:',
+	'replacetext_categorysearch' => 'Substituir só na categoria:',
+	'replacetext_prefixsearch' => 'Substituir só em páginas com o prefixo:',
 	'replacetext_editpages' => 'Substituir texto no conteúdo da página',
 	'replacetext_movepages' => 'Substituir texto em títulos de páginas, quando possível',
 	'replacetext_givetarget' => 'Deve especificar o texto que será substituído.',
 	'replacetext_nonamespace' => 'Deverá seleccionar pelo menos um espaço nominal.',
 	'replacetext_editormove' => 'Deve seleccionar pelo menos uma das opções de substituição.',
 	'replacetext_choosepagesforedit' => "Por favor, seleccione {{PLURAL:$3|a página na qual|as páginas nas quais}} deseja substituir '$1' por '$2':",
-	'replacetext_choosepagesformove' => "Substituir '$1' por '$2' {{PLURAL:$3|no nome da seguinte página|nos nomes das seguintes páginas}}:",
+	'replacetext_choosepagesformove' => 'Substituir "$1" por "$2" {{PLURAL:$3|no nome da seguinte página|nos nomes das seguintes páginas}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte página não pode ser movida|As seguintes páginas não podem ser movidas}}:',
 	'replacetext_formovedpages' => 'Para páginas movidas:',
 	'replacetext_savemovedpages' => 'Gravar os títulos anteriores como redirecionamentos para os novos títulos',
@@ -1404,9 +1407,10 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_success' => "'$1' será substituído por '$2' em $3 {{PLURAL:$3|página|páginas}}.",
 	'replacetext_noreplacement' => 'Não foram encontradas páginas contendo a "string" \'$1\'.',
 	'replacetext_nomove' => "Não foram encontradas páginas cujo título contenha '$1'",
+	'replacetext_nosuchcategory' => 'Não existe nenhuma categoria com o nome "$1".',
 	'replacetext_return' => 'Voltar ao formulário.',
-	'replacetext_warning' => "Há $1 {{PLURAL:$1|página que já contém|páginas que já contêm}} o texto de substituição: '$2'.
-Se prosseguir, não será possível distinguir o texto que vai agora inserir {{PLURAL:$1|do texto já existente|dos textos já existentes}}, pelo que não poderá desfazer a operação com uma simples substituição em ordem inversa.
+	'replacetext_warning' => "Há {{PLURAL:$1|uma página que já contém|$1 páginas que já contêm}} o texto de substituição: '$2'.
+Se prosseguir, não será possível distinguir o texto que vai agora inserir, {{PLURAL:$1|do texto já existente|dos textos já existentes}}, pelo que não poderá desfazer a operação com uma simples substituição em ordem inversa.
 Deseja prosseguir a substituição?",
 	'replacetext_blankwarning' => 'Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
 	'replacetext_continue' => 'Prosseguir',
