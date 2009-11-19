@@ -244,6 +244,7 @@ $messages['br'] = array(
 	'replacetext_watchmovedpages' => 'Evezhiañ ar pajennoù-mañ',
 	'replacetext_invertselections' => 'Eilpennañ an diuzadennoù',
 	'replacetext_replace' => "Erlec'hiañ",
+	'replacetext_nosuchcategory' => "N'eus rummad ebet en anv « $1 ».",
 	'replacetext_return' => "Distreiñ d'ar furmskrid.",
 	'replacetext_continue' => "Kenderc'hel",
 );
