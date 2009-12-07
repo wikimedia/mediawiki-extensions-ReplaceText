@@ -1141,6 +1141,49 @@ $messages['lt'] = array(
 	'replacetext_editsummary' => 'Teksto pakeitimas - "$1" į "$2"',
 );
 
+/** Macedonian (Македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'replacetext' => 'Замени текст',
+	'replacetext-desc' => 'Додава [[Special:ReplaceText|специјална страница]] која им овозможува на администраторите да вршат пронаоѓање и замена на глобални низи во страниците на викито',
+	'replacetext_docu' => 'За да замените една низа со друга, ширум сите регуларни страници на ова вики, внесете ги тука двете парчиња текст и потоа притиснете на „Продолжи“.
+Потоа ќе ви се прикаже листа на страници кои го содржат бараниот текст, и ќе можете да изберете во кои од нив сакате да ја извршите змената.
+Вашето име ќе се појави во историјата на страниците како корисник одговорен за промените.',
+	'replacetext_originaltext' => 'Оригинален текст:',
+	'replacetext_replacementtext' => 'Нов текст:',
+	'replacetext_optionalfilters' => 'Незадолжителни филтри:',
+	'replacetext_categorysearch' => 'Замени само во категорија:',
+	'replacetext_prefixsearch' => 'Замени само во страници со префиксот:',
+	'replacetext_editpages' => 'Замени текст во содржина на страница',
+	'replacetext_movepages' => 'Замени текст во насловите на страниците, кога е можно',
+	'replacetext_givetarget' => 'Мора да ја назначите низата што треба да се замени.',
+	'replacetext_nonamespace' => 'Мора да изберете барем еден именски простор.',
+	'replacetext_editormove' => 'Мора да одберете барем една од можностите за замена.',
+	'replacetext_choosepagesforedit' => 'Замени „$1“ со „$2“ во текстот на {{PLURAL:$3|следнава страница|следниве страници}}:',
+	'replacetext_choosepagesformove' => 'Замени "$1" со "$2" во {{PLURAL:$3|насловот на следната страница|наслови на следните страници}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Следнава страница не може да се премести|Следниве страници не можат да се преместат}}:',
+	'replacetext_formovedpages' => 'За преместени страници:',
+	'replacetext_savemovedpages' => 'Зачувај ги старите наслови како пренасочувања кон новите наслови',
+	'replacetext_watchmovedpages' => 'Набљудувај ги овие страници',
+	'replacetext_invertselections' => 'Обратен избор',
+	'replacetext_replace' => 'Замени',
+	'replacetext_success' => '„$1“ ќе биде заменето со „$2“ во $3 {{PLURAL:$3|страница|страници}}.',
+	'replacetext_noreplacement' => 'Нема пронајдено страници кои ја содржат низата „$1“.',
+	'replacetext_nomove' => 'Нема пронајдено страници чиј наслов содржи „$1“.',
+	'replacetext_nosuchcategory' => 'Не постои категорија по име „$1“',
+	'replacetext_return' => 'Назад кон образецот',
+	'replacetext_warning' => 'Има {{PLURAL:$1|$1 страница која веќе ја содржи|$1 страници кои веќе ја содржат}} новата низа „$2“.
+Ако ја извршите оваа замена, тогаш нема да можете да ја одделите вапата замена од тие низи.
+Сакате да продолжите со замената?',
+	'replacetext_blankwarning' => 'Бидејќи новата низа е празна, оваа операција не може да се врати.
+Дали сакате да продолжите?',
+	'replacetext_continue' => 'Продолжи',
+	'replacetext_cancel' => '(Кликнете на копчето „Назад“ во вашиот прелистувач за да ја откажете операцијата.)',
+	'replacetext_editsummary' => 'Замена на текст - „$1“ со „$2“',
+	'right-replacetext' => 'Вршење замена на низи во целото вики',
+);
+
 /** Malayalam (മലയാളം)
  * @author Shijualex
  */
@@ -1365,6 +1408,14 @@ Czy kontynuować zastępowanie?',
 	'replacetext_cancel' => '(Wciśnij klawisz „Wstecz” w przeglądarce, aby przerwać operację.)',
 	'replacetext_editsummary' => 'zamienił w treści „$1” na „$2”',
 	'right-replacetext' => 'Wykonywanie zastępowania tekstu w całej wiki',
+);
+
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'replacetext' => 'Rimpiassa test',
+	'replacetext-desc' => "A dà na [[Special:ReplaceText|pàgina special]] për përmëtte a j'aministrador ëd fé na serca-e-rimpiassa dë stringhe global su tute le pàgine ëd contnù ëd na wiki",
 );
 
 /** Pontic (Ποντιακά)
