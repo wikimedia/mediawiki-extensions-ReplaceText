@@ -1411,11 +1411,12 @@ Czy kontynuować zastępowanie?',
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
 	'replacetext' => 'Rimpiassa test',
-	'replacetext-desc' => "A dà na [[Special:ReplaceText|pàgina special]] për përmëtte a j'aministrador ëd fé na serca-e-rimpiassa dë stringhe global su tute le pàgine ëd contnù ëd na wiki",
+	'replacetext-desc' => "A dà na [[Special:ReplaceText|pàgina special]] për përmëtte a j'aministrator ëd fé un sërca-e-rampiassa dë stringhe global su tute le pàgine ëd contnù ëd na wiki",
 );
 
 /** Pontic (Ποντιακά)
