@@ -1417,6 +1417,40 @@ Czy kontynuować zastępowanie?',
 $messages['pms'] = array(
 	'replacetext' => 'Rimpiassa test',
 	'replacetext-desc' => "A dà na [[Special:ReplaceText|pàgina special]] për përmëtte a j'aministrator ëd fé un sërca-e-rampiassa dë stringhe global su tute le pàgine ëd contnù ëd na wiki",
+	'replacetext_docu' => "Për rimpiassé na stringa ëd test con n'àutra ans tute  le pàgine regolar dë sta wiki-sì, anseriss ij doi tòch ëd test sì e peui sgnaca 'Continua'.
+At sarà alora mostà na lista ëd pàgine ch'a conten ël test d'arserca, e it podras serne cole an dova it veule rimpiasselo.
+Tò nòm a aparirà ant le stòrie dle pàgine com l'utent responsàbil për minca cambe.",
+	'replacetext_originaltext' => 'Test original:',
+	'replacetext_replacementtext' => 'Test ëd rimpiassadura:',
+	'replacetext_optionalfilters' => 'Filtr opsionaj:',
+	'replacetext_categorysearch' => 'Rimpiassa mach an categorìa:',
+	'replacetext_prefixsearch' => 'Rimpiassa mach an pàgine con ël prefiss:',
+	'replacetext_editpages' => 'Rimpiassa test ant ij contnù dla pagina',
+	'replacetext_movepages' => 'Rimpiassa test ant ij tìtoj dla pagina, quand possìbil',
+	'replacetext_givetarget' => 'It deuve spessifié la stranga da esse rimpiassà.',
+	'replacetext_nonamespace' => 'It deuve spessifié almanch në spassi nominal.',
+	'replacetext_editormove' => 'It deuve selessioné almanch un-a dle opsin ëd rimpiassadura.',
+	'replacetext_choosepagesforedit' => 'Rimpiassa "$1" con "$2" ant ël test ëd {{PLURAL:$3|la pàgina|le pagine}} sota:',
+	'replacetext_choosepagesformove' => 'Rimpiassa "$1" con "$2" ant {{PLURAL:$3|ël tìtol dla pagina|ij tìtoj dle pagine}} sota:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|La pàgina|Le pàgine}} sota a peulo pa esse tramudà:',
+	'replacetext_formovedpages' => 'Për tramudé pàgine:',
+	'replacetext_savemovedpages' => 'Salva ël tìtol vej com rediression al tìtol neuv',
+	'replacetext_watchmovedpages' => "Ten d'euj ste pàgine-sì",
+	'replacetext_invertselections' => 'Anvert selession',
+	'replacetext_replace' => 'Rimpiassa',
+	'replacetext_success' => '"$1" a sarà rimpiassà con "$2" an $3 {{PLURAL:$3|pàgina|pàgine}}.',
+	'replacetext_noreplacement' => 'Pa gnun-e pàgine trovà contenent la stringa "$1".',
+	'replacetext_nomove' => 'Pa gnun-e pàgine trovà con ij tìtoj contenent "$1".',
+	'replacetext_nosuchcategory' => 'Pa gnun-e categorìe a esisto con ël nòm "$1".',
+	'replacetext_return' => 'Artorna a la forma.',
+	'replacetext_warning' => 'A-i {{PLURAL:$1|é $1 pàgina ch\'a conten|son $1 pàgine ch\'a conten-o}} già la stringa ëd rimpiassadura, "$2".
+S\'it fas sta rimpiassadura-sì it saras pa bon a separé toe rimpiassadure da ste stringhe-sì. It continue con la rimpiassadura?',
+	'replacetext_blankwarning' => "Da già che la stringa ëd rimpiass a l'é veuida, st'operassion-sì a sarà pa reversibla.
+It veus-to continué?",
+	'replacetext_continue' => 'Continua',
+	'replacetext_cancel' => '(Sgnaca ël boton "André" ant ël tò browser për scanselé l\'operassion.)',
+	'replacetext_editsummary' => 'Rimpiassadura test - "$1" a "$2"',
+	'right-replacetext' => "Fà rimpiassadura dë stringhe an sl'antrega wiki",
 );
 
 /** Pontic (Ποντιακά)
