@@ -238,12 +238,14 @@ $messages['bn'] = array(
 $messages['br'] = array(
 	'replacetext' => "Erlec'hiañ an destenn",
 	'replacetext_originaltext' => 'Testenn orin :',
+	'replacetext_replacementtext' => "Testenn erlec'hiañ :",
 	'replacetext_optionalfilters' => 'Siloù diret :',
 	'replacetext_categorysearch' => "Erlec'hiañ er rummad hepken :",
 	'replacetext_formovedpages' => "Evit ar pajennoù dilec'hiet :",
 	'replacetext_watchmovedpages' => 'Evezhiañ ar pajennoù-mañ',
 	'replacetext_invertselections' => 'Eilpennañ an diuzadennoù',
 	'replacetext_replace' => "Erlec'hiañ",
+	'replacetext_noreplacement' => "N'eus bet kavet pajenn ebet gant an neudennad « $1 ».",
 	'replacetext_nosuchcategory' => "N'eus rummad ebet en anv « $1 ».",
 	'replacetext_return' => "Distreiñ d'ar furmskrid.",
 	'replacetext_continue' => "Kenderc'hel",
@@ -1816,10 +1818,32 @@ $messages['tr'] = array(
 );
 
 /** Ukrainian (Українська)
+ * @author AS
  * @author Prima klasy4na
  */
 $messages['uk'] = array(
+	'replacetext' => 'Заміна тексту',
 	'replacetext-desc' => 'Додає [[Special:ReplaceText|спеціальну сторінку]], що дозволяє адміністраторам робити глобальну заміну зазначеного тексту на всіх звичайних сторінках вікі',
+	'replacetext_docu' => "Для того, щоб замінити один текст на іншій на всіх сторінках вікі, вам треба ввести тут два фрагменти тексту і натиснути кнопку «Продовжити». Після цього вам буде запропонований список всіх сторінок, що містять замінюваний текст, і ви зможете вибрати ті, в яких потрібно виконати заміни. В історії редагувань сторінок, в яких відбудеться заміна тексту, буде вказане ваше ім'я.",
+	'replacetext_originaltext' => 'Оригінальний текст:',
+	'replacetext_replacementtext' => 'Замінити на:',
+	'replacetext_optionalfilters' => 'Додаткові фільтри:',
+	'replacetext_categorysearch' => 'Замінити тільки в категорії:',
+	'replacetext_prefixsearch' => 'Замінити тільки на сторінках, чиї назви починаються на:',
+	'replacetext_editpages' => 'Заміна тексту у вмісті сторінки',
+	'replacetext_movepages' => 'Замінити текст у назвах сторінок, якщо можливо',
+	'replacetext_givetarget' => 'Ви повинні вказати рядок, який потрібно замінити.',
+	'replacetext_nonamespace' => 'Ви повинні вибрати принаймні один простір назв.',
+	'replacetext_editormove' => 'Ви повинні вибрати принаймні один варіант заміни.',
+	'replacetext_choosepagesforedit' => 'Будь ласка, виберіть {{PLURAL:$3|сторінку, в якій|сторінки, в яких}} ви хочете здійснити заміну «$1» на «$2»:',
+	'replacetext_choosepagesformove' => 'Замінити «$1» на «$2» в {{PLURAL:$3|назві наступної сторінки|назвах наступних сторінок}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Наступна сторінка не може бути перейменована|Наступні сторінки не можуть бути перейменовані}}:',
+	'replacetext_formovedpages' => 'Для перейменованих сторінок:',
+	'replacetext_savemovedpages' => 'Зберегти старі назви як перенаправлення на нові',
+	'replacetext_watchmovedpages' => 'Спостерігати за цими сторінками',
+	'replacetext_invertselections' => 'Інвертувати виділення',
+	'replacetext_replace' => 'Замінити',
+	'replacetext_success' => '«$1» буде замінений на «$2» на $3 {{PLURAL:$3|сторінці|сторінках|сторінках}}.',
 	'replacetext_continue' => 'Продовжити',
 );
 
