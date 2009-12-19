@@ -234,6 +234,7 @@ $messages['bn'] = array(
 
 /** Breton (Brezhoneg)
  * @author Fohanno
+ * @author Y-M D
  */
 $messages['br'] = array(
 	'replacetext' => "Erlec'hiañ an destenn",
@@ -249,6 +250,7 @@ $messages['br'] = array(
 	'replacetext_nosuchcategory' => "N'eus rummad ebet en anv « $1 ».",
 	'replacetext_return' => "Distreiñ d'ar furmskrid.",
 	'replacetext_continue' => "Kenderc'hel",
+	'replacetext_editsummary' => 'Erlec\'hiañ an destenn - "$1" dre "$2"',
 );
 
 /** Bosnian (Bosanski)
@@ -1297,6 +1299,7 @@ Vil du halda fram?',
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  * @author Laaknor
+ * @author Nghtwlkr
  * @author Simny
  */
 $messages['no'] = array(
@@ -1305,19 +1308,33 @@ $messages['no'] = array(
 	'replacetext_docu' => 'For å erstatte én tekststreng med en annen på alle datasider på denne wikien kan du skrive inn de to tekstene her og trykke «Erstatt». Du vil da bli ført til en liste over sider som inneholder søketeksten, og du kan velge hvilke sider du ønsker å erstatte den i. Navnet ditt vil stå i sidehistorikkene som den som er ansvarlig for endringene.',
 	'replacetext_originaltext' => 'Originaltekst:',
 	'replacetext_replacementtext' => 'Erstatningstekst:',
-	'replacetext_choosepagesforedit' => 'Velg hvilke sider du ønsker å erstatte «$1» med «$2» i:',
+	'replacetext_optionalfilters' => 'Valgfrie filter:',
+	'replacetext_categorysearch' => 'Erstatt kun i kategori:',
+	'replacetext_prefixsearch' => 'Erstatt kun i sider med prefikset:',
+	'replacetext_editpages' => 'Erstatt tekst i sideinnholdet',
+	'replacetext_movepages' => 'Erstatt tekst i sidetitler, der dette er mulig',
+	'replacetext_givetarget' => 'Du må spesifisere en streng som skal erstattes.',
+	'replacetext_nonamespace' => 'Du må velge minst ett navnerom.',
+	'replacetext_editormove' => 'Du må velge minst ett av alternativene for erstatning.',
+	'replacetext_choosepagesforedit' => 'Velg {{PLURAL:$3|siden|sidene}} der du ønsker å bytte ut «$1» med «$2»:',
+	'replacetext_choosepagesformove' => 'Erstatt «$1» med «$2» i {{PLURAL:$3|tittelen på den følgende siden|titlene på de følgende sidene}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Den følgende siden|De følgende sidene}} kan ikke flyttes:',
 	'replacetext_formovedpages' => 'For flyttede sider:',
+	'replacetext_savemovedpages' => 'Lagre de gamle titlene som omdirigeringer til de nye',
 	'replacetext_watchmovedpages' => 'Overvåk disse sidene',
 	'replacetext_invertselections' => 'Inverter valg',
 	'replacetext_replace' => 'Erstatt',
 	'replacetext_success' => '«$1» blir erstattet med «$2» på {{PLURAL:$3|én side|$3 sider}}.',
 	'replacetext_noreplacement' => 'Ingen sider ble funnet med strengen «$1».',
 	'replacetext_nomove' => 'Ingen sider ble funnet der tittelen inneholder «$1».',
+	'replacetext_nosuchcategory' => 'Det eksisterer ingen kategori med navnet «$1».',
+	'replacetext_return' => 'Tilbake til skjemaet.',
 	'replacetext_warning' => 'Det er {{PLURAL:$1|en side|$1 sider}} som allerede har erstatningsteksten «$2». Om du gjør denne erstatningen vil du ikke kunne skille ut dine erstatninger fra denne teksten. Fortsette med erstattingen?',
 	'replacetext_blankwarning' => 'Fordi erstatningsteksten er tom vil denne handlingen ikke kunne angres automatisk; fortsette?',
 	'replacetext_continue' => 'Fortsett',
 	'replacetext_cancel' => '(Trykk på «Tilbake»-knappen for å avbryte handlingen.)',
 	'replacetext_editsummary' => 'Teksterstatting – «$1» til «$2»',
+	'right-replacetext' => 'Gjennomfør teksterstatninger på hele wikien',
 );
 
 /** Occitan (Occitan)
