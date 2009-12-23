@@ -114,6 +114,7 @@ $messages['ar'] = array(
 	'replacetext_success' => "سوف تستبدل '$2' ب'$1' في {{PLURAL:$3||صفحة واحدة|صفحتين|$3 صفحات|$3 صفحة}}.",
 	'replacetext_noreplacement' => "لا صفحات تم العثور عليها تحتوي على السلسلة '$1'.",
 	'replacetext_nomove' => "لم توجد صفحات تحتوي عناوينها '$1'.",
+	'replacetext_nosuchcategory' => 'لا يوجد تصنيف بالاسم "$1".',
 	'replacetext_return' => 'رجوع إلى الاستمارة',
 	'replacetext_warning' => "توجد {{PLURAL:$1||صفحة واحدة تحتوي|صفحتان تحتويان|$1 صفحات تحتوي|$1 صفحة تحتوي}} بالفعل على سلسلة الاستبدال '$2'.
 إذا قمت بهذا الاستبدال فلن تصبح قادرًا على فصل استبدالاتك عن هذه السلاسل.
@@ -1573,9 +1574,13 @@ Deseja prosseguir com a substituição?",
  * @author KlaudiuMihaila
  */
 $messages['ro'] = array(
+	'replacetext' => 'Înlocuieşte text',
 	'replacetext_originaltext' => 'Text original:',
+	'replacetext_optionalfilters' => 'Filtre opţionale:',
 	'replacetext_watchmovedpages' => 'Urmăreşte aceste pagini',
+	'replacetext_replace' => 'Înlocuire',
 	'replacetext_nomove' => "Nu a fost găsită nici o pagină al cărei titlu să conţină '$1'.",
+	'replacetext_return' => 'Revenire la formular.',
 	'replacetext_continue' => 'Continuare',
 	'replacetext_editsummary' => "Înlocuire de text - '$1' în '$2'",
 );
@@ -1818,12 +1823,14 @@ Naisa mo bang magpatuloy pa?',
 
 /** Turkish (Türkçe)
  * @author Joseph
+ * @author Vito Genovese
  */
 $messages['tr'] = array(
 	'replacetext' => 'Metni değiştir',
 	'replacetext-desc' => 'Yöneticilere, bir vikideki tüm içerik sayfalarında bir küresel dizi bul-ve-değiştir yapmalarına izin veren bir [[Special:ReplaceText|özel sayfa]] sağlar',
 	'replacetext_originaltext' => 'Orijinal metin:',
 	'replacetext_replacementtext' => 'Yerine konulacak metin:',
+	'replacetext_optionalfilters' => 'Opsiyonel filtreler',
 	'replacetext_movepages' => 'Sayfa başlıklarında metni değiştir, mümkün olduğunda',
 	'replacetext_choosepagesforedit' => "Lütfen, '$1' yerine '$2' koymak istediğiniz {{PLURAL:$3|sayfayı|sayfaları}} seçin:",
 	'replacetext_choosepagesformove' => "Aşağıdaki {{PLURAL:$3|sayfanın adında|sayfaların adlarında}} '$1' i '$2' ile değiştir:",
