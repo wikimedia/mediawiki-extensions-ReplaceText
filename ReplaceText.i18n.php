@@ -143,12 +143,12 @@ $messages['arc'] = array(
 $messages['arz'] = array(
 	'replacetext' => 'استبدل النص',
 	'replacetext-desc' => 'يوفر [[Special:ReplaceText|صفحة خاصة]] للسماح للإداريين للقيام بعملية أوجد واستبدل على نص فى كل صفحات المحتوى لويكي',
-	'replacetext_docu' => "لاستبدال سلسلة نص بأخرى عبر كل الصفحات العادية فى هذا الويكي، أدخل قطعتى النص هنا ثم اضغط 'استمرار'. سيعرض عليك بعد ذلك قائمة بالصفحات التى تحتوى على نص البحث، ويمكنك اختيار اللواتى تريد الاستبدال فيها. اسمك سيظهر فى تواريخ الصفحات كالمستخدم المسؤول عن أية تغييرات.",
+	'replacetext_docu' => "لاستبدال سلسلة نص بأخرى عبر كل الصفحات العادية فى هذا الويكى، أدخل قطعتى النص هنا ثم اضغط 'استمرار'. سيعرض عليك بعد ذلك قائمة بالصفحات التى تحتوى على نص البحث، ويمكنك اختيار اللواتى تريد الاستبدال فيها. اسمك سيظهر فى تواريخ الصفحات كالمستخدم المسؤول عن أية تغييرات.",
 	'replacetext_originaltext' => 'النص الأصلي:',
 	'replacetext_replacementtext' => 'نص الاستبدال:',
-	'replacetext_movepages' => 'استبدل النص في عناوين الصفحات، عندما يكون ممكنا',
+	'replacetext_movepages' => 'استبدل النص فى عناوين الصفحات، عندما يكون ممكنا',
 	'replacetext_choosepagesforedit' => "من فضلك اختار {{PLURAL:$3|الصفحه|الصفحات}} اللى فيها عايز تستبدل ب'$1' '$2':",
-	'replacetext_choosepagesformove' => 'استبدل "$1" ب"$2" في {{PLURAL:$3||اسم الصفحة التالية|اسمي الصفحتين التاليتين|أسماء الصفحات التالية}}:',
+	'replacetext_choosepagesformove' => 'استبدل "$1" ب"$2" فى {{PLURAL:$3||اسم الصفحة التالية|اسمى الصفحتين التاليتين|أسماء الصفحات التالية}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|الصفحة|الصفحات}} التالية لا يمكن نقلها:',
 	'replacetext_savemovedpages' => 'احفظ العناوين القديمة كتحويلات للعناوين الجديدة',
 	'replacetext_invertselections' => 'عكس الاختيارات',
@@ -243,15 +243,29 @@ $messages['br'] = array(
 	'replacetext_replacementtext' => "Testenn erlec'hiañ :",
 	'replacetext_optionalfilters' => 'Siloù diret :',
 	'replacetext_categorysearch' => "Erlec'hiañ er rummad hepken :",
+	'replacetext_prefixsearch' => "Erlec'hiañ hepken er bajennoù gant ar rakger :",
+	'replacetext_editpages' => "Erlec'hiañ an destenn en danvez er bajenn",
+	'replacetext_movepages' => "Erlec'hiañ an destenn e titl ar pajennoù, ma 'z eo posubl",
+	'replacetext_givetarget' => "Rankout a reoc'h reiñ ar chadenn a rank bezañ erlec'hiet.",
+	'replacetext_nonamespace' => "Rankout a reoc'h dibab un esaouenn anv d'an nebeutañ.",
+	'replacetext_editormove' => "Rankout a reoc'h dibab d'an nebeutañ un dibarzh erlec'hiañ.",
+	'replacetext_choosepagesforedit' => 'Erlec\'hiañ "$1" gant "$2" e testenn ar bajenn{{PLURAL:$3||où}} da heul :',
+	'replacetext_choosepagesformove' => 'Erlec\'hiañ  "$1" gant "$2" e titl{{PLURAL:$3| ar bajenn da heul|où ar bajennoù da heul}} :',
+	'replacetext_cannotmove' => "Ne c'hell ket bezañ fiñvet ar bajenn{{PLURAL:$1||où}} da heul :",
 	'replacetext_formovedpages' => "Evit ar pajennoù dilec'hiet :",
+	'replacetext_savemovedpages' => 'Enrollañ an titloù kozh evel adkasoù davet an titloù nevez',
 	'replacetext_watchmovedpages' => 'Evezhiañ ar pajennoù-mañ',
 	'replacetext_invertselections' => 'Eilpennañ an diuzadennoù',
 	'replacetext_replace' => "Erlec'hiañ",
+	'replacetext_success' => '"$1" a vo erlec\'hiet gant "$2" e $3 pajenn{{PLURAL:$3||}}.',
 	'replacetext_noreplacement' => "N'eus bet kavet pajenn ebet gant an neudennad « $1 ».",
+	'replacetext_nomove' => 'N\'eo bet kavet pennad ebet gant "$1" en ul lodenn eus an titl.',
 	'replacetext_nosuchcategory' => "N'eus rummad ebet en anv « $1 ».",
 	'replacetext_return' => "Distreiñ d'ar furmskrid.",
 	'replacetext_continue' => "Kenderc'hel",
+	'replacetext_cancel' => '(Evit nulañ an ober klikit war ar bouton "Disto" en ho merdeer.)',
 	'replacetext_editsummary' => 'Erlec\'hiañ an destenn - "$1" dre "$2"',
+	'right-replacetext' => "Krouiñ erlec'hiadurioù testenn er wiki a-bezh",
 );
 
 /** Bosnian (Bosanski)
@@ -1939,6 +1953,34 @@ $messages['vo'] = array(
 	'replacetext_continue' => 'Ledunön',
 	'replacetext_editsummary' => 'Vödemiplaädam - „$1“ ad „$2“',
 	'right-replacetext' => 'Ledunön vödemiplaädami in vük lölik',
+);
+
+/** Simplified Chinese (‪中文(简体)‬)
+ * @author Liangent
+ */
+$messages['zh-hans'] = array(
+	'replacetext' => '取代文字',
+	'replacetext-desc' => '提供[[Special:ReplaceText|特殊页面]]以利管理员以「寻找及取代」的方式更改所有文章页面内的内容。',
+	'replacetext_docu' => '要取代此维基内所有页面文字的字串，请将「原始文字」及「取代的文字」分别填入下面的两个栏位之中，然后按「继续」。接下来所有内含原始文字的页面会被列出，你可以选择要在那一些页面进行取代。页面的改动历史会显示你是负责进行这次改动的用户。',
+	'replacetext_originaltext' => '原始文字',
+	'replacetext_replacementtext' => '取代文字',
+	'replacetext_movepages' => '如果可以的话，也取代页面名称的字串。',
+	'replacetext_nonamespace' => '您必须选择最少一个名字空间。',
+	'replacetext_choosepagesforedit' => '请选择你想将「$1」取代成「$2」的页面。',
+	'replacetext_choosepagesformove' => '对以下页面的名称进行取代：',
+	'replacetext_cannotmove' => '以下页面无法被移动：',
+	'replacetext_savemovedpages' => '保留被移动的页面的旧名字，将它们重导向到新名字。',
+	'replacetext_invertselections' => '倒选',
+	'replacetext_replace' => '取代',
+	'replacetext_success' => '已将 $3 个页面内的「$1」取代为「$2」。',
+	'replacetext_noreplacement' => '因无任何页面内含有「$1」。',
+	'replacetext_return' => '返回表格。',
+	'replacetext_warning' => '有 $1 个页面已经包含文字「$2」。如果您执行了取代作业，被替代的文字会跟它们混在一起，变得难以分开原来的文字和被替代的文字。要继续执行取代作业吗？',
+	'replacetext_blankwarning' => '因为取代字串是空白的，这将造成难以复原的结果！您要继续吗？',
+	'replacetext_continue' => '继续',
+	'replacetext_cancel' => '（按下浏览器上的 "返回" 按钮可以取消操作）',
+	'replacetext_editsummary' => '取代文字 - 「$1」 取代为 「$2」',
+	'right-replacetext' => '对整个维基进行文字替换。',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
