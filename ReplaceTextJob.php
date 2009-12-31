@@ -70,8 +70,8 @@ class ReplaceTextJob extends Job {
 				$article->doEdit( $new_text, $edit_summary, $flags );
 				$wgUser = $actual_user;
 			}
+			wfProfileOut( __METHOD__ . '-replace' );
 		}
-		wfProfileOut( __METHOD__ . '-replace' );
 		wfProfileOut( __METHOD__ );
 		return true;
 	}
