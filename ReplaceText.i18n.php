@@ -1494,6 +1494,14 @@ $messages['pnt'] = array(
 	'replacetext_originaltext' => 'Πρωτότυπον κείμενον:',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'replacetext_originaltext' => 'آرنی متن:',
+	'replacetext_watchmovedpages' => 'همدا مخونه کتل',
+);
+
 /** Portuguese (Português)
  * @author 555
  * @author Crazymadlover
