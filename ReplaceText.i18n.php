@@ -487,6 +487,9 @@ $messages['eo'] = array(
 $messages['es'] = array(
 	'replacetext' => 'Reemplazar texto',
 	'replacetext-desc' => 'Provee a los administradores de una [[Special:ReplaceText|página especial]] para realizar una búsqueda y reemplazo global de una expresión en todas las páginas de una wiki.',
+	'replacetext_docu' => "Para sustituir una cadena de texto con otra en todas las páginas de este wiki, introduce ambos textos aquí y haz clic en 'Continuar'.
+A continuación verás un listado de páginas que contienen el texto de búsqueda, de los cuales podrás elegir aquellos en los que quieras cambiar el texto.
+Tu nombre aparecerá como usuario responsable de los cambios en el historial de cada una de esas páginas.",
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Texto de reemplazo:',
 	'replacetext_optionalfilters' => 'Filtros opcionales:',
@@ -510,6 +513,9 @@ $messages['es'] = array(
 	'replacetext_nomove' => "No se hallaron páginas cuyo título contenga '$1'.",
 	'replacetext_nosuchcategory' => 'No existen categorías con el nombre "$1".',
 	'replacetext_return' => 'Retornar al formulario.',
+	'replacetext_warning' => 'Hay {{PLURAL:$1|$1 página que ya contiene|$1 páginas que ya contienen}} la cadena de sustitución, "$2".
+Si realizas esta sustituación, no podrás separar tus sustituciones de estas cadenas.
+¿Deseas continuar con la sustitución?',
 	'replacetext_blankwarning' => 'Como la cadena de reemplazo está vacía, esta operación no podrá revertirse.
 ¿ Desea continuar ?',
 	'replacetext_continue' => 'Continuar',
