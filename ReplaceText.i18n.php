@@ -1123,7 +1123,7 @@ Wells De trozdämm wigger maache?',
 $messages['lb'] = array(
 	'replacetext' => 'Text ersetzen',
 	'replacetext-desc' => "Weist eng [[Special:ReplaceText|Spezialsäit]] déi Administrateuren et erlaabt eng Rei vun Textzeechen op alle Contenu-säite vun enger Wiki ze gesinn an z'ersetzen",
-	'replacetext_docu' => "Fir en Text duerch en aneren Text op allen Inhaltssäite vun dëser Wiki z'ersetzen, gitt w.e.g. déi zwee Texter hei ana klickt op 'Weider'. Dir gesitt dann eng Lëscht vu Säiten op denen de gesichten Text dran ass, an Dir kënnt déi eraussichen op denen Dir den Text ersetze wëllt. Äre Numm steet an der Lëscht vun de Versiounen als Auteur vun all denen Ännerungen.",
+	'replacetext_docu' => "Fir en Text duerch en aneren Text op allen Inhaltssäite vun dëser Wiki z'ersetzen, gitt w.e.g. déi zwéin Texter hei an klickt op 'Weider'. Dir gesitt dann eng Lëscht vu Säiten op deenen de gesichten Text dran ass, an Dir kënnt déi eraussichen op denen Dir den Text ersetze wëllt. Ären Numm steet an der Lëscht vun de Versiounen als Auteur vun all deenen Ännerungen.",
 	'replacetext_originaltext' => 'Originaltext:',
 	'replacetext_replacementtext' => 'Neien Text:',
 	'replacetext_optionalfilters' => 'Optional Filteren:',
