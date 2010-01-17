@@ -1808,6 +1808,7 @@ $messages['sv'] = array(
 $messages['te'] = array(
 	'replacetext_originaltext' => 'అసలు పాఠ్యం:',
 	'replacetext_replacementtext' => 'మార్పిడి పాఠ్యం:',
+	'replacetext_optionalfilters' => 'ఐచ్చిక వడపోతలు:',
 	'replacetext_continue' => 'కొనసాగించు',
 );
 
