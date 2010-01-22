@@ -770,7 +770,7 @@ $messages['he'] = array(
 
 /** Croatian (Hrvatski)
  * @author Dalibor Bosits
- * @author Suradnik13
+ * @author Ex13
  */
 $messages['hr'] = array(
 	'replacetext' => 'Zamjeni tekst',
@@ -1164,6 +1164,13 @@ $messages['lt'] = array(
 	'replacetext' => 'Keisti tekstą',
 	'replacetext_continue' => 'Tęsti',
 	'replacetext_editsummary' => 'Teksto pakeitimas - "$1" į "$2"',
+);
+
+/** Malagasy (Malagasy)
+ * @author Jagwar
+ */
+$messages['mg'] = array(
+	'right-replacetext' => 'Manolo lahatsoratra misy manerana ilay wiki',
 );
 
 /** Macedonian (Македонски)
@@ -2066,6 +2073,7 @@ $messages['zh-tw'] = array(
 	'replacetext_replace' => '取代',
 	'replacetext_success' => '已將 $3 個頁面內的「$1」取代為「$2」。',
 	'replacetext_noreplacement' => '因無任何頁面內含有「$1」。',
+	'replacetext_warning' => '',
 	'replacetext_blankwarning' => '因為取代字串是空白的，這將造成難以復原的結果！您要繼續嗎？',
 	'replacetext_continue' => '繼續',
 	'replacetext_cancel' => '(按下 "返回" 按鈕以取消本次操作)',
