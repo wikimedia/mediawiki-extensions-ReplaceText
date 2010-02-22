@@ -26,7 +26,6 @@ $wgExtensionCredits['specialpage'][] = array(
 	'version' => '0.7.1',
 	'author' => array( 'Yaron Koren', 'Niklas Laxström' ),
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Replace_Text',
-	'description' => 'A special page that lets administrators run a global search-and-replace',
 	'descriptionmsg'  => 'replacetext-desc',
 );
 
