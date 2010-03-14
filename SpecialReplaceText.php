@@ -31,17 +31,17 @@ class ReplaceText extends SpecialPage {
 		$formOpts = array( 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
 
 		$wgOut->addHTML(
-			Xml::openElement( 'form', $formOpts ) . "\n".
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) . "\n".
-			Xml::hidden( 'target', $this->target ) . "\n".
-			Xml::hidden( 'replacement', $this->replacement ) . "\n".
-			Xml::hidden( 'category', $this->category ) . "\n".
-			Xml::hidden( 'prefix', $this->prefix ) . "\n".
-			Xml::hidden( 'edit_pages', $this->edit_pages ) . "\n".
-			Xml::hidden( 'move_pages', $this->move_pages ) . "\n".
+			Xml::openElement( 'form', $formOpts ) . "\n" .
+			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) . "\n" .
+			Xml::hidden( 'target', $this->target ) . "\n" .
+			Xml::hidden( 'replacement', $this->replacement ) . "\n" .
+			Xml::hidden( 'category', $this->category ) . "\n" .
+			Xml::hidden( 'prefix', $this->prefix ) . "\n" .
+			Xml::hidden( 'edit_pages', $this->edit_pages ) . "\n" .
+			Xml::hidden( 'move_pages', $this->move_pages ) . "\n" .
 			Xml::hidden( 'confirm', 1 ) . "\n"
 		);
-		foreach ($this->selected_namespaces as $ns) {
+		foreach ( $this->selected_namespaces as $ns ) {
 			$wgOut->addHTML(
 				Xml::hidden( 'ns' . $ns, 1 ) . "\n"
 			);
@@ -59,8 +59,8 @@ class ReplaceText extends SpecialPage {
 		global $wgRequest;
 		$all_namespaces = SearchEngine::searchableNamespaces();
 		$selected_namespaces = array();
-		foreach ($all_namespaces as $ns => $name) {
-			if ($wgRequest->getCheck('ns' . $ns)) {
+		foreach ( $all_namespaces as $ns => $name ) {
+			if ( $wgRequest->getCheck( 'ns' . $ns ) ) {
 				$selected_namespaces[] = $ns;
 			}
 		}
@@ -74,8 +74,8 @@ class ReplaceText extends SpecialPage {
 		$this->replacement = $wgRequest->getText( 'replacement' );
 		$this->category = $wgRequest->getText( 'category' );
 		$this->prefix = $wgRequest->getText( 'prefix' );
-		$this->edit_pages = ($wgRequest->getVal( 'edit_pages' ) == 1);
-		$this->move_pages = ($wgRequest->getVal( 'move_pages' ) == 1);
+		$this->edit_pages = ( $wgRequest->getVal( 'edit_pages' ) == 1 );
+		$this->move_pages = ( $wgRequest->getVal( 'move_pages' ) == 1 );
 		$this->selected_namespaces = self::getSelectedNamespaces();
 
 		if ( $wgRequest->getCheck( 'continue' ) ) {
@@ -186,7 +186,7 @@ class ReplaceText extends SpecialPage {
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 					// see if this move can happen
-					$cur_page_name = str_replace('_', ' ', $row->page_title);
+					$cur_page_name = str_replace( '_', ' ', $row->page_title );
 					$new_page_name = str_replace( $this->target, $this->replacement, $cur_page_name );
 					$new_title = Title::makeTitleSafe( $row->page_namespace, $new_page_name );
 					$err = $title->isValidMoveOperation( $new_title );
@@ -199,15 +199,15 @@ class ReplaceText extends SpecialPage {
 			}
 			// if no results were found, check to see if a bad
 			// category name was entered
-			if ( count($titles_for_edit) == 0 && count($titles_for_move) == 0 ) {
+			if ( count( $titles_for_edit ) == 0 && count( $titles_for_move ) == 0 ) {
 				$sk = $this->user->getSkin();
 				$bad_cat_name = false;
-				if (! empty($this->category)) {
-					$category_title = Title::makeTitleSafe(NS_CATEGORY, $this->category);
-					if (! $category_title->exists()) $bad_cat_name = true;
+				if ( ! empty( $this->category ) ) {
+					$category_title = Title::makeTitleSafe( NS_CATEGORY, $this->category );
+					if ( ! $category_title->exists() ) $bad_cat_name = true;
 				}
-				if ($bad_cat_name) {
-					$wgOut->addHTML(wfMsg('replacetext_nosuchcategory', $sk->link($category_title, ucfirst($this->category))));
+				if ( $bad_cat_name ) {
+					$wgOut->addHTML( wfMsg( 'replacetext_nosuchcategory', $sk->link( $category_title, ucfirst( $this->category ) ) ) );
 				} else {
 					if ( $this->edit_pages )
 						$wgOut->addWikiMsg( 'replacetext_noreplacement', "<tt><nowiki>{$this->target}</nowiki></tt>" );
@@ -247,13 +247,13 @@ class ReplaceText extends SpecialPage {
 		$wgOut->addHTML( Xml::textarea( 'replacement', $this->replacement, 50, 2, array( 'style' => 'width: auto;' ) ) );
 		$wgOut->addHTML( '</td></tr></table>' );
 
-		$search_label = wfMsg('powersearch-ns');
+		$search_label = wfMsg( 'powersearch-ns' );
 		$namespaces = SearchEngine::searchableNamespaces();
 		$tables = $this->namespaceTables( $namespaces );
 		$wgOut->addHTML( "<fieldset>\n<p>$search_label</p\n>$tables\n</fieldset>" );
-		$optional_filters_label = wfMsg('replacetext_optionalfilters');
-		$category_search_label = wfMsg('replacetext_categorysearch');
-		$prefix_search_label = wfMsg('replacetext_prefixsearch');
+		$optional_filters_label = wfMsg( 'replacetext_optionalfilters' );
+		$category_search_label = wfMsg( 'replacetext_categorysearch' );
+		$prefix_search_label = wfMsg( 'replacetext_prefixsearch' );
 		$wgOut->addHTML(
 			"<fieldset>\n" .
 			"<p>$optional_filters_label</p>\n" .
@@ -279,13 +279,13 @@ class ReplaceText extends SpecialPage {
                 // Try not to make too many assumptions about namespace numbering.
                 $rows = array();
                 $tables = "";
-                foreach( $namespaces as $ns => $name ) {
+                foreach ( $namespaces as $ns => $name ) {
                         $subj = MWNamespace::getSubject( $ns );
-                        if( !array_key_exists( $subj, $rows ) ) {
+                        if ( !array_key_exists( $subj, $rows ) ) {
                                 $rows[$subj] = "";
                         }
                         $name = str_replace( '_', ' ', $name );
-                        if( '' == $name ) {
+                        if ( '' == $name ) {
                                 $name = wfMsg( 'blanknamespace' );
                         }
                         $rows[$subj] .= Xml::openElement( 'td', array( 'style' => 'white-space: nowrap' ) ) .
@@ -300,9 +300,9 @@ class ReplaceText extends SpecialPage {
                 $tableStyle = $wgContLang->isRTL() ?
                         'float: right; margin: 0 0 0em 1em' : 'float: left; margin: 0 1em 0em 0';
                 // Build the final HTML table...
-                for( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
+                for ( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
                         $tables .= Xml::openElement( 'table', array( 'style' => $tableStyle ) );
-                        for( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
+                        for ( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
                                 $tables .= "<tr>\n" . $rows[$j] . "</tr>";
                         }
                         $tables .= Xml::closeElement( 'table' ) . "\n";
@@ -457,13 +457,13 @@ class ReplaceText extends SpecialPage {
 			"page_title LIKE '%$sql_str%'",
 			"page_namespace IN ($include_ns)",
 		);
-		if (! empty($category)) {
+		if ( ! empty( $category ) ) {
 			$category = str_replace( ' ', '_', $dbr->escapeLike( $category ) );
 			$tables[] = 'categorylinks';
 			$conds[] = 'page_id = cl_from';
 			$conds[] = "cl_to = '$category'";
 		}
-		if (! empty($prefix)) {
+		if ( ! empty( $prefix ) ) {
 			$prefix = $dbr->escapeLike( str_replace( ' ', '_', $prefix ) );
 			$conds[] = "page_title like '$prefix%'";
 		}
@@ -491,13 +491,13 @@ class ReplaceText extends SpecialPage {
 			'rev_id = page_latest',
 			'rev_text_id = old_id'
 		);
-		if (! empty($category)) {
+		if ( ! empty( $category ) ) {
 			$category = str_replace( ' ', '_', $dbr->escapeLike( $category ) );
 			$tables[] = 'categorylinks';
 			$conds[] = 'page_id = cl_from';
 			$conds[] = "cl_to = '$category'";
 		}
-		if (! empty($prefix)) {
+		if ( ! empty( $prefix ) ) {
 			$prefix = $dbr->escapeLike( str_replace( ' ', '_', $prefix ) );
 			$conds[] = "page_title like '$prefix%'";
 		}

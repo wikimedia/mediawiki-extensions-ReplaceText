@@ -35,8 +35,8 @@ class ReplaceTextJob extends Job {
 			$reason = $this->params['edit_summary'];
 			$create_redirect = $this->params['create_redirect'];
 			$this->title->moveTo( $new_title, true, $reason, $create_redirect );
-			if ($this->params['watch_page']) {
-				$article = new Article($new_title);
+			if ( $this->params['watch_page'] ) {
+				$article = new Article( $new_title );
 				$article->doWatch();
 			}
 			$wgUser = $actual_user;
@@ -65,7 +65,7 @@ class ReplaceTextJob extends Job {
 				$wgUser = User::newFromId( $this->params['user_id'] );
 				$edit_summary = $this->params['edit_summary'];
 				$flags = EDIT_MINOR;
-				if ($wgUser->isAllowed('bot'))
+				if ( $wgUser->isAllowed( 'bot' ) )
 					$flags |= EDIT_FORCE_BOT;
 				$article->doEdit( $new_text, $edit_summary, $flags );
 				$wgUser = $actual_user;
