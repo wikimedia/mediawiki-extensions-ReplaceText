@@ -108,7 +108,7 @@ $aliases['km'] = array(
 	'ReplaceText' => array( 'ជំនួសអត្ថបទ' ),
 );
 
-/** Ripoarisch (Ripoarisch) */
+/** Colognian (Ripoarisch) */
 $aliases['ksh'] = array(
 	'ReplaceText' => array( 'Tex tuusche' ),
 );
