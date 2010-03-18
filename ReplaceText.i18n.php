@@ -40,11 +40,8 @@ Your name will appear in page histories as the user responsible for any changes.
 	'replacetext_nomove' => 'No pages were found whose title contains "$1".',
 	'replacetext_nosuchcategory' => 'No category exists with the name "$1".',
 	'replacetext_return' => 'Return to form.',
-	'replacetext_warning' => 'There {{PLURAL:$1|is $1 page that already contains|are $1 pages that already contain}} the replacement string, "$2".
-If you make this replacement you will not be able to separate your replacements from these strings.
-Continue with the replacement?',
-	'replacetext_blankwarning' => 'Because the replacement string is blank, this operation will not be reversible.
-Do you want to continue?',
+	'replacetext_warning' => "'''Warning:''' There {{PLURAL:$1|is $1 page that already contains|are $1 pages that already contain}} the replacement string, \"$2\". If you make this replacement you will not be able to separate your replacements from these strings.",
+	'replacetext_blankwarning' => "'''Warning:''' Because the replacement string is blank, this operation will not be reversible.",
 	'replacetext_continue' => 'Continue',
 	'replacetext_cancel' => '(Click the "Back" button in your browser to cancel the operation.)',
 	// content messages
