@@ -395,9 +395,8 @@ $messages['de'] = array(
 	'replacetext_nomove' => 'Es wurden keine Titel gefunden, die „$1“ beinhalten.',
 	'replacetext_nosuchcategory' => 'Es gibt keine Kategorie mit dem Namen „$1“.',
 	'replacetext_return' => 'Zurück zum Formular.',
-	'replacetext_warning' => '$1 {{PLURAL:$1|Seite enthält|Seiten enthalten}} bereits den zu ersetzenden Textteil „$2“.
-Eine Trennung der Ersetzungen mit den bereits vorhandenen Textteilen ist nicht möglich.
-Möchtest du weitermachen?',
+	'replacetext_warning' => "'''Warnung:''' $1 {{PLURAL:$1|Seite enthält|Seiten enthalten}} bereits den zu ersetzenden Textteil „$2“.
+Wenn du die Ersetzung durchführst, ist eine spätere Trennung der Ersetzungen mit den bereits vorhandenen Textteilen ist nicht mehr möglich.",
 	'replacetext_blankwarning' => 'Der zu ersetzende Textteil ist leer, die Operation kann nicht rückgängig gemacht werden, trotzdem fortfahren?',
 	'replacetext_continue' => 'Fortfahren',
 	'replacetext_cancel' => '(Klicke auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
@@ -449,9 +448,8 @@ $messages['dsb'] = array(
 	'replacetext_nomove' => "Boki, kótarychž titel wopśimujo '$1', njejsu se namakali.",
 	'replacetext_nosuchcategory' => 'Kategorija z mjenim "$1" njeeksistěrujo.',
 	'replacetext_return' => 'Slědk k formularoju.',
-	'replacetext_warning' => "{{PLURAL:$1|Jo $1 bok, kótaryž južo wopśimujo|stej $1 boka, kótarejž južo wopśimujotej|su $1 boki, kótarež južo wopśimuju|jo $1 bokow, kótarež južo wopśimujo}} tekst, kótaryž ma se wuměniś, '$2'.
-Jolic wuwjedujoš toś tu wuměnu, njamóžoš rozeznaś swóje wuměny wót toś togo teksta.
-Coš dalej wuměniś?",
+	'replacetext_warning' => '\'\'\'Warnowanje:\'\'\' {{PLURAL:$1|Jo $1 bok, kótaryž južo wopśimujo|stej $1 boka, kótarejž južo wopśimujotej|su $1 boki, kótarež južo wopśimuju|jo $1 bokow, kótarež južo wopśimujo}} tekst, kótaryž ma se wuměniś, "$2".
+Jolic wuwjedujoš toś tu wuměnu, njamóžoš rozeznaś swóje wuměny wót toś togo teksta.',
 	'replacetext_blankwarning' => 'Dokulaž njejo tekst za wuměnjenje, toś ta operacija njedajo se anulěrowaś. Coš weto pókšacowaś?',
 	'replacetext_continue' => 'Dalej',
 	'replacetext_cancel' => '(Klikni na tłocašk "Slědk" w swójom wobglědowaku, aby pśetergnuł operaciju.)',
@@ -618,6 +616,7 @@ $messages['fi'] = array(
  * @author Grondin
  * @author IAlex
  * @author McDutchie
+ * @author Peter17
  * @author PieRRoMaN
  * @author Verdy p
  * @author Zetud
@@ -649,9 +648,8 @@ $messages['fr'] = array(
 	'replacetext_nomove' => 'Aucune page n’a été trouvée dont le titre contient « $1 ».',
 	'replacetext_nosuchcategory' => "Il n'existe pas de catégorie nommée « $1 ».",
 	'replacetext_return' => 'Revenir au formulaire.',
-	'replacetext_warning' => 'Il y a $1 fichier{{PLURAL:$1| qui contient|s qui contiennent}} la chaîne de remplacement « $2 ».
-Si vous effectuez cette substitution, vous ne pourrez pas séparer vos changements à partir de ces chaînes.
-Voulez-vous continuer ces substitutions ?',
+	'replacetext_warning' => 'Il y a $1 fichier{{PLURAL:$1| qui contient|s qui contiennent}} déjà la chaîne de remplacement « $2 ».
+Si vous effectuez cette substitution, vous ne pourrez pas distinguer vos modifications de ces chaînes.',
 	'replacetext_blankwarning' => 'Parce que la chaîne de remplacement est vide, cette opération sera irréversible ; voulez-vous continuer ?',
 	'replacetext_continue' => 'Continuer',
 	'replacetext_cancel' => '(Cliquez sur le bouton  « Retour » de votre navigateur pour annuler l’opération.)',
@@ -744,8 +742,8 @@ $messages['gsw'] = array(
 	'replacetext_nomove' => "S sin kei Syte gfunde wore, wu '$1' im Titel hän",
 	'replacetext_nosuchcategory' => 'S git kei Kategorii mit em Name „$1“.',
 	'replacetext_return' => 'Zrugg zum Formular.',
-	'replacetext_warning' => 'In $1 {{PLURAL:$1|Syte het s|Seite het s}} dr Täxtteil „$2“, wu ersetzt soll wäre, scho.
-E Trännig vu dr Ersetzige mit dr Täxtteil, wu s scho het, sich nit megli. Mechtsch einewäg wytermache?',
+	'replacetext_warning' => "'''Warnig:''' In $1 {{PLURAL:$1|Syte het s|Seite het s}} dr Täxtteil „$2“, wu ersetzt soll wäre, scho.
+E Trännig vu dr Ersetzige mit dr Täxtteil, wu s scho het, sich nit megli. Mechtsch einewäg wytermache?",
 	'replacetext_blankwarning' => 'Dr Täxtteil, wu soll ersetzt wären, isch läär. D Operation cha nit ruckgängig gmacht wäre, einewäg wytermache?',
 	'replacetext_continue' => 'Wytermache',
 	'replacetext_cancel' => '(Druck uf d „Zrugg“-Schaltflächi go d Operation abbräche.)',
@@ -850,7 +848,7 @@ $messages['hsb'] = array(
 	'replacetext_nomove' => "Strony, kotrychž titul '$1' wobsahuje, njebuchu namakane.",
 	'replacetext_nosuchcategory' => 'Kategorija z mjenom "$1" njeeksistuje.',
 	'replacetext_return' => 'Wróćo k formularej',
-	'replacetext_warning' => "{{PLURAL:$1|Je hižo $1 strona, kotraž wobsahuje|Stej hižo $1 stronje, kotejž wobsahujetej|Su hižo $1 strony, kotrež wobsahuja|Je hižo $1 stronow, kotrež wobsahuje}} narunanski tekst, '$2'. Jeli tute narunanje činiš, njemóžeš swoje narunanja wot tutoho teksta rozdźělić. Z narunanjom pokročować?",
+	'replacetext_warning' => "'''Warnowanje:''' {{PLURAL:$1|Je hižo $1 strona, kotraž wobsahuje|Stej hižo $1 stronje, kotejž wobsahujetej|Su hižo $1 strony, kotrež wobsahuja|Je hižo $1 stronow, kotrež wobsahuje}} narunanski tekst, '$2'. Jeli tute narunanje činiš, njemóžeš swoje narunanja wot tutoho teksta rozdźělić.",
 	'replacetext_blankwarning' => 'Narunanski dźěl je prózdny, tohodla operacija njeda so cofnyć; njedźiwajo na to pokročować?',
 	'replacetext_continue' => 'Dale',
 	'replacetext_cancel' => '(Klikń na tłóčatko "Wróćo" w swojim wobhladowaku, zo by operaciju přetrohnył.)',
@@ -931,9 +929,8 @@ $messages['ia'] = array(
 	'replacetext_nomove' => "Nulle pagina esseva trovate con un titulo que contine '$1'.",
 	'replacetext_nosuchcategory' => "Nulle categoria existe con le nomine '$1'.",
 	'replacetext_return' => 'Retornar al formulario.',
-	'replacetext_warning' => "Il ha $1 {{PLURAL:$1|pagina|paginas}} que contine ja le nove texto, '$2'.
-Si tu face iste reimplaciamento, tu non potera distinguer inter tu reimplaciamentos e iste texto ja existente.
-Continuar le reimplaciamento?",
+	'replacetext_warning' => "'''Attention:''' Il ha \$1 {{PLURAL:\$1|pagina|paginas}} que contine ja le nove texto, \"\$2\".
+Si tu face iste reimplaciamento, tu non potera distinguer inter tu reimplaciamentos e iste texto ja existente.",
 	'replacetext_blankwarning' => 'Post que le nove texto es vacue, iste operation non essera reversibile; continuar?',
 	'replacetext_continue' => 'Continuar',
 	'replacetext_cancel' => '(Clicca le button "Retro" in tu navigator pro cancellar le operation.)',
@@ -1092,7 +1089,7 @@ $messages['km'] = array(
 	'replacetext_editsummary' => "អត្ថបទជំនួស - '$1' ទៅ '$2'",
 );
 
-/** Ripoarisch (Ripoarisch)
+/** Colognian (Ripoarisch)
  * @author Purodha
  */
 $messages['ksh'] = array(
@@ -1231,9 +1228,7 @@ $messages['mk'] = array(
 	'replacetext_nomove' => 'Нема пронајдено страници чиј наслов содржи „$1“.',
 	'replacetext_nosuchcategory' => 'Не постои категорија по име „$1“',
 	'replacetext_return' => 'Назад кон образецот',
-	'replacetext_warning' => 'Има {{PLURAL:$1|$1 страница која веќе ја содржи|$1 страници кои веќе ја содржат}} новата низа „$2“.
-Ако ја извршите оваа замена, тогаш нема да можете да ја одделите вапата замена од тие низи.
-Сакате да продолжите со замената?',
+	'replacetext_warning' => "'''Предупредување:''' Има {{PLURAL:$1|$1 страница што веќе ја содржи|$1 страници што веќе ја содржат}} новата низа „$2“. Ако ја извршите оваа замена, тогаш нема да можете да ги раздвоите вашите замени од тие низи.",
 	'replacetext_blankwarning' => 'Бидејќи новата низа е празна, оваа операција не може да се врати.
 Дали сакате да продолжите?',
 	'replacetext_continue' => 'Продолжи',
@@ -1521,8 +1516,8 @@ Tò nòm a aparirà ant le stòrie dle pàgine com l'utent responsàbil për min
 	'replacetext_nomove' => 'Pa gnun-e pàgine trovà con ij tìtoj contenent "$1".',
 	'replacetext_nosuchcategory' => 'A esisto gnun-e categorìe con ël nòm "$1".',
 	'replacetext_return' => 'Artorna al formolari.',
-	'replacetext_warning' => 'A-i {{PLURAL:$1|é $1 pàgina ch\'a conten|son $1 pàgine ch\'a conten-o}} già la stringa ëd rimpiassadura, "$2".
-S\'it fas sta rimpiassadura-sì it saras pa bon a separé toe rimpiassadure da ste stringhe-sì. It continue con la rimpiassadura?',
+	'replacetext_warning' => "'''Atension:''' A-i {{PLURAL:\$1|é \$1 pàgina ch'a conten|son \$1 pàgine ch'a conten-o}} già la stringa ëd rimpiassadura, \"\$2\".
+S'it fas sta rimpiassadura-sì it saras pa bon a separé toe rimpiassadure da ste stringhe-sì.",
 	'replacetext_blankwarning' => "Da già che la stringa ëd rimpiass a l'é veuida, st'operassion-sì a sarà pa reversìbil.
 Veul-lo continué?",
 	'replacetext_continue' => 'Continua',
@@ -1582,9 +1577,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_nomove' => "Não foram encontradas páginas cujo título contenha '$1'",
 	'replacetext_nosuchcategory' => 'Não existe nenhuma categoria com o nome "$1".',
 	'replacetext_return' => 'Voltar ao formulário.',
-	'replacetext_warning' => "Há {{PLURAL:$1|uma página que já contém|$1 páginas que já contêm}} o texto de substituição: '$2'.
-Se prosseguir, não será possível distinguir o texto que vai agora inserir, {{PLURAL:$1|do texto já existente|dos textos já existentes}}, pelo que não poderá desfazer a operação com uma simples substituição em ordem inversa.
-Deseja prosseguir a substituição?",
+	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} o texto de substituição, \"\$2\". Se fizer esta substituição não poderá desfazer a operação com uma simples substituição em ordem inversa.",
 	'replacetext_blankwarning' => 'Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
 	'replacetext_continue' => 'Prosseguir',
 	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
@@ -1696,9 +1689,7 @@ $messages['ru'] = array(
 	'replacetext_nomove' => 'Не удалось найти страницы, заголовок которых содержит «$1».',
 	'replacetext_nosuchcategory' => 'Не существует категории с именем «$1».',
 	'replacetext_return' => 'Вернуться к форме.',
-	'replacetext_warning' => 'Найдена {{PLURAL:$1|$1 страница, содержащая|$1 страницы, содержащие|$1 страниц, содержащих}} текст для замены, «$2».
-Если вы продолжите операцию замены, то не сможете отделить уже существующие записи от тех, которые появятся после замены.
-Продолжить замену?',
+	'replacetext_warning' => "'''Внимание.''' Найдена {{PLURAL:$1|$1 страница, содержащая|$1 страницы, содержащие|$1 страниц, содержащих}} текст для замены, «$2». Если вы продолжите операцию замены, то не сможете отделить уже существующие записи от тех, которые появятся после замены.",
 	'replacetext_blankwarning' => 'Из-за того, что текст для замены пуст, операция по замене не сможет быть отменена.
 Вы хотите продолжить?',
 	'replacetext_continue' => 'Продолжить',
