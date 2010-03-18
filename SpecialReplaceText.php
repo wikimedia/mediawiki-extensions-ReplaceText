@@ -230,7 +230,7 @@ class ReplaceText extends SpecialPage {
 		// search interface was added in MW 1.16 - check for the
 		// presence of the 'powersearch-togglelabel' message to see
 		// if we can use this functionality here
-		if ( wfMsg( 'powersearch-togglelabel' ) !== '&lt;powersearch-togglelabel&gt;' ) {
+		if ( ! wfEmptyMsg( 'powersearch-togglelabel', wfMsg( 'powersearch-togglelabel' ) ) ) {
 			$wgOut->addHTML(
 				Xml::tags(
 					'div',
