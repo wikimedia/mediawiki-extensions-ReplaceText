@@ -25,36 +25,6 @@ class ReplaceText extends SpecialPage {
 		$this->doSpecialReplaceText();
 	}
 
-	function displayConfirmForm( $message ) {
-		global $wgOut;
-
-		$formOpts = array( 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
-
-		$wgOut->addHTML(
-			Xml::openElement( 'form', $formOpts ) . "\n" .
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) . "\n" .
-			Xml::hidden( 'target', $this->target ) . "\n" .
-			Xml::hidden( 'replacement', $this->replacement ) . "\n" .
-			Xml::hidden( 'category', $this->category ) . "\n" .
-			Xml::hidden( 'prefix', $this->prefix ) . "\n" .
-			Xml::hidden( 'edit_pages', $this->edit_pages ) . "\n" .
-			Xml::hidden( 'move_pages', $this->move_pages ) . "\n" .
-			Xml::hidden( 'confirm', 1 ) . "\n"
-		);
-		foreach ( $this->selected_namespaces as $ns ) {
-			$wgOut->addHTML(
-				Xml::hidden( 'ns' . $ns, 1 ) . "\n"
-			);
-		}
-		$wgOut->wrapWikiMsg( '$1', $message );
-		$wgOut->addHTML(
-			Xml::submitButton( wfMsg( 'replacetext_continue' ) )
-		);
-
-		$wgOut->addWikiMsg( 'replacetext_cancel' );
-		$wgOut->addHTML( Xml::closeElement( 'form' ) );
-	}
-
 	static function getSelectedNamespaces() {
 		global $wgRequest;
 		$all_namespaces = SearchEngine::searchableNamespaces();
@@ -141,37 +111,6 @@ class ReplaceText extends SpecialPage {
 			$titles_for_move = array();
 			$unmoveable_titles = array();
 
-			// display a page to make the user confirm the
-			// replacement, if the replacement string is
-			// either blank or found elsewhere on the wiki
-			// (since undoing the replacement would be
-			// difficult in either case)
-			if ( !$wgRequest->getCheck( 'confirm' ) ) {
-
-				$message = false;
-
-				if ( $this->replacement === '' ) {
-					$message = 'replacetext_blankwarning';
-				} elseif ( $this->edit_pages ) {
-					$res = $this->doSearchQuery( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix );
-					$count = $res->numRows();
-					if ( $count > 0 ) {
-						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), "<tt><nowiki>{$this->replacement}</nowiki></tt>" );
-					}
-				} elseif ( $this->move_pages ) {
-					$res = $this->getMatchingTitles( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix );
-					$count = $res->numRows();
-					if ( $count > 0 ) {
-						$message = array( 'replacetext_warning', $wgLang->formatNum( $count ), $this->replacement );
-					}
-				}
-
-				if ( $message ) {
-					$this->displayConfirmForm( $message );
-					return;
-				}
-			}
-
 			// if user is replacing text within pages...
 			if ( $this->edit_pages ) {
 				$res = $this->doSearchQuery( $this->target, $this->selected_namespaces, $this->category, $this->prefix );
@@ -217,23 +156,54 @@ class ReplaceText extends SpecialPage {
 				// link back to starting form
 				$wgOut->addHTML( '<p>' . $sk->makeKnownLinkObj( $this->getTitle(), wfMsg( 'replacetext_return' ) ) . '</p>' );
 			} else {
+				// show a warning message if the replacement string
+				// is either blank or found elsewhere on the wiki
+				// (since undoing the replacement would be
+				// difficult in either case)
+				$warning_msg = null;
+
+				if ( $this->replacement === '' ) {
+					$warning_msg = wfMsg('replacetext_blankwarning');
+				} elseif ( count( $titles_for_edit ) > 0 ) {
+					$res = $this->doSearchQuery( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix );
+					$count = $res->numRows();
+					if ( $count > 0 ) {
+						$warning_msg = wfMsg( 'replacetext_warning', $wgLang->formatNum( $count ), "<tt><nowiki>{$this->replacement}</nowiki></tt>" );
+					}
+				} elseif ( count( $titles_for_move ) > 0 ) {
+					$res = $this->getMatchingTitles( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix );
+					$count = $res->numRows();
+					if ( $count > 0 ) {
+						$warning_msg = wfMsg( 'replacetext_warning', $wgLang->formatNum( $count ), $this->replacement );
+					}
+				}
+
+				if ( ! is_null( $warning_msg ) ) {
+					$wgOut->addWikiText("<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />");
+				}
+
 				$this->pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles );
 			}
 			return;
 		}
 
 		// if we're still here, show the starting form
-		$this->showForm( 'replacetext_docu' );
+		$this->showForm();
 	}
 
-	function showForm( $message ) {
+	function showForm( $warning_msg = null ) {
 		global  $wgOut;
 		$wgOut->addHTML(
-			Xml::openElement( 'form', array( 'action' => $this->getTitle()->getFullUrl(), 'method' => 'post' ) ) .
+			Xml::openElement( 'form', array( 'id' => 'powersearch', 'action' => $this->getTitle()->getFullUrl(), 'method' => 'post' ) ) .
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Xml::hidden( 'continue', 1 )
 		);
-		$wgOut->addWikiMsg( $message );
+		if ( is_null( $warning_msg ) ) {
+			$wgOut->addWikiMsg( 'replacetext_docu' );
+		} else {
+			$actual_warning_msg = wfMsg( $warning_msg );
+			$wgOut->addWikiText("<div class=\"errorbox\">$actual_warning_msg</div><br clear=\"both\" />");
+		}
 		$wgOut->addHTML( '<table><tr><td style="vertical-align: top;">' );
 		$wgOut->addWikiMsg( 'replacetext_originaltext' );
 		$wgOut->addHTML( '</td><td>' );
@@ -247,68 +217,114 @@ class ReplaceText extends SpecialPage {
 		$wgOut->addHTML( Xml::textarea( 'replacement', $this->replacement, 50, 2, array( 'style' => 'width: auto;' ) ) );
 		$wgOut->addHTML( '</td></tr></table>' );
 
+		// the interface is heavily based on the one in Special:Search
 		$search_label = wfMsg( 'powersearch-ns' );
 		$namespaces = SearchEngine::searchableNamespaces();
 		$tables = $this->namespaceTables( $namespaces );
-		$wgOut->addHTML( "<fieldset>\n<p>$search_label</p\n>$tables\n</fieldset>" );
+		$wgOut->addHTML(
+			"<div class=\"mw-search-formheader\"></div>\n" .
+			"<fieldset id=\"mw-searchoptions\">\n" . 
+			Xml::tags( 'h4', null, wfMsgExt( 'powersearch-ns', array( 'parseinline' ) ) )
+		);
+		// the ability to select/unselect groups of namespaces in the
+		// search interface was added in MW 1.16 - check for the
+		// presence of the 'powersearch-togglelabel' message to see
+		// if we can use this functionality here
+		if ( wfMsg( 'powersearch-togglelabel' ) !== '&lt;powersearch-togglelabel&gt;' ) {
+			$wgOut->addHTML(
+				Xml::tags(
+					'div',
+					array( 'id' => 'mw-search-togglebox' ),
+					Xml::label( wfMsg( 'powersearch-togglelabel' ), 'mw-search-togglelabel' ) .
+					Xml::element(
+						'input',
+						array(
+							'type'=>'button',
+							'id' => 'mw-search-toggleall',
+							'onclick' => 'mwToggleSearchCheckboxes("all");',
+							'value' => wfMsg( 'powersearch-toggleall' )
+						)
+					) .
+					Xml::element(
+						'input',
+						array(
+							'type'=>'button',
+							'id' => 'mw-search-togglenone',
+							'onclick' => 'mwToggleSearchCheckboxes("none");',
+							'value' => wfMsg( 'powersearch-togglenone' )
+						)
+					)
+				)
+			
+			);
+		} // end if
+		$wgOut->addHTML(
+			Xml::element( 'div', array( 'class' => 'divider' ), '', false ) .
+			"$tables\n</fieldset>"
+		);
 		$optional_filters_label = wfMsg( 'replacetext_optionalfilters' );
 		$category_search_label = wfMsg( 'replacetext_categorysearch' );
 		$prefix_search_label = wfMsg( 'replacetext_prefixsearch' );
 		$wgOut->addHTML(
-			"<fieldset>\n" .
-			"<p>$optional_filters_label</p>\n" .
+			"<fieldset id=\"mw-searchoptions\">\n" . 
+			Xml::tags( 'h4', null, wfMsgExt( 'replacetext_optionalfilters', array( 'parseinline' ) ) ) .
+			Xml::element( 'div', array( 'class' => 'divider' ), '', false ) .
 			"<p>$category_search_label\n" .
 			Xml::input( 'category', 20, $this->category ) . '</p>' .
 			"<p>$prefix_search_label\n" .
 			Xml::input( 'prefix', 20, $this->prefix ) . '</p>' .
 			"</fieldset>\n" .
+			"<p>\n" .
 			Xml::checkLabel( wfMsg( 'replacetext_editpages' ), 'edit_pages', 'edit_pages', true ) . '<br />' .
-			Xml::checkLabel( wfMsg( 'replacetext_movepages' ), 'move_pages', 'move_pages' ) . '<br /><br />' .
+			Xml::checkLabel( wfMsg( 'replacetext_movepages' ), 'move_pages', 'move_pages' ) .
+			"</p>\n" .
 			Xml::submitButton( wfMsg( 'replacetext_continue' ) ) .
 			Xml::closeElement( 'form' )
 		);
+		// add javascript specific to special:search
+		$wgOut->addScriptFile( 'search.js' );
 	}
 
 	/**
 	 * Copied almost exactly from MediaWiki's SpecialSearch class, i.e.
 	 * the search page
 	 */
-        function namespaceTables( $namespaces, $rowsPerTable = 3 ) {
-                global $wgContLang;
-                // Group namespaces into rows according to subject.
-                // Try not to make too many assumptions about namespace numbering.
-                $rows = array();
-                $tables = "";
-                foreach ( $namespaces as $ns => $name ) {
-                        $subj = MWNamespace::getSubject( $ns );
-                        if ( !array_key_exists( $subj, $rows ) ) {
-                                $rows[$subj] = "";
-                        }
-                        $name = str_replace( '_', ' ', $name );
-                        if ( '' == $name ) {
-                                $name = wfMsg( 'blanknamespace' );
-                        }
-                        $rows[$subj] .= Xml::openElement( 'td', array( 'style' => 'white-space: nowrap' ) ) .
-                                Xml::checkLabel( $name, "ns{$ns}", "mw-search-ns{$ns}", in_array( $ns, $namespaces ) ) .
-                                Xml::closeElement( 'td' ) . "\n";
-                }
-                $rows = array_values( $rows );
-                $numRows = count( $rows );
-                // Lay out namespaces in multiple floating two-column tables so they'll
-                // be arranged nicely while still accommodating different screen widths
-                // Float to the right on RTL wikis
-                $tableStyle = $wgContLang->isRTL() ?
-                        'float: right; margin: 0 0 0em 1em' : 'float: left; margin: 0 1em 0em 0';
-                // Build the final HTML table...
-                for ( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
-                        $tables .= Xml::openElement( 'table', array( 'style' => $tableStyle ) );
-                        for ( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
-                                $tables .= "<tr>\n" . $rows[$j] . "</tr>";
-                        }
-                        $tables .= Xml::closeElement( 'table' ) . "\n";
-                }
-                return $tables;
-        }
+	function namespaceTables( $namespaces, $rowsPerTable = 3 ) {
+		global $wgContLang;
+		// Group namespaces into rows according to subject.
+		// Try not to make too many assumptions about namespace numbering.
+		$rows = array();
+		$tables = "";
+		foreach ( $namespaces as $ns => $name ) {
+			$subj = MWNamespace::getSubject( $ns );
+			if ( !array_key_exists( $subj, $rows ) ) {
+				$rows[$subj] = "";
+			}
+			$name = str_replace( '_', ' ', $name );
+			if ( '' == $name ) {
+				$name = wfMsg( 'blanknamespace' );
+			}
+			$rows[$subj] .= Xml::openElement( 'td', array( 'style' => 'white-space: nowrap' ) ) .
+				Xml::checkLabel( $name, "ns{$ns}", "mw-search-ns{$ns}", in_array( $ns, $namespaces ) ) .
+				Xml::closeElement( 'td' ) . "\n";
+		}
+		$rows = array_values( $rows );
+		$numRows = count( $rows );
+		// Lay out namespaces in multiple floating two-column tables so they'll
+		// be arranged nicely while still accommodating different screen widths
+		// Float to the right on RTL wikis
+		$tableStyle = $wgContLang->isRTL() ?
+			'float: right; margin: 0 0 0em 1em' : 'float: left; margin: 0 1em 0em 0';
+		// Build the final HTML table...
+		for ( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
+			$tables .= Xml::openElement( 'table', array( 'style' => $tableStyle ) );
+			for ( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
+				$tables .= "<tr>\n" . $rows[$j] . "</tr>";
+			}
+			$tables .= Xml::closeElement( 'table' ) . "\n";
+		}
+		return $tables;
+	}
 
 
 	function pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles ) {
