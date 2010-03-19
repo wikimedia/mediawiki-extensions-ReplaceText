@@ -168,13 +168,19 @@ class ReplaceText extends SpecialPage {
 					$res = $this->doSearchQuery( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
-						$warning_msg = wfMsg( 'replacetext_warning', $wgLang->formatNum( $count ), "<tt><nowiki>{$this->replacement}</nowiki></tt>" );
+						$warning_msg = wfMsgExt( 'replacetext_warning', 'parsemag',
+							$wgLang->formatNum( $count ),
+							"<tt><nowiki>{$this->replacement}</nowiki></tt>"
+						);
 					}
 				} elseif ( count( $titles_for_move ) > 0 ) {
 					$res = $this->getMatchingTitles( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
-						$warning_msg = wfMsg( 'replacetext_warning', $wgLang->formatNum( $count ), $this->replacement );
+						$warning_msg = wfMsgExt( 'replacetext_warning', 'parsemag',
+							$wgLang->formatNum( $count ),
+							$this->replacement
+						);
 					}
 				}
 
