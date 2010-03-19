@@ -223,9 +223,8 @@ $messages['be-tarask'] = array(
 	'replacetext_nomove' => 'Ня знойдзена старонак, у назвах якіх утрымліваецца «$1».',
 	'replacetext_nosuchcategory' => 'Не існуе катэгорыі з назвай «$1».',
 	'replacetext_return' => 'Вярнуцца да формы.',
-	'replacetext_warning' => 'Існуе $1 {{PLURAL:$1|старонка, якая ўтрымлівае|старонкі, якія ўтрымліваюць|старонак, якія ўтрымліваюць}} тэкст на замену «$2».
-Калі Вы зробіце гэту замену, Вы ня зможаце аддзяліць Вашыя замены ад гэтых тэкстаў.
-Працягваць замену?',
+	'replacetext_warning' => "'''Папярэджаньне:''' Існуе $1 {{PLURAL:$1|старонка, якая ўтрымлівае|старонкі, якія ўтрымліваюць|старонак, якія ўтрымліваюць}} тэкст на замену «$2».
+Калі Вы зробіце гэту замену, Вы ня зможаце аддзяліць Вашыя замены ад гэтых тэкстаў.",
 	'replacetext_blankwarning' => 'У выніку таго, што радок, на які павінна адбыцца замена, пусты, апэрацыя ня будзе выкананая.
 Вы жадаеце працягваць?',
 	'replacetext_continue' => 'Працягваць',
@@ -396,7 +395,7 @@ $messages['de'] = array(
 	'replacetext_nosuchcategory' => 'Es gibt keine Kategorie mit dem Namen „$1“.',
 	'replacetext_return' => 'Zurück zum Formular.',
 	'replacetext_warning' => "'''Warnung:''' $1 {{PLURAL:$1|Seite enthält|Seiten enthalten}} bereits den zu ersetzenden Textteil „$2“.
-Wenn du die Ersetzung durchführst, ist eine spätere Trennung der Ersetzungen mit den bereits vorhandenen Textteilen ist nicht mehr möglich.",
+Wenn du die Ersetzung durchführst, ist eine spätere Trennung der Ersetzungen mit den bereits vorhandenen Textteilen nicht mehr möglich.",
 	'replacetext_blankwarning' => 'Der zu ersetzende Textteil ist leer, die Operation kann nicht rückgängig gemacht werden, trotzdem fortfahren?',
 	'replacetext_continue' => 'Fortfahren',
 	'replacetext_cancel' => '(Klicke auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
@@ -687,9 +686,7 @@ $messages['gl'] = array(
 	'replacetext_nomove' => 'Non se atopou ningún artigo cuxo título conteña "$1".',
 	'replacetext_nosuchcategory' => 'Non existe ningunha categoría co nome "$1".',
 	'replacetext_return' => 'Voltar ao formulario.',
-	'replacetext_warning' => 'Hai {{PLURAL:$1|unha páxina|$1 páxinas}} que xa {{PLURAL:$1|contén|conteñen}} a cadea de substitución "$2".
-Se fai esta substitución non poderá separar as súas substitucións destas cadeas.
-Quere continuar coa substitución?',
+	'replacetext_warning' => '\'\'\'Aviso:\'\'\' hai {{PLURAL:$1|unha páxina|$1 páxinas}} que xa {{PLURAL:$1|contén|conteñen}} a cadea de substitución "$2". Se fai esta substitución non poderá distinguir as súas modificacións destas cadeas.',
 	'replacetext_blankwarning' => 'Debido a que a cadea de substitución está baleira, esta operación non será reversible; quere continuar?',
 	'replacetext_continue' => 'Continuar',
 	'replacetext_cancel' => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
@@ -1170,9 +1167,8 @@ $messages['lb'] = array(
 	'replacetext_nomove' => "Keng Säite fonnt wou '$1' am Titel drasteet.",
 	'replacetext_nosuchcategory' => 'Et gëtt keng Kategorie mam Numm "$1".',
 	'replacetext_return' => 'Zréck op de Formulaire',
-	'replacetext_warning' => "Et gëtt schonn {{PLURAL:$1|eng Säit op däer|$1 Säiten op deenen}} d'Zeecherei '$2' schonn dran ass.
-Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säiten op deenen Dir Ännerunge gemaach hutt vun de Säiten z'ënnerscheeden wou elo d'Zeecherei '$2' schonn dran ass.
-Wëllt Dir mat der Ännerung weiderfueren?",
+	'replacetext_warning' => "'''Opgepasst:''' Et gëtt schonn {{PLURAL:$1|eng Säit op däer|$1 Säiten op deenen}} d'Zeecherei '$2' schonn dran ass.
+Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säiten op deenen Dir Ännerunge gemaach hutt vun de Säiten z'ënnerscheeden wou elo d'Zeecherei '$2' schonn dran ass.",
 	'replacetext_blankwarning' => 'Well den Textdeel mat dem de gesichten Text ersat gi soll eidel ass, kann dës Aktioun net réckgängeg gemaach ginn; wëllt Dir awer weiderfueren?',
 	'replacetext_continue' => 'Weiderfueren',
 	'replacetext_cancel' => '(Klickt op de Knäppchen "Zréck" an Ärem Browser fir d\'Operatioun ofzebriechen)',
@@ -1298,9 +1294,8 @@ Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke v
 	'replacetext_nomove' => 'Er zijn geen pagina\'s gevonden met "$1" in de naam.',
 	'replacetext_nosuchcategory' => 'De categorie "$1" bestaat niet.',
 	'replacetext_return' => 'Terugkeren naar het formulier.',
-	'replacetext_warning' => "Er {{PLURAL:$1|is $1 pagina|zijn $1 pagina's}} die het te vervangen tesktdeel al '$2' al {{PLURAL:$1|bevat|bevatten}}.
-Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.
-Wilt u doorgaan met vervangen?",
+	'replacetext_warning' => '\'\'\'Waarshuwing:\'\'\' Er {{PLURAL:$1|is $1 pagina|zijn $1 pagina\'s}} die het te vervangen tesktdeel al "$2" al {{PLURAL:$1|bevat|bevatten}}.
+Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.',
 	'replacetext_blankwarning' => 'Omdat u tekst vervangt door niets, kan deze handeling niet ongedaan gemaakt worden. Wilt u doorgaan?',
 	'replacetext_continue' => 'Doorgaan',
 	'replacetext_cancel' => '(Klik op de knop "Terug" in uw webbrowser om deze handeling te annuleren)',
