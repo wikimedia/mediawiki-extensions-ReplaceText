@@ -885,9 +885,7 @@ A neved szerepelni fog a laptörténetekben, mint aki a változtatásokat végez
 	'replacetext_nomove' => 'Nem található olyan lap, melynek címe tartalmazza a(z) „$1” keresőkifejezést.',
 	'replacetext_nosuchcategory' => 'Nincs „$1” nevű kategória.',
 	'replacetext_return' => 'Visszatérés az űrlapra.',
-	'replacetext_warning' => '{{PLURAL:$1|Egy|$1}} lap már tartalmazza a szöveget, amire cserélni szeretnél („$2”).
-Ha folytatod a cserét, utólag nem fogod tudni megkülönböztetni az újonnan bekerült szövegeket a már előtte is meglevő előfordulásoktól.
-Folytatod a cserét?',
+	'replacetext_warning' => "'''Figyelem:''' {{PLURAL:$1|egy|$1}} lap már tartalmazza a szöveget, amire cserélni szeretnél („$2”). Ha végrehajtod a cserét, utólag nem fogod tudni megkülönböztetni az újonnan bekerült szövegeket a már előtte is meglevő előfordulásoktól.",
 	'replacetext_blankwarning' => 'Mivel az új szöveg üres, ez a művelet nem lesz visszavonható.
 Biztosan folytatni szeretnéd?',
 	'replacetext_continue' => 'Folytatás',
