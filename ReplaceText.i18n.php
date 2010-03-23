@@ -323,9 +323,8 @@ $messages['bs'] = array(
 	'replacetext_nomove' => "Nijedna stranica nije pronađena čiji naslov sadrži '$1'.",
 	'replacetext_nosuchcategory' => 'Ne postoji nijedna kategorija pod nazivom "$1".',
 	'replacetext_return' => 'Nazad na obrazac.',
-	'replacetext_warning' => "{{PLURAL:$1|Postoji $1 stranica koja već sadrži|Postoje $1 stranice koje već sadrže|Postoji $1 stranica koje već sadrže}} zamjenski tekst '$2'.
-Ako želite napraviti ovu zamjenu nećete biti u mogućnosti da razdvojite Vaše zamjene od ovih tekstova.
-Nastaviti sa zamjenom?",
+	'replacetext_warning' => "'''Upozorenje:''' {{PLURAL:$1|Postoji $1 stranica koja već sadrži|Postoje $1 stranice koje već sadrže|Postoji $1 stranica koje već sadrže}} zamjenski tekst ''$2''.
+Ako želite napraviti ovu zamjenu nećete biti u mogućnosti da razdvojite Vaše zamjene od ovih tekstova.",
 	'replacetext_blankwarning' => 'Pošto je zamjenski tekst prazan, ovu operaciju neće biti moguće vratiti.
 Da li želite nastaviti?',
 	'replacetext_continue' => 'Nastavi',
@@ -1376,7 +1375,7 @@ $messages['no'] = array(
 	'replacetext_nomove' => 'Ingen sider ble funnet der tittelen inneholder «$1».',
 	'replacetext_nosuchcategory' => 'Det eksisterer ingen kategori med navnet «$1».',
 	'replacetext_return' => 'Tilbake til skjemaet.',
-	'replacetext_warning' => 'Det er {{PLURAL:$1|en side|$1 sider}} som allerede har erstatningsteksten «$2». Om du gjør denne erstatningen vil du ikke kunne skille ut dine erstatninger fra denne teksten. Fortsette med erstattingen?',
+	'replacetext_warning' => "'''Advarsel:''' Det er {{PLURAL:$1|én side|$1 sider}} som allerede har erstatningsteksten «$2». Om du gjør denne erstatningen vil du ikke kunne skille ut dine erstatninger fra denne teksten.",
 	'replacetext_blankwarning' => 'Fordi erstatningsteksten er tom vil denne handlingen ikke kunne angres automatisk; fortsette?',
 	'replacetext_continue' => 'Fortsett',
 	'replacetext_cancel' => '(Trykk på «Tilbake»-knappen for å avbryte handlingen.)',
