@@ -616,13 +616,14 @@ $messages['fi'] = array(
  * @author McDutchie
  * @author Peter17
  * @author PieRRoMaN
+ * @author Urhixidur
  * @author Verdy p
  * @author Zetud
  */
 $messages['fr'] = array(
 	'replacetext' => 'Remplacer le texte',
 	'replacetext-desc' => 'Fournit une page spéciale permettant aux administrateurs de remplacer des chaînes de caractères par d’autres sur l’ensemble du wiki',
-	'replacetext_docu' => 'Pour remplacer une chaîne de caractères avec une autre sur l’ensemble des données des pages de ce wiki, vous pouvez entrez les deux textes ici et cliquer sur « Remplacer ». Votre nom apparaîtra dans l’historique des pages tel un utilisateur auteur des changements.',
+	'replacetext_docu' => 'Pour remplacer une chaîne de caractères par une autre sur l’ensemble des données des pages de ce wiki, vous pouvez entrez les deux textes ici et cliquer sur « {{int:replacetext_replace}} ». Votre nom apparaîtra dans l’historique des pages tel un utilisateur auteur des changements.',
 	'replacetext_originaltext' => 'Texte original :',
 	'replacetext_replacementtext' => 'Texte de remplacement :',
 	'replacetext_optionalfilters' => 'Filtres optionnels :',
@@ -650,7 +651,7 @@ $messages['fr'] = array(
 Si vous effectuez cette substitution, vous ne pourrez pas distinguer vos modifications de ces chaînes.',
 	'replacetext_blankwarning' => 'Parce que la chaîne de remplacement est vide, cette opération sera irréversible ; voulez-vous continuer ?',
 	'replacetext_continue' => 'Continuer',
-	'replacetext_cancel' => '(Cliquez sur le bouton  « Retour » de votre navigateur pour annuler l’opération.)',
+	'replacetext_cancel' => '(Cliquez sur le bouton  « Retour » ou « Reculer » de votre navigateur pour annuler l’opération.)',
 	'replacetext_editsummary' => 'Remplacement du texte — « $1 » par « $2 »',
 	'right-replacetext' => 'Faire des remplacements de texte dans tout le wiki',
 );
