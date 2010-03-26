@@ -645,7 +645,7 @@ $messages['fr'] = array(
 	'replacetext_success' => '« $1 » sera remplacé par « $2 » dans $3 fichier{{PLURAL:$3||s}}.',
 	'replacetext_noreplacement' => 'Aucun fichier contenant la chaîne « $1 » n’a été trouvé.',
 	'replacetext_nomove' => 'Aucune page n’a été trouvée dont le titre contient « $1 ».',
-	'replacetext_nosuchcategory' => "Il n'existe pas de catégorie nommée « $1 ».",
+	'replacetext_nosuchcategory' => 'Il n’existe pas de catégorie nommée « $1 ».',
 	'replacetext_return' => 'Revenir au formulaire.',
 	'replacetext_warning' => 'Il y a $1 fichier{{PLURAL:$1| qui contient|s qui contiennent}} déjà la chaîne de remplacement « $2 ».
 Si vous effectuez cette substitution, vous ne pourrez pas distinguer vos modifications de ces chaînes.',
