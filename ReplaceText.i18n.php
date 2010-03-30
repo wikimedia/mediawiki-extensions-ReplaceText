@@ -142,9 +142,7 @@ $messages['ar'] = array(
 	'replacetext_nomove' => "لم توجد صفحات تحتوي عناوينها '$1'.",
 	'replacetext_nosuchcategory' => 'لا يوجد تصنيف بالاسم "$1".',
 	'replacetext_return' => 'رجوع إلى الاستمارة',
-	'replacetext_warning' => "توجد {{PLURAL:$1||صفحة واحدة تحتوي|صفحتان تحتويان|$1 صفحات تحتوي|$1 صفحة تحتوي}} بالفعل على سلسلة الاستبدال '$2'.
-إذا قمت بهذا الاستبدال فلن تصبح قادرًا على فصل استبدالاتك عن هذه السلاسل.
-أأستمر في الاستبدال؟",
+	'replacetext_warning' => "'''تحذير''': توجد {{PLURAL:$1||صفحة واحدة تحتوي|صفحتان تحتويان|$1 صفحات تحتوي|$1 صفحة تحتوي}} بالفعل على سلسلة الاستبدال '$2'. إذا قمت بهذا الاستبدال فلن تصبح قادرًا على فصل استبدالاتك عن هذه السلاسل.",
 	'replacetext_blankwarning' => 'لأن سلسلة الاستبدال فارغة، هذه العملية لن تكون عكسية؛ استمر؟',
 	'replacetext_continue' => 'استمر',
 	'replacetext_cancel' => '(اضغط زر "رجوع" في متصفحك لإلغاء العملية.)',
@@ -504,6 +502,7 @@ $messages['eo'] = array(
  * @author Dferg
  * @author Imre
  * @author Locos epraix
+ * @author Pertile
  * @author Translationista
  */
 $messages['es'] = array(
@@ -535,7 +534,7 @@ Tu nombre aparecerá como usuario responsable de los cambios en el historial de 
 	'replacetext_nomove' => "No se hallaron páginas cuyo título contenga '$1'.",
 	'replacetext_nosuchcategory' => 'No existen categorías con el nombre "$1".',
 	'replacetext_return' => 'Retornar al formulario.',
-	'replacetext_warning' => 'Hay {{PLURAL:$1|$1 página que ya contiene|$1 páginas que ya contienen}} la cadena de sustitución, "$2".
+	'replacetext_warning' => '\'\'\'Advertencia:\'\'\' hay {{PLURAL:$1|$1 página que ya contiene|$1 páginas que ya contienen}} la cadena de sustitución, "$2".
 Si realizas esta sustituación, no podrás separar tus sustituciones de estas cadenas.
 ¿Deseas continuar con la sustitución?',
 	'replacetext_blankwarning' => 'Como la cadena de reemplazo está vacía, esta operación no podrá revertirse.
