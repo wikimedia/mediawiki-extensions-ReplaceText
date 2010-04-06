@@ -1466,8 +1466,7 @@ $messages['pl'] = array(
 	'replacetext_nomove' => 'Nie znaleziono żadnych stron o tytule zawierającym „$1”.',
 	'replacetext_nosuchcategory' => 'Kategoria „$1” nie istnieje.',
 	'replacetext_return' => 'Powrót do formularza.',
-	'replacetext_warning' => '{{PLURAL:$1|Jest $1 strona|Są $1 strony|Jest $1 stron}} zawierających tekst „$2”, którym chcesz zastępować. Jeśli wykonasz zastępowanie nie będzie możliwe odseparowanie tych stron od wykonanych zastąpień.
-Czy kontynuować zastępowanie?',
+	'replacetext_warning' => "'''Uwaga''' {{PLURAL:$1|Jest $1 strona zawierająca|Są $1 strony zawierające|Jest $1 stron zawierających}} tekst „$2”, którym chcesz zastępować. Jeśli wykonasz zastępowanie nie będzie możliwe odseparowanie Twoich zastąpień od tych tekstów.",
 	'replacetext_blankwarning' => 'Ponieważ ciąg znaków, którym ma być wykonane zastępowanie jest pusty, operacja będzie nieodwracalna. Czy kontynuować?',
 	'replacetext_continue' => 'Kontynuuj',
 	'replacetext_cancel' => '(Wciśnij klawisz „Wstecz” w przeglądarce, aby przerwać operację.)',
@@ -1572,7 +1571,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} o texto de substituição, \"\$2\". Se fizer esta substituição não poderá desfazer a operação com uma simples substituição em ordem inversa.",
 	'replacetext_blankwarning' => 'Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
 	'replacetext_continue' => 'Prosseguir',
-	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
+	'replacetext_cancel' => '(Pressione o botão "Voltar" do seu browser para cancelar a operação.)',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
 	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
 );
