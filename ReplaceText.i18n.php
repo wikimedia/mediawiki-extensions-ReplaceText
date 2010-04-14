@@ -1068,6 +1068,13 @@ $messages['jv'] = array(
 	'replacetext_continue' => 'Banjurna',
 );
 
+/** Georgian (ქართული)
+ * @author BRUTE
+ */
+$messages['ka'] = array(
+	'replacetext_replace' => 'ჩანაცვლება',
+);
+
 /** Khmer (ភាសាខ្មែរ)
  * @author Lovekhmer
  * @author Thearith
