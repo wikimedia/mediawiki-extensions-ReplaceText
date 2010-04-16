@@ -1095,6 +1095,49 @@ $messages['km'] = array(
 	'replacetext_editsummary' => "អត្ថបទជំនួស - '$1' ទៅ '$2'",
 );
 
+/** Korean (한국어)
+ * @author Devunt
+ * @author Kwj2772
+ */
+$messages['ko'] = array(
+	'replacetext' => '찾아 바꾸기',
+	'replacetext-desc' => '관리자가 위키 전체의 내용을 찾아 바꿀 수 있도록 [[Special:ReplaceText|특수 문서]]를 추가',
+	'replacetext_docu' => "이 위키에서 어떤 문자열을 다른 문자열로 바꾸기 위해서는, 찾을 문자열과 바꿀 문자열을 입력한 뒤 '계속'을 눌러 주세요.
+그러면 해당 문자열을 포함하고 있는 문서 목록이 나오며, 그중에서 바꿀 문서들을 선택할 수 있습니다.
+당신의 사용자 이름이 문서 역사에 나올 것입니다.",
+	'replacetext_originaltext' => '찾을 문자열:',
+	'replacetext_replacementtext' => '바꿀 문자열:',
+	'replacetext_optionalfilters' => '선택적 필터:',
+	'replacetext_categorysearch' => '다음 분류에서만 바꾸기:',
+	'replacetext_prefixsearch' => '다음 접두어로 시작하는 문서만 바꾸기:',
+	'replacetext_editpages' => '문서 내용의 문자열을 바꾸기',
+	'replacetext_movepages' => '가능하다면 문서 제목에 있는 문자열도 바꾸기',
+	'replacetext_givetarget' => '찾을 문자열을 반드시 지정해야 합니다.',
+	'replacetext_nonamespace' => '이름공간을 적어도 하나는 선택해야 합니다.',
+	'replacetext_editormove' => '찾아 바꾸기 옵션을 적어도 하나는 선택해야 합니다.',
+	'replacetext_choosepagesforedit' => '$3개의 문서에 있는 “$1” 문자열을 “$2” 문자열로 바꿉니다:',
+	'replacetext_choosepagesformove' => '$3개의 문서 제목에 있는 “$1” 문자열을 “$2” 문자열로 바꿉니다:',
+	'replacetext_cannotmove' => '다음 {{PLURAL:$1|문서는|문서들은}} 이동할 수 없습니다:',
+	'replacetext_formovedpages' => '이동한 페이지의 경우 :',
+	'replacetext_savemovedpages' => '옛 문서 제목을 새 문서 제목으로 넘겨 주는 문서로 만들기',
+	'replacetext_watchmovedpages' => '이 문서 주시하기',
+	'replacetext_invertselections' => '선택 반전',
+	'replacetext_replace' => '찾아 바꾸기',
+	'replacetext_success' => '“$1” 문자열은 $3개의 문서에서 “$2” 문자열로 바뀔 것입니다.',
+	'replacetext_noreplacement' => '“$1” 문자열을 포함하고 있는 문서가 없습니다.',
+	'replacetext_nomove' => '“$1” 문자열을 포함하고 있는 문서 제목이 없습니다.',
+	'replacetext_nosuchcategory' => '“$1” 문자열을 포함하고 있는 분류가 없습니다.',
+	'replacetext_return' => '찾아 바꾸기 양식으로 돌아가기',
+	'replacetext_warning' => '“$2” 문자열을 포함하고 있는 $1개의 문서가 이미 있습니다. 이 찾아 바꾸기를 실행하면, 이미 존재하는 “$2” 문자열과 더 이상 구분되지 않을 것입니다.
+찾아 바꾸기를 계속하시겠습니까?',
+	'replacetext_blankwarning' => '바꿀 문자열이 비어 있으므로 이 동작은 되돌릴 수 없습니다.
+계속하시겠습니까?',
+	'replacetext_continue' => '계속',
+	'replacetext_cancel' => '(이 동작을 취소하려면 웹 브라우저의 ‘뒤로’ 버튼을 눌러 주세요.)',
+	'replacetext_editsummary' => '찾아 바꾸기 – “$1” 문자열을 “$2” 문자열로',
+	'right-replacetext' => '찾아 바꾸기를 위키 전체에 수행합니다.',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
