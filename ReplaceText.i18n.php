@@ -458,6 +458,7 @@ Jolic wuwjedujoš toś tu wuměnu, njamóžoš rozeznaś swóje wuměny wót to�
  * @author Consta
  * @author Dada
  * @author ZaDiak
+ * @author Απεργός
  */
 $messages['el'] = array(
 	'replacetext' => 'Αντικατάσταση κειμένου',
@@ -471,9 +472,9 @@ $messages['el'] = array(
 	'replacetext_watchmovedpages' => 'Παρακολούθηση αυτών των σελίδων',
 	'replacetext_invertselections' => 'Αναστροφή επιλογών',
 	'replacetext_replace' => 'Αντικατάσταση',
-	'replacetext_noreplacement' => 'Δε βρέθηκαν σελίδες που να περιέχουν τη συμβολοσειρά "$ 1".',
-	'replacetext_nomove' => 'Δε βρέθηκαν σελίδες των οποίων ο τίτλος να περιέχει τον όρο "$ 1".',
-	'replacetext_nosuchcategory' => 'Δεν υπάρχει κατηγορία με το όνομα "$ 1".',
+	'replacetext_noreplacement' => 'Δε βρέθηκαν σελίδες που να περιέχουν τη συμβολοσειρά "$1".',
+	'replacetext_nomove' => 'Δε βρέθηκαν σελίδες των οποίων ο τίτλος να περιέχει τον όρο "$1".',
+	'replacetext_nosuchcategory' => 'Δεν υπάρχει κατηγορία με το όνομα "$1".',
 	'replacetext_return' => 'Επιστροφή στη φόρμα.',
 	'replacetext_continue' => 'Συνέχεια',
 	'replacetext_editsummary' => "Αντικατάσταση κειμένου - '$1' σε '$2'",
