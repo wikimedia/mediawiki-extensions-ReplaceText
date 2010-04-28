@@ -981,6 +981,7 @@ Apakah ingin dilanjutkan?',
 );
 
 /** Italian (Italiano)
+ * @author Civvì
  * @author Darth Kule
  * @author Marco 27
  */
@@ -999,7 +1000,7 @@ $messages['it'] = array(
 	'replacetext_nonamespace' => 'È necessario selezionare almeno un namespace',
 	'replacetext_editormove' => 'È necessario selezionare almeno una delle opzioni di sostituzione.',
 	'replacetext_choosepagesforedit' => "Selezionare {{PLURAL:$3|la pagina per la quale|le pagine per le quali}} si desidera sostituire '$1' con '$2':",
-	'replacetext_choosepagesformove' => "Sostituire '$1' con '$2' {{PLURAL:$3|nel nome della pagina seguente|nei nomi delle pagine seguenti}}:",
+	'replacetext_choosepagesformove' => 'Sostituire "$1" con "$2" {{PLURAL:$3|nel titolo della pagina seguente|nei titoli delle pagine seguenti}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|La pagina seguente non può essere spostata|Le pagine seguenti non possono essere spostate}}:',
 	'replacetext_formovedpages' => 'Per le pagine spostate:',
 	'replacetext_savemovedpages' => 'Conservare i vecchi titoli come redirect al nuovo titolo:',
@@ -1009,8 +1010,9 @@ $messages['it'] = array(
 	'replacetext_success' => "'$1' sarà sostituito con '$2' in $3 {{PLURAL:$3|pagina|pagine}}.",
 	'replacetext_noreplacement' => "Non sono state trovate pagine contenenti il testo '$1'.",
 	'replacetext_nomove' => "Non sono state trovate pagine il cui titolo contiene '$1'.",
+	'replacetext_nosuchcategory' => 'Non esiste categoria con il nome "$1".',
 	'replacetext_return' => 'Torna al modulo.',
-	'replacetext_warning' => "{{PLURAL:$1|C'è già $1 pagina che contiene|Ci sono già $1 pagine che contengono}} il testo di sostituzione, '$2'. Se si effettua questa sostituzione non si sarà in grado di separare le sostituzioni da questi testi. Continuare con la sostituzione?",
+	'replacetext_warning' => '{{PLURAL:$1|C\'è già $1 pagina che contiene|Ci sono già $1 pagine che contengono}} il testo di sostituzione, "$2". Se si effettua questa sostituzione non si sarà in grado di separare le sostituzioni da questi testi. Continuare con la sostituzione?',
 	'replacetext_blankwarning' => "Poiché il testo di sostituzione è vuoto, l'operazione non sarà reversibile. Si desidera continuare?",
 	'replacetext_continue' => 'Continua',
 	'replacetext_cancel' => '(Fare clic sul pulsante "Indietro" nel proprio browser per annullare l\'operazione.)',
