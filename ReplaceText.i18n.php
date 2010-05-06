@@ -1615,7 +1615,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_choosepagesformove' => 'Substituir "$1" por "$2" {{PLURAL:$3|no nome da seguinte página|nos nomes das seguintes páginas}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte página não pode ser movida|As seguintes páginas não podem ser movidas}}:',
 	'replacetext_formovedpages' => 'Para páginas movidas:',
-	'replacetext_savemovedpages' => 'Gravar os títulos anteriores como redirecionamentos para os novos títulos',
+	'replacetext_savemovedpages' => 'Gravar os títulos anteriores como redireccionamentos para os novos títulos',
 	'replacetext_watchmovedpages' => 'Vigiar estas páginas',
 	'replacetext_invertselections' => 'Inverter selecções',
 	'replacetext_replace' => 'Substituir',
