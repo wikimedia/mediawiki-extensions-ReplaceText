@@ -2040,9 +2040,7 @@ $messages['vi'] = array(
 	'replacetext_nomove' => 'Không tìm thấy trang nào với “$1” trong tên.',
 	'replacetext_nosuchcategory' => 'Không có thể loại với tên “$1”.',
 	'replacetext_return' => 'Trở lại biểu mẫu.',
-	'replacetext_warning' => 'Có $1 {{PLURAL:$1|trang|trang}} đã có chứa chuỗi thay thế, “$2”.
-Nếu bạn thực hiện thay thế này bạn sẽ không thể phân biệt sự thay thế của bạn với những chuỗi này.
-Tiếp tục thay thế chứ?',
+	'replacetext_warning' => "'''Cảnh báo:''' {{PLURAL:$1|Một trang|$1 trang}} trong lựa chọn đã có chứa chuỗi thay thế, “$2”. Nếu bạn thực hiện thay thế này bạn sẽ không thể phân biệt sự thay thế của bạn với những chuỗi này.",
 	'replacetext_blankwarning' => 'Vì chuỗi thay thế là khoảng trắng, tác vụ này sẽ không thể hồi lại được; tiếp tục?',
 	'replacetext_continue' => 'Tiếp tục',
 	'replacetext_cancel' => '(Bấm nút “Lùi” của trình duyệt để hủy tác vụ.)',
