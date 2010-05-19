@@ -1680,12 +1680,12 @@ Deseja prosseguir com a substituição?",
  * @author KlaudiuMihaila
  */
 $messages['ro'] = array(
-	'replacetext' => 'Înlocuieşte text',
+	'replacetext' => 'Înlocuiește text',
 	'replacetext_originaltext' => 'Text original:',
-	'replacetext_optionalfilters' => 'Filtre opţionale:',
-	'replacetext_watchmovedpages' => 'Urmăreşte aceste pagini',
+	'replacetext_optionalfilters' => 'Filtre opționale:',
+	'replacetext_watchmovedpages' => 'Urmărește aceste pagini',
 	'replacetext_replace' => 'Înlocuire',
-	'replacetext_nomove' => "Nu a fost găsită nici o pagină al cărei titlu să conţină '$1'.",
+	'replacetext_nomove' => "Nu a fost găsită nici o pagină al cărei titlu să conțină '$1'.",
 	'replacetext_return' => 'Revenire la formular.',
 	'replacetext_continue' => 'Continuare',
 	'replacetext_editsummary' => "Înlocuire de text - '$1' în '$2'",
