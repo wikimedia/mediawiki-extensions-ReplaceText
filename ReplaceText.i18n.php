@@ -824,7 +824,7 @@ Ako napravite ovu zamjenu nećete moći odvojiti svoju zamjenu od ovog teksta. N
  */
 $messages['hsb'] = array(
 	'replacetext' => 'Tekst narunać',
-	'replacetext-desc' => 'Steji [[Special:ReplaceText|specialnu stronu]] k dispoziciji, kotraž administratoram zmóžnja, globalne pytanje a narunanje teksta na wšěch wobsahowych stronach wikija přewjesć',
+	'replacetext-desc' => 'Staji [[Special:ReplaceText|specialnu stronu]] k dispoziciji, kotraž administratoram zmóžnja, globalne pytanje a narunanje teksta na wšěch wobsahowych stronach wikija přewjesć',
 	'replacetext_docu' => "Zo by tekst přez druhi tekst na wšěch regularnych stronach tutoho wikija narunał, zapodaj wobaj tekstowej dźělej a klikń potom na 'Dale'. Budźeš potom lisćinu stronow widźeć, kotrež pytany tekst wobsahuja a móžeš jednu z nich wubrać, w kotrejž chceš tekst narunać. Twoje mjeno zjewi so w stawiznach strony jako wužiwar, kotryž je zamołwity za změny.",
 	'replacetext_originaltext' => 'Originalny tekst:',
 	'replacetext_replacementtext' => 'Narunanski tekst:',
