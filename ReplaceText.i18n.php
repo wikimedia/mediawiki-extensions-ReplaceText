@@ -1903,21 +1903,20 @@ $messages['tl'] = array(
 	'replacetext' => 'Palitan ang teksto',
 	'replacetext-desc' => 'Nagbibigay ng isang [[Special:ReplaceText|natatanging pahina]] upang mapahintulutan ang mga tagapangasiwa na makagawa ng isang baging na pandaidigang hanapin-at-palitan sa ibabaw ng lahat ng mga pahina ng nilalaman ng isang wiki',
 	'replacetext_docu' => "Upang mapalitan ang isang bagting ng teksto ng iba pang nasa kahabaan ng lahat ng pangkaraniwang mga pahinang nasa ibabaw ng wiking ito, ipasok ang dalawang piraso ng teksto dito at pindutin pagkatapos ang 'Magpatuloy'. Susunod na ipapakita naman sa iyo ang isang talaan ng mga pahinang naglalaman ng teksto ng paghanap, at mapipili mo ang mga maaari mong ipamalit dito. Lilitaw ang pangalan mo sa mga kasaysayan ng pahina bilang tagagamit na umaako sa anumang mga pagbabago.",
-	'replacetext_originaltext' => 'Orihinal na teksto',
-	'replacetext_replacementtext' => 'Pamalit na teksto',
-	'replacetext_movepages' => 'Palitan din ang tekstong nasa loob ng mga pamagat ng pahina, kung kailan maaari',
+	'replacetext_originaltext' => 'Orihinal na teksto:',
+	'replacetext_replacementtext' => 'Pamalit na teksto:',
+	'replacetext_movepages' => 'Palitan ang tekstong nasa loob ng mga pamagat na pampahina, kapag maaari',
 	'replacetext_choosepagesforedit' => "Pakipili ang {{PLURAL:$3|pahina|mga pahina}} kung saan mo naisa na palitan ang '$1' ng '$2':",
-	'replacetext_choosepagesformove' => 'Palitan ang tekstong nasa loob ng {{PLURAL:$3|pangalan ng sumusunod na pahina|mga pangalan ng sumusunod na mga pahina}}:',
+	'replacetext_choosepagesformove' => 'Palitan ang "$1" ng "$2"  sa loob ng {{PLURAL:$3|pangalan ng sumusunod na pahina|mga pangalan ng sumusunod na mga pahina}}:',
 	'replacetext_cannotmove' => 'Hindi maililipat ang sumusunod na {{PLURAL:$1|pahina|mga pahina}}:',
-	'replacetext_savemovedpages' => 'Para sa inilipat na mga pahina, sagipin ang lumang mga pamagat bilang mga nakaturo patungo sa bagong mga pamagat.',
+	'replacetext_savemovedpages' => 'Sagipin ang lumang mga pamagat bilang mga pampunta patungo sa bagong mga pamagat',
 	'replacetext_invertselections' => 'Baligtarin ang mga pagpipilian',
 	'replacetext_replace' => 'Palitan',
 	'replacetext_success' => "Ang '$1' ay mapapalitan ng '$2' sa loob ng $3 {{PLURAL:$3|pahina|mga pahina}}.",
 	'replacetext_noreplacement' => "Walang natagpuang mga pahinang naglalaman ng bagting na '$1'.",
 	'replacetext_return' => 'Bumalik sa pormularyo.',
-	'replacetext_warning' => "Mayroong {{PLURAL:$1|$1 pahinang naglalaman na|$1 mga pahinang naglalaman na}} ng pamalit na bagting, '$2'.
-Kapag ginawa mo ang pagpapalit na ito hindi mo na maihihiwalay ang mga pamalit mo mula sa mga bagting na ito.
-Ipagpapatuloy pa rin ba ang pagpapalit?",
+	'replacetext_warning' => "'''Babala:''' Mayroong {{PLURAL:$1|$1 pahinang naglalaman na|$1 mga pahinang naglalaman na}} ng pamalit na bagting, '$2'.
+Kapag ginawa mo ang pagpapalit na ito hindi mo na maihihiwalay ang mga pamalit mo mula sa mga bagting na ito.",
 	'replacetext_blankwarning' => 'Dahil sa walang laman ang bagting ng pamalit, hindi na maibabalik pa sa dati ang gawaing ito/
 Naisa mo bang magpatuloy pa?',
 	'replacetext_continue' => 'Magpatuloy',
