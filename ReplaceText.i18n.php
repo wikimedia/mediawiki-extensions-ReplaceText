@@ -258,10 +258,15 @@ $messages['bn'] = array(
 
 /** Breton (Brezhoneg)
  * @author Fohanno
+ * @author Fulup
  * @author Y-M D
  */
 $messages['br'] = array(
 	'replacetext' => "Erlec'hiañ an destenn",
+	'replacetext-desc' => "Pourchas a ra ur [[Special:ReplaceText|bajenn dibar]] a aotre ar verourien da erlec'hiañ steudadoù arouezennoù dre arouezennoù all er wiki a-bezh",
+	'replacetext_docu' => "Evit erlec'hiañ ur steudad arouezennoù gant unan all e holl bajennoù boutin ar wiki-mañ e c'hallit merkañ an div destenn amañ ha klikañ war 'kenderc'hel'.
+Diskouezet e vo deoc'h ur roll pajennoù m'emañ an destenn klasket enno ha gallout a reot dibab ar re a fell deoc'h cheñch.
+War wel e teuio hoc'h anv war roll istor pep pajenn evit ma vo gouezet gant piv eo bet graet ar cheñchamant.",
 	'replacetext_originaltext' => 'Testenn orin :',
 	'replacetext_replacementtext' => "Testenn erlec'hiañ :",
 	'replacetext_optionalfilters' => 'Siloù diret :',
@@ -285,6 +290,8 @@ $messages['br'] = array(
 	'replacetext_nomove' => 'N\'eo bet kavet pennad ebet gant "$1" en ul lodenn eus an titl.',
 	'replacetext_nosuchcategory' => "N'eus rummad ebet en anv « $1 ».",
 	'replacetext_return' => "Distreiñ d'ar furmskrid.",
+	'replacetext_warning' => "'''Diwallit :''' {{PLURAL:\$1| \$1 bajenn enni| \$1 pajenn enno}} ar steudad arouezennoù erlec'hiañ zo dija, \"\$2\". Ma kasit ar cheñchamant da benn ne vo ket posupl diforc'hañ ar cheñchamantoù degaset ganeoc'h diouzh an neudennadoù-se ken.",
+	'replacetext_blankwarning' => "'''Diwallit : ''' Dre m'eo goullo ar steudad erlec'hiañ, ne vo ket tu da zizober an urzh-mañ.",
 	'replacetext_continue' => "Kenderc'hel",
 	'replacetext_cancel' => '(Evit nulañ an ober klikit war ar bouton "Disto" en ho merdeer.)',
 	'replacetext_editsummary' => 'Erlec\'hiañ an destenn - "$1" dre "$2"',
@@ -1253,7 +1260,7 @@ $messages['mk'] = array(
 	'replacetext' => 'Замени текст',
 	'replacetext-desc' => 'Додава [[Special:ReplaceText|специјална страница]] која им овозможува на администраторите да вршат пронаоѓање и замена на глобални низи во страниците на викито',
 	'replacetext_docu' => 'За да замените една низа со друга, ширум сите регуларни страници на ова вики, внесете ги тука двете парчиња текст и потоа притиснете на „Продолжи“.
-Потоа ќе ви се прикаже листа на страници кои го содржат бараниот текст, и ќе можете да изберете во кои од нив сакате да ја извршите змената.
+Потоа ќе ви се прикаже список на страници кои го содржат бараниот текст, и ќе можете да изберете во кои од нив сакате да ја извршите змената.
 Вашето име ќе се појави во историјата на страниците како корисник одговорен за промените.',
 	'replacetext_originaltext' => 'Оригинален текст:',
 	'replacetext_replacementtext' => 'Нов текст:',
