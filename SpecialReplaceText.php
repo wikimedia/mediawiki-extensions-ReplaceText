@@ -462,9 +462,9 @@ class ReplaceText extends SpecialPage {
 
 	public static function convertWhiteSpaceToHTML( $msg ) {
 		$msg = htmlspecialchars( $msg );
-		$msg = preg_replace( '/^ /m', '&nbsp; ', $msg );
-		$msg = preg_replace( '/ $/m', ' &nbsp;', $msg );
-		$msg = preg_replace( '/  /', '&nbsp; ', $msg );
+		$msg = preg_replace( '/^ /m', '&#160; ', $msg );
+		$msg = preg_replace( '/ $/m', ' &#160;', $msg );
+		$msg = preg_replace( '/  /', '&#160; ', $msg );
 		# $msg = str_replace( "\n", '<br />', $msg );
 		return $msg;
 	}
