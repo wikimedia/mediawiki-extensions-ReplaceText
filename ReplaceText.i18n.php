@@ -345,6 +345,13 @@ $messages['ca'] = array(
 	'replacetext_continue' => 'Continua',
 );
 
+/** Chechen (Нохчийн)
+ * @author Sasan700
+ */
+$messages['ce'] = array(
+	'replacetext_optionalfilters' => 'Тlедожийна доцу литтарш:',
+);
+
 /** Czech (Česky)
  * @author Matěj Grabovský
  * @author Mormegil
@@ -1795,8 +1802,11 @@ $messages['sk'] = array(
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
+	'replacetext' => 'Замени текст',
 	'replacetext_originaltext' => 'Оригинални текст:',
 	'replacetext_replacementtext' => 'Текст којим се замењује:',
+	'replacetext_optionalfilters' => 'Опциони филтери:',
+	'replacetext_categorysearch' => 'Замени само у категорији:',
 	'replacetext_editpages' => 'Замени текст у садржају стране',
 	'replacetext_movepages' => 'Замени текст у насловима страна, уколико је могуће',
 	'replacetext_givetarget' => 'Морате навести стринг кога треба заменити.',
