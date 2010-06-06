@@ -2,8 +2,9 @@
 /**
  * Internationalization file for the Replace Text extension
  *
- * @addtogroup Extensions
-*/
+ * @file
+ * @ingroup Extensions
+ */
 
 $messages = array();
 
