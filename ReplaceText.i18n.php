@@ -1832,8 +1832,11 @@ $messages['sr-ec'] = array(
  * @author Michaello
  */
 $messages['sr-el'] = array(
+	'replacetext' => 'Zameni tekst',
 	'replacetext_originaltext' => 'Originalni tekst:',
 	'replacetext_replacementtext' => 'Tekst kojim se zamenjuje:',
+	'replacetext_optionalfilters' => 'Opcioni filteri:',
+	'replacetext_categorysearch' => 'Zameni samo u kategoriji:',
 	'replacetext_editpages' => 'Zameni tekst u sadržaju strane',
 	'replacetext_movepages' => 'Zameni tekst u naslovima strana, ukoliko je moguće',
 	'replacetext_givetarget' => 'Morate navesti string koga treba zameniti.',
