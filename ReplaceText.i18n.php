@@ -1651,6 +1651,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
  * @author Crazymadlover
  * @author Eduardo.mps
  * @author Enqd
+ * @author Giro720
  * @author Luckas Blade
  */
 $messages['pt-br'] = array(
@@ -1680,9 +1681,7 @@ $messages['pt-br'] = array(
 	'replacetext_nomove' => "Não foram encontradas páginas com títulos contendo '$1'.",
 	'replacetext_nosuchcategory' => 'Não existe categoria com o nome "$1".',
 	'replacetext_return' => 'Voltar ao formulário.',
-	'replacetext_warning' => "Há {{PLURAL:$1|$1 página que já possui|$1 páginas que já possuem}} a cadeia de caracteres de substituição, '$2'.
-Se você prosseguir com a substituição, não será possível distinguir as suas substituições do texto já existente.
-Deseja prosseguir com a substituição?",
+	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} o texto de substituição, \"\$2\". Se fizer esta substituição não poderá desfazer a operação com uma simples substituição em ordem inversa.",
 	'replacetext_blankwarning' => 'Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
 	'replacetext_continue' => 'Prosseguir',
 	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
