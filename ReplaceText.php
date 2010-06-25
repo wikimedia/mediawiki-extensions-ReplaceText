@@ -33,10 +33,13 @@ $rtgIP = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['ReplaceText'] = $rtgIP . 'ReplaceText.i18n.php';
 $wgExtensionAliasesFiles['ReplaceText'] = $rtgIP . 'ReplaceText.alias.php';
 $wgJobClasses['replaceText'] = 'ReplaceTextJob';
-$wgAvailableRights[] = 'replacetext';
-$wgHooks['AdminLinks'][] = 'rtAddToAdminLinks';
 
 // This extension uses its own permission type, 'replacetext'
+$wgAvailableRights[] = 'replacetext';
+$wgGroupPermissions['bureaucrat']['replacetext'] = true;
+
+$wgHooks['AdminLinks'][] = 'rtAddToAdminLinks';
+
 $wgSpecialPages['ReplaceText'] = 'ReplaceText';
 $wgSpecialPageGroups['ReplaceText'] = 'wiki';
 $wgAutoloadClasses['ReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
