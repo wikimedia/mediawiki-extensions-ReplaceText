@@ -274,7 +274,7 @@ War wel e teuio hoc'h anv war roll istor pep pajenn evit ma vo gouezet gant piv 
 	'replacetext_categorysearch' => "Erlec'hiañ er rummad hepken :",
 	'replacetext_prefixsearch' => "Erlec'hiañ hepken er bajennoù gant ar rakger :",
 	'replacetext_editpages' => "Erlec'hiañ an destenn en danvez er bajenn",
-	'replacetext_movepages' => "Erlec'hiañ an destenn e titl ar pajennoù, ma 'z eo posubl",
+	'replacetext_movepages' => "Erlec'hiañ an destenn e titl ar pajennoù, ma 'z eo posupl",
 	'replacetext_givetarget' => "Rankout a reoc'h reiñ ar chadenn a rank bezañ erlec'hiet.",
 	'replacetext_nonamespace' => "Rankout a reoc'h dibab un esaouenn anv d'an nebeutañ.",
 	'replacetext_editormove' => "Rankout a reoc'h dibab d'an nebeutañ un dibarzh erlec'hiañ.",
