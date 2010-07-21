@@ -2106,6 +2106,10 @@ $messages['zh-hans'] = array(
 	'replacetext_docu' => '要替换此维基内所有页面文字的字串，请将「原始文字」及「替换的文字」分别填入下面的两个栏位之中，然后按「继续」。接下来所有内含原始文字的页面会被列出，你可以选择要在那一些页面进行替换。页面的改动历史会显示你是负责进行这次改动的用户。',
 	'replacetext_originaltext' => '原始文字',
 	'replacetext_replacementtext' => '替换文字',
+	'replacetext_optionalfilters' => '可选过滤器：',
+	'replacetext_categorysearch' => '仅当页面在该分类中时替换：',
+	'replacetext_prefixsearch' => '仅当页面带有该前缀时替换：',
+	'replacetext_editpages' => '仅在页面内容当中进行替换',
 	'replacetext_movepages' => '如果可以的话，也替换页面名称的字串。',
 	'replacetext_nonamespace' => '您必须选择最少一个名字空间。',
 	'replacetext_choosepagesforedit' => '请选择你想将「$1」替换成「$2」的页面。',
@@ -2122,11 +2126,7 @@ $messages['zh-hans'] = array(
 	'replacetext_continue' => '继续',
 	'replacetext_cancel' => '（按下浏览器上的 "返回" 按钮可以取消操作）',
 	'replacetext_editsummary' => '替换文字 - 「$1」替换为「$2」',
-	'right-replacetext' => '对整个维基进行文字替换。',	
-	'replacetext_optionalfilters' => '可选过滤器：',	
-	'replacetext_categorysearch' => '仅当页面在该分类中时替换：',	
-	'replacetext_prefixsearch' => '仅当页面带有该前缀时替换：',	
-	'replacetext_editpages' => '仅在页面内容当中进行替换',
+	'right-replacetext' => '对整个维基进行文字替换。',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
@@ -2140,6 +2140,10 @@ $messages['zh-hant'] = array(
 	'replacetext_docu' => '要替換此維基內所有頁面文字的字串，請將「原始文字」及「替換的文字」分別填入下面的兩個欄位之中，然後按「繼續」。接下來所有內含原始文字的頁面會被列出，你可以選擇要在那一些頁面進行替換。頁面的改動歷史會顯示你是負責進行這次改動的用戶。',
 	'replacetext_originaltext' => '原始文字',
 	'replacetext_replacementtext' => '替換文字',
+	'replacetext_optionalfilters' => '可選過濾器：',
+	'replacetext_categorysearch' => '僅當頁面在該分類中時替換：',
+	'replacetext_prefixsearch' => '僅當頁面帶有該前綴時替換：',
+	'replacetext_editpages' => '僅在頁面內容當中進行替換',
 	'replacetext_movepages' => '如果可以的話，也替換頁面名稱的字串。',
 	'replacetext_nonamespace' => '您必須選擇最少一個名字空間。',
 	'replacetext_choosepagesforedit' => '請選擇你想將「$1」替換成「$2」的頁面。',
@@ -2157,8 +2161,5 @@ $messages['zh-hant'] = array(
 	'replacetext_cancel' => '（按下瀏覽器上的 "返回" 按鈕可以取消操作）',
 	'replacetext_editsummary' => '替換文字 - 「$1」替換為「$2」',
 	'right-replacetext' => '對整個維基進行文字替換。',
-	'replacetext_optionalfilters' => '可選過濾器：',
-	'replacetext_categorysearch' => '僅當頁面在該分類中時替換：',
-	'replacetext_prefixsearch' => '僅當頁面帶有該前綴時替換：',
-	'replacetext_editpages' => '僅在頁面內容當中進行替換',
 );
+
