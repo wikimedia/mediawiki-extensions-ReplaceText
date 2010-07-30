@@ -471,61 +471,60 @@ class ReplaceText extends SpecialPage {
 
 	function getMatchingTitles( $str, $namespaces, $category, $prefix ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$sql_str = $dbr->escapeLike( str_replace( ' ', '_', $str ) );
-		$include_ns = $dbr->makeList( $namespaces );
+		$any = $dbr->anyString();
+
+		$str = Title::newFromText( $str )->getDbKey();
+
 		$tables = array( 'page' );
 		$vars = array( 'page_title', 'page_namespace' );
 		$conds = array(
-			"page_title LIKE '%$sql_str%'",
-			"page_namespace IN ($include_ns)",
+			'page_title ' . $dbr->buildLike( $any, $str, $any ),
+			"page_namespace IN ({$dbr->makeList( $namespaces )})",
 		);
-		if ( ! empty( $category ) ) {
-			$category = str_replace( ' ', '_', $dbr->escapeLike( $category ) );
-			$tables[] = 'categorylinks';
-			$conds[] = 'page_id = cl_from';
-			$conds[] = "cl_to = '$category'";
-		}
-		if ( ! empty( $prefix ) ) {
-			$prefix = $dbr->escapeLike( str_replace( ' ', '_', $prefix ) );
-			$conds[] = "page_title like '$prefix%'";
-		}
 
-		return $dbr->select(
-			$tables,
-			$vars,
-			$conds,
-			__METHOD__,
-			array( 'ORDER BY' => 'page_namespace, page_title' )
-		);
+		$this->categoryConditition( $category, $tables, $conds );
+		$this->prefixCondition( $prefix, $conds );
+		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
+
+		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
 	}
 
 	function doSearchQuery( $search, $namespaces, $category, $prefix ) {
 		$dbr = wfGetDB( DB_SLAVE );
-
-		$search = $dbr->escapeLike( $search );
-		$include_ns = $dbr->makeList( $namespaces );
+		$any = $dbr->anyString();
 
 		$tables = array( 'page', 'revision', 'text' );
 		$vars = array( 'page_id', 'page_namespace', 'page_title', 'old_text' );
 		$conds = array(
-			"old_text like '%$search%'",
-			"page_namespace in ($include_ns)",
+			'old_text ' . $dbr->buildLike( $any, $search, $any ),
+			"page_namespace IN ({$dbr->makeList( $namespaces )})",
 			'rev_id = page_latest',
 			'rev_text_id = old_id'
 		);
-		if ( ! empty( $category ) ) {
-			$category = str_replace( ' ', '_', $dbr->escapeLike( $category ) );
-			$tables[] = 'categorylinks';
-			$conds[] = 'page_id = cl_from';
-			$conds[] = "cl_to = '$category'";
-		}
-		if ( ! empty( $prefix ) ) {
-			$prefix = $dbr->escapeLike( str_replace( ' ', '_', $prefix ) );
-			$conds[] = "page_title like '$prefix%'";
-		}
+
+		$this->categoryConditition( $category, $tables, $conds );
+		$this->prefixCondition( $prefix, $conds );
 		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
 
 		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
+	}
+
+	protected function categoryConditition( $category, &$tables, &$conds ) {
+		if ( !empty( $category ) ) {
+			$category = Title::newFromText( $category )->getDbKey();
+			$tables[] = 'categorylinks';
+			$conds[] = 'page_id = cl_from';
+			$conds['cl_to'] = $category;
+		}
+	}
+
+	protected function prefixCondition( $prefix, &$conds ) {
+		if ( !empty( $prefix ) ) {
+			$dbr = wfGetDB( DB_SLAVE );
+			$any = $dbr->anyString();
+			$prefix = Title::newFromText( $prefix )->getDbKey();
+			$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
+		}
 	}
 
 }
