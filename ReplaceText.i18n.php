@@ -994,6 +994,14 @@ Apakah ingin dilanjutkan?',
 	'right-replacetext' => 'Melakukan penggantian seluruh teks kalimat di wiki ini',
 );
 
+/** Igbo (Igbo)
+ * @author Ukabia
+ */
+$messages['ig'] = array(
+	'replacetext_originaltext' => 'Mkpụrụ nke mbu:',
+	'replacetext_replace' => 'Kwụchí na élú',
+);
+
 /** Italian (Italiano)
  * @author Civvì
  * @author Darth Kule
