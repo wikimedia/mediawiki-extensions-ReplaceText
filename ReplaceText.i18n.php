@@ -1608,6 +1608,9 @@ $messages['pnt'] = array(
 $messages['ps'] = array(
 	'replacetext_originaltext' => 'آرنی متن:',
 	'replacetext_watchmovedpages' => 'همدا مخونه کتل',
+	'replacetext_invertselections' => 'ټاکنې سرچپه کول',
+	'replacetext_replace' => 'ځايناستول',
+	'replacetext_editsummary' => 'متن ځايناستول - له "$1" نه "$2" ته',
 );
 
 /** Portuguese (Português)
