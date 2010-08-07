@@ -9,7 +9,6 @@ class ReplaceText extends SpecialPage {
 	 */
 	public function __construct() {
 		parent::__construct( 'ReplaceText', 'replacetext' );
-		wfLoadExtensionMessages( 'ReplaceText' );
 	}
 
 	function execute( $query ) {
@@ -146,6 +145,7 @@ class ReplaceText extends SpecialPage {
 					if ( ! $category_title->exists() ) $bad_cat_name = true;
 				}
 				if ( $bad_cat_name ) {
+					//FIXME: raw html message
 					$wgOut->addHTML( wfMsg( 'replacetext_nosuchcategory', $sk->link( $category_title, ucfirst( $this->category ) ) ) );
 				} else {
 					if ( $this->edit_pages )
@@ -154,6 +154,7 @@ class ReplaceText extends SpecialPage {
 						$wgOut->addWikiMsg( 'replacetext_nomove', "<tt><nowiki>{$this->target}</nowiki></tt>" );
 				}
 				// link back to starting form
+				//FIXME: raw html message
 				$wgOut->addHTML( '<p>' . $sk->makeKnownLinkObj( $this->getTitle(), wfMsg( 'replacetext_return' ) ) . '</p>' );
 			} else {
 				// show a warning message if the replacement string
@@ -207,8 +208,7 @@ class ReplaceText extends SpecialPage {
 		if ( is_null( $warning_msg ) ) {
 			$wgOut->addWikiMsg( 'replacetext_docu' );
 		} else {
-			$actual_warning_msg = wfMsg( $warning_msg );
-			$wgOut->addWikiText("<div class=\"errorbox\">$actual_warning_msg</div><br clear=\"both\" />");
+			$wgOut->wrapWikiMsg( "<div class=\"errorbox\">\n$1\n</div><br clear=\"both\" />", $warning_msg );
 		}
 		$wgOut->addHTML( '<table><tr><td style="vertical-align: top;">' );
 		$wgOut->addWikiMsg( 'replacetext_originaltext' );
@@ -236,7 +236,8 @@ class ReplaceText extends SpecialPage {
 		// search interface was added in MW 1.16 - check for the
 		// presence of the 'powersearch-togglelabel' message to see
 		// if we can use this functionality here
-		if ( ! wfEmptyMsg( 'powersearch-togglelabel', wfMsg( 'powersearch-togglelabel' ) ) ) {
+		// FIXME: this extension requires 1.16 now?
+		if ( !wfEmptyMsg( 'powersearch-togglelabel', wfMsg( 'powersearch-togglelabel' ) ) ) {
 			$wgOut->addHTML(
 				Xml::tags(
 					'div',
@@ -268,6 +269,7 @@ class ReplaceText extends SpecialPage {
 			Xml::element( 'div', array( 'class' => 'divider' ), '', false ) .
 			"$tables\n</fieldset>"
 		);
+		//FIXME: raw html messages
 		$optional_filters_label = wfMsg( 'replacetext_optionalfilters' );
 		$category_search_label = wfMsg( 'replacetext_categorysearch' );
 		$prefix_search_label = wfMsg( 'replacetext_prefixsearch' );
