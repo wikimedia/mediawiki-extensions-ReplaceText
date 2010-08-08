@@ -1606,7 +1606,16 @@ $messages['pnt'] = array(
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
+	'replacetext' => 'متن ځايناستول',
 	'replacetext_originaltext' => 'آرنی متن:',
+	'replacetext_replacementtext' => 'د متن ځايناستوب:',
+	'replacetext_categorysearch' => 'يوازې په وېشنيزه کې ځايناستول:',
+	'replacetext_prefixsearch' => 'يوازې په مختاړي لرونکيو مخونو کې ځايناستول:',
+	'replacetext_editpages' => 'د مخ په مېنځپانګه کې متن ځايناستول',
+	'replacetext_movepages' => 'د شونتيا په وخت کې، د مخ د سرليک متن ځايناستول',
+	'replacetext_nonamespace' => 'تاسې بايد لږ تر لږه يو نوم-تشيال وټاکۍ.',
+	'replacetext_cannotmove' => 'دا {{PLURAL:$1|لاندې مخ|لانديني مخونه}} د لېږدولو وړ نه دي:',
+	'replacetext_formovedpages' => 'د لېږدل شويو مخونو لپاره:',
 	'replacetext_watchmovedpages' => 'همدا مخونه کتل',
 	'replacetext_invertselections' => 'ټاکنې سرچپه کول',
 	'replacetext_replace' => 'ځايناستول',
