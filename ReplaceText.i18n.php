@@ -1818,6 +1818,7 @@ $messages['sk'] = array(
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Sasa Stefanovic
+ * @author Жељко Тодоровић
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
@@ -1839,7 +1840,7 @@ $messages['sr-ec'] = array(
 	'replacetext_invertselections' => 'Инвертуј избор',
 	'replacetext_replace' => 'Пресними',
 	'replacetext_success' => "'$1' ће бити замењено са '$2' у $3 {{PLURAL:$3|страни|страна}}.",
-	'replacetext_noreplacement' => "Није нађена ни једна страна која садржи стринг '$1'.",
+	'replacetext_noreplacement' => "Није нађена ниједна страница која садржи стринг '$1'.",
 	'replacetext_nomove' => "Није нађена ни једна страна чији наслов садржи '$1'.",
 	'replacetext_return' => 'Врати се на форму.',
 	'replacetext_continue' => 'Настави',
