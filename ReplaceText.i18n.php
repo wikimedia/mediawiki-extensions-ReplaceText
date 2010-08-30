@@ -1854,11 +1854,11 @@ $messages['sr-ec'] = array(
 	'replacetext_formovedpages' => 'За премештене стране:',
 	'replacetext_savemovedpages' => 'Сними старе наслове као преусмерења ка новим насловима',
 	'replacetext_watchmovedpages' => 'Надгледај ове стране',
-	'replacetext_invertselections' => 'Инвертуј избор',
+	'replacetext_invertselections' => 'Обрни избор',
 	'replacetext_replace' => 'Пресними',
 	'replacetext_success' => "'$1' ће бити замењено са '$2' у $3 {{PLURAL:$3|страни|страна}}.",
 	'replacetext_noreplacement' => "Није нађена ниједна страница која садржи стринг '$1'.",
-	'replacetext_nomove' => "Није нађена ни једна страна чији наслов садржи '$1'.",
+	'replacetext_nomove' => 'Није нађена ниједна страница чији наслов садржи „$1“.',
 	'replacetext_return' => 'Врати се на форму.',
 	'replacetext_continue' => 'Настави',
 	'replacetext_editsummary' => "Замена текста - '$1' у '$2'",
@@ -1866,6 +1866,7 @@ $messages['sr-ec'] = array(
 
 /** Serbian Latin ekavian (Srpski (latinica))
  * @author Michaello
+ * @author Жељко Тодоровић
  */
 $messages['sr-el'] = array(
 	'replacetext' => 'Zameni tekst',
@@ -1883,11 +1884,11 @@ $messages['sr-el'] = array(
 	'replacetext_formovedpages' => 'Za premeštene strane:',
 	'replacetext_savemovedpages' => 'Snimi stare naslove kao preusmerenja ka novim naslovima',
 	'replacetext_watchmovedpages' => 'Nadgledaj ove strane',
-	'replacetext_invertselections' => 'Invertuj izbor',
+	'replacetext_invertselections' => 'Obrni izbor',
 	'replacetext_replace' => 'Presnimi',
 	'replacetext_success' => "'$1' će biti zamenjeno sa '$2' u $3 {{PLURAL:$3|strani|strana}}.",
 	'replacetext_noreplacement' => "Nije nađena ni jedna strana koja sadrži string '$1'.",
-	'replacetext_nomove' => "Nije nađena ni jedna strana čiji naslov sadrži '$1'.",
+	'replacetext_nomove' => 'Nije nađena nijedna stranica čiji naslov sadrži „$1“.',
 	'replacetext_return' => 'Vrati se na formu.',
 	'replacetext_continue' => 'Nastavi',
 	'replacetext_editsummary' => "Zamena teksta - '$1' u '$2'",
