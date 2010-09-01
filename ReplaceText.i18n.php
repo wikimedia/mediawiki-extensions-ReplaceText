@@ -692,6 +692,23 @@ Si vous effectuez cette substitution, vous ne pourrez pas distinguer vos modific
 	'right-replacetext' => 'Faire des remplacements de texte dans tout le wiki',
 );
 
+/** Franco-Provençal (Arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'replacetext' => 'Remplaciér lo tèxto',
+	'replacetext_originaltext' => 'Tèxto d’origina :',
+	'replacetext_replacementtext' => 'Tèxto de remplacement :',
+	'replacetext_optionalfilters' => 'Filtros u chouèx :',
+	'replacetext_formovedpages' => 'Por les pâges renomâs :',
+	'replacetext_watchmovedpages' => 'Siuvre cetes pâges',
+	'replacetext_invertselections' => 'Envèrsar los chouèx',
+	'replacetext_replace' => 'Remplaciér',
+	'replacetext_return' => 'Tornar u formulèro.',
+	'replacetext_continue' => 'Continuar',
+	'replacetext_editsummary' => 'Remplacement du tèxto — « $1 » per « $2 »',
+);
+
 /** Galician (Galego)
  * @author Toliño
  */
