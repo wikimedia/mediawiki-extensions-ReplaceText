@@ -1264,7 +1264,7 @@ $messages['lb'] = array(
 	'replacetext_givetarget' => 'Dir musst déi Zeechen uginn déi ersat solle ginn.',
 	'replacetext_nonamespace' => 'Dir musst mindestens een Nummraum eraussichen.',
 	'replacetext_editormove' => 'Dir musst mindestens eng vun den Optioune vum Ersetzen eraussichen.',
-	'replacetext_choosepagesforedit' => 'Wielt w.e.g. d\'{{PLURAL:$3|Säit op däer|Säiten op deenen}} Dir "$1" duerch "$2" ersetze wëllt:',
+	'replacetext_choosepagesforedit' => 'Wielt w.e.g. d\'{{PLURAL:$3|Säit op där|Säiten op deenen}} Dir "$1" duerch "$2" ersetze wëllt:',
 	'replacetext_choosepagesformove' => "'$1' duerch '$2' am Titel vun {{PLURAL:$3|dëser Säit|dëse Säiten}} ersetzen:",
 	'replacetext_cannotmove' => 'Dës {{PLURAL:$1|Säit kann|Säite kënne}} net geréckelt ginn:',
 	'replacetext_formovedpages' => 'Fir geréckelt Säiten:',
@@ -1277,7 +1277,7 @@ $messages['lb'] = array(
 	'replacetext_nomove' => "Keng Säite fonnt wou '$1' am Titel drasteet.",
 	'replacetext_nosuchcategory' => 'Et gëtt keng Kategorie mam Numm "$1".',
 	'replacetext_return' => 'Zréck op de Formulaire',
-	'replacetext_warning' => "'''Opgepasst:''' Et gëtt schonn {{PLURAL:$1|eng Säit op däer|$1 Säiten op deenen}} d'Zeecherei '$2' schonn dran ass.
+	'replacetext_warning' => "'''Opgepasst:''' Et gëtt schonn {{PLURAL:$1|eng Säit op där|$1 Säiten op deenen}} d'Zeecherei '$2' schonn dran ass.
 Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säiten op deenen Dir Ännerunge gemaach hutt vun de Säiten z'ënnerscheeden wou elo d'Zeecherei '$2' schonn dran ass.",
 	'replacetext_blankwarning' => 'Well den Textdeel mat dem de gesichten Text ersat gi soll eidel ass, kann dës Aktioun net réckgängeg gemaach ginn; wëllt Dir awer weiderfueren?',
 	'replacetext_continue' => 'Weiderfueren',
