@@ -845,6 +845,7 @@ $messages['he'] = array(
 /** Croatian (Hrvatski)
  * @author Dalibor Bosits
  * @author Ex13
+ * @author Herr Mlinka
  */
 $messages['hr'] = array(
 	'replacetext' => 'Zamjeni tekst',
@@ -854,7 +855,7 @@ $messages['hr'] = array(
 	'replacetext_replacementtext' => 'Zamjenski tekst:',
 	'replacetext_movepages' => 'Zamijeni tekst u naslovima stranica, ako je moguće',
 	'replacetext_choosepagesforedit' => "Molimo odaberite {{PLURAL:$3|stranicu|stranice}} na kojima želite zamijeniti '$1' za '$2':",
-	'replacetext_choosepagesformove' => "Zamijeni '$1' s '$2' u {{PLURAL:$1|naslovu sljedeće stranice|naslovima sljedećih stranica}}:",
+	'replacetext_choosepagesformove' => 'Zamijeni "$1" s "$2" u {{PLURAL:$1|naslovu sljedeće stranice|naslovima sljedećih stranica}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Sljedeća stranica|Sljedeće stranice}} ne mogu biti premještene:',
 	'replacetext_invertselections' => 'Izvrni odabir',
 	'replacetext_replace' => 'Zamjeni',
