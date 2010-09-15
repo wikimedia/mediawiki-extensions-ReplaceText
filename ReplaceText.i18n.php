@@ -408,8 +408,8 @@ $messages['de'] = array(
 	'replacetext_nosuchcategory' => 'Es gibt keine Kategorie mit dem Namen „$1“.',
 	'replacetext_return' => 'Zurück zum Formular.',
 	'replacetext_warning' => "'''Warnung:''' $1 {{PLURAL:$1|Seite enthält|Seiten enthalten}} bereits den zu ersetzenden Textteil „$2“.
-Wenn du die Ersetzung durchführst, ist eine spätere Trennung der Ersetzungen mit den bereits vorhandenen Textteilen nicht mehr möglich.",
-	'replacetext_blankwarning' => 'Der zu ersetzende Textteil ist leer, die Operation kann nicht rückgängig gemacht werden, trotzdem fortfahren?',
+Sofern du nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführst, ist eine spätere Unterscheidung zwischen den nunmehr zu ersetzenden und den bereits vorhandenen Textteilen nicht mehr möglich.",
+	'replacetext_blankwarning' => "'''Warnung:''' Da der zu ersetzende Textteil leer ist, kann die Operation nicht rückgängig gemacht werden. Möchtest du dennoch fortfahren?",
 	'replacetext_continue' => 'Fortfahren',
 	'replacetext_cancel' => '(Klicke auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
 	'replacetext_editsummary' => 'Textersetzung - „$1“ durch „$2“',
