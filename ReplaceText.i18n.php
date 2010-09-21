@@ -418,6 +418,7 @@ Sofern du nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführst, ist eine sp�
 
 /** German (formal address) (Deutsch (Sie-Form))
  * @author Imre
+ * @author Kghbln
  * @author Umherirrender
  */
 $messages['de-formal'] = array(
@@ -425,7 +426,8 @@ $messages['de-formal'] = array(
 	'replacetext_givetarget' => 'Sie müssen eine Zeichenkette angeben, die ersetzt werden soll.',
 	'replacetext_editormove' => 'Sie müssen mindestens eine Ersetzungsoption wählen.',
 	'replacetext_warning' => "'''Warnung:''' $1 {{PLURAL:$1|Seite enthält|Seiten enthalten}} bereits den zu ersetzenden Textteil „$2“.
-Wenn Sie die Ersetzung durchführen, ist eine spätere Trennung der Ersetzungen mit den bereits vorhandenen Textteilen nicht mehr möglich.",
+Sofern Sie nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführen, ist eine spätere Unterscheidung zwischen den nunmehr zu ersetzenden und den bereits vorhandenen Textteilen nicht mehr möglich.",
+	'replacetext_blankwarning' => "'''Warnung:''' Da der zu ersetzende Textteil leer ist, kann die Operation nicht rückgängig gemacht werden. Möchten Sie dennoch fortfahren?",
 	'replacetext_cancel' => '(Klicken Sie auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
 );
 
