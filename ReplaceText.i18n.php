@@ -382,7 +382,7 @@ Vaše jméno se objeví v historiích stránek jako osoba zodpovědná za přís
  */
 $messages['de'] = array(
 	'replacetext' => 'Text ersetzen',
-	'replacetext-desc' => 'Ergänzt eine [[Special:ReplaceText|Spezialseite]], die es Administratoren ermöglicht, eine globale Text-suchen-und-ersetzen-Operation auf allen Inhaltsseiten durchzuführen.',
+	'replacetext-desc' => 'Ergänzt eine [[Special:ReplaceText|Spezialseite]], die eine globale Text-suchen-und-ersetzen-Operation auf allen Inhaltsseiten ermöglicht',
 	'replacetext_docu' => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, gib die beiden Textteile hier ein und klicke auf die Ersetzen-Schaltfläche. Dein Benutzername wird in der Versionsgeschichte aufgenommen.',
 	'replacetext_originaltext' => 'Originaltext:',
 	'replacetext_replacementtext' => 'Neuer Text:',
