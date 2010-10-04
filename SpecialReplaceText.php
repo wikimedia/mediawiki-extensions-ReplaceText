@@ -9,6 +9,7 @@ class ReplaceText extends SpecialPage {
 	 */
 	public function __construct() {
 		parent::__construct( 'ReplaceText', 'replacetext' );
+		wfLoadExtensionMessages( 'ReplaceText' );
 	}
 
 	function execute( $query ) {
@@ -233,10 +234,9 @@ class ReplaceText extends SpecialPage {
 			Xml::tags( 'h4', null, wfMsgExt( 'powersearch-ns', array( 'parseinline' ) ) )
 		);
 		// the ability to select/unselect groups of namespaces in the
-		// search interface was added in MW 1.16 - check for the
-		// presence of the 'powersearch-togglelabel' message to see
-		// if we can use this functionality here
-		// FIXME: this extension requires 1.16 now?
+		// search interface exists only in some skins, like Vector -
+		// check for the presence of the 'powersearch-togglelabel'
+		// message to see if we can use this functionality here
 		if ( !wfEmptyMsg( 'powersearch-togglelabel', wfMsg( 'powersearch-togglelabel' ) ) ) {
 			$wgOut->addHTML(
 				Xml::tags(
@@ -473,18 +473,27 @@ class ReplaceText extends SpecialPage {
 
 	function getMatchingTitles( $str, $namespaces, $category, $prefix ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$any = $dbr->anyString();
 
 		$str = Title::newFromText( $str )->getDbKey();
 
 		$tables = array( 'page' );
 		$vars = array( 'page_title', 'page_namespace' );
-		$conds = array(
-			'page_title ' . $dbr->buildLike( $any, $str, $any ),
-			"page_namespace IN ({$dbr->makeList( $namespaces )})",
-		);
+		// anyString() method was added in MW 1.16
+		if ( method_exists( $dbr, 'anyString' ) ) {
+			$any = $dbr->anyString();
+			$conds = array(
+				'page_title ' . $dbr->buildLike( $any, $str, $any ),
+				"page_namespace IN ({$dbr->makeList( $namespaces )})",
+			);
+		} else {
+			$include_ns = $dbr->makeList( $namespaces );
+			$conds = array(
+				"page_title LIKE '%$str%'",
+				"page_namespace IN ($include_ns)",
+			);
+		}
 
-		$this->categoryConditition( $category, $tables, $conds );
+		$this->categoryCondition( $category, $tables, $conds );
 		$this->prefixCondition( $prefix, $conds );
 		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
 
@@ -493,25 +502,37 @@ class ReplaceText extends SpecialPage {
 
 	function doSearchQuery( $search, $namespaces, $category, $prefix ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$any = $dbr->anyString();
 
 		$tables = array( 'page', 'revision', 'text' );
 		$vars = array( 'page_id', 'page_namespace', 'page_title', 'old_text' );
-		$conds = array(
-			'old_text ' . $dbr->buildLike( $any, $search, $any ),
-			"page_namespace IN ({$dbr->makeList( $namespaces )})",
-			'rev_id = page_latest',
-			'rev_text_id = old_id'
-		);
+		// anyString() method was added in MW 1.16
+		if ( method_exists( $dbr, 'anyString' ) ) {
+			$any = $dbr->anyString();
+			$conds = array(
+				'old_text ' . $dbr->buildLike( $any, $search, $any ),
+				"page_namespace IN ({$dbr->makeList( $namespaces )})",
+				'rev_id = page_latest',
+				'rev_text_id = old_id'
+			);
+		} else {
+			$search = $dbr->escapeLike( $search );	 
+			$include_ns = $dbr->makeList( $namespaces );
+			$conds = array(
+				"old_text LIKE '%$search%'",
+				"page_namespace IN ($include_ns)",
+				'rev_id = page_latest',
+				'rev_text_id = old_id'
+			);
+		}
 
-		$this->categoryConditition( $category, $tables, $conds );
+		$this->categoryCondition( $category, $tables, $conds );
 		$this->prefixCondition( $prefix, $conds );
 		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
 
 		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
 	}
 
-	protected function categoryConditition( $category, &$tables, &$conds ) {
+	protected function categoryCondition( $category, &$tables, &$conds ) {
 		if ( !empty( $category ) ) {
 			$category = Title::newFromText( $category )->getDbKey();
 			$tables[] = 'categorylinks';
@@ -523,9 +544,14 @@ class ReplaceText extends SpecialPage {
 	protected function prefixCondition( $prefix, &$conds ) {
 		if ( !empty( $prefix ) ) {
 			$dbr = wfGetDB( DB_SLAVE );
-			$any = $dbr->anyString();
 			$prefix = Title::newFromText( $prefix )->getDbKey();
-			$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
+			// anyString() function was added in MW 1.16
+			if ( method_exists( $dbr, 'anyString' ) ) {
+				$any = $dbr->anyString();
+				$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
+			} else {
+				$conds[] = "page_title LIKE '$prefix%'";
+			}
 		}
 	}
 
