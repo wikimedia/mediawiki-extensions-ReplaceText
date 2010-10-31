@@ -30,7 +30,7 @@ $specialPageAliases['bs'] = array(
 
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
-	'ReplaceText' => array( 'Text ersetzen' ),
+	'ReplaceText' => array( 'Text_ersetzen' ),
 );
 
 /** Lower Sorbian (Dolnoserbski) */
@@ -41,6 +41,11 @@ $specialPageAliases['dsb'] = array(
 /** Divehi (ދިވެހިބަސް) */
 $specialPageAliases['dv'] = array(
 	'ReplaceText' => array( 'ލިޔުން ބަދަލުކުރައްވާ' ),
+);
+
+/** Finnish (Suomi) */
+$specialPageAliases['fi'] = array(
+	'ReplaceText' => array( 'Korvaa' ),
 );
 
 /** French (Français) */
@@ -85,7 +90,7 @@ $specialPageAliases['hu'] = array(
 
 /** Interlingua (Interlingua) */
 $specialPageAliases['ia'] = array(
-	'ReplaceText' => array( 'Reimplaciar texto' ),
+	'ReplaceText' => array( 'Reimplaciar_texto' ),
 );
 
 /** Indonesian (Bahasa Indonesia) */
