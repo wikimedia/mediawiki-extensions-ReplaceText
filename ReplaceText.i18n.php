@@ -2164,13 +2164,14 @@ $messages['vi'] = array(
 );
 
 /** Volapük (Volapük)
+ * @author Malafaya
  * @author Smeira
  */
 $messages['vo'] = array(
 	'replacetext' => 'Plaädön vödemi',
 	'replacetext-desc' => 'Jafön [[Special:ReplaceText|padi patik]] ad mögükön guvanes sukami e plaädami valöpikis, ninädapadis valik vüka seimik tefölis.',
-	'replacetext_originaltext' => 'Rigavödem',
-	'replacetext_replacementtext' => 'Plaädamavödem',
+	'replacetext_originaltext' => 'Rigavödem:',
+	'replacetext_replacementtext' => 'Plaädamavödem:',
 	'replacetext_movepages' => 'Plaädön vödemi i pö padatiäds, ven mögos',
 	'replacetext_choosepagesforedit' => 'Välolös {{PLURAL:$3|padi, su kel|padis, su kels}} vilol plaädön vödemi: „$1“ me vödem: „$2“:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Pad|Pads}} fovik no kanons patopätükön:',
