@@ -2187,10 +2187,11 @@ $messages['vo'] = array(
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Liangent
  * @author Onecountry
+ * @author PhiLiP
  */
 $messages['zh-hans'] = array(
 	'replacetext' => '替换文字',
-	'replacetext-desc' => '提供[[Special:ReplaceText|特殊页面]]以利管理员以「查找及替换」的方式更改所有文章页面内的内容。',
+	'replacetext-desc' => '提供[[Special:ReplaceText|特殊页面]]让管理员可以对wiki的所有页面内容执行查找和替换。',
 	'replacetext_docu' => '要替换此维基内所有页面文字的字串，请将“原文字”及“替换文字”分别填入以下两个栏位之中，然后按“继续”。接下来会列出所有含原文字的页面供你选择在哪些页面进行替换。页面改动历史会显示你是进行此次改动的用户。',
 	'replacetext_originaltext' => '原文字',
 	'replacetext_replacementtext' => '替换文字',
