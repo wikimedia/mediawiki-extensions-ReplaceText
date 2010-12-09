@@ -1,15 +1,11 @@
 <?php
 
-if ( !defined( 'MEDIAWIKI' ) ) die();
-
 class ReplaceText extends SpecialPage {
-
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
 		parent::__construct( 'ReplaceText', 'replacetext' );
-		wfLoadExtensionMessages( 'ReplaceText' );
 	}
 
 	function execute( $query ) {
