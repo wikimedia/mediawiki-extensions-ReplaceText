@@ -6,6 +6,7 @@ class ReplaceText extends SpecialPage {
 	 */
 	public function __construct() {
 		parent::__construct( 'ReplaceText', 'replacetext' );
+		wfLoadExtensionMessages( 'ReplaceText' );
 	}
 
 	function execute( $query ) {
