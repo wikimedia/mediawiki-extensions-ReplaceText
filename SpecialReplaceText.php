@@ -5,8 +5,11 @@ class ReplaceText extends SpecialPage {
 	 * Constructor
 	 */
 	public function __construct() {
+		global $wgVersion;
 		parent::__construct( 'ReplaceText', 'replacetext' );
-		wfLoadExtensionMessages( 'ReplaceText' );
+		if ( version_compare( $wgVersion, '1.16', '<' ) ) {
+			wfLoadExtensionMessages( 'ReplaceText' );
+		}
 	}
 
 	function execute( $query ) {
