@@ -2263,6 +2263,7 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
+ * @author Mark85296341
  * @author Roc michael
  * @author Sheepy
  * @author Wrightbus
@@ -2278,7 +2279,7 @@ $messages['zh-hant'] = array(
 	'replacetext_prefixsearch' => '僅當頁面帶有該前綴時替換：',
 	'replacetext_editpages' => '僅在頁面內容當中進行替換',
 	'replacetext_movepages' => '如果可以的話，也替換頁面名稱的字串。',
-	'replacetext_givetarget' => '必須指定查找的字符串',
+	'replacetext_givetarget' => '必須指定尋找的字符串',
 	'replacetext_nonamespace' => '您必須選擇最少一個名字空間。',
 	'replacetext_editormove' => '必須選擇至少一個替換選項。',
 	'replacetext_choosepagesforedit' => '請選擇你想將「$1」替換成「$2」的頁面。',
@@ -2297,7 +2298,7 @@ $messages['zh-hant'] = array(
 	'replacetext_warning' => '有$1個頁面已經包含文字「$2」。如果您執行了替換作業，被替代的文字會跟它們混在一起，變得難以分開原來的文字和被替代的文字。要繼續執行替換作業嗎？',
 	'replacetext_blankwarning' => '因為替換字串是空白的，這將造成難以復原的結果！您要繼續嗎？',
 	'replacetext_continue' => '繼續',
-	'replacetext_cancel' => '（按下瀏覽器上的 "返回" 按鈕可以取消操作）',
+	'replacetext_cancel' => '（按下瀏覽器上的「返回」按鈕可以取消操作）',
 	'replacetext_editsummary' => '替換文字 - 「$1」替換為「$2」',
 	'right-replacetext' => '對整個維基進行文字替換。',
 );
