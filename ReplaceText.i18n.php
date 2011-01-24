@@ -234,6 +234,7 @@ $messages['ba'] = array(
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
+ * @author Zedlik
  */
 $messages['be-tarask'] = array(
 	'replacetext' => 'Замяніць тэкст',
@@ -248,7 +249,7 @@ $messages['be-tarask'] = array(
 	'replacetext_movepages' => 'Замяніць тэкст у назвах старонак, калі гэта магчыма',
 	'replacetext_givetarget' => 'Вам неабходна пазначыць радок для замены.',
 	'replacetext_nonamespace' => 'Вам неабходна выбраць хаця б адну прастору назваў.',
-	'replacetext_editormove' => 'Вам неабходна выбраць хаця б адну з установак пераносу.',
+	'replacetext_editormove' => 'Вам неабходна выбраць хаця б адну з наладаў пераносу.',
 	'replacetext_choosepagesforedit' => 'Калі ласка, выберыце {{PLURAL:$3|старонку, у якой|старонкі, у якіх}} Вы жадаеце замяніць «$1» на «$2»:',
 	'replacetext_choosepagesformove' => 'Замяніць «$1» на «$2» у {{PLURAL:$3|назьве наступнай старонкі|назвах наступных старонак}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Наступная старонка ня можа быць перанесена|Наступныя старонкі ня могуць быць перанесены}}:',
