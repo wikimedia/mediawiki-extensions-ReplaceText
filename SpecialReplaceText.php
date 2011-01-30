@@ -515,10 +515,10 @@ class ReplaceText extends SpecialPage {
 				'rev_text_id = old_id'
 			);
 		} else {
-			$search = $dbr->escapeLike( $search );	 
+			$any = $dbr->anyString();
 			$include_ns = $dbr->makeList( $namespaces );
 			$conds = array(
-				"old_text LIKE '%$search%'",
+				"old_text " . $dbr->buildLike( $any, $search, $any ),
 				"page_namespace IN ($include_ns)",
 				'rev_id = page_latest',
 				'rev_text_id = old_id'
