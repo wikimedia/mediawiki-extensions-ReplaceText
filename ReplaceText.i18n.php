@@ -1274,11 +1274,11 @@ wann en Sigg ömjenannt woode es.',
 	'replacetext_nomove' => 'Mer han kei Sigge jefonge, woh „$1“ em Tittel dren förkütt.',
 	'replacetext_nosuchcategory' => 'Mer han kein Saachjropp met dämm Name „$1“.',
 	'replacetext_return' => 'Jangk retuur op dat Fommulaa.',
-	'replacetext_warning' => '
+	'replacetext_warning' => "'''Opjepaß:'''
 {{PLURAL:$1|Ein Sigg enthält|$1 Sigge enthallde}} ald dat Täxstöck „$2“, wat bemm Tuusche ennjeföch wääde sull.
-Wenn De dat jemaat häs, dokam_mer die Änderong nit esu leich automattesch retuur maache, weil mer die ald do woore,
-un de ennjetuuschte Tästöcker nit ungerscheide kann.
-Wells De trozdämm wigger maache?',
+Wenn De dat jemaat häs, kam_mer die Änderong nit esu leich automattesch retuur maache, weil mer die ald do woore,
+un de ennjetuuschte Täxstöcker nit ungerscheide kann.
+Wells De trozdämm wigger maache?",
 	'replacetext_blankwarning' => 'Dat Täxstöck, wat beim Tuusche ennjfööch weed, is leddich,
 dröm kam_mer die Änderong nit esu leich automattesch retuur maache.
 Wells De trozdämm wigger maache?',
