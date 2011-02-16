@@ -36,7 +36,7 @@ $wgJobClasses['replaceText'] = 'ReplaceTextJob';
 
 // This extension uses its own permission type, 'replacetext'
 $wgAvailableRights[] = 'replacetext';
-$wgGroupPermissions['bureaucrat']['replacetext'] = true;
+$wgGroupPermissions['sysop']['replacetext'] = true;
 
 $wgHooks['AdminLinks'][] = 'rtAddToAdminLinks';
 
