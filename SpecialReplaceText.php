@@ -1,6 +1,7 @@
-<?php
+﻿<?php
 
 class ReplaceText extends SpecialPage {
+
 	/**
 	 * Constructor
 	 */
@@ -42,6 +43,7 @@ class ReplaceText extends SpecialPage {
 
 		$this->target = $wgRequest->getText( 'target' );
 		$this->replacement = $wgRequest->getText( 'replacement' );
+		$this->use_regex = ( $wgRequest->getVal( 'use_regex' ) == 1 );
 		$this->category = $wgRequest->getText( 'category' );
 		$this->prefix = $wgRequest->getText( 'prefix' );
 		$this->edit_pages = ( $wgRequest->getVal( 'edit_pages' ) == 1 );
@@ -60,6 +62,7 @@ class ReplaceText extends SpecialPage {
 			$replacement_params['user_id'] = $wgUser->getId();
 			$replacement_params['target_str'] = $this->target;
 			$replacement_params['replacement_str'] = $this->replacement;
+			$replacement_params['use_regex'] = $this->use_regex;
 			$replacement_params['edit_summary'] = wfMsgForContent( 'replacetext_editsummary', $this->target, $this->replacement );
 			$replacement_params['create_redirect'] = false;
 			$replacement_params['watch_page'] = false;
@@ -85,7 +88,7 @@ class ReplaceText extends SpecialPage {
 			}
 			Job::batchInsert( $jobs );
 
-			$count =  $wgLang->formatNum( count( $jobs ) );
+			$count = $wgLang->formatNum( count( $jobs ) );
 			$wgOut->addWikiMsg( 'replacetext_success', "<tt><nowiki>{$this->target}</nowiki></tt>", "<tt><nowiki>{$this->replacement}</nowiki></tt>", $count );
 
 			// Link back
@@ -93,7 +96,6 @@ class ReplaceText extends SpecialPage {
 			$wgOut->addHTML( $sk->makeKnownLinkObj( $this->getTitle(), wfMsgHtml( 'replacetext_return' ) ) );
 			return;
 		} elseif ( $wgRequest->getCheck( 'target' ) ) { // very long elseif, look for "end elseif"
-
 			// first, check that at least one namespace has been
 			// picked, and that either editing or moving pages
 			// has been selected
@@ -113,20 +115,24 @@ class ReplaceText extends SpecialPage {
 
 			// if user is replacing text within pages...
 			if ( $this->edit_pages ) {
-				$res = $this->doSearchQuery( $this->target, $this->selected_namespaces, $this->category, $this->prefix );
+				$res = $this->doSearchQuery( $this->target, $this->selected_namespaces, $this->category, $this->prefix , $this->use_regex );
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
-					$context = $this->extractContext( $row->old_text, $this->target );
+					$context = $this->extractContext( $row->old_text, $this->target, $this->use_regex );
 					$titles_for_edit[] = array( $title, $context );
 				}
 			}
 			if ( $this->move_pages ) {
-				$res = $this->getMatchingTitles( $this->target, $this->selected_namespaces, $this->category, $this->prefix );
+				$res = $this->getMatchingTitles( $this->target, $this->selected_namespaces, $this->category, $this->prefix, $this->use_regex );
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 					// see if this move can happen
 					$cur_page_name = str_replace( '_', ' ', $row->page_title );
-					$new_page_name = str_replace( $this->target, $this->replacement, $cur_page_name );
+					if ( $this->use_regex ) {
+						$new_page_name = preg_replace( "/".$this->target."/U", $this->replacement, $cur_page_name );
+					} else {
+						$new_page_name = str_replace( $this->target, $this->replacement, $cur_page_name );
+					}
 					$new_title = Title::makeTitleSafe( $row->page_namespace, $new_page_name );
 					$err = $title->isValidMoveOperation( $new_title );
 					if ( $title->userCan( 'move', true ) && !is_array( $err ) ) {
@@ -158,16 +164,16 @@ class ReplaceText extends SpecialPage {
 				//FIXME: raw html message
 				$wgOut->addHTML( '<p>' . $sk->makeKnownLinkObj( $this->getTitle(), wfMsg( 'replacetext_return' ) ) . '</p>' );
 			} else {
-				// show a warning message if the replacement string
-				// is either blank or found elsewhere on the wiki
-				// (since undoing the replacement would be
-				// difficult in either case)
+				// Show a warning message if the replacement
+				// string is either blank or found elsewhere on
+				// the wiki (since undoing the replacement
+				// would be difficult in either case).
 				$warning_msg = null;
 
 				if ( $this->replacement === '' ) {
 					$warning_msg = wfMsg('replacetext_blankwarning');
 				} elseif ( count( $titles_for_edit ) > 0 ) {
-					$res = $this->doSearchQuery( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix );
+					$res = $this->doSearchQuery( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix, $this->use_regex );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
 						$warning_msg = wfMsgExt( 'replacetext_warning', 'parsemag',
@@ -176,7 +182,7 @@ class ReplaceText extends SpecialPage {
 						);
 					}
 				} elseif ( count( $titles_for_move ) > 0 ) {
-					$res = $this->getMatchingTitles( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix );
+					$res = $this->getMatchingTitles( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix, $this->use_regex );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
 						$warning_msg = wfMsgExt( 'replacetext_warning', 'parsemag',
@@ -200,7 +206,7 @@ class ReplaceText extends SpecialPage {
 	}
 
 	function showForm( $warning_msg = null ) {
-		global  $wgOut;
+		global $wgOut;
 		$wgOut->addHTML(
 			Xml::openElement( 'form', array( 'id' => 'powersearch', 'action' => $this->getTitle()->getFullUrl(), 'method' => 'post' ) ) .
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
@@ -223,8 +229,13 @@ class ReplaceText extends SpecialPage {
 		$wgOut->addHTML( '</td><td>' );
 		$wgOut->addHTML( Xml::textarea( 'replacement', $this->replacement, 50, 2, array( 'style' => 'width: auto;' ) ) );
 		$wgOut->addHTML( '</td></tr></table>' );
+		$wgOut->addHTML( Xml::tags( 'p', null,
+				Xml::checkLabel( wfMsg( 'replacetext_useregex' ), 'use_regex', 'use_regex' ) ) . "\n" .
+			Xml::element( 'p', array( 'style' => 'font-style: italic' ),
+				wfMsg( 'replacetext_regexdocu' ) )
+		);
 
-		// the interface is heavily based on the one in Special:Search
+		// The interface is heavily based on the one in Special:Search.
 		$search_label = wfMsg( 'powersearch-ns' );
 		$namespaces = SearchEngine::searchableNamespaces();
 		$tables = $this->namespaceTables( $namespaces );
@@ -233,10 +244,10 @@ class ReplaceText extends SpecialPage {
 			"<fieldset id=\"mw-searchoptions\">\n" . 
 			Xml::tags( 'h4', null, wfMsgExt( 'powersearch-ns', array( 'parseinline' ) ) )
 		);
-		// the ability to select/unselect groups of namespaces in the
+		// The ability to select/unselect groups of namespaces in the
 		// search interface exists only in some skins, like Vector -
 		// check for the presence of the 'powersearch-togglelabel'
-		// message to see if we can use this functionality here
+		// message to see if we can use this functionality here.
 		if ( !wfEmptyMsg( 'powersearch-togglelabel', wfMsg( 'powersearch-togglelabel' ) ) ) {
 			$wgOut->addHTML(
 				Xml::tags(
@@ -262,7 +273,6 @@ class ReplaceText extends SpecialPage {
 						)
 					)
 				)
-			
 			);
 		} // end if
 		$wgOut->addHTML(
@@ -334,7 +344,6 @@ class ReplaceText extends SpecialPage {
 		return $tables;
 	}
 
-
 	function pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles ) {
 		global $wgOut, $wgLang, $wgScript;
 
@@ -345,7 +354,8 @@ class ReplaceText extends SpecialPage {
 			Xml::openElement( 'form', $formOpts ) .
 			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Xml::hidden( 'target', $this->target ) .
-			Xml::hidden( 'replacement', $this->replacement )
+			Xml::hidden( 'replacement', $this->replacement ) .
+			Xml::hidden( 'use_regex', $this->use_regex )
 		);
 
 		$js = file_get_contents( dirname( __FILE__ ) . '/ReplaceText.js' );
@@ -389,7 +399,8 @@ class ReplaceText extends SpecialPage {
 			Xml::hidden( 'replace', 1 )
 		);
 
-		// only show "invert selections" link if there are more than five pages
+		// Only show "invert selections" link if there are more than
+		// five pages.
 		if ( count( $titles_for_edit ) + count( $titles_for_move ) > 5 ) {
 			$buttonOpts = array(
 				'type' => 'button',
@@ -415,18 +426,24 @@ class ReplaceText extends SpecialPage {
 		}
 	}
 
-
 	/**
 	 * Extract context and highlights search text
+	 *
+	 * TODO: The bolding needs to be fixed for regular expressions.
 	 */
-	function extractContext( $text, $target ) {
+	function extractContext( $text, $target, $use_regex = false ) {
 		global $wgLang;
+
 		$cw = $this->user->getOption( 'contextchars', 40 );
 
 		// Get all indexes
-		$targetq = preg_quote( $target, '/' );
-		preg_match_all( "/$targetq/", $text, $matches, PREG_OFFSET_CAPTURE );
-
+		if ( $use_regex ) {
+			preg_match_all( "/$target/", $text, $matches, PREG_OFFSET_CAPTURE );
+		} else {
+			$targetq = preg_quote( $target, '/' );
+			preg_match_all( "/$targetq/", $text, $matches, PREG_OFFSET_CAPTURE );
+		}
+ 
 		$poss = array();
 		foreach ( $matches[0] as $_ ) {
 			$poss[] = $_[1];
@@ -454,11 +471,16 @@ class ReplaceText extends SpecialPage {
 			list( $index, $len, ) = $_;
 			$context .= self::convertWhiteSpaceToHTML( $wgLang->truncate( substr( $text, 0, $index ), - $cw ) );
 			$snippet = self::convertWhiteSpaceToHTML( substr( $text, $index, $len ) );
-			$targetq = preg_quote( self::convertWhiteSpaceToHTML( $target ), '/' );
-			$context .= preg_replace( "/$targetq/i", '<span class="searchmatch">\0</span>', $snippet );
+			if ( $use_regex ) {
+				$targetStr =  "/$target/U";
+			} else {
+				$targetq = preg_quote( self::convertWhiteSpaceToHTML( $target ), '/' );
+				$targetStr = "/$targetq/i";
+			}
+			$context .= preg_replace( $targetStr, '<span class="searchmatch">\0</span>', $snippet );
+
 			$context .= self::convertWhiteSpaceToHTML( $wgLang->truncate( substr( $text, $index + $len ), $cw ) );
 		}
-
 		return $context;
 	}
 
@@ -471,27 +493,28 @@ class ReplaceText extends SpecialPage {
 		return $msg;
 	}
 
-	function getMatchingTitles( $str, $namespaces, $category, $prefix ) {
+	function getMatchingTitles( $str, $namespaces, $category, $prefix, $use_regex = false ) {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$str = Title::newFromText( $str )->getDbKey();
 
 		$tables = array( 'page' );
 		$vars = array( 'page_title', 'page_namespace' );
-		// anyString() method was added in MW 1.16
-		if ( method_exists( $dbr, 'anyString' ) ) {
-			$any = $dbr->anyString();
-			$conds = array(
-				'page_title ' . $dbr->buildLike( $any, $str, $any ),
-				"page_namespace IN ({$dbr->makeList( $namespaces )})",
-			);
+		if ( $use_regex ) {
+			$comparisonCond = "page_title REGEXP '$str'";
 		} else {
-			$include_ns = $dbr->makeList( $namespaces );
-			$conds = array(
-				"page_title LIKE '%$str%'",
-				"page_namespace IN ($include_ns)",
-			);
+			// anyString() method was added in MW 1.16
+			if ( method_exists( $dbr, 'anyString' ) ) {
+				$any = $dbr->anyString();
+				$comparisonCond = 'page_title ' . $dbr->buildLike( $any, $str, $any );
+			} else {
+				$comparisonCond = "page_title LIKE '%$str%'";
+			}
 		}
+		$conds = array(
+			$comparisonCond,
+			"page_namespace IN ({$dbr->makeList( $namespaces )})",
+		);
 
 		$this->categoryCondition( $category, $tables, $conds );
 		$this->prefixCondition( $prefix, $conds );
@@ -500,30 +523,27 @@ class ReplaceText extends SpecialPage {
 		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
 	}
 
-	function doSearchQuery( $search, $namespaces, $category, $prefix ) {
+	function doSearchQuery( $search, $namespaces, $category, $prefix, $use_regex = false ) {
 		$dbr = wfGetDB( DB_SLAVE );
-
 		$tables = array( 'page', 'revision', 'text' );
 		$vars = array( 'page_id', 'page_namespace', 'page_title', 'old_text' );
-		// anyString() method was added in MW 1.16
-		if ( method_exists( $dbr, 'anyString' ) ) {
-			$any = $dbr->anyString();
-			$conds = array(
-				'old_text ' . $dbr->buildLike( $any, $search, $any ),
-				"page_namespace IN ({$dbr->makeList( $namespaces )})",
-				'rev_id = page_latest',
-				'rev_text_id = old_id'
-			);
+		if ( $use_regex ) {
+			$comparisonCond = "old_text REGEXP '$search'";
 		} else {
-			$any = $dbr->anyString();
-			$include_ns = $dbr->makeList( $namespaces );
-			$conds = array(
-				"old_text " . $dbr->buildLike( $any, $search, $any ),
-				"page_namespace IN ($include_ns)",
-				'rev_id = page_latest',
-				'rev_text_id = old_id'
-			);
+			// anyString() method was added in MW 1.16
+			if ( method_exists( $dbr, 'anyString' ) ) {
+				$any = $dbr->anyString();
+				$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $any );
+			} else {
+				$comparisonCond = "old_text LIKE '%$search%'";
+			}
 		}
+		$conds = array(
+			$comparisonCond,
+			"page_namespace IN ({$dbr->makeList( $namespaces )})",
+			'rev_id = page_latest',
+			'rev_text_id = old_id'
+		);
 
 		$this->categoryCondition( $category, $tables, $conds );
 		$this->prefixCondition( $prefix, $conds );
