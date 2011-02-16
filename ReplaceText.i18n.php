@@ -20,7 +20,7 @@ You will then be shown a list of pages that contain the search text, and you can
 Your name will appear in page histories as the user responsible for any changes.',
 	'replacetext_originaltext' => 'Original text:',
 	'replacetext_replacementtext' => 'Replacement text:',
-	'replacetext_useregex' => 'Use regular expressions and wildcards',
+	'replacetext_useregex' => 'Use regular expressions',
 	'replacetext_regexdocu' => '(Example: values of "a(.*)c" for "Original text" and "ac$1" for "Replacement text" would replace "abc" with "acb".)',
 	'replacetext_optionalfilters' => 'Optional filters:',
 	'replacetext_categorysearch' => 'Replace only in category:',
