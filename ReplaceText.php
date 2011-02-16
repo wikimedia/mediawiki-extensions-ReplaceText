@@ -23,7 +23,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'Replace Text',
-	'version' => '0.8.1',
+	'version' => '0.9',
 	'author' => array( 'Yaron Koren', 'Niklas Laxström' ),
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'descriptionmsg'  => 'replacetext-desc',
@@ -45,7 +45,7 @@ $wgSpecialPageGroups['ReplaceText'] = 'wiki';
 $wgAutoloadClasses['ReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = $rtgIP . 'ReplaceTextJob.php';
 
-// This function should really go into a "ReplaceText_body.php" file...
+// This function should really go into a "ReplaceText_body.php" file.
 function rtAddToAdminLinks( &$admin_links_tree ) {
 	$general_section = $admin_links_tree->getSection( wfMsg( 'adminlinks_general' ) );
         $extensions_row = $general_section->getRow( 'extensions' );
