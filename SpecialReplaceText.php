@@ -513,7 +513,7 @@ class ReplaceText extends SpecialPage {
 		}
 		$conds = array(
 			$comparisonCond,
-			"page_namespace IN ({$dbr->makeList( $namespaces )})",
+			'page_namespace' => $namespaces,
 		);
 
 		$this->categoryCondition( $category, $tables, $conds );
@@ -540,7 +540,7 @@ class ReplaceText extends SpecialPage {
 		}
 		$conds = array(
 			$comparisonCond,
-			"page_namespace IN ({$dbr->makeList( $namespaces )})",
+			'page_namespace' => $namespaces,
 			'rev_id = page_latest',
 			'rev_text_id = old_id'
 		);
