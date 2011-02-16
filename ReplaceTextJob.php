@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  * Background job to replace text in a given page
