@@ -759,6 +759,7 @@ $messages['frp'] = array(
 );
 
 /** Galician (Galego)
+ * @author Hamilton Abreu
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -775,7 +776,7 @@ $messages['gl'] = array(
 	'replacetext_givetarget' => 'Debe especificar a cadea que vai ser substituída.',
 	'replacetext_nonamespace' => 'Debe escoller, polo menos, un espazo de nomes.',
 	'replacetext_editormove' => 'Debe seleccionar, polo menos, unha das opcións de substitución.',
-	'replacetext_choosepagesforedit' => 'Por favor, seleccione {{PLURAL:$3|a páxina na|as páxinas nas}} que quere substituír "$1" por "$2":',
+	'replacetext_choosepagesforedit' => '!!Por favor, seleccione {{PLURAL:$3|a páxina na|as páxinas nas}} que quere substituír "$1" por "$2":',
 	'replacetext_choosepagesformove' => 'Substituír "$1" por "$2" {{PLURAL:$3|no título da seguinte páxina|nos títulos das seguintes páxinas}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte páxina|As seguintes páxinas}} non {{PLURAL:$1|pode|poden}} ser {{PLURAL:$1|movida|movidas}}:',
 	'replacetext_formovedpages' => 'Para as páxinas movidas:',
@@ -789,7 +790,7 @@ $messages['gl'] = array(
 	'replacetext_nosuchcategory' => 'Non existe ningunha categoría co nome "$1".',
 	'replacetext_return' => 'Volver ao formulario.',
 	'replacetext_warning' => '\'\'\'Aviso:\'\'\' hai {{PLURAL:$1|unha páxina|$1 páxinas}} que xa {{PLURAL:$1|contén|conteñen}} a cadea de substitución "$2". Se fai esta substitución non poderá distinguir as súas modificacións destas cadeas.',
-	'replacetext_blankwarning' => 'Debido a que a cadea de substitución está baleira, esta operación non será reversible; quere continuar?',
+	'replacetext_blankwarning' => '!!Debido a que a cadea de substitución está baleira, esta operación non será reversible; quere continuar?',
 	'replacetext_continue' => 'Continuar',
 	'replacetext_cancel' => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
 	'replacetext_editsummary' => 'Substitución de texto - de "$1" a "$2"',
@@ -1006,6 +1007,8 @@ $messages['ia'] = array(
 	'replacetext_docu' => "Pro reimplaciar un catena de characteres per un altere trans tote le paginas regular in iste wiki, entra le duo pecias de texto hic e clicca super 'Continuar'. Postea se monstrara un lista de paginas que contine le texto cercate, e tu potera seliger in quales tu vole reimplaciar lo. Tu nomine figurara in le historias del paginas como le usator responsabile de omne modificationes.",
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Nove texto:',
+	'replacetext_useregex' => 'Usar expressiones regular',
+	'replacetext_regexdocu' => '(Exemplo: valores de "a(.*)c" pro "Texto original" e "ac$1" pro "Texto de substitution" reimplaciarea "abc" per "acb".)',
 	'replacetext_optionalfilters' => 'Filtros optional:',
 	'replacetext_categorysearch' => 'Reimplaciar solmente in le categoria:',
 	'replacetext_prefixsearch' => 'Reimplaciar solmente in paginas con le prefixo:',
@@ -1747,21 +1750,24 @@ $messages['ps'] = array(
  */
 $messages['pt'] = array(
 	'replacetext' => 'Substituir texto',
-	'replacetext-desc' => "[[Special:ReplaceText|Página especial]] que permite que administradores façam substituições globais de texto ''(string find-and-replace)'' em todas as páginas de conteúdo de uma wiki",
-	'replacetext_docu' => 'Para substituir um texto por outro texto em todas as páginas desta wiki, introduza os dois textos e clique o botão "Substituir". Serão listadas as páginas que contêm o texto a substituir e poderá seleccionar em quais deseja proceder à substituição.
+	'replacetext-desc' => "[[Special:ReplaceText|Página especial]] que permite que os administradores façam substituições globais de texto ''(string find-and-replace)'' em todas as páginas de conteúdo de uma wiki",
+	'replacetext_docu' => 'Para substituir um texto por outro texto em todas as páginas desta wiki, introduza os dois textos e clique o botão "Prosseguir".
+Serão listadas as páginas que contêm o texto a substituir e poderá seleccionar em quais deseja proceder à substituição.
 O seu nome aparecerá no histórico dessas páginas como o utilizador responsável pelas alterações.',
 	'replacetext_originaltext' => 'Texto original:',
-	'replacetext_replacementtext' => 'Novo texto:',
+	'replacetext_replacementtext' => 'Texto de substituição:',
+	'replacetext_useregex' => 'Usar expressões regulares',
+	'replacetext_regexdocu' => '(Exemplo: os valores "a(.*)c" no "Texto original" e "ac$1" no "Texto de substituição" substituiriam "abc" por "acb")',
 	'replacetext_optionalfilters' => 'Filtros opcionais:',
 	'replacetext_categorysearch' => 'Substituir só na categoria:',
 	'replacetext_prefixsearch' => 'Substituir só em páginas com o prefixo:',
 	'replacetext_editpages' => 'Substituir texto no conteúdo da página',
-	'replacetext_movepages' => 'Substituir texto em títulos de páginas, quando possível',
+	'replacetext_movepages' => 'Substituir texto nos títulos de páginas, quando possível',
 	'replacetext_givetarget' => 'Deve especificar o texto que será substituído.',
 	'replacetext_nonamespace' => 'Deverá seleccionar pelo menos um espaço nominal.',
 	'replacetext_editormove' => 'Deve seleccionar pelo menos uma das opções de substituição.',
-	'replacetext_choosepagesforedit' => "Por favor, seleccione {{PLURAL:$3|a página na qual|as páginas nas quais}} deseja substituir '$1' por '$2':",
-	'replacetext_choosepagesformove' => 'Substituir "$1" por "$2" {{PLURAL:$3|no nome da seguinte página|nos nomes das seguintes páginas}}:',
+	'replacetext_choosepagesforedit' => 'Substituir "$1" por "$2" no texto {{PLURAL:$3|da seguinte página|das seguintes páginas}}:',
+	'replacetext_choosepagesformove' => 'Substituir "$1" por "$2" {{PLURAL:$3|no título da seguinte página|nos títulos das seguintes páginas}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte página não pode ser movida|As seguintes páginas não podem ser movidas}}:',
 	'replacetext_formovedpages' => 'Para páginas movidas:',
 	'replacetext_savemovedpages' => 'Gravar os títulos anteriores como redireccionamentos para os novos títulos',
@@ -1769,15 +1775,15 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_invertselections' => 'Inverter selecções',
 	'replacetext_replace' => 'Substituir',
 	'replacetext_success' => "'$1' será substituído por '$2' em $3 {{PLURAL:$3|página|páginas}}.",
-	'replacetext_noreplacement' => 'Não foram encontradas páginas contendo a "string" \'$1\'.',
-	'replacetext_nomove' => "Não foram encontradas páginas cujo título contenha '$1'",
+	'replacetext_noreplacement' => 'Não foram encontradas páginas que contenham o texto "$1".',
+	'replacetext_nomove' => 'Não foram encontradas páginas cujo título contenha "$1".',
 	'replacetext_nosuchcategory' => 'Não existe nenhuma categoria com o nome "$1".',
 	'replacetext_return' => 'Voltar ao formulário.',
-	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} o texto de substituição, \"\$2\". Se fizer esta substituição não poderá desfazer a operação com uma simples substituição em ordem inversa.",
-	'replacetext_blankwarning' => 'Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
+	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} o texto de substituição, \"\$2\". Se fizer esta substituição não poderá distingui-las das suas substituições, nem desfazer a operação com uma simples substituição em ordem inversa.",
+	'replacetext_blankwarning' => "'''Aviso:''' Como o texto de substituição foi deixado em branco, esta operação não será reversível.",
 	'replacetext_continue' => 'Prosseguir',
-	'replacetext_cancel' => '(Pressione o botão "Voltar" do seu browser para cancelar a operação.)',
-	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
+	'replacetext_cancel' => '(Clique o botão "Voltar" do seu browser para cancelar a operação.)',
+	'replacetext_editsummary' => 'Substituição de texto - de "$1" para "$2"',
 	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
 );
 
@@ -1786,6 +1792,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
  * @author Eduardo.mps
  * @author Enqd
  * @author Giro720
+ * @author Hamilton Abreu
  * @author Luckas Blade
  */
 $messages['pt-br'] = array(
@@ -1802,7 +1809,7 @@ $messages['pt-br'] = array(
 	'replacetext_givetarget' => 'Você deve especificar um texto a ser substituido.',
 	'replacetext_nonamespace' => 'Você deve selecionar pelo menos um domínio.',
 	'replacetext_editormove' => 'Você deve selecionar pelo menos uma das opções de substituição',
-	'replacetext_choosepagesforedit' => "Por favor, seleccione {{PLURAL:$3|a página na qual|as páginas nas quais}} deseja substituir '$1' por '$2':",
+	'replacetext_choosepagesforedit' => "!!Por favor, seleccione {{PLURAL:$3|a página na qual|as páginas nas quais}} deseja substituir '$1' por '$2':",
 	'replacetext_choosepagesformove' => 'Substituir "$1" por "$2" {{PLURAL:$3|no nome da seguinte página|nos nomes das seguintes páginas}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte página não pode ser movida|As seguintes páginas não podem ser movidas}}:',
 	'replacetext_formovedpages' => 'Para páginas movidas:',
@@ -1816,7 +1823,7 @@ $messages['pt-br'] = array(
 	'replacetext_nosuchcategory' => 'Não existe categoria com o nome "$1".',
 	'replacetext_return' => 'Voltar ao formulário.',
 	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} o texto de substituição, \"\$2\". Se fizer esta substituição não poderá desfazer a operação com uma simples substituição em ordem inversa.",
-	'replacetext_blankwarning' => 'Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
+	'replacetext_blankwarning' => '!!Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
 	'replacetext_continue' => 'Prosseguir',
 	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
@@ -1863,6 +1870,8 @@ $messages['ru'] = array(
 	'replacetext_docu' => 'Для того, чтобы заменить один текст на другой на всех страницах вики, вам необходимо ввести здесь желаемый текст и нажать на кнопку «Продолжить». После этого вам будет предложен список всех страниц, содержащих заменяемый текст, и вы сможете выбрать из них те, в которых нужно произвести замены. В качестве лица, отвечающего за внесённые изменения, в истории правок страниц, в которых произойдёт замена текста, будете указаны вы.',
 	'replacetext_originaltext' => 'Исходный текст:',
 	'replacetext_replacementtext' => 'Текст для замены:',
+	'replacetext_useregex' => 'Использовать регулярные выражения',
+	'replacetext_regexdocu' => '(Например, выражения «a(.*)c» в поле «Исходный текст» и «ac$1» в поле «Текст для замены» приведут к замене «abc» на «acb».)',
 	'replacetext_optionalfilters' => 'Необязательные фильтры:',
 	'replacetext_categorysearch' => 'Заменить только в категории:',
 	'replacetext_prefixsearch' => 'Заменить только в страницах с приставкой:',
