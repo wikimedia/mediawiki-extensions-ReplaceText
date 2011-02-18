@@ -1682,6 +1682,8 @@ At sarà alora mostrà na lista ëd pàgine ch'a conten-o ël test d'arserca, e 
 Tò nòm a aparirà ant le stòrie dle pàgine com l'utent responsàbil për minca cangiament.",
 	'replacetext_originaltext' => 'Test original:',
 	'replacetext_replacementtext' => 'Test ëd rimpiassadura:',
+	'replacetext_useregex' => 'Dòvra espression regolar',
+	'replacetext_regexdocu' => '(Esempi: valor ëd "a(.*)c" për "Test original" e "ac$1" për "Rimpiassé test" a dovrìa rimpiassé "abc" with "acb".)',
 	'replacetext_optionalfilters' => 'Filtr opsionaj:',
 	'replacetext_categorysearch' => 'Rimpiassa mach an categorìa:',
 	'replacetext_prefixsearch' => 'Rimpiassa mach an pàgine con ël prefiss:',
