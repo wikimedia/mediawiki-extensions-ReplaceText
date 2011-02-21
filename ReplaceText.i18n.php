@@ -236,6 +236,7 @@ $messages['ba'] = array(
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
+ * @author Wizardist
  * @author Zedlik
  */
 $messages['be-tarask'] = array(
@@ -244,6 +245,7 @@ $messages['be-tarask'] = array(
 	'replacetext_docu' => "Каб замяніць адзін радок на іншы ва ўсіх звычайных старонках {{GRAMMAR:родны|{{SITENAME}}}}, увядзіце два радкі тут, а потым націсьніце 'Працягваць'. Будзе паказаны сьпіс старонак, якія ўтрымліваюць тэкст, які Вы шукалі, і Вы зможаце выбраць старонкі, дзе Вы жадаеце зрабіць замену. Ваша імя будзе запісанае ў гісторыю старонкі, таму што ўдзельнікі адказныя за ўсе зробленыя зьмены.",
 	'replacetext_originaltext' => 'Арыгінальны тэкст:',
 	'replacetext_replacementtext' => 'Тэкст на замену:',
+	'replacetext_useregex' => 'Выкарыстоўваць рэгулярныя выразы',
 	'replacetext_optionalfilters' => 'Неабавязковыя фільтры:',
 	'replacetext_categorysearch' => 'Замяніць толькі ў катэгорыі:',
 	'replacetext_prefixsearch' => 'Замяніць толькі ў старонках, назвы якіх пачынаюцца з:',
@@ -1093,6 +1095,7 @@ $messages['ig'] = array(
 );
 
 /** Italian (Italiano)
+ * @author Beta16
  * @author Civvì
  * @author Darth Kule
  * @author Marco 27
@@ -1103,6 +1106,7 @@ $messages['it'] = array(
 	'replacetext_docu' => "Per sostituire una stringa di testo con un'altra su tutte le pagine del sito, inserire qui due pezzi di testo e poi premere 'Continua'. Verrà quindi mostrato un elenco delle pagine che contengono il testo cercato, e sarà possibile scegliere quelle in cui si desidera sostituirlo. Il proprio nome verrà visualizzato nella pagina della cronologia come l'utente responsabile delle eventuali modifiche.",
 	'replacetext_originaltext' => 'Testo originale:',
 	'replacetext_replacementtext' => 'Testo sostituito:',
+	'replacetext_useregex' => 'Utilizza le espressioni regolari',
 	'replacetext_optionalfilters' => 'Filtri opzionali:',
 	'replacetext_categorysearch' => 'Sostituire solo nella categoria:',
 	'replacetext_prefixsearch' => 'Sostituire solo nelle pagine con il prefisso:',
