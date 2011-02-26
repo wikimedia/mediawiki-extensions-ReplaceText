@@ -246,6 +246,7 @@ $messages['be-tarask'] = array(
 	'replacetext_originaltext' => 'Арыгінальны тэкст:',
 	'replacetext_replacementtext' => 'Тэкст на замену:',
 	'replacetext_useregex' => 'Выкарыстоўваць рэгулярныя выразы',
+	'replacetext_regexdocu' => '(Напрыклад, выразы «a(.*)c» ў полі «Арыгінальны тэкст» і «ac$1» у полі «Тэкст на замену» прывядуць да замены «abc» на «acb».)',
 	'replacetext_optionalfilters' => 'Неабавязковыя фільтры:',
 	'replacetext_categorysearch' => 'Замяніць толькі ў катэгорыі:',
 	'replacetext_prefixsearch' => 'Замяніць толькі ў старонках, назвы якіх пачынаюцца з:',
@@ -828,6 +829,8 @@ $messages['gsw'] = array(
 	'replacetext_docu' => 'Go ne Täxt dur e andere Täxt uf allene Inhaltssyte z ersetze, gib di bede Täxtteil doo yy un druck uf Ersetze-Schaltflächi. Dir wird derno ne Lischt vu dr Syte zeigt, wu s dr gsuecht Täxt din het, un Du chasch die uuswehle, wu Du dr Täxt witt din ersetze. Dyy Benutzername wird in d Versionsgschicht ufgnuh',
 	'replacetext_originaltext' => 'Originaltäxt:',
 	'replacetext_replacementtext' => 'Neje Täxt:',
+	'replacetext_useregex' => 'Platzhalter un reguläri Uusdruck verwände',
+	'replacetext_regexdocu' => '(Byschpel: D Wärt fir „a(.*)c“ fir „Originaltext“ un „ac$1“ fir „Neje Text“ deete zue dr Ersetzig „abc“ dur „acb“ fiere.)',
 	'replacetext_optionalfilters' => 'Optionali Filter:',
 	'replacetext_categorysearch' => 'Nume in däre Kategorie ersetze:',
 	'replacetext_prefixsearch' => 'Nume in Syte ersetze mit däm Präfix:',
@@ -859,16 +862,19 @@ E Trännig vu dr Ersetzige mit dr Täxtteil, wu s scho het, sich nit megli. Mech
 );
 
 /** Hebrew (עברית)
+ * @author Amire80
  * @author Rotemliss
  * @author YaronSh
  */
 $messages['he'] = array(
 	'replacetext' => 'החלפת טקסט',
 	'replacetext-desc' => 'אספקת [[Special:ReplaceText|דף מיוחד]] כדי לאפשר למפעילים לבצע חיפוש והחלפה של מחרוזות בכל דפי התוכן בוויקי',
-	'replacetext_docu' => "כדי להחליף מחרוזת טקסט אחת באחרת בכל הדפים הרגילים בוויקי זה, הזינו את הטקסט בשני חלקים ולחצו על 'המשך'. אז תוצג בפניכם רשימת דפים המכילים את הטקסט אחריו חיפשתם, ותוכלו לבחור את הדפים בהם תרצו להחליף את הטקסט האמור. שמכם יופיע בהיסטוריית הגרסאות של כל דף בתור המשתמש האחראי לשינויים שבוצעו.",
+	'replacetext_docu' => "כדי להחליף מחרוזת טקסט אחת באחרת בכל הדפים הרגילים בוויקי זה, הזינו את הטקסט בשני חלקים ולחצו על 'המשך'. אז תוצג בפניכם רשימת דפים המכילים את הטקסט שחיפשתם, ותוכלו לבחור את הדפים שבהם תרצו להחליף את הטקסט האמור. שמכם יופיע בהיסטוריית הגרסאות של כל דף בתור המשתמש האחראי לשינויים שנעשו.",
 	'replacetext_originaltext' => 'הטקסט המקורי:',
 	'replacetext_replacementtext' => 'טקסט ההחלפה:',
-	'replacetext_optionalfilters' => 'מסננים אופציונאליים:',
+	'replacetext_useregex' => 'להשתמש בביטויים רגולריים',
+	'replacetext_regexdocu' => '(דוגמה: ערכים של <span dir="ltr">"a(.*)c"</span> ל"טקסט המקורי" ו־<span dir="ltr">"ac$1"</span> ל"טקסט ההחלפה" יחליף "abc" ב־"acb".)',
+	'replacetext_optionalfilters' => 'מסננים אופציונליים:',
 	'replacetext_categorysearch' => 'החלפה רק בקטגוריה:',
 	'replacetext_prefixsearch' => 'החלפה רק בדפים בעלי הקידומת:',
 	'replacetext_editpages' => 'החלפת טקסט בתוכן הדפים',
@@ -893,7 +899,7 @@ $messages['he'] = array(
 	'replacetext_blankwarning' => 'כיוון שמחרוזת ההחלפה ריקה, לא ניתן יהיה לבטל פעולה זו; להמשיך?',
 	'replacetext_continue' => 'המשך',
 	'replacetext_cancel' => '(לחצו על הלחצן "חזרה" בדפדפן שלכם כדי לבטל את הפעולה.)',
-	'replacetext_editsummary' => "החלפת טקסט - $1 ל־'$2'",
+	'replacetext_editsummary' => 'החלפת טקסט – "$1" ב־"$2"',
 	'right-replacetext' => 'ביצוע החלפת מחרוזות באתר הוויקי כולו',
 );
 
