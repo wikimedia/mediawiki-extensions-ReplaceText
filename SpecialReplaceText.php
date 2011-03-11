@@ -508,19 +508,17 @@ class ReplaceText extends SpecialPage {
 	function getMatchingTitles( $str, $namespaces, $category, $prefix, $use_regex = false ) {
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$str = Title::newFromText( $str )->getDbKey();
-
 		$tables = array( 'page' );
 		$vars = array( 'page_title', 'page_namespace' );
 		if ( $use_regex ) {
-			$comparisonCond = "page_title REGEXP '$str'";
+			$comparisonCond = 'page_title REGEXP ' . $dbr->addQuotes( $str );
 		} else {
 			// anyString() method was added in MW 1.16
 			if ( method_exists( $dbr, 'anyString' ) ) {
 				$any = $dbr->anyString();
 				$comparisonCond = 'page_title ' . $dbr->buildLike( $any, $str, $any );
 			} else {
-				$comparisonCond = "page_title LIKE '%$str%'";
+				$comparisonCond = 'page_title LIKE ' . $dbr->addQuotes( "%$str%" );
 			}
 		}
 		$conds = array(
@@ -540,14 +538,14 @@ class ReplaceText extends SpecialPage {
 		$tables = array( 'page', 'revision', 'text' );
 		$vars = array( 'page_id', 'page_namespace', 'page_title', 'old_text' );
 		if ( $use_regex ) {
-			$comparisonCond = "old_text REGEXP '$search'";
+			$comparisonCond = 'old_text REGEXP '  . $dbr->addQuotes( $search );
 		} else {
 			// anyString() method was added in MW 1.16
 			if ( method_exists( $dbr, 'anyString' ) ) {
 				$any = $dbr->anyString();
 				$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $any );
 			} else {
-				$comparisonCond = "old_text LIKE '%$search%'";
+				$comparisonCond = 'old_text LIKE ' . $dbr->addQuotes( "%$search%" );
 			}
 		}
 		$conds = array(
