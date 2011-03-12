@@ -23,6 +23,7 @@ class ReplaceText extends SpecialPage {
 
 		$this->user = $wgUser;
 		$this->setHeaders();
+		$wgOut->addModuleStyles( 'mediawiki.special' );
 		$this->doSpecialReplaceText();
 	}
 
