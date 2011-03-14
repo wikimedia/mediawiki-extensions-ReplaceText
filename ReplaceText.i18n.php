@@ -1652,6 +1652,7 @@ $messages['pdc'] = array(
  * @author Leinad
  * @author Maikking
  * @author Matma Rex
+ * @author Odder
  * @author Sp5uhe
  * @author ToSter
  */
@@ -1661,6 +1662,8 @@ $messages['pl'] = array(
 	'replacetext_docu' => 'Możesz zastąpić jeden ciąg znaków innym, w treści wszystkich stron tej wiki. W tym celu wprowadź dwa fragmenty tekstu i naciśnij „Kontynuuj”. Zostanie pokazana lista stron, które zawierają wyszukiwany tekst. Będziesz mógł wybrać te strony, na których chcesz ten tekst zamienić na nowy. W historii zmian stron, do opisu autora edycji, zostanie użyta Twoja nazwa użytkownika.',
 	'replacetext_originaltext' => 'Wyszukiwany tekst',
 	'replacetext_replacementtext' => 'Zamień na',
+	'replacetext_useregex' => 'Użyj wyrażeń regularnych',
+	'replacetext_regexdocu' => '(Przykładowo wstawiając „a(.*)c“ w polu „{{int:replacetext_originaltext}}“ oraz „ac$1“ w polu „{{int:replacetext_replacementtext}}“ spowodujesz zastąpienie „abc“ przez „acb“.)',
 	'replacetext_optionalfilters' => 'Dodatkowe filtry:',
 	'replacetext_categorysearch' => 'Zamień tylko w kategorii',
 	'replacetext_prefixsearch' => 'Zamień tylko na stronach z prefiksem',
