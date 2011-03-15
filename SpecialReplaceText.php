@@ -511,6 +511,8 @@ class ReplaceText extends SpecialPage {
 
 		$tables = array( 'page' );
 		$vars = array( 'page_title', 'page_namespace' );
+
+		$str = str_replace( ' ', '_', $str );
 		if ( $use_regex ) {
 			$comparisonCond = 'page_title REGEXP ' . $dbr->addQuotes( $str );
 		} else {
