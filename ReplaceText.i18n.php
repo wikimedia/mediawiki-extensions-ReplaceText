@@ -638,22 +638,45 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Ebraminio
  * @author Huji
+ * @author Wayiran
  */
 $messages['fa'] = array(
 	'replacetext' => 'جایگزینی متن',
 	'replacetext-desc' => 'یک [[Special:ReplaceText|صفحهٔ ویژه]] اضافه می‌کند که به مدیران اجازه می‌دهد یک جستجو و جایگزینی سراسری در تمام محتوای ویکی انجام دهند',
 	'replacetext_docu' => 'برای جایگزین کردن یک رشتهٔ متنی با رشته دیگر در کل داده‌های این ویکی، شما می‌توانید دو متن را در زیر وارد کرده و دکمهٔ «جایگزین کن» را بزنید. اسم شما در تاریخچهٔ صفحه‌ها به عنوان کاربری که مسئول این تغییرها است ثبت می‌شود.',
-	'replacetext_originaltext' => 'متن اصلی',
-	'replacetext_replacementtext' => 'متن جایگزین',
+	'replacetext_originaltext' => 'متن اصلی:',
+	'replacetext_replacementtext' => 'متن جایگزین:',
+	'replacetext_useregex' => 'استفاده از عبارت باقاعده',
+	'replacetext_regexdocu' => '(مثال: مقادیر «a(.*)c» برای «متن اصلی» و «ac$1» برای «متن جایگزین»، «abc» را با «acb» جایگزین خواهد کرد.)',
+	'replacetext_optionalfilters' => 'پالایه‌های اختیاری:',
+	'replacetext_categorysearch' => 'جایگزینی فقط در ردهٔ:',
+	'replacetext_prefixsearch' => 'جایگزینی فقط در صفحه‌هایی با پیشوند:',
+	'replacetext_editpages' => 'جایگزینی متن در محتویات صفحه',
+	'replacetext_movepages' => 'جایگزینی متن و در عنوان صفحه‌ها، وقتی که امکان‌پذیر است',
+	'replacetext_givetarget' => 'شما می‌بایست متنی را که باید جایگزین شود مشخص نمایید.',
+	'replacetext_nonamespace' => 'شما می‌بایست حداقل یک فضای نام را انتخاب کنید.',
+	'replacetext_editormove' => 'شما می‌بایست حداقل یکی از گزینه‌های جایگزین کردن را انتخاب کنید.',
+	'replacetext_choosepagesforedit' => 'جایگزینی «$1» با «$2» در متن این {{PLURAL:$3|صفحه|صفحه‌ها}}:',
+	'replacetext_choosepagesformove' => 'جایگزینی «$1» با «$2» در {{PLURAL:$3|عنوان این صفحه|عنوان این صفحه‌ها}}',
+	'replacetext_cannotmove' => 'این {{PLURAL:$1|صفحه|صفحه‌ها}} نمی‌توانند منتقل شوند:',
+	'replacetext_formovedpages' => 'برای صفحه‌های منتقل شده:',
+	'replacetext_savemovedpages' => 'ذخیره‌سازی عنوان‌های قدیم به عنوان تغییر مسیرهایی به عنوان‌های جدید',
+	'replacetext_watchmovedpages' => '‌پی‌گیری این صفحه‌ها',
+	'replacetext_invertselections' => 'وارانه کردن انتخاب‌ها',
 	'replacetext_replace' => 'جایگزین کن',
-	'replacetext_success' => "در $3 صفحه '$1' را با '$2' جایگزین کرد.",
+	'replacetext_success' => 'در $3 {{PLURAL:$3|صفحه|صفحه}} «$1» با «$2» جایگزین می‌شود.',
 	'replacetext_noreplacement' => "جایگزینی انجام نشد؛ صفحه‌ای که حاوی '$1' باشد پیدا نشد.",
-	'replacetext_warning' => "در حال حاضر $1 حاوی متن جایگزین، '$2'، هستند؛ اگر شما این جایگزینی را انجام دهید قادر نخواهید بود که مواردی که جایگزین کردید را از مواردی که از قبل وجود داشته تفکیک کنید. آیا ادامه می‌دهید؟",
+	'replacetext_nomove' => 'صفحه‌ای پیدا نشد که عنوان آن «$1» را داشته باشد.',
+	'replacetext_nosuchcategory' => 'رده‌ای با نام «$1» وجود ندارد.',
+	'replacetext_return' => 'بازگشت به فرم.',
+	'replacetext_warning' => "'''هشدار:''' {{PLURAL:$1|در حال حاضر $1 صفحه است که حاوی|در حال حاضر $1 صفحه وجود دارد که حاوی}} رشتهٔ جایگزینی «$2» است. اگر شما این جایگزینی را انجام دهید، قادر نخواهید بود تا جایگزینی‌هایتان را از این رشته‌ها جدا کنید.",
 	'replacetext_blankwarning' => 'چون متن جایگزین خالی است، این عمل قابل بازگشت نخواهد بود؛ ادامه می‌دهید؟',
 	'replacetext_continue' => 'ادامه',
-	'replacetext_cancel' => '(دکمهٔ «بازگشت» را بزنید تا عمل را لغو کنید.)',
+	'replacetext_cancel' => '(دکمهٔ «بازگشت» را در مرورگرتان کلیک کنید تا عملیات لغو شود.)',
 	'replacetext_editsummary' => "جایگزینی متن - '$1' به '$2'",
+	'right-replacetext' => 'انجام جایگزین کردن رشته در تمام ویکی',
 );
 
 /** Finnish (Suomi)
