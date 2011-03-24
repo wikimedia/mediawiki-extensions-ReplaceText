@@ -485,7 +485,9 @@ class ReplaceText extends SpecialPage {
 		$context = '';
 		foreach ( $cuts as $_ ) {
 			list( $index, $len, ) = $_;
-			$context .= self::convertWhiteSpaceToHTML( $wgLang->truncate( substr( $text, 0, $index ), - $cw ) );
+			$context .= self::convertWhiteSpaceToHTML(
+				$wgLang->truncate( substr( $text, 0, $index ), - $cw, '...', false  )
+			);
 			$snippet = self::convertWhiteSpaceToHTML( substr( $text, $index, $len ) );
 			if ( $use_regex ) {
 				$targetStr =  "/$target/U";
@@ -495,7 +497,9 @@ class ReplaceText extends SpecialPage {
 			}
 			$context .= preg_replace( $targetStr, '<span class="searchmatch">\0</span>', $snippet );
 
-			$context .= self::convertWhiteSpaceToHTML( $wgLang->truncate( substr( $text, $index + $len ), $cw ) );
+			$context .= self::convertWhiteSpaceToHTML(
+				$wgLang->truncate( substr( $text, $index + $len ), $cw, '...', false )
+			);
 		}
 		return $context;
 	}
