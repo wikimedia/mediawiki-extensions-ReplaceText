@@ -1989,6 +1989,7 @@ $messages['sk'] = array(
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+ * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
  * @author Михајло Анђелковић
@@ -2017,6 +2018,7 @@ $messages['sr-ec'] = array(
 	'replacetext_return' => 'Врати се на форму.',
 	'replacetext_continue' => 'Настави',
 	'replacetext_editsummary' => "Замена текста - '$1' у '$2'",
+	'right-replacetext' => 'замењивање ниски на целом викију',
 );
 
 /** Serbian Latin ekavian (‪Srpski (latinica)‬)
