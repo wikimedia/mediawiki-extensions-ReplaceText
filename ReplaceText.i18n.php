@@ -204,6 +204,8 @@ $messages['ba'] = array(
 Һеҙҙең исемегеҙ биттәрҙең үҙгәртеү тарихтарында үҙгәртеүҙәргә яуаплы ҡатнашыусы булараҡ күрһәтеләсәк.',
 	'replacetext_originaltext' => 'Сығанаҡ текст:',
 	'replacetext_replacementtext' => 'Алмаш текст:',
+	'replacetext_useregex' => 'Регуляр аңлатмаларҙы ҡулланырға',
+	'replacetext_regexdocu' => '(Миҫал: "Сығанаҡ текст" өсөн "a(.*)c" аңлатмаһы һәм "Алмаш текст" өсөн "ac$1" "abc" тексын "acb" тип алмаштырасаҡ.)',
 	'replacetext_optionalfilters' => 'Мөһим булмаған һөҙгөстәр:',
 	'replacetext_categorysearch' => 'Был категорияла ғына алмаштырырға:',
 	'replacetext_prefixsearch' => 'Ошо хәрефтәр менән башланған биттәрҙә генә алмаштырырға:',
