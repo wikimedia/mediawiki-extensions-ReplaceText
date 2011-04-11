@@ -390,10 +390,12 @@ Da li želite nastaviti?',
 );
 
 /** Catalan (Català)
+ * @author SMP
  * @author Solde
  */
 $messages['ca'] = array(
 	'replacetext_continue' => 'Continua',
+	'right-replacetext' => 'Fer substitucions de cadena a tot el wiki',
 );
 
 /** Chechen (Нохчийн)
