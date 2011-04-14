@@ -42,11 +42,11 @@ class ReplaceTextJob extends Job {
 			$create_redirect = $this->params['create_redirect'];
 			$this->title->moveTo( $new_title, true, $reason, $create_redirect );
 			if ( $this->params['watch_page'] ) {
-				Action::factory( 'watch', new Article( $new_title ) )->execute();
+				Action::factory( 'watch', new Article( $new_title, 0 ) )->execute();
 			}
 			$wgUser = $actual_user;
 		} else {
-			$article = new Article( $this->title );
+			$article = new Article( $this->title, 0 );
 			if ( !$article ) {
 				$this->error = 'replaceText: Article not found "' . $this->title->getPrefixedDBkey() . '"';
 				wfProfileOut( __METHOD__ );
