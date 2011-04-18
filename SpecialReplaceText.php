@@ -397,7 +397,7 @@ class ReplaceText extends SpecialPage {
 			foreach ( $titles_for_move as $title ) {
 				$wgOut->addHTML(
 					Xml::check( 'move-' . $title->getArticleID(), true ) .
-					$skin->makeLinkObj( $title, $title->prefix( $title->getText() ) ) . "<br />\n"
+					$skin->makeLinkObj( $title, $title->getPrefixedText() ) . "<br />\n"
 				);
 			}
 			$wgOut->addHTML( '<br />' );
