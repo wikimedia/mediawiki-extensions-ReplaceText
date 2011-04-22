@@ -697,6 +697,7 @@ $messages['fi'] = array(
 	'replacetext_docu' => "Korvataksesi yhden merkkijonon toisella kaikissa tämän wikin tavallisissa sivuissa, syötä molemmat kaksi tekstinpätkää tänne ja sitten napsauta kohtaa 'Jatka'. Tämän jälkeen sinulle näytetään luettelo sivuista, jotka sisältävät haetun tekstin, ja voit valita ne, joihin haluat korvata sen. Oma nimesi näkyy sivun historiassa käyttäjänä joka on vastuussa kaikista tehdyistä muutoksista.",
 	'replacetext_originaltext' => 'Alkuperäinen teksti',
 	'replacetext_replacementtext' => 'Korvaava teksti',
+	'replacetext_useregex' => 'Käytä säännöllisiä lausekkeita',
 	'replacetext_optionalfilters' => 'Lisäehtoja:',
 	'replacetext_categorysearch' => 'Muokkaa ainoastaan sivuja, jotka ovat luokassa:',
 	'replacetext_prefixsearch' => 'Korvaa ainoastaan sivuilla, joissa on etuliite:',
