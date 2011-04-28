@@ -318,6 +318,8 @@ Diskouezet e vo deoc'h ur roll pajennoù m'emañ an destenn klasket enno ha gall
 War wel e teuio hoc'h anv war roll istor pep pajenn evit ma vo gouezet gant piv eo bet graet ar cheñchamant.",
 	'replacetext_originaltext' => 'Testenn orin :',
 	'replacetext_replacementtext' => "Testenn erlec'hiañ :",
+	'replacetext_useregex' => 'Ober gant jedadennoù reoliek',
+	'replacetext_regexdocu' => '(Da skouer : Talvoudenn "a(.*)c" evit "Testenn orin" ha "ac$1" evit "Testenn erlec\'hiañ" a vo erlec\'ho "abc" gant "acb".)',
 	'replacetext_optionalfilters' => 'Siloù diret :',
 	'replacetext_categorysearch' => "Erlec'hiañ er rummad hepken :",
 	'replacetext_prefixsearch' => "Erlec'hiañ hepken er bajennoù gant ar rakger :",
