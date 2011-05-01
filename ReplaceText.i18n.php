@@ -300,9 +300,15 @@ $messages['bg'] = array(
 
 /** Bengali (বাংলা)
  * @author Bellayet
+ * @author Wikitanvir
  */
 $messages['bn'] = array(
 	'replacetext' => 'লেখা প্রতিস্থাপন',
+	'replacetext_originaltext' => 'মূল লেখা:',
+	'replacetext_replacementtext' => 'প্রতিস্থাপিত লেখা:',
+	'replacetext_useregex' => 'রেগুলার এক্সপ্রেশন ব্যবহার করো',
+	'replacetext_optionalfilters' => 'ঐচ্ছিক ফিল্টার',
+	'replacetext_categorysearch' => 'শুধুমাত্র বিষয়শ্রেণীতেই প্রতিস্থাপন করো:',
 );
 
 /** Breton (Brezhoneg)
