@@ -46,7 +46,6 @@ Your name will appear in page histories as the user responsible for any changes.
 	'replacetext_warning' => "'''Warning:''' There {{PLURAL:$1|is $1 page that already contains|are $1 pages that already contain}} the replacement string, \"$2\". If you make this replacement you will not be able to separate your replacements from these strings.",
 	'replacetext_blankwarning' => "'''Warning:''' Because the replacement string is blank, this operation will not be reversible.",
 	'replacetext_continue' => 'Continue',
-	'replacetext_cancel' => '(Click the "Back" button in your browser to cancel the operation.)',
 	// content messages
 	'replacetext_editsummary' => 'Text replace - "$1" to "$2"',
 	'right-replacetext' => 'Do string replacements on the entire wiki',
@@ -107,7 +106,6 @@ $messages['af'] = array(
 	'replacetext_blankwarning' => 'Omdat u teks met niks vervang kan hierdie aksie nie ongedaan gemaak word nie.
 Wil u voortgaan?',
 	'replacetext_continue' => 'Gaan voort',
-	'replacetext_cancel' => '(Kliek op die "Terug"-knoppie in u webblaaier om hierdie operasie te kanselleer.)',
 	'replacetext_editsummary' => "Teks vervang - '$1' na '$2'",
 	'right-replacetext' => 'Doen vervangings oor die hele wiki',
 );
@@ -148,7 +146,6 @@ $messages['ar'] = array(
 	'replacetext_warning' => "'''تحذير''': توجد {{PLURAL:$1||صفحة واحدة تحتوي|صفحتان تحتويان|$1 صفحات تحتوي|$1 صفحة تحتوي}} بالفعل على سلسلة الاستبدال '$2'. إذا قمت بهذا الاستبدال فلن تصبح قادرًا على فصل استبدالاتك عن هذه السلاسل.",
 	'replacetext_blankwarning' => 'لأن سلسلة الاستبدال فارغة، هذه العملية لن تكون عكسية؛ استمر؟',
 	'replacetext_continue' => 'استمر',
-	'replacetext_cancel' => '(اضغط زر "رجوع" في متصفحك لإلغاء العملية.)',
 	'replacetext_editsummary' => "استبدال النص - '$1' ب'$2'",
 	'right-replacetext' => 'القيام باستبدال للسلاسل في الويكي بأكمله',
 );
@@ -188,7 +185,6 @@ $messages['arz'] = array(
 استمرار مع الاستبدال؟",
 	'replacetext_blankwarning' => 'لأن سلسلة الاستبدال فارغة، هذه العملية لن تكون عكسية؛ استمر؟',
 	'replacetext_continue' => 'استمر',
-	'replacetext_cancel' => '(اضغط زر "رجوع" علشان إلغاء العملية.)',
 	'replacetext_editsummary' => "استبدال النص - '$1' ب'$2'",
 	'right-replacetext' => 'القيام باستبدال للسلاسل فى الويكى بأكمله',
 );
@@ -230,7 +226,6 @@ $messages['ba'] = array(
 	'replacetext_warning' => "'''Иғтибар:''' Алмаш \"\$2\" тексын үҙ эсенә алған {{PLURAL:\$1|\$1 бит}} бар инде. Әгәр һеҙ алмаштырыуҙы башҡарһағыҙ, алмаштырылған текстарҙы булғандарынан айыра алмаясаҡһығыҙ.",
 	'replacetext_blankwarning' => "'''Иғтибар:'''Алмаш текст буш булғанға күрә, был ғәмәлде кире алыу мөмкин түгел.",
 	'replacetext_continue' => 'Дауам итергә',
-	'replacetext_cancel' => '(Ғәмәлде кире алыу өсөн, браузерығыҙҙың "Артҡа" төмәһенә баҫығыҙ.)',
 	'replacetext_editsummary' => '"$1" тексын "$2" менән алмаштырыу',
 	'right-replacetext' => 'Бөтә викила тексты алмаштырыу',
 );
@@ -275,7 +270,6 @@ $messages['be-tarask'] = array(
 	'replacetext_blankwarning' => 'У выніку таго, што радок, на які павінна адбыцца замена, пусты, апэрацыя ня будзе выкананая.
 Вы жадаеце працягваць?',
 	'replacetext_continue' => 'Працягваць',
-	'replacetext_cancel' => '(Націсьніце кнопку «Вярнуцца» у браўзэры, каб скасаваць апэрацыю.)',
 	'replacetext_editsummary' => 'Замена тэксту: «$1» на «$2»',
 	'right-replacetext' => 'замена тэксту ва ўсёй вікі',
 );
@@ -294,7 +288,6 @@ $messages['bg'] = array(
 	'replacetext_noreplacement' => "Не бяха открити страници, съдържащи низа '$1'.",
 	'replacetext_blankwarning' => 'Тъй като низът за заместване е празен, процесът на заместване е необратим; продължаване?',
 	'replacetext_continue' => 'Продължаване',
-	'replacetext_cancel' => '(натиснете бутона „Back“ за прекратяване на действието.)',
 	'replacetext_editsummary' => "Заместване на текст - '$1' на '$2'",
 );
 
@@ -350,7 +343,6 @@ War wel e teuio hoc'h anv war roll istor pep pajenn evit ma vo gouezet gant piv 
 	'replacetext_warning' => "'''Diwallit :''' {{PLURAL:\$1| \$1 bajenn enni| \$1 pajenn enno}} ar steudad arouezennoù erlec'hiañ zo dija, \"\$2\". Ma kasit ar cheñchamant da benn ne vo ket posupl diforc'hañ ar cheñchamantoù degaset ganeoc'h diouzh an neudennadoù-se ken.",
 	'replacetext_blankwarning' => "'''Diwallit : ''' Dre m'eo goullo ar steudad erlec'hiañ, ne vo ket tu da zizober an urzh-mañ.",
 	'replacetext_continue' => "Kenderc'hel",
-	'replacetext_cancel' => '(Evit nulañ an ober klikit war ar bouton "Disto" en ho merdeer.)',
 	'replacetext_editsummary' => 'Erlec\'hiañ an destenn - "$1" dre "$2"',
 	'right-replacetext' => "Krouiñ erlec'hiadurioù testenn er wiki a-bezh",
 );
@@ -392,7 +384,6 @@ Ako želite napraviti ovu zamjenu nećete biti u mogućnosti da razdvojite Vaše
 	'replacetext_blankwarning' => 'Pošto je zamjenski tekst prazan, ovu operaciju neće biti moguće vratiti.
 Da li želite nastaviti?',
 	'replacetext_continue' => 'Nastavi',
-	'replacetext_cancel' => '(Kliknite na dugme "Nazad" u Vašem pregledniku da bi zaustavili operaciju.)',
 	'replacetext_editsummary' => "Zamjena teksta - '$1' u '$2'",
 	'right-replacetext' => 'Pravljenje zamjene teksta na cijelom wikiju',
 );
@@ -427,7 +418,6 @@ Vaše jméno se objeví v historiích stránek jako osoba zodpovědná za přís
 	'replacetext_replacementtext' => 'Nahradit textem:',
 	'replacetext_replace' => 'Nahradit',
 	'replacetext_continue' => 'Pokračovat',
-	'replacetext_cancel' => '(Operaci zrušíte kliknutím na tlačítko „Zpět“ ve vašem prohlížeči.)',
 	'replacetext_editsummary' => 'Nahrazení textu „$1“ textem „$2“',
 	'right-replacetext' => 'Hledání a nahrazování textu na celé wiki',
 );
@@ -473,7 +463,6 @@ $messages['de'] = array(
 Sofern du nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführst, ist eine spätere Unterscheidung zwischen den nunmehr zu ersetzenden und den bereits vorhandenen Textteilen nicht mehr möglich.",
 	'replacetext_blankwarning' => "'''Warnung:''' Da der zu ersetzende Textteil leer ist, kann die Operation nicht rückgängig gemacht werden. Möchtest du dennoch fortfahren?",
 	'replacetext_continue' => 'Fortfahren',
-	'replacetext_cancel' => '(Klicke auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
 	'replacetext_editsummary' => 'Textersetzung - „$1“ durch „$2“',
 	'right-replacetext' => 'Textersetzung für das gesamte Wiki durchführen',
 );
@@ -490,7 +479,6 @@ $messages['de-formal'] = array(
 	'replacetext_warning' => "'''Warnung:''' $1 {{PLURAL:$1|Seite enthält|Seiten enthalten}} bereits den zu ersetzenden Textteil „$2“.
 Sofern Sie nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführen, ist eine spätere Unterscheidung zwischen den nunmehr zu ersetzenden und den bereits vorhandenen Textteilen nicht mehr möglich.",
 	'replacetext_blankwarning' => "'''Warnung:''' Da der zu ersetzende Textteil leer ist, kann die Operation nicht rückgängig gemacht werden. Möchten Sie dennoch fortfahren?",
-	'replacetext_cancel' => '(Klicken Sie auf die „Zurück“-Schaltfläche, um die Operation abzubrechen.)',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -529,7 +517,6 @@ $messages['dsb'] = array(
 Jolic wuwjedujoš toś tu wuměnu, njamóžoš rozeznaś swóje wuměny wót toś togo teksta.',
 	'replacetext_blankwarning' => 'Dokulaž njejo tekst za wuměnjenje, toś ta operacija njedajo se anulěrowaś. Coš weto pókšacowaś?',
 	'replacetext_continue' => 'Dalej',
-	'replacetext_cancel' => '(Klikni na tłocašk "Slědk" w swójom wobglědowaku, aby pśetergnuł operaciju.)',
 	'replacetext_editsummary' => "Wuměna teksta - '$1' do '$2'",
 	'right-replacetext' => 'Tekst na cełem wikiju wuměniś',
 );
@@ -626,7 +613,6 @@ Si realizas esta sustituación, no podrás separar tus sustituciones de estas ca
 	'replacetext_blankwarning' => 'Como la cadena de reemplazo está vacía, esta operación no podrá revertirse.
 ¿ Desea continuar ?',
 	'replacetext_continue' => 'Continuar',
-	'replacetext_cancel' => '(Haga click en el botón "retroceder" en su navegador para cancelar la operación.)',
 	'replacetext_editsummary' => "Texto reemplaza - '$1' a '$2'",
 	'right-replacetext' => 'Reemplaza cadenas de caracteres en toda la wiki',
 );
@@ -645,7 +631,6 @@ $messages['eu'] = array(
 	'replacetext_replace' => 'Ordeztu',
 	'replacetext_noreplacement' => "Ez da aurkitu '$1' karaktere-katea duen orrialderik.",
 	'replacetext_continue' => 'Jarraitu',
-	'replacetext_cancel' => '(Zure nabigatzailearen atzerako botoia sakatu ekintza deuseztatzeko.)',
 	'replacetext_editsummary' => "Testu aldaketa - '$1'(e)tik '$2'(e)ra.",
 );
 
@@ -686,7 +671,6 @@ $messages['fa'] = array(
 	'replacetext_warning' => "'''هشدار:''' در حال حاضر $1 صفحه وجود دارد که حاوی رشتهٔ جایگزینی «$2» {{PLURAL:$1|است|هستند}}. اگر شما این جایگزینی را انجام دهید، قادر نخواهید بود تا جایگزینی‌هایتان را از این رشته‌ها جدا کنید.",
 	'replacetext_blankwarning' => 'چون متن جایگزین خالی است، این عمل قابل بازگشت نخواهد بود؛ ادامه می‌دهید؟',
 	'replacetext_continue' => 'ادامه',
-	'replacetext_cancel' => '(دکمهٔ «بازگشت» را در مرورگرتان کلیک کنید تا عملیات لغو شود.)',
 	'replacetext_editsummary' => "جایگزینی متن - '$1' به '$2'",
 	'right-replacetext' => 'انجام جایگزین کردن رشته در تمام ویکی',
 );
@@ -779,7 +763,6 @@ $messages['fr'] = array(
 Si vous effectuez cette substitution, vous ne pourrez pas distinguer vos modifications de ces chaînes.',
 	'replacetext_blankwarning' => 'Parce que la chaîne de remplacement est vide, cette opération sera irréversible ; voulez-vous continuer ?',
 	'replacetext_continue' => 'Continuer',
-	'replacetext_cancel' => '(Cliquez sur le bouton  « Retour » ou « Reculer » de votre navigateur pour annuler l’opération.)',
 	'replacetext_editsummary' => 'Remplacement du texte — « $1 » par « $2 »',
 	'right-replacetext' => 'Faire des remplacements de texte dans tout le wiki',
 );
@@ -837,7 +820,6 @@ $messages['gl'] = array(
 	'replacetext_warning' => '\'\'\'Aviso:\'\'\' hai {{PLURAL:$1|unha páxina|$1 páxinas}} que xa {{PLURAL:$1|contén|conteñen}} a cadea de substitución "$2". Se fai esta substitución non poderá distinguir as súas modificacións destas cadeas.',
 	'replacetext_blankwarning' => "'''Atención:''' Debido a que a cadea de substitución está baleira, esta operación non será reversible.",
 	'replacetext_continue' => 'Continuar',
-	'replacetext_cancel' => '(Prema no botón "Atrás" do seu navegador para cancelar a operación.)',
 	'replacetext_editsummary' => 'Substitución de texto - de "$1" a "$2"',
 	'right-replacetext' => 'Facer substitucións de cordas no wiki enteiro',
 );
@@ -893,7 +875,6 @@ $messages['gsw'] = array(
 E Trännig vu dr Ersetzige mit dr Täxtteil, wu s scho het, sich nit megli. Mechtsch einewäg wytermache?",
 	'replacetext_blankwarning' => 'Dr Täxtteil, wu soll ersetzt wären, isch läär. D Operation cha nit ruckgängig gmacht wäre, einewäg wytermache?',
 	'replacetext_continue' => 'Wytermache',
-	'replacetext_cancel' => '(Druck uf d „Zrugg“-Schaltflächi go d Operation abbräche.)',
 	'replacetext_editsummary' => 'Täxtersetzig - „$1“ dur „$2“',
 	'right-replacetext' => 'Mach e Täxtersetzig fir s gsamt Wiki',
 );
@@ -935,7 +916,6 @@ $messages['he'] = array(
 	'replacetext_warning' => '\'\'\'אזהרה\'\'\': {{PLURAL:$1|ישנו עמוד אחד שכבר מכיל|ישנם $1 עמודים שכבר מכילים}} את מחרוזת ההחלפה, "$2". אם החלפה זו תבוצע לא תהיה באפשרותך להפריד את החלפותיך מ{{PLURAL:$1|מחרוזת זו|מחרוזות אלו}}.',
 	'replacetext_blankwarning' => 'כיוון שמחרוזת ההחלפה ריקה, לא ניתן יהיה לבטל פעולה זו; להמשיך?',
 	'replacetext_continue' => 'המשך',
-	'replacetext_cancel' => '(לחצו על הלחצן "חזרה" בדפדפן שלכם כדי לבטל את הפעולה.)',
 	'replacetext_editsummary' => 'החלפת טקסט – "$1" ב־"$2"',
 	'right-replacetext' => 'ביצוע החלפת מחרוזות באתר הוויקי כולו',
 );
@@ -963,7 +943,6 @@ $messages['hr'] = array(
 Ako napravite ovu zamjenu nećete moći odvojiti svoju zamjenu od ovog teksta. Nastaviti sa zamjenom?",
 	'replacetext_blankwarning' => 'Zato što je zamjenski tekst prazan, ovaj postupak se neće moći vratiti; nastaviti?',
 	'replacetext_continue' => 'Dalje',
-	'replacetext_cancel' => '(Pritisnite tipku "Nazad" u svom pregledniku za zaustavljanje postupka.)',
 	'replacetext_editsummary' => "Zamjena teksta - '$1' u '$2'",
 );
 
@@ -1002,7 +981,6 @@ $messages['hsb'] = array(
 	'replacetext_warning' => "'''Warnowanje:''' {{PLURAL:$1|Je hižo $1 strona, kotraž wobsahuje|Stej hižo $1 stronje, kotejž wobsahujetej|Su hižo $1 strony, kotrež wobsahuja|Je hižo $1 stronow, kotrež wobsahuje}} narunanski tekst, '$2'. Jeli tute narunanje činiš, njemóžeš swoje narunanja wot tutoho teksta rozdźělić.",
 	'replacetext_blankwarning' => 'Narunanski dźěl je prózdny, tohodla operacija njeda so cofnyć; njedźiwajo na to pokročować?',
 	'replacetext_continue' => 'Dale',
-	'replacetext_cancel' => '(Klikń na tłóčatko "Wróćo" w swojim wobhladowaku, zo by operaciju přetrohnył.)',
 	'replacetext_editsummary' => "Tekstowe narunanje - '$1' do '$2'",
 	'right-replacetext' => 'Tekstowe narunanja na cyłym wikiju činić',
 );
@@ -1043,7 +1021,6 @@ A neved szerepelni fog a laptörténetekben, mint aki a változtatásokat végez
 	'replacetext_blankwarning' => 'Mivel az új szöveg üres, ez a művelet nem lesz visszavonható.
 Biztosan folytatni szeretnéd?',
 	'replacetext_continue' => 'Folytatás',
-	'replacetext_cancel' => '(Kattints a böngésződ „vissza” gombjára a művelet megszakításához)',
 	'replacetext_editsummary' => 'Szöveg cseréje – „$1” → „$2”',
 	'right-replacetext' => 'szövegcserék végrehajtása az egész wikin',
 );
@@ -1084,7 +1061,6 @@ $messages['ia'] = array(
 Si tu face iste reimplaciamento, tu non potera distinguer inter tu reimplaciamentos e iste texto ja existente.",
 	'replacetext_blankwarning' => 'Post que le nove texto es vacue, iste operation non essera reversibile; continuar?',
 	'replacetext_continue' => 'Continuar',
-	'replacetext_cancel' => '(Clicca le button "Retro" in tu navigator pro cancellar le operation.)',
 	'replacetext_editsummary' => "Reimplaciamento de texto - '$1' per '$2'",
 	'right-replacetext' => 'Facer reimplaciamentos de texto in le wiki integre',
 );
@@ -1128,7 +1104,6 @@ $messages['id'] = array(
 	'replacetext_blankwarning' => 'Karena untaian pengganti kosong, operasi ini tidak dapat dikembalikan.
 Apakah ingin dilanjutkan?',
 	'replacetext_continue' => 'Lanjutkan',
-	'replacetext_cancel' => '(Klik tombol "Back" pada penjelajah Anda untuk membatalkan operasi.)',
 	'replacetext_editsummary' => 'Penggantian teks - "$1" menjadi "$2"',
 	'right-replacetext' => 'Melakukan penggantian seluruh teks kalimat di wiki ini',
 );
@@ -1178,7 +1153,6 @@ $messages['it'] = array(
 	'replacetext_warning' => '{{PLURAL:$1|C\'è già $1 pagina che contiene|Ci sono già $1 pagine che contengono}} il testo di sostituzione, "$2". Se si effettua questa sostituzione non si sarà in grado di separare le sostituzioni da questi testi. Continuare con la sostituzione?',
 	'replacetext_blankwarning' => "Poiché il testo di sostituzione è vuoto, l'operazione non sarà reversibile. Si desidera continuare?",
 	'replacetext_continue' => 'Continua',
-	'replacetext_cancel' => '(Fare clic sul pulsante "Indietro" nel proprio browser per annullare l\'operazione.)',
 	'replacetext_editsummary' => "Sostituzione testo - '$1' con '$2'",
 	'right-replacetext' => 'Esegue sostituzioni di testo in tutto il sito',
 );
@@ -1218,7 +1192,6 @@ $messages['ja'] = array(
 	'replacetext_warning' => "'''警告:''' 置換後文字列「$2」を既に含んだページが $1{{PLURAL:$1|ページ}}あります。この置換を実行すると、これらの文字列と実際に置換された箇所を区別できなくなります。",
 	'replacetext_blankwarning' => '置換後文字列が空であるため、この操作は実行後の取り消しができなくなります。続行しますか？',
 	'replacetext_continue' => '続行',
-	'replacetext_cancel' => '(操作を中止するにはブラウザの「戻る」ボタンをクリックしてください)',
 	'replacetext_editsummary' => '文字列「$1」を「$2」に置換',
 	'right-replacetext' => 'ウィキ全体で文字列の置換を実行する',
 );
@@ -1298,7 +1271,6 @@ $messages['ko'] = array(
 	'replacetext_blankwarning' => '바꿀 문자열이 비어 있으므로 이 동작은 되돌릴 수 없습니다.
 계속하시겠습니까?',
 	'replacetext_continue' => '계속',
-	'replacetext_cancel' => '(이 동작을 취소하려면 웹 브라우저의 ‘뒤로’ 버튼을 눌러 주세요.)',
 	'replacetext_editsummary' => '찾아 바꾸기 – “$1” 문자열을 “$2” 문자열로',
 	'right-replacetext' => '찾아 바꾸기를 위키 전체에 수행합니다.',
 );
@@ -1350,7 +1322,6 @@ Wells De trozdämm wigger maache?",
 dröm kam_mer die Änderong nit esu leich automattesch retuur maache.
 Wells De trozdämm wigger maache?',
 	'replacetext_continue' => 'Wiggermaache',
-	'replacetext_cancel' => '(Kleck dä „Zerök“- ov „Retuur“-Knopp, öm dä Förjang afzebreche)',
 	'replacetext_editsummary' => 'Täx-Shtöcker tuusche — vun „$1“ noh „$2“',
 	'right-replacetext' => 'Donn Täx-Shtöcksher em janze Wiki ußtuusche',
 );
@@ -1392,7 +1363,6 @@ $messages['lb'] = array(
 Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säiten op deenen Dir Ännerunge gemaach hutt vun de Säiten z'ënnerscheeden wou elo d'Zeecherei '$2' schonn dran ass.",
 	'replacetext_blankwarning' => 'Well den Textdeel mat dem de gesichten Text ersat gi soll eidel ass, kann dës Aktioun net réckgängeg gemaach ginn; wëllt Dir awer weiderfueren?',
 	'replacetext_continue' => 'Weiderfueren',
-	'replacetext_cancel' => '(Klickt op de Knäppchen "Zréck" an Ärem Browser fir d\'Operatioun ofzebriechen)',
 	'replacetext_editsummary' => "Text ersat - '$1' duerch '$2'",
 	'right-replacetext' => 'Ersetze vun enger Rei vun Textzeechen op der ganzer Wiki',
 );
@@ -1451,7 +1421,6 @@ $messages['mk'] = array(
 	'replacetext_blankwarning' => 'Бидејќи новата низа е празна, оваа операција не може да се врати.
 Дали сакате да продолжите?',
 	'replacetext_continue' => 'Продолжи',
-	'replacetext_cancel' => '(Кликнете на копчето „Назад“ во вашиот прелистувач за да ја откажете операцијата.)',
 	'replacetext_editsummary' => 'Замена на текст - „$1“ со „$2“',
 	'right-replacetext' => 'Вршење замена на низи во целото вики',
 );
@@ -1486,7 +1455,6 @@ $messages['ml'] = array(
 	'replacetext_nomove' => 'ഒരു താളിന്റെയും തലക്കെട്ടിൽ "$1" എന്നു കണ്ടെത്താനായില്ല.',
 	'replacetext_return' => 'ഫോമിലേക്ക് തിരിച്ചു പോവുക',
 	'replacetext_continue' => 'തുടരുക',
-	'replacetext_cancel' => '(ഈ പ്രവർത്തനം നിരാകരിക്കുവാൻ ബ്രൗസറിന്റെ "ബാക്ക്" ബട്ടൺ ഞെക്കുക)',
 	'replacetext_editsummary' => 'എഴുത്ത് മാറ്റിച്ചേർക്കൽ - "$1" എന്നത് "$2" എന്നതുകൊണ്ട്',
 	'right-replacetext' => 'വിക്കിയിൽ മുഴുവനും പദം മാറ്റിച്ചേർക്കുക',
 );
@@ -1507,7 +1475,6 @@ $messages['mr'] = array(
 	'replacetext_warning' => "अगोदरच $1 पानांवर '$2' हा बदलण्यासाठीचा मजकूर आहे; जर तुम्ही पुनर्लेखन केले तर तुम्ही केलेले बदल तुम्ही या पानांपासून वेगळे करू शकणार नाही. पुनर्लेखन करायचे का?",
 	'replacetext_blankwarning' => 'बदलण्यासाठीचा मजकूर रिकामा असल्यामुळे ही क्रिया उलटविता येणार नाही; पुढे जायचे का?',
 	'replacetext_continue' => 'पुनर्लेखन करा',
-	'replacetext_cancel' => '(क्रिया रद्द करण्यासाठी "Back" कळीवर टिचकी द्या.)',
 	'replacetext_editsummary' => "मजकूर पुनर्लेखन - '$1' ते '$2'",
 );
 
@@ -1550,7 +1517,6 @@ Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke v
 Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.',
 	'replacetext_blankwarning' => 'Omdat u tekst vervangt door niets, kan deze handeling niet ongedaan gemaakt worden. Wilt u doorgaan?',
 	'replacetext_continue' => 'Doorgaan',
-	'replacetext_cancel' => '(Klik op de knop "Terug" in uw webbrowser om deze handeling te annuleren)',
 	'replacetext_editsummary' => "Tekst vervangen - '$1' door '$2'",
 	'right-replacetext' => 'Tekst vervangen in de hele wiki',
 );
@@ -1592,7 +1558,6 @@ Halda fram med utbytinga?',
 	'replacetext_blankwarning' => 'Av di teksten som skal bli sett inn er tom, vil ikkje denne handlinga kunna bli køyrt omvendt.
 Vil du halda fram?',
 	'replacetext_continue' => 'Hald fram',
-	'replacetext_cancel' => '(Trykk på «Attende»-knappen i nettlesaren din for å avbryta handlinga.)',
 	'replacetext_editsummary' => 'Utbyting av tekst - «$1» til «$2»',
 	'right-replacetext' => 'Gjennomfør utbyting av tekst på heile wikien',
 );
@@ -1633,7 +1598,6 @@ $messages['no'] = array(
 	'replacetext_warning' => "'''Advarsel:''' Det er {{PLURAL:$1|én side|$1 sider}} som allerede har erstatningsteksten «$2». Om du gjør denne erstatningen vil du ikke kunne skille ut dine erstatninger fra denne teksten.",
 	'replacetext_blankwarning' => 'Fordi erstatningsteksten er tom vil denne handlingen ikke kunne angres automatisk; fortsette?',
 	'replacetext_continue' => 'Fortsett',
-	'replacetext_cancel' => '(Trykk på «Tilbake»-knappen for å avbryte handlingen.)',
 	'replacetext_editsummary' => 'Teksterstatting – «$1» til «$2»',
 	'right-replacetext' => 'Gjennomfør teksterstatninger på hele wikien',
 );
@@ -1672,7 +1636,6 @@ $messages['oc'] = array(
 S'efectuatz aquesta substitucion, poiretz pas separar vòstres cambiaments a partir d'aquestas cadenas.",
 	'replacetext_blankwarning' => 'Perque la cadena de remplaçament es voida, aquesta operacion serà irreversibla ; volètz contunhar ?',
 	'replacetext_continue' => 'Contunhar',
-	'replacetext_cancel' => "(Clicatz sul boton  « Retorn » de vòstre navigador per anullar l'operacion.)",
 	'replacetext_editsummary' => 'Remplaçament del tèxte — « $1 » per « $2 »',
 	'right-replacetext' => 'Far de remplaçaments de tèxte dins tot lo wiki',
 );
@@ -1726,7 +1689,6 @@ $messages['pl'] = array(
 	'replacetext_warning' => "'''Uwaga''' {{PLURAL:$1|Jest $1 strona zawierająca|Są $1 strony zawierające|Jest $1 stron zawierających}} tekst „$2”, którym chcesz zastępować. Jeśli wykonasz zastępowanie nie będzie możliwe odseparowanie Twoich zastąpień od tych tekstów.",
 	'replacetext_blankwarning' => 'Ponieważ ciąg znaków, którym ma być wykonane zastępowanie jest pusty, operacja będzie nieodwracalna. Czy kontynuować?',
 	'replacetext_continue' => 'Kontynuuj',
-	'replacetext_cancel' => '(Wciśnij klawisz „Wstecz” w przeglądarce, aby przerwać operację.)',
 	'replacetext_editsummary' => 'zamienił w treści „$1” na „$2”',
 	'right-replacetext' => 'Wykonywanie zastępowania tekstu w całej wiki',
 );
@@ -1771,7 +1733,6 @@ S'it fas sta rimpiassadura-sì it saras pa bon a separé toe rimpiassadure da st
 	'replacetext_blankwarning' => "Da già che la stringa ëd rimpiass a l'é veuida, st'operassion-sì a sarà pa reversìbil.
 Veul-lo continué?",
 	'replacetext_continue' => 'Continua',
-	'replacetext_cancel' => '(Sgnaca ël boton "André" an tò navigador për scancelé l\'operassion.)',
 	'replacetext_editsummary' => 'Rimpiassadura test - "$1" a "$2"',
 	'right-replacetext' => "Fà rimpiassadura dë stringhe an sl'antrega wiki",
 );
@@ -1845,7 +1806,6 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} o texto de substituição, \"\$2\". Se fizer esta substituição não poderá distingui-las das suas substituições, nem desfazer a operação com uma simples substituição em ordem inversa.",
 	'replacetext_blankwarning' => "'''Aviso:''' Como o texto de substituição foi deixado em branco, esta operação não será reversível.",
 	'replacetext_continue' => 'Prosseguir',
-	'replacetext_cancel' => '(Clique o botão "Voltar" do seu browser para cancelar a operação.)',
 	'replacetext_editsummary' => 'Substituição de texto - de "$1" para "$2"',
 	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
 );
@@ -1888,7 +1848,6 @@ $messages['pt-br'] = array(
 	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} o texto de substituição, \"\$2\". Se fizer esta substituição não poderá desfazer a operação com uma simples substituição em ordem inversa.",
 	'replacetext_blankwarning' => '!!Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
 	'replacetext_continue' => 'Prosseguir',
-	'replacetext_cancel' => '(Pressione o botão "Voltar" de seu navegador para cancelar a operação.)',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
 	'right-replacetext' => 'Faça substituições de cadeias de caracteres no wiki inteiro',
 );
@@ -1960,7 +1919,6 @@ $messages['ru'] = array(
 	'replacetext_blankwarning' => 'Из-за того, что текст для замены пуст, операция по замене не сможет быть отменена.
 Вы хотите продолжить?',
 	'replacetext_continue' => 'Продолжить',
-	'replacetext_cancel' => '(Нажмите кнопку «Назад» в вашем браузере для отмены текущей операции.)',
 	'replacetext_editsummary' => 'Замена текста — «$1» на «$2»',
 	'right-replacetext' => 'выполнение замен текста во всей вики',
 );
@@ -1998,7 +1956,6 @@ $messages['sk'] = array(
 	'replacetext_warning' => '$1 {{PLURAL:$1|stránka|stránok}} už obsahuje text „$2”, ktorým chcete text nahradiť; ak budete pokračovať a text nahradíte, nebudete môcť odlíšiť vaše nahradenia od existujúceho textu, ktorý tento reťazec už obsahuje. Pokračovať v nahradení?',
 	'replacetext_blankwarning' => 'Pretože text, ktorým text chcete nahradiť je prázdny, operácia bude nevratná. Pokračovať?',
 	'replacetext_continue' => 'Pokračovať',
-	'replacetext_cancel' => '(Operáciu zrušíte stlačením tlačidla „Späť” vo vašom prehliadači.)',
 	'replacetext_editsummary' => 'Nahradenie textu „$1” textom „$2”',
 	'right-replacetext' => 'Vykonať náhradu reťazcov na celej wiki',
 );
@@ -2103,7 +2060,6 @@ $messages['sv'] = array(
 	'replacetext_warning' => '\'\'\'Varning:\'\'\' Det finns {{PLURAL:$1|$1 sida|$1 sidor}} som redan har ersättningssträngen "$2". Om du gör den här ersättningen kommer du inte kunna separera dina ersättningar från den här texten.',
 	'replacetext_blankwarning' => 'Eftersom ersättningstexten är tom kommer den här handlingen inte kunna upphävas; vill du fortsätta?',
 	'replacetext_continue' => 'Fortsätt',
-	'replacetext_cancel' => '(Klicka på "Tillbaka"-knappen i din webbläsare för att avbryta handlingen.)',
 	'replacetext_editsummary' => 'Textersättning - "$1" till "$2"',
 	'right-replacetext' => 'Genomför textersättningar på hela wikin',
 );
@@ -2163,7 +2119,6 @@ Kapag ginawa mo ang pagpapalit na ito hindi mo na maihihiwalay ang mga pamalit m
 	'replacetext_blankwarning' => 'Dahil sa walang laman ang bagting ng pamalit, hindi na maibabalik pa sa dati ang gawaing ito/
 Naisa mo bang magpatuloy pa?',
 	'replacetext_continue' => 'Magpatuloy',
-	'replacetext_cancel' => "(Pindutin ang pinduting \"Magbalik\" sa iyong pantingin-tingin o ''browser'' upang huwag nang maipagpatuloy ang gawain.)",
 	'replacetext_editsummary' => "Palitan ang tekso - '$1' papunta sa '$2'",
 	'right-replacetext' => 'Gumawa ng pagpapalit ng bagting sa buong wiki',
 );
@@ -2207,7 +2162,6 @@ Değiştirme işlemine devam etmek ister misiniz?',
 	'replacetext_blankwarning' => 'Değiştirme dizgisi boş olduğu için bu işlem geri alınamayacak.
 Devam etmek istiyor musunuz?',
 	'replacetext_continue' => 'Devam',
-	'replacetext_cancel' => '(İşlemi iptal etmek için tarayıcınızdaki "Geri" düğmesine tıklayın.)',
 	'replacetext_editsummary' => 'Metin değiştir - "$1" yerine "$2"',
 	'right-replacetext' => 'Vikinin tamamında dizgileri değiştirir',
 );
@@ -2285,7 +2239,6 @@ $messages['vi'] = array(
 	'replacetext_warning' => "'''Cảnh báo:''' {{PLURAL:$1|Một trang|$1 trang}} trong lựa chọn đã có chứa chuỗi thay thế, “$2”. Nếu bạn thực hiện thay thế này bạn sẽ không thể phân biệt sự thay thế của bạn với những chuỗi này.",
 	'replacetext_blankwarning' => 'Vì chuỗi thay thế là khoảng trắng, tác vụ này sẽ không thể hồi lại được; tiếp tục?',
 	'replacetext_continue' => 'Tiếp tục',
-	'replacetext_cancel' => '(Bấm nút “Lùi” của trình duyệt để hủy tác vụ.)',
 	'replacetext_editsummary' => 'Thay thế văn bản - ‘$1’ thành ‘$2’',
 	'right-replacetext' => 'Thay thế chuỗi ở tất cả wiki',
 );
@@ -2346,7 +2299,6 @@ $messages['zh-hans'] = array(
 	'replacetext_warning' => '有$1个页面已经包含文字「$2」。如果您执行了替换作业，被替代的文字会跟它们混在一起，变得难以分开原来的文字和被替代的文字。要继续执行替换作业吗？',
 	'replacetext_blankwarning' => "'''警告：'''因为替换字串为空，这将导致操作无法复原！您要继续吗？",
 	'replacetext_continue' => '继续',
-	'replacetext_cancel' => '（按下浏览器上的 "返回" 按钮可以取消操作）',
 	'replacetext_editsummary' => '替换文字 - 「$1」替换为「$2」',
 	'right-replacetext' => '对整个维基进行文字替换。',
 );
@@ -2387,7 +2339,6 @@ $messages['zh-hant'] = array(
 	'replacetext_warning' => '有$1個頁面已經包含文字「$2」。如果您執行了替換作業，被替代的文字會跟它們混在一起，變得難以分開原來的文字和被替代的文字。要繼續執行替換作業嗎？',
 	'replacetext_blankwarning' => '因為替換字串是空白的，這將造成難以復原的結果！您要繼續嗎？',
 	'replacetext_continue' => '繼續',
-	'replacetext_cancel' => '（按下瀏覽器上的「返回」按鈕可以取消操作）',
 	'replacetext_editsummary' => '替換文字 - 「$1」替換為「$2」',
 	'right-replacetext' => '對整個維基進行文字替換。',
 );
