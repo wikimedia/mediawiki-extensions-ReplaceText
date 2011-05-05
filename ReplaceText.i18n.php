@@ -1129,6 +1129,7 @@ $messages['it'] = array(
 	'replacetext_originaltext' => 'Testo originale:',
 	'replacetext_replacementtext' => 'Testo sostituito:',
 	'replacetext_useregex' => 'Utilizza le espressioni regolari',
+	'replacetext_regexdocu' => '(Esempio: con valori di "a(.*)c" per "{{int:replacetext_originaltext}}" e "ac$1" per "{{int:replacetext_replacementtext}}" trasformerebbe "abc" in "acb".)',
 	'replacetext_optionalfilters' => 'Filtri opzionali:',
 	'replacetext_categorysearch' => 'Sostituire solo nella categoria:',
 	'replacetext_prefixsearch' => 'Sostituire solo nelle pagine con il prefisso:',
