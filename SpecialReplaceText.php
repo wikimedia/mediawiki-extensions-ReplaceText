@@ -225,8 +225,8 @@ class ReplaceText extends SpecialPage {
 		global $wgOut;
 		$wgOut->addHTML(
 			Xml::openElement( 'form', array( 'id' => 'powersearch', 'action' => $this->getTitle()->getFullUrl(), 'method' => 'post' ) ) .
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Xml::hidden( 'continue', 1 )
+			Html::Hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::Hidden( 'continue', 1 )
 		);
 		if ( is_null( $warning_msg ) ) {
 			$wgOut->addWikiMsg( 'replacetext_docu' );
@@ -368,10 +368,10 @@ class ReplaceText extends SpecialPage {
 		$formOpts = array( 'id' => 'choose_pages', 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
 		$wgOut->addHTML(
 			Xml::openElement( 'form', $formOpts ) .
-			Xml::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Xml::hidden( 'target', $this->target ) .
-			Xml::hidden( 'replacement', $this->replacement ) .
-			Xml::hidden( 'use_regex', $this->use_regex )
+			Html::Hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::Hidden( 'target', $this->target ) .
+			Html::Hidden( 'replacement', $this->replacement ) .
+			Html::Hidden( 'use_regex', $this->use_regex )
 		);
 
 		$js = file_get_contents( dirname( __FILE__ ) . '/ReplaceText.js' );
@@ -412,7 +412,7 @@ class ReplaceText extends SpecialPage {
 		$wgOut->addHTML(
 			"<br />\n" .
 			Xml::submitButton( wfMsg( 'replacetext_replace' ) ) .
-			Xml::hidden( 'replace', 1 )
+			Html::Hidden( 'replace', 1 )
 		);
 
 		// Only show "invert selections" link if there are more than
