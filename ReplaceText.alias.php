@@ -23,6 +23,11 @@ $specialPageAliases['arz'] = array(
 	'ReplaceText' => array( 'تبديل_نص' ),
 );
 
+/** Breton (Brezhoneg) */
+$specialPageAliases['br'] = array(
+	'ReplaceText' => array( 'Erlc\'hiañTestenn' ),
+);
+
 /** Bosnian (Bosanski) */
 $specialPageAliases['bs'] = array(
 	'ReplaceText' => array( 'ZamjenaTeksta' ),
@@ -50,7 +55,7 @@ $specialPageAliases['fi'] = array(
 
 /** French (Français) */
 $specialPageAliases['fr'] = array(
-	'ReplaceText' => array( 'Remplacer texte', 'RemplacerTexte' ),
+	'ReplaceText' => array( 'Remplacer_texte', 'RemplacerTexte' ),
 );
 
 /** Franco-Provençal (Arpetan) */
@@ -60,7 +65,7 @@ $specialPageAliases['frp'] = array(
 
 /** Galician (Galego) */
 $specialPageAliases['gl'] = array(
-	'ReplaceText' => array( 'Substituír o texto' ),
+	'ReplaceText' => array( 'Substituír_o_texto' ),
 );
 
 /** Swiss German (Alemannisch) */
@@ -83,9 +88,14 @@ $specialPageAliases['hsb'] = array(
 	'ReplaceText' => array( 'Tekst narunać' ),
 );
 
+/** Haitian (Kreyòl ayisyen) */
+$specialPageAliases['ht'] = array(
+	'ReplaceText' => array( 'RanplaseTeks' ),
+);
+
 /** Hungarian (Magyar) */
 $specialPageAliases['hu'] = array(
-	'ReplaceText' => array( 'Szöveg csere' ),
+	'ReplaceText' => array( 'Szöveg_csere' ),
 );
 
 /** Interlingua (Interlingua) */
@@ -178,9 +188,9 @@ $specialPageAliases['sq'] = array(
 	'ReplaceText' => array( 'ZëvendësoTekstin' ),
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица)) */
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬) */
 $specialPageAliases['sr-ec'] = array(
-	'ReplaceText' => array( 'ЗамениТекст' ),
+	'ReplaceText' => array( 'ЗамениТекст', 'Замени_текст' ),
 );
 
 /** Swahili (Kiswahili) */
