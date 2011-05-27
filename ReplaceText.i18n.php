@@ -774,6 +774,7 @@ $messages['frp'] = array(
 	'replacetext' => 'Remplaciér lo tèxto',
 	'replacetext_originaltext' => 'Tèxto d’origina :',
 	'replacetext_replacementtext' => 'Tèxto de remplacement :',
+	'replacetext_useregex' => 'Utilisar des èxprèssions racionèles',
 	'replacetext_optionalfilters' => 'Filtros u chouèx :',
 	'replacetext_formovedpages' => 'Por les pâges renomâs :',
 	'replacetext_watchmovedpages' => 'Siuvre cetes pâges',
