@@ -42,7 +42,7 @@ class ReplaceTextJob extends Job {
 			$create_redirect = $this->params['create_redirect'];
 			$this->title->moveTo( $new_title, true, $reason, $create_redirect );
 			if ( $this->params['watch_page'] ) {
-				Action::factory( 'watch', new Article( $new_title, 0 ) )->execute();
+				WatchAction::doWatch( $new_title, $wgUser );
 			}
 			$wgUser = $actual_user;
 		} else {
