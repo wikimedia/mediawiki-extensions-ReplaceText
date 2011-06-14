@@ -45,8 +45,12 @@ class ReplaceTextJob extends Job {
 				if ( class_exists( 'WatchAction' ) ) {
 					// Class was added in MW 1.19
 					WatchAction::doWatch( $new_title, $wgUser );
-				} else {
+				} elseif ( class_exists( 'Action' ) ) {
+					// Class was added in MW 1.18
 					Action::factory( 'watch', new Article( $new_title, 0 ) )->execute();
+				} else {
+					$article = new Article( $new_title );
+					$article->doWatch();
 				}
 			}
 			$wgUser = $actual_user;
