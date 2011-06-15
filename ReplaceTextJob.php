@@ -49,7 +49,7 @@ class ReplaceTextJob extends Job {
 					// Class was added in MW 1.18
 					Action::factory( 'watch', new Article( $new_title, 0 ) )->execute();
 				} else {
-					$article = new Article( $new_title );
+					$article = new Article( $new_title, 0 );
 					$article->doWatch();
 				}
 			}
