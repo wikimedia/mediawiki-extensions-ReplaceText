@@ -1480,6 +1480,47 @@ $messages['mr'] = array(
 	'replacetext_editsummary' => "मजकूर पुनर्लेखन - '$1' ते '$2'",
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'replacetext' => 'Ganti teks',
+	'replacetext-desc' => 'Menyediakan [[Special:ReplaceText|laman khas]] untuk membolehkan para pentadbir melakukan pencarian dan penggantian rentetan sejagat di semua laman-laman kandungan wiki',
+	'replacetext_docu' => "Untuk mengganti satu rentetan teks dengan satu lagi merentasi semua laman biasa di wiki ini, isikan kedua-dua teks yang terlibat di sini, kemudian tekan 'Sambung'.
+Kemudian, anda akan ditunjukkan satu senarai laman yang mengandungi teks carian, dan anda boleh memilih laman-laman yang mana anda ingin melakukan penggantian itu.
+Nama anda akan terpapar dalam sejarah laman sebagai pengguna yang bertanggungjawab atas sebarang perubahan.",
+	'replacetext_originaltext' => 'Teks asal:',
+	'replacetext_replacementtext' => 'Teks ganti:',
+	'replacetext_useregex' => 'Gunakan ungkapan nalar',
+	'replacetext_regexdocu' => '(Contoh: nilai "a(.*)c" untuk "Teks asal" dan "ac$1" untuk "Teks ganti" akan mengganti "abc" dengan "acb".)',
+	'replacetext_optionalfilters' => 'Penapis pilihan:',
+	'replacetext_categorysearch' => 'Ganti dalam kategori sahaja:',
+	'replacetext_prefixsearch' => 'Ganti dalam laman yang berawalan ini sahaja:',
+	'replacetext_editpages' => 'Ganti teks dalam kandungan laman',
+	'replacetext_movepages' => 'Ganti teks dalam tajuk laman, jika boleh',
+	'replacetext_givetarget' => 'Anda mesti menyatakan rentetan untuk diganti.',
+	'replacetext_nonamespace' => 'Anda mesti memilih sekurang-kurangnya satu ruang nama.',
+	'replacetext_editormove' => 'Anda mesti memilih sekurang-kurangnya satu pilihan penggantian.',
+	'replacetext_choosepagesforedit' => 'Ganti "$1" dengan "$2" dalam teks {{PLURAL:$3|laman|laman-laman}} berikut:',
+	'replacetext_choosepagesformove' => 'Ganti "$1" dengan "$2" dalam {{PLURAL:$3|judul|judul-judul}} laman yang berikut:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Laman|Laman-laman}} yang berikut tidak boleh dipindahkan:',
+	'replacetext_formovedpages' => 'Untuk laman yang dipindahkan:',
+	'replacetext_savemovedpages' => 'Simpan tajuk lama sebagai lencongan kepada tajuk baru',
+	'replacetext_watchmovedpages' => 'Pantau laman-laman ini',
+	'replacetext_invertselections' => 'Songsangkan pilihan',
+	'replacetext_replace' => 'Ganti',
+	'replacetext_success' => '"$1" akan digantikan oleh "$2" di $3 laman.',
+	'replacetext_noreplacement' => 'Tiada laman yang mengandungi rentetan "$1".',
+	'replacetext_nomove' => 'Tiada laman yang mengandungi "$1" dalam tajuknya.',
+	'replacetext_nosuchcategory' => 'Tiada kategori dengan nama "$1".',
+	'replacetext_return' => 'Kembali ke borang.',
+	'replacetext_warning' => "'''Amaran:''' Terdapat \$1 laman yang sudah mengandungi rentetan ganti \"\$2\". Jika anda melakukan penggantian ini, anda tidak akan dapat mengasingkan gantian anda daripada rentetan-rentetan ini.",
+	'replacetext_blankwarning' => "'''Amaran:''' Oleh sebab rentetan ganti adalah kosong, operasi ini tidak boleh dimansuhkan.",
+	'replacetext_continue' => 'Sambung',
+	'replacetext_editsummary' => 'Ganti teks - "$1" kepada "$2"',
+	'right-replacetext' => 'Membuat penggantian rentetan di seluruh wiki',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
