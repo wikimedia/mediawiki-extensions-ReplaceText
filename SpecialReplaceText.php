@@ -54,6 +54,18 @@ class ReplaceText extends SpecialPage {
 		}
 	}
 
+	/**
+	 * Helper function to display a hidden field for different versions
+	 * of MediaWiki.
+	 */
+	static function hiddenField( $name, $value ) {
+		if ( class_exists( 'Html' ) ) {
+			return "\t" . Html::hidden( $name, $value ) . "\n";
+		} else {
+			return "\t" . Xml::hidden( $name, $value ) . "\n";
+		}
+	}
+
 	function doSpecialReplaceText() {
 		global $wgUser, $wgOut, $wgRequest, $wgLang;
 
@@ -224,9 +236,9 @@ class ReplaceText extends SpecialPage {
 	function showForm( $warning_msg = null ) {
 		global $wgOut;
 		$wgOut->addHTML(
-			Xml::openElement( 'form', array( 'id' => 'powersearch', 'action' => $this->getTitle()->getFullUrl(), 'method' => 'post' ) ) .
-			Html::Hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::Hidden( 'continue', 1 )
+			Xml::openElement( 'form', array( 'id' => 'powersearch', 'action' => $this->getTitle()->getFullUrl(), 'method' => 'post' ) ) . "\n" .
+			self::hiddenField( 'title', $this->getTitle()->getPrefixedText() ) .
+			self::hiddenField( 'continue', 1 )
 		);
 		if ( is_null( $warning_msg ) ) {
 			$wgOut->addWikiMsg( 'replacetext_docu' );
@@ -367,11 +379,11 @@ class ReplaceText extends SpecialPage {
 
 		$formOpts = array( 'id' => 'choose_pages', 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
 		$wgOut->addHTML(
-			Xml::openElement( 'form', $formOpts ) .
-			Html::Hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::Hidden( 'target', $this->target ) .
-			Html::Hidden( 'replacement', $this->replacement ) .
-			Html::Hidden( 'use_regex', $this->use_regex )
+			Xml::openElement( 'form', $formOpts ) . "\n" .
+			self::hiddenField( 'title', $this->getTitle()->getPrefixedText() ) .
+			self::hiddenField( 'target', $this->target ) .
+			self::hiddenField( 'replacement', $this->replacement ) .
+			self::hiddenField( 'use_regex', $this->use_regex )
 		);
 
 		$js = file_get_contents( dirname( __FILE__ ) . '/ReplaceText.js' );
@@ -411,8 +423,8 @@ class ReplaceText extends SpecialPage {
 
 		$wgOut->addHTML(
 			"<br />\n" .
-			Xml::submitButton( wfMsg( 'replacetext_replace' ) ) .
-			Html::Hidden( 'replace', 1 )
+			Xml::submitButton( wfMsg( 'replacetext_replace' ) ) . "\n" .
+			self::hiddenField( 'replace', 1 )
 		);
 
 		// Only show "invert selections" link if there are more than
