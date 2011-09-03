@@ -1556,7 +1556,7 @@ Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke v
 	'replacetext_nomove' => 'Er zijn geen pagina\'s gevonden met "$1" in de naam.',
 	'replacetext_nosuchcategory' => 'De categorie "$1" bestaat niet.',
 	'replacetext_return' => 'Terugkeren naar het formulier.',
-	'replacetext_warning' => '\'\'\'Waarshuwing:\'\'\' Er {{PLURAL:$1|is $1 pagina|zijn $1 pagina\'s}} die het te vervangen tesktdeel al "$2" al {{PLURAL:$1|bevat|bevatten}}.
+	'replacetext_warning' => '\'\'\'Waarschuwing:\'\'\' Er {{PLURAL:$1|is $1 pagina|zijn $1 pagina\'s}} die het te vervangen tesktdeel al "$2" al {{PLURAL:$1|bevat|bevatten}}.
 Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.',
 	'replacetext_blankwarning' => 'Omdat u tekst vervangt door niets, kan deze handeling niet ongedaan gemaakt worden. Wilt u doorgaan?',
 	'replacetext_continue' => 'Doorgaan',
