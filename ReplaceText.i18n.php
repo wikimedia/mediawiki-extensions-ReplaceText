@@ -1162,6 +1162,7 @@ $messages['it'] = array(
 /** Japanese (日本語)
  * @author Aotake
  * @author Fryed-peach
+ * @author Schu
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -1170,6 +1171,8 @@ $messages['ja'] = array(
 	'replacetext_docu' => 'ある文字列をこのウィキ上のすべての標準ページで別のものに置換するには、必要な2つの文字列をここに入力し「続行」を押します。次に検索した文字列を含むページが一覧表示され、置換を行いたいページを選択できます。置換後には、あなたの名前がページ履歴にその編集を担当した利用者として表示されます。',
 	'replacetext_originaltext' => '置換前の文字列:',
 	'replacetext_replacementtext' => '置換後の文字列:',
+	'replacetext_useregex' => '正規表現を使用',
+	'replacetext_regexdocu' => '（例："置換前の文字列"には "a(.*)c" 、"置換後の文字列"には "ac$1"の値で、"abc" は "acb" に置換されます。）',
 	'replacetext_optionalfilters' => '追加のフィルター (任意):',
 	'replacetext_categorysearch' => '以下のカテゴリにあるもののみを置換:',
 	'replacetext_prefixsearch' => '以下の文字列から始まるページ内のもののみを置換:',
