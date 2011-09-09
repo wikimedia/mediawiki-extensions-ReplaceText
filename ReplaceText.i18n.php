@@ -189,6 +189,13 @@ $messages['arz'] = array(
 	'right-replacetext' => 'القيام باستبدال للسلاسل فى الويكى بأكمله',
 );
 
+/** Azerbaijani (Azərbaycanca)
+ * @author Cekli829
+ */
+$messages['az'] = array(
+	'replacetext_originaltext' => 'Orijinal mətn:',
+);
+
 /** Bashkir (Башҡортса)
  * @author Assele
  */
