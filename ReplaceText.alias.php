@@ -48,6 +48,11 @@ $specialPageAliases['dv'] = array(
 	'ReplaceText' => array( 'ލިޔުން ބަދަލުކުރައްވާ' ),
 );
 
+/** Persian (فارسی) */
+$specialPageAliases['fa'] = array(
+	'ReplaceText' => array( 'جایگزینی_متن' ),
+);
+
 /** Finnish (Suomi) */
 $specialPageAliases['fi'] = array(
 	'ReplaceText' => array( 'Korvaa' ),
@@ -60,7 +65,7 @@ $specialPageAliases['fr'] = array(
 
 /** Franco-Provençal (Arpetan) */
 $specialPageAliases['frp'] = array(
-	'ReplaceText' => array( 'Remplaciér lo tèxto', 'RemplaciérLoTèxto' ),
+	'ReplaceText' => array( 'Remplaciér_lo_tèxto', 'RemplaciérLoTèxto' ),
 );
 
 /** Galician (Galego) */
@@ -155,7 +160,7 @@ $specialPageAliases['mt'] = array(
 
 /** Nedersaksisch (Nedersaksisch) */
 $specialPageAliases['nds-nl'] = array(
-	'ReplaceText' => array( 'Tekse_vervangen' ),
+	'ReplaceText' => array( 'Tekste_vervangen' ),
 );
 
 /** Dutch (Nederlands) */
@@ -188,9 +193,14 @@ $specialPageAliases['sq'] = array(
 	'ReplaceText' => array( 'ZëvendësoTekstin' ),
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬) */
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬) */
 $specialPageAliases['sr-ec'] = array(
 	'ReplaceText' => array( 'ЗамениТекст', 'Замени_текст' ),
+);
+
+/** Swedish (Svenska) */
+$specialPageAliases['sv'] = array(
+	'ReplaceText' => array( 'Ersätt_text' ),
 );
 
 /** Swahili (Kiswahili) */
