@@ -899,7 +899,7 @@ $messages['he'] = array(
 	'replacetext_originaltext' => 'הטקסט המקורי:',
 	'replacetext_replacementtext' => 'טקסט ההחלפה:',
 	'replacetext_useregex' => 'להשתמש בביטויים רגולריים',
-	'replacetext_regexdocu' => '(דוגמה: ערכים של <span dir="ltr">"a(.*)c"</span> ל"טקסט המקורי" ו־<span dir="ltr">"ac$1"</span> ל"טקסט ההחלפה" יחליף "abc" ב־"acb".)',
+	'replacetext_regexdocu' => '(דוגמה: הכנסת הערכים של "a(.*)c" ל"טקסט המקורי" ו־"ac$1" ל"טקסט ההחלפה" תחליף "abc" ב־"acb".)',
 	'replacetext_optionalfilters' => 'מסננים אופציונליים:',
 	'replacetext_categorysearch' => 'החלפה רק בקטגוריה:',
 	'replacetext_prefixsearch' => 'החלפה רק בדפים בעלי הקידומת:',
