@@ -58,6 +58,7 @@ Your name will appear in page histories as the user responsible for any changes.
  * @author McMonster
  * @author Nike
  * @author Purodha
+ * @author Umherirrender
  */
 $messages['qqq'] = array(
 	'replacetext' => "This message is displayed as a title of this extension's special page.",
@@ -71,7 +72,7 @@ $messages['qqq'] = array(
 
 {{Identical|Replace}}',
 	'replacetext_continue' => '{{Identical|Continue}}',
-	'right-replacetext' => '{{doc-right}}',
+	'right-replacetext' => '{{doc-right|replacetext}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -2013,34 +2014,34 @@ $messages['sk'] = array(
 	'right-replacetext' => 'Vykonať náhradu reťazcov na celej wiki',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
-	'replacetext' => 'Замени текст',
-	'replacetext_originaltext' => 'Оригинални текст:',
-	'replacetext_replacementtext' => 'Текст којим се замењује:',
-	'replacetext_optionalfilters' => 'Опциони филтери:',
+	'replacetext' => 'Замена текста',
+	'replacetext_originaltext' => 'Изворни текст:',
+	'replacetext_replacementtext' => 'Нови текст:',
+	'replacetext_optionalfilters' => 'Необавезни филтери:',
 	'replacetext_categorysearch' => 'Замени само у категорији:',
-	'replacetext_editpages' => 'Замени текст у садржају стране',
-	'replacetext_movepages' => 'Замени текст у насловима страна, уколико је могуће',
-	'replacetext_givetarget' => 'Морате навести стринг кога треба заменити.',
-	'replacetext_nonamespace' => 'Морате изабрати најмање један именски простор.',
-	'replacetext_editormove' => 'Морате изабрати макар једну од опција замене.',
-	'replacetext_choosepagesforedit' => "Замени '$1' са '$2' у тексту {{PLURAL:$3|следеће стране|следећих страна}}:",
-	'replacetext_cannotmove' => '{{PLURAL:$1|Следећа страна не може бити премештена|Следеће стране не могу бити премештене}}:',
-	'replacetext_formovedpages' => 'За премештене стране:',
-	'replacetext_savemovedpages' => 'Сними старе наслове као преусмерења ка новим насловима',
+	'replacetext_editpages' => 'Замени текст у садржају странице',
+	'replacetext_movepages' => 'Замени текст у насловима страница, када је могуће',
+	'replacetext_givetarget' => 'Морате навести ниску коју желите да замените.',
+	'replacetext_nonamespace' => 'Морате изабрати барем један именски простор.',
+	'replacetext_editormove' => 'Морате изабрати барем једну од могућности за замену.',
+	'replacetext_choosepagesforedit' => 'Замени „$1“ са „$2“ у тексту {{PLURAL:$3|следеће странице|следећих страница}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Следећа страница не може бити премештена|Следеће странице не могу бити премештене}}:',
+	'replacetext_formovedpages' => 'За премештене странице:',
+	'replacetext_savemovedpages' => 'Сачувај старе наслове као преусмерења ка новим насловима',
 	'replacetext_watchmovedpages' => 'Надгледај ове стране',
 	'replacetext_invertselections' => 'Обрни избор',
 	'replacetext_replace' => 'Пресними',
 	'replacetext_success' => "'$1' ће бити замењено са '$2' у $3 {{PLURAL:$3|страни|страна}}.",
 	'replacetext_noreplacement' => "Није нађена ниједна страница која садржи стринг '$1'.",
 	'replacetext_nomove' => 'Није нађена ниједна страница чији наслов садржи „$1“.',
-	'replacetext_return' => 'Врати се на форму.',
+	'replacetext_return' => 'Назад на образац.',
 	'replacetext_continue' => 'Настави',
 	'replacetext_editsummary' => "Замена текста - '$1' у '$2'",
 	'right-replacetext' => 'замењивање ниски на целом викију',
