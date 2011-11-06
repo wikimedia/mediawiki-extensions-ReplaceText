@@ -163,7 +163,7 @@ class ReplaceText extends SpecialPage {
 					}
 					$new_title = Title::makeTitleSafe( $row->page_namespace, $new_page_name );
 					$err = $title->isValidMoveOperation( $new_title );
-					if ( $title->userCan( 'move', true ) && !is_array( $err ) ) {
+					if ( $title->userCan( 'move' ) && !is_array( $err ) ) {
 						$titles_for_move[] = $title;
 					} else {
 						$unmoveable_titles[] = $title;
