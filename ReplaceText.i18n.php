@@ -1699,7 +1699,7 @@ S'efectuatz aquesta substitucion, poiretz pas separar vòstres cambiaments a par
  */
 $messages['pdc'] = array(
 	'replacetext_noreplacement' => 'Ken Blatt gfunne mit „$1“.',
-	'replacetext_continue' => 'Weiter',
+	'replacetext_continue' => 'Weider',
 );
 
 /** Polish (Polski)
