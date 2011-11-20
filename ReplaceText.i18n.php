@@ -930,6 +930,7 @@ $messages['he'] = array(
 );
 
 /** Croatian (Hrvatski)
+ * @author Bugoslav
  * @author Dalibor Bosits
  * @author Ex13
  * @author Herr Mlinka
@@ -944,6 +945,7 @@ $messages['hr'] = array(
 	'replacetext_choosepagesforedit' => "Molimo odaberite {{PLURAL:$3|stranicu|stranice}} na kojima želite zamijeniti '$1' za '$2':",
 	'replacetext_choosepagesformove' => 'Zamijeni "$1" s "$2" u {{PLURAL:$1|naslovu sljedeće stranice|naslovima sljedećih stranica}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|Sljedeća stranica|Sljedeće stranice}} ne mogu biti premještene:',
+	'replacetext_watchmovedpages' => 'Prati ove stranice',
 	'replacetext_invertselections' => 'Izvrni odabir',
 	'replacetext_replace' => 'Zamjeni',
 	'replacetext_success' => "'$1' će biti zamijenjen za '$2' na $3 {{PLURAL:$3|stranici|stranice|stranica}}.",
