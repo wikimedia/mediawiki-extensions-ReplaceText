@@ -2049,7 +2049,7 @@ $messages['sr-ec'] = array(
 	'right-replacetext' => 'замењивање ниски на целом викију',
 );
 
-/** Serbian Latin ekavian (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Michaello
  * @author Жељко Тодоровић
  */
