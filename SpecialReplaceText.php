@@ -316,9 +316,9 @@ class ReplaceText extends SpecialPage {
 			Xml::tags( 'h4', null, wfMsgExt( 'replacetext_optionalfilters', array( 'parseinline' ) ) ) .
 			Xml::element( 'div', array( 'class' => 'divider' ), '', false ) .
 			"<p>$category_search_label\n" .
-			Xml::input( 'category', 20, $this->category ) . '</p>' .
+			Xml::input( 'category', 20, $this->category, array( 'type' => 'text' ) ) . '</p>' .
 			"<p>$prefix_search_label\n" .
-			Xml::input( 'prefix', 20, $this->prefix ) . '</p>' .
+			Xml::input( 'prefix', 20, $this->prefix, array( 'type' => 'text' ) ) . '</p>' .
 			"</fieldset>\n" .
 			"<p>\n" .
 			Xml::checkLabel( wfMsg( 'replacetext_editpages' ), 'edit_pages', 'edit_pages', true ) . '<br />' .
