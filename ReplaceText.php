@@ -25,7 +25,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Replace Text',
 	'version' => '0.9.2',
 	'author' => array( 'Yaron Koren', 'Niklas Laxström' ),
-	'url' => 'http://www.mediawiki.org/wiki/Extension:Replace_Text',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'descriptionmsg'  => 'replacetext-desc',
 );
 
