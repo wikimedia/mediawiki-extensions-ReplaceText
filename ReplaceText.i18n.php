@@ -55,6 +55,7 @@ Your name will appear in page histories as the user responsible for any changes.
  * @author Darth Kule
  * @author EugeneZelenko
  * @author Fryed-peach
+ * @author Kwj2772
  * @author McMonster
  * @author Nike
  * @author Purodha
@@ -67,6 +68,8 @@ $messages['qqq'] = array(
 {{Identical|Content page}}',
 	'replacetext_docu' => "Description of how to use this extension, displayed on the extension's special page ([[Special:ReplaceText]]).",
 	'replacetext_originaltext' => 'Label of the text field, where user enters original piece of text, which would be replaced.',
+	'replacetext_regexdocu' => '* "Original text" - {{msg-mw|replacetext_originaltext}}
+* "Replacement text" - {{msg-mw|replacetext_replacementtext}}',
 	'replacetext_choosepagesforedit' => 'Displayed over the list of pages where the given text was found.',
 	'replacetext_replace' => 'Label of the button, which triggers the begin of replacment.
 
@@ -1260,6 +1263,8 @@ $messages['ko'] = array(
 당신의 사용자 이름이 문서 역사에 나올 것입니다.",
 	'replacetext_originaltext' => '찾을 문자열:',
 	'replacetext_replacementtext' => '바꿀 문자열:',
+	'replacetext_useregex' => '정규 표현식 사용',
+	'replacetext_regexdocu' => '(예: "찾을 문자열"에 "a(.*)c"값을 입력하고 "바꿀 문자열에 "ac$1"을 입력하면 "abc"가 "acb"로 바뀝니다.)',
 	'replacetext_optionalfilters' => '선택적 필터:',
 	'replacetext_categorysearch' => '다음 분류에서만 바꾸기:',
 	'replacetext_prefixsearch' => '다음 접두어로 시작하는 문서만 바꾸기:',
