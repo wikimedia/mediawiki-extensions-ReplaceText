@@ -2082,6 +2082,7 @@ $messages['sr-el'] = array(
 	'replacetext_return' => 'Vrati se na formu.',
 	'replacetext_continue' => 'Nastavi',
 	'replacetext_editsummary' => "Zamena teksta - '$1' u '$2'",
+	'right-replacetext' => 'zamenjivanje niski na celom vikiju',
 );
 
 /** Swedish (Svenska)
@@ -2386,9 +2387,9 @@ $messages['zh-hant'] = array(
 	'replacetext_givetarget' => '必須指定尋找的字符串',
 	'replacetext_nonamespace' => '您必須選擇最少一個名字空間。',
 	'replacetext_editormove' => '必須選擇至少一個替換選項。',
-	'replacetext_choosepagesforedit' => '請選擇你想將「$1」替換成「$2」的頁面。',
-	'replacetext_choosepagesformove' => '對以下頁面的名稱進行替換：',
-	'replacetext_cannotmove' => '以下頁面無法被移動：',
+	'replacetext_choosepagesforedit' => '請選擇想將“$1”替換成“$2”的{{PLURAL:$3|頁面|頁面}}。',
+	'replacetext_choosepagesformove' => '將{{PLURAL:$3|以下頁面|以下頁面}}中的“$1”替換為“$2”：',
+	'replacetext_cannotmove' => '無法移動以下{{PLURAL:$1|頁面|頁面}}：',
 	'replacetext_formovedpages' => '對以下頁面進行了移動：',
 	'replacetext_savemovedpages' => '重定向至新標題時保留舊標題。',
 	'replacetext_watchmovedpages' => '監視這些頁面',
