@@ -1539,6 +1539,46 @@ Nama anda akan terpapar dalam sejarah laman sebagai pengguna yang bertanggungjaw
 	'right-replacetext' => 'Membuat penggantian rentetan di seluruh wiki',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ * @author Laaknor
+ * @author Nghtwlkr
+ * @author Simny
+ */
+$messages['nb'] = array(
+	'replacetext' => 'Erstatt tekst',
+	'replacetext-desc' => 'Lar administratorer kunne [[Special:ReplaceText|erstatte tekst]] på alle innholdssider på en wiki.',
+	'replacetext_docu' => 'For å erstatte én tekststreng med en annen på alle datasider på denne wikien kan du skrive inn de to tekstene her og trykke «Erstatt». Du vil da bli ført til en liste over sider som inneholder søketeksten, og du kan velge hvilke sider du ønsker å erstatte den i. Navnet ditt vil stå i sidehistorikkene som den som er ansvarlig for endringene.',
+	'replacetext_originaltext' => 'Originaltekst:',
+	'replacetext_replacementtext' => 'Erstatningstekst:',
+	'replacetext_optionalfilters' => 'Valgfrie filter:',
+	'replacetext_categorysearch' => 'Erstatt kun i kategori:',
+	'replacetext_prefixsearch' => 'Erstatt kun i sider med prefikset:',
+	'replacetext_editpages' => 'Erstatt tekst i sideinnholdet',
+	'replacetext_movepages' => 'Erstatt tekst i sidetitler, der dette er mulig',
+	'replacetext_givetarget' => 'Du må spesifisere en streng som skal erstattes.',
+	'replacetext_nonamespace' => 'Du må velge minst ett navnerom.',
+	'replacetext_editormove' => 'Du må velge minst ett av alternativene for erstatning.',
+	'replacetext_choosepagesforedit' => 'Velg {{PLURAL:$3|siden|sidene}} der du ønsker å bytte ut «$1» med «$2»:',
+	'replacetext_choosepagesformove' => 'Erstatt «$1» med «$2» i {{PLURAL:$3|tittelen på den følgende siden|titlene på de følgende sidene}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Den følgende siden|De følgende sidene}} kan ikke flyttes:',
+	'replacetext_formovedpages' => 'For flyttede sider:',
+	'replacetext_savemovedpages' => 'Lagre de gamle titlene som omdirigeringer til de nye',
+	'replacetext_watchmovedpages' => 'Overvåk disse sidene',
+	'replacetext_invertselections' => 'Inverter valg',
+	'replacetext_replace' => 'Erstatt',
+	'replacetext_success' => '«$1» blir erstattet med «$2» på {{PLURAL:$3|én side|$3 sider}}.',
+	'replacetext_noreplacement' => 'Ingen sider ble funnet med strengen «$1».',
+	'replacetext_nomove' => 'Ingen sider ble funnet der tittelen inneholder «$1».',
+	'replacetext_nosuchcategory' => 'Det eksisterer ingen kategori med navnet «$1».',
+	'replacetext_return' => 'Tilbake til skjemaet.',
+	'replacetext_warning' => "'''Advarsel:''' Det er {{PLURAL:$1|én side|$1 sider}} som allerede har erstatningsteksten «$2». Om du gjør denne erstatningen vil du ikke kunne skille ut dine erstatninger fra denne teksten.",
+	'replacetext_blankwarning' => 'Fordi erstatningsteksten er tom vil denne handlingen ikke kunne angres automatisk; fortsette?',
+	'replacetext_continue' => 'Fortsett',
+	'replacetext_editsummary' => 'Teksterstatting – «$1» til «$2»',
+	'right-replacetext' => 'Gjennomfør teksterstatninger på hele wikien',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
@@ -1621,46 +1661,6 @@ Vil du halda fram?',
 	'replacetext_continue' => 'Hald fram',
 	'replacetext_editsummary' => 'Utbyting av tekst - «$1» til «$2»',
 	'right-replacetext' => 'Gjennomfør utbyting av tekst på heile wikien',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
- * @author Laaknor
- * @author Nghtwlkr
- * @author Simny
- */
-$messages['nb'] = array(
-	'replacetext' => 'Erstatt tekst',
-	'replacetext-desc' => 'Lar administratorer kunne [[Special:ReplaceText|erstatte tekst]] på alle innholdssider på en wiki.',
-	'replacetext_docu' => 'For å erstatte én tekststreng med en annen på alle datasider på denne wikien kan du skrive inn de to tekstene her og trykke «Erstatt». Du vil da bli ført til en liste over sider som inneholder søketeksten, og du kan velge hvilke sider du ønsker å erstatte den i. Navnet ditt vil stå i sidehistorikkene som den som er ansvarlig for endringene.',
-	'replacetext_originaltext' => 'Originaltekst:',
-	'replacetext_replacementtext' => 'Erstatningstekst:',
-	'replacetext_optionalfilters' => 'Valgfrie filter:',
-	'replacetext_categorysearch' => 'Erstatt kun i kategori:',
-	'replacetext_prefixsearch' => 'Erstatt kun i sider med prefikset:',
-	'replacetext_editpages' => 'Erstatt tekst i sideinnholdet',
-	'replacetext_movepages' => 'Erstatt tekst i sidetitler, der dette er mulig',
-	'replacetext_givetarget' => 'Du må spesifisere en streng som skal erstattes.',
-	'replacetext_nonamespace' => 'Du må velge minst ett navnerom.',
-	'replacetext_editormove' => 'Du må velge minst ett av alternativene for erstatning.',
-	'replacetext_choosepagesforedit' => 'Velg {{PLURAL:$3|siden|sidene}} der du ønsker å bytte ut «$1» med «$2»:',
-	'replacetext_choosepagesformove' => 'Erstatt «$1» med «$2» i {{PLURAL:$3|tittelen på den følgende siden|titlene på de følgende sidene}}:',
-	'replacetext_cannotmove' => '{{PLURAL:$1|Den følgende siden|De følgende sidene}} kan ikke flyttes:',
-	'replacetext_formovedpages' => 'For flyttede sider:',
-	'replacetext_savemovedpages' => 'Lagre de gamle titlene som omdirigeringer til de nye',
-	'replacetext_watchmovedpages' => 'Overvåk disse sidene',
-	'replacetext_invertselections' => 'Inverter valg',
-	'replacetext_replace' => 'Erstatt',
-	'replacetext_success' => '«$1» blir erstattet med «$2» på {{PLURAL:$3|én side|$3 sider}}.',
-	'replacetext_noreplacement' => 'Ingen sider ble funnet med strengen «$1».',
-	'replacetext_nomove' => 'Ingen sider ble funnet der tittelen inneholder «$1».',
-	'replacetext_nosuchcategory' => 'Det eksisterer ingen kategori med navnet «$1».',
-	'replacetext_return' => 'Tilbake til skjemaet.',
-	'replacetext_warning' => "'''Advarsel:''' Det er {{PLURAL:$1|én side|$1 sider}} som allerede har erstatningsteksten «$2». Om du gjør denne erstatningen vil du ikke kunne skille ut dine erstatninger fra denne teksten.",
-	'replacetext_blankwarning' => 'Fordi erstatningsteksten er tom vil denne handlingen ikke kunne angres automatisk; fortsette?',
-	'replacetext_continue' => 'Fortsett',
-	'replacetext_editsummary' => 'Teksterstatting – «$1» til «$2»',
-	'right-replacetext' => 'Gjennomfør teksterstatninger på hele wikien',
 );
 
 /** Occitan (Occitan)
@@ -2056,30 +2056,31 @@ $messages['sr-ec'] = array(
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Michaello
+ * @author Rancher
  * @author Жељко Тодоровић
  */
 $messages['sr-el'] = array(
-	'replacetext' => 'Zameni tekst',
-	'replacetext_originaltext' => 'Originalni tekst:',
-	'replacetext_replacementtext' => 'Tekst kojim se zamenjuje:',
-	'replacetext_optionalfilters' => 'Opcioni filteri:',
+	'replacetext' => 'Zamena teksta',
+	'replacetext_originaltext' => 'Izvorni tekst:',
+	'replacetext_replacementtext' => 'Novi tekst:',
+	'replacetext_optionalfilters' => 'Neobavezni filteri:',
 	'replacetext_categorysearch' => 'Zameni samo u kategoriji:',
-	'replacetext_editpages' => 'Zameni tekst u sadržaju strane',
-	'replacetext_movepages' => 'Zameni tekst u naslovima strana, ukoliko je moguće',
-	'replacetext_givetarget' => 'Morate navesti string koga treba zameniti.',
-	'replacetext_nonamespace' => 'Morate izabrati najmanje jedan imenski prostor.',
-	'replacetext_editormove' => 'Morate izabrati makar jednu od opcija zamene.',
-	'replacetext_choosepagesforedit' => "Zameni '$1' sa '$2' u tekstu {{PLURAL:$3|sledeće strane|sledećih strana}}:",
-	'replacetext_cannotmove' => '{{PLURAL:$1|Sledeća strana ne može biti premeštena|Sledeće strane ne mogu biti premeštene}}:',
-	'replacetext_formovedpages' => 'Za premeštene strane:',
-	'replacetext_savemovedpages' => 'Snimi stare naslove kao preusmerenja ka novim naslovima',
+	'replacetext_editpages' => 'Zameni tekst u sadržaju stranice',
+	'replacetext_movepages' => 'Zameni tekst u naslovima stranica, kada je moguće',
+	'replacetext_givetarget' => 'Morate navesti nisku koju želite da zamenite.',
+	'replacetext_nonamespace' => 'Morate izabrati barem jedan imenski prostor.',
+	'replacetext_editormove' => 'Morate izabrati barem jednu od mogućnosti za zamenu.',
+	'replacetext_choosepagesforedit' => 'Zameni „$1“ sa „$2“ u tekstu {{PLURAL:$3|sledeće stranice|sledećih stranica}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Sledeća stranica ne može biti premeštena|Sledeće stranice ne mogu biti premeštene}}:',
+	'replacetext_formovedpages' => 'Za premeštene stranice:',
+	'replacetext_savemovedpages' => 'Sačuvaj stare naslove kao preusmerenja ka novim naslovima',
 	'replacetext_watchmovedpages' => 'Nadgledaj ove strane',
 	'replacetext_invertselections' => 'Obrni izbor',
-	'replacetext_replace' => 'Presnimi',
+	'replacetext_replace' => 'Zameni',
 	'replacetext_success' => "'$1' će biti zamenjeno sa '$2' u $3 {{PLURAL:$3|strani|strana}}.",
-	'replacetext_noreplacement' => "Nije nađena ni jedna strana koja sadrži string '$1'.",
+	'replacetext_noreplacement' => "Nije nađena nijedna stranica koja sadrži string '$1'.",
 	'replacetext_nomove' => 'Nije nađena nijedna stranica čiji naslov sadrži „$1“.',
-	'replacetext_return' => 'Vrati se na formu.',
+	'replacetext_return' => 'Nazad na obrazac.',
 	'replacetext_continue' => 'Nastavi',
 	'replacetext_editsummary' => "Zamena teksta - '$1' u '$2'",
 	'right-replacetext' => 'zamenjivanje niski na celom vikiju',
