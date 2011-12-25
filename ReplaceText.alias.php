@@ -158,6 +158,11 @@ $specialPageAliases['mt'] = array(
 	'ReplaceText' => array( 'BiddelTest' ),
 );
 
+/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+$specialPageAliases['nb'] = array(
+	'ReplaceText' => array( 'Teksterstatning' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $specialPageAliases['nds-nl'] = array(
 	'ReplaceText' => array( 'Tekste_vervangen' ),
@@ -168,11 +173,6 @@ $specialPageAliases['nl'] = array(
 	'ReplaceText' => array( 'TekstVervangen' ),
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
-$specialPageAliases['nb'] = array(
-	'ReplaceText' => array( 'Teksterstatning' ),
-);
-
 /** Occitan (Occitan) */
 $specialPageAliases['oc'] = array(
 	'ReplaceText' => array( 'Remplaçar tèxte', 'RemplaçarTèxte' ),
@@ -180,7 +180,7 @@ $specialPageAliases['oc'] = array(
 
 /** Portuguese (Português) */
 $specialPageAliases['pt'] = array(
-	'ReplaceText' => array( 'Substituir texto' ),
+	'ReplaceText' => array( 'Substituir_texto' ),
 );
 
 /** Slovak (Slovenčina) */
@@ -222,8 +222,3 @@ $specialPageAliases['tr'] = array(
 $specialPageAliases['vec'] = array(
 	'ReplaceText' => array( 'SostuituissiTesto' ),
 );
-
-/**
- * For backwards compatibility with MediaWiki 1.15 and earlier.
- */
-$aliases =& $specialPageAliases;
