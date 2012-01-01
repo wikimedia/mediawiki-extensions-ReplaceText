@@ -328,7 +328,7 @@ class ReplaceText extends SpecialPage {
 			Xml::closeElement( 'form' )
 		);
 		// add javascript specific to special:search
-		$wgOut->addScriptFile( 'search.js' );
+		$wgOut->addModules( 'mediawiki.special.search' );
 	}
 
 	/**
