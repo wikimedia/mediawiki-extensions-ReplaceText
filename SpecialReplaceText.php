@@ -71,11 +71,11 @@ class ReplaceText extends SpecialPage {
 
 		$this->target = $wgRequest->getText( 'target' );
 		$this->replacement = $wgRequest->getText( 'replacement' );
-		$this->use_regex = ( $wgRequest->getVal( 'use_regex' ) == 1 );
+		$this->use_regex = $wgRequest->getBool( 'use_regex' );
 		$this->category = $wgRequest->getText( 'category' );
 		$this->prefix = $wgRequest->getText( 'prefix' );
-		$this->edit_pages = ( $wgRequest->getVal( 'edit_pages' ) == 1 );
-		$this->move_pages = ( $wgRequest->getVal( 'move_pages' ) == 1 );
+		$this->edit_pages = $wgRequest->getBool( 'edit_pages' );
+		$this->move_pages = $wgRequest->getBool( 'move_pages' );
 		$this->selected_namespaces = self::getSelectedNamespaces();
 
 		if ( $wgRequest->getCheck( 'continue' ) ) {
