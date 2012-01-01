@@ -2,31 +2,21 @@
 
 class ReplaceText extends SpecialPage {
 
-	/**
-	 * Constructor
-	 */
 	public function __construct() {
-		global $wgVersion;
 		parent::__construct( 'ReplaceText', 'replacetext' );
-		if ( version_compare( $wgVersion, '1.16', '<' ) ) {
-			wfLoadExtensionMessages( 'ReplaceText' );
-		}
 	}
 
 	function execute( $query ) {
 		global $wgUser, $wgOut;
 
-		if ( ! $wgUser->isAllowed( 'replacetext' ) ) {
+		if ( !$wgUser->isAllowed( 'replacetext' ) ) {
 			$wgOut->permissionRequired( 'replacetext' );
 			return;
 		}
 
 		$this->user = $wgUser;
 		$this->setHeaders();
-		if ( method_exists( $wgOut, 'addModuleStyles' ) &&
-			 !is_null( $wgOut->getResourceLoader()->getModule( 'mediawiki.special' ) ) ) {
-			$wgOut->addModuleStyles( 'mediawiki.special' );
-		}
+		$wgOut->addModuleStyles( 'mediawiki.special' );
 		$this->doSpecialReplaceText();
 	}
 
@@ -43,18 +33,6 @@ class ReplaceText extends SpecialPage {
 	}
 
 	/**
-	 * Helper function to generate a link.
-	 */
-	static function linkToTitle( $skin, $title, $linkText ) {
-		// link() method was added in MW 1.16
-		if ( method_exists( $skin, 'link' ) ) {
-			return $skin->link( $title, $linkText );
-		} else {
-			return $skin->makeKnownLinkObj( $title, $linkText );
-		}
-	}
-
-	/**
 	 * Helper function to display a hidden field for different versions
 	 * of MediaWiki.
 	 */
@@ -67,7 +45,8 @@ class ReplaceText extends SpecialPage {
 	}
 
 	function doSpecialReplaceText() {
-		global $wgUser, $wgOut, $wgRequest, $wgLang;
+		global $wgOut, $wgRequest, $wgLang;
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$this->target = $wgRequest->getText( 'target' );
 		$this->replacement = $wgRequest->getText( 'replacement' );
@@ -87,7 +66,7 @@ class ReplaceText extends SpecialPage {
 
 		if ( $wgRequest->getCheck( 'replace' ) ) {
 			$replacement_params = array();
-			$replacement_params['user_id'] = $wgUser->getId();
+			$replacement_params['user_id'] = $this->user->getId();
 			$replacement_params['target_str'] = $this->target;
 			$replacement_params['replacement_str'] = $this->replacement;
 			$replacement_params['use_regex'] = $this->use_regex;
@@ -120,8 +99,7 @@ class ReplaceText extends SpecialPage {
 			$wgOut->addWikiMsg( 'replacetext_success', "<tt><nowiki>{$this->target}</nowiki></tt>", "<tt><nowiki>{$this->replacement}</nowiki></tt>", $count );
 
 			// Link back
-			$sk = $this->user->getSkin();
-			$wgOut->addHTML( $this->linkToTitle( $sk, $this->getTitle(), wfMsgHtml( 'replacetext_return' ) ) );
+			$wgOut->addHTML( $linker->link( $this->getTitle(), wfMsgHtml( 'replacetext_return' ) ) );
 			return;
 		} elseif ( $wgRequest->getCheck( 'target' ) ) { // very long elseif, look for "end elseif"
 			// first, check that at least one namespace has been
@@ -173,15 +151,14 @@ class ReplaceText extends SpecialPage {
 			// if no results were found, check to see if a bad
 			// category name was entered
 			if ( count( $titles_for_edit ) == 0 && count( $titles_for_move ) == 0 ) {
-				$sk = $this->user->getSkin();
 				$bad_cat_name = false;
 				if ( ! empty( $this->category ) ) {
 					$category_title = Title::makeTitleSafe( NS_CATEGORY, $this->category );
 					if ( ! $category_title->exists() ) $bad_cat_name = true;
 				}
 				if ( $bad_cat_name ) {
-					//FIXME: raw html message
-					$wgOut->addHTML( wfMsg( 'replacetext_nosuchcategory', $this->linkToTitle( $sk, $category_title, ucfirst( $this->category ) ) ) );
+					$link = $linker->link( $category_title, htmlspecialchars( ucfirst( $this->category ) ) );
+					$wgOut->addHTML( wfMsgHtml( 'replacetext_nosuchcategory', $link ) );
 				} else {
 					if ( $this->edit_pages )
 						$wgOut->addWikiMsg( 'replacetext_noreplacement', "<tt><nowiki>{$this->target}</nowiki></tt>" );
@@ -190,7 +167,7 @@ class ReplaceText extends SpecialPage {
 				}
 				// link back to starting form
 				//FIXME: raw html message
-				$wgOut->addHTML( '<p>' . $this->linkToTitle( $sk, $this->getTitle(), wfMsg( 'replacetext_return' ) ) . '</p>' );
+				$wgOut->addHTML( '<p>' . $linker->link( $this->getTitle(), wfMsgHtml( 'replacetext_return' ) ) . '</p>' );
 			} else {
 				// Show a warning message if the replacement
 				// string is either blank or found elsewhere on
@@ -373,9 +350,8 @@ class ReplaceText extends SpecialPage {
 	}
 
 	function pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles ) {
-		global $wgOut, $wgLang, $wgScript;
-
-		$skin = $this->user->getSkin();
+		global $wgOut, $wgLang, $wgScriptPath;
+		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$formOpts = array( 'id' => 'choose_pages', 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
 		$wgOut->addHTML(
@@ -386,9 +362,7 @@ class ReplaceText extends SpecialPage {
 			self::hiddenField( 'use_regex', $this->use_regex )
 		);
 
-		$js = file_get_contents( dirname( __FILE__ ) . '/ReplaceText.js' );
-		$js = '<script type="text/javascript">' . $js . '</script>';
-		$wgOut->addScript( $js );
+		$wgOut->addScriptFile( "$wgScriptPath/extensions/ReplaceText/ReplaceText.js" );
 
 		if ( count( $titles_for_edit ) > 0 ) {
 			$wgOut->addWikiMsg( 'replacetext_choosepagesforedit', "<tt><nowiki>{$this->target}</nowiki></tt>", "<tt><nowiki>{$this->replacement}</nowiki></tt>",
@@ -398,7 +372,7 @@ class ReplaceText extends SpecialPage {
 				list( $title, $context ) = $title_and_context;
 				$wgOut->addHTML(
 					Xml::check( $title->getArticleID(), true ) .
-					$this->linkToTitle( $skin, $title, $title->getPrefixedText() ) . " - <small>$context</small><br />\n"
+					$linker->link( $title ) . " - <small>$context</small><br />\n"
 				);
 			}
 			$wgOut->addHTML( '<br />' );
@@ -409,7 +383,7 @@ class ReplaceText extends SpecialPage {
 			foreach ( $titles_for_move as $title ) {
 				$wgOut->addHTML(
 					Xml::check( 'move-' . $title->getArticleID(), true ) .
-					$skin->makeLinkObj( $title, htmlspecialchars( $title->getPrefixedText() ) ) . "<br />\n"
+					$linker->link( $title ) . "<br />\n"
 				);
 			}
 			$wgOut->addHTML( '<br />' );
@@ -447,7 +421,7 @@ class ReplaceText extends SpecialPage {
 			$wgOut->addWikiMsg( 'replacetext_cannotmove', $wgLang->formatNum( count( $unmoveable_titles ) ) );
 			$text = "<ul>\n";
 			foreach ( $unmoveable_titles as $title ) {
-				$text .= "<li>{$this->linkToTitle( $skin, $title, $title->getPrefixedText() )}<br />\n";
+				$text .= "<li>{$linker->link( $title )}<br />\n";
 			}
 			$text .= "</ul>\n";
 			$wgOut->addHTML( $text );
@@ -535,13 +509,8 @@ class ReplaceText extends SpecialPage {
 		if ( $use_regex ) {
 			$comparisonCond = 'page_title REGEXP ' . $dbr->addQuotes( $str );
 		} else {
-			// anyString() method was added in MW 1.16
-			if ( method_exists( $dbr, 'anyString' ) ) {
-				$any = $dbr->anyString();
-				$comparisonCond = 'page_title ' . $dbr->buildLike( $any, $str, $any );
-			} else {
-				$comparisonCond = 'page_title LIKE ' . $dbr->addQuotes( "%$str%" );
-			}
+			$any = $dbr->anyString();
+			$comparisonCond = 'page_title ' . $dbr->buildLike( $any, $str, $any );
 		}
 		$conds = array(
 			$comparisonCond,
@@ -562,13 +531,8 @@ class ReplaceText extends SpecialPage {
 		if ( $use_regex ) {
 			$comparisonCond = 'old_text REGEXP '  . $dbr->addQuotes( $search );
 		} else {
-			// anyString() method was added in MW 1.16
-			if ( method_exists( $dbr, 'anyString' ) ) {
-				$any = $dbr->anyString();
-				$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $any );
-			} else {
-				$comparisonCond = 'old_text LIKE ' . $dbr->addQuotes( "%$search%" );
-			}
+			$any = $dbr->anyString();
+			$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $any );
 		}
 		$conds = array(
 			$comparisonCond,
@@ -585,7 +549,7 @@ class ReplaceText extends SpecialPage {
 	}
 
 	protected function categoryCondition( $category, &$tables, &$conds ) {
-		if ( !empty( $category ) ) {
+		if ( strval( $category ) !== '' ) {
 			$category = Title::newFromText( $category )->getDbKey();
 			$tables[] = 'categorylinks';
 			$conds[] = 'page_id = cl_from';
@@ -594,17 +558,14 @@ class ReplaceText extends SpecialPage {
 	}
 
 	protected function prefixCondition( $prefix, &$conds ) {
-		if ( !empty( $prefix ) ) {
-			$dbr = wfGetDB( DB_SLAVE );
-			$prefix = Title::newFromText( $prefix )->getDbKey();
-			// anyString() function was added in MW 1.16
-			if ( method_exists( $dbr, 'anyString' ) ) {
-				$any = $dbr->anyString();
-				$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
-			} else {
-				$conds[] = "page_title LIKE '$prefix%'";
-			}
+		if ( strval( $prefix ) === '' ) {
+			return;
 		}
+			
+		$dbr = wfGetDB( DB_SLAVE );
+		$prefix = Title::newFromText( $prefix )->getDbKey();
+		$any = $dbr->anyString();
+		$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
 	}
 
 }
