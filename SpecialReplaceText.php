@@ -16,7 +16,10 @@ class ReplaceText extends SpecialPage {
 
 		$this->user = $wgUser;
 		$this->setHeaders();
-		$wgOut->addModuleStyles( 'mediawiki.special' );
+		if ( method_exists( $wgOut, 'addModuleStyles' ) &&	 
+			!is_null( $wgOut->getResourceLoader()->getModule( 'mediawiki.special' ) ) ) {
+			$wgOut->addModuleStyles( 'mediawiki.special' );
+		}
 		$this->doSpecialReplaceText();
 	}
 
@@ -264,6 +267,7 @@ class ReplaceText extends SpecialPage {
 						array(
 							'type'=>'button',
 							'id' => 'mw-search-toggleall',
+							// 'onclick' value needed for MW 1.16
 							'onclick' => 'mwToggleSearchCheckboxes("all");',
 							'value' => wfMsg( 'powersearch-toggleall' )
 						)
@@ -273,6 +277,7 @@ class ReplaceText extends SpecialPage {
 						array(
 							'type'=>'button',
 							'id' => 'mw-search-togglenone',
+							// 'onclick' value needed for MW 1.16
 							'onclick' => 'mwToggleSearchCheckboxes("none");',
 							'value' => wfMsg( 'powersearch-togglenone' )
 						)
@@ -304,8 +309,12 @@ class ReplaceText extends SpecialPage {
 			Xml::submitButton( wfMsg( 'replacetext_continue' ) ) .
 			Xml::closeElement( 'form' )
 		);
-		// add javascript specific to special:search
-		$wgOut->addModules( 'mediawiki.special.search' );
+		// Add Javascript specific to Special:Search
+		if ( method_exists( $wgOut, 'addModules' ) ) {
+			$wgOut->addModules( 'mediawiki.special.search' );
+		} else {
+			$wgOut->addScriptFile( 'search.js' );
+		}
 	}
 
 	/**
@@ -472,11 +481,11 @@ class ReplaceText extends SpecialPage {
 		foreach ( $cuts as $_ ) {
 			list( $index, $len, ) = $_;
 			$context .= self::convertWhiteSpaceToHTML(
-				$wgLang->truncate( substr( $text, 0, $index ), - $cw, '...', false  )
+				$wgLang->truncate( substr( $text, 0, $index ), - $cw, '...', false )
 			);
 			$snippet = self::convertWhiteSpaceToHTML( substr( $text, $index, $len ) );
 			if ( $use_regex ) {
-				$targetStr =  "/$target/U";
+				$targetStr = "/$target/U";
 			} else {
 				$targetq = preg_quote( self::convertWhiteSpaceToHTML( $target ), '/' );
 				$targetStr = "/$targetq/i";
@@ -529,7 +538,7 @@ class ReplaceText extends SpecialPage {
 		$tables = array( 'page', 'revision', 'text' );
 		$vars = array( 'page_id', 'page_namespace', 'page_title', 'old_text' );
 		if ( $use_regex ) {
-			$comparisonCond = 'old_text REGEXP '  . $dbr->addQuotes( $search );
+			$comparisonCond = 'old_text REGEXP ' . $dbr->addQuotes( $search );
 		} else {
 			$any = $dbr->anyString();
 			$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $any );
