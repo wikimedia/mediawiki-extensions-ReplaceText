@@ -23,7 +23,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'Replace Text',
-	'version' => '0.9.2',
+	'version' => '0.9.3',
 	'author' => array( 'Yaron Koren', 'Niklas Laxström' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'descriptionmsg'  => 'replacetext-desc',
