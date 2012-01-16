@@ -722,8 +722,8 @@ $messages['fi'] = array(
 	'replacetext_nomove' => 'No pages were found whose title contains "$1".',
 	'replacetext_nosuchcategory' => 'Luokkaa "$1" ei ole.',
 	'replacetext_return' => 'Palaa lomakkeeseen.',
-	'replacetext_warning' => '\'\'\'Varoitus:\'\'\' {{PLURAL:$1|$1 sivu| $1 sivua}} sisältää jo korvaavan tekstin, "$2". Korvauksen jälkeen korvatut ja jo tekstin sisältäneet kohdat eivät erotu toisistaan.
-If you make this replacement you will not be able to separate your replacements from these strings.',
+	'replacetext_warning' => "'''Varoitus:''' {{PLURAL:$1|$1 sivu| $1 sivua}} sisältää jo korvaavan tekstin, ”$2”.
+Korvauksen jälkeen korvatut ja jo tekstin sisältäneet kohdat eivät erotu toisistaan.",
 	'replacetext_blankwarning' => "'''Varoitus:''' Koska korvaava teksti on tyhjä, operaatiota ei voi palauttaa käänteisellä korvauksella.",
 	'replacetext_continue' => 'Jatka',
 	'replacetext_editsummary' => 'Tekstin korvaus – ”$1” muotoon ”$2”',
