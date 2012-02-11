@@ -48,11 +48,14 @@ $wgAutoloadClasses['ReplaceTextJob'] = $rtgIP . 'ReplaceTextJob.php';
 // This function should really go into a "ReplaceText_body.php" file.
 function rtAddToAdminLinks( &$admin_links_tree ) {
 	$general_section = $admin_links_tree->getSection( wfMsg( 'adminlinks_general' ) );
-        $extensions_row = $general_section->getRow( 'extensions' );
+	$extensions_row = $general_section->getRow( 'extensions' );
+
 	if ( is_null( $extensions_row ) ) {
 		$extensions_row = new ALRow( 'extensions' );
 		$general_section->addRow( $extensions_row );
 	}
+
 	$extensions_row->addItem( ALItem::newFromSpecialPage( 'ReplaceText' ) );
+
 	return true;
 }
