@@ -572,7 +572,10 @@ class ReplaceText extends SpecialPage {
 		}
 			
 		$dbr = wfGetDB( DB_SLAVE );
-		$prefix = Title::newFromText( $prefix )->getDbKey();
+		$title = Title::newFromText( $prefix );
+		if ( !is_null( $title ) ) {
+			$prefix = $title->getDbKey();
+		}
 		$any = $dbr->anyString();
 		$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
 	}
