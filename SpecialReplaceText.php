@@ -16,7 +16,7 @@ class ReplaceText extends SpecialPage {
 
 		$this->user = $wgUser;
 		$this->setHeaders();
-		if ( method_exists( $wgOut, 'addModuleStyles' ) &&	 
+		if ( method_exists( $wgOut, 'addModuleStyles' ) &&
 			!is_null( $wgOut->getResourceLoader()->getModule( 'mediawiki.special' ) ) ) {
 			$wgOut->addModuleStyles( 'mediawiki.special' );
 		}
@@ -85,7 +85,7 @@ class ReplaceText extends SpecialPage {
 			}
 			$jobs = array();
 			foreach ( $wgRequest->getValues() as $key => $value ) {
-				if ( $value == '1' && $key !== 'replace' ) {
+				if ( $value == '1' && $key !== 'replace' && $key !== 'use_regex' ) {
 					if ( strpos( $key, 'move-' ) !== false ) {
 						$title = Title::newFromID( substr( $key, 5 ) );
 						$replacement_params['move_page'] = true;
@@ -516,7 +516,7 @@ class ReplaceText extends SpecialPage {
 
 		$str = str_replace( ' ', '_', $str );
 		if ( $use_regex ) {
-			$comparisonCond = 'page_title REGEXP ' . $dbr->addQuotes( $str );
+			$comparisonCond = $this->regexCond( $dbr, 'page_title', $str );
 		} else {
 			$any = $dbr->anyString();
 			$comparisonCond = 'page_title ' . $dbr->buildLike( $any, $str, $any );
@@ -538,7 +538,7 @@ class ReplaceText extends SpecialPage {
 		$tables = array( 'page', 'revision', 'text' );
 		$vars = array( 'page_id', 'page_namespace', 'page_title', 'old_text' );
 		if ( $use_regex ) {
-			$comparisonCond = 'old_text REGEXP ' . $dbr->addQuotes( $search );
+			$comparisonCond = $this->regexCond( $dbr, 'old_text', $search );
 		} else {
 			$any = $dbr->anyString();
 			$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $any );
@@ -580,4 +580,12 @@ class ReplaceText extends SpecialPage {
 		$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
 	}
 
+	private function regexCond( $dbr, $column, $regex ) {
+		if ( $dbr instanceof DatabasePostgres ) {
+			$op = '~';
+		} else {
+			$op = 'REGEXP';
+		}
+		return "$column $op " . $dbr->addQuotes( $regex );
+	}
 }
