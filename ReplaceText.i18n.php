@@ -582,6 +582,7 @@ $messages['eo'] = array(
 
 /** Spanish (Español)
  * @author Antur
+ * @author Armando-Martin
  * @author Crazymadlover
  * @author Dferg
  * @author Imre
@@ -597,6 +598,8 @@ A continuación verás un listado de páginas que contienen el texto de búsqued
 Tu nombre aparecerá como usuario responsable de los cambios en el historial de cada una de esas páginas.",
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Texto de reemplazo:',
+	'replacetext_useregex' => 'Utilizar expresiones regulares',
+	'replacetext_regexdocu' => '(Ejemplo: los valores "a(.*)c" para el "texto orixinal" y "ac$1" para el "texto de substitución" cambiarán "abc" por "acb".)',
 	'replacetext_optionalfilters' => 'Filtros opcionales:',
 	'replacetext_categorysearch' => 'Reemplace sólo en la categoría:',
 	'replacetext_prefixsearch' => 'Reemplaza solamente en páginas con el prefijo:',
