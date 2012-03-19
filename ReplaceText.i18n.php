@@ -1989,6 +1989,7 @@ $messages['ru'] = array(
 
 /** Slovak (Slovenčina)
  * @author Helix84
+ * @author Teslaton
  */
 $messages['sk'] = array(
 	'replacetext' => 'Nahradiť text',
@@ -1996,6 +1997,8 @@ $messages['sk'] = array(
 	'replacetext_docu' => 'Nájsť text na všetkých stránkach tejto wiki a nahradiť ho iným textom môžete tak, že sem napíšete texty a stlačíte „Pokračovať”. Potom sa vám zobrazí zoznam stránok obsahujúcich hľadaný text a môžete si zvoliť tie, na ktorých ho chcete nahradiť. V histórii úprav sa zaznamená vaše meno.',
 	'replacetext_originaltext' => 'Pôvodný text:',
 	'replacetext_replacementtext' => 'Nahradiť textom:',
+	'replacetext_useregex' => 'Použiť regulárne výrazy',
+	'replacetext_regexdocu' => '(Príklad: výraz „a(.*)c“ pre „Pôvodný text“ a „ac$1“ pre „Nahradiť textom“ nahradí „abc“ s „acb“.)',
 	'replacetext_optionalfilters' => 'Nepovinné filtre:',
 	'replacetext_categorysearch' => 'Nahradiť iba v kategórii:',
 	'replacetext_prefixsearch' => 'Nahradiť iba v stránkach s predponou:',
@@ -2017,7 +2020,7 @@ $messages['sk'] = array(
 	'replacetext_nomove' => 'Neboli nájdené žiadne stránky, ktorých názov obsahuje „$1“.',
 	'replacetext_nosuchcategory' => 'Žiadna kategória s názvom „$1“ neexistuje.',
 	'replacetext_return' => 'Späť na formulár.',
-	'replacetext_warning' => '$1 {{PLURAL:$1|stránka|stránok}} už obsahuje text „$2”, ktorým chcete text nahradiť; ak budete pokračovať a text nahradíte, nebudete môcť odlíšiť vaše nahradenia od existujúceho textu, ktorý tento reťazec už obsahuje. Pokračovať v nahradení?',
+	'replacetext_warning' => '$1 {{PLURAL:$1|stránka|stránky|stránok}} už obsahuje text „$2”, ktorým chcete pôvodný text nahradiť; ak budete pokračovať a text nahradíte, nebudete môcť odlíšiť vaše nahradenia od existujúceho textu, ktorý tento reťazec už obsahuje.',
 	'replacetext_blankwarning' => 'Pretože text, ktorým text chcete nahradiť je prázdny, operácia bude nevratná. Pokračovať?',
 	'replacetext_continue' => 'Pokračovať',
 	'replacetext_editsummary' => 'Nahradenie textu „$1” textom „$2”',
