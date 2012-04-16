@@ -1880,11 +1880,12 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
  * @author Enqd
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Jaideraf
  * @author Luckas Blade
  */
 $messages['pt-br'] = array(
 	'replacetext' => 'Substituir texto',
-	'replacetext-desc' => 'Fornece uma [[Special:ReplaceText|página especial]] que permite que administradores procurem e substituam uma "string" global em todas as páginas de conteúdo de uma wiki.',
+	'replacetext-desc' => 'Fornece uma [[Special:ReplaceText|página especial]] que permite que administradores procurem e substituam uma "string" global em todas as páginas de conteúdo de um wiki.',
 	'replacetext_docu' => 'Para substituir uma "string" de texto por outra em todas as páginas desta wiki você precisa fornecer o texto a ser substituído e o novo texto, logo em seguida pressione o botão \'Substituir\'. Será exibida uma lista de páginas que contenham o termo pesquisado, sendo possível selecionar em quais você deseja realizar substituições. Seu nome de utilizador aparecerá nos históricos de páginas como o responsável por ter feito as alterações.',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Texto substitutivo:',
@@ -1998,7 +1999,7 @@ $messages['sk'] = array(
 	'replacetext_originaltext' => 'Pôvodný text:',
 	'replacetext_replacementtext' => 'Nahradiť textom:',
 	'replacetext_useregex' => 'Použiť regulárne výrazy',
-	'replacetext_regexdocu' => '(Príklad: výraz „a(.*)c“ pre „Pôvodný text“ a „ac$1“ pre „Nahradiť textom“ nahradí „abc“ s „acb“.)',
+	'replacetext_regexdocu' => '(Príklad: výraz „a(.*)c“ pre „Pôvodný text“ a „ac$1“ pre „Nahradiť textom“ nahradí „abc“ textom „acb“.)',
 	'replacetext_optionalfilters' => 'Nepovinné filtre:',
 	'replacetext_categorysearch' => 'Nahradiť iba v kategórii:',
 	'replacetext_prefixsearch' => 'Nahradiť iba v stránkach s predponou:',
@@ -2020,7 +2021,7 @@ $messages['sk'] = array(
 	'replacetext_nomove' => 'Neboli nájdené žiadne stránky, ktorých názov obsahuje „$1“.',
 	'replacetext_nosuchcategory' => 'Žiadna kategória s názvom „$1“ neexistuje.',
 	'replacetext_return' => 'Späť na formulár.',
-	'replacetext_warning' => '$1 {{PLURAL:$1|stránka|stránky|stránok}} už obsahuje text „$2”, ktorým chcete pôvodný text nahradiť; ak budete pokračovať a text nahradíte, nebudete môcť odlíšiť vaše nahradenia od existujúceho textu, ktorý tento reťazec už obsahuje.',
+	'replacetext_warning' => "'''Upozornenie:''' $1 {{PLURAL:$1|stránka|stránky|stránok}} už obsahuje text „$2”, ktorým chcete pôvodný text nahradiť. Ak budete pokračovať a text nahradíte, nebudete môcť odlíšiť vaše nahradenia od existujúceho textu, ktorý tento reťazec už obsahuje.",
 	'replacetext_blankwarning' => 'Pretože text, ktorým text chcete nahradiť je prázdny, operácia bude nevratná. Pokračovať?',
 	'replacetext_continue' => 'Pokračovať',
 	'replacetext_editsummary' => 'Nahradenie textu „$1” textom „$2”',
