@@ -1179,6 +1179,7 @@ $messages['it'] = array(
  * @author Aotake
  * @author Fryed-peach
  * @author Schu
+ * @author Shirayuki
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -1214,7 +1215,7 @@ $messages['ja'] = array(
 	'replacetext_blankwarning' => '置換後文字列が空であるため、この操作は実行後の取り消しができなくなります。続行しますか？',
 	'replacetext_continue' => '続行',
 	'replacetext_editsummary' => '文字列「$1」を「$2」に置換',
-	'right-replacetext' => 'ウィキ全体で文字列の置換を実行する',
+	'right-replacetext' => 'ウィキ全体で文字列の置換を実行',
 );
 
 /** Javanese (Basa Jawa)
