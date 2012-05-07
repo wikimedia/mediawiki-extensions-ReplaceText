@@ -1883,22 +1883,27 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
  * @author Hamilton Abreu
  * @author Jaideraf
  * @author Luckas Blade
+ * @author 555
  */
 $messages['pt-br'] = array(
 	'replacetext' => 'Substituir texto',
-	'replacetext-desc' => 'Fornece uma [[Special:ReplaceText|página especial]] que permite que administradores procurem e substituam uma "string" global em todas as páginas de conteúdo de um wiki.',
-	'replacetext_docu' => 'Para substituir uma "string" de texto por outra em todas as páginas desta wiki você precisa fornecer o texto a ser substituído e o novo texto, logo em seguida pressione o botão \'Substituir\'. Será exibida uma lista de páginas que contenham o termo pesquisado, sendo possível selecionar em quais você deseja realizar substituições. Seu nome de utilizador aparecerá nos históricos de páginas como o responsável por ter feito as alterações.',
+	'replacetext-desc' => '[[Special:ReplaceText|Página especial]] que permite que os administradores façam substituições globais de texto em todas as páginas de conteúdo de um wiki',
+	'replacetext_docu' => 'Para substituir uma "string" de texto por outra em todas as páginas deste wiki, forneça o texto a ser substituído e o novo texto e clique no botão \'Avançar\'.
+Será exibida uma lista de páginas que possuem o termo pesquisado. A partir dela, selecione em quais você deseja realizar substituições.
+Seu nome de usuário aparecerá nos históricos das páginas como o responsável por ter feito as alterações.',
 	'replacetext_originaltext' => 'Texto original:',
-	'replacetext_replacementtext' => 'Texto substitutivo:',
+	'replacetext_replacementtext' => 'Novo texto:',
+	'replacetext_useregex' => 'Usar expressões regulares',
+	'replacetext_regexdocu' => '(Exemplo: os valores "a(.*)c" no "Texto original" e "ac$1" em "Novo texto" substituiriam "abc" por "acb")',
 	'replacetext_optionalfilters' => 'Filtros opcionais:',
 	'replacetext_categorysearch' => 'Substituir apenas na categoria:',
 	'replacetext_prefixsearch' => 'Substituir apenas em páginas com o prefixo:',
 	'replacetext_editpages' => 'Substituir texto no conteúdo da página',
 	'replacetext_movepages' => 'Substituir texto nos títulos das páginas, quando possível',
-	'replacetext_givetarget' => 'Você deve especificar um texto a ser substituido.',
-	'replacetext_nonamespace' => 'Você deve selecionar pelo menos um domínio.',
-	'replacetext_editormove' => 'Você deve selecionar pelo menos uma das opções de substituição',
-	'replacetext_choosepagesforedit' => "!!Por favor, seleccione {{PLURAL:$3|a página na qual|as páginas nas quais}} deseja substituir '$1' por '$2':",
+	'replacetext_givetarget' => 'Você precisa especificar um texto para ser substituído.',
+	'replacetext_nonamespace' => 'Você precisa selecionar no mínimo um espaço nominal.',
+	'replacetext_editormove' => 'Você precisa selecionar no mínimo uma das opções de substituição.',
+	'replacetext_choosepagesforedit' => 'Substituir "$1" por "$2" no texto {{PLURAL:$3|da página|das páginas}} a seguir:',
 	'replacetext_choosepagesformove' => 'Substituir "$1" por "$2" {{PLURAL:$3|no nome da seguinte página|nos nomes das seguintes páginas}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte página não pode ser movida|As seguintes páginas não podem ser movidas}}:',
 	'replacetext_formovedpages' => 'Para páginas movidas:',
@@ -1906,16 +1911,16 @@ $messages['pt-br'] = array(
 	'replacetext_watchmovedpages' => 'Vigiar estas páginas',
 	'replacetext_invertselections' => 'Inverter seleções',
 	'replacetext_replace' => 'Substituir',
-	'replacetext_success' => "'$1' será substituído por '$2' em $3 {{PLURAL:$3|página|páginas}}.",
-	'replacetext_noreplacement' => 'Não foram encontradas páginas contendo a "string" \'$1\'.',
-	'replacetext_nomove' => "Não foram encontradas páginas com títulos contendo '$1'.",
-	'replacetext_nosuchcategory' => 'Não existe categoria com o nome "$1".',
+	'replacetext_success' => '"$1" será substituído por "$2" em $3 {{PLURAL:$3|página|páginas}}.',
+	'replacetext_noreplacement' => 'Não foram encontradas páginas que contenham a expressão "$1".',
+	'replacetext_nomove' => 'Não foram encontradas páginas cujo título contenha "$1".',
+	'replacetext_nosuchcategory' => 'Não existe nenhuma categoria com o nome "$1".',
 	'replacetext_return' => 'Voltar ao formulário.',
-	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} o texto de substituição, \"\$2\". Se fizer esta substituição não poderá desfazer a operação com uma simples substituição em ordem inversa.",
-	'replacetext_blankwarning' => '!!Uma vez que a "string" de novo texto foi deixada em branco, esta operação não será reversível. Prosseguir?',
-	'replacetext_continue' => 'Prosseguir',
+	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} a expressão de substituição, \"\$2\". Se você prosseguir, não será possível distinguí-las das suas substituições, nem desfazer a operação com uma simples substituição em ordem inversa.",
+	'replacetext_blankwarning' => "'''Aviso:''' Como o texto de substituição foi deixado em branco, esta operação não será reversível.",
+	'replacetext_continue' => 'Avançar',
 	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
-	'right-replacetext' => 'Faça substituições de cadeias de caracteres no wiki inteiro',
+	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
 );
 
 /** Romanian (Română)
