@@ -1876,6 +1876,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 );
 
 /** Brazilian Portuguese (Português do Brasil)
+ * @author 555
  * @author Crazymadlover
  * @author Eduardo.mps
  * @author Enqd
@@ -1883,7 +1884,6 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
  * @author Hamilton Abreu
  * @author Jaideraf
  * @author Luckas Blade
- * @author 555
  */
 $messages['pt-br'] = array(
 	'replacetext' => 'Substituir texto',
