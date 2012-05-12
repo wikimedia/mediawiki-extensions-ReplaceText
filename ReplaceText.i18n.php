@@ -1629,6 +1629,7 @@ Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.',
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Gunnernett
  * @author Harald Khan
+ * @author Njardarlogar
  */
 $messages['nn'] = array(
 	'replacetext' => 'Byt ut tekst',
@@ -2272,7 +2273,7 @@ $messages['uk'] = array(
 	'replacetext_continue' => 'Продовжити',
 );
 
-/** Veps (Vepsan kel')
+/** Veps (Vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
