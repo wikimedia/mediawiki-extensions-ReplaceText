@@ -75,7 +75,7 @@ $specialPageAliases['gl'] = array(
 
 /** Swiss German (Alemannisch) */
 $specialPageAliases['gsw'] = array(
-	'ReplaceText' => array( 'Täxt ersetze' ),
+	'ReplaceText' => array( 'Täxt_ersetze' ),
 );
 
 /** Hebrew (עברית) */
@@ -221,4 +221,14 @@ $specialPageAliases['tr'] = array(
 /** Vèneto (Vèneto) */
 $specialPageAliases['vec'] = array(
 	'ReplaceText' => array( 'SostuituissiTesto' ),
+);
+
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'ReplaceText' => array( 'Thay_văn_bản' ),
+);
+
+/** Simplified Chinese (‪中文(简体)‬) */
+$specialPageAliases['zh-hans'] = array(
+	'ReplaceText' => array( '替换文本' ),
 );
