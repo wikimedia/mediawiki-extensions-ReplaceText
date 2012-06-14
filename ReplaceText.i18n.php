@@ -193,7 +193,7 @@ $messages['arz'] = array(
 	'right-replacetext' => 'القيام باستبدال للسلاسل فى الويكى بأكمله',
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Cekli829
  */
 $messages['az'] = array(
@@ -285,7 +285,7 @@ $messages['be-tarask'] = array(
 	'right-replacetext' => 'замена тэксту ва ўсёй вікі',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  */
 $messages['bg'] = array(
@@ -315,7 +315,7 @@ $messages['bn'] = array(
 	'replacetext_categorysearch' => 'শুধুমাত্র বিষয়শ্রেণীতেই প্রতিস্থাপন করো:',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fohanno
  * @author Fulup
  * @author Y-M D
@@ -358,7 +358,7 @@ War wel e teuio hoc'h anv war roll istor pep pajenn evit ma vo gouezet gant piv 
 	'right-replacetext' => "Krouiñ erlec'hiadurioù testenn er wiki a-bezh",
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
@@ -399,7 +399,7 @@ Da li želite nastaviti?',
 	'right-replacetext' => 'Pravljenje zamjene teksta na cijelom wikiju',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author SMP
  * @author Solde
  */
@@ -415,7 +415,7 @@ $messages['ce'] = array(
 	'replacetext_optionalfilters' => 'Тlедожийна доцу литтарш:',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Matěj Grabovský
  * @author Mormegil
  */
@@ -580,7 +580,7 @@ $messages['eo'] = array(
 	'replacetext_editsummary' => "Teksta anstataŭigo - '$1' al '$2'",
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Antur
  * @author Armando-Martin
  * @author Crazymadlover
@@ -631,7 +631,7 @@ Si realizas esta sustituación, no podrás separar tus sustituciones de estas ca
 	'right-replacetext' => 'Reemplaza cadenas de caracteres en toda la wiki',
 );
 
-/** Basque (Euskara)
+/** Basque (euskara)
  * @author An13sa
  * @author Kobazulo
  */
@@ -689,7 +689,7 @@ $messages['fa'] = array(
 	'right-replacetext' => 'انجام جایگزین کردن رشته در تمام ویکی',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Cimon Avaro
  * @author Crt
  * @author Nike
@@ -733,7 +733,7 @@ Korvauksen jälkeen korvatut ja jo tekstin sisältäneet kohdat eivät erotu toi
 	'right-replacetext' => 'Tehdä merkkijonojen korvauksia koko wikin laajuudella',
 );
 
-/** French (Français)
+/** French (français)
  * @author Crochet.david
  * @author Grondin
  * @author IAlex
@@ -781,7 +781,7 @@ Si vous effectuez cette substitution, vous ne pourrez pas distinguer vos modific
 	'right-replacetext' => 'Faire des remplacements de texte dans tout le wiki',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -935,7 +935,7 @@ $messages['he'] = array(
 	'right-replacetext' => 'ביצוע החלפת מחרוזות באתר הוויקי כולו',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author Bugoslav
  * @author Dalibor Bosits
  * @author Ex13
@@ -1002,7 +1002,7 @@ $messages['hsb'] = array(
 	'right-replacetext' => 'Tekstowe narunanja na cyłym wikiju činić',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Glanthor Reviol
  */
 $messages['hu'] = array(
@@ -1042,7 +1042,7 @@ Biztosan folytatni szeretnéd?',
 	'right-replacetext' => 'szövegcserék végrehajtása az egész wikin',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -1133,7 +1133,7 @@ $messages['ig'] = array(
 	'replacetext_replace' => 'Kwụchí na élú',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Beta16
  * @author Civvì
  * @author Darth Kule
@@ -1391,7 +1391,7 @@ Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säi
 	'right-replacetext' => 'Ersetze vun enger Rei vun Textzeechen op der ganzer Wiki',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Homo
  */
 $messages['lt'] = array(
@@ -1407,7 +1407,7 @@ $messages['mg'] = array(
 	'right-replacetext' => 'Manolo lahatsoratra misy manerana ilay wiki',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -1626,7 +1626,7 @@ Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.',
 	'right-replacetext' => 'Tekst vervangen in de hele wiki',
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Gunnernett
  * @author Harald Khan
  * @author Njardarlogar
@@ -1668,7 +1668,7 @@ Vil du halda fram?',
 	'right-replacetext' => 'Gjennomfør utbyting av tekst på heile wikien',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
@@ -1714,7 +1714,7 @@ $messages['pdc'] = array(
 	'replacetext_continue' => 'Weider',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author Derbeth
  * @author Leinad
  * @author Maikking
@@ -1830,7 +1830,7 @@ $messages['ps'] = array(
 	'replacetext_editsummary' => 'متن ځايناستول - له "$1" نه "$2" ته',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author 555
  * @author Crazymadlover
  * @author Hamilton Abreu
@@ -1876,7 +1876,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author 555
  * @author Crazymadlover
  * @author Eduardo.mps
@@ -1924,7 +1924,7 @@ Seu nome de usuário aparecerá nos históricos das páginas como o responsável
 	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author Firilacroco
  * @author KlaudiuMihaila
  */
@@ -1940,7 +1940,7 @@ $messages['ro'] = array(
 	'replacetext_editsummary' => "Înlocuire de text - '$1' în '$2'",
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
@@ -1950,7 +1950,7 @@ $messages['roa-tara'] = array(
 	'replacetext_continue' => 'Condinue',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author AlexSm
  * @author Ferrer
  * @author Kv75
@@ -1995,7 +1995,7 @@ $messages['ru'] = array(
 	'right-replacetext' => 'выполнение замен текста во всей вики',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  * @author Teslaton
  */
@@ -2035,7 +2035,7 @@ $messages['sk'] = array(
 	'right-replacetext' => 'Vykonať náhradu reťazcov na celej wiki',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -2068,7 +2068,7 @@ $messages['sr-ec'] = array(
 	'right-replacetext' => 'замењивање ниски на целом викију',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author Michaello
  * @author Rancher
  * @author Жељко Тодоровић
@@ -2100,7 +2100,7 @@ $messages['sr-el'] = array(
 	'right-replacetext' => 'zamenjivanje niski na celom vikiju',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Fluff
  * @author M.M.S.
  * @author Najami
@@ -2243,7 +2243,7 @@ Devam etmek istiyor musunuz?',
 	'right-replacetext' => 'Vikinin tamamında dizgileri değiştirir',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author AS
  * @author Prima klasy4na
  */
@@ -2343,7 +2343,7 @@ $messages['vo'] = array(
 	'right-replacetext' => 'Ledunön vödemiplaädami in vük lölik',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Liangent
  * @author Onecountry
  * @author PhiLiP
@@ -2382,7 +2382,7 @@ $messages['zh-hans'] = array(
 	'right-replacetext' => '对整个维基进行文字替换。',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Mark85296341
  * @author Roc michael
  * @author Sheepy
