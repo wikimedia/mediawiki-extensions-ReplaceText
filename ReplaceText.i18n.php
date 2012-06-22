@@ -1258,6 +1258,7 @@ $messages['km'] = array(
 /** Korean (한국어)
  * @author Devunt
  * @author Kwj2772
+ * @author 아라
  */
 $messages['ko'] = array(
 	'replacetext' => '찾아 바꾸기',
@@ -1277,20 +1278,20 @@ $messages['ko'] = array(
 	'replacetext_givetarget' => '찾을 문자열을 반드시 지정해야 합니다.',
 	'replacetext_nonamespace' => '이름공간을 적어도 하나는 선택해야 합니다.',
 	'replacetext_editormove' => '찾아 바꾸기 옵션을 적어도 하나는 선택해야 합니다.',
-	'replacetext_choosepagesforedit' => '$3개의 문서에 있는 “$1” 문자열을 “$2” 문자열로 바꿉니다:',
-	'replacetext_choosepagesformove' => '$3개의 문서 제목에 있는 “$1” 문자열을 “$2” 문자열로 바꿉니다:',
+	'replacetext_choosepagesforedit' => '문서 $3개에 있는 “$1” 문자열을 “$2” 문자열로 바꿉니다:',
+	'replacetext_choosepagesformove' => '가리키는 문서 제목 $3개에 있는 “$1” 문자열을 “$2” 문자열로 바꿉니다:',
 	'replacetext_cannotmove' => '다음 {{PLURAL:$1|문서는|문서들은}} 이동할 수 없습니다:',
 	'replacetext_formovedpages' => '이동한 페이지의 경우 :',
 	'replacetext_savemovedpages' => '옛 문서 제목을 새 문서 제목으로 넘겨 주는 문서로 만들기',
 	'replacetext_watchmovedpages' => '이 문서 주시하기',
 	'replacetext_invertselections' => '선택 반전',
 	'replacetext_replace' => '찾아 바꾸기',
-	'replacetext_success' => '“$1” 문자열은 $3개의 문서에서 “$2” 문자열로 바뀔 것입니다.',
+	'replacetext_success' => '“$1” 문자열은 문서 $3개에서 “$2” 문자열로 바뀔 것입니다.',
 	'replacetext_noreplacement' => '“$1” 문자열을 포함하고 있는 문서가 없습니다.',
 	'replacetext_nomove' => '“$1” 문자열을 포함하고 있는 문서 제목이 없습니다.',
 	'replacetext_nosuchcategory' => '“$1” 문자열을 포함하고 있는 분류가 없습니다.',
 	'replacetext_return' => '찾아 바꾸기 양식으로 돌아가기',
-	'replacetext_warning' => '“$2” 문자열을 포함하고 있는 $1개의 문서가 이미 있습니다. 이 찾아 바꾸기를 실행하면, 이미 존재하는 “$2” 문자열과 더 이상 구분되지 않을 것입니다.
+	'replacetext_warning' => '“$2” 문자열을 포함하고 있는 문서 $1개가 이미 있습니다. 이 찾아 바꾸기를 실행하면, 이미 존재하는 “$2” 문자열과 더 이상 구분되지 않을 것입니다.
 찾아 바꾸기를 계속하시겠습니까?',
 	'replacetext_blankwarning' => '바꿀 문자열이 비어 있으므로 이 동작은 되돌릴 수 없습니다.
 계속하시겠습니까?',
