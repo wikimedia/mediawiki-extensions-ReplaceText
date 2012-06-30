@@ -43,7 +43,7 @@ $specialPageAliases['diq'] = array(
 	'ReplaceText' => array( 'MetinVurnayış' ),
 );
 
-/** Lower Sorbian (Dolnoserbski) */
+/** Lower Sorbian (dolnoserbski) */
 $specialPageAliases['dsb'] = array(
 	'ReplaceText' => array( 'Tekst wuměniś' ),
 );
@@ -73,7 +73,7 @@ $specialPageAliases['frp'] = array(
 	'ReplaceText' => array( 'Remplaciér_lo_tèxto', 'RemplaciérLoTèxto' ),
 );
 
-/** Galician (Galego) */
+/** Galician (galego) */
 $specialPageAliases['gl'] = array(
 	'ReplaceText' => array( 'Substituír_o_texto' ),
 );
@@ -93,7 +93,7 @@ $specialPageAliases['hr'] = array(
 	'ReplaceText' => array( 'Zamjeni_tekst' ),
 );
 
-/** Upper Sorbian (Hornjoserbsce) */
+/** Upper Sorbian (hornjoserbsce) */
 $specialPageAliases['hsb'] = array(
 	'ReplaceText' => array( 'Tekst narunać' ),
 );
