@@ -241,7 +241,7 @@ $messages['ba'] = array(
 	'right-replacetext' => 'Бөтә викила тексты алмаштырыу',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -492,7 +492,7 @@ Sofern Sie nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführen, ist eine sp
 	'replacetext_blankwarning' => "'''Warnung:''' Da der zu ersetzende Textteil leer ist, kann die Operation nicht rückgängig gemacht werden. Möchten Sie dennoch fortfahren?",
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -799,7 +799,7 @@ $messages['frp'] = array(
 	'replacetext_editsummary' => 'Remplacement du tèxto — « $1 » per « $2 »',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Hamilton Abreu
  * @author Toliño
  */
@@ -963,7 +963,7 @@ Ako napravite ovu zamjenu nećete moći odvojiti svoju zamjenu od ovog teksta. N
 	'replacetext_editsummary' => "Zamjena teksta - '$1' u '$2'",
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
