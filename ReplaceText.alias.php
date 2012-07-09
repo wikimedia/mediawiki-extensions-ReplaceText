@@ -220,7 +220,7 @@ $specialPageAliases['sw'] = array(
 
 /** Tagalog (Tagalog) */
 $specialPageAliases['tl'] = array(
-	'ReplaceText' => array( 'Palitan ang teksto' ),
+	'ReplaceText' => array( 'Palitan_ang_teksto' ),
 );
 
 /** Turkish (Türkçe) */
