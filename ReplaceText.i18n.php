@@ -200,7 +200,7 @@ $messages['az'] = array(
 	'replacetext_originaltext' => 'Orijinal mətn:',
 );
 
-/** Bashkir (Башҡортса)
+/** Bashkir (башҡортса)
  * @author Assele
  */
 $messages['ba'] = array(
@@ -408,7 +408,7 @@ $messages['ca'] = array(
 	'right-replacetext' => 'Fer substitucions de cadena a tot el wiki',
 );
 
-/** Chechen (Нохчийн)
+/** Chechen (нохчийн)
  * @author Sasan700
  */
 $messages['ce'] = array(
@@ -1544,8 +1544,8 @@ Nama anda akan terpapar dalam sejarah laman sebagai pengguna yang bertanggungjaw
 	'right-replacetext' => 'Membuat penggantian rentetan di seluruh wiki',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
+ * @author Event
  * @author Laaknor
  * @author Nghtwlkr
  * @author Simny
@@ -1556,6 +1556,8 @@ $messages['nb'] = array(
 	'replacetext_docu' => 'For å erstatte én tekststreng med en annen på alle datasider på denne wikien kan du skrive inn de to tekstene her og trykke «Erstatt». Du vil da bli ført til en liste over sider som inneholder søketeksten, og du kan velge hvilke sider du ønsker å erstatte den i. Navnet ditt vil stå i sidehistorikkene som den som er ansvarlig for endringene.',
 	'replacetext_originaltext' => 'Originaltekst:',
 	'replacetext_replacementtext' => 'Erstatningstekst:',
+	'replacetext_useregex' => 'Bruk regulæruttrykk',
+	'replacetext_regexdocu' => '(Eksempel: Verdier for "a(.*)c" i "Opprinnelig tekst" og "ac$1" i "Erstatningstekst" erstatter "abc" med "acb".)',
 	'replacetext_optionalfilters' => 'Valgfrie filter:',
 	'replacetext_categorysearch' => 'Erstatt kun i kategori:',
 	'replacetext_prefixsearch' => 'Erstatt kun i sider med prefikset:',
@@ -2274,7 +2276,7 @@ $messages['uk'] = array(
 	'replacetext_continue' => 'Продовжити',
 );
 
-/** Veps (Vepsän kel’)
+/** Veps (vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
