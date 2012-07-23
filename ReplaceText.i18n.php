@@ -55,6 +55,7 @@ Your name will appear in page histories as the user responsible for any changes.
  * @author Darth Kule
  * @author EugeneZelenko
  * @author Fryed-peach
+ * @author Kghbln
  * @author Kwj2772
  * @author McMonster
  * @author Nike
@@ -66,7 +67,7 @@ $messages['qqq'] = array(
 	'replacetext-desc' => '{{desc}}
 
 {{Identical|Content page}}',
-	'replacetext_docu' => "Description of how to use this extension, displayed on the extension's special page ([[Special:ReplaceText]]).",
+	'replacetext_docu' => "Description of how to use this extension, displayed on the extension's special page ([[Special:ReplaceText]]). The translation of 'Continue' should correspond with message {{msg-mw|Replacetext continue}}.",
 	'replacetext_originaltext' => 'Label of the text field, where user enters original piece of text, which would be replaced.',
 	'replacetext_regexdocu' => '* "Original text" - {{msg-mw|replacetext_originaltext}}
 * "Replacement text" - {{msg-mw|replacetext_replacementtext}}',
@@ -444,8 +445,8 @@ Vaše jméno se objeví v historiích stránek jako osoba zodpovědná za přís
 $messages['de'] = array(
 	'replacetext' => 'Text ersetzen',
 	'replacetext-desc' => 'Ergänzt eine [[Special:ReplaceText|Spezialseite]], die eine globale Text-suchen-und-ersetzen-Operation auf allen Inhaltsseiten ermöglicht',
-	'replacetext_docu' => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, gib hier die beiden Textteile ein und klicke danach auf die „Fortsetzen“-Schaltfläche. Auf der dann folgenden Seite erhält man eine Aufzählung der Seiten, die den zu ersetzenden Text enthalten. Dort kann man auch auswählen, auf welchen Seiten die Ersetzungen durchgeführt werden sollen. Dein Benutzername wird während der Ersetzungen in der Versionsgeschichte aufgenommen.',
-	'replacetext_originaltext' => 'Originaltext:',
+	'replacetext_docu' => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, gib hier die beiden Textteile ein und klicke danach auf die „Fortfahren“-Schaltfläche. Auf der dann folgenden Seite erhält man eine Aufzählung der Seiten, die den zu ersetzenden Text enthalten. Dort kann man auch auswählen, auf welchen Seiten die Ersetzungen durchgeführt werden sollen. Dein Benutzername wird während der Ersetzungen in der Versionsgeschichte aufgenommen.',
+	'replacetext_originaltext' => 'Vorhandener Text:',
 	'replacetext_replacementtext' => 'Neuer Text:',
 	'replacetext_useregex' => 'Platzhalter und reguläre Ausdrücke verwenden',
 	'replacetext_regexdocu' => '(Beispiel: Die Werte für „a(.*)c“ für „Originaltext“ und „ac$1“ für „Neuer Text“ würden zur Ersetzung „abc“ durch „acb“ führen.)',
@@ -453,7 +454,7 @@ $messages['de'] = array(
 	'replacetext_categorysearch' => 'Ersetze nur in der Kategorie:',
 	'replacetext_prefixsearch' => 'Ersetze nur in Seiten mit dem Präfix:',
 	'replacetext_editpages' => 'Ersetze Text im Seiteninhalt',
-	'replacetext_movepages' => 'Ersetze Text auch in Seitentiteln, wenn möglich',
+	'replacetext_movepages' => 'Ersetze Text auch in Seitentiteln (sofern möglich)',
 	'replacetext_givetarget' => 'Du musst eine Zeichenkette angeben, die ersetzt werden soll.',
 	'replacetext_nonamespace' => 'Mindestens ein Namensraum muss ausgewählt werden.',
 	'replacetext_editormove' => 'Du musst mindestens eine Ersetzungsoption wählen.',
@@ -467,8 +468,8 @@ $messages['de'] = array(
 	'replacetext_replace' => 'Ersetzen',
 	'replacetext_success' => '„$1“ wird durch „$2“ in $3 {{PLURAL:$3|Seite|Seiten}} ersetzt.',
 	'replacetext_noreplacement' => 'Es wurde keine Seite gefunden, die den Text „$1“ enthält.',
-	'replacetext_nomove' => 'Es wurden keine Titel gefunden, die „$1“ beinhalten.',
-	'replacetext_nosuchcategory' => 'Es gibt keine Kategorie mit dem Namen „$1“.',
+	'replacetext_nomove' => 'Es wurde keine Seite gefunden, deren Titel den Text „$1“ enthält.',
+	'replacetext_nosuchcategory' => 'Es ist keine Kategorie namens „$1“ vorhanden.',
 	'replacetext_return' => 'Zurück zum Formular.',
 	'replacetext_warning' => "'''Warnung:''' $1 {{PLURAL:$1|Seite enthält|Seiten enthalten}} bereits den zu ersetzenden Textteil „$2“.
 Sofern du nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführst, ist eine spätere Unterscheidung zwischen den nunmehr zu ersetzenden und den bereits vorhandenen Textteilen nicht mehr möglich.",
@@ -484,7 +485,7 @@ Sofern du nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführst, ist eine sp�
  * @author Umherirrender
  */
 $messages['de-formal'] = array(
-	'replacetext_docu' => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, geben Sie hier die beiden Textteile ein und klicken danach auf die „Fortsetzen“-Schaltfläche. Auf der dann folgenden Seite erhält man eine Aufzählung der Seiten, die den zu ersetzenden Text enthalten. Dort kann man auch auswählen, auf welchen Seiten die Ersetzungen durchgeführt werden sollen. Ihr Benutzername wird während der Ersetzungen in der Versionsgeschichte aufgenommen.',
+	'replacetext_docu' => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, geben Sie hier die beiden Textteile ein und klicken danach auf die „Fortfahren“-Schaltfläche. Auf der dann folgenden Seite erhält man eine Aufzählung der Seiten, die den zu ersetzenden Text enthalten. Dort kann man auch auswählen, auf welchen Seiten die Ersetzungen durchgeführt werden sollen. Ihr Benutzername wird während der Ersetzungen in der Versionsgeschichte aufgenommen.',
 	'replacetext_givetarget' => 'Sie müssen eine Zeichenkette angeben, die ersetzt werden soll.',
 	'replacetext_editormove' => 'Sie müssen mindestens eine Ersetzungsoption wählen.',
 	'replacetext_warning' => "'''Warnung:''' $1 {{PLURAL:$1|Seite enthält|Seiten enthalten}} bereits den zu ersetzenden Textteil „$2“.
