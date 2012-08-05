@@ -957,7 +957,7 @@ $messages['hr'] = array(
 	'replacetext_replace' => 'Zamjeni',
 	'replacetext_success' => "'$1' će biti zamijenjen za '$2' na $3 {{PLURAL:$3|stranici|stranice|stranica}}.",
 	'replacetext_noreplacement' => "Nije pronađena ni jedna stranica koja sadrži '$1'.",
-	'replacetext_warning' => "Postoji {{PLURAL:$1|$1 stranica koja već sadrži|$1 stranica koje već sadrže}} zamjenski tekst, '$2'.
+	'replacetext_warning' => "Postoji {{PLURAL:$1|$1 stranica koja već sadrži|$1 stranica koje već sadrže}} zamjenski tekst, '$2'. 
 Ako napravite ovu zamjenu nećete moći odvojiti svoju zamjenu od ovog teksta. Nastaviti sa zamjenom?",
 	'replacetext_blankwarning' => 'Zato što je zamjenski tekst prazan, ovaj postupak se neće moći vratiti; nastaviti?',
 	'replacetext_continue' => 'Dalje',
@@ -1609,7 +1609,7 @@ Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke v
 	'replacetext_givetarget' => 'U moet de te vervangen tekst opgeven.',
 	'replacetext_nonamespace' => 'U moet ten minste één naamruimte selecteren.',
 	'replacetext_editormove' => 'U moet tenminste een van de vervangingingsopties kiezen.',
-	'replacetext_choosepagesforedit' => "Selecteer de {{PLURAL:$3|pagina|pagina's}} waar u '$1' door '$2' wilt vervangen:",
+	'replacetext_choosepagesforedit' => 'Selecteer de {{PLURAL:$3|pagina|pagina\'s}} waar u "$1" door "$2" wilt vervangen:',
 	'replacetext_choosepagesformove' => '"$1" door "$2" vervangen in de volgende {{PLURAL:$3|paginanaam|paginanamen}}:',
 	'replacetext_cannotmove' => "De volgende {{PLURAL:$1|pagina kan|pagina's kunnen}} niet hernoemd worden:",
 	'replacetext_formovedpages' => "Voor hernoemde pagina's:",
@@ -1622,8 +1622,8 @@ Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke v
 	'replacetext_nomove' => 'Er zijn geen pagina\'s gevonden met "$1" in de naam.',
 	'replacetext_nosuchcategory' => 'De categorie "$1" bestaat niet.',
 	'replacetext_return' => 'Terugkeren naar het formulier.',
-	'replacetext_warning' => '\'\'\'Waarschuwing:\'\'\' Er {{PLURAL:$1|is $1 pagina|zijn $1 pagina\'s}} die het te vervangen tesktdeel al "$2" al {{PLURAL:$1|bevat|bevatten}}.
-Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.',
+	'replacetext_warning' => "'''Waarschuwing:''' Er {{PLURAL:\$1|is één pagina|zijn \$1 pagina's}} die het te vervangen tekstdeel al \"\$2\" al {{PLURAL:\$1|bevat|bevatten}}.
+Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.",
 	'replacetext_blankwarning' => 'Omdat u tekst vervangt door niets, kan deze handeling niet ongedaan gemaakt worden. Wilt u doorgaan?',
 	'replacetext_continue' => 'Doorgaan',
 	'replacetext_editsummary' => "Tekst vervangen - '$1' door '$2'",
