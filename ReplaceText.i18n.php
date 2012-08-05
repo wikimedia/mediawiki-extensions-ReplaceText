@@ -15,13 +15,13 @@ $messages['en'] = array(
 	// user messages
 	'replacetext' => 'Replace text',
 	'replacetext-desc' => 'Provides a [[Special:ReplaceText|special page]] to allow administrators to do a global string find-and-replace on all the content pages of a wiki',
-	'replacetext_docu' => 'To replace one text string with another across all regular pages on this wiki, enter the two pieces of text here and then hit \'Continue\'.
+	'replacetext_docu' => 'To replace one text string with another across all regular pages on this wiki, enter the two pieces of text here and then hit "{{int:replacetext_continue}}".
 You will then be shown a list of pages that contain the search text, and you can choose the ones in which you want to replace it.
 Your name will appear in page histories as the user responsible for any changes.',
 	'replacetext_originaltext' => 'Original text:',
 	'replacetext_replacementtext' => 'Replacement text:',
 	'replacetext_useregex' => 'Use regular expressions',
-	'replacetext_regexdocu' => '(Example: values of "a(.*)c" for "Original text" and "ac$1" for "Replacement text" would replace "abc" with "acb".)',
+	'replacetext_regexdocu' => '(Example: values of "a(.*)c" for "{{int:replacetext_originaltext}}" and "ac$1" for "{{int:replacetext_replacementtext}}" would replace "abc" with "acb".)',
 	'replacetext_optionalfilters' => 'Optional filters:',
 	'replacetext_categorysearch' => 'Replace only in category:',
 	'replacetext_prefixsearch' => 'Replace only in pages with the prefix:',
@@ -30,25 +30,25 @@ Your name will appear in page histories as the user responsible for any changes.
 	'replacetext_givetarget' => 'You must specify the string to be replaced.',
 	'replacetext_nonamespace' => 'You must select at least one namespace.',
 	'replacetext_editormove' => 'You must select at least one of the replacement options.',
-	'replacetext_choosepagesforedit' => 'Replace "$1" with "$2" in the text of the following {{PLURAL:$3|page|pages}}:',
-	'replacetext_choosepagesformove' => 'Replace "$1" with "$2" in the {{PLURAL:$3|title of the following page|titles of the following pages}}:',
-	'replacetext_cannotmove' => 'The following {{PLURAL:$1|page|pages}} cannot be moved:',
+	'replacetext_choosepagesforedit' => 'Replace "$1" with "$2" in the text of the following {{PLURAL:$3|page|$3 pages}}:',
+	'replacetext_choosepagesformove' => 'Replace "$1" with "$2" in the {{PLURAL:$3|title of the following page|titles of the following $3 pages}}:',
+	'replacetext_cannotmove' => 'The following {{PLURAL:$1|page|$1 pages}} cannot be moved:',
 	'replacetext_formovedpages' => 'For moved pages:',
 	'replacetext_savemovedpages' => 'Save the old titles as redirects to the new titles',
 	'replacetext_watchmovedpages' => 'Watch these pages',
 	'replacetext_invertselections' => 'Invert selections',
 	'replacetext_replace' => 'Replace',
-	'replacetext_success' => '"$1" will be replaced with "$2" in $3 {{PLURAL:$3|page|pages}}.',
+	'replacetext_success' => '"$1" will be replaced with "$2" in {{PLURAL:$3|one page|$3 pages}}.',
 	'replacetext_noreplacement' => 'No pages were found containing the string "$1".',
 	'replacetext_nomove' => 'No pages were found whose title contains "$1".',
 	'replacetext_nosuchcategory' => 'No category exists with the name "$1".',
 	'replacetext_return' => 'Return to form.',
-	'replacetext_warning' => "'''Warning:''' There {{PLURAL:$1|is $1 page that already contains|are $1 pages that already contain}} the replacement string, \"$2\". If you make this replacement you will not be able to separate your replacements from these strings.",
+	'replacetext_warning' => "'''Warning:''' There {{PLURAL:$1|is one page that already contains|are $1 pages that already contain}} the replacement string, \"$2\". If you make this replacement you will not be able to separate your replacements from these strings.",
 	'replacetext_blankwarning' => "'''Warning:''' Because the replacement string is blank, this operation will not be reversible.",
 	'replacetext_continue' => 'Continue',
 	// content messages
 	'replacetext_editsummary' => 'Text replace - "$1" to "$2"',
-	'right-replacetext' => 'Do string replacements on the entire wiki',
+	'right-replacetext' => 'Make string replacements on the entire wiki',
 );
 
 /** Message documentation (Message documentation)
@@ -957,7 +957,7 @@ $messages['hr'] = array(
 	'replacetext_replace' => 'Zamjeni',
 	'replacetext_success' => "'$1' će biti zamijenjen za '$2' na $3 {{PLURAL:$3|stranici|stranice|stranica}}.",
 	'replacetext_noreplacement' => "Nije pronađena ni jedna stranica koja sadrži '$1'.",
-	'replacetext_warning' => "Postoji {{PLURAL:$1|$1 stranica koja već sadrži|$1 stranica koje već sadrže}} zamjenski tekst, '$2'. 
+	'replacetext_warning' => "Postoji {{PLURAL:$1|$1 stranica koja već sadrži|$1 stranica koje već sadrže}} zamjenski tekst, '$2'.
 Ako napravite ovu zamjenu nećete moći odvojiti svoju zamjenu od ovog teksta. Nastaviti sa zamjenom?",
 	'replacetext_blankwarning' => 'Zato što je zamjenski tekst prazan, ovaj postupak se neće moći vratiti; nastaviti?',
 	'replacetext_continue' => 'Dalje',
