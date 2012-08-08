@@ -809,11 +809,13 @@ $messages['frp'] = array(
 $messages['gl'] = array(
 	'replacetext' => 'Substituír un texto',
 	'replacetext-desc' => 'Proporciona unha [[Special:ReplaceText|páxina especial]] para que os administradores poidan facer unha cadea global para atopar e substituír un texto no contido de todas as páxinas dun wiki',
-	'replacetext_docu' => 'Para substituír unha cadea de texto por outra en todas as páxinas regulares deste wiki, teclee aquí as dúas pezas do texto e logo prema en "Continuar". Despois mostraráselle unha lista das páxinas que conteñen o texto buscado e pode elixir en cales quere substituílo. O seu nome aparecerá nos histotiais das páxinas como o usuario responsable de calquera cambio.',
+	'replacetext_docu' => 'Para substituír unha cadea de texto por outra en todas as páxinas regulares deste wiki, insira aquí as dúas pezas de texto e logo prema en "{{int:replacetext_continue}}".
+Despois mostraráselle unha lista das páxinas que conteñen o texto buscado e poderá elixir en cales quere substituílo.
+O seu nome aparecerá nos histotiais das páxinas como o usuario responsable de calquera cambio.',
 	'replacetext_originaltext' => 'Texto orixinal:',
 	'replacetext_replacementtext' => 'Texto de substitución:',
 	'replacetext_useregex' => 'Usar expresións regulares',
-	'replacetext_regexdocu' => '(Examplo: os valores "a(.*)c" para o "texto orixinal" e "ac$1" para o "texto de substitución" cambiarán "abc" por "acb".)',
+	'replacetext_regexdocu' => '(Exemplo: Os valores "a(.*)c" en "{{int:replacetext_originaltext}}" e "ac$1" en "{{int:replacetext_replacementtext}}" han substituír "abc" por "acb".)',
 	'replacetext_optionalfilters' => 'Filtros opcionais:',
 	'replacetext_categorysearch' => 'Substituír só na categoría:',
 	'replacetext_prefixsearch' => 'Substituír só nas páxinas co prefixo:',
