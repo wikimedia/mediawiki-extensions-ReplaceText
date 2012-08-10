@@ -1514,13 +1514,13 @@ $messages['mr'] = array(
 $messages['ms'] = array(
 	'replacetext' => 'Ganti teks',
 	'replacetext-desc' => 'Menyediakan [[Special:ReplaceText|laman khas]] untuk membolehkan para pentadbir melakukan pencarian dan penggantian rentetan sejagat di semua laman-laman kandungan wiki',
-	'replacetext_docu' => "Untuk mengganti satu rentetan teks dengan satu lagi merentasi semua laman biasa di wiki ini, isikan kedua-dua teks yang terlibat di sini, kemudian tekan 'Sambung'.
+	'replacetext_docu' => "Untuk mengganti satu rentetan teks dengan satu lagi merentasi semua laman biasa di wiki ini, isikan kedua-dua teks yang terlibat di sini, kemudian tekan '{{int:replacetext_continue}}'.
 Kemudian, anda akan ditunjukkan satu senarai laman yang mengandungi teks carian, dan anda boleh memilih laman-laman yang mana anda ingin melakukan penggantian itu.
 Nama anda akan terpapar dalam sejarah laman sebagai pengguna yang bertanggungjawab atas sebarang perubahan.",
 	'replacetext_originaltext' => 'Teks asal:',
 	'replacetext_replacementtext' => 'Teks ganti:',
 	'replacetext_useregex' => 'Gunakan ungkapan nalar',
-	'replacetext_regexdocu' => '(Contoh: nilai "a(.*)c" untuk "Teks asal" dan "ac$1" untuk "Teks ganti" akan mengganti "abc" dengan "acb".)',
+	'replacetext_regexdocu' => '(Contoh: nilai "a(.*)c" untuk "{{int:replacetext_originaltext}}" dan "ac$1" untuk "{{int:replacetext_replacementtext}}" akan mengganti "abc" dengan "acb".)',
 	'replacetext_optionalfilters' => 'Penapis pilihan:',
 	'replacetext_categorysearch' => 'Ganti dalam kategori sahaja:',
 	'replacetext_prefixsearch' => 'Ganti dalam laman yang berawalan ini sahaja:',
