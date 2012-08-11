@@ -1235,9 +1235,14 @@ $messages['jv'] = array(
 
 /** Georgian (ქართული)
  * @author BRUTE
+ * @author David1010
  */
 $messages['ka'] = array(
+	'replacetext' => 'ტექსტის შეცვლა',
+	'replacetext_originaltext' => 'პირველადი ტექსტი:',
+	'replacetext_replacementtext' => 'შესაცვლელი ტექსტი:',
 	'replacetext_replace' => 'ჩანაცვლება',
+	'replacetext_continue' => 'გაგრძელება',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -2159,6 +2164,7 @@ $messages['te'] = array(
 	'replacetext_originaltext' => 'అసలు పాఠ్యం:',
 	'replacetext_replacementtext' => 'మార్పిడి పాఠ్యం:',
 	'replacetext_optionalfilters' => 'ఐచ్చిక వడపోతలు:',
+	'replacetext_cannotmove' => 'ఈ {{PLURAL:$1|పేజీని|$1 పేజీలను}} తరలించలేరు:',
 	'replacetext_continue' => 'కొనసాగించు',
 );
 
