@@ -1723,6 +1723,7 @@ $messages['pdc'] = array(
 );
 
 /** Polish (polski)
+ * @author Ankry
  * @author Derbeth
  * @author Leinad
  * @author Maikking
@@ -1734,11 +1735,11 @@ $messages['pdc'] = array(
 $messages['pl'] = array(
 	'replacetext' => 'Zastąp tekst',
 	'replacetext-desc' => 'Dodaje [[Special:ReplaceText|stronę specjalną]], pozwalającą administratorom na wyszukanie i zamianę zadanego tekstu w treści wszystkich stron wiki',
-	'replacetext_docu' => 'Możesz zastąpić jeden ciąg znaków innym, w treści wszystkich stron tej wiki. W tym celu wprowadź dwa fragmenty tekstu i naciśnij „Kontynuuj”. Zostanie pokazana lista stron, które zawierają wyszukiwany tekst. Będziesz mógł wybrać te strony, na których chcesz ten tekst zamienić na nowy. W historii zmian stron, do opisu autora edycji, zostanie użyta Twoja nazwa użytkownika.',
+	'replacetext_docu' => 'Możesz zastąpić jeden ciąg znaków innym, w treści wszystkich stron tej wiki. W tym celu wprowadź tutaj dwa fragmenty tekstu i naciśnij „{{int:replacetext_continue}}”. Zostanie pokazana lista stron, które zawierają wyszukiwany tekst. Będziesz {{GENDER:|mógł|mogła}} wybrać te strony, na których chcesz ten tekst zamienić na nowy. W historii zmian stron, do opisu autora edycji, zostanie użyta Twoja nazwa użytkownika.',
 	'replacetext_originaltext' => 'Wyszukiwany tekst',
 	'replacetext_replacementtext' => 'Zamień na',
 	'replacetext_useregex' => 'Użyj wyrażeń regularnych',
-	'replacetext_regexdocu' => '(Przykładowo wstawiając „a(.*)c“ w polu „{{int:replacetext_originaltext}}“ oraz „ac$1“ w polu „{{int:replacetext_replacementtext}}“ spowodujesz zastąpienie „abc“ przez „acb“.)',
+	'replacetext_regexdocu' => '(Przykładowo: wstawiając „a(.*)c” w polu „{{int:replacetext_originaltext}}” oraz „ac$1” w polu „{{int:replacetext_replacementtext}}” spowodujesz zastąpienie „abc” przez „acb”.)',
 	'replacetext_optionalfilters' => 'Dodatkowe filtry:',
 	'replacetext_categorysearch' => 'Zamień tylko w kategorii',
 	'replacetext_prefixsearch' => 'Zamień tylko na stronach z prefiksem',
@@ -1935,12 +1936,14 @@ Seu nome de usuário aparecerá nos históricos das páginas como o responsável
 /** Romanian (română)
  * @author Firilacroco
  * @author KlaudiuMihaila
+ * @author Stelistcristi
  */
 $messages['ro'] = array(
 	'replacetext' => 'Înlocuiește text',
 	'replacetext_originaltext' => 'Text original:',
 	'replacetext_optionalfilters' => 'Filtre opționale:',
 	'replacetext_watchmovedpages' => 'Urmărește aceste pagini',
+	'replacetext_invertselections' => 'Inversează selecțiile',
 	'replacetext_replace' => 'Înlocuire',
 	'replacetext_nomove' => "Nu a fost găsită nici o pagină al cărei titlu să conțină '$1'.",
 	'replacetext_return' => 'Revenire la formular.',
