@@ -1242,7 +1242,9 @@ $messages['ka'] = array(
 	'replacetext_originaltext' => 'პირველადი ტექსტი:',
 	'replacetext_replacementtext' => 'შესაცვლელი ტექსტი:',
 	'replacetext_replace' => 'ჩანაცვლება',
+	'replacetext_return' => 'ფორმასთან დაბრუნება.',
 	'replacetext_continue' => 'გაგრძელება',
+	'replacetext_editsummary' => 'ტექსტის შეცვლა - „$1“ „$2“-ზე',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -2011,6 +2013,13 @@ $messages['ru'] = array(
 	'right-replacetext' => 'выполнение замен текста во всей вики',
 );
 
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'replacetext_replace' => 'ප්‍රතිස්ථාපනය',
+);
+
 /** Slovak (slovenčina)
  * @author Helix84
  * @author Teslaton
@@ -2155,6 +2164,13 @@ $messages['sv'] = array(
 	'replacetext_continue' => 'Fortsätt',
 	'replacetext_editsummary' => 'Textersättning - "$1" till "$2"',
 	'right-replacetext' => 'Genomför textersättningar på hela wikin',
+);
+
+/** Tamil (தமிழ்)
+ * @author Shanmugamp7
+ */
+$messages['ta'] = array(
+	'replacetext_continue' => 'தொடரவும்',
 );
 
 /** Telugu (తెలుగు)
@@ -2371,6 +2387,8 @@ $messages['zh-hans'] = array(
 	'replacetext_docu' => '要替换此维基内所有页面文字的字串，请将“原文字”及“替换文字”分别填入以下两个栏位之中，然后按“继续”。接下来会列出所有含原文字的页面供你选择在哪些页面进行替换。页面改动历史会显示你是进行此次改动的用户。',
 	'replacetext_originaltext' => '原文字',
 	'replacetext_replacementtext' => '替换文字',
+	'replacetext_useregex' => '使用正则表达式',
+	'replacetext_regexdocu' => '（例如：在“{{int:replacetext_originaltext}}”填入“a(.*)c”并在“{{int:replacetext_replacementtext}}”填入“ac$1”可以将“abc”替换为“acb”。）',
 	'replacetext_optionalfilters' => '可选过滤器：',
 	'replacetext_categorysearch' => '仅替换该分类中的页面：',
 	'replacetext_prefixsearch' => '仅替换带该前缀页面：',
@@ -2396,7 +2414,7 @@ $messages['zh-hans'] = array(
 	'replacetext_blankwarning' => "'''警告：'''因为替换字串为空，这将导致操作无法复原！您要继续吗？",
 	'replacetext_continue' => '继续',
 	'replacetext_editsummary' => '替换文字 - 「$1」替换为「$2」',
-	'right-replacetext' => '对整个维基进行文字替换。',
+	'right-replacetext' => '对整个wiki进行文字替换。',
 );
 
 /** Traditional Chinese (‪中文（繁體）‬)
