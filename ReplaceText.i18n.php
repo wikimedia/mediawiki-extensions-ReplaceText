@@ -150,7 +150,7 @@ $messages['ar'] = array(
 	'replacetext_return' => 'رجوع إلى الاستمارة',
 	'replacetext_warning' => "'''تحذير''': توجد {{PLURAL:$1||صفحة واحدة تحتوي|صفحتان تحتويان|$1 صفحات تحتوي|$1 صفحة تحتوي}} بالفعل على سلسلة الاستبدال '$2'. إذا قمت بهذا الاستبدال فلن تصبح قادرًا على فصل استبدالاتك عن هذه السلاسل.",
 	'replacetext_blankwarning' => 'لأن سلسلة الاستبدال فارغة، هذه العملية لن تكون عكسية؛ استمر؟',
-	'replacetext_continue' => 'استمر',
+	'replacetext_continue' => 'استمرار',
 	'replacetext_editsummary' => "استبدال النص - '$1' ب'$2'",
 	'right-replacetext' => 'القيام باستبدال للسلاسل في الويكي بأكمله',
 );
@@ -630,6 +630,13 @@ Si realizas esta sustituación, no podrás separar tus sustituciones de estas ca
 	'replacetext_continue' => 'Continuar',
 	'replacetext_editsummary' => "Texto reemplaza - '$1' a '$2'",
 	'right-replacetext' => 'Reemplaza cadenas de caracteres en toda la wiki',
+);
+
+/** Estonian (eesti)
+ * @author Avjoska
+ */
+$messages['et'] = array(
+	'replacetext_replace' => 'Asenda',
 );
 
 /** Basque (euskara)
@@ -2166,10 +2173,19 @@ $messages['sv'] = array(
 	'right-replacetext' => 'Genomför textersättningar på hela wikin',
 );
 
+/** Swahili (Kiswahili)
+ * @author Stephenwanjau
+ */
+$messages['sw'] = array(
+	'replacetext_continue' => 'Endelea',
+);
+
 /** Tamil (தமிழ்)
  * @author Shanmugamp7
  */
 $messages['ta'] = array(
+	'replacetext_watchmovedpages' => 'இந்தப் பக்கங்களை கவனிக்கவும்',
+	'replacetext_replace' => 'மாற்றுக',
 	'replacetext_continue' => 'தொடரவும்',
 );
 
