@@ -194,6 +194,47 @@ $messages['arz'] = array(
 	'right-replacetext' => 'القيام باستبدال للسلاسل فى الويكى بأكمله',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'replacetext' => 'Reemplazar testu',
+	'replacetext-desc' => "Ufre una [[Special:ReplaceText|páxina especial]] que permite a los alministradores facer una gueta y sustitución global d'una cadena de testu en toles páxines de conteníu d'una wiki",
+	'replacetext_docu' => "Pa sustituir una cadena de testu por otra en toles páxines regulares d'esta wiki, escribi equí les dos pieces de testu y llueu calca \"{{int:replacetext_continue}}\".
+Dempués s'amosará una llista de les páxines que contienen el testu buscáu, y podrás esbillar aquelles nes que quieras sustituilu.
+El to nome apaecerá nos historiales de les páxines como l'usuariu responsable de cualesquier cambiu.",
+	'replacetext_originaltext' => 'Testu orixinal:',
+	'replacetext_replacementtext' => 'Testu de sustitución:',
+	'replacetext_useregex' => 'Usar espresiones regulares',
+	'replacetext_regexdocu' => '(Exemplu: los valores "a(.*)c" pa "{{int:replacetext_originaltext}}" y "ac$1" pa "{{int:replacetext_replacementtext}}" camudarán "abc" por "acb".)',
+	'replacetext_optionalfilters' => 'Peñeres opcionales:',
+	'replacetext_categorysearch' => 'Sustituir sólo na categoría:',
+	'replacetext_prefixsearch' => 'Sustituir sólo nes páxines col prefixu:',
+	'replacetext_editpages' => 'Sustituir el testu nel conteníu de la páxina',
+	'replacetext_movepages' => 'Sustituir el testu nos títulos de les páxines, si ye posible',
+	'replacetext_givetarget' => 'Debes conseñar la cadena que se va a sustituir.',
+	'replacetext_nonamespace' => 'Debes escoyer, polo menos, un espaciu de nomes.',
+	'replacetext_editormove' => 'Debes escoyer polo menos una de les opciones de sustitución.',
+	'replacetext_choosepagesforedit' => 'Sustituír "$1" por "$2" nel testu de {{PLURAL:$3|la páxina siguiente|les páxines siguientes}}:',
+	'replacetext_choosepagesformove' => 'Sustituír "$1" por "$2" {{PLURAL:$3|nel títulu de la páxina siguiente|nos títulos de les páxines siguientes}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|La siguiente páxina|Les siguientes páxines}} nun se {{PLURAL:$1|pue|puen}} mover:',
+	'replacetext_formovedpages' => 'Pa páxines movies:',
+	'replacetext_savemovedpages' => 'Guardar los títulos antiguos como redireiciones a los títulos nuevos',
+	'replacetext_watchmovedpages' => 'Vixilar eses páxines',
+	'replacetext_invertselections' => 'Invertir seleiciones',
+	'replacetext_replace' => 'Sustituir',
+	'replacetext_success' => '"$1" se sustituirá por "$2" en {{PLURAL:$3|una páxina|$3 páxines}}.',
+	'replacetext_noreplacement' => "Nun s'alcontraron páxines que contengan la cadena de caráuteres «$1».",
+	'replacetext_nomove' => "Nun s'alcontraron páxines que contengan «$1» nel títulu.",
+	'replacetext_nosuchcategory' => 'Nun esiste denguna categoría col nome «$1».',
+	'replacetext_return' => 'Volver al formulariu.',
+	'replacetext_warning' => "'''Avisu:''' Hai {{PLURAL:$1|una páxina|$1 páxines}} que yá {{PLURAL:$1|contién|contienen}} la cadena de sustitución «$2». Si faes esta sustitución nun podrás distinguir los tos cambios d'estes cadenes.",
+	'replacetext_blankwarning' => "'''Avisu:''' Como la cadena de sustitución ta balera, esta operación nun sedrá reversible.",
+	'replacetext_continue' => 'Siguir',
+	'replacetext_editsummary' => 'Sustitución de testu - de «$1» a «$2»',
+	'right-replacetext' => 'Facer les sustituciones de la cadena na wiki ensembre',
+);
+
 /** Azerbaijani (azərbaycanca)
  * @author Cekli829
  */
@@ -2327,6 +2368,15 @@ $messages['uk'] = array(
 	'replacetext_replace' => 'Замінити',
 	'replacetext_success' => '«$1» буде замінений на «$2» на $3 {{PLURAL:$3|сторінці|сторінках|сторінках}}.',
 	'replacetext_continue' => 'Продовжити',
+);
+
+/** Urdu (اردو)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ur'] = array(
+	'replacetext_replacementtext' => 'متبادل متن:',
+	'replacetext_optionalfilters' => 'اختیاری فلٹر:',
+	'replacetext_replace' => 'کو تبدیل',
 );
 
 /** Veps (vepsän kel’)
