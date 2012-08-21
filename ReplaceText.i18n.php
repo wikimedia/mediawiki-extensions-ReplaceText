@@ -635,9 +635,9 @@ $messages['eo'] = array(
 $messages['es'] = array(
 	'replacetext' => 'Reemplazar texto',
 	'replacetext-desc' => 'Provee a los administradores de una [[Special:ReplaceText|página especial]] para realizar una búsqueda y reemplazo global de una expresión en todas las páginas de una wiki.',
-	'replacetext_docu' => "Para sustituir una cadena de texto con otra en todas las páginas de este wiki, introduce ambos textos aquí y haz clic en 'Continuar'.
+	'replacetext_docu' => 'Para sustituir una cadena de texto con otra en todas las páginas de este wiki, introduce ambos textos aquí y haz clic en "{{int:replacetext_continue}}".
 A continuación verás un listado de páginas que contienen el texto de búsqueda, de los cuales podrás elegir aquellos en los que quieras cambiar el texto.
-Tu nombre aparecerá como usuario responsable de los cambios en el historial de cada una de esas páginas.",
+Tu nombre aparecerá como usuario responsable de los cambios en el historial de cada una de esas páginas.',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Texto de reemplazo:',
 	'replacetext_useregex' => 'Utilizar expresiones regulares',
@@ -1245,7 +1245,9 @@ $messages['it'] = array(
 $messages['ja'] = array(
 	'replacetext' => '文字列の置換',
 	'replacetext-desc' => '管理者がウィキ内の全記事で、ある文字列に一致する部分すべてを置換できるようにする[[Special:ReplaceText|特別ページ]]を提供する',
-	'replacetext_docu' => 'ある文字列をこのウィキ上のすべての標準ページで別のものに置換するには、必要な2つの文字列をここに入力し「続行」を押します。次に検索した文字列を含むページが一覧表示され、置換を行いたいページを選択できます。置換後には、あなたの名前がページ履歴にその編集を担当した利用者として表示されます。',
+	'replacetext_docu' => 'このウィキ上のすべての標準ページについて、ある文字列を別の文字列に置換するには、2 つの文字列をここに入力して「{{int:replacetext_continue}}」を押します。
+検索した文字列を含むページが列挙されますので、置換したいページを選択してください。
+置換すると、その編集を担当した利用者としてあなたの名前が、ページ履歴に表示されます。',
 	'replacetext_originaltext' => '置換前の文字列:',
 	'replacetext_replacementtext' => '置換後の文字列:',
 	'replacetext_useregex' => '正規表現を使用',
