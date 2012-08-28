@@ -1839,13 +1839,13 @@ $messages['pl'] = array(
 $messages['pms'] = array(
 	'replacetext' => 'Rimpiassa test',
 	'replacetext-desc' => "A dà na [[Special:ReplaceText|pàgina special]] për përmëtte a j'aministrator ëd fé un sërca-e-rampiassa dë stringhe global su tute le pàgine ëd contnù ëd na wiki",
-	'replacetext_docu' => "Për rimpiassé na stringa ëd test con n'àutra ans tute  le pàgine regolar dë sta wiki-sì, anseriss ij doi tòch ëd test sì e peui sgnaca 'Continua'.
+	'replacetext_docu' => "Për rimpiassé na stringa ëd test con n'àutra dzor tute  le pàgine regolar dë sta wiki-sì, anseriss ij doi tòch ëd test sì e peui sgnaca \"{{int:replacetext_continue}}\".
 At sarà alora mostrà na lista ëd pàgine ch'a conten-o ël test d'arserca, e it podras serne cole andoa it veule rimpiasselo.
 Tò nòm a aparirà ant le stòrie dle pàgine com l'utent responsàbil për minca cangiament.",
 	'replacetext_originaltext' => 'Test original:',
 	'replacetext_replacementtext' => 'Test ëd rimpiassadura:',
 	'replacetext_useregex' => "Dovré dj'espression regolar",
-	'replacetext_regexdocu' => '(Esempi: valor ëd "a(.*)c" për "Test original" e "ac$1" për "Rimpiassé test" a dovrìa rimpiassé "abc" with "acb".)',
+	'replacetext_regexdocu' => '(Esempi: valor ëd "a(.*)c" për "{{int:replacetext_originaltext}}" e "ac$1" për "{{int:replacetext_replacementtext}}" a dovrìa rimpiassé "abc" with "acb".)',
 	'replacetext_optionalfilters' => 'Filtr opsionaj:',
 	'replacetext_categorysearch' => 'Rimpiassa mach an categorìa:',
 	'replacetext_prefixsearch' => 'Rimpiassa mach an pàgine con ël prefiss:',
