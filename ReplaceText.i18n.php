@@ -1378,15 +1378,15 @@ $messages['ksh'] = array(
 	'replacetext' => 'Täx-Shtöcksher ußtuusche',
 	'replacetext-desc' => 'Deit en [[Special:ReplaceText|Söndersigg]] en et Wiki, womet {{int:group-sysop}} aanjefbaa Täx-Shtöcksher en alle Atikelle em Wiki söke un ußtuusche künne.',
 	'replacetext_docu' => 'Öm ene Täx en alle nomaale Sigge em Wiki ze söke un ußzetuusche, jif hee
-zwei Täx-Shtöcksher en, un donn dann op „{{int:replacetext continue}}“ klecke.
-Dann süühß De en Leß met Sigge, wo dö dä jesoohte Täx dren enthallde es,
+zwei Täx-Schtöcksher en, un donn dann op „{{int:replacetext continue}}“ klecke.
+Dann süühß De en Leß met Sigge, wo dö dä jesoohte Täx dren änthallde es,
 un De kanns Der erußsöke, en wat för enne dovun dat De dä och jetuusch
 han wells. Dinge Name als Metmaacher weed met dä neu veränderte Versione
 fun dä Sigge faßjehallde als dä Schriiver, dä et jemaat hät.',
 	'replacetext_originaltext' => 'Dä ojinaal Täx för Ußzetuusche:',
 	'replacetext_replacementtext' => 'Dä neue Täx för anshtatt dämm Ojinaal erin ze donn',
 	'replacetext_useregex' => 'Met „<i lang="en">regular Expressions</i>“',
-	'replacetext_regexdocu' => '(För e Beispel: Nämm „a(.*)c“ fö_t Ojinaal un „ac$1“ fö_der neue Täxt, un De kriß „abc“ dorsh „acb“ ußjetuusch.)',
+	'replacetext_regexdocu' => '(För e Beispel: Nämm „a(.*)c“ för „{{int:replacetext_originaltext}}“ un „ac$1“ för „{{int:replacetext_replacementtext}}“, un De kriß „abc“ dorsh „acb“ ußjetuusch.)',
 	'replacetext_optionalfilters' => 'Müjjelesche Beschrängkunge:',
 	'replacetext_categorysearch' => 'Bloß en dä Saachjropp ußtuusche:',
 	'replacetext_prefixsearch' => 'Bloß en Sigge ußtuusche, dänne ier Tittelle aanfange met:',
