@@ -168,7 +168,7 @@ $specialPageAliases['mt'] = array(
 	'ReplaceText' => array( 'BiddelTest' ),
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬) */
+/** Norwegian Bokmål (norsk (bokmål)‎) */
 $specialPageAliases['nb'] = array(
 	'ReplaceText' => array( 'Teksterstatning' ),
 );
@@ -203,7 +203,7 @@ $specialPageAliases['sq'] = array(
 	'ReplaceText' => array( 'ZëvendësoTekstin' ),
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬) */
+/** Serbian (Cyrillic script) (српски (ћирилица)‎) */
 $specialPageAliases['sr-ec'] = array(
 	'ReplaceText' => array( 'ЗамениТекст', 'Замени_текст' ),
 );
@@ -243,7 +243,7 @@ $specialPageAliases['vi'] = array(
 	'ReplaceText' => array( 'Thay_văn_bản' ),
 );
 
-/** Simplified Chinese (‪中文（简体）‬) */
+/** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'ReplaceText' => array( '替换文本' ),
 );
