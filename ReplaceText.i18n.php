@@ -2494,7 +2494,7 @@ $messages['zh-hans'] = array(
 	'right-replacetext' => '对整个wiki进行文字替换。',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Mark85296341
  * @author Roc michael
  * @author Sheepy
@@ -2506,6 +2506,8 @@ $messages['zh-hant'] = array(
 	'replacetext_docu' => '要替換此維基內所有頁面文字的字串，請將「原始文字」及「替換的文字」分別填入下面的兩個欄位之中，然後按「繼續」。接下來所有內含原始文字的頁面會被列出，你可以選擇要在那一些頁面進行替換。頁面的改動歷史會顯示你是負責進行這次改動的用戶。',
 	'replacetext_originaltext' => '原文字',
 	'replacetext_replacementtext' => '替換文字',
+	'replacetext_useregex' => '使用正則表達式',
+	'replacetext_regexdocu' => '（例如：在“{{int:replacetext_originaltext}}”填入“a(.*)c”並在“{{int:replacetext_replacementtext}}”填入“ac$1”可以將“abc”替換為“acb”。）',
 	'replacetext_optionalfilters' => '可選過濾器：',
 	'replacetext_categorysearch' => '僅當頁面在該分類中時替換：',
 	'replacetext_prefixsearch' => '僅當頁面帶有該前綴時替換：',
