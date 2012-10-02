@@ -283,7 +283,7 @@ $messages['ba'] = array(
 	'right-replacetext' => 'Бөтә викила тексты алмаштырыу',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -522,7 +522,7 @@ Sofern du nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführst, ist eine sp�
 	'right-replacetext' => 'Textersetzung für das gesamte Wiki durchführen',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Imre
  * @author Kghbln
  * @author Umherirrender
@@ -1615,7 +1615,7 @@ Nama anda akan terpapar dalam sejarah laman sebagai pengguna yang bertanggungjaw
 	'right-replacetext' => 'Membuat penggantian rentetan di seluruh wiki',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Event
  * @author Laaknor
  * @author Nghtwlkr
@@ -1700,7 +1700,7 @@ Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.",
 	'right-replacetext' => 'Tekst vervangen in de hele wiki',
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
+/** Norwegian Nynorsk (norsk (nynorsk)‎)
  * @author Gunnernett
  * @author Harald Khan
  * @author Njardarlogar
@@ -2119,7 +2119,7 @@ $messages['sk'] = array(
 	'right-replacetext' => 'Vykonať náhradu reťazcov na celej wiki',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -2152,7 +2152,7 @@ $messages['sr-ec'] = array(
 	'right-replacetext' => 'замењивање ниски на целом викију',
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬)
+/** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
  * @author Rancher
  * @author Жељко Тодоровић
@@ -2453,7 +2453,7 @@ $messages['vo'] = array(
 	'right-replacetext' => 'Ledunön vödemiplaädami in vük lölik',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Liangent
  * @author Onecountry
  * @author PhiLiP
