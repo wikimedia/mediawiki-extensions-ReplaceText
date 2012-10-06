@@ -2187,6 +2187,7 @@ $messages['sr-el'] = array(
 /** Swedish (svenska)
  * @author Fluff
  * @author M.M.S.
+ * @author Martinwiss
  * @author Najami
  * @author Per
  * @author Rotsee
@@ -2197,6 +2198,8 @@ $messages['sv'] = array(
 	'replacetext_docu' => 'För att ersätta en textträng med en annan på alla datasidor på den här wikin kan du skriva in de två texterna här och klicka på "Ersätt". Du kommer sedan att visas på en lista över sidor som innehåller söktexten, och du kan välja en av dom som du vill ersätta. Ditt namn kommer visas i sidhistoriken som den som är ansvarig för ändringarna.',
 	'replacetext_originaltext' => 'Originaltext:',
 	'replacetext_replacementtext' => 'Ersättningstext:',
+	'replacetext_useregex' => 'Använd reguljära uttryck',
+	'replacetext_regexdocu' => '(T.ex: värden på "a(.*)c" för "{{int:replacetext_originaltext}}" och "ac$1" för "{{int:replacetext_replacementtext}}" skulle ersätta "abc" med "acb".)',
 	'replacetext_optionalfilters' => 'Valbara filter:',
 	'replacetext_categorysearch' => 'Ersätt endast i kategori:',
 	'replacetext_prefixsearch' => 'Ersätt endast sidor med prefixet:',
