@@ -8,7 +8,6 @@
  * @author Ankit Garg
  */
 class ReplaceTextJob extends Job {
-
 	function __construct( $title, $params = '', $id = 0 ) {
 		parent::__construct( 'replaceText', $title, $params, $id );
 	}
@@ -45,12 +44,8 @@ class ReplaceTextJob extends Job {
 				if ( class_exists( 'WatchAction' ) ) {
 					// Class was added in MW 1.19
 					WatchAction::doWatch( $new_title, $wgUser );
-				} elseif ( class_exists( 'Action' ) ) {
-					// Class was added in MW 1.18
-					Action::factory( 'watch', new Article( $new_title, 0 ) )->execute();
 				} else {
-					$article = new Article( $new_title, 0 );
-					$article->doWatch();
+					Action::factory( 'watch', new WikiPage( $new_title ) )->execute();
 				}
 			}
 			$wgUser = $actual_user;
@@ -66,6 +61,7 @@ class ReplaceTextJob extends Job {
 			$article_text = $article->fetchContent();
 			$target_str = $this->params['target_str'];
 			$replacement_str = $this->params['replacement_str'];
+			// @todo FIXME eh?
 			$num_matches;
 
 			if ( $this->params['use_regex'] ) {

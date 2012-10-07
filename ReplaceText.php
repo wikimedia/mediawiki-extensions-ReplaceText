@@ -17,7 +17,7 @@
  * replacement, since it is not easily reversible.
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) die();
+if ( !defined( 'MEDIAWIKI' ) ) { die(); }
 
 // credits
 $wgExtensionCredits['specialpage'][] = array(
@@ -46,8 +46,8 @@ $wgAutoloadClasses['ReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = $rtgIP . 'ReplaceTextJob.php';
 
 // This function should really go into a "ReplaceText_body.php" file.
-function rtAddToAdminLinks( &$admin_links_tree ) {
-	$general_section = $admin_links_tree->getSection( wfMsg( 'adminlinks_general' ) );
+function rtAddToAdminLinks( ALTree &$admin_links_tree ) {
+	$general_section = $admin_links_tree->getSection( wfMessage( 'adminlinks_general' )->text() );
 	$extensions_row = $general_section->getRow( 'extensions' );
 
 	if ( is_null( $extensions_row ) ) {
