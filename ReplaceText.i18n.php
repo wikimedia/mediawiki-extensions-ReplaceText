@@ -1795,6 +1795,7 @@ $messages['pdc'] = array(
  * @author Maikking
  * @author Matma Rex
  * @author Odder
+ * @author Reedy
  * @author Sp5uhe
  * @author ToSter
  */
