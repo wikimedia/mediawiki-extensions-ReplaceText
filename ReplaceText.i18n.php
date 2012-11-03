@@ -1965,13 +1965,13 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 $messages['pt-br'] = array(
 	'replacetext' => 'Substituir texto',
 	'replacetext-desc' => '[[Special:ReplaceText|Página especial]] que permite que os administradores façam substituições globais de texto em todas as páginas de conteúdo de um wiki',
-	'replacetext_docu' => 'Para substituir uma "string" de texto por outra em todas as páginas deste wiki, forneça o texto a ser substituído e o novo texto e clique no botão \'Avançar\'.
+	'replacetext_docu' => 'Para substituir uma "string" de texto por outra em todas as páginas deste wiki, forneça o texto a ser substituído e o novo texto e clique no botão "{{int:replacetext_continue}}".
 Será exibida uma lista de páginas que possuem o termo pesquisado. A partir dela, selecione em quais você deseja realizar substituições.
-Seu nome de usuário aparecerá nos históricos das páginas como o responsável por ter feito as alterações.', # Fuzzy
+Seu nome de usuário aparecerá nos históricos das páginas como o responsável por ter feito as alterações.',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Novo texto:',
 	'replacetext_useregex' => 'Usar expressões regulares',
-	'replacetext_regexdocu' => '(Exemplo: os valores "a(.*)c" no "Texto original" e "ac$1" em "Novo texto" substituiriam "abc" por "acb")', # Fuzzy
+	'replacetext_regexdocu' => '(Exemplo: os valores "a(.*)c" no "{{int:replacetext_originaltext}}" e "ac$1" em "{{int:replacetext_replacementtext}}" substituiriam "abc" por "acb")',
 	'replacetext_optionalfilters' => 'Filtros opcionais:',
 	'replacetext_categorysearch' => 'Substituir apenas na categoria:',
 	'replacetext_prefixsearch' => 'Substituir apenas em páginas com o prefixo:',
@@ -2186,6 +2186,7 @@ $messages['sr-el'] = array(
 );
 
 /** Swedish (svenska)
+ * @author Cybjit
  * @author Fluff
  * @author M.M.S.
  * @author Martinwiss
@@ -2196,7 +2197,9 @@ $messages['sr-el'] = array(
 $messages['sv'] = array(
 	'replacetext' => 'Ersätt text',
 	'replacetext-desc' => 'Låter administratörer [[Special:ReplaceText|ersätta text]] på alla innehållssidor på en wiki',
-	'replacetext_docu' => 'För att ersätta en textträng med en annan på alla datasidor på den här wikin kan du skriva in de två texterna här och klicka på "Ersätt". Du kommer sedan att visas på en lista över sidor som innehåller söktexten, och du kan välja en av dom som du vill ersätta. Ditt namn kommer visas i sidhistoriken som den som är ansvarig för ändringarna.', # Fuzzy
+	'replacetext_docu' => 'För att ersätta en textsträng med en annan på alla vanliga sidor i den här wikin, skriv in de två texterna här och klicka på "{{int:replacetext_continue}}".
+Du kommer sedan att visas på en lista över sidor som innehåller söktexten, där du kan välja de som du vill ersätta i.
+Ditt namn kommer visas i sidhistoriken som den som är ansvarig för ändringarna.',
 	'replacetext_originaltext' => 'Originaltext:',
 	'replacetext_replacementtext' => 'Ersättningstext:',
 	'replacetext_useregex' => 'Använd reguljära uttryck',
