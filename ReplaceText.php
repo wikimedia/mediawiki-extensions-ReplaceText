@@ -47,7 +47,14 @@ $wgSpecialPageGroups['ReplaceText'] = 'wiki';
 $wgAutoloadClasses['ReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = $rtgIP . 'ReplaceTextJob.php';
 
-// This function should really go into a "ReplaceText_body.php" file.
+/**
+ * This function should really go into a "ReplaceText_body.php" file.
+ *
+ * Handler for 'AdminLinks' hook in the AdminLinks extension
+ *
+ * @param $admin_links_tree ALTree
+ * @return bool
+ */
 function rtAddToAdminLinks( ALTree &$admin_links_tree ) {
 	$general_section = $admin_links_tree->getSection( wfMessage( 'adminlinks_general' )->text() );
 	$extensions_row = $general_section->getRow( 'extensions' );
