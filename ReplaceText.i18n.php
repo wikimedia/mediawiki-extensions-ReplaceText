@@ -789,6 +789,7 @@ Korvauksen jälkeen korvatut ja jo tekstin sisältäneet kohdat eivät erotu toi
  * @author Grondin
  * @author IAlex
  * @author McDutchie
+ * @author Nicolas NALLET
  * @author Peter17
  * @author PieRRoMaN
  * @author Urhixidur
@@ -826,7 +827,7 @@ Votre nom apparaîtra dans l’historique des pages tel un utilisateur auteur de
 	'replacetext_nomove' => 'Aucune page n’a été trouvée dont le titre contient « $1 ».',
 	'replacetext_nosuchcategory' => 'Il n’existe pas de catégorie nommée « $1 ».',
 	'replacetext_return' => 'Revenir au formulaire.',
-	'replacetext_warning' => 'Il y a $1 fichier{{PLURAL:$1| qui contient|s qui contiennent}} déjà la chaîne de remplacement « $2 ».
+	'replacetext_warning' => 'Il y a $1 fichier {{PLURAL:$1| qui contient|s qui contiennent}} déjà la chaîne de remplacement « $2 ».
 Si vous effectuez cette substitution, vous ne pourrez pas distinguer vos modifications de ces chaînes.',
 	'replacetext_blankwarning' => 'Parce que la chaîne de remplacement est vide, cette opération sera irréversible ; voulez-vous continuer ?',
 	'replacetext_continue' => 'Continuer',
@@ -1624,7 +1625,9 @@ Nama anda akan terpapar dalam sejarah laman sebagai pengguna yang bertanggungjaw
 $messages['nb'] = array(
 	'replacetext' => 'Erstatt tekst',
 	'replacetext-desc' => 'Lar administratorer kunne [[Special:ReplaceText|erstatte tekst]] på alle innholdssider på en wiki.',
-	'replacetext_docu' => 'For å erstatte én tekststreng med en annen på alle datasider på denne wikien kan du skrive inn de to tekstene her og trykke «Erstatt». Du vil da bli ført til en liste over sider som inneholder søketeksten, og du kan velge hvilke sider du ønsker å erstatte den i. Navnet ditt vil stå i sidehistorikkene som den som er ansvarlig for endringene.', # Fuzzy
+	'replacetext_docu' => 'For å erstatte én tekststreng med en annen på alle datasider på denne wikien kan du skrive inn de to tekstene her og trykke «{{int:replacetext_continue}}».
+Du vil da bli ført til en liste over sider som inneholder søketeksten, og du kan velge hvilke sider du ønsker å erstatte den i.
+Navnet ditt vil stå i sidehistorikkene som den som er ansvarlig for endringene.',
 	'replacetext_originaltext' => 'Originaltekst:',
 	'replacetext_replacementtext' => 'Erstatningstekst:',
 	'replacetext_useregex' => 'Bruk regulæruttrykk',
