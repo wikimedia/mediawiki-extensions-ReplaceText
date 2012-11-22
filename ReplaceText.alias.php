@@ -193,6 +193,11 @@ $specialPageAliases['pt'] = array(
 	'ReplaceText' => array( 'Substituir_texto' ),
 );
 
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'ReplaceText' => array( 'SostituisciTesto' ),
+);
+
 /** Slovak (slovenčina) */
 $specialPageAliases['sk'] = array(
 	'ReplaceText' => array( 'NahradiťText' ),
