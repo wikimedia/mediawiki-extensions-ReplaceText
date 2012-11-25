@@ -579,16 +579,20 @@ Jolic wuwjedujoš toś tu wuměnu, njamóžoš rozeznaś swóje wuměny wót to�
 /** Greek (Ελληνικά)
  * @author Consta
  * @author Dada
+ * @author Protnet
  * @author ZaDiak
  * @author Απεργός
  */
 $messages['el'] = array(
 	'replacetext' => 'Αντικατάσταση κειμένου',
+	'replacetext-desc' => 'Παρέχει μια [[Special:ReplaceText|ειδική σελίδα]] που επιτρέπει στους διαχειριστές να κάνουν μια οικουμενική εύρεση και αντικατάσταση συμβολοσειράς σε όλες τις σελίδες περιεχομένου ενός βίκι',
 	'replacetext_originaltext' => 'Αρχικό κείμενο:',
 	'replacetext_replacementtext' => 'Κείμενο αντικατάστασης:',
 	'replacetext_optionalfilters' => 'Προαιρετικά φίλτρα:',
 	'replacetext_categorysearch' => 'Αντικατάσταση μόνο στην κατηγορία:',
 	'replacetext_editpages' => 'Αντικατάσταση κειμένου στα περιεχόμενα σελίδας',
+	'replacetext_movepages' => 'Αντικατάσταση κειμένου σε τίτλους σελίδας, όταν είναι δυνατόν',
+	'replacetext_givetarget' => 'Πρέπει να καθορίσετε τη συμβολοσειρά προς αντικατάσταση.',
 	'replacetext_nonamespace' => 'Πρέπει να επιλέξεις τουλάχιστον μια περιοχή.',
 	'replacetext_formovedpages' => 'Για μετακινούμενες σελίδες:',
 	'replacetext_watchmovedpages' => 'Παρακολούθηση αυτών των σελίδων',
