@@ -173,7 +173,7 @@ $specialPageAliases['nb'] = array(
 	'ReplaceText' => array( 'Teksterstatning' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'ReplaceText' => array( 'Tekste_vervangen' ),
 );
