@@ -2360,6 +2360,7 @@ Devam etmek istiyor musunuz?',
 
 /** Ukrainian (українська)
  * @author AS
+ * @author Base
  * @author Prima klasy4na
  */
 $messages['uk'] = array(
@@ -2368,6 +2369,7 @@ $messages['uk'] = array(
 	'replacetext_docu' => "Для того, щоб замінити один текст на іншій на всіх сторінках вікі, вам треба ввести тут два фрагменти тексту і натиснути кнопку «Продовжити». Після цього вам буде запропонований список всіх сторінок, що містять замінюваний текст, і ви зможете вибрати ті, в яких потрібно виконати заміни. В історії редагувань сторінок, в яких відбудеться заміна тексту, буде вказане ваше ім'я.", # Fuzzy
 	'replacetext_originaltext' => 'Оригінальний текст:',
 	'replacetext_replacementtext' => 'Замінити на:',
+	'replacetext_useregex' => 'Використовувати регулярні вирази',
 	'replacetext_optionalfilters' => 'Додаткові фільтри:',
 	'replacetext_categorysearch' => 'Замінити тільки в категорії:',
 	'replacetext_prefixsearch' => 'Замінити тільки на сторінках, чиї назви починаються на:',
