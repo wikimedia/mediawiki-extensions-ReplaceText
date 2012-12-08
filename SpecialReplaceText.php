@@ -40,6 +40,7 @@ class ReplaceText extends SpecialPage {
 	}
 
 	function doSpecialReplaceText() {
+		wfProfileIn( __METHOD__ );
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 
@@ -54,11 +55,10 @@ class ReplaceText extends SpecialPage {
 		$this->move_pages = $request->getBool( 'move_pages' );
 		$this->selected_namespaces = $this->getSelectedNamespaces();
 
-		if ( $request->getCheck( 'continue' ) ) {
-			if ( $this->target === '' ) {
-				$this->showForm( 'replacetext_givetarget' );
-				return;
-			}
+		if ( $request->getCheck( 'continue' ) && $this->target === '' ) {
+			$this->showForm( 'replacetext_givetarget' );
+			wfProfileOut( __METHOD__ );
+			return;
 		}
 
 		if ( $request->getCheck( 'replace' ) ) {
@@ -109,6 +109,7 @@ class ReplaceText extends SpecialPage {
 					$this->msg( 'replacetext_return' )->escaped() )
 			);
 
+			wfProfileOut( __METHOD__ );
 			return;
 		} elseif ( $request->getCheck( 'target' ) ) { // very long elseif, look for "end elseif"
 			// first, check that at least one namespace has been
@@ -116,10 +117,12 @@ class ReplaceText extends SpecialPage {
 			// has been selected
 			if ( count( $this->selected_namespaces ) == 0 ) {
 				$this->showForm( 'replacetext_nonamespace' );
+				wfProfileOut( __METHOD__ );
 				return;
 			}
 			if ( ! $this->edit_pages && ! $this->move_pages ) {
 				$this->showForm( 'replacetext_editormove' );
+				wfProfileOut( __METHOD__ );
 				return;
 			}
 
@@ -190,11 +193,13 @@ class ReplaceText extends SpecialPage {
 						$this->msg( 'replacetext_nosuchcategory' )->rawParams( $link )->escaped()
 					);
 				} else {
-					if ( $this->edit_pages )
+					if ( $this->edit_pages ) {
 						$out->addWikiMsg( 'replacetext_noreplacement', "<code><nowiki>{$this->target}</nowiki></code>" );
+					}
 
-					if ( $this->move_pages )
+					if ( $this->move_pages ) {
 						$out->addWikiMsg( 'replacetext_nomove', "<code><nowiki>{$this->target}</nowiki></code>" );
+					}
 				}
 				// link back to starting form
 				$out->addHTML( '<p>' . $linker->link( $this->getTitle(), $this->msg( 'replacetext_return' )->escaped() ) . '</p>' );
@@ -229,11 +234,13 @@ class ReplaceText extends SpecialPage {
 
 				$this->pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles );
 			}
+			wfProfileOut( __METHOD__ );
 			return;
 		}
 
 		// if we're still here, show the starting form
 		$this->showForm();
+		wfProfileOut( __METHOD__ );
 	}
 
 	function showForm( $warning_msg = null ) {
@@ -485,6 +492,7 @@ class ReplaceText extends SpecialPage {
 	function extractContext( $text, $target, $use_regex = false ) {
 		global $wgLang;
 
+		wfProfileIn( __METHOD__ );
 		$cw = $this->getUser()->getOption( 'contextchars', 40 );
 
 		// Get all indexes
@@ -494,7 +502,7 @@ class ReplaceText extends SpecialPage {
 			$targetq = preg_quote( $target, '/' );
 			preg_match_all( "/$targetq/", $text, $matches, PREG_OFFSET_CAPTURE );
 		}
- 
+
 		$poss = array();
 		foreach ( $matches[0] as $_ ) {
 			$poss[] = $_[1];
@@ -536,6 +544,7 @@ class ReplaceText extends SpecialPage {
 				$wgLang->truncate( substr( $text, $index + $len ), $cw, '...', false )
 			);
 		}
+		wfProfileOut( __METHOD__ );
 		return $context;
 	}
 
@@ -558,8 +567,7 @@ class ReplaceText extends SpecialPage {
 		if ( $use_regex ) {
 			$comparisonCond = $this->regexCond( $dbr, 'page_title', $str );
 		} else {
-			$any = $dbr->anyString();
-			$comparisonCond = 'page_title ' . $dbr->buildLike( $any, $str, $any );
+			$comparisonCond = 'page_title ' . $dbr->buildLike( $any, $str, $dbr->anyString() );
 		}
 		$conds = array(
 			$comparisonCond,
@@ -580,8 +588,7 @@ class ReplaceText extends SpecialPage {
 		if ( $use_regex ) {
 			$comparisonCond = $this->regexCond( $dbr, 'old_text', $search );
 		} else {
-			$any = $dbr->anyString();
-			$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $any );
+			$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $dbr->anyString() );
 		}
 		$conds = array(
 			$comparisonCond,
@@ -610,7 +617,7 @@ class ReplaceText extends SpecialPage {
 		if ( strval( $prefix ) === '' ) {
 			return;
 		}
-			
+
 		$dbr = wfGetDB( DB_SLAVE );
 		$title = Title::newFromText( $prefix );
 		if ( !is_null( $title ) ) {
