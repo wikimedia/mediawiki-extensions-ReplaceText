@@ -49,6 +49,7 @@ Your name will appear in page histories as the user responsible for any changes.
 	// content messages
 	'replacetext_editsummary' => 'Text replace - "$1" to "$2"',
 	'right-replacetext' => 'Make string replacements on the entire wiki',
+	'action-replacetext' => 'make string replacements on the entire wiki',
 );
 
 /** Message documentation (Message documentation)
@@ -77,6 +78,7 @@ $messages['qqq'] = array(
 {{Identical|Replace}}',
 	'replacetext_continue' => '{{Identical|Continue}}',
 	'right-replacetext' => '{{doc-right|replacetext}}',
+	'action-replacetext' => '{{doc-action|replacetext}}',
 );
 
 /** Afrikaans (Afrikaans)
