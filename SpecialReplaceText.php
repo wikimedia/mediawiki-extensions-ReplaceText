@@ -588,7 +588,8 @@ class ReplaceText extends SpecialPage {
 		if ( $use_regex ) {
 			$comparisonCond = $this->regexCond( $dbr, 'old_text', $search );
 		} else {
-			$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $dbr->anyString() );
+			$any = $dbr->anyString();
+			$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $any );
 		}
 		$conds = array(
 			$comparisonCond,
