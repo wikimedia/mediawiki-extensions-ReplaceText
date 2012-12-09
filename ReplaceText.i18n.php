@@ -484,6 +484,7 @@ Vaše jméno se objeví v historiích stránek jako osoba zodpovědná za přís
  * @author Leithian
  * @author Melancholie
  * @author Merlissimo
+ * @author Metalhead64
  * @author Raimond Spekking
  * @author Umherirrender
  */
@@ -522,6 +523,7 @@ Sofern du nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführst, ist eine sp�
 	'replacetext_continue' => 'Fortfahren',
 	'replacetext_editsummary' => 'Textersetzung - „$1“ durch „$2“',
 	'right-replacetext' => 'Textersetzung für das gesamte Wiki durchführen',
+	'action-replacetext' => 'im gesamten Wiki Zeichenfolgeersetzungen durchzuführen',
 );
 
 /** German (formal address) (Deutsch (Sie-Form)‎)
@@ -905,7 +907,8 @@ O seu nome aparecerá nos histotiais das páxinas como o usuario responsable de 
 	'replacetext_blankwarning' => "'''Atención:''' Debido a que a cadea de substitución está baleira, esta operación non será reversible.",
 	'replacetext_continue' => 'Continuar',
 	'replacetext_editsummary' => 'Substitución de texto - de "$1" a "$2"',
-	'right-replacetext' => 'Facer substitucións de cordas no wiki enteiro',
+	'right-replacetext' => 'Facer substitucións de texto en todo o wiki',
+	'action-replacetext' => 'facer substitucións de texto en todo o wiki',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -1287,6 +1290,7 @@ $messages['ja'] = array(
 	'replacetext_continue' => '続行',
 	'replacetext_editsummary' => '文字列「$1」を「$2」に置換',
 	'right-replacetext' => 'ウィキ全体で文字列の置換を実行',
+	'action-replacetext' => 'ウィキ全体での文字列の置換の実行',
 );
 
 /** Javanese (Basa Jawa)
@@ -2372,6 +2376,7 @@ $messages['uk'] = array(
 	'replacetext_originaltext' => 'Оригінальний текст:',
 	'replacetext_replacementtext' => 'Замінити на:',
 	'replacetext_useregex' => 'Використовувати регулярні вирази',
+	'replacetext_regexdocu' => '(Наприклад: вирази «a(.*)c» у полі «{{int:replacetext_originaltext}}» і «ac$1» у полі «{{int:replacetext_replacementtext}}» призведе до заміни «abc» на «acb».)',
 	'replacetext_optionalfilters' => 'Додаткові фільтри:',
 	'replacetext_categorysearch' => 'Замінити тільки в категорії:',
 	'replacetext_prefixsearch' => 'Замінити тільки на сторінках, чиї назви починаються на:',
@@ -2389,7 +2394,15 @@ $messages['uk'] = array(
 	'replacetext_invertselections' => 'Інвертувати виділення',
 	'replacetext_replace' => 'Замінити',
 	'replacetext_success' => '«$1» буде замінений на «$2» на $3 {{PLURAL:$3|сторінці|сторінках|сторінках}}.',
+	'replacetext_noreplacement' => 'Не знайдено сторінок, що містять рядок «$1».',
+	'replacetext_nomove' => 'Не знайдено сторінок, назва яких містить «$1».',
+	'replacetext_nosuchcategory' => 'Не існує категорії з назвою «$1».',
+	'replacetext_return' => 'Повернутися до форми.',
+	'replacetext_blankwarning' => "'''Увага:''' Так, як текст для заміни порожній, операцію не можна буде скасувати.",
 	'replacetext_continue' => 'Продовжити',
+	'replacetext_editsummary' => 'Заміна тексту — «$1» на «$2»',
+	'right-replacetext' => 'Робити заміни тексту у всій вікі',
+	'action-replacetext' => 'виконання замін тексту по всій вікі',
 );
 
 /** Urdu (اردو)
