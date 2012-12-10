@@ -681,6 +681,7 @@ Si realizas esta sustituación, no podrás separar tus sustituciones de estas ca
 	'replacetext_continue' => 'Continuar',
 	'replacetext_editsummary' => "Texto reemplaza - '$1' a '$2'",
 	'right-replacetext' => 'Reemplaza cadenas de caracteres en toda la wiki',
+	'action-replacetext' => 'Reemplazar cadenas de texto en todo el wiki',
 );
 
 /** Estonian (eesti)
@@ -794,6 +795,7 @@ Korvauksen jälkeen korvatut ja jo tekstin sisältäneet kohdat eivät erotu toi
 
 /** French (français)
  * @author Crochet.david
+ * @author Gomoko
  * @author Grondin
  * @author IAlex
  * @author McDutchie
@@ -841,6 +843,7 @@ Si vous effectuez cette substitution, vous ne pourrez pas distinguer vos modific
 	'replacetext_continue' => 'Continuer',
 	'replacetext_editsummary' => 'Remplacement du texte — « $1 » par « $2 »',
 	'right-replacetext' => 'Faire des remplacements de texte dans tout le wiki',
+	'action-replacetext' => 'faire les remplacements de la chaîne dans tout le wiki',
 );
 
 /** Franco-Provençal (arpetan)
@@ -1005,6 +1008,7 @@ $messages['he'] = array(
 	'replacetext_continue' => 'המשך',
 	'replacetext_editsummary' => 'החלפת טקסט – "$1" ב־"$2"',
 	'right-replacetext' => 'ביצוע החלפת מחרוזות באתר הוויקי כולו',
+	'action-replacetext' => 'החלפת מחרוזות בכל הוויקי',
 );
 
 /** Croatian (hrvatski)
@@ -1530,6 +1534,7 @@ $messages['mk'] = array(
 	'replacetext_continue' => 'Продолжи',
 	'replacetext_editsummary' => 'Замена на текст - „$1“ со „$2“',
 	'right-replacetext' => 'Вршење замена на низи во целото вики',
+	'action-replacetext' => 'вршење замена на низи во целото вики',
 );
 
 /** Malayalam (മലയാളം)
