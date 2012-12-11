@@ -1076,6 +1076,7 @@ $messages['hsb'] = array(
 	'replacetext_continue' => 'Dale',
 	'replacetext_editsummary' => "Tekstowe narunanje - '$1' do '$2'",
 	'right-replacetext' => 'Tekstowe narunanja na cyłym wikiju činić',
+	'action-replacetext' => 'Tekstowe narunanja na cyłym wikiju činić',
 );
 
 /** Hungarian (magyar)
@@ -1384,6 +1385,7 @@ $messages['ko'] = array(
 	'replacetext_continue' => '계속',
 	'replacetext_editsummary' => '찾아 바꾸기 – "$1" 문자열을 "$2" 문자열로',
 	'right-replacetext' => '찾아 바꾸기를 위키 전체에 수행합니다.',
+	'action-replacetext' => '찾아 바꾸기를 위키 전체에 수행',
 );
 
 /** Colognian (Ripoarisch)
@@ -1716,6 +1718,7 @@ Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.",
 	'replacetext_continue' => 'Doorgaan',
 	'replacetext_editsummary' => "Tekst vervangen - '$1' door '$2'",
 	'right-replacetext' => 'Tekst vervangen in de hele wiki',
+	'action-replacetext' => 'tekst te vervangen in de hele wiki',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
