@@ -235,6 +235,7 @@ El to nome apaecerá nos historiales de les páxines como l'usuariu responsable 
 	'replacetext_continue' => 'Siguir',
 	'replacetext_editsummary' => 'Sustitución de testu - de «$1» a «$2»',
 	'right-replacetext' => 'Facer les sustituciones de la cadena na wiki ensembre',
+	'action-replacetext' => 'facer sustituciones de cadena na wiki ensembre',
 );
 
 /** Azerbaijani (azərbaycanca)
