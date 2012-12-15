@@ -1479,6 +1479,7 @@ Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säi
 	'replacetext_continue' => 'Weiderfueren',
 	'replacetext_editsummary' => "Text ersat - '$1' duerch '$2'",
 	'right-replacetext' => 'Ersetze vun enger Rei vun Textzeechen op der ganzer Wiki',
+	'action-replacetext' => 'ersetze vun enger Rei vun Textzeechen op der ganzer Wiki',
 );
 
 /** Lithuanian (lietuvių)
@@ -2410,6 +2411,7 @@ $messages['uk'] = array(
 	'replacetext_nomove' => 'Не знайдено сторінок, назва яких містить «$1».',
 	'replacetext_nosuchcategory' => 'Не існує категорії з назвою «$1».',
 	'replacetext_return' => 'Повернутися до форми.',
+	'replacetext_warning' => "'''Увага:''' Знайдено {{PLURAL:$1|$1 сторінку, що містить|$1 сторінки, що містять|$1 сторінок, що містять}} текст на який заміняти, «$2». Якщо Ви проведете цю заміну, то не зможете відділити Ваші заміни від тих рядків, що є вже.",
 	'replacetext_blankwarning' => "'''Увага:''' Так, як текст для заміни порожній, операцію не можна буде скасувати.",
 	'replacetext_continue' => 'Продовжити',
 	'replacetext_editsummary' => 'Заміна тексту — «$1» на «$2»',
