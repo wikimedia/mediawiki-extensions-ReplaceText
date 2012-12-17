@@ -330,6 +330,7 @@ $messages['be-tarask'] = array(
 	'replacetext_continue' => 'Працягваць',
 	'replacetext_editsummary' => 'Замена тэксту: «$1» на «$2»',
 	'right-replacetext' => 'замена тэксту ва ўсёй вікі',
+	'action-replacetext' => 'замяняць радкі ва ўсёй вікі',
 );
 
 /** Bulgarian (български)
@@ -1633,6 +1634,7 @@ Nama anda akan terpapar dalam sejarah laman sebagai pengguna yang bertanggungjaw
 	'replacetext_continue' => 'Sambung',
 	'replacetext_editsummary' => 'Ganti teks - "$1" kepada "$2"',
 	'right-replacetext' => 'Membuat penggantian rentetan di seluruh wiki',
+	'action-replacetext' => 'melakukan penggantian rentetan di seluruh wiki',
 );
 
 /** Norwegian Bokmål (norsk (bokmål)‎)
