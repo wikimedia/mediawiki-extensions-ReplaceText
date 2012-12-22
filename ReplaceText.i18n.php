@@ -594,22 +594,29 @@ $messages['el'] = array(
 	'replacetext-desc' => 'Παρέχει μια [[Special:ReplaceText|ειδική σελίδα]] που επιτρέπει στους διαχειριστές να κάνουν μια οικουμενική εύρεση και αντικατάσταση συμβολοσειράς σε όλες τις σελίδες περιεχομένου ενός βίκι',
 	'replacetext_originaltext' => 'Αρχικό κείμενο:',
 	'replacetext_replacementtext' => 'Κείμενο αντικατάστασης:',
+	'replacetext_useregex' => 'Χρήση κανονικών εκφράσεων',
 	'replacetext_optionalfilters' => 'Προαιρετικά φίλτρα:',
 	'replacetext_categorysearch' => 'Αντικατάσταση μόνο στην κατηγορία:',
+	'replacetext_prefixsearch' => 'Αντικατάσταση μόνο σε σελίδες με πρόθεμα:',
 	'replacetext_editpages' => 'Αντικατάσταση κειμένου στα περιεχόμενα σελίδας',
 	'replacetext_movepages' => 'Αντικατάσταση κειμένου σε τίτλους σελίδας, όταν είναι δυνατόν',
 	'replacetext_givetarget' => 'Πρέπει να καθορίσετε τη συμβολοσειρά προς αντικατάσταση.',
 	'replacetext_nonamespace' => 'Πρέπει να επιλέξεις τουλάχιστον μια περιοχή.',
+	'replacetext_editormove' => 'Πρέπει να επιλέξετε τουλάχιστον μία από τις επιλογές αντικατάστασης.',
 	'replacetext_formovedpages' => 'Για μετακινούμενες σελίδες:',
+	'replacetext_savemovedpages' => 'Αποθήκευση των παλιών τίτλων ως ανακατευθύνσεις προς τους νέους τίτλους',
 	'replacetext_watchmovedpages' => 'Παρακολούθηση αυτών των σελίδων',
 	'replacetext_invertselections' => 'Αναστροφή επιλογών',
 	'replacetext_replace' => 'Αντικατάσταση',
+	'replacetext_success' => 'Το «$1» θα αντικατασταθεί από το «$2» σε {{PLURAL:$3|μία σελίδα|$3 σελίδες}}.',
 	'replacetext_noreplacement' => 'Δε βρέθηκαν σελίδες που να περιέχουν τη συμβολοσειρά "$1".',
 	'replacetext_nomove' => 'Δε βρέθηκαν σελίδες των οποίων ο τίτλος να περιέχει τον όρο "$1".',
 	'replacetext_nosuchcategory' => 'Δεν υπάρχει κατηγορία με το όνομα "$1".',
 	'replacetext_return' => 'Επιστροφή στη φόρμα.',
 	'replacetext_continue' => 'Συνέχεια',
 	'replacetext_editsummary' => "Αντικατάσταση κειμένου - '$1' σε '$2'",
+	'right-replacetext' => 'Να γίνουν αντικαταστάσεις συμβολοσειρών σε ολόκληρο το wiki',
+	'action-replacetext' => 'Να γίνουν αντικαταστάσεις συμβολοσειρών σε ολόκληρο το wiki',
 );
 
 /** Esperanto (Esperanto)
@@ -690,6 +697,9 @@ Si realizas esta sustituación, no podrás separar tus sustituciones de estas ca
  * @author Avjoska
  */
 $messages['et'] = array(
+	'replacetext' => 'Asenda tekst',
+	'replacetext_originaltext' => 'Originaaltekst:',
+	'replacetext_replacementtext' => 'Asendustekst:',
 	'replacetext_replace' => 'Asenda',
 );
 
@@ -2102,7 +2112,12 @@ $messages['ru'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
+	'replacetext' => 'පෙළ ප්‍රතිස්ථාපනය කරන්න',
+	'replacetext_originaltext' => 'මුල් පෙළ:',
+	'replacetext_replacementtext' => 'ප්‍රතිස්ථාපන පෙළ:',
+	'replacetext_optionalfilters' => 'අමතර පෙරහන්:',
 	'replacetext_replace' => 'ප්‍රතිස්ථාපනය',
+	'replacetext_continue' => 'ඉදිරියට යන්න',
 );
 
 /** Slovak (slovenčina)
