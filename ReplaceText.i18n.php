@@ -2326,6 +2326,8 @@ $messages['sw'] = array(
  * @author Shanmugamp7
  */
 $messages['ta'] = array(
+	'replacetext_originaltext' => 'மூலவுரை:',
+	'replacetext_replacementtext' => 'மாற்றப்பட வேண்டிய உரை:',
 	'replacetext_watchmovedpages' => 'இந்தப் பக்கங்களை கவனிக்கவும்',
 	'replacetext_replace' => 'மாற்றுக',
 	'replacetext_continue' => 'தொடரவும்',
