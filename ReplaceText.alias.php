@@ -252,3 +252,8 @@ $specialPageAliases['vi'] = array(
 $specialPageAliases['zh-hans'] = array(
 	'ReplaceText' => array( '替换文本' ),
 );
+
+/** Traditional Chinese (中文（繁體）‎) */
+$specialPageAliases['zh-hant'] = array(
+	'ReplaceText' => array( '替換文本' ),
+);
