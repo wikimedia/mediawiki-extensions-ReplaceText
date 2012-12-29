@@ -2159,7 +2159,11 @@ $messages['si'] = array(
 	'replacetext_originaltext' => 'මුල් පෙළ:',
 	'replacetext_replacementtext' => 'ප්‍රතිස්ථාපන පෙළ:',
 	'replacetext_optionalfilters' => 'අමතර පෙරහන්:',
+	'replacetext_formovedpages' => 'ගෙනගිය පිටු සඳහා:',
+	'replacetext_watchmovedpages' => 'මෙම පිටු මුර කරන්න',
+	'replacetext_invertselections' => 'තෝරාගැනුම් යටිකුරු කරන්න',
 	'replacetext_replace' => 'ප්‍රතිස්ථාපනය',
+	'replacetext_return' => 'නැවතත් ආකෘතිපත්‍රයට.',
 	'replacetext_continue' => 'ඉදිරියට යන්න',
 );
 
