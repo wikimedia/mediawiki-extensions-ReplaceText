@@ -1954,7 +1954,7 @@ Veul-lo continué?",
 	'replacetext_continue' => 'Continua',
 	'replacetext_editsummary' => 'Rimpiassadura test - "$1" a "$2"',
 	'right-replacetext' => "Fà rimpiassadura dë stringhe an sl'antrega wiki",
-	'action-replacetext' => "fà rimpiassadura dë stringhe an sl'antrega wiki",
+	'action-replacetext' => 'fé ij rampiass dë stringhe an sla wiki antrega',
 );
 
 /** Pontic (Ποντιακά)
@@ -2102,6 +2102,7 @@ $messages['ro'] = array(
 $messages['roa-tara'] = array(
 	'replacetext' => "Sostituisce 'u teste",
 	'replacetext_originaltext' => 'Teste origgenale:',
+	'replacetext_watchmovedpages' => 'Vide ste pàggene',
 	'replacetext_replace' => 'Sostituisce',
 	'replacetext_continue' => 'Condinue',
 );
@@ -2165,6 +2166,7 @@ $messages['si'] = array(
 	'replacetext_replace' => 'ප්‍රතිස්ථාපනය',
 	'replacetext_return' => 'නැවතත් ආකෘතිපත්‍රයට.',
 	'replacetext_continue' => 'ඉදිරියට යන්න',
+	'replacetext_editsummary' => 'පෙළ ප්‍රතිස්ථාපනය - "$1" වෙත "$2"',
 );
 
 /** Slovak (slovenčina)
