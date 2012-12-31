@@ -508,6 +508,7 @@ $messages['ce'] = array(
 /** Czech (česky)
  * @author Matěj Grabovský
  * @author Mormegil
+ * @author Vks
  */
 $messages['cs'] = array(
 	'replacetext' => 'Nahradit text',
@@ -517,6 +518,7 @@ Zobrazí se seznam stránek obsahujících hledaný text, ze kterých si budete 
 Vaše jméno se objeví v historiích stránek jako osoba zodpovědná za příslušné změny.', # Fuzzy
 	'replacetext_originaltext' => 'Původní text:',
 	'replacetext_replacementtext' => 'Nahradit textem:',
+	'replacetext_invertselections' => 'Invertovat výběr',
 	'replacetext_replace' => 'Nahradit',
 	'replacetext_continue' => 'Pokračovat',
 	'replacetext_editsummary' => 'Nahrazení textu „$1“ textem „$2“',
@@ -627,36 +629,46 @@ Jolic wuwjedujoš toś tu wuměnu, njamóžoš rozeznaś swóje wuměny wót to�
 /** Greek (Ελληνικά)
  * @author Consta
  * @author Dada
+ * @author Glavkos
  * @author Protnet
  * @author ZaDiak
  * @author Απεργός
  */
 $messages['el'] = array(
 	'replacetext' => 'Αντικατάσταση κειμένου',
-	'replacetext-desc' => 'Παρέχει μια [[Special:ReplaceText|ειδική σελίδα]] που επιτρέπει στους διαχειριστές να κάνουν μια οικουμενική εύρεση και αντικατάσταση συμβολοσειράς σε όλες τις σελίδες περιεχομένου ενός βίκι',
+	'replacetext-desc' => 'Παρέχει μια [[Special:ReplaceText|ειδική σελίδα]] που επιτρέπει σε διαχειριστές να κάνουν μια καθολική εύρεση και αντικατάσταση συμβολοσειράς σε όλες τις σελίδες περιεχομένου ενός wiki',
+	'replacetext_docu' => 'Για να αντικαταστήσετε μια συμβολοσειρά κειμένου με μια άλλη σε όλες τις κανονικές σελίδες αυτού του wiki, εισαγάγετε εδώ τα δύο κείμενα και στη συνέχεια πατήστε «{{int:replacetext_continue}}».
+Θα εμφανιστεί τότε μια λίστα με σελίδες που περιέχουν το αναζητούμενο κείμενο και μπορείτε να επιλέξετε εκείνες στις οποίες θέλετε να το αντικαταστήσετε.
+Το όνομά σας θα εμφανιστεί στο ιστορικό των σελίδων ως ο χρήστης που ευθύνεται για τις όποιες αλλαγές.',
 	'replacetext_originaltext' => 'Αρχικό κείμενο:',
 	'replacetext_replacementtext' => 'Κείμενο αντικατάστασης:',
 	'replacetext_useregex' => 'Χρήση κανονικών εκφράσεων',
+	'replacetext_regexdocu' => '(Παράδειγμα: με τιμές «a(.*)γ» ως «{{int:replacetext_originaltext}}» και «ac$1» ως «{{int:replacetext_replacementtext}}» θα αντικατασταθεί το «αβγ» με «αγβ»).',
 	'replacetext_optionalfilters' => 'Προαιρετικά φίλτρα:',
 	'replacetext_categorysearch' => 'Αντικατάσταση μόνο στην κατηγορία:',
 	'replacetext_prefixsearch' => 'Αντικατάσταση μόνο σε σελίδες με πρόθεμα:',
 	'replacetext_editpages' => 'Αντικατάσταση κειμένου στα περιεχόμενα σελίδας',
 	'replacetext_movepages' => 'Αντικατάσταση κειμένου σε τίτλους σελίδας, όταν είναι δυνατόν',
 	'replacetext_givetarget' => 'Πρέπει να καθορίσετε τη συμβολοσειρά προς αντικατάσταση.',
-	'replacetext_nonamespace' => 'Πρέπει να επιλέξεις τουλάχιστον μια περιοχή.',
+	'replacetext_nonamespace' => 'Πρέπει να επιλέξετε τουλάχιστον έναν ονοματοχώρο.',
 	'replacetext_editormove' => 'Πρέπει να επιλέξετε τουλάχιστον μία από τις επιλογές αντικατάστασης.',
+	'replacetext_choosepagesforedit' => 'Αντικατάσταση «$1» με «$2» στο κείμενο {{PLURAL:$3|της ακόλουθης σελίδας|των ακόλουθων $3 σελίδων}}:',
+	'replacetext_choosepagesformove' => 'Αντικατάσταση «$1» με «$2» στον τίτλο {{PLURAL:$3|της ακόλουθης σελίδας|των ακόλουθων $3 σελίδων}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Η ακόλουθη σελίδα|Οι ακόλουθες $1 σελίδες}} δεν είναι δυνατό να μετακινηθούν:',
 	'replacetext_formovedpages' => 'Για μετακινούμενες σελίδες:',
 	'replacetext_savemovedpages' => 'Αποθήκευση των παλιών τίτλων ως ανακατευθύνσεις προς τους νέους τίτλους',
 	'replacetext_watchmovedpages' => 'Παρακολούθηση αυτών των σελίδων',
 	'replacetext_invertselections' => 'Αναστροφή επιλογών',
 	'replacetext_replace' => 'Αντικατάσταση',
 	'replacetext_success' => 'Το «$1» θα αντικατασταθεί από το «$2» σε {{PLURAL:$3|μία σελίδα|$3 σελίδες}}.',
-	'replacetext_noreplacement' => 'Δε βρέθηκαν σελίδες που να περιέχουν τη συμβολοσειρά "$1".',
-	'replacetext_nomove' => 'Δε βρέθηκαν σελίδες των οποίων ο τίτλος να περιέχει τον όρο "$1".',
-	'replacetext_nosuchcategory' => 'Δεν υπάρχει κατηγορία με το όνομα "$1".',
+	'replacetext_noreplacement' => 'Δε βρέθηκαν σελίδες που να περιέχουν τη συμβολοσειρά «$1».',
+	'replacetext_nomove' => 'Δε βρέθηκαν σελίδες των οποίων ο τίτλος να περιέχει «$1».',
+	'replacetext_nosuchcategory' => 'Δεν υπάρχει κατηγορία με όνομα «$1».',
 	'replacetext_return' => 'Επιστροφή στη φόρμα.',
+	'replacetext_warning' => "'''Προειδοποίηση:''' {{PLURAL:$1|Υπάρχει μια σελίδα που περιέχει|Υπάρχουν $1 σελίδες που περιέχουν}} ήδη την προς αντικατάσταση συμβολοσειρά, «$2». Αν κάνετε αυτήν την αντικατάσταση δεν θα είστε μετά σε θέση να ξεχωρίσετε το κείμενο που αντικαταστήσετε από αυτό που ήδη υπήρχε.",
+	'replacetext_blankwarning' => "'''Προειδοποίηση:''' Επειδή η προς αντικατάσταση συμβολοσειρά είναι κενή, αυτή η διαδικασία δεν θα είναι αναστρέψιμη.",
 	'replacetext_continue' => 'Συνέχεια',
-	'replacetext_editsummary' => "Αντικατάσταση κειμένου - '$1' σε '$2'",
+	'replacetext_editsummary' => 'Αντικατάσταση κειμένου - «$1» σε «$2»',
 	'right-replacetext' => 'Να γίνουν αντικαταστάσεις συμβολοσειρών σε ολόκληρο το wiki',
 	'action-replacetext' => 'Να γίνουν αντικαταστάσεις συμβολοσειρών σε ολόκληρο το wiki',
 );
