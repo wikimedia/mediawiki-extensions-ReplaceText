@@ -53,6 +53,11 @@ $specialPageAliases['dv'] = array(
 	'ReplaceText' => array( 'ލިޔުން ބަދަލުކުރައްވާ' ),
 );
 
+/** Greek (Ελληνικά) */
+$specialPageAliases['el'] = array(
+	'ReplaceText' => array( 'ΑντικατάστασηΚειμένου' ),
+);
+
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
 	'ReplaceText' => array( 'جایگزینی_متن' ),
