@@ -50,15 +50,33 @@ class ReplaceTextJob extends Job {
 			}
 			$wgUser = $actual_user;
 		} else {
-			$article = new Article( $this->title, 0 );
-			if ( !$article ) {
-				$this->error = 'replaceText: Article not found "' . $this->title->getPrefixedDBkey() . '"';
-				wfProfileOut( __METHOD__ );
-				return false;
+			// WikiPage::getContent() replaced
+			// Article::fetchContent() starting in MW 1.21.
+			if ( method_exists( 'WikiPage', 'getContent' ) ) {
+				if ( $this->title->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
+					$this->error = 'replaceText: Wiki page "' . $this->title->getPrefixedDBkey() . '" does not hold regular wikitext.';
+					wfProfileOut( __METHOD__ );
+					return false;
+				}
+				$wikiPage = new WikiPage( $this->title );
+				// Is this check necessary?
+				if ( !$wikiPage ) {
+					$this->error = 'replaceText: Wiki page not found for "' . $this->title->getPrefixedDBkey() . '."';
+					wfProfileOut( __METHOD__ );
+					return false;
+				}
+				$article_text = $wikiPage->getContent()->getNativeData();
+			} else {
+				$article = new Article( $this->title, 0 );
+				if ( !$article ) {
+					$this->error = 'replaceText: Article not found for "' . $this->title->getPrefixedDBkey() . '"';
+					wfProfileOut( __METHOD__ );
+					return false;
+				}
+				$article_text = $article->fetchContent();
 			}
 
 			wfProfileIn( __METHOD__ . '-replace' );
-			$article_text = $article->fetchContent();
 			$target_str = $this->params['target_str'];
 			$replacement_str = $this->params['replacement_str'];
 			// @todo FIXME eh?
@@ -70,12 +88,12 @@ class ReplaceTextJob extends Job {
 				$new_text = str_replace( $target_str, $replacement_str, $article_text, $num_matches );
 			}
 
-			// if there's at least one replacement, modify the page,
-			// using the passed-in edit summary
+			// If there's at least one replacement, modify the page,
+			// using the passed-in edit summary.
 			if ( $num_matches > 0 ) {
-				// change global $wgUser variable to the one
+				// Change global $wgUser variable to the one
 				// specified by the job only for the extent of
-				// this replacement
+				// this replacement.
 				global $wgUser;
 				$actual_user = $wgUser;
 				$wgUser = User::newFromId( $this->params['user_id'] );
@@ -84,7 +102,12 @@ class ReplaceTextJob extends Job {
 				if ( $wgUser->isAllowed( 'bot' ) ) {
 					$flags |= EDIT_FORCE_BOT;
 				}
-				$article->doEdit( $new_text, $edit_summary, $flags );
+				if ( method_exists( 'WikiPage', 'getContent' ) ) {
+					$new_content = new WikitextContent( $new_text );
+					$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
+				} else {
+					$article->doEdit( $new_text, $edit_summary, $flags );
+				}
 				$wgUser = $actual_user;
 			}
 			wfProfileOut( __METHOD__ . '-replace' );
