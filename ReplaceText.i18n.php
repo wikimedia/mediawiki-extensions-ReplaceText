@@ -586,6 +586,13 @@ Sofern Sie nun die {{PLURAL:$1|Ersetzung|Ersetzungen}} durchführen, ist eine sp
 	'replacetext_blankwarning' => "'''Warnung:''' Da der zu ersetzende Textteil leer ist, kann die Operation nicht rückgängig gemacht werden. Möchten Sie dennoch fortfahren?",
 );
 
+/** Zazaki (Zazaki)
+ * @author Mirzali
+ */
+$messages['diq'] = array(
+	'replacetext_continue' => 'Dewam ke',
+);
+
 /** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
