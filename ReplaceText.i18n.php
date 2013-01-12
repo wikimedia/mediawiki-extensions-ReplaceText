@@ -61,6 +61,7 @@ Your name will appear in page histories as the user responsible for any changes.
  * @author McMonster
  * @author Nike
  * @author Purodha
+ * @author Shirayuki
  * @author Umherirrender
  */
 $messages['qqq'] = array(
@@ -73,6 +74,7 @@ $messages['qqq'] = array(
 	'replacetext_regexdocu' => '* "Original text" - {{msg-mw|replacetext_originaltext}}
 * "Replacement text" - {{msg-mw|replacetext_replacementtext}}',
 	'replacetext_choosepagesforedit' => 'Displayed over the list of pages where the given text was found.',
+	'replacetext_invertselections' => '{{Identical|Invert selection}}',
 	'replacetext_replace' => 'Label of the button, which triggers the begin of replacment.
 
 {{Identical|Replace}}',
