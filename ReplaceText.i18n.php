@@ -1425,9 +1425,9 @@ $messages['km'] = array(
 $messages['ko'] = array(
 	'replacetext' => '찾아 바꾸기',
 	'replacetext-desc' => '관리자가 위키 전체의 내용을 찾아 바꿀 수 있도록 [[Special:ReplaceText|특수 문서]]를 추가',
-	'replacetext_docu' => '이 위키에서 어떤 문자열을 다른 문자열로 바꾸기 위해서는, 찾을 문자열과 바꿀 문자열을 입력한 뒤 "{{int:replacetext_continue}}"을 누르세요.
-그러면 해당 문자열을 포함하고 있는 문서 목록이 나오며, 그중에서 바꿀 문서들을 선택할 수 있습니다.
-당신의 사용자 이름이 문서 역사에 나올 것입니다.',
+	'replacetext_docu' => '이 위키에서 어떤 문자열을 다른 문자열로 바꾸기 위해서는 찾을 문자열과 바꿀 문자열을 입력한 뒤 "{{int:replacetext_continue}}"을 누르세요.
+그러면 해당 문자열을 포함하고 있는 문서 목록이 나오며, 그 중에서 바꿀 문서들을 선택할 수 있습니다.
+모든 바뀜에 당신의 사용자 이름이 문서 역사에 나올 것입니다.',
 	'replacetext_originaltext' => '찾을 문자열:',
 	'replacetext_replacementtext' => '바꿀 문자열:',
 	'replacetext_useregex' => '정규 표현식 사용',
