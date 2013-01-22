@@ -1325,6 +1325,7 @@ $messages['it'] = array(
 	'replacetext_continue' => 'Continua',
 	'replacetext_editsummary' => "Sostituzione testo - '$1' con '$2'",
 	'right-replacetext' => 'Esegue sostituzioni di testo in tutto il sito',
+	'action-replacetext' => 'eseguire sostituzioni di testo in tutto il sito',
 );
 
 /** Japanese (日本語)
