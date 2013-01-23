@@ -2592,11 +2592,12 @@ $messages['vo'] = array(
  * @author Liangent
  * @author Onecountry
  * @author PhiLiP
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'replacetext' => '替换文字',
 	'replacetext-desc' => '提供[[Special:ReplaceText|特殊页面]]让管理员可以对wiki的所有页面内容执行查找和替换。',
-	'replacetext_docu' => '要替换此维基内所有页面文字的字串，请将“原文字”及“替换文字”分别填入以下两个栏位之中，然后按“继续”。接下来会列出所有含原文字的页面供你选择在哪些页面进行替换。页面改动历史会显示你是进行此次改动的用户。', # Fuzzy
+	'replacetext_docu' => '要替换此维基内所有页面文字的字串，请将“原文字”及“替换文字”分别填入以下两个栏位之中，然后按“{{int:replacetext_continue}}”。接下来会列出所有含原文字的页面供你选择在哪些页面进行替换。页面改动历史会显示你是进行此次改动的用户。',
 	'replacetext_originaltext' => '原文字',
 	'replacetext_replacementtext' => '替换文字',
 	'replacetext_useregex' => '使用正则表达式',
@@ -2627,6 +2628,7 @@ $messages['zh-hans'] = array(
 	'replacetext_continue' => '继续',
 	'replacetext_editsummary' => '替换文字 - 「$1」替换为「$2」',
 	'right-replacetext' => '对整个wiki进行文字替换。',
+	'action-replacetext' => '对这整个wiki做字符串替换',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
