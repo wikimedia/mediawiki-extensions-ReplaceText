@@ -178,7 +178,7 @@ $specialPageAliases['nb'] = array(
 	'ReplaceText' => array( 'Teksterstatning' ),
 );
 
-/** Nedersaksies (Nedersaksies) */
+/** Low Saxon (Netherlands) (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'ReplaceText' => array( 'Tekste_vervangen' ),
 );
