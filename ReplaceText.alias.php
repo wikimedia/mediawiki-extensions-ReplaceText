@@ -173,7 +173,7 @@ $specialPageAliases['mt'] = array(
 	'ReplaceText' => array( 'BiddelTest' ),
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'ReplaceText' => array( 'Teksterstatning' ),
 );
