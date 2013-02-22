@@ -211,7 +211,7 @@ class ReplaceText extends SpecialPage {
 				$warning_msg = null;
 
 				if ( $this->replacement === '' ) {
-					$warning_msg = $this->msg('replacetext_blankwarning')->escaped();
+					$warning_msg = $this->msg('replacetext_blankwarning')->text();
 				} elseif ( count( $titles_for_edit ) > 0 ) {
 					$res = $this->doSearchQuery( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix, $this->use_regex );
 					$count = $res->numRows();
