@@ -66,8 +66,7 @@ Your name will appear in page histories as the user responsible for any changes.
  */
 $messages['qqq'] = array(
 	'replacetext' => "This message is displayed as a title of this extension's special page.",
-	'replacetext-desc' => '{{desc}}
-
+	'replacetext-desc' => '{{desc|name=Replace Text|url=http://www.mediawiki.org/wiki/Extension:Replace_Text}}
 {{Identical|Content page}}',
 	'replacetext_docu' => "Description of how to use this extension, displayed on the extension's special page ([[Special:ReplaceText]]). The translation of 'Continue' should correspond with message {{msg-mw|Replacetext continue}}.",
 	'replacetext_originaltext' => 'Label of the text field, where user enters original piece of text, which would be replaced.',

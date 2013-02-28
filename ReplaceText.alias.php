@@ -50,7 +50,7 @@ $specialPageAliases['dsb'] = array(
 
 /** Divehi (ދިވެހިބަސް) */
 $specialPageAliases['dv'] = array(
-	'ReplaceText' => array( 'ލިޔުން ބަދަލުކުރައްވާ' ),
+	'ReplaceText' => array( 'ލިޔުން_ބަދަލުކުރައްވާ' ),
 );
 
 /** Greek (Ελληνικά) */
