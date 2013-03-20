@@ -160,7 +160,7 @@ $specialPageAliases['mk'] = array(
 
 /** Malayalam (മലയാളം) */
 $specialPageAliases['ml'] = array(
-	'ReplaceText' => array( 'പകരംഎഴുത്ത്' ),
+	'ReplaceText' => array( 'എഴുത്ത്മാറ്റിച്ചേർക്കുക' ),
 );
 
 /** Marathi (मराठी) */

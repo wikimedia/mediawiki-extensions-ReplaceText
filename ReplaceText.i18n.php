@@ -73,11 +73,45 @@ $messages['qqq'] = array(
 	'replacetext_regexdocu' => '* "Original text" - {{msg-mw|replacetext_originaltext}}
 * "Replacement text" - {{msg-mw|replacetext_replacementtext}}',
 	'replacetext_choosepagesforedit' => 'Displayed over the list of pages where the given text was found.',
+	'replacetext_choosepagesformove' => 'Used in [[Special:ReplaceText]].
+
+This message is followed by list of the pages.
+
+Parameters:
+* $1 - target string
+* $2 - replacement string
+* $3 - number of pages',
+	'replacetext_cannotmove' => 'Used in [[Special:ReplaceText]].
+
+This message is followed by list of the pages.
+
+Parameters:
+* $1 - number of pages which cannot be moved',
 	'replacetext_invertselections' => '{{Identical|Invert selection}}',
 	'replacetext_replace' => 'Label of the button, which triggers the begin of replacment.
 
 {{Identical|Replace}}',
+	'replacetext_success' => 'Used as success message in [[Special:ReplaceText]]. Parameters:
+* $1 - target string
+* $2 - replacement string
+* $3 - number of affected pages',
+	'replacetext_noreplacement' => 'Used in [[Special:ReplaceText]]. Parameters:
+* $1 - target string
+See also:
+* {{msg-mw|Replacetext nomove}}',
+	'replacetext_nomove' => 'Used in [[Special:ReplaceText]]. Parameters:
+* $1 - target string
+See also:
+* {{msg-mw|Replacetext noreplacement}}',
+	'replacetext_nosuchcategory' => 'Used in [[Special:ReplaceText]]. Parameters:
+* $1 - category name (with link)',
+	'replacetext_warning' => 'Used in [[Special:ReplaceText]]. Parameters:
+* $1 - number of pages
+* $2 - replacement string',
 	'replacetext_continue' => '{{Identical|Continue}}',
+	'replacetext_editsummary' => 'Used as Edit Summary in [[Special:ReplaceText]]. Parameters:
+* $1 - target string
+* $2 - replacement string',
 	'right-replacetext' => '{{doc-right|replacetext}}',
 	'action-replacetext' => '{{doc-action|replacetext}}',
 );
