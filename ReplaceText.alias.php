@@ -58,6 +58,11 @@ $specialPageAliases['el'] = array(
 	'ReplaceText' => array( 'ΑντικατάστασηΚειμένου' ),
 );
 
+/** Esperanto (Esperanto) */
+$specialPageAliases['eo'] = array(
+	'ReplaceText' => array( 'Anstataŭigi_tekston' ),
+);
+
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
 	'ReplaceText' => array( 'جایگزینی_متن' ),

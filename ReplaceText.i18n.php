@@ -2169,6 +2169,7 @@ $messages['roa-tara'] = array(
 	'replacetext_watchmovedpages' => 'Vide ste pàggene',
 	'replacetext_replace' => 'Sostituisce',
 	'replacetext_continue' => 'Condinue',
+	'replacetext_editsummary' => 'Teste sostituite - "$1" cu "$2"',
 );
 
 /** Russian (русский)
