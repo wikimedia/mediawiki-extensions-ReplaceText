@@ -1804,7 +1804,7 @@ Navnet ditt vil stå i sidehistorikkene som den som er ansvarlig for endringene.
 $messages['nl'] = array(
 	'replacetext' => 'Tekst vervangen',
 	'replacetext-desc' => "Beheerders kunnen via een [[Special:ReplaceText|speciale pagina]] tekst zoeken en vervangen in alle pagina's",
-	'replacetext_docu' => "Om een stuk tekst te vervangen door een ander stuk tekst in alle pagina's van de wiki, kunt u hier deze twee tekstdelen ingeven en daarna op \"{{int:replacetext_continue}}\" klikken.
+	'replacetext_docu' => "Om een stuk tekst te vervangen door een ander stuk tekst in alle pagina's van de wiki, kunt u hier deze twee tekstdelen opgeven en daarna op \"{{int:replacetext_continue}}\" klikken.
 U krijgt dan een lijst met pagina's te zien waar uw te vervangen tekstdeel in voorkomt, en u kunt kiezen in welke pagina's u de tekst ook echt wilt vervangen.
 Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke voor de wijzigingen.",
 	'replacetext_originaltext' => 'Oorspronkelijke tekst:',
