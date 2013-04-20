@@ -2049,6 +2049,7 @@ $messages['ps'] = array(
 );
 
 /** Portuguese (português)
+ * @author Capmo
  * @author Crazymadlover
  * @author Hamilton Abreu
  * @author Lijealso
@@ -2061,11 +2062,11 @@ $messages['pt'] = array(
 	'replacetext-desc' => "[[Special:ReplaceText|Página especial]] que permite que os administradores façam substituições globais de texto ''(string find-and-replace)'' em todas as páginas de conteúdo de uma wiki",
 	'replacetext_docu' => 'Para substituir um texto por outro texto em todas as páginas desta wiki, introduza os dois textos e clique o botão "Prosseguir".
 Serão listadas as páginas que contêm o texto a substituir e poderá seleccionar em quais deseja proceder à substituição.
-O seu nome aparecerá no histórico dessas páginas como o utilizador responsável pelas alterações.', # Fuzzy
+O seu nome aparecerá no histórico dessas páginas como o utilizador responsável pelas alterações.',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Texto de substituição:',
 	'replacetext_useregex' => 'Usar expressões regulares',
-	'replacetext_regexdocu' => '(Exemplo: os valores "a(.*)c" no "Texto original" e "ac$1" no "Texto de substituição" substituiriam "abc" por "acb")', # Fuzzy
+	'replacetext_regexdocu' => '(Exemplo: os valores "a(.*)c" no "Texto original" e "ac$1" no "Texto de substituição" substituiriam "abc" por "acb")',
 	'replacetext_optionalfilters' => 'Filtros opcionais:',
 	'replacetext_categorysearch' => 'Substituir só na categoria:',
 	'replacetext_prefixsearch' => 'Substituir só em páginas com o prefixo:',
@@ -2092,9 +2093,11 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_continue' => 'Prosseguir',
 	'replacetext_editsummary' => 'Substituição de texto - de "$1" para "$2"',
 	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
+	'action-replacetext' => 'fazer substituições de texto por toda a wiki',
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Capmo
  * @author Crazymadlover
  * @author Eduardo.mps
  * @author Enqd
@@ -2106,7 +2109,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
  */
 $messages['pt-br'] = array(
 	'replacetext' => 'Substituir texto',
-	'replacetext-desc' => '[[Special:ReplaceText|Página especial]] que permite que os administradores façam substituições globais de texto em todas as páginas de conteúdo de um wiki',
+	'replacetext-desc' => 'Apresenta uma [[Special:ReplaceText|página especial]] que permite aos administradores fazer substituições globais de texto em todas as páginas de conteúdo de uma wiki',
 	'replacetext_docu' => 'Para substituir uma "string" de texto por outra em todas as páginas deste wiki, forneça o texto a ser substituído e o novo texto e clique no botão "{{int:replacetext_continue}}".
 Será exibida uma lista de páginas que possuem o termo pesquisado. A partir dela, selecione em quais você deseja realizar substituições.
 Seu nome de usuário aparecerá nos históricos das páginas como o responsável por ter feito as alterações.',
