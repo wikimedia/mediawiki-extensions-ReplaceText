@@ -1520,7 +1520,7 @@ han wells. Dinge Name als Metmaacher weed met dä neu veränderte Versione
 fun dä Sigge faßjehallde als dä Schriiver, dä et jemaat hät.',
 	'replacetext_originaltext' => 'Dä ojinaal Täx för Ußzetuusche:',
 	'replacetext_replacementtext' => 'Dä neue Täx för anshtatt dämm Ojinaal erin ze donn',
-	'replacetext_useregex' => 'Met „<i lang="en">regular Expressions</i>“',
+	'replacetext_useregex' => 'Met rejolähre Ußdrök',
 	'replacetext_regexdocu' => '(För e Beispel: Nämm „a(.*)c“ för „{{int:replacetext_originaltext}}“ un „ac$1“ för „{{int:replacetext_replacementtext}}“, un De kriß „abc“ dorsh „acb“ ußjetuusch.)',
 	'replacetext_optionalfilters' => 'Müjjelesche Beschrängkunge:',
 	'replacetext_categorysearch' => 'Bloß en dä Saachjropp ußtuusche:',
