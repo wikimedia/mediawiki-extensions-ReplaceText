@@ -2053,6 +2053,7 @@ $messages['ps'] = array(
  * @author Crazymadlover
  * @author Hamilton Abreu
  * @author Lijealso
+ * @author Luckas
  * @author Malafaya
  * @author Waldir
  * @author 555
@@ -2081,7 +2082,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_formovedpages' => 'Para páginas movidas:',
 	'replacetext_savemovedpages' => 'Gravar os títulos anteriores como redireccionamentos para os novos títulos',
 	'replacetext_watchmovedpages' => 'Vigiar estas páginas',
-	'replacetext_invertselections' => 'Inverter selecções',
+	'replacetext_invertselections' => 'Inverter seleções',
 	'replacetext_replace' => 'Substituir',
 	'replacetext_success' => "'$1' será substituído por '$2' em $3 {{PLURAL:$3|página|páginas}}.",
 	'replacetext_noreplacement' => 'Não foram encontradas páginas que contenham o texto "$1".',
