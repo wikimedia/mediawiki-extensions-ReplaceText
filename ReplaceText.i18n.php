@@ -1554,7 +1554,8 @@ dröm kam_mer die Änderong nit esu leich automattesch retuur maache.
 Wells De trozdämm wigger maache?',
 	'replacetext_continue' => 'Wiggermaache',
 	'replacetext_editsummary' => 'Täx-Shtöcker tuusche — vun „$1“ noh „$2“',
-	'right-replacetext' => 'Donn Täx-Shtöcksher em janze Wiki ußtuusche',
+	'right-replacetext' => 'Täx-Schtöckscher em janze Wiki ußtuusche',
+	'action-replacetext' => 'Täx-Schtöckscher em janze Wiki ußzetuusche',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
