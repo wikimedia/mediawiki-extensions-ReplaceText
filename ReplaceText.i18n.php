@@ -744,6 +744,7 @@ $messages['eo'] = array(
  * @author Dferg
  * @author Imre
  * @author Locos epraix
+ * @author MarcoAurelio
  * @author Pertile
  * @author Translationista
  */
@@ -1754,7 +1755,7 @@ Nama anda akan terpapar dalam sejarah laman sebagai pengguna yang bertanggungjaw
 	'action-replacetext' => 'melakukan penggantian rentetan di seluruh wiki',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Event
  * @author Laaknor
  * @author Nghtwlkr
@@ -1842,7 +1843,7 @@ Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.",
 	'action-replacetext' => 'tekst te vervangen in de hele wiki',
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎)
+/** Norwegian Nynorsk (norsk nynorsk)
  * @author Gunnernett
  * @author Harald Khan
  * @author Njardarlogar
@@ -2106,6 +2107,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
  * @author Giro720
  * @author Hamilton Abreu
  * @author Jaideraf
+ * @author Luckas
  * @author Luckas Blade
  * @author 555
  */
