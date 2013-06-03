@@ -2682,6 +2682,7 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (中文（繁體）‎)
+ * @author Justincheng12345
  * @author Mark85296341
  * @author Roc michael
  * @author Sheepy
@@ -2690,7 +2691,7 @@ $messages['zh-hans'] = array(
 $messages['zh-hant'] = array(
 	'replacetext' => '替換文字',
 	'replacetext-desc' => '提供[[Special:ReplaceText|特殊頁面]]以利管理員以「尋找及替換」的方式更改所有文章頁面內的內容。',
-	'replacetext_docu' => '要替換此維基內所有頁面文字的字串，請將「原始文字」及「替換的文字」分別填入下面的兩個欄位之中，然後按「繼續」。接下來所有內含原始文字的頁面會被列出，你可以選擇要在那一些頁面進行替換。頁面的改動歷史會顯示你是負責進行這次改動的用戶。', # Fuzzy
+	'replacetext_docu' => '要替換此維基內所有頁面文字的字串，請將「原始文字」及「替換的文字」分別填入下面的兩個欄位之中，然後按「{{int:replacetext_continue}}」。接下來所有內含原始文字的頁面會被列出，你可以選擇要在那一些頁面進行替換。頁面的改動歷史會顯示你是負責進行這次改動的用戶。',
 	'replacetext_originaltext' => '原文字',
 	'replacetext_replacementtext' => '替換文字',
 	'replacetext_useregex' => '使用正則表達式',
@@ -2721,6 +2722,7 @@ $messages['zh-hant'] = array(
 	'replacetext_continue' => '繼續',
 	'replacetext_editsummary' => '替換文字 - 「$1」替換為「$2」',
 	'right-replacetext' => '對整個維基進行文字替換。',
+	'action-replacetext' => '對整個維基進行文字替換。',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
