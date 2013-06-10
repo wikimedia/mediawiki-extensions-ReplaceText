@@ -324,10 +324,11 @@ $messages['azb'] = array(
 
 /** Bashkir (башҡортса)
  * @author Assele
+ * @author Рустам Нурыев
  */
 $messages['ba'] = array(
 	'replacetext' => 'Тексты алмаштырырға',
-	'replacetext-desc' => 'Хәкимдәргә бөтә эстәлек биттәрендә тексты табып алмаштырырға мөмкинлек биреүсе [[Special:ReplaceText|махсус бит]] менән тәьмин итә',
+	'replacetext-desc' => 'Хакимдәргә бөтә эстәлек биттәрендә тексты табып алмаштырырға мөмкинлек биреүсе [[Special:ReplaceText|махсус бит]] менән тәьмин итә',
 	'replacetext_docu' => 'Был викиның бөтә биттәрендә бер текст юлын икенсе менән алмаштырыр өсөн, ике текст керетегеҙ һәм "Дауам итергә" төймәһенә баҫығыҙ.
 Артабан һеҙгә эҙләнгән тексты үҙ эсенә алған биттәр исемлеге күрһәтеләсәк, һеҙ улар араһында алмаштырырға теләгәндәрен һайлай алаһығыҙ.
 Һеҙҙең исемегеҙ биттәрҙең үҙгәртеү тарихтарында үҙгәртеүҙәргә яуаплы ҡатнашыусы булараҡ күрһәтеләсәк.', # Fuzzy
@@ -2581,6 +2582,7 @@ $messages['vep'] = array(
 
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
+ * @author Tuankiet65
  * @author Vinhtantran
  */
 $messages['vi'] = array(
@@ -2617,6 +2619,7 @@ $messages['vi'] = array(
 	'replacetext_continue' => 'Tiếp tục',
 	'replacetext_editsummary' => 'Thay thế văn bản - ‘$1’ thành ‘$2’',
 	'right-replacetext' => 'Thay thế chuỗi ở tất cả wiki',
+	'action-replacetext' => 'thực hiện thay thế câu trên toàn wiki',
 );
 
 /** Volapük (Volapük)
