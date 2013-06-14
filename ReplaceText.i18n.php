@@ -2618,8 +2618,8 @@ $messages['vi'] = array(
 	'replacetext_blankwarning' => 'Vì chuỗi thay thế là khoảng trắng, tác vụ này sẽ không thể hồi lại được; tiếp tục?',
 	'replacetext_continue' => 'Tiếp tục',
 	'replacetext_editsummary' => 'Thay thế văn bản - ‘$1’ thành ‘$2’',
-	'right-replacetext' => 'Thay thế chuỗi ở tất cả wiki',
-	'action-replacetext' => 'thực hiện thay thế câu trên toàn wiki',
+	'right-replacetext' => 'Thay thế văn bản trên toàn wiki',
+	'action-replacetext' => 'thay thế văn bản trên toàn wiki',
 );
 
 /** Volapük (Volapük)
