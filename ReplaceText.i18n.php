@@ -536,9 +536,12 @@ $messages['ca'] = array(
 
 /** Chechen (нохчийн)
  * @author Sasan700
+ * @author Умар
  */
 $messages['ce'] = array(
+	'replacetext' => 'Хийца йоза',
 	'replacetext_optionalfilters' => 'Тlедожийна доцу литтарш:',
+	'replacetext_replace' => 'Хийца',
 );
 
 /** Czech (česky)
