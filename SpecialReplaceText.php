@@ -70,7 +70,7 @@ class ReplaceText extends SpecialPage {
 			$replacement_params['edit_summary'] = $this->msg(
 				'replacetext_editsummary',
 				$this->target, $this->replacement
-			)->inContentLanguage()->text();
+			)->inContentLanguage()->plain();
 			$replacement_params['create_redirect'] = false;
 			$replacement_params['watch_page'] = false;
 			foreach ( $request->getValues() as $key => $value ) {
