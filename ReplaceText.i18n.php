@@ -954,7 +954,7 @@ Votre nom apparaîtra dans l’historique des pages tel un utilisateur auteur de
 Si vous effectuez cette substitution, vous ne pourrez pas distinguer vos modifications de ces chaînes.',
 	'replacetext_blankwarning' => 'Parce que la chaîne de remplacement est vide, cette opération sera irréversible ; voulez-vous continuer ?',
 	'replacetext_continue' => 'Continuer',
-	'replacetext_editsummary' => 'Remplacement du texte — « $1 » par « $2 »',
+	'replacetext_editsummary' => 'Remplacement de texte — « $1 » par « $2 »',
 	'right-replacetext' => 'Faire des remplacements de texte dans tout le wiki',
 	'action-replacetext' => 'faire les remplacements de la chaîne dans tout le wiki',
 );
@@ -1022,7 +1022,7 @@ O seu nome aparecerá nos histotiais das páxinas como o usuario responsable de 
 	'replacetext_warning' => '\'\'\'Aviso:\'\'\' Hai {{PLURAL:$1|unha páxina|$1 páxinas}} que xa {{PLURAL:$1|contén|conteñen}} a cadea de substitución "$2". Se fai esta substitución non poderá distinguir as súas modificacións destas cadeas.',
 	'replacetext_blankwarning' => "'''Atención:''' Debido a que a cadea de substitución está baleira, esta operación non será reversible.",
 	'replacetext_continue' => 'Continuar',
-	'replacetext_editsummary' => 'Substitución de texto - de "$1" a "$2"',
+	'replacetext_editsummary' => 'Substitución de texto: "$1" por "$2"',
 	'right-replacetext' => 'Facer substitucións de texto en todo o wiki',
 	'action-replacetext' => 'facer substitucións de texto en todo o wiki',
 );
