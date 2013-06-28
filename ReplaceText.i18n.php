@@ -47,7 +47,7 @@ Your name will appear in page histories as the user responsible for any changes.
 	'replacetext_blankwarning' => "'''Warning:''' Because the replacement string is blank, this operation will not be reversible.",
 	'replacetext_continue' => 'Continue',
 	// content messages
-	'replacetext_editsummary' => 'Text replace - "$1" to "$2"',
+	'replacetext_editsummary' => 'Text replacement - "$1" to "$2"',
 	'right-replacetext' => 'Make string replacements on the entire wiki',
 	'action-replacetext' => 'make string replacements on the entire wiki',
 );
