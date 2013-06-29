@@ -1659,7 +1659,7 @@ $messages['mk'] = array(
 	'replacetext_blankwarning' => 'Бидејќи новата низа е празна, оваа операција не може да се врати.
 Дали сакате да продолжите?',
 	'replacetext_continue' => 'Продолжи',
-	'replacetext_editsummary' => 'Замена на текст - „$1“ со „$2“',
+	'replacetext_editsummary' => 'Замена на текст — „$1“ со „$2“',
 	'right-replacetext' => 'Вршење замена на низи во целото вики',
 	'action-replacetext' => 'вршење замена на низи во целото вики',
 );
