@@ -40,7 +40,7 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'ReplaceText' => array( 'MetinVurnayış' ),
+	'ReplaceText' => array( 'MetinVırnayış' ),
 );
 
 /** Lower Sorbian (dolnoserbski) */
