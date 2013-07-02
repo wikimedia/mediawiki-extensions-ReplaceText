@@ -564,6 +564,13 @@ Vaše jméno se objeví v historiích stránek jako osoba zodpovědná za přís
 	'right-replacetext' => 'Hledání a nahrazování textu na celé wiki',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'replacetext_editsummary' => 'Disodli\'r testun - "$1" i "$2"',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Leithian
@@ -1855,7 +1862,7 @@ Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.",
 $messages['nn'] = array(
 	'replacetext' => 'Byt ut tekst',
 	'replacetext-desc' => 'Gjev ei [[Special:ReplaceText|spesialsida]] som lèt administratorar søkja etter og byta ut tekst på alle innhaldssidene på ein wiki.',
-	'replacetext_docu' => 'For å byta éin tekststreng med ein annan på alle datasidene på denne wikien kan du skriva inn dei to tekstane her og trykkja «Hald fram». Du vil då bli førd til ei lista over sidene som inneheld søkjestrengen, og du kan velja kva sider du ønskjer å byta han ut i. Namnet ditt vil stå i sidehistorikkane som han som er ansvarleg for endringane.', # Fuzzy
+	'replacetext_docu' => 'For å byta ein tekststreng med ein annan på alle vanlege sider på denne wikien kan du skriva inn dei to tekstbitane her og klikka «{{int:replacetext_continue}}». Du vil då verta ført til ei liste over sidene som inneheld søkjestrengen, og du kan velja kva sider du ønskjer å byta han ut i. Namnet ditt vil stå i sidehistorikkane som den som er ansvarleg for endringane.',
 	'replacetext_originaltext' => 'Originaltekst:',
 	'replacetext_replacementtext' => 'Ny tekst til erstatning:',
 	'replacetext_optionalfilters' => 'Valfrie filter:',
@@ -1885,7 +1892,7 @@ Halda fram med utbytinga?', # Fuzzy
 	'replacetext_blankwarning' => 'Av di teksten som skal bli sett inn er tom, vil ikkje denne handlinga kunna bli køyrt omvendt.
 Vil du halda fram?',
 	'replacetext_continue' => 'Hald fram',
-	'replacetext_editsummary' => 'Utbyting av tekst - «$1» til «$2»',
+	'replacetext_editsummary' => 'Utbyting av tekst - «$1» til «$2»', # Fuzzy
 	'right-replacetext' => 'Gjennomfør utbyting av tekst på heile wikien',
 );
 
