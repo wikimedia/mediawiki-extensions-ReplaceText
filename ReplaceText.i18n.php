@@ -1944,6 +1944,7 @@ $messages['pdc'] = array(
 
 /** Polish (polski)
  * @author Ankry
+ * @author Chrumps
  * @author Derbeth
  * @author Leinad
  * @author Maikking
@@ -1985,7 +1986,7 @@ $messages['pl'] = array(
 	'replacetext_warning' => "'''Uwaga''' {{PLURAL:$1|Jest $1 strona zawierająca|Są $1 strony zawierające|Jest $1 stron zawierających}} tekst „$2”, którym chcesz zastępować. Jeśli wykonasz zastępowanie nie będzie możliwe odseparowanie Twoich zastąpień od tych tekstów.",
 	'replacetext_blankwarning' => 'Ponieważ ciąg znaków, którym ma być wykonane zastępowanie jest pusty, operacja będzie nieodwracalna. Czy kontynuować?',
 	'replacetext_continue' => 'Kontynuuj',
-	'replacetext_editsummary' => 'zamienił w treści „$1” na „$2”',
+	'replacetext_editsummary' => 'Zastępowanie tekstu - "$1" na "$2"',
 	'right-replacetext' => 'Wykonywanie zastępowania tekstu w całej wiki',
 );
 
