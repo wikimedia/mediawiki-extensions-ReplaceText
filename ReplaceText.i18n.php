@@ -2076,7 +2076,7 @@ $messages['pt'] = array(
 	'replacetext' => 'Substituir texto',
 	'replacetext-desc' => "[[Special:ReplaceText|Página especial]] que permite que os administradores façam substituições globais de texto ''(string find-and-replace)'' em todas as páginas de conteúdo de uma wiki",
 	'replacetext_docu' => 'Para substituir um texto por outro texto em todas as páginas desta wiki, introduza os dois textos e clique o botão "Prosseguir".
-Serão listadas as páginas que contêm o texto a substituir e poderá seleccionar em quais deseja proceder à substituição.
+Serão listadas as páginas que contêm o texto a substituir e poderá selecionar em quais deseja proceder à substituição.
 O seu nome aparecerá no histórico dessas páginas como o utilizador responsável pelas alterações.',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Texto de substituição:',
@@ -2088,8 +2088,8 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_editpages' => 'Substituir texto no conteúdo da página',
 	'replacetext_movepages' => 'Substituir texto nos títulos de páginas, quando possível',
 	'replacetext_givetarget' => 'Deve especificar o texto que será substituído.',
-	'replacetext_nonamespace' => 'Deverá seleccionar pelo menos um espaço nominal.',
-	'replacetext_editormove' => 'Deve seleccionar pelo menos uma das opções de substituição.',
+	'replacetext_nonamespace' => 'Deverá selecionar pelo menos um espaço nominal.',
+	'replacetext_editormove' => 'Deve selecionar pelo menos uma das opções de substituição.',
 	'replacetext_choosepagesforedit' => 'Substituir "$1" por "$2" no texto {{PLURAL:$3|da seguinte página|das seguintes páginas}}:',
 	'replacetext_choosepagesformove' => 'Substituir "$1" por "$2" {{PLURAL:$3|no título da seguinte página|nos títulos das seguintes páginas}}:',
 	'replacetext_cannotmove' => '{{PLURAL:$1|A seguinte página não pode ser movida|As seguintes páginas não podem ser movidas}}:',
@@ -2106,7 +2106,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} o texto de substituição, \"\$2\". Se fizer esta substituição não poderá distingui-las das suas substituições, nem desfazer a operação com uma simples substituição em ordem inversa.",
 	'replacetext_blankwarning' => "'''Aviso:''' Como o texto de substituição foi deixado em branco, esta operação não será reversível.",
 	'replacetext_continue' => 'Prosseguir',
-	'replacetext_editsummary' => 'Substituição de texto - de "$1" para "$2"',
+	'replacetext_editsummary' => 'Substituição de texto - de "$1" para "$2"', # Fuzzy
 	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
 	'action-replacetext' => 'fazer substituições de texto por toda a wiki',
 );
