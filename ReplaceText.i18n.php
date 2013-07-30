@@ -542,6 +542,7 @@ $messages['ce'] = array(
 	'replacetext' => 'Хийца йоза',
 	'replacetext_optionalfilters' => 'Тlедожийна доцу литтарш:',
 	'replacetext_replace' => 'Хийца',
+	'replacetext_continue' => 'Кхин дӀа',
 );
 
 /** Czech (česky)
@@ -1849,7 +1850,7 @@ Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke v
 Als u nu doorgaat met vervangen, kunt u geen onderscheid meer maken.",
 	'replacetext_blankwarning' => 'Omdat u tekst vervangt door niets, kan deze handeling niet ongedaan gemaakt worden. Wilt u doorgaan?',
 	'replacetext_continue' => 'Doorgaan',
-	'replacetext_editsummary' => "Tekst vervangen - '$1' door '$2'",
+	'replacetext_editsummary' => 'Tekst vervangen - "$1" door "$2"',
 	'right-replacetext' => 'Tekst vervangen in de hele wiki',
 	'action-replacetext' => 'tekst te vervangen in de hele wiki',
 );
