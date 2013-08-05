@@ -1246,7 +1246,9 @@ Biztosan folytatni szeretnéd?',
 $messages['ia'] = array(
 	'replacetext' => 'Reimplaciar texto',
 	'replacetext-desc' => 'Forni un [[Special:ReplaceText|pagina special]] que permitte al administratores cercar e reimplaciar globalmente un catena de characteres in tote le paginas de contento de un wiki',
-	'replacetext_docu' => "Pro reimplaciar un catena de characteres per un altere trans tote le paginas regular in iste wiki, entra le duo pecias de texto hic e clicca super 'Continuar'. Postea se monstrara un lista de paginas que contine le texto cercate, e tu potera seliger in quales tu vole reimplaciar lo. Tu nomine figurara in le historias del paginas como le usator responsabile de omne modificationes.", # Fuzzy
+	'replacetext_docu' => 'Pro reimplaciar un catena de characteres per un altere in tote le paginas regular in iste wiki, entra le duo pecias de texto hic e clicca super "{{int:replacetext_continue}}".
+Postea apparera un lista de paginas que contine le texto cercate, e tu potera seliger le paginas in le quales tu vole reimplaciar lo.
+Tu nomine figurara in le historias del paginas como le usator responsabile de eventual modificationes.',
 	'replacetext_originaltext' => 'Texto original:',
 	'replacetext_replacementtext' => 'Nove texto:',
 	'replacetext_useregex' => 'Usar expressiones regular',
@@ -1276,7 +1278,7 @@ $messages['ia'] = array(
 Si tu face iste reimplaciamento, tu non potera distinguer inter tu reimplaciamentos e iste texto ja existente.",
 	'replacetext_blankwarning' => 'Post que le nove texto es vacue, iste operation non essera reversibile; continuar?',
 	'replacetext_continue' => 'Continuar',
-	'replacetext_editsummary' => "Reimplaciamento de texto - '$1' per '$2'",
+	'replacetext_editsummary' => "Reimplaciamento de texto - '$1' per '$2'", # Fuzzy
 	'right-replacetext' => 'Facer reimplaciamentos de texto in le wiki integre',
 );
 
