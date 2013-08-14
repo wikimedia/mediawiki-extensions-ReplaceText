@@ -70,8 +70,8 @@ $messages['qqq'] = array(
 {{Identical|Content page}}',
 	'replacetext_docu' => "Description of how to use this extension, displayed on the extension's special page ([[Special:ReplaceText]]). The translation of 'Continue' should correspond with message {{msg-mw|Replacetext continue}}.",
 	'replacetext_originaltext' => 'Label of the text field, where user enters original piece of text, which would be replaced.',
-	'replacetext_regexdocu' => '* "Original text" - {{msg-mw|replacetext_originaltext}}
-* "Replacement text" - {{msg-mw|replacetext_replacementtext}}',
+	'replacetext_regexdocu' => '* "Original text" - {{msg-mw|Replacetext originaltext}}
+* "Replacement text" - {{msg-mw|Replacetext replacementtext}}',
 	'replacetext_choosepagesforedit' => 'Displayed over the list of pages where the given text was found.',
 	'replacetext_choosepagesformove' => 'Used in [[Special:ReplaceText]].
 
