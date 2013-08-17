@@ -1481,8 +1481,8 @@ $messages['km'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'replacetext' => '찾아 바꾸기',
-	'replacetext-desc' => '관리자가 위키 전체의 내용을 찾아 바꿀 수 있도록 [[Special:ReplaceText|특수 문서]]를 추가',
+	'replacetext' => '문자열 찾아 바꾸기',
+	'replacetext-desc' => '관리자가 위키 전체의 본문에 있는 문자열을 찾아 바꿀 수 있도록 [[Special:ReplaceText|특수 문서]]를 제공합니다',
 	'replacetext_docu' => '이 위키에서 어떤 문자열을 다른 문자열로 바꾸기 위해서는 찾을 문자열과 바꿀 문자열을 입력한 뒤 "{{int:replacetext_continue}}"을 누르세요.
 그러면 해당 문자열을 포함하고 있는 문서 목록이 나오며, 그 중에서 바꿀 문서들을 선택할 수 있습니다.
 모든 바뀜에 당신의 사용자 이름이 문서 역사에 나올 것입니다.',
@@ -1510,13 +1510,13 @@ $messages['ko'] = array(
 	'replacetext_noreplacement' => '"$1" 문자열을 포함하고 있는 문서가 없습니다.',
 	'replacetext_nomove' => '"$1" 문자열을 포함하고 있는 문서 제목이 없습니다.',
 	'replacetext_nosuchcategory' => '"$1" 문자열을 포함하고 있는 분류가 없습니다.',
-	'replacetext_return' => '찾아 바꾸기 양식으로 돌아가기',
+	'replacetext_return' => '양식으로 돌아갑니다.',
 	'replacetext_warning' => '"$2" 문자열을 포함하고 있는 문서 $1개가 이미 있습니다. 이 찾아 바꾸기를 실행하면, 이미 존재하는 "$2" 문자열과 더 이상 구분되지 않을 것입니다.
 찾아 바꾸기를 계속하겠습니까?',
 	'replacetext_blankwarning' => '바꿀 문자열이 비어 있으므로 이 동작은 되돌릴 수 없습니다.
 계속하시겠습니까?',
 	'replacetext_continue' => '계속',
-	'replacetext_editsummary' => '찾아 바꾸기 – "$1" 문자열을 "$2" 문자열로',
+	'replacetext_editsummary' => '문자열 찾아 바꾸기 - "$1" 문자열을 "$2" 문자열로',
 	'right-replacetext' => '찾아 바꾸기를 위키 전체에 수행합니다.',
 	'action-replacetext' => '찾아 바꾸기를 위키 전체에 수행',
 );
@@ -2191,9 +2191,13 @@ $messages['roa-tara'] = array(
 	'replacetext_replacementtext' => 'Teste da sostituì:',
 	'replacetext_useregex' => 'Ause le espressiune regolare',
 	'replacetext_watchmovedpages' => 'Vide ste pàggene',
+	'replacetext_invertselections' => 'Selezione a smerse',
 	'replacetext_replace' => 'Sostituisce',
+	'replacetext_success' => '"$1" avène sostituite cu "$2" jndr\'à {{PLURAL:$3|\'na pàgene|$3 pàggene}}.',
+	'replacetext_return' => "Tuèrne a 'u module.",
 	'replacetext_continue' => 'Condinue',
-	'replacetext_editsummary' => 'Teste sostituite - "$1" cu "$2"',
+	'replacetext_editsummary' => 'Sostituzione d\'u teste - "$1" cu "$2"',
+	'right-replacetext' => "Fà 'a sostituzione de le stringhe sus a totte a uicchi",
 );
 
 /** Russian (русский)
@@ -2533,6 +2537,7 @@ Devam etmek istiyor musunuz?',
 
 /** Ukrainian (українська)
  * @author AS
+ * @author Andriykopanytsia
  * @author Base
  * @author Prima klasy4na
  * @author Ата
@@ -2571,7 +2576,7 @@ $messages['uk'] = array(
 	'replacetext_warning' => "'''Увага:''' Знайдено {{PLURAL:$1|$1 сторінку, що містить|$1 сторінки, що містять|$1 сторінок, що містять}} текст на який заміняти, «$2». Якщо Ви проведете цю заміну, то не зможете відділити Ваші заміни від тих рядків, що є вже.",
 	'replacetext_blankwarning' => "'''Увага:''' Так, як текст для заміни порожній, операцію не можна буде скасувати.",
 	'replacetext_continue' => 'Продовжити',
-	'replacetext_editsummary' => 'Заміна тексту — «$1» на «$2»',
+	'replacetext_editsummary' => 'Заміна тексту — „$1“ на „$2“',
 	'right-replacetext' => 'Робити заміни тексту у всій вікі',
 	'action-replacetext' => 'виконання замін тексту по всій вікі',
 );
