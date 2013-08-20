@@ -1371,7 +1371,7 @@ $messages['it'] = array(
 	'replacetext_warning' => '{{PLURAL:$1|C\'è già $1 pagina che contiene|Ci sono già $1 pagine che contengono}} il testo di sostituzione, "$2". Se si effettua questa sostituzione non si sarà in grado di separare le sostituzioni da questi testi. Continuare con la sostituzione?',
 	'replacetext_blankwarning' => "Poiché il testo di sostituzione è vuoto, l'operazione non sarà reversibile. Si desidera continuare?",
 	'replacetext_continue' => 'Continua',
-	'replacetext_editsummary' => "Sostituzione testo - '$1' con '$2'",
+	'replacetext_editsummary' => 'Sostituzione testo - "$1" con "$2"',
 	'right-replacetext' => 'Esegue sostituzioni di testo in tutto il sito',
 	'action-replacetext' => 'eseguire sostituzioni di testo in tutto il sito',
 );
