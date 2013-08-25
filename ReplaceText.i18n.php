@@ -2159,8 +2159,8 @@ Seu nome de usuário aparecerá nos históricos das páginas como o responsável
 	'replacetext_return' => 'Voltar ao formulário.',
 	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} a expressão de substituição, \"\$2\". Se você prosseguir, não será possível distinguí-las das suas substituições, nem desfazer a operação com uma simples substituição em ordem inversa.",
 	'replacetext_blankwarning' => "'''Aviso:''' Como o texto de substituição foi deixado em branco, esta operação não será reversível.",
-	'replacetext_continue' => 'Avançar',
-	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'",
+	'replacetext_continue' => 'Continuar',
+	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'", # Fuzzy
 	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
 );
 
