@@ -1939,7 +1939,7 @@ $messages['oc'] = array(
 S'efectuatz aquesta substitucion, poiretz pas separar vòstres cambiaments a partir d'aquestas cadenas.",
 	'replacetext_blankwarning' => 'Perque la cadena de remplaçament es voida, aquesta operacion serà irreversibla ; volètz contunhar ?',
 	'replacetext_continue' => 'Contunhar',
-	'replacetext_editsummary' => 'Remplaçament del tèxte — « $1 » per « $2 »',
+	'replacetext_editsummary' => 'Remplaçament de tèxte — « $1 » per « $2 »',
 	'right-replacetext' => 'Far de remplaçaments de tèxte dins tot lo wiki',
 );
 
