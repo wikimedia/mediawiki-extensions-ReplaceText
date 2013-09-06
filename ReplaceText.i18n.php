@@ -2121,6 +2121,7 @@ O seu nome aparecerá no histórico dessas páginas como o utilizador responsáv
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
  * @author Capmo
  * @author Crazymadlover
  * @author Eduardo.mps
@@ -2166,8 +2167,9 @@ Seu nome de usuário aparecerá nos históricos das páginas como o responsável
 	'replacetext_warning' => "'''Aviso:''' Há {{PLURAL:\$1|uma página que já contém|\$1 páginas que já contêm}} a expressão de substituição, \"\$2\". Se você prosseguir, não será possível distinguí-las das suas substituições, nem desfazer a operação com uma simples substituição em ordem inversa.",
 	'replacetext_blankwarning' => "'''Aviso:''' Como o texto de substituição foi deixado em branco, esta operação não será reversível.",
 	'replacetext_continue' => 'Continuar',
-	'replacetext_editsummary' => "Substituindo texto '$1' por '$2'", # Fuzzy
+	'replacetext_editsummary' => 'Substituição de texto - "$1" por "$2"',
 	'right-replacetext' => 'Fazer substituições de texto em toda a wiki',
+	'action-replacetext' => 'executar substituições de cadeias de caracteres em toda a wiki',
 );
 
 /** Romanian (română)
