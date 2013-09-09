@@ -1820,6 +1820,7 @@ Navnet ditt vil stå i sidehistorikkene som den som er ansvarlig for endringene.
 );
 
 /** Dutch (Nederlands)
+ * @author HanV
  * @author SPQRobin
  * @author Siebrand
  */
@@ -1840,12 +1841,12 @@ Uw naam wordt opgenomen in de geschiedenis van de pagina als verantwoordelijke v
 	'replacetext_movepages' => 'Tekst vervangen in paginanamen als mogelijk',
 	'replacetext_givetarget' => 'U moet de te vervangen tekst opgeven.',
 	'replacetext_nonamespace' => 'U moet ten minste één naamruimte selecteren.',
-	'replacetext_editormove' => 'U moet tenminste een van de vervangingingsopties kiezen.',
+	'replacetext_editormove' => 'U moet tenminste een van de vervangingsopties kiezen.',
 	'replacetext_choosepagesforedit' => 'Selecteer de {{PLURAL:$3|pagina|pagina\'s}} waar u "$1" door "$2" wilt vervangen:',
 	'replacetext_choosepagesformove' => '"$1" door "$2" vervangen in de volgende {{PLURAL:$3|paginanaam|paginanamen}}:',
 	'replacetext_cannotmove' => "De volgende {{PLURAL:$1|pagina kan|pagina's kunnen}} niet hernoemd worden:",
 	'replacetext_formovedpages' => "Voor hernoemde pagina's:",
-	'replacetext_savemovedpages' => "Een doorwijziging aanmaken voor hernoemde pagina's",
+	'replacetext_savemovedpages' => "Een doorverwijzing aanmaken voor hernoemde pagina's",
 	'replacetext_watchmovedpages' => "Deze pagina's volgen",
 	'replacetext_invertselections' => 'Selecties omkeren',
 	'replacetext_replace' => 'Vervangen',
