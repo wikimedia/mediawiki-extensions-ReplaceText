@@ -68,7 +68,9 @@ $messages['qqq'] = array(
 	'replacetext' => '{{doc-special|ReplaceText}}',
 	'replacetext-desc' => '{{desc|name=Replace Text|url=http://www.mediawiki.org/wiki/Extension:Replace_Text}}
 {{Identical|Content page}}',
-	'replacetext_docu' => "Description of how to use this extension, displayed on the extension's special page ([[Special:ReplaceText]]). The translation of 'Continue' should correspond with message {{msg-mw|Replacetext continue}}.",
+	'replacetext_docu' => "Description of how to use this extension, displayed on the extension's special page ([[Special:ReplaceText]]).
+
+Refers to {{msg-mw|Replacetext continue}}.",
 	'replacetext_originaltext' => 'Label of the text field, where user enters original piece of text, which would be replaced.',
 	'replacetext_regexdocu' => '<code>$1</code> is not a parameter.
 
