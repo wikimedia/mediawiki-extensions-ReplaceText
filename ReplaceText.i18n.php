@@ -2216,6 +2216,7 @@ $messages['roa-tara'] = array(
  * @author Ferrer
  * @author Kv75
  * @author Normalex
+ * @author Okras
  * @author Rubin
  * @author Александр Сигачёв
  */
@@ -2226,7 +2227,7 @@ $messages['ru'] = array(
 	'replacetext_originaltext' => 'Исходный текст:',
 	'replacetext_replacementtext' => 'Текст для замены:',
 	'replacetext_useregex' => 'Использовать регулярные выражения',
-	'replacetext_regexdocu' => '(Например, выражения «a(.*)c» в поле «Исходный текст» и «ac$1» в поле «Текст для замены» приведут к замене «abc» на «acb».)', # Fuzzy
+	'replacetext_regexdocu' => '(Например, выражения «a(.*)c» в поле «{{int:replacetext_originaltext}}» и «ac$1» в поле «{{int:replacetext_replacementtext}}» приведут к замене «abc» на «acb».)',
 	'replacetext_optionalfilters' => 'Необязательные фильтры:',
 	'replacetext_categorysearch' => 'Заменить только в категории:',
 	'replacetext_prefixsearch' => 'Заменить только в страницах с приставкой:',
