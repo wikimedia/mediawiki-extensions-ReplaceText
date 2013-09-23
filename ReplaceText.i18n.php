@@ -577,6 +577,8 @@ Vaše jméno se objeví v historiích stránek jako osoba zodpovědná za přís
  * @author Lloffiwr
  */
 $messages['cy'] = array(
+	'replacetext_originaltext' => 'Y testun gwreiddiol:',
+	'replacetext_replacementtext' => 'Y testun newydd:',
 	'replacetext_editsummary' => 'Disodli\'r testun - "$1" i "$2"',
 );
 
