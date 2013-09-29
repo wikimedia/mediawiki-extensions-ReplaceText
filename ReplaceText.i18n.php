@@ -74,9 +74,9 @@ Refers to {{msg-mw|Replacetext continue}}.",
 	'replacetext_originaltext' => 'Label of the text field, where user enters original piece of text, which would be replaced.',
 	'replacetext_regexdocu' => '<code>$1</code> is not a parameter.
 
-Uses the following messages:
-* "Original text" - {{msg-mw|Replacetext originaltext}}
-* "Replacement text" - {{msg-mw|Replacetext replacementtext}}',
+Refers to the following messages:
+* {{msg-mw|Replacetext originaltext}}
+* {{msg-mw|Replacetext replacementtext}}',
 	'replacetext_choosepagesforedit' => 'Displayed over the list of pages where the given text was found. Parameters:
 * $1 - target code
 * $2 - replacement code
@@ -2225,7 +2225,7 @@ $messages['roa-tara'] = array(
 $messages['ru'] = array(
 	'replacetext' => 'Заменить текст',
 	'replacetext-desc' => 'Добавляет [[Special:ReplaceText|служебную страницу]], позволяющую администраторам осуществлять повсеместную замену указанного текста на всех обычных страницах вики',
-	'replacetext_docu' => 'Для того, чтобы заменить один текст на другой на всех страницах вики, вам необходимо ввести здесь желаемый текст и нажать на кнопку «Продолжить». После этого вам будет предложен список всех страниц, содержащих заменяемый текст, и вы сможете выбрать из них те, в которых нужно произвести замены. В качестве лица, отвечающего за внесённые изменения, в истории правок страниц, в которых произойдёт замена текста, будете указаны вы.', # Fuzzy
+	'replacetext_docu' => 'Для того, чтобы заменить одну строку на другую на всех страницах вики, вам необходимо ввести здесь желаемый текст и нажать на кнопку «{{int:replacetext_continue}}». После этого вам будет предложен список всех страниц, содержащих заменяемый текст, и вы сможете выбрать из них те, в которых нужно произвести замены. В качестве лица, отвечающего за внесённые изменения, в истории правок страниц, в которых произойдёт замена текста, будете указаны вы.',
 	'replacetext_originaltext' => 'Исходный текст:',
 	'replacetext_replacementtext' => 'Текст для замены:',
 	'replacetext_useregex' => 'Использовать регулярные выражения',
@@ -2720,6 +2720,7 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (中文（繁體）‎)
+ * @author Ch.Andrew
  * @author Justincheng12345
  * @author Mark85296341
  * @author Roc michael
@@ -2758,7 +2759,7 @@ $messages['zh-hant'] = array(
 	'replacetext_warning' => '有$1個頁面已經包含文字「$2」。如果您執行了替換作業，被替代的文字會跟它們混在一起，變得難以分開原來的文字和被替代的文字。要繼續執行替換作業嗎？',
 	'replacetext_blankwarning' => '因為替換字串是空白的，這將造成難以復原的結果！您要繼續嗎？',
 	'replacetext_continue' => '繼續',
-	'replacetext_editsummary' => '替換文字 - 「$1」替換為「$2」',
+	'replacetext_editsummary' => '取代文字 - 「$1」取代成「$2」',
 	'right-replacetext' => '對整個維基進行文字替換。',
 	'action-replacetext' => '對整個維基進行文字替換。',
 );
