@@ -2065,7 +2065,7 @@ $messages['ps'] = array(
 	'replacetext_replacementtext' => 'د متن ځايناستوب:',
 	'replacetext_categorysearch' => 'يوازې په وېشنيزه کې ځايناستول:',
 	'replacetext_prefixsearch' => 'يوازې په مختاړي لرونکيو مخونو کې ځايناستول:',
-	'replacetext_editpages' => 'د مخ په مېنځپانګه کې متن ځايناستول',
+	'replacetext_editpages' => 'د مخ په مېنځپانگه کې متن ځايناستول',
 	'replacetext_movepages' => 'د شونتيا په وخت کې، د مخ د سرليک متن ځايناستول',
 	'replacetext_nonamespace' => 'تاسې بايد لږ تر لږه يو نوم-تشيال وټاکۍ.',
 	'replacetext_cannotmove' => 'دا {{PLURAL:$1|لاندې مخ|لانديني مخونه}} د لېږدولو وړ نه دي:',
@@ -2073,7 +2073,7 @@ $messages['ps'] = array(
 	'replacetext_watchmovedpages' => 'همدا مخونه کتل',
 	'replacetext_invertselections' => 'ټاکنې سرچپه کول',
 	'replacetext_replace' => 'ځايناستول',
-	'replacetext_editsummary' => 'متن ځايناستول - له "$1" نه "$2" ته',
+	'replacetext_editsummary' => 'متن ځايناستول - له "$1" نه "$2" ته', # Fuzzy
 );
 
 /** Portuguese (português)
@@ -2650,7 +2650,7 @@ $messages['vi'] = array(
 	'replacetext_warning' => "'''Cảnh báo:''' {{PLURAL:$1|Một trang|$1 trang}} trong lựa chọn đã có chứa chuỗi thay thế, “$2”. Nếu bạn thực hiện thay thế này bạn sẽ không thể phân biệt sự thay thế của bạn với những chuỗi này.",
 	'replacetext_blankwarning' => 'Vì chuỗi thay thế là khoảng trắng, tác vụ này sẽ không thể hồi lại được; tiếp tục?',
 	'replacetext_continue' => 'Tiếp tục',
-	'replacetext_editsummary' => 'Thay thế văn bản - ‘$1’ thành ‘$2’',
+	'replacetext_editsummary' => 'Thay thế văn bản – “$1” thành “$2”',
 	'right-replacetext' => 'Thay thế văn bản trên toàn wiki',
 	'action-replacetext' => 'thay thế văn bản trên toàn wiki',
 );
