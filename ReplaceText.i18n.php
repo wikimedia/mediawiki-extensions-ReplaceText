@@ -2721,6 +2721,7 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎)
  * @author Ch.Andrew
+ * @author Cwlin0416
  * @author Justincheng12345
  * @author Mark85296341
  * @author Roc michael
@@ -2742,7 +2743,7 @@ $messages['zh-hant'] = array(
 	'replacetext_movepages' => '如果可以的話，也替換頁面名稱的字串。',
 	'replacetext_givetarget' => '必須指定尋找的字符串',
 	'replacetext_nonamespace' => '您必須選擇最少一個名字空間。',
-	'replacetext_editormove' => '必須選擇至少一個替換選項。',
+	'replacetext_editormove' => '您必須選擇至少一個替換的選項。',
 	'replacetext_choosepagesforedit' => '請選擇想將“$1”替換成“$2”的{{PLURAL:$3|頁面|頁面}}。',
 	'replacetext_choosepagesformove' => '將{{PLURAL:$3|以下頁面|以下頁面}}中的“$1”替換為“$2”：',
 	'replacetext_cannotmove' => '無法移動以下{{PLURAL:$1|頁面|頁面}}：',
