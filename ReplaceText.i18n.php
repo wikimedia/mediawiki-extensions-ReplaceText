@@ -2257,6 +2257,7 @@ $messages['ru'] = array(
 	'replacetext_continue' => 'Продолжить',
 	'replacetext_editsummary' => 'Замена текста — «$1» на «$2»',
 	'right-replacetext' => 'выполнение замен текста во всей вики',
+	'action-replacetext' => 'замену строк по всему проекту',
 );
 
 /** Sinhala (සිංහල)
