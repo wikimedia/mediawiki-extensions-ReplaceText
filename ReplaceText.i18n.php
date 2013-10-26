@@ -1729,6 +1729,7 @@ $messages['ml'] = array(
 
 /** Marathi (मराठी)
  * @author Kaustubh
+ * @author V.narsikar
  */
 $messages['mr'] = array(
 	'replacetext' => 'मजकूरावर पुनर्लेखन करा',
@@ -1742,7 +1743,7 @@ $messages['mr'] = array(
 	'replacetext_noreplacement' => "'$1' मजकूर असणारे एकही पान सापडले नाही.",
 	'replacetext_warning' => "अगोदरच $1 पानांवर '$2' हा बदलण्यासाठीचा मजकूर आहे; जर तुम्ही पुनर्लेखन केले तर तुम्ही केलेले बदल तुम्ही या पानांपासून वेगळे करू शकणार नाही. पुनर्लेखन करायचे का?", # Fuzzy
 	'replacetext_blankwarning' => 'बदलण्यासाठीचा मजकूर रिकामा असल्यामुळे ही क्रिया उलटविता येणार नाही; पुढे जायचे का?',
-	'replacetext_continue' => 'पुनर्लेखन करा',
+	'replacetext_continue' => 'चालू ठेवा',
 	'replacetext_editsummary' => "मजकूर पुनर्लेखन - '$1' ते '$2'", # Fuzzy
 );
 
