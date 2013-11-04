@@ -1926,7 +1926,9 @@ Vil du halda fram?',
 $messages['oc'] = array(
 	'replacetext' => 'Remplaçar lo tèxte',
 	'replacetext-desc' => 'Provesís una [[Special:ReplaceText|pagina especiala]] que permet als administrators de remplaçar de cadenas de caractèrs per d’autras sus l’ensemble del wiki',
-	'replacetext_docu' => "Per remplaçar una cadena de caractèrs amb una autra sus l'ensemble de las donadas de las paginas d'aqueste wiki, podètz picar los dos tèxtes aicí e clicar sus 'Remplaçar'. Vòstre nom apareiserà dins l'istoric de las paginas tal coma un utilizaire autor dels cambiaments.", # Fuzzy
+	'replacetext_docu' => "Per remplaçar una cadena de caractèrs per una autra sus l'ensemble de las donadas de las paginas d'aqueste wiki, podètz picar los dos tèxtes aicí e clicar sus « {{int:replacetext_replace}} ».
+Una lista de las paginas que contenon lo tèxte recercat apareisserà e poiretz causir las que volètz modificar.
+Vòstre nom apareiserà dins l'istoric de las paginas tal coma un utilizaire autor dels cambiaments.",
 	'replacetext_originaltext' => 'Tèxte original :',
 	'replacetext_replacementtext' => 'Tèxte novèl :',
 	'replacetext_optionalfilters' => 'Filtres opcionals :',
