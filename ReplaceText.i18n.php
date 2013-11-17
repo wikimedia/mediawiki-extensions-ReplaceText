@@ -1269,9 +1269,9 @@ $messages['ia'] = array(
 Postea apparera un lista de paginas que contine le texto cercate, e tu potera seliger le paginas in le quales tu vole reimplaciar lo.
 Tu nomine figurara in le historias del paginas como le usator responsabile de eventual modificationes.',
 	'replacetext_originaltext' => 'Texto original:',
-	'replacetext_replacementtext' => 'Nove texto:',
+	'replacetext_replacementtext' => 'Texto de substitution:',
 	'replacetext_useregex' => 'Usar expressiones regular',
-	'replacetext_regexdocu' => '(Exemplo: valores de "a(.*)c" pro "Texto original" e "ac$1" pro "Texto de substitution" reimplaciarea "abc" per "acb".)', # Fuzzy
+	'replacetext_regexdocu' => '(Exemplo: valores de "a(.*)c" pro "{{int:replacetext_originaltext}}" e "ac$1" pro "{{int:replacetext_replacementtext}}" reimplaciarea "abc" per "acb".)',
 	'replacetext_optionalfilters' => 'Filtros optional:',
 	'replacetext_categorysearch' => 'Reimplaciar solmente in le categoria:',
 	'replacetext_prefixsearch' => 'Reimplaciar solmente in paginas con le prefixo:',
@@ -1297,8 +1297,9 @@ Tu nomine figurara in le historias del paginas como le usator responsabile de ev
 Si tu face iste reimplaciamento, tu non potera distinguer inter tu reimplaciamentos e iste texto ja existente.",
 	'replacetext_blankwarning' => 'Post que le nove texto es vacue, iste operation non essera reversibile; continuar?',
 	'replacetext_continue' => 'Continuar',
-	'replacetext_editsummary' => "Reimplaciamento de texto - '$1' per '$2'", # Fuzzy
-	'right-replacetext' => 'Facer reimplaciamentos de texto in le wiki integre',
+	'replacetext_editsummary' => 'Substitution de texto – "$1" per "$2"',
+	'right-replacetext' => 'Reimplaciar catenas de texto in tote le wiki',
+	'action-replacetext' => 'reimplaciar catenas de texto in tote le wiki',
 );
 
 /** Indonesian (Bahasa Indonesia)
