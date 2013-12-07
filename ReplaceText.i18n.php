@@ -554,7 +554,7 @@ $messages['ce'] = array(
 	'replacetext_continue' => 'Кхин дӀа',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Matěj Grabovský
  * @author Mormegil
  * @author Vks
@@ -929,7 +929,7 @@ $messages['fi'] = array(
 Korvauksen jälkeen korvatut ja jo tekstin sisältäneet kohdat eivät erotu toisistaan.",
 	'replacetext_blankwarning' => "'''Varoitus:''' Koska korvaava teksti on tyhjä, operaatiota ei voi palauttaa käänteisellä korvauksella.",
 	'replacetext_continue' => 'Jatka',
-	'replacetext_editsummary' => 'Tekstin korvaus – ”$1” muotoon ”$2”', # Fuzzy
+	'replacetext_editsummary' => 'Tekstin korvaus – ”$1” muotoon ”$2”',
 	'right-replacetext' => 'Tehdä merkkijonojen korvauksia koko wikin laajuudella',
 );
 
