@@ -2728,7 +2728,7 @@ $messages['zh-hans'] = array(
 	'replacetext_warning' => '有$1个页面已经包含文字「$2」。如果您执行了替换作业，被替代的文字会跟它们混在一起，变得难以分开原来的文字和被替代的文字。要继续执行替换作业吗？',
 	'replacetext_blankwarning' => "'''警告：'''因为替换字串为空，这将导致操作无法复原！您要继续吗？",
 	'replacetext_continue' => '继续',
-	'replacetext_editsummary' => '替换文字 - 「$1」替换为「$2」', # Fuzzy
+	'replacetext_editsummary' => '文本替换 - 替换「$1」为「$2」',
 	'right-replacetext' => '对整个wiki进行文字替换。',
 	'action-replacetext' => '对这整个wiki做字符串替换',
 );
