@@ -86,7 +86,7 @@ $specialPageAliases['frp'] = array(
 
 /** Galician (galego) */
 $specialPageAliases['gl'] = array(
-	'ReplaceText' => array( 'Substituír_o_texto' ),
+	'ReplaceText' => array( 'Substituír_o_texto', 'Substituír_texto' ),
 );
 
 /** Swiss German (Alemannisch) */
