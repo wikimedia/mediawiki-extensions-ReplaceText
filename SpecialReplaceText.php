@@ -275,11 +275,11 @@ class ReplaceText extends SpecialPage {
 		// 'width: auto' style is needed to override MediaWiki's
 		// normal 'width: 100%', which causes the textarea to get
 		// zero width in IE
-		$out->addHTML( Xml::textarea( 'target', $this->target, 125, 25, array( 'style' => 'width: auto;' ) ) );
+		$out->addHTML( Xml::textarea( 'target', $this->target, 100, 5, array( 'style' => 'width: auto;' ) ) );
 		$out->addHTML( '</td></tr><tr><td style="vertical-align: top;">' );
 		$out->addWikiMsg( 'replacetext_replacementtext' );
 		$out->addHTML( '</td><td>' );
-		$out->addHTML( Xml::textarea( 'replacement', $this->replacement, 125, 25, array( 'style' => 'width: auto;' ) ) );
+		$out->addHTML( Xml::textarea( 'replacement', $this->replacement, 100, 5, array( 'style' => 'width: auto;' ) ) );
 		$out->addHTML( '</td></tr></table>' );
 		$out->addHTML( Xml::tags( 'p', null,
 				Xml::checkLabel(
