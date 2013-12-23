@@ -695,7 +695,7 @@ $messages['dsb'] = array(
 Jolic wuwjedujoš toś tu wuměnu, njamóžoš rozeznaś swóje wuměny wót toś togo teksta.',
 	'replacetext_blankwarning' => 'Dokulaž njejo tekst za wuměnjenje, toś ta operacija njedajo se anulěrowaś. Coš weto pókšacowaś?',
 	'replacetext_continue' => 'Dalej',
-	'replacetext_editsummary' => "Wuměna teksta - '$1' do '$2'", # Fuzzy
+	'replacetext_editsummary' => 'Wuměna teksta - "$1" do "$2"',
 	'right-replacetext' => 'Tekst na cełem wikiju wuměniś',
 );
 
@@ -1217,7 +1217,7 @@ $messages['hsb'] = array(
 	'replacetext_warning' => "'''Warnowanje:''' {{PLURAL:$1|Je hižo $1 strona, kotraž wobsahuje|Stej hižo $1 stronje, kotejž wobsahujetej|Su hižo $1 strony, kotrež wobsahuja|Je hižo $1 stronow, kotrež wobsahuje}} narunanski tekst, '$2'. Jeli tute narunanje činiš, njemóžeš swoje narunanja wot tutoho teksta rozdźělić.",
 	'replacetext_blankwarning' => 'Narunanski dźěl je prózdny, tohodla operacija njeda so cofnyć; njedźiwajo na to pokročować?',
 	'replacetext_continue' => 'Dale',
-	'replacetext_editsummary' => "Tekstowe narunanje - '$1' do '$2'", # Fuzzy
+	'replacetext_editsummary' => 'Tekstowe narunanje - "$1" do "$2"',
 	'right-replacetext' => 'Tekstowe narunanja na cyłym wikiju činić',
 	'action-replacetext' => 'Tekstowe narunanja na cyłym wikiju činić',
 );
