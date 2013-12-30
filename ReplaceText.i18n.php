@@ -852,6 +852,7 @@ $messages['eu'] = array(
  * @author Ebraminio
  * @author Huji
  * @author Omidh
+ * @author Reza1615
  * @author Wayiran
  */
 $messages['fa'] = array(
@@ -863,7 +864,7 @@ $messages['fa'] = array(
 	'replacetext_originaltext' => 'متن اصلی:',
 	'replacetext_replacementtext' => 'متن جایگزین:',
 	'replacetext_useregex' => 'استفاده از عبارت باقاعده',
-	'replacetext_regexdocu' => '(مثال: مقادیر «a(.*)c» برای «متن اصلی» و «ac$1» برای «متن جایگزین»، «abc» را با «acb» جایگزین خواهد کرد.)', # Fuzzy
+	'replacetext_regexdocu' => '(مثال: مقادیر «a(.*)c» برای «{{int:replacetext_originaltext}}» و «ac$1» برای «{{int:replacetext_replacementtext}}»، «abc» را با «acb» جایگزین خواهد کرد.)',
 	'replacetext_optionalfilters' => 'پالایه‌های اختیاری:',
 	'replacetext_categorysearch' => 'جایگزینی فقط در ردهٔ:',
 	'replacetext_prefixsearch' => 'جایگزینی فقط در صفحه‌هایی با پیشوند:',
