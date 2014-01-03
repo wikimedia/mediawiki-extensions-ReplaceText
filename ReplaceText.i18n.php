@@ -352,20 +352,20 @@ $messages['ba'] = array(
 	'replacetext_givetarget' => 'Һеҙ алмаштырыла торған юлды күрһәтергә тейешһегеҙ.',
 	'replacetext_nonamespace' => 'Һеҙ кәмендә бер исемдәр арауығын һайларға тейешһегеҙ.',
 	'replacetext_editormove' => 'Һеҙ кәмендә бер алмаштырыу төрөн һайларға тейешһегеҙ.',
-	'replacetext_choosepagesforedit' => '"$1" тексын "$2" менән түбәндәге {{PLURAL:$3|биттә|биттәрҙә}} алмаштырырға:',
-	'replacetext_choosepagesformove' => '"$1" тексын "$2" менән түбәндәге бит {{PLURAL:$3|исемендә|исемдәрендә}} алмаштырырға:',
-	'replacetext_cannotmove' => 'Түбәндәге {{PLURAL:$1|биттең|биттәрҙең}} исемен үҙгәртеп булмай:',
+	'replacetext_choosepagesforedit' => '"$1" тексын "$2" менән түбәндәге {{PLURAL:$3|1=биттә|биттәрҙә}} алмаштырырға:', # Fuzzy
+	'replacetext_choosepagesformove' => '"$1" тексын "$2" менән түбәндәге бит {{PLURAL:$3|1=исемендә|исемдәрендә}} алмаштырырға:', # Fuzzy
+	'replacetext_cannotmove' => 'Түбәндәге {{PLURAL:$1|1=биттең|биттәрҙең}} исемен үҙгәртеп булмай:', # Fuzzy
 	'replacetext_formovedpages' => 'Исемдәре үҙгәртелгән биттәр өсөн:',
 	'replacetext_savemovedpages' => 'Иҫке исемдәрен яңы исемдәргә йүнәлтеүҙәр рәүешендә һаҡларға',
 	'replacetext_watchmovedpages' => 'Был биттәрҙе күҙәтеүҙәр исемлегенә индерергә',
 	'replacetext_invertselections' => 'Һайланғандарҙы әйләндерергә',
 	'replacetext_replace' => 'Алмаштырырға',
-	'replacetext_success' => '"$1" "$2" менән $3 {{PLURAL:$3|биттә}} алмаштырыласаҡ.',
+	'replacetext_success' => '"$1" "$2" менән $3 {{PLURAL:$3|биттә}} алмаштырыласаҡ.', # Fuzzy
 	'replacetext_noreplacement' => '"$1" юлын үҙ эсенә алған бер бит тә табылманы.',
 	'replacetext_nomove' => 'Исемендә "$1" булған бер бит тә табылманы.',
 	'replacetext_nosuchcategory' => '"$1" исемле бер категория ла юҡ.',
 	'replacetext_return' => 'Формаға кире ҡайтырға.',
-	'replacetext_warning' => "'''Иғтибар:''' Алмаш \"\$2\" тексын үҙ эсенә алған {{PLURAL:\$1|\$1 бит}} бар инде. Әгәр һеҙ алмаштырыуҙы башҡарһағыҙ, алмаштырылған текстарҙы булғандарынан айыра алмаясаҡһығыҙ.",
+	'replacetext_warning' => "'''Иғтибар:''' Алмаш \"\$2\" тексын үҙ эсенә алған {{PLURAL:\$1|\$1 бит}} бар инде. Әгәр һеҙ алмаштырыуҙы башҡарһағыҙ, алмаштырылған текстарҙы булғандарынан айыра алмаясаҡһығыҙ.", # Fuzzy
 	'replacetext_blankwarning' => "'''Иғтибар:'''Алмаш текст буш булғанға күрә, был ғәмәлде кире алыу мөмкин түгел.",
 	'replacetext_continue' => 'Дауам итергә',
 	'replacetext_editsummary' => '"$1" тексын "$2" менән алмаштырыу', # Fuzzy
@@ -396,9 +396,9 @@ $messages['be-tarask'] = array(
 	'replacetext_givetarget' => 'Вам неабходна пазначыць радок для замены.',
 	'replacetext_nonamespace' => 'Вам неабходна выбраць хаця б адну прастору назваў.',
 	'replacetext_editormove' => 'Вам неабходна выбраць хаця б адну з наладаў пераносу.',
-	'replacetext_choosepagesforedit' => 'Калі ласка, выберыце {{PLURAL:$3|старонку, у якой|старонкі, у якіх}} Вы жадаеце замяніць «$1» на «$2»:',
-	'replacetext_choosepagesformove' => 'Замяніць «$1» на «$2» у {{PLURAL:$3|назьве наступнай старонкі|назвах наступных старонак}}:',
-	'replacetext_cannotmove' => '{{PLURAL:$1|Наступная старонка ня можа быць перанесена|Наступныя старонкі ня могуць быць перанесены}}:',
+	'replacetext_choosepagesforedit' => 'Калі ласка, выберыце {{PLURAL:$3|1=старонку, у якой|старонкі, у якіх}} Вы жадаеце замяніць «$1» на «$2»:', # Fuzzy
+	'replacetext_choosepagesformove' => 'Замяніць «$1» на «$2» у {{PLURAL:$3|1=назьве наступнай старонкі|назвах наступных старонак}}:', # Fuzzy
+	'replacetext_cannotmove' => '{{PLURAL:$1|1=Наступная старонка ня можа быць перанесена|Наступныя старонкі ня могуць быць перанесены}}:', # Fuzzy
 	'replacetext_formovedpages' => 'Для перанесеных старонак:',
 	'replacetext_savemovedpages' => 'Захаваць старыя назвы як перанакіраваньні на новыя',
 	'replacetext_watchmovedpages' => 'Назіраць за гэтымі старонкамі',
@@ -2255,20 +2255,20 @@ $messages['ru'] = array(
 	'replacetext_givetarget' => 'Вы должны указать строку, которую нужно заменить.',
 	'replacetext_nonamespace' => 'Вы должны выбрать по крайней мере одно пространство имён.',
 	'replacetext_editormove' => 'Вы должны выбрать по крайней мере, один из вариантов замены.',
-	'replacetext_choosepagesforedit' => 'Пожалуйста, выберите {{PLURAL:$3|страницу, в которой|страницы, в которых}} вы хотите осуществить замену «$1» на «$2»:',
-	'replacetext_choosepagesformove' => 'Заменить «$1» на «$2» в {{PLURAL:$3|названии следующей страницы|названиях следующих страниц}}:',
-	'replacetext_cannotmove' => '{{PLURAL:$1|Следующая страница не может быть переименована|Следующие страницы не могут быть переименованы}}:',
+	'replacetext_choosepagesforedit' => 'Пожалуйста, выберите {{PLURAL:$3|1=страницу, в которой|страницы, в которых}} вы хотите осуществить замену «$1» на «$2»:', # Fuzzy
+	'replacetext_choosepagesformove' => 'Заменить «$1» на «$2» в {{PLURAL:$3|1=названии следующей страницы|названиях следующих страниц}}:', # Fuzzy
+	'replacetext_cannotmove' => '{{PLURAL:$1|1=Следующая страница не может быть переименована|Следующие страницы не могут быть переименованы}}:', # Fuzzy
 	'replacetext_formovedpages' => 'Для переименованных страниц:',
 	'replacetext_savemovedpages' => 'Сохранить старые названия как перенаправления на новые',
 	'replacetext_watchmovedpages' => 'Включить эти страницы в список наблюдения',
 	'replacetext_invertselections' => 'Инвертировать выбор',
 	'replacetext_replace' => 'Заменить',
-	'replacetext_success' => '«$1» будет заменён на «$2» на $3 {{PLURAL:$3|странице|страницах|страницах}}.',
+	'replacetext_success' => '«$1» будет заменён на «$2» на $3 {{PLURAL:$3|странице|страницах|страницах}}.', # Fuzzy
 	'replacetext_noreplacement' => 'Не найдено ни одной страницы, содержащей «$1».',
 	'replacetext_nomove' => 'Не удалось найти страницы, заголовок которых содержит «$1».',
 	'replacetext_nosuchcategory' => 'Не существует категории с именем «$1».',
 	'replacetext_return' => 'Вернуться к форме.',
-	'replacetext_warning' => "'''Внимание.''' Найдена {{PLURAL:$1|$1 страница, содержащая|$1 страницы, содержащие|$1 страниц, содержащих}} текст для замены, «$2». Если вы продолжите операцию замены, то не сможете отделить уже существующие записи от тех, которые появятся после замены.",
+	'replacetext_warning' => "'''Внимание.''' Найдена {{PLURAL:$1|$1 страница, содержащая|$1 страниц, содержащих|$1 страницы, содержащие}} текст для замены, «$2». Если вы продолжите операцию замены, то не сможете отделить уже существующие записи от тех, которые появятся после замены.", # Fuzzy
 	'replacetext_blankwarning' => 'Из-за того, что текст для замены пуст, операция по замене не сможет быть отменена.
 Вы хотите продолжить?',
 	'replacetext_continue' => 'Продолжить',
@@ -2351,14 +2351,14 @@ $messages['sr-ec'] = array(
 	'replacetext_givetarget' => 'Морате навести ниску коју желите да замените.',
 	'replacetext_nonamespace' => 'Морате изабрати барем један именски простор.',
 	'replacetext_editormove' => 'Морате изабрати барем једну од могућности за замену.',
-	'replacetext_choosepagesforedit' => 'Замени „$1“ са „$2“ у тексту {{PLURAL:$3|следеће странице|следећих страница}}:',
-	'replacetext_cannotmove' => '{{PLURAL:$1|Следећа страница не може бити премештена|Следеће странице не могу бити премештене}}:',
+	'replacetext_choosepagesforedit' => 'Замени „$1“ са „$2“ у тексту {{PLURAL:$3|1=следеће странице|следећих страница}}:', # Fuzzy
+	'replacetext_cannotmove' => '{{PLURAL:$1|1=Следећа страница не може бити премештена|Следеће странице не могу бити премештене}}:', # Fuzzy
 	'replacetext_formovedpages' => 'За премештене странице:',
 	'replacetext_savemovedpages' => 'Сачувај старе наслове као преусмерења ка новим насловима',
 	'replacetext_watchmovedpages' => 'Надгледај ове стране',
 	'replacetext_invertselections' => 'Обрни избор',
 	'replacetext_replace' => 'Замени',
-	'replacetext_success' => "'$1' ће бити замењено са '$2' у $3 {{PLURAL:$3|страни|страна}}.",
+	'replacetext_success' => "'$1' ће бити замењено са '$2' у $3 {{PLURAL:$3|1=страни|страна}}.", # Fuzzy
 	'replacetext_noreplacement' => "Није нађена ниједна страница која садржи стринг '$1'.",
 	'replacetext_nomove' => 'Није нађена ниједна страница чији наслов садржи „$1“.',
 	'replacetext_return' => 'Назад на образац.',
@@ -2383,14 +2383,14 @@ $messages['sr-el'] = array(
 	'replacetext_givetarget' => 'Morate navesti nisku koju želite da zamenite.',
 	'replacetext_nonamespace' => 'Morate izabrati barem jedan imenski prostor.',
 	'replacetext_editormove' => 'Morate izabrati barem jednu od mogućnosti za zamenu.',
-	'replacetext_choosepagesforedit' => 'Zameni „$1“ sa „$2“ u tekstu {{PLURAL:$3|sledeće stranice|sledećih stranica}}:',
-	'replacetext_cannotmove' => '{{PLURAL:$1|Sledeća stranica ne može biti premeštena|Sledeće stranice ne mogu biti premeštene}}:',
+	'replacetext_choosepagesforedit' => 'Zameni „$1“ sa „$2“ u tekstu {{PLURAL:$3|1=sledeće stranice|sledećih stranica}}:', # Fuzzy
+	'replacetext_cannotmove' => '{{PLURAL:$1|1=Sledeća stranica ne može biti premeštena|Sledeće stranice ne mogu biti premeštene}}:', # Fuzzy
 	'replacetext_formovedpages' => 'Za premeštene stranice:',
 	'replacetext_savemovedpages' => 'Sačuvaj stare naslove kao preusmerenja ka novim naslovima',
 	'replacetext_watchmovedpages' => 'Nadgledaj ove strane',
 	'replacetext_invertselections' => 'Obrni izbor',
 	'replacetext_replace' => 'Zameni',
-	'replacetext_success' => "'$1' će biti zamenjeno sa '$2' u $3 {{PLURAL:$3|strani|strana}}.",
+	'replacetext_success' => "'$1' će biti zamenjeno sa '$2' u $3 {{PLURAL:$3|1=strani|strana}}.", # Fuzzy
 	'replacetext_noreplacement' => "Nije nađena nijedna stranica koja sadrži string '$1'.",
 	'replacetext_nomove' => 'Nije nađena nijedna stranica čiji naslov sadrži „$1“.',
 	'replacetext_return' => 'Nazad na obrazac.',
@@ -2592,9 +2592,9 @@ $messages['uk'] = array(
 	'replacetext_givetarget' => 'Ви повинні вказати рядок, який потрібно замінити.',
 	'replacetext_nonamespace' => 'Ви повинні вибрати принаймні один простір назв.',
 	'replacetext_editormove' => 'Ви повинні вибрати принаймні один варіант заміни.',
-	'replacetext_choosepagesforedit' => 'Будь ласка, виберіть {{PLURAL:$3|сторінку, в якій|сторінки, в яких}} ви хочете здійснити заміну «$1» на «$2»:',
-	'replacetext_choosepagesformove' => 'Замінити «$1» на «$2» в {{PLURAL:$3|назві наступної сторінки|назвах наступних сторінок}}:',
-	'replacetext_cannotmove' => '{{PLURAL:$1|Наступна сторінка не може бути перейменована|Наступні сторінки не можуть бути перейменовані}}:',
+	'replacetext_choosepagesforedit' => 'Будь ласка, виберіть {{PLURAL:$3|1=сторінку, в якій|сторінки, в яких}} ви хочете здійснити заміну «$1» на «$2»:',
+	'replacetext_choosepagesformove' => 'Замінити «$1» на «$2» в {{PLURAL:$3|1=назві наступної сторінки|назвах наступних сторінок}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|1=Наступна сторінка не може бути перейменована|Наступні сторінки не можуть бути перейменовані}}:',
 	'replacetext_formovedpages' => 'Для перейменованих сторінок:',
 	'replacetext_savemovedpages' => 'Зберегти старі назви як перенаправлення на нові',
 	'replacetext_watchmovedpages' => 'Спостерігати за цими сторінками',
