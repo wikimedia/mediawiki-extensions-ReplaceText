@@ -697,6 +697,7 @@ Jolic wuwjedujoš toś tu wuměnu, njamóžoš rozeznaś swóje wuměny wót to�
 	'replacetext_continue' => 'Dalej',
 	'replacetext_editsummary' => 'Wuměna teksta - "$1" do "$2"',
 	'right-replacetext' => 'Tekst na cełem wikiju wuměniś',
+	'action-replacetext' => 'Tekst na cełem wikiju wuměniś',
 );
 
 /** Greek (Ελληνικά)
