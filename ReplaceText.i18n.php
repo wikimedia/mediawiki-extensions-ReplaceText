@@ -835,12 +835,13 @@ $messages['et'] = array(
 /** Basque (euskara)
  * @author An13sa
  * @author Kobazulo
+ * @author Xabier Armendaritz
  */
 $messages['eu'] = array(
 	'replacetext' => 'Testua ordeztu',
 	'replacetext_originaltext' => 'Jatorrizko testua:',
 	'replacetext_movepages' => 'Posiblea denean, orrialdeen izenburuetan ere testua ordezkatu',
-	'replacetext_cannotmove' => 'Hurrengo {{PLURAL:$1|orrialdea ezin da mugitu:|orrialdeak ezin dira mugitu:}}',
+	'replacetext_cannotmove' => 'Ondorengo {{PLURAL:$1|orri hau ezin da mugitu:|orri hauek ezin dira mugitu:}}',
 	'replacetext_watchmovedpages' => 'Orrialde hauek jarraitu',
 	'replacetext_invertselections' => 'Hautaketak alderantzikatu',
 	'replacetext_replace' => 'Ordeztu',
@@ -1574,7 +1575,7 @@ fun dä Sigge faßjehallde als dä Schriiver, dä et jemaat hät.',
 	'replacetext_choosepagesformove' => 'Donn dä Täx „$1“ en hee dä {{PLURAL:$3|Sigg|Sigge|nix}} ierem Name jäje der Täx „$2“ ußtuusche:',
 	'replacetext_cannotmove' => 'Hee die {{PLURAL:$1|Sigg kann|Sigge künne|nix kann}} nit ömjenannt wäde:',
 	'replacetext_formovedpages' => 'För ömjenannte Sigge:',
-	'replacetext_savemovedpages' => 'Donn der ahle Tittel faßallde un en Ömleidung op der Neue druß maache,
+	'replacetext_savemovedpages' => 'Donn der ahle Tittel faßallde un en Ömleidong op der Neue druß maache,
 wann en Sigg ömjenannt woode es.',
 	'replacetext_watchmovedpages' => 'Op di Sigge oppasse',
 	'replacetext_invertselections' => 'De Ußwahl ömdrieje',
@@ -2234,10 +2235,12 @@ $messages['roa-tara'] = array(
 /** Russian (русский)
  * @author AlexSm
  * @author Ferrer
+ * @author Kaganer
  * @author Kv75
  * @author Normalex
  * @author Okras
  * @author Rubin
+ * @author Rubin16
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -2256,20 +2259,20 @@ $messages['ru'] = array(
 	'replacetext_givetarget' => 'Вы должны указать строку, которую нужно заменить.',
 	'replacetext_nonamespace' => 'Вы должны выбрать по крайней мере одно пространство имён.',
 	'replacetext_editormove' => 'Вы должны выбрать по крайней мере, один из вариантов замены.',
-	'replacetext_choosepagesforedit' => 'Пожалуйста, выберите {{PLURAL:$3|1=страницу, в которой|страницы, в которых}} вы хотите осуществить замену «$1» на «$2»:', # Fuzzy
-	'replacetext_choosepagesformove' => 'Заменить «$1» на «$2» в {{PLURAL:$3|1=названии следующей страницы|названиях следующих страниц}}:', # Fuzzy
-	'replacetext_cannotmove' => '{{PLURAL:$1|1=Следующая страница не может быть переименована|Следующие страницы не могут быть переименованы}}:', # Fuzzy
+	'replacetext_choosepagesforedit' => 'Пожалуйста, выберите {{PLURAL:$3|1=страницу, в которой|страницы, в которых}} вы хотите осуществить замену «$1» на «$2»:',
+	'replacetext_choosepagesformove' => 'Заменить «$1» на «$2» в {{PLURAL:$3|1=названии следующей страницы|названиях следующих страниц}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|1=Следующая страница не может быть переименована|Следующие страницы не могут быть переименованы}}:',
 	'replacetext_formovedpages' => 'Для переименованных страниц:',
 	'replacetext_savemovedpages' => 'Сохранить старые названия как перенаправления на новые',
 	'replacetext_watchmovedpages' => 'Включить эти страницы в список наблюдения',
 	'replacetext_invertselections' => 'Инвертировать выбор',
 	'replacetext_replace' => 'Заменить',
-	'replacetext_success' => '«$1» будет заменён на «$2» на $3 {{PLURAL:$3|странице|страницах|страницах}}.', # Fuzzy
+	'replacetext_success' => '«$1» будет заменён на «$2» на $3 {{PLURAL:$3|странице|страницах}}.',
 	'replacetext_noreplacement' => 'Не найдено ни одной страницы, содержащей «$1».',
 	'replacetext_nomove' => 'Не удалось найти страницы, заголовок которых содержит «$1».',
 	'replacetext_nosuchcategory' => 'Не существует категории с именем «$1».',
 	'replacetext_return' => 'Вернуться к форме.',
-	'replacetext_warning' => "'''Внимание.''' Найдена {{PLURAL:$1|$1 страница, содержащая|$1 страниц, содержащих|$1 страницы, содержащие}} текст для замены, «$2». Если вы продолжите операцию замены, то не сможете отделить уже существующие записи от тех, которые появятся после замены.", # Fuzzy
+	'replacetext_warning' => "'''Внимание.''' Найдена {{PLURAL:$1|$1 страница, содержащая|$1 страниц, содержащих|$1 страницы, содержащие}} текст для замены, «$2». Если вы продолжите операцию замены, то не сможете отделить уже существующие записи от тех, которые появятся после замены.",
 	'replacetext_blankwarning' => 'Из-за того, что текст для замены пуст, операция по замене не сможет быть отменена.
 Вы хотите продолжить?',
 	'replacetext_continue' => 'Продолжить',
