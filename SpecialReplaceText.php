@@ -44,8 +44,6 @@ class ReplaceText extends SpecialPage {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
-
 		$this->target = $request->getText( 'target' );
 		$this->replacement = $request->getText( 'replacement' );
 		$this->use_regex = $request->getBool( 'use_regex' );
@@ -105,7 +103,7 @@ class ReplaceText extends SpecialPage {
 
 			// Link back
 			$out->addHTML(
-				$linker->link( $this->getTitle(),
+				Linker::link( $this->getTitle(),
 					$this->msg( 'replacetext_return' )->escaped() )
 			);
 
@@ -188,7 +186,7 @@ class ReplaceText extends SpecialPage {
 				}
 
 				if ( $bad_cat_name ) {
-					$link = $linker->link( $category_title, htmlspecialchars( ucfirst( $this->category ) ) );
+					$link = Linker::link( $category_title, htmlspecialchars( ucfirst( $this->category ) ) );
 					$out->addHTML(
 						$this->msg( 'replacetext_nosuchcategory' )->rawParams( $link )->escaped()
 					);
@@ -202,7 +200,7 @@ class ReplaceText extends SpecialPage {
 					}
 				}
 				// link back to starting form
-				$out->addHTML( '<p>' . $linker->link( $this->getTitle(), $this->msg( 'replacetext_return' )->escaped() ) . '</p>' );
+				$out->addHTML( '<p>' . Linker::link( $this->getTitle(), $this->msg( 'replacetext_return' )->escaped() ) . '</p>' );
 			} else {
 				// Show a warning message if the replacement
 				// string is either blank or found elsewhere on
@@ -298,7 +296,7 @@ class ReplaceText extends SpecialPage {
 		$tables = $this->namespaceTables( $namespaces );
 		$out->addHTML(
 			"<div class=\"mw-search-formheader\"></div>\n" .
-			"<fieldset id=\"mw-searchoptions\">\n" . 
+			"<fieldset id=\"mw-searchoptions\">\n" .
 			Xml::tags( 'h4', null, $this->msg( 'powersearch-ns' )->parse() )
 		);
 		// The ability to select/unselect groups of namespaces in the
@@ -353,7 +351,7 @@ class ReplaceText extends SpecialPage {
 		$category_search_label = $this->msg( 'replacetext_categorysearch' )->text();
 		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->text();
 		$out->addHTML(
-			"<fieldset id=\"mw-searchoptions\">\n" . 
+			"<fieldset id=\"mw-searchoptions\">\n" .
 			Xml::tags( 'h4', null, $this->msg( 'replacetext_optionalfilters' )->parse() ) .
 			Xml::element( 'div', array( 'class' => 'divider' ), '', false ) .
 			"<p>$category_search_label\n" .
@@ -417,7 +415,6 @@ class ReplaceText extends SpecialPage {
 		global $wgLang, $wgScriptPath;
 
 		$out = $this->getOutput();
-		$linker = class_exists( 'DummyLinker' ) ? new DummyLinker : new Linker;
 
 		$formOpts = array( 'id' => 'choose_pages', 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
 		$out->addHTML(
@@ -441,7 +438,7 @@ class ReplaceText extends SpecialPage {
 				list( $title, $context ) = $title_and_context;
 				$out->addHTML(
 					Xml::check( $title->getArticleID(), true ) .
-					$linker->link( $title ) . " - <small>$context</small><br />\n"
+					Linker::link( $title ) . " - <small>$context</small><br />\n"
 				);
 			}
 			$out->addHTML( '<br />' );
@@ -452,7 +449,7 @@ class ReplaceText extends SpecialPage {
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
 					Xml::check( 'move-' . $title->getArticleID(), true ) .
-					$linker->link( $title ) . "<br />\n"
+					Linker::link( $title ) . "<br />\n"
 				);
 			}
 			$out->addHTML( '<br />' );
@@ -490,7 +487,7 @@ class ReplaceText extends SpecialPage {
 			$out->addWikiMsg( 'replacetext_cannotmove', $wgLang->formatNum( count( $unmoveable_titles ) ) );
 			$text = "<ul>\n";
 			foreach ( $unmoveable_titles as $title ) {
-				$text .= "<li>{$linker->link( $title )}<br />\n";
+				$text .= "<li>" . Linker::link( $title ) . "<br />\n";
 			}
 			$text .= "</ul>\n";
 			$out->addHTML( $text );
