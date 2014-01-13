@@ -775,6 +775,7 @@ $messages['eo'] = array(
  * @author Ciencia Al Poder
  * @author Crazymadlover
  * @author Dferg
+ * @author Fitoschido
  * @author Imre
  * @author Locos epraix
  * @author MarcoAurelio
@@ -818,7 +819,7 @@ Si realizas esta sustituación, no podrás separar tus sustituciones de estas ca
 	'replacetext_blankwarning' => 'Como la cadena de reemplazo está vacía, esta operación no podrá revertirse.
 ¿ Desea continuar ?',
 	'replacetext_continue' => 'Continuar',
-	'replacetext_editsummary' => 'Texto reemplazado - «$1» por «$2»',
+	'replacetext_editsummary' => 'Texto reemplazado: «$1» por «$2»',
 	'right-replacetext' => 'Reemplaza cadenas de caracteres en toda la wiki',
 	'action-replacetext' => 'Reemplazar cadenas de texto en todo el wiki',
 );
