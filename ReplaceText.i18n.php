@@ -2341,6 +2341,7 @@ $messages['sk'] = array(
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Milicevic01
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -2357,14 +2358,14 @@ $messages['sr-ec'] = array(
 	'replacetext_givetarget' => 'Морате навести ниску коју желите да замените.',
 	'replacetext_nonamespace' => 'Морате изабрати барем један именски простор.',
 	'replacetext_editormove' => 'Морате изабрати барем једну од могућности за замену.',
-	'replacetext_choosepagesforedit' => 'Замени „$1“ са „$2“ у тексту {{PLURAL:$3|1=следеће странице|следећих страница}}:', # Fuzzy
-	'replacetext_cannotmove' => '{{PLURAL:$1|1=Следећа страница не може бити премештена|Следеће странице не могу бити премештене}}:', # Fuzzy
+	'replacetext_choosepagesforedit' => 'Замени „$1“ са „$2“ у тексту {{PLURAL:$3|следеће странице|следећих $3 страница}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Следећа страница не може бити премештена|Следеће странице не могу бити премештене}}:',
 	'replacetext_formovedpages' => 'За премештене странице:',
 	'replacetext_savemovedpages' => 'Сачувај старе наслове као преусмерења ка новим насловима',
 	'replacetext_watchmovedpages' => 'Надгледај ове стране',
 	'replacetext_invertselections' => 'Обрни избор',
 	'replacetext_replace' => 'Замени',
-	'replacetext_success' => "'$1' ће бити замењено са '$2' у $3 {{PLURAL:$3|1=страни|страна}}.", # Fuzzy
+	'replacetext_success' => '„$1“ ће бити замењено са „$2“ у $3 {{PLURAL:$3|страни|страна}}.',
 	'replacetext_noreplacement' => "Није нађена ниједна страница која садржи стринг '$1'.",
 	'replacetext_nomove' => 'Није нађена ниједна страница чији наслов садржи „$1“.',
 	'replacetext_return' => 'Назад на образац.',
@@ -2375,6 +2376,7 @@ $messages['sr-ec'] = array(
 
 /** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
+ * @author Milicevic01
  * @author Rancher
  * @author Жељко Тодоровић
  */
@@ -2389,14 +2391,14 @@ $messages['sr-el'] = array(
 	'replacetext_givetarget' => 'Morate navesti nisku koju želite da zamenite.',
 	'replacetext_nonamespace' => 'Morate izabrati barem jedan imenski prostor.',
 	'replacetext_editormove' => 'Morate izabrati barem jednu od mogućnosti za zamenu.',
-	'replacetext_choosepagesforedit' => 'Zameni „$1“ sa „$2“ u tekstu {{PLURAL:$3|1=sledeće stranice|sledećih stranica}}:', # Fuzzy
-	'replacetext_cannotmove' => '{{PLURAL:$1|1=Sledeća stranica ne može biti premeštena|Sledeće stranice ne mogu biti premeštene}}:', # Fuzzy
+	'replacetext_choosepagesforedit' => 'Zameni „$1“ sa „$2“ u tekstu {{PLURAL:$3|sledeće stranice|sledećih $3 stranica}}:',
+	'replacetext_cannotmove' => '{{PLURAL:$1|Sledeća stranica ne može biti premeštena|Sledeće stranice ne mogu biti premeštene}}:',
 	'replacetext_formovedpages' => 'Za premeštene stranice:',
 	'replacetext_savemovedpages' => 'Sačuvaj stare naslove kao preusmerenja ka novim naslovima',
 	'replacetext_watchmovedpages' => 'Nadgledaj ove strane',
 	'replacetext_invertselections' => 'Obrni izbor',
 	'replacetext_replace' => 'Zameni',
-	'replacetext_success' => "'$1' će biti zamenjeno sa '$2' u $3 {{PLURAL:$3|1=strani|strana}}.", # Fuzzy
+	'replacetext_success' => '„$1“ će biti zamenjeno sa „$2“ u $3 {{PLURAL:$3|strani|strana}}.',
 	'replacetext_noreplacement' => "Nije nađena nijedna stranica koja sadrži string '$1'.",
 	'replacetext_nomove' => 'Nije nađena nijedna stranica čiji naslov sadrži „$1“.',
 	'replacetext_return' => 'Nazad na obrazac.',
