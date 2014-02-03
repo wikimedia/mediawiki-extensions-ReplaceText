@@ -555,6 +555,7 @@ $messages['ce'] = array(
 );
 
 /** Czech (čeština)
+ * @author Chmee2
  * @author Hypothalamus
  * @author Matěj Grabovský
  * @author Mormegil
@@ -592,7 +593,7 @@ Vaše jméno se objeví v historii stránek jako {{GENDER:|uživatel, který zm�
 	'replacetext_nosuchcategory' => 'Neexistuje žádná kategorie s názvem „$1“.',
 	'replacetext_return' => 'Vrátit se na formulář.',
 	'replacetext_warning' => "'''Upozornění:''' {{PLURAL:$1|Existuje jedna strana již obsahující|Existují $1 stránky již obsahující|Existuje $1 stránek již obsahujících}} náhradní řetězec „$2“. Pokud provedete toto nahrazení, nebudete moci rozlišit své náhradní řetězce od původních řetězců.",
-	'replacetext_blankwarning' => "''' Upozornění:''' Protože náhradní řetězec je prázdný, tato operace nebude vratná.",
+	'replacetext_blankwarning' => "'''Upozornění:''' Protože náhradní řetězec je prázdný, tato operace nebude vratná.",
 	'replacetext_continue' => 'Pokračovat',
 	'replacetext_editsummary' => 'Nahrazení textu „$1“ textem „$2“',
 	'right-replacetext' => 'Hledání a nahrazování textu na celé wiki',
