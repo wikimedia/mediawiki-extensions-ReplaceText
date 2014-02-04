@@ -588,6 +588,7 @@ Vaše jméno se objeví v historii stránek jako {{GENDER:|uživatel, který zm�
 	'replacetext_watchmovedpages' => 'Sledovat tyto stránky',
 	'replacetext_invertselections' => 'Invertovat výběr',
 	'replacetext_replace' => 'Nahradit',
+	'replacetext_success' => 'Na {{PLURAL:$3|jedné stránce|$3 stránkách}} bude text „$1“ nahrazen textem „$2“.',
 	'replacetext_noreplacement' => 'Nebyly nalezeny žádné stránky, které by obsahovaly řetězec „$1“.',
 	'replacetext_nomove' => 'Nebyly nalezeny žádné stránky, jejichž název by obsahoval „$1“.',
 	'replacetext_nosuchcategory' => 'Neexistuje žádná kategorie s názvem „$1“.',
