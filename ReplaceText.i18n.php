@@ -624,12 +624,13 @@ $messages['cy'] = array(
  * @author Melancholie
  * @author Merlissimo
  * @author Metalhead64
+ * @author Purodha
  * @author Raimond Spekking
  * @author Umherirrender
  */
 $messages['de'] = array(
 	'replacetext' => 'Text ersetzen',
-	'replacetext-desc' => 'Ergänzt eine [[Special:ReplaceText|Spezialseite]], die eine globale Text-suchen-und-ersetzen-Operation auf allen Inhaltsseiten ermöglicht',
+	'replacetext-desc' => 'Bietet eine  [[Special:ReplaceText|Spezialseite]], die eine globale Text-suchen-und-ersetzen-Operation auf allen Inhaltsseiten ermöglicht',
 	'replacetext_docu' => 'Um einen Text durch einen anderen Text auf allen Inhaltsseiten zu ersetzen, gib hier die beiden Textteile ein und klicke danach auf die Schaltfläche „{{int:replacetext_continue}}“. Auf der dann folgenden Seite erhält man eine Aufzählung der Seiten, die den zu ersetzenden Text enthalten. Dort kann man auch auswählen, auf welchen Seiten die Ersetzungen durchgeführt werden sollen. Dein Benutzername wird während der Ersetzungen in der Versionsgeschichte aufgenommen.',
 	'replacetext_originaltext' => 'Vorhandener Text:',
 	'replacetext_replacementtext' => 'Neuer Text:',
