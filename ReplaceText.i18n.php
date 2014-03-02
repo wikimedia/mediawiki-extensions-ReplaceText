@@ -881,6 +881,7 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author Ebraminio
  * @author Huji
  * @author Omidh
@@ -923,6 +924,7 @@ $messages['fa'] = array(
 	'replacetext_continue' => 'ادامه',
 	'replacetext_editsummary' => "جایگزینی متن - '$1' به '$2'",
 	'right-replacetext' => 'انجام جایگزین کردن رشته در تمام ویکی',
+	'action-replacetext' => 'ساختن جایگزین کردن رشته در تمام ویکی',
 );
 
 /** Finnish (suomi)
