@@ -1666,8 +1666,8 @@ $messages['lb'] = array(
 	'replacetext_return' => 'Zréck op de Formulaire',
 	'replacetext_warning' => "'''Opgepasst:''' Et gëtt schonn {{PLURAL:$1|eng Säit op där|$1 Säiten op deenen}} d'Zeecherei '$2' schonn dran ass.
 Wann Dir dës Ännerunge maacht wäert et Iech net méi méiglech sinn déi Säiten op deenen Dir Ännerunge gemaach hutt vun de Säiten z'ënnerscheeden wou elo d'Zeecherei '$2' schonn dran ass.",
-	'replacetext_blankwarning' => 'Well den Textdeel mat dem de gesichten Text ersat gi soll eidel ass, kann dës Aktioun net réckgängeg gemaach ginn; wëllt Dir awer weiderfueren?',
-	'replacetext_continue' => 'Weiderfueren',
+	'replacetext_blankwarning' => 'Well den Textdeel mat dem de gesichten Text ersat gi soll eidel ass, kann dës Aktioun net réckgängeg gemaach ginn; wëllt Dir awer virufueren?',
+	'replacetext_continue' => 'Virufueren',
 	'replacetext_editsummary' => 'Text ersat - "$1" duerch "$2"',
 	'right-replacetext' => 'Ersetze vun enger Rei vun Textzeechen op der ganzer Wiki',
 	'action-replacetext' => 'ersetze vun enger Rei vun Textzeechen op der ganzer Wiki',
