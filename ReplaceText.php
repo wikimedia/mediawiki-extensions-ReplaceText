@@ -19,7 +19,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) { die(); }
 
-define( 'REPLACE_TEXT_VERSION', '0.9.7' );
+define( 'REPLACE_TEXT_VERSION', '0.10.0' );
 
 // credits
 $wgExtensionCredits['specialpage'][] = array(
@@ -31,7 +31,8 @@ $wgExtensionCredits['specialpage'][] = array(
 	'descriptionmsg'  => 'replacetext-desc',
 );
 
-$rtgIP = dirname( __FILE__ ) . '/';
+$rtgIP = __DIR__ . '/';
+$wgMessagesDirs['ReplaceText'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ReplaceText'] = $rtgIP . 'ReplaceText.i18n.php';
 $wgExtensionMessagesFiles['ReplaceTextAlias'] = $rtgIP . 'ReplaceText.alias.php';
 $wgJobClasses['replaceText'] = 'ReplaceTextJob';
