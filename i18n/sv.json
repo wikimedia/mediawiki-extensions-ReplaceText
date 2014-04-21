@@ -7,7 +7,8 @@
 			"Martinwiss",
 			"Najami",
 			"Per",
-			"Rotsee"
+			"Rotsee",
+			"WikiPhoenix"
 		]
 	},
 	"replacetext": "Ersätt text",
@@ -42,5 +43,6 @@
 	"replacetext_blankwarning": "Eftersom ersättningstexten är tom kommer den här handlingen inte kunna upphävas; vill du fortsätta?",
 	"replacetext_continue": "Fortsätt",
 	"replacetext_editsummary": "Textersättning - \"$1\" till \"$2\"",
-	"right-replacetext": "Genomför textersättningar på hela wikin"
+	"right-replacetext": "Genomför textersättningar på hela wikin",
+	"action-replacetext": "genomför textersättningar på hela wikin"
 }
