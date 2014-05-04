@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mirzali"
+			"Mirzali",
+			"Marmase"
 		]
 	},
+	"replacetext_watchmovedpages": "'''Enê pela seyr ke'''",
 	"replacetext_continue": "Dewam ke"
 }
