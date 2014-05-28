@@ -422,7 +422,8 @@ class ReplaceText extends SpecialPage {
 			$this->hiddenField( 'title', $this->getTitle()->getPrefixedText() ) .
 			$this->hiddenField( 'target', $this->target ) .
 			$this->hiddenField( 'replacement', $this->replacement ) .
-			$this->hiddenField( 'use_regex', $this->use_regex )
+			$this->hiddenField( 'use_regex', $this->use_regex ) .
+			$this->hiddenField( 'replace', 1 )
 		);
 
 		$out->addScriptFile( "$wgScriptPath/extensions/ReplaceText/ReplaceText.js" );
@@ -463,8 +464,7 @@ class ReplaceText extends SpecialPage {
 
 		$out->addHTML(
 			"<br />\n" .
-			Xml::submitButton( $this->msg( 'replacetext_replace' )->text() ) . "\n" .
-			$this->hiddenField( 'replace', 1 )
+			Xml::submitButton( $this->msg( 'replacetext_replace' )->text() ) . "\n"
 		);
 
 		// Only show "invert selections" link if there are more than
