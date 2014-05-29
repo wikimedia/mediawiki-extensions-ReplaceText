@@ -1,6 +1,6 @@
 Replace Text Extension
 
-        Version 0.9.7
+        Version 1.0
         Yaron Koren and Niklas Laxström
 
 This is free software licenced under the GNU General Public Licence. Please
@@ -20,8 +20,8 @@ blank or a string that is already contained in the wiki, the 'ReplaceText'
 page prompts the user to confirm the replacement before it is performed.
 
 Each replacement shows up as a wiki edit, with the administrator who
-performed the replacement appearing as the user and an edit summary
-that looks like "Text replace: 'search string' to 'replacement string'".
+performed the replacement appearing as the user and an edit summary that
+looks like "Text replacement: 'search string' to 'replacement string'".
 
 For more information, see the extension homepage at:
 http://www.mediawiki.org/wiki/Extension:Replace_Text
