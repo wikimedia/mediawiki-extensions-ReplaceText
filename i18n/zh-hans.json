@@ -4,7 +4,8 @@
 			"Liangent",
 			"Onecountry",
 			"PhiLiP",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Mywood"
 		]
 	},
 	"replacetext": "替换文字",
@@ -34,7 +35,7 @@
 	"replacetext_noreplacement": "无任何页面含有“$1”。",
 	"replacetext_nomove": "无任何页面标题含有“$1”。",
 	"replacetext_nosuchcategory": "无任何分类名为“$1”。",
-	"replacetext_return": "返回表单。",
+	"replacetext_return": "返回表格。",
 	"replacetext_warning": "有$1个页面已经包含文字「$2」。如果您执行了替换作业，被替代的文字会跟它们混在一起，变得难以分开原来的文字和被替代的文字。要继续执行替换作业吗？",
 	"replacetext_blankwarning": "'''警告：'''因为替换字串为空，这将导致操作无法复原！您要继续吗？",
 	"replacetext_continue": "继续",
