@@ -106,7 +106,7 @@ $specialPageAliases['hr'] = array(
 
 /** Upper Sorbian (hornjoserbsce) */
 $specialPageAliases['hsb'] = array(
-	'ReplaceText' => array( 'Tekst narunać' ),
+	'ReplaceText' => array( 'Tekst_narunać' ),
 );
 
 /** Haitian (Kreyòl ayisyen) */
