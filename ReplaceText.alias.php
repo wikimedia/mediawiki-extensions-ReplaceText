@@ -174,6 +174,11 @@ $specialPageAliases['mr'] = array(
 	'ReplaceText' => array( 'मजकुरबदला' ),
 );
 
+/** Malay (Bahasa Melayu) */
+$specialPageAliases['ms'] = array(
+	'ReplaceText' => array( 'Ganti_teks' ),
+);
+
 /** Maltese (Malti) */
 $specialPageAliases['mt'] = array(
 	'ReplaceText' => array( 'BiddelTest' ),
