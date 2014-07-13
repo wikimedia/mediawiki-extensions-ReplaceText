@@ -3,7 +3,8 @@
 		"authors": [
 			"Minh Nguyen",
 			"Tuankiet65",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Trần Nguyễn Minh Huy"
 		]
 	},
 	"replacetext": "Thay thế văn bản",
@@ -23,7 +24,7 @@
 	"replacetext_editormove": "Bạn cần phải chọn ít nhất một trong những tùy chọn thay thế.",
 	"replacetext_choosepagesforedit": "Thay ‘$1’ bằng ‘$2’ trong nội dung của {{PLURAL:$3|trang|những trang}} sau:",
 	"replacetext_choosepagesformove": "Thay “$1” bằng “$2” trong tên của {{PLURAL:$3|trang|các trang}} sau:",
-	"replacetext_cannotmove": "Không có thể di chuyển {{PLURAL:$1|trang|các trang}} sau:",
+	"replacetext_cannotmove": "Không thể di chuyển {{PLURAL:$1|trang|$1 trang}} sau:",
 	"replacetext_formovedpages": "Đối với trang đã di chuyển:",
 	"replacetext_savemovedpages": "Lưu các tên cũ để đổi hướng đến tên mới",
 	"replacetext_watchmovedpages": "Theo dõi các trang này",
