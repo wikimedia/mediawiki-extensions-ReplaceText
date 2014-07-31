@@ -271,5 +271,5 @@ $specialPageAliases['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
-	'ReplaceText' => array( '替換文本' ),
+	'ReplaceText' => array( '替換文字' ),
 );
