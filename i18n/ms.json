@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anakmalaysia"
+			"Anakmalaysia",
+			"Pizza1016"
 		]
 	},
 	"replacetext": "Ganti teks",
-	"replacetext-desc": "Menyediakan [[Special:ReplaceText|laman khas]] untuk membolehkan para pentadbir melakukan pencarian dan penggantian rentetan sejagat di semua laman-laman kandungan wiki",
+	"replacetext-desc": "Menyediakan sebuah [[Special:ReplaceText|laman khas]] untuk membolehkan para penyelia untuk melakukan pencarian dan penggantian rentetan sejagat pada semua laman-laman kandungan sebuah wiki",
 	"replacetext_docu": "Untuk mengganti satu rentetan teks dengan satu lagi merentasi semua laman biasa di wiki ini, isikan kedua-dua teks yang terlibat di sini, kemudian tekan '{{int:replacetext_continue}}'.\nKemudian, anda akan ditunjukkan satu senarai laman yang mengandungi teks carian, dan anda boleh memilih laman-laman yang mana anda ingin melakukan penggantian itu.\nNama anda akan terpapar dalam sejarah laman sebagai pengguna yang bertanggungjawab atas sebarang perubahan.",
 	"replacetext_originaltext": "Teks asal:",
 	"replacetext_replacementtext": "Teks ganti:",
