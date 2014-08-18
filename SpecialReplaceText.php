@@ -423,8 +423,14 @@ class ReplaceText extends SpecialPage {
 			$this->hiddenField( 'target', $this->target ) .
 			$this->hiddenField( 'replacement', $this->replacement ) .
 			$this->hiddenField( 'use_regex', $this->use_regex ) .
+			$this->hiddenField( 'move_pages', $this->move_pages ) .
+			$this->hiddenField( 'edit_pages', $this->edit_pages ) .
 			$this->hiddenField( 'replace', 1 )
 		);
+
+		foreach( $this->selected_namespaces as $ns ) {
+			$out->addHTML( $this->hiddenField( 'ns' . $ns ), 1 );
+		}
 
 		$out->addScriptFile( "$wgScriptPath/extensions/ReplaceText/ReplaceText.js" );
 
