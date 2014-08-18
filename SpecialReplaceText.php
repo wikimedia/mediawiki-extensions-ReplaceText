@@ -31,14 +31,6 @@ class ReplaceText extends SpecialPage {
 		return $selected_namespaces;
 	}
 
-	/**
-	 * Helper function to display a hidden field for different versions
-	 * of MediaWiki.
-	 */
-	function hiddenField( $name, $value ) {
-		return "\t" . Html::hidden( $name, $value ) . "\n";
-	}
-
 	function doSpecialReplaceText() {
 		wfProfileIn( __METHOD__ );
 		$out = $this->getOutput();
@@ -255,8 +247,8 @@ class ReplaceText extends SpecialPage {
 					'method' => 'post'
 				)
 			) . "\n" .
-			$this->hiddenField( 'title', $this->getTitle()->getPrefixedText() ) .
-			$this->hiddenField( 'continue', 1 )
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'continue', 1 )
 		);
 		if ( is_null( $warning_msg ) ) {
 			$out->addWikiMsg( 'replacetext_docu' );
@@ -419,17 +411,17 @@ class ReplaceText extends SpecialPage {
 		$formOpts = array( 'id' => 'choose_pages', 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
 		$out->addHTML(
 			Xml::openElement( 'form', $formOpts ) . "\n" .
-			$this->hiddenField( 'title', $this->getTitle()->getPrefixedText() ) .
-			$this->hiddenField( 'target', $this->target ) .
-			$this->hiddenField( 'replacement', $this->replacement ) .
-			$this->hiddenField( 'use_regex', $this->use_regex ) .
-			$this->hiddenField( 'move_pages', $this->move_pages ) .
-			$this->hiddenField( 'edit_pages', $this->edit_pages ) .
-			$this->hiddenField( 'replace', 1 )
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'target', $this->target ) .
+			Html::hidden( 'replacement', $this->replacement ) .
+			Html::hidden( 'use_regex', $this->use_regex ) .
+			Html::hidden( 'move_pages', $this->move_pages ) .
+			Html::hidden( 'edit_pages', $this->edit_pages ) .
+			Html::hidden( 'replace', 1 )
 		);
 
 		foreach( $this->selected_namespaces as $ns ) {
-			$out->addHTML( $this->hiddenField( 'ns' . $ns ), 1 );
+			$out->addHTML( Html::hidden( 'ns' . $ns, 1 ) );
 		}
 
 		$out->addScriptFile( "$wgScriptPath/extensions/ReplaceText/ReplaceText.js" );
