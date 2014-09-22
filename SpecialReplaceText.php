@@ -83,7 +83,13 @@ class ReplaceText extends SpecialPage {
 						$jobs[] = new ReplaceTextJob( $title, $replacement_params );
 				}
 			}
-			Job::batchInsert( $jobs );
+
+			// BC for 1.20 and lower
+			if ( class_exists( 'JobQueueGroup' ) ) {
+				JobQueueGroup::singleton()->push( $jobs );
+			} else {
+				Job::batchInsert( $jobs );
+			}
 
 			$count = $this->getLanguage()->formatNum( count( $jobs ) );
 			$out->addWikiMsg(
