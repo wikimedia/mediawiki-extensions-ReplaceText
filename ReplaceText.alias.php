@@ -254,7 +254,7 @@ $specialPageAliases['uk'] = array(
 	'ReplaceText' => array( 'Замінити_текст' ),
 );
 
-/** vèneto (vèneto) */
+/** Venetian (vèneto) */
 $specialPageAliases['vec'] = array(
 	'ReplaceText' => array( 'SostuituissiTesto' ),
 );
