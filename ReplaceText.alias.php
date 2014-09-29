@@ -71,7 +71,7 @@ $specialPageAliases['fa'] = array(
 
 /** Finnish (suomi) */
 $specialPageAliases['fi'] = array(
-	'ReplaceText' => array( 'Korvaa' ),
+	'ReplaceText' => array( 'Korvaa_teksti' ),
 );
 
 /** French (français) */
