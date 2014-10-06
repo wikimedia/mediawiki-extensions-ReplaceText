@@ -128,7 +128,7 @@ class ReplaceText extends SpecialPage {
 
 			// if user is replacing text within pages...
 			if ( $this->edit_pages ) {
-				$res = $this->doSearchQuery(
+				$res = ReplaceTextSearch::doSearchQuery(
 					$this->target,
 					$this->selected_namespaces,
 					$this->category,
@@ -209,7 +209,7 @@ class ReplaceText extends SpecialPage {
 				if ( $this->replacement === '' ) {
 					$warning_msg = $this->msg('replacetext_blankwarning')->text();
 				} elseif ( count( $titles_for_edit ) > 0 ) {
-					$res = $this->doSearchQuery( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix, $this->use_regex );
+					$res = ReplaceTextSearch::doSearchQuery( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix, $this->use_regex );
 					$count = $res->numRows();
 					if ( $count > 0 ) {
 						$warning_msg = $this->msg( 'replacetext_warning' )->numParams( $count )
@@ -594,61 +594,5 @@ class ReplaceText extends SpecialPage {
 		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
 
 		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
-	}
-
-	function doSearchQuery( $search, $namespaces, $category, $prefix, $use_regex = false ) {
-		$dbr = wfGetDB( DB_SLAVE );
-		$tables = array( 'page', 'revision', 'text' );
-		$vars = array( 'page_id', 'page_namespace', 'page_title', 'old_text' );
-		if ( $use_regex ) {
-			$comparisonCond = $this->regexCond( $dbr, 'old_text', $search );
-		} else {
-			$any = $dbr->anyString();
-			$comparisonCond = 'old_text ' . $dbr->buildLike( $any, $search, $any );
-		}
-		$conds = array(
-			$comparisonCond,
-			'page_namespace' => $namespaces,
-			'rev_id = page_latest',
-			'rev_text_id = old_id'
-		);
-
-		$this->categoryCondition( $category, $tables, $conds );
-		$this->prefixCondition( $prefix, $conds );
-		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
-
-		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
-	}
-
-	protected function categoryCondition( $category, &$tables, &$conds ) {
-		if ( strval( $category ) !== '' ) {
-			$category = Title::newFromText( $category )->getDbKey();
-			$tables[] = 'categorylinks';
-			$conds[] = 'page_id = cl_from';
-			$conds['cl_to'] = $category;
-		}
-	}
-
-	protected function prefixCondition( $prefix, &$conds ) {
-		if ( strval( $prefix ) === '' ) {
-			return;
-		}
-
-		$dbr = wfGetDB( DB_SLAVE );
-		$title = Title::newFromText( $prefix );
-		if ( !is_null( $title ) ) {
-			$prefix = $title->getDbKey();
-		}
-		$any = $dbr->anyString();
-		$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
-	}
-
-	private function regexCond( $dbr, $column, $regex ) {
-		if ( $dbr instanceof DatabasePostgres ) {
-			$op = '~';
-		} else {
-			$op = 'REGEXP';
-		}
-		return "$column $op " . $dbr->addQuotes( $regex );
 	}
 }
