@@ -10,12 +10,13 @@
 			"Odder",
 			"Reedy",
 			"Sp5uhe",
-			"ToSter"
+			"ToSter",
+			"WTM"
 		]
 	},
 	"replacetext": "Zastąp tekst",
 	"replacetext-desc": "Dodaje [[Special:ReplaceText|stronę specjalną]], pozwalającą administratorom na wyszukanie i zamianę zadanego tekstu w treści wszystkich stron wiki",
-	"replacetext_docu": "Możesz zastąpić jeden ciąg znaków innym, w treści wszystkich stron tej wiki. W tym celu wprowadź tutaj dwa fragmenty tekstu i naciśnij „{{int:replacetext_continue}}”. Zostanie pokazana lista stron, które zawierają wyszukiwany tekst. Będziesz {{GENDER:|mógł|mogła}} wybrać te strony, na których chcesz ten tekst zamienić na nowy. W historii zmian stron, do opisu autora edycji, zostanie użyta Twoja nazwa użytkownika.",
+	"replacetext_docu": "Możesz zastąpić jeden ciąg znaków innym, w treści wszystkich normalnych stron tej wiki. W tym celu wprowadź tutaj dwa fragmenty tekstu i naciśnij „{{int:replacetext_continue}}”. Zostanie pokazana lista stron, które zawierają wyszukiwany tekst. Będziesz {{GENDER:|mógł|mogła}} wybrać te strony, na których chcesz ten tekst zamienić na nowy. W historii zmian pojawi się Twoja nazwa użytkownika.",
 	"replacetext_originaltext": "Wyszukiwany tekst",
 	"replacetext_replacementtext": "Zamień na",
 	"replacetext_useregex": "Użyj wyrażeń regularnych",
