@@ -264,6 +264,11 @@ $specialPageAliases['vi'] = array(
 	'ReplaceText' => array( 'Thay_văn_bản' ),
 );
 
+/** Chinese (中文) */
+$specialPageAliases['zh'] = array(
+	'ReplaceText' => array( '替换文本', '替換文本', '取代文字' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'ReplaceText' => array( '替换文本' ),
