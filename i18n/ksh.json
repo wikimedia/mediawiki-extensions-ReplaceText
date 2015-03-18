@@ -24,7 +24,7 @@
 	"replacetext_cannotmove": "Hee die {{PLURAL:$1|Sigg kann|Sigge künne|nix kann}} nit ömjenannt wäde:",
 	"replacetext_formovedpages": "För ömjenannte Sigge:",
 	"replacetext_savemovedpages": "Donn der ahle Tittel faßallde un en Ömleidong op der Neue druß maache,\nwann en Sigg ömjenannt woode es.",
-	"replacetext_watchmovedpages": "Op di Sigge oppasse",
+	"replacetext_watchmovedpages": "Op di Sigge oppaßße",
 	"replacetext_invertselections": "De Ußwahl ömdrieje",
 	"replacetext_replace": "Tuusche",
 	"replacetext_success": "„$1“ soll en {{PLURAL:$3|eine Sigg|$3 Sigge|nix}} dorsch „$2“ ußjetuusch wääde.",
