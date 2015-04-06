@@ -5,7 +5,8 @@
 			"Andriykopanytsia",
 			"Base",
 			"Prima klasy4na",
-			"Ата"
+			"Ата",
+			"Ahonc"
 		]
 	},
 	"replacetext": "Заміна тексту",
@@ -40,6 +41,6 @@
 	"replacetext_blankwarning": "'''Увага:''' Так, як текст для заміни порожній, операцію не можна буде скасувати.",
 	"replacetext_continue": "Продовжити",
 	"replacetext_editsummary": "Заміна тексту — „$1“ на „$2“",
-	"right-replacetext": "Робити заміни тексту у всій вікі",
+	"right-replacetext": "виконання заміни тексту по всій вікі",
 	"action-replacetext": "виконання замін тексту по всій вікі"
 }
