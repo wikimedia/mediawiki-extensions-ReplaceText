@@ -24,6 +24,11 @@ $specialPageAliases['arz'] = array(
 	'ReplaceText' => array( 'تبديل_نص' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'ReplaceText' => array( 'متنی_جاگیرکورتین' ),
+);
+
 /** Breton (brezhoneg) */
 $specialPageAliases['br'] = array(
 	'ReplaceText' => array( 'Erlc\'hiañTestenn' ),
