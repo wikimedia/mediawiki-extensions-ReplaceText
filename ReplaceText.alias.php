@@ -39,6 +39,11 @@ $specialPageAliases['bs'] = array(
 	'ReplaceText' => array( 'ZamjenaTeksta' ),
 );
 
+/** Czech (čeština) */
+$specialPageAliases['cs'] = array(
+	'ReplaceText' => array( 'Nahradit_text' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'ReplaceText' => array( 'Text_ersetzen' ),
