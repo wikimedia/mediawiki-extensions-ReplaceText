@@ -1,6 +1,6 @@
 <?php
 
-class ReplaceText extends SpecialPage {
+class SpecialReplaceText extends SpecialPage {
 	private $target, $replacement, $use_regex, $category, $prefix, $edit_pages, $move_pages, $selected_namespaces;
 
 	public function __construct() {
