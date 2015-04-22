@@ -19,7 +19,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) { die(); }
 
-define( 'REPLACE_TEXT_VERSION', '1.0.1' );
+define( 'REPLACE_TEXT_VERSION', '1.0.2' );
 
 // credits
 $wgExtensionCredits['specialpage'][] = array(
@@ -43,9 +43,9 @@ $wgGroupPermissions['sysop']['replacetext'] = true;
 
 $wgHooks['AdminLinks'][] = 'rtAddToAdminLinks';
 
-$wgSpecialPages['ReplaceText'] = 'ReplaceText';
+$wgSpecialPages['ReplaceText'] = 'SpecialReplaceText';
 $wgSpecialPageGroups['ReplaceText'] = 'wiki';
-$wgAutoloadClasses['ReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
+$wgAutoloadClasses['SpecialReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = $rtgIP . 'ReplaceTextJob.php';
 $wgAutoloadClasses['ReplaceTextSearch'] = $rtgIP . 'ReplaceTextSearch.php';
 
