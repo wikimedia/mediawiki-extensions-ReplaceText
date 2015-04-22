@@ -47,6 +47,7 @@ $wgSpecialPages['ReplaceText'] = 'ReplaceText';
 $wgSpecialPageGroups['ReplaceText'] = 'wiki';
 $wgAutoloadClasses['ReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = $rtgIP . 'ReplaceTextJob.php';
+$wgAutoloadClasses['ReplaceTextSearch'] = $rtgIP . 'ReplaceTextSearch.php';
 
 /**
  * This function should really go into a "ReplaceText_body.php" file.
