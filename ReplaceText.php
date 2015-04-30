@@ -19,14 +19,14 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) { die(); }
 
-define( 'REPLACE_TEXT_VERSION', '1.0.2' );
+define( 'REPLACE_TEXT_VERSION', '1.1' );
 
 // credits
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'Replace Text',
 	'version' => REPLACE_TEXT_VERSION,
-	'author' => array( 'Yaron Koren', 'Niklas Laxström' ),
+	'author' => array( 'Yaron Koren', 'Niklas Laxström', '...' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'descriptionmsg'  => 'replacetext-desc',
 );
