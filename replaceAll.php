@@ -1,11 +1,10 @@
 #!/usr/bin/php
 <?php
 /**
- * Insert jobs into the jobqueue to replace text bits.
+ * Insert jobs into the job queue to replace text bits.
  * Or execute immediately... your choice.
  *
  * Copyright © 2014 Mark A. Hershberger <mah@nichework.com>
- * https://www.mediawiki.org/
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,12 +32,7 @@
  *
  */
 
-// Copied from WebStart
-$IP = getenv( 'MW_INSTALL_PATH' );
-if ( $IP === false ) {
-	$IP = realpath( '.' ) ?: dirname( __DIR__ );
-}
-require_once "$IP/maintenance/Maintenance.php";
+require_once( dirname( __FILE__ ) . '/../../maintenance/Maintenance.php' );
 
 /**
  * Maintenance script that generates a plaintext link dump.
