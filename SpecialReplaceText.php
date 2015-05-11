@@ -579,7 +579,7 @@ class SpecialReplaceText extends SpecialPage {
 
 		$str = str_replace( ' ', '_', $str );
 		if ( $use_regex ) {
-			$comparisonCond = $this->regexCond( $dbr, 'page_title', $str );
+			$comparisonCond = ReplaceTextSearch::regexCond( $dbr, 'page_title', $str );
 		} else {
 			$any = $dbr->anyString();
 			$comparisonCond = 'page_title ' . $dbr->buildLike( $any, $str, $any );
@@ -589,8 +589,8 @@ class SpecialReplaceText extends SpecialPage {
 			'page_namespace' => $namespaces,
 		);
 
-		$this->categoryCondition( $category, $tables, $conds );
-		$this->prefixCondition( $prefix, $conds );
+		ReplaceTextSearch::categoryCondition( $category, $tables, $conds );
+		ReplaceTextSearch::prefixCondition( $prefix, $conds );
 		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
 
 		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );

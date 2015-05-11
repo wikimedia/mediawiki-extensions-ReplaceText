@@ -25,7 +25,7 @@ class ReplaceTextSearch {
 		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
 	}
 
-	static protected function categoryCondition( $category, &$tables, &$conds ) {
+	public static function categoryCondition( $category, &$tables, &$conds ) {
 		if ( strval( $category ) !== '' ) {
 			$category = Title::newFromText( $category )->getDbKey();
 			$tables[] = 'categorylinks';
@@ -34,7 +34,7 @@ class ReplaceTextSearch {
 		}
 	}
 
-	static protected function prefixCondition( $prefix, &$conds ) {
+	public static function prefixCondition( $prefix, &$conds ) {
 		if ( strval( $prefix ) === '' ) {
 			return;
 		}
@@ -48,7 +48,7 @@ class ReplaceTextSearch {
 		$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
 	}
 
-	static private function regexCond( $dbr, $column, $regex ) {
+	public static function regexCond( $dbr, $column, $regex ) {
 		if ( $dbr instanceof DatabasePostgres ) {
 			$op = '~';
 		} else {
