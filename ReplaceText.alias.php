@@ -19,7 +19,7 @@ $specialPageAliases['ar'] = array(
 	'ReplaceText' => array( 'استبدال_نص' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'ReplaceText' => array( 'تبديل_نص' ),
 );
@@ -89,7 +89,7 @@ $specialPageAliases['fr'] = array(
 	'ReplaceText' => array( 'Remplacer_texte', 'RemplacerTexte' ),
 );
 
-/** Franco-Provençal (arpetan) */
+/** Arpitan (arpetan) */
 $specialPageAliases['frp'] = array(
 	'ReplaceText' => array( 'Remplaciér_lo_tèxto', 'RemplaciérLoTèxto' ),
 );
