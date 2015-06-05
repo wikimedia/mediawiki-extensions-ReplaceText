@@ -35,7 +35,7 @@
 	"replacetext_warning": "'''Opjepaß:'''\n{{PLURAL:$1|Ein Sigg enthält|$1 Sigge enthallde}} ald dat Täxstöck „$2“, wat bemm Tuusche ennjeföch wääde sull.\nWenn De dat jemaat häs, kam_mer die Änderong nit esu leich automattesch retuur maache, weil mer die ald do woore,\nun de ennjetuuschte Täxstöcker nit ungerscheide kann.\nWells De trozdämm wigger maache?",
 	"replacetext_blankwarning": "Dat Täxstöck, wat beim Tuusche ennjfööch weed, is leddich,\ndröm kam_mer die Änderong nit esu leich automattesch retuur maache.\nWells De trozdämm wigger maache?",
 	"replacetext_continue": "Wiggermaache",
-	"replacetext_editsummary": "Täx-Schtöcker tuusche — vun „$1“ noh „$2“",
+	"replacetext_editsummary": "Täx-Schtöker tuusche — vun „$1“ noh „$2“",
 	"right-replacetext": "Täx-Schtöckscher em janze Wiki ußtuusche",
 	"action-replacetext": "Täx-Schtöckscher em janze Wiki ußzetuusche"
 }
