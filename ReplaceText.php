@@ -44,7 +44,6 @@ $wgGroupPermissions['sysop']['replacetext'] = true;
 $wgHooks['AdminLinks'][] = 'rtAddToAdminLinks';
 
 $wgSpecialPages['ReplaceText'] = 'SpecialReplaceText';
-$wgSpecialPageGroups['ReplaceText'] = 'wiki';
 $wgAutoloadClasses['SpecialReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = $rtgIP . 'ReplaceTextJob.php';
 $wgAutoloadClasses['ReplaceTextSearch'] = $rtgIP . 'ReplaceTextSearch.php';

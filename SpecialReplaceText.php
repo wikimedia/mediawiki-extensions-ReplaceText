@@ -595,4 +595,8 @@ class SpecialReplaceText extends SpecialPage {
 
 		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
 	}
+
+	protected function getGroupName() {
+		return 'wiki';
+	}
 }
