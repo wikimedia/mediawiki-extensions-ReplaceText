@@ -346,8 +346,8 @@ class SpecialReplaceText extends SpecialPage {
 			"$tables\n</fieldset>"
 		);
 		// @todo FIXME: raw html messages
-		$category_search_label = $this->msg( 'replacetext_categorysearch' )->text();
-		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->text();
+		$category_search_label = $this->msg( 'replacetext_categorysearch' )->escaped();
+		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->escaped();
 		$out->addHTML(
 			"<fieldset id=\"mw-searchoptions\">\n" .
 			Xml::tags( 'h4', null, $this->msg( 'replacetext_optionalfilters' )->parse() ) .
