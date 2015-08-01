@@ -5,7 +5,7 @@
 		]
 	},
 	"replacetext": "Täx-Shtöcksher ußtuusche",
-	"replacetext-desc": "Deit en [[Special:ReplaceText|Söndersigg]] en et Wiki, womet {{int:group-sysop}} aanjefbaa Täx-Shtöcksher en alle Atikelle em Wiki söke un ußtuusche künne.",
+	"replacetext-desc": "Deit en [[Special:ReplaceText|{{int:specialpage}}]] en et Wiki, womet {{int:group-sysop}} aanjefbaa Täx-Schtöckscher en alle Atikelle em Wikki söhke un ußtuusche künne.",
 	"replacetext_docu": "Öm ene Täx en alle nomaale Sigge em Wiki ze söke un ußzetuusche, jif hee\nzwei Täx-Schtöcksher en, un donn dann op „{{int:replacetext continue}}“ klecke.\nDann süühß De en Leß met Sigge, wo dö dä jesoohte Täx dren änthallde es,\nun De kanns Der erußsöke, en wat för enne dovun dat De dä och jetuusch\nhan wells. Dinge Name als Metmaacher weed met dä neu veränderte Versione\nfun dä Sigge faßjehallde als dä Schriiver, dä et jemaat hät.",
 	"replacetext_originaltext": "Dä ojinaal Täx för Ußzetuusche:",
 	"replacetext_replacementtext": "Dä neue Täx för anshtatt dämm Ojinaal erin ze donn",
@@ -31,7 +31,7 @@
 	"replacetext_noreplacement": "Kein Sigge jefonge met däm Täxstöck „$1“ dren.",
 	"replacetext_nomove": "Mer han kei Sigge jefonge, woh „$1“ en de Övverschreff dren förkütt.",
 	"replacetext_nosuchcategory": "Mer han kein Saachjropp met dämm Name „$1“.",
-	"replacetext_return": "Jangk retuur op dat Fommulaa.",
+	"replacetext_return": "Jangk retuhr op dat Fommolaa.",
 	"replacetext_warning": "<strong>Opjepaß:<strong>\n{{PLURAL:$1|Ein Sigg enthält|$1 Sigge enthallde}} ald dat Täxstöck „$2“, wat bemm Tuusche ennjeföhsch wähde sull.\nWenn De dat jemaat häs, kam_mer di Ännderong nit esu leijsch automattesch retuhr maache, weil mer di ald do wohre, un de ennjetuuschte Täxschtöker nit ongerscheide kann.\nWells De verhafftesch trozdämm wigger maache?",
 	"replacetext_blankwarning": "Dat Täxstöck, wat beim Tuusche ennjföhsch weed, es läddesch, dröm kam_mer di Ännderong nidd esu leijsch automattesch retuhr maache.\nWells De trozdämm wigger maache?",
 	"replacetext_continue": "Wiggermaache",
