@@ -41,31 +41,10 @@ $wgJobClasses['replaceText'] = 'ReplaceTextJob';
 $wgAvailableRights[] = 'replacetext';
 $wgGroupPermissions['sysop']['replacetext'] = true;
 
-$wgHooks['AdminLinks'][] = 'rtAddToAdminLinks';
+$wgHooks['AdminLinks'][] = 'ReplaceTextHooks::addToAdminLinks';
 
 $wgSpecialPages['ReplaceText'] = 'SpecialReplaceText';
+$wgAutoloadClasses['ReplaceTextHooks'] = $rtgIP . 'ReplaceText.hooks.php';
 $wgAutoloadClasses['SpecialReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = $rtgIP . 'ReplaceTextJob.php';
 $wgAutoloadClasses['ReplaceTextSearch'] = $rtgIP . 'ReplaceTextSearch.php';
-
-/**
- * This function should really go into a "ReplaceText_body.php" file.
- *
- * Handler for 'AdminLinks' hook in the AdminLinks extension
- *
- * @param $admin_links_tree ALTree
- * @return bool
- */
-function rtAddToAdminLinks( ALTree &$admin_links_tree ) {
-	$general_section = $admin_links_tree->getSection( wfMessage( 'adminlinks_general' )->text() );
-	$extensions_row = $general_section->getRow( 'extensions' );
-
-	if ( is_null( $extensions_row ) ) {
-		$extensions_row = new ALRow( 'extensions' );
-		$general_section->addRow( $extensions_row );
-	}
-
-	$extensions_row->addItem( ALItem::newFromSpecialPage( 'ReplaceText' ) );
-
-	return true;
-}
