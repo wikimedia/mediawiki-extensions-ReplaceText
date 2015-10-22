@@ -4,7 +4,8 @@
 			"Devunt",
 			"Kwj2772",
 			"아라",
-			"Hwangjy9"
+			"Hwangjy9",
+			"Yearning"
 		]
 	},
 	"replacetext": "문자열 찾아 바꾸기",
@@ -39,6 +40,6 @@
 	"replacetext_blankwarning": "바꿀 문자열이 비어 있으므로 이 동작은 되돌릴 수 없습니다.\n계속하시겠습니까?",
 	"replacetext_continue": "계속",
 	"replacetext_editsummary": "문자열 찾아 바꾸기 - \"$1\" 문자열을 \"$2\" 문자열로",
-	"right-replacetext": "찾아 바꾸기를 위키 전체에 수행하기",
+	"right-replacetext": "위키 전체에서 찾아 바꾸기",
 	"action-replacetext": "찾아 바꾸기를 위키 전체에 수행"
 }
