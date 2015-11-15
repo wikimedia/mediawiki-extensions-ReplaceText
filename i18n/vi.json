@@ -22,7 +22,7 @@
 	"replacetext_givetarget": "Bạn cần phải định rõ văn bản để thay thế.",
 	"replacetext_nonamespace": "Cần phải chọn ít nhất một không gian tên.",
 	"replacetext_editormove": "Bạn cần phải chọn ít nhất một trong những tùy chọn thay thế.",
-	"replacetext_choosepagesforedit": "Thay ‘$1’ bằng ‘$2’ trong nội dung của {{PLURAL:$3|trang|những trang}} sau:",
+	"replacetext_choosepagesforedit": "Thay “$1” bằng “$2” trong nội dung của {{PLURAL:$3|trang|những trang}} sau:",
 	"replacetext_choosepagesformove": "Thay “$1” bằng “$2” trong tên của {{PLURAL:$3|trang|các trang}} sau:",
 	"replacetext_cannotmove": "Không thể di chuyển {{PLURAL:$1|trang|$1 trang}} sau:",
 	"replacetext_formovedpages": "Đối với trang đã di chuyển:",
