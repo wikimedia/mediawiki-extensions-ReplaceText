@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BRUTE",
-			"David1010"
+			"David1010",
+			"Otogi"
 		]
 	},
 	"replacetext": "ტექსტის შეცვლა",
@@ -17,6 +18,7 @@
 	"replacetext_formovedpages": "გადატანილი გვერდებისათვის:",
 	"replacetext_savemovedpages": "ძველი სათაურის შენახვა როგორც ახალზე გადამისამართება",
 	"replacetext_watchmovedpages": "ამ გვერდების კონტროლი",
+	"replacetext_invertselections": "შერჩევის ინვერტირება",
 	"replacetext_replace": "ჩანაცვლება",
 	"replacetext_return": "ფორმასთან დაბრუნება.",
 	"replacetext_continue": "გაგრძელება",
