@@ -4,11 +4,12 @@
 			"Beta16",
 			"Civvì",
 			"Darth Kule",
-			"Marco 27"
+			"Marco 27",
+			"Malore"
 		]
 	},
 	"replacetext": "Sostituzione testo",
-	"replacetext-desc": "Fornisce una [[Special:ReplaceText|pagina speciale]] per permettere agli amministratori di effettuare una ricerca e sostituzione globale di testo su tutte le pagine di contenuti di un sito",
+	"replacetext-desc": "Fornisce una [[Special:ReplaceText|pagina speciale]] per permettere agli amministratori di effettuare una ricerca e sostituzione globale di testo su tutte le pagine di contenuto di un sito",
 	"replacetext_docu": "Per sostituire una stringa di testo con un'altra su tutte le pagine del sito, inserire qui due pezzi di testo e poi premere \"{{int:replacetext_continue}}\". Verrà quindi mostrato un elenco delle pagine che contengono il testo cercato e sarà possibile scegliere quelle in cui si desidera sostituirlo. Il proprio nome verrà visualizzato nella pagina della cronologia come l'utente responsabile delle eventuali modifiche.",
 	"replacetext_originaltext": "Testo originale:",
 	"replacetext_replacementtext": "Testo sostituito:",
