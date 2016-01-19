@@ -7,6 +7,10 @@ class SpecialReplaceText extends SpecialPage {
 		parent::__construct( 'ReplaceText', 'replacetext' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	function execute( $query ) {
 		if ( !$this->getUser()->isAllowed( 'replacetext' ) ) {
 			throw new PermissionsError( 'replacetext' );
