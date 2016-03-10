@@ -4,7 +4,7 @@
  * allow administrators to do a global string find-and-replace on all the
  * content pages of a wiki.
  *
- * http://www.mediawiki.org/wiki/Extension:Replace_Text
+ * https://www.mediawiki.org/wiki/Extension:Replace_Text
  *
  * The special page created is 'Special:ReplaceText', and it provides
  * a form to do a global search-and-replace, with the changes to every
@@ -40,13 +40,13 @@ $wgExtensionCredits['specialpage'][] = array(
 	'version' => REPLACE_TEXT_VERSION,
 	'author' => array( 'Yaron Koren', 'Niklas Laxström', '...' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Replace_Text',
-	'descriptionmsg'  => 'replacetext-desc',
+	'descriptionmsg' => 'replacetext-desc',
+	'license-name' => 'GPL-2.0+'
 );
 
-$rtgIP = __DIR__ . '/';
 $wgMessagesDirs['ReplaceText'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['ReplaceText'] = $rtgIP . 'ReplaceText.i18n.php';
-$wgExtensionMessagesFiles['ReplaceTextAlias'] = $rtgIP . 'ReplaceText.alias.php';
+$wgExtensionMessagesFiles['ReplaceText'] = __DIR__ . '/ReplaceText.i18n.php';
+$wgExtensionMessagesFiles['ReplaceTextAlias'] = __DIR__ . '/ReplaceText.alias.php';
 $wgJobClasses['replaceText'] = 'ReplaceTextJob';
 
 // This extension uses its own permission type, 'replacetext'
@@ -56,7 +56,7 @@ $wgGroupPermissions['sysop']['replacetext'] = true;
 $wgHooks['AdminLinks'][] = 'ReplaceTextHooks::addToAdminLinks';
 
 $wgSpecialPages['ReplaceText'] = 'SpecialReplaceText';
-$wgAutoloadClasses['ReplaceTextHooks'] = $rtgIP . 'ReplaceText.hooks.php';
-$wgAutoloadClasses['SpecialReplaceText'] = $rtgIP . 'SpecialReplaceText.php';
-$wgAutoloadClasses['ReplaceTextJob'] = $rtgIP . 'ReplaceTextJob.php';
-$wgAutoloadClasses['ReplaceTextSearch'] = $rtgIP . 'ReplaceTextSearch.php';
+$wgAutoloadClasses['ReplaceTextHooks'] = __DIR__ . '/ReplaceText.hooks.php';
+$wgAutoloadClasses['SpecialReplaceText'] = __DIR__ . '/SpecialReplaceText.php';
+$wgAutoloadClasses['ReplaceTextJob'] = __DIR__ . '/ReplaceTextJob.php';
+$wgAutoloadClasses['ReplaceTextSearch'] = __DIR__ . '/ReplaceTextSearch.php';
