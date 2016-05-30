@@ -23,13 +23,16 @@ if ( function_exists( 'wfLoadExtension' ) ) {
 	$wgMessagesDirs['ReplaceText'] = __DIR__ . '/i18n';
 	$wgExtensionMessagesFiles['ReplaceTextAlias'] = __DIR__ . '/ReplaceText.alias.php';
 	/* wfWarn(
-	'Deprecated PHP entry point used for Replace Text extension. Please use wfLoadExtension instead, ' .
-	'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+		'Deprecated PHP entry point used for Replace Text extension. ' .
+		'Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
 	); */
 	return;
 }
 
-if ( !defined( 'MEDIAWIKI' ) ) { die(); }
+if ( !defined( 'MEDIAWIKI' ) ) {
+	die();
+}
 
 define( 'REPLACE_TEXT_VERSION', '1.2' );
 

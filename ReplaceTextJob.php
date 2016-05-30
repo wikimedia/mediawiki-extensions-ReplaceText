@@ -31,9 +31,12 @@ class ReplaceTextJob extends Job {
 			$wgUser = User::newFromId( $this->params['user_id'] );
 			$cur_page_name = $this->title->getText();
 			if ( $this->params['use_regex'] ) {
-				$new_page_name = preg_replace( "/" . $this->params['target_str'] . "/Uu", $this->params['replacement_str'], $cur_page_name );
+				$new_page_name = preg_replace(
+					"/" . $this->params['target_str'] . "/Uu", $this->params['replacement_str'], $cur_page_name
+				);
 			} else {
-				$new_page_name = str_replace( $this->params['target_str'], $this->params['replacement_str'], $cur_page_name );
+				$new_page_name =
+					str_replace( $this->params['target_str'], $this->params['replacement_str'], $cur_page_name );
 			}
 
 			$new_title = Title::newFromText( $new_page_name, $this->title->getNamespace() );
@@ -54,20 +57,23 @@ class ReplaceTextJob extends Job {
 			// Article::fetchContent() starting in MW 1.21.
 			if ( method_exists( 'WikiPage', 'getContent' ) ) {
 				if ( $this->title->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
-					$this->error = 'replaceText: Wiki page "' . $this->title->getPrefixedDBkey() . '" does not hold regular wikitext.';
+					$this->error = 'replaceText: Wiki page "' .
+						$this->title->getPrefixedDBkey() . '" does not hold regular wikitext.';
 					wfProfileOut( __METHOD__ );
 					return false;
 				}
 				$wikiPage = new WikiPage( $this->title );
 				// Is this check necessary?
 				if ( !$wikiPage ) {
-					$this->error = 'replaceText: Wiki page not found for "' . $this->title->getPrefixedDBkey() . '."';
+					$this->error =
+						'replaceText: Wiki page not found for "' . $this->title->getPrefixedDBkey() . '."';
 					wfProfileOut( __METHOD__ );
 					return false;
 				}
 				$wikiPageContent = $wikiPage->getContent();
 				if ( is_null( $wikiPageContent ) ) {
-					$this->error = 'replaceText: No contents found for wiki page at "' . $this->title->getPrefixedDBkey() . '."';
+					$this->error =
+						'replaceText: No contents found for wiki page at "' . $this->title->getPrefixedDBkey() . '."';
 					wfProfileOut( __METHOD__ );
 					return false;
 				}
@@ -88,7 +94,8 @@ class ReplaceTextJob extends Job {
 			$num_matches = 0;
 
 			if ( $this->params['use_regex'] ) {
-				$new_text = preg_replace( '/' . $target_str . '/Uu', $replacement_str, $article_text, -1, $num_matches );
+				$new_text =
+					preg_replace( '/' . $target_str . '/Uu', $replacement_str, $article_text, -1, $num_matches );
 			} else {
 				$new_text = str_replace( $target_str, $replacement_str, $article_text, $num_matches );
 			}

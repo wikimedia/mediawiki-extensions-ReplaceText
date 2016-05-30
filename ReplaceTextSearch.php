@@ -1,7 +1,9 @@
 <?php
 
 class ReplaceTextSearch {
-	public static function doSearchQuery( $search, $namespaces, $category, $prefix, $use_regex = false ) {
+	public static function doSearchQuery(
+		$search, $namespaces, $category, $prefix, $use_regex = false
+	) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = array( 'page', 'revision', 'text' );
 		$vars = array( 'page_id', 'page_namespace', 'page_title', 'old_text' );
@@ -22,7 +24,7 @@ class ReplaceTextSearch {
 		self::prefixCondition( $prefix, $conds );
 		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
 
-		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
+		return $dbr->select( $tables, $vars, $conds, __METHOD__, $sort );
 	}
 
 	public static function categoryCondition( $category, &$tables, &$conds ) {

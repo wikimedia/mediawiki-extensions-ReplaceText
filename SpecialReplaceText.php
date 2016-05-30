@@ -1,7 +1,9 @@
 <?php
 
 class SpecialReplaceText extends SpecialPage {
-	private $target, $replacement, $use_regex, $category, $prefix, $edit_pages, $move_pages, $selected_namespaces;
+	private $target, $replacement, $use_regex,
+	$category, $prefix, $edit_pages, $move_pages,
+	$selected_namespaces;
 
 	public function __construct() {
 		parent::__construct( 'ReplaceText', 'replacetext' );
@@ -90,8 +92,9 @@ class SpecialReplaceText extends SpecialPage {
 					} else {
 						$title = Title::newFromID( $key );
 					}
-					if ( $title !== null )
+					if ( $title !== null ) {
 						$jobs[] = new ReplaceTextJob( $title, $replacement_params );
+					}
 				}
 			}
 
@@ -168,9 +171,11 @@ class SpecialReplaceText extends SpecialPage {
 					$cur_page_name = str_replace( '_', ' ', $row->page_title );
 
 					if ( $this->use_regex ) {
-						$new_page_name = preg_replace( "/" . $this->target . "/Uu", $this->replacement, $cur_page_name );
+						$new_page_name =
+							preg_replace( "/" . $this->target . "/Uu", $this->replacement, $cur_page_name );
 					} else {
-						$new_page_name = str_replace( $this->target, $this->replacement, $cur_page_name );
+						$new_page_name =
+							str_replace( $this->target, $this->replacement, $cur_page_name );
 					}
 
 					$new_title = Title::makeTitleSafe( $row->page_namespace, $new_page_name );
@@ -189,9 +194,11 @@ class SpecialReplaceText extends SpecialPage {
 			if ( count( $titles_for_edit ) == 0 && count( $titles_for_move ) == 0 ) {
 				$bad_cat_name = false;
 
-				if ( ! empty( $this->category ) ) {
+				if ( !empty( $this->category ) ) {
 					$category_title = Title::makeTitleSafe( NS_CATEGORY, $this->category );
-					if ( ! $category_title->exists() ) $bad_cat_name = true;
+					if ( !$category_title->exists() ) {
+						$bad_cat_name = true;
+					}
 				}
 
 				if ( $bad_cat_name ) {
@@ -201,7 +208,9 @@ class SpecialReplaceText extends SpecialPage {
 					);
 				} else {
 					if ( $this->edit_pages ) {
-						$out->addWikiMsg( 'replacetext_noreplacement', "<code><nowiki>{$this->target}</nowiki></code>" );
+						$out->addWikiMsg(
+							'replacetext_noreplacement', "<code><nowiki>{$this->target}</nowiki></code>"
+						);
 					}
 
 					if ( $this->move_pages ) {
@@ -209,7 +218,13 @@ class SpecialReplaceText extends SpecialPage {
 					}
 				}
 				// link back to starting form
-				$out->addHTML( '<p>' . Linker::link( $this->getTitle(), $this->msg( 'replacetext_return' )->escaped() ) . '</p>' );
+				$out->addHTML(
+					'<p>' .
+					Linker::link(
+					$this->getTitle(),
+					$this->msg( 'replacetext_return' )->escaped() )
+					. '</p>'
+				);
 			} else {
 				// Show a warning message if the replacement
 				// string is either blank or found elsewhere on
@@ -218,16 +233,27 @@ class SpecialReplaceText extends SpecialPage {
 				$warning_msg = null;
 
 				if ( $this->replacement === '' ) {
-					$warning_msg = $this->msg('replacetext_blankwarning')->text();
+					$warning_msg = $this->msg( 'replacetext_blankwarning' )->text();
 				} elseif ( count( $titles_for_edit ) > 0 ) {
-					$res = ReplaceTextSearch::doSearchQuery( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix, $this->use_regex );
+					$res = ReplaceTextSearch::doSearchQuery(
+						$this->replacement,
+						$this->selected_namespaces,
+						$this->category,
+						$this->prefix,
+						$this->use_regex
+					);
 					$count = $res->numRows();
 					if ( $count > 0 ) {
 						$warning_msg = $this->msg( 'replacetext_warning' )->numParams( $count )
 							->params( "<code><nowiki>{$this->replacement}</nowiki></code>" )->text();
 					}
 				} elseif ( count( $titles_for_move ) > 0 ) {
-					$res = $this->getMatchingTitles( $this->replacement, $this->selected_namespaces, $this->category, $this->prefix, $this->use_regex );
+					$res = $this->getMatchingTitles(
+						$this->replacement,
+						$this->selected_namespaces,
+						$this->category,
+						$this->prefix, $this->use_regex
+					);
 					$count = $res->numRows();
 					if ( $count > 0 ) {
 						$warning_msg = $this->msg( 'replacetext_warning' )->numParams( $count )
@@ -236,7 +262,7 @@ class SpecialReplaceText extends SpecialPage {
 				}
 
 				if ( ! is_null( $warning_msg ) ) {
-					$out->addWikiText("<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />");
+					$out->addWikiText( "<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />" );
 				}
 
 				$this->pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles );
@@ -282,11 +308,15 @@ class SpecialReplaceText extends SpecialPage {
 		// 'width: auto' style is needed to override MediaWiki's
 		// normal 'width: 100%', which causes the textarea to get
 		// zero width in IE
-		$out->addHTML( Xml::textarea( 'target', $this->target, 100, 5, array( 'style' => 'width: auto;' ) ) );
+		$out->addHTML(
+			Xml::textarea( 'target', $this->target, 100, 5, array( 'style' => 'width: auto;' ) )
+		);
 		$out->addHTML( '</td></tr><tr><td style="vertical-align: top;">' );
 		$out->addWikiMsg( 'replacetext_replacementtext' );
 		$out->addHTML( '</td><td>' );
-		$out->addHTML( Xml::textarea( 'replacement', $this->replacement, 100, 5, array( 'style' => 'width: auto;' ) ) );
+		$out->addHTML(
+			Xml::textarea( 'replacement', $this->replacement, 100, 5, array( 'style' => 'width: auto;' ) )
+		);
 		$out->addHTML( '</td></tr></table>' );
 		$out->addHTML( Xml::tags( 'p', null,
 				Xml::checkLabel(
@@ -369,7 +399,9 @@ class SpecialReplaceText extends SpecialPage {
 			Xml::input( 'prefix', 20, $this->prefix, array( 'type' => 'text' ) ) . '</p>' .
 			"</fieldset>\n" .
 			"<p>\n" .
-			Xml::checkLabel( $this->msg( 'replacetext_editpages' )->text(), 'edit_pages', 'edit_pages', true ) . '<br />' .
+			Xml::checkLabel(
+				$this->msg( 'replacetext_editpages' )->text(), 'edit_pages', 'edit_pages', true
+			) . '<br />' .
 			Xml::checkLabel( $this->msg( 'replacetext_movepages' )->text(), 'move_pages', 'move_pages' ) .
 			"</p>\n" .
 			Xml::submitButton( $this->msg( 'replacetext_continue' )->text() ) .
@@ -425,7 +457,11 @@ class SpecialReplaceText extends SpecialPage {
 
 		$out = $this->getOutput();
 
-		$formOpts = array( 'id' => 'choose_pages', 'method' => 'post', 'action' => $this->getTitle()->getFullUrl() );
+		$formOpts = array(
+			'id' => 'choose_pages',
+			'method' => 'post',
+			'action' => $this->getTitle()->getFullUrl()
+		);
 		$out->addHTML(
 			Xml::openElement( 'form', $formOpts ) . "\n" .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
@@ -437,15 +473,19 @@ class SpecialReplaceText extends SpecialPage {
 			Html::hidden( 'replace', 1 )
 		);
 
-		foreach( $this->selected_namespaces as $ns ) {
+		foreach ( $this->selected_namespaces as $ns ) {
 			$out->addHTML( Html::hidden( 'ns' . $ns, 1 ) );
 		}
 
 		$out->addScriptFile( "$wgScriptPath/extensions/ReplaceText/ReplaceText.js" );
 
 		if ( count( $titles_for_edit ) > 0 ) {
-			$out->addWikiMsg( 'replacetext_choosepagesforedit', "<code><nowiki>{$this->target}</nowiki></code>", "<code><nowiki>{$this->replacement}</nowiki></code>",
-				$wgLang->formatNum( count( $titles_for_edit ) ) );
+			$out->addWikiMsg(
+				'replacetext_choosepagesforedit',
+				"<code><nowiki>{$this->target}</nowiki></code>",
+				"<code><nowiki>{$this->replacement}</nowiki></code>",
+				$wgLang->formatNum( count( $titles_for_edit ) )
+			);
 
 			foreach ( $titles_for_edit as $title_and_context ) {
 				/**
@@ -461,7 +501,10 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		if ( count( $titles_for_move ) > 0 ) {
-			$out->addWikiMsg( 'replacetext_choosepagesformove', $this->target, $this->replacement, $wgLang->formatNum( count( $titles_for_move ) ) );
+			$out->addWikiMsg(
+				'replacetext_choosepagesformove',
+				$this->target, $this->replacement, $wgLang->formatNum( count( $titles_for_move ) )
+			);
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
 					Xml::check( 'move-' . $title->getArticleID(), true ) .
@@ -471,8 +514,12 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addHTML( '<br />' );
 			$out->addWikiMsg( 'replacetext_formovedpages' );
 			$out->addHTML(
-				Xml::checkLabel( $this->msg( 'replacetext_savemovedpages' )->text(), 'create-redirect', 'create-redirect', true ) . "<br />\n" .
-				Xml::checkLabel( $this->msg( 'replacetext_watchmovedpages' )->text(), 'watch-pages', 'watch-pages', false )
+				Xml::checkLabel(
+					$this->msg( 'replacetext_savemovedpages' )->text(),
+						'create-redirect', 'create-redirect', true ) . "<br />\n" .
+				Xml::checkLabel(
+					$this->msg( 'replacetext_watchmovedpages' )->text(), 'watch-pages', 'watch-pages', false
+				)
 			);
 			$out->addHTML( '<br />' );
 		}
@@ -534,7 +581,9 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		$cuts = array();
+		// @codingStandardsIgnoreStart
 		for ( $i = 0; $i < count( $poss ); $i++ ) {
+		// @codingStandardsIgnoreEnd
 			$index = $poss[$i];
 			$len = strlen( $target );
 
@@ -604,7 +653,7 @@ class SpecialReplaceText extends SpecialPage {
 		ReplaceTextSearch::prefixCondition( $prefix, $conds );
 		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
 
-		return $dbr->select( $tables, $vars, $conds, __METHOD__ , $sort );
+		return $dbr->select( $tables, $vars, $conds, __METHOD__, $sort );
 	}
 
 	protected function getGroupName() {

@@ -31,8 +31,9 @@
  * @link     https://www.mediawiki.org/wiki/Extension:Replace_Text
  *
  */
-
-require_once( dirname( __FILE__ ) . '/../../maintenance/Maintenance.php' );
+// @codingStandardsIgnoreStart
+require_once ( dirname( __FILE__ ) . '/../../maintenance/Maintenance.php' );
+// @codingStandardsIgnoreEnd
 
 /**
  * Maintenance script that generates a plaintext link dump.
@@ -135,7 +136,9 @@ class ReplaceText extends Maintenance {
 		}
 
 		$this->defaultContinue = true;
+		// @codingStandardsIgnoreStart
 		while ( ( $line = fgets( $handle ) ) !== false ) {
+		// @codingStandardsIgnoreEnd
 			$field = explode( "\t", $line );
 			if ( !isset( $field[1] ) ) {
 				continue;
@@ -174,7 +177,7 @@ class ReplaceText extends Maintenance {
 		$nsList = MWNamespace::getCanonicalNamespaces();
 		ksort( $nsList );
 		foreach ( $nsList as $int => $val ) {
-			if ($val == "") {
+			if ( $val == "" ) {
 				$val = "(main)";
 			}
 			echo " $int\t$val\n";
@@ -217,11 +220,12 @@ EOF;
 					array_map(
 						function( $namespace ) use ( $namespace, $nsflip ) {
 							if ( is_numeric( $namespace )
-									&& isset( $namespace[ $namespace ] ) ) {
+									&& isset( $namespace[ $namespace ] )
+							) {
 								return intval( $namespace );
 							}
 							$namespace = strtolower( $namespace );
-								var_dump($nsflip[$namespace]);
+								var_dump( $nsflip[$namespace] );
 							if ( isset( $nsflip[ $namespace ] ) ) {
 								return $nsflip[ $namespace ];
 							}
@@ -252,7 +256,9 @@ EOF;
 	protected function getTitles( $res ) {
 		if ( count( $this->titles ) == 0 ) {
 			$this->titles = array();
+			// @codingStandardsIgnoreStart
 			while ( $row = $res->fetchObject() ) {
+			// @codingStandardsIgnoreEnd
 				$this->titles[] = Title::makeTitleSafe(
 					$row->page_namespace,
 					$row->page_title

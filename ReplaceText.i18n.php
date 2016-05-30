@@ -10,6 +10,7 @@
  *
  * This shim maintains compatibility back to MediaWiki 1.17.
  */
+// @codingStandardsIgnoreStart
 $messages = array();
 if ( !function_exists( 'wfJsonI18nShim83efb47faf1e2b8d' ) ) {
 	function wfJsonI18nShim83efb47faf1e2b8d( $cache, $code, &$cachedData ) {
