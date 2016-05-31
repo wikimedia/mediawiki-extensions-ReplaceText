@@ -56,8 +56,15 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		if ( $request->getCheck( 'replace' ) ) {
+			global $wgReplaceTextUser;
+
 			$replacement_params = array();
-			$replacement_params['user_id'] = $this->getUser()->getId();
+			if ( $wgReplaceTextUser != null ) {
+				$user = User::newFromName( $wgReplaceTextUser );
+			} else {
+				$user = $this->getUser();
+			}
+			$replacement_params['user_id'] = $user->getId();
 			$replacement_params['target_str'] = $this->target;
 			$replacement_params['replacement_str'] = $this->replacement;
 			$replacement_params['use_regex'] = $this->use_regex;

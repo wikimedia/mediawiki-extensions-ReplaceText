@@ -43,5 +43,8 @@
 			"ReplaceTextHooks::addToAdminLinks"
 		]
 	},
+	"config": {
+		"ReplaceTextUser": null
+	},
 	"manifest_version": 1
 }

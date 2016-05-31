@@ -60,3 +60,6 @@ $wgAutoloadClasses['ReplaceTextHooks'] = __DIR__ . '/ReplaceText.hooks.php';
 $wgAutoloadClasses['SpecialReplaceText'] = __DIR__ . '/SpecialReplaceText.php';
 $wgAutoloadClasses['ReplaceTextJob'] = __DIR__ . '/ReplaceTextJob.php';
 $wgAutoloadClasses['ReplaceTextSearch'] = __DIR__ . '/ReplaceTextSearch.php';
+
+// Global variables
+$wgReplaceTextUser = null;
