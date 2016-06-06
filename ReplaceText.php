@@ -31,7 +31,7 @@ if ( function_exists( 'wfLoadExtension' ) ) {
 
 if ( !defined( 'MEDIAWIKI' ) ) { die(); }
 
-define( 'REPLACE_TEXT_VERSION', '1.1.1' );
+define( 'REPLACE_TEXT_VERSION', '1.2' );
 
 // credits
 $wgExtensionCredits['specialpage'][] = array(
