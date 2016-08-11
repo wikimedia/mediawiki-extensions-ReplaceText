@@ -168,7 +168,7 @@ class SpecialReplaceText extends SpecialPage {
 					$cur_page_name = str_replace( '_', ' ', $row->page_title );
 
 					if ( $this->use_regex ) {
-						$new_page_name = preg_replace( "/".$this->target."/U", $this->replacement, $cur_page_name );
+						$new_page_name = preg_replace( "/" . $this->target . "/Uu", $this->replacement, $cur_page_name );
 					} else {
 						$new_page_name = str_replace( $this->target, $this->replacement, $cur_page_name );
 					}
@@ -522,7 +522,7 @@ class SpecialReplaceText extends SpecialPage {
 
 		// Get all indexes
 		if ( $use_regex ) {
-			preg_match_all( "/$target/", $text, $matches, PREG_OFFSET_CAPTURE );
+			preg_match_all( "/$target/Uu", $text, $matches, PREG_OFFSET_CAPTURE );
 		} else {
 			$targetq = preg_quote( $target, '/' );
 			preg_match_all( "/$targetq/", $text, $matches, PREG_OFFSET_CAPTURE );
@@ -558,7 +558,7 @@ class SpecialReplaceText extends SpecialPage {
 			);
 			$snippet = $this->convertWhiteSpaceToHTML( substr( $text, $index, $len ) );
 			if ( $use_regex ) {
-				$targetStr = "/$target/U";
+				$targetStr = "/$target/Uu";
 			} else {
 				$targetq = preg_quote( $this->convertWhiteSpaceToHTML( $target ), '/' );
 				$targetStr = "/$targetq/i";

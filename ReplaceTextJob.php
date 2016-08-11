@@ -31,7 +31,7 @@ class ReplaceTextJob extends Job {
 			$wgUser = User::newFromId( $this->params['user_id'] );
 			$cur_page_name = $this->title->getText();
 			if ( $this->params['use_regex'] ) {
-				$new_page_name = preg_replace( "/".$this->params['target_str']."/U", $this->params['replacement_str'], $cur_page_name );
+				$new_page_name = preg_replace( "/" . $this->params['target_str'] . "/Uu", $this->params['replacement_str'], $cur_page_name );
 			} else {
 				$new_page_name = str_replace( $this->params['target_str'], $this->params['replacement_str'], $cur_page_name );
 			}
@@ -88,7 +88,7 @@ class ReplaceTextJob extends Job {
 			$num_matches = 0;
 
 			if ( $this->params['use_regex'] ) {
-				$new_text = preg_replace( '/' . $target_str . '/U', $replacement_str, $article_text, -1, $num_matches );
+				$new_text = preg_replace( '/' . $target_str . '/Uu', $replacement_str, $article_text, -1, $num_matches );
 			} else {
 				$new_text = str_replace( $target_str, $replacement_str, $article_text, $num_matches );
 			}
