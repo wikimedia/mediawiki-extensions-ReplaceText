@@ -114,12 +114,8 @@ class ReplaceTextJob extends Job {
 				if ( $wgUser->isAllowed( 'bot' ) ) {
 					$flags |= EDIT_FORCE_BOT;
 				}
-				if ( method_exists( 'WikiPage', 'getContent' ) ) {
-					$new_content = new WikitextContent( $new_text );
-					$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
-				} else {
-					$article->doEdit( $new_text, $edit_summary, $flags );
-				}
+				$new_content = new WikitextContent( $new_text );
+				$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
 				$wgUser = $actual_user;
 			}
 			wfProfileOut( __METHOD__ . '-replace' );
