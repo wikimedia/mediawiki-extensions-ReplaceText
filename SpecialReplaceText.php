@@ -98,12 +98,7 @@ class SpecialReplaceText extends SpecialPage {
 				}
 			}
 
-			// BC for 1.20 and lower
-			if ( class_exists( 'JobQueueGroup' ) ) {
-				JobQueueGroup::singleton()->push( $jobs );
-			} else {
-				Job::batchInsert( $jobs );
-			}
+			JobQueueGroup::singleton()->push( $jobs );
 
 			$count = $this->getLanguage()->formatNum( count( $jobs ) );
 			$out->addWikiMsg(
