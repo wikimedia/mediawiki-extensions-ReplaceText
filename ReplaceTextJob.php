@@ -53,40 +53,28 @@ class ReplaceTextJob extends Job {
 			}
 			$wgUser = $actual_user;
 		} else {
-			// WikiPage::getContent() replaced
-			// Article::fetchContent() starting in MW 1.21.
-			if ( method_exists( 'WikiPage', 'getContent' ) ) {
-				if ( $this->title->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
-					$this->error = 'replaceText: Wiki page "' .
-						$this->title->getPrefixedDBkey() . '" does not hold regular wikitext.';
-					wfProfileOut( __METHOD__ );
-					return false;
-				}
-				$wikiPage = new WikiPage( $this->title );
-				// Is this check necessary?
-				if ( !$wikiPage ) {
-					$this->error =
-						'replaceText: Wiki page not found for "' . $this->title->getPrefixedDBkey() . '."';
-					wfProfileOut( __METHOD__ );
-					return false;
-				}
-				$wikiPageContent = $wikiPage->getContent();
-				if ( is_null( $wikiPageContent ) ) {
-					$this->error =
-						'replaceText: No contents found for wiki page at "' . $this->title->getPrefixedDBkey() . '."';
-					wfProfileOut( __METHOD__ );
-					return false;
-				}
-				$article_text = $wikiPageContent->getNativeData();
-			} else {
-				$article = new Article( $this->title, 0 );
-				if ( !$article ) {
-					$this->error = 'replaceText: Article not found for "' . $this->title->getPrefixedDBkey() . '"';
-					wfProfileOut( __METHOD__ );
-					return false;
-				}
-				$article_text = $article->fetchContent();
+			if ( $this->title->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
+				$this->error = 'replaceText: Wiki page "' .
+					$this->title->getPrefixedDBkey() . '" does not hold regular wikitext.';
+				wfProfileOut( __METHOD__ );
+				return false;
 			}
+			$wikiPage = new WikiPage( $this->title );
+			// Is this check necessary?
+			if ( !$wikiPage ) {
+				$this->error =
+					'replaceText: Wiki page not found for "' . $this->title->getPrefixedDBkey() . '."';
+				wfProfileOut( __METHOD__ );
+				return false;
+			}
+			$wikiPageContent = $wikiPage->getContent();
+			if ( is_null( $wikiPageContent ) ) {
+				$this->error =
+					'replaceText: No contents found for wiki page at "' . $this->title->getPrefixedDBkey() . '."';
+				wfProfileOut( __METHOD__ );
+				return false;
+			}
+			$article_text = $wikiPageContent->getNativeData();
 
 			wfProfileIn( __METHOD__ . '-replace' );
 			$target_str = $this->params['target_str'];
