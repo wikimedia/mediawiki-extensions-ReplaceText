@@ -73,8 +73,10 @@ class ReplaceText extends Maintenance {
 		$this->addOption( "summary", "Alternate edit summary. (%r is where to ".
 			" place the replacement text, %f the text to look for.)",
 			false, true, 's' );
-		$this->addOption( "ns", "Comma separated namespaces to search in. ".
-			"(Main)" );
+		$this->addOption( "nsall", "Search all canonical namespaces (false). " .
+			"If true, this option overrides the ns option.", false, false, 'a' );
+		$this->addOption( "ns", "Comma separated namespaces to search in (Main) .",
+			false, true );
 		$this->addOption( "replacements", "File containing the list of replacements to " .
 			"be made.  Fields in the file are tab-separated.  See --show-file-format " .
 			"for more information.",
@@ -209,32 +211,34 @@ EOF;
 	}
 
 	protected function getNamespaces() {
-		$namespaces = array( NS_MAIN );
-		$names = $this->getOption( "ns" );
-		$namespace = MWNamespace::getCanonicalNamespaces();
-		$namespace[0] = "main";
-		$nsflip = array_flip( $namespace );
-		if ( $names ) {
-			$namespaces =
-				array_filter(
-					array_map(
-						function( $namespace ) use ( $namespace, $nsflip ) {
-							if ( is_numeric( $namespace )
-									&& isset( $namespace[ $namespace ] )
-							) {
-								return intval( $namespace );
+		$nsall = $this->getOption( "nsall" );
+		$ns = $this->getOption( "ns" );
+		if ( !$nsall && !$ns ) {
+			$namespaces = [ NS_MAIN ];
+		} else {
+			$canonical = MWNamespace::getCanonicalNamespaces();
+			$canonical[NS_MAIN] = "_";
+			$namespaces = array_flip( $canonical );
+			if ( !$nsall ) {
+				$namespaces = array_map(
+					function( $n ) use ( $canonical, $namespaces ) {
+						if ( is_numeric( $n ) ) {
+							if ( isset( $canonical[ $n ] ) ) {
+								return intval( $n );
 							}
-							$namespace = strtolower( $namespace );
-								var_dump( $nsflip[$namespace] );
-							if ( isset( $nsflip[ $namespace ] ) ) {
-								return $nsflip[ $namespace ];
+						} else {
+							if ( isset( $namespaces[ $n ] ) ) {
+								return $namespaces[ $n ];
 							}
-							return null;
-						}, explode( ",", $names ) ),
+						}
+						return null;
+					}, explode( ",", $ns ) );
+				$namespaces = array_filter(
+					$namespaces,
 					function( $val ) {
 						return $val !== null;
-					}
-				);
+					} );
+			}
 		}
 		return $namespaces;
 	}
@@ -334,6 +338,11 @@ EOF;
 		$wgShowExceptionDetails = true;
 
 		if ( $this->localSetup() ) {
+
+			if ( $this->namespaces === [] ) {
+				$this->error( "No matching namespaces.", true );
+			}
+
 			foreach ( array_keys( $this->target ) as $index ) {
 				$target = $this->target[$index];
 				$replacement = $this->replacement[$index];
@@ -351,6 +360,10 @@ EOF;
 
 				if ( $res->numRows() === 0 ) {
 					$this->error( "No targets found to replace.", true );
+				}
+				if ( $this->getOption( "dry-run" ) ) {
+					$this->listTitles( $res );
+					return;
 				}
 				if ( !$this->shouldContinueByDefault() && $this->listTitles( $res ) ) {
 					if ( !$this->getReply( "Replace instances on these pages?" ) ) {
