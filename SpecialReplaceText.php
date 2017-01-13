@@ -147,6 +147,9 @@ class SpecialReplaceText extends SpecialPage {
 
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
+					if ( $title == null ) {
+						continue;
+					}
 					$context = $this->extractContext( $row->old_text, $this->target, $this->use_regex );
 					$titles_for_edit[] = array( $title, $context );
 				}
@@ -162,7 +165,10 @@ class SpecialReplaceText extends SpecialPage {
 
 				foreach ( $res as $row ) {
 					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
-					// see if this move can happen
+					if ( $title == null ) {
+						continue;
+					}
+					// See if this move can happen.
 					$cur_page_name = str_replace( '_', ' ', $row->page_title );
 
 					if ( $this->use_regex ) {
@@ -184,8 +190,8 @@ class SpecialReplaceText extends SpecialPage {
 				}
 			}
 
-			// if no results were found, check to see if a bad
-			// category name was entered
+			// If no results were found, check to see if a bad
+			// category name was entered.
 			if ( count( $titles_for_edit ) == 0 && count( $titles_for_move ) == 0 ) {
 				$bad_cat_name = false;
 
@@ -266,7 +272,7 @@ class SpecialReplaceText extends SpecialPage {
 			return;
 		}
 
-		// if we're still here, show the starting form
+		// If we're still here, show the starting form.
 		$this->showForm();
 		wfProfileOut( __METHOD__ );
 	}
