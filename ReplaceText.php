@@ -37,15 +37,15 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 define( 'REPLACE_TEXT_VERSION', '1.2' );
 
 // credits
-$wgExtensionCredits['specialpage'][] = array(
+$wgExtensionCredits['specialpage'][] = [
 	'path' => __FILE__,
 	'name' => 'Replace Text',
 	'version' => REPLACE_TEXT_VERSION,
-	'author' => array( 'Yaron Koren', 'Niklas Laxström', '...' ),
+	'author' => [ 'Yaron Koren', 'Niklas Laxström', '...' ],
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'descriptionmsg' => 'replacetext-desc',
 	'license-name' => 'GPL-2.0+'
-);
+];
 
 $wgMessagesDirs['ReplaceText'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ReplaceText'] = __DIR__ . '/ReplaceText.i18n.php';

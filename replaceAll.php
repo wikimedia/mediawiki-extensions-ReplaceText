@@ -110,7 +110,7 @@ class ReplaceText extends Maintenance {
 		if ( !$ret ) {
 			$this->error( "You have to specify a target.", true );
 		}
-		return array( $ret );
+		return [ $ret ];
 	}
 
 	protected function getReplacement() {
@@ -118,7 +118,7 @@ class ReplaceText extends Maintenance {
 		if ( !$ret ) {
 			$this->error( "You have to specify replacement text.", true );
 		}
-		return array( $ret );
+		return [ $ret ];
 	}
 
 	protected function getReplacements() {
@@ -167,8 +167,8 @@ class ReplaceText extends Maintenance {
 		$msg = wfMessage( 'replacetext_editsummary' )->
 			rawParams( $this->target )->rawParams( $this->replacement );
 		if ( $this->getOption( "summary" ) !== null ) {
-			$msg = str_replace( array( '%f', '%r' ),
-				array( $this->target, $this->replacement ),
+			$msg = str_replace( [ '%f', '%r' ],
+				[ $this->target, $this->replacement ],
 				$this->getOption( "summary" ) );
 		}
 		return $msg;
@@ -207,7 +207,6 @@ regex(p*)	Count the Ps; \\1	true
 
 
 EOF;
-
 	}
 
 	protected function getNamespaces() {
@@ -221,7 +220,7 @@ EOF;
 			$namespaces = array_flip( $canonical );
 			if ( !$nsall ) {
 				$namespaces = array_map(
-					function( $n ) use ( $canonical, $namespaces ) {
+					function ( $n ) use ( $canonical, $namespaces ) {
 						if ( is_numeric( $n ) ) {
 							if ( isset( $canonical[ $n ] ) ) {
 								return intval( $n );
@@ -235,7 +234,7 @@ EOF;
 					}, explode( ",", $ns ) );
 				$namespaces = array_filter(
 					$namespaces,
-					function( $val ) {
+					function ( $val ) {
 						return $val !== null;
 					} );
 			}
@@ -254,12 +253,12 @@ EOF;
 	}
 
 	protected function useRegex() {
-		return array( $this->getOption( "regex" ) );
+		return [ $this->getOption( "regex" ) ];
 	}
 
 	protected function getTitles( $res ) {
 		if ( count( $this->titles ) == 0 ) {
-			$this->titles = array();
+			$this->titles = [];
 			// @codingStandardsIgnoreStart
 			while ( $row = $res->fetchObject() ) {
 			// @codingStandardsIgnoreEnd
@@ -283,13 +282,13 @@ EOF;
 
 	protected function replaceTitles( $res, $target, $replacement, $useRegex ) {
 		foreach ( $this->getTitles( $res ) as $title ) {
-			$param = array(
+			$param = [
 				'target_str'      => $target,
 				'replacement_str' => $replacement,
 				'use_regex'       => $useRegex,
 				'user_id'         => $this->user->getId(),
 				'edit_summary'    => $this->summaryMsg,
-			);
+			];
 			echo "Replacing on $title... ";
 			$job = new ReplaceTextJob( $title, $param, 0 );
 			if ( $job->run() !== true ) {
@@ -338,7 +337,6 @@ EOF;
 		$wgShowExceptionDetails = true;
 
 		if ( $this->localSetup() ) {
-
 			if ( $this->namespaces === [] ) {
 				$this->error( "No matching namespaces.", true );
 			}

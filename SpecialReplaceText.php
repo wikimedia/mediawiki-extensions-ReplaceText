@@ -28,7 +28,7 @@ class SpecialReplaceText extends SpecialPage {
 
 	function getSelectedNamespaces() {
 		$all_namespaces = SearchEngine::searchableNamespaces();
-		$selected_namespaces = array();
+		$selected_namespaces = [];
 		foreach ( $all_namespaces as $ns => $name ) {
 			if ( $this->getRequest()->getCheck( 'ns' . $ns ) ) {
 				$selected_namespaces[] = $ns;
@@ -60,7 +60,7 @@ class SpecialReplaceText extends SpecialPage {
 		if ( $request->getCheck( 'replace' ) ) {
 			global $wgReplaceTextUser;
 
-			$replacement_params = array();
+			$replacement_params = [];
 			if ( $wgReplaceTextUser != null ) {
 				$user = User::newFromName( $wgReplaceTextUser );
 			} else {
@@ -83,7 +83,7 @@ class SpecialReplaceText extends SpecialPage {
 					$replacement_params['watch_page'] = true;
 				}
 			}
-			$jobs = array();
+			$jobs = [];
 			foreach ( $request->getValues() as $key => $value ) {
 				if ( $value == '1' && $key !== 'replace' && $key !== 'use_regex' ) {
 					if ( strpos( $key, 'move-' ) !== false ) {
@@ -131,9 +131,9 @@ class SpecialReplaceText extends SpecialPage {
 				return;
 			}
 
-			$titles_for_edit = array();
-			$titles_for_move = array();
-			$unmoveable_titles = array();
+			$titles_for_edit = [];
+			$titles_for_move = [];
+			$unmoveable_titles = [];
 
 			// if user is replacing text within pages...
 			if ( $this->edit_pages ) {
@@ -151,7 +151,7 @@ class SpecialReplaceText extends SpecialPage {
 						continue;
 					}
 					$context = $this->extractContext( $row->old_text, $this->target, $this->use_regex );
-					$titles_for_edit[] = array( $title, $context );
+					$titles_for_edit[] = [ $title, $context ];
 				}
 			}
 			if ( $this->move_pages ) {
@@ -285,11 +285,11 @@ class SpecialReplaceText extends SpecialPage {
 		$out->addHTML(
 			Xml::openElement(
 				'form',
-				array(
+				[
 					'id' => 'powersearch',
 					'action' => $this->getTitle()->getFullUrl(),
 					'method' => 'post'
-				)
+				]
 			) . "\n" .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Html::hidden( 'continue', 1 )
@@ -310,13 +310,13 @@ class SpecialReplaceText extends SpecialPage {
 		// normal 'width: 100%', which causes the textarea to get
 		// zero width in IE
 		$out->addHTML(
-			Xml::textarea( 'target', $this->target, 100, 5, array( 'style' => 'width: auto;' ) )
+			Xml::textarea( 'target', $this->target, 100, 5, [ 'style' => 'width: auto;' ] )
 		);
 		$out->addHTML( '</td></tr><tr><td style="vertical-align: top;">' );
 		$out->addWikiMsg( 'replacetext_replacementtext' );
 		$out->addHTML( '</td><td>' );
 		$out->addHTML(
-			Xml::textarea( 'replacement', $this->replacement, 100, 5, array( 'style' => 'width: auto;' ) )
+			Xml::textarea( 'replacement', $this->replacement, 100, 5, [ 'style' => 'width: auto;' ] )
 		);
 		$out->addHTML( '</td></tr></table>' );
 		$out->addHTML( Xml::tags( 'p', null,
@@ -326,7 +326,7 @@ class SpecialReplaceText extends SpecialPage {
 				)
 			) . "\n" .
 			Xml::element( 'p',
-				array( 'style' => 'font-style: italic' ),
+				[ 'style' => 'font-style: italic' ],
 				$this->msg( 'replacetext_regexdocu' )->text()
 			)
 		);
@@ -351,40 +351,40 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addHTML(
 				Html::element(
 					'div',
-					array( 'id' => 'mw-search-togglebox' )
+					[ 'id' => 'mw-search-togglebox' ]
 				)
 			);
 		} else { // MW <= 1.19
 			$out->addHTML(
 				Xml::tags(
 					'div',
-					array( 'id' => 'mw-search-togglebox' ),
+					[ 'id' => 'mw-search-togglebox' ],
 					Xml::label( $this->msg( 'powersearch-togglelabel' )->text(), 'mw-search-togglelabel' ) .
 					Xml::element(
 						'input',
-						array(
+						[
 							'type'=>'button',
 							'id' => 'mw-search-toggleall',
 							// 'onclick' value needed for MW 1.16
 							'onclick' => 'mwToggleSearchCheckboxes("all");',
 							'value' => $this->msg( 'powersearch-toggleall' )->text()
-						)
+						]
 					) .
 					Xml::element(
 						'input',
-						array(
+						[
 							'type'=>'button',
 							'id' => 'mw-search-togglenone',
 							// 'onclick' value needed for MW 1.16
 							'onclick' => 'mwToggleSearchCheckboxes("none");',
 							'value' => $this->msg( 'powersearch-togglenone' )->text()
-						)
+						]
 					)
 				)
 			);
 		} // end if
 		$out->addHTML(
-			Xml::element( 'div', array( 'class' => 'divider' ), '', false ) .
+			Xml::element( 'div', [ 'class' => 'divider' ], '', false ) .
 			"$tables\n</fieldset>"
 		);
 		// @todo FIXME: raw html messages
@@ -393,11 +393,11 @@ class SpecialReplaceText extends SpecialPage {
 		$out->addHTML(
 			"<fieldset id=\"mw-searchoptions\">\n" .
 			Xml::tags( 'h4', null, $this->msg( 'replacetext_optionalfilters' )->parse() ) .
-			Xml::element( 'div', array( 'class' => 'divider' ), '', false ) .
+			Xml::element( 'div', [ 'class' => 'divider' ], '', false ) .
 			"<p>$category_search_label\n" .
-			Xml::input( 'category', 20, $this->category, array( 'type' => 'text' ) ) . '</p>' .
+			Xml::input( 'category', 20, $this->category, [ 'type' => 'text' ] ) . '</p>' .
 			"<p>$prefix_search_label\n" .
-			Xml::input( 'prefix', 20, $this->prefix, array( 'type' => 'text' ) ) . '</p>' .
+			Xml::input( 'prefix', 20, $this->prefix, [ 'type' => 'text' ] ) . '</p>' .
 			"</fieldset>\n" .
 			"<p>\n" .
 			Xml::checkLabel(
@@ -420,7 +420,7 @@ class SpecialReplaceText extends SpecialPage {
 		global $wgContLang;
 		// Group namespaces into rows according to subject.
 		// Try not to make too many assumptions about namespace numbering.
-		$rows = array();
+		$rows = [];
 		$tables = "";
 		foreach ( $namespaces as $ns => $name ) {
 			$subj = MWNamespace::getSubject( $ns );
@@ -431,7 +431,7 @@ class SpecialReplaceText extends SpecialPage {
 			if ( '' == $name ) {
 				$name = $this->msg( 'blanknamespace' )->text();
 			}
-			$rows[$subj] .= Xml::openElement( 'td', array( 'style' => 'white-space: nowrap' ) ) .
+			$rows[$subj] .= Xml::openElement( 'td', [ 'style' => 'white-space: nowrap' ] ) .
 				Xml::checkLabel( $name, "ns{$ns}", "mw-search-ns{$ns}", in_array( $ns, $namespaces ) ) .
 				Xml::closeElement( 'td' ) . "\n";
 		}
@@ -444,7 +444,7 @@ class SpecialReplaceText extends SpecialPage {
 			'float: right; margin: 0 0 0em 1em' : 'float: left; margin: 0 1em 0em 0';
 		// Build the final HTML table...
 		for ( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
-			$tables .= Xml::openElement( 'table', array( 'style' => $tableStyle ) );
+			$tables .= Xml::openElement( 'table', [ 'style' => $tableStyle ] );
 			for ( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
 				$tables .= "<tr>\n" . $rows[$j] . "</tr>";
 			}
@@ -458,11 +458,11 @@ class SpecialReplaceText extends SpecialPage {
 
 		$out = $this->getOutput();
 
-		$formOpts = array(
+		$formOpts = [
 			'id' => 'choose_pages',
 			'method' => 'post',
 			'action' => $this->getTitle()->getFullUrl()
-		);
+		];
 		$out->addHTML(
 			Xml::openElement( 'form', $formOpts ) . "\n" .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
@@ -533,11 +533,11 @@ class SpecialReplaceText extends SpecialPage {
 		// Only show "invert selections" link if there are more than
 		// five pages.
 		if ( count( $titles_for_edit ) + count( $titles_for_move ) > 5 ) {
-			$buttonOpts = array(
+			$buttonOpts = [
 				'type' => 'button',
 				'value' => $this->msg( 'replacetext_invertselections' )->text(),
 				'onclick' => 'invertSelections(); return false;'
-			);
+			];
 
 			$out->addHTML(
 				Xml::element( 'input', $buttonOpts )
@@ -576,12 +576,12 @@ class SpecialReplaceText extends SpecialPage {
 			preg_match_all( "/$targetq/", $text, $matches, PREG_OFFSET_CAPTURE );
 		}
 
-		$poss = array();
+		$poss = [];
 		foreach ( $matches[0] as $_ ) {
 			$poss[] = $_[1];
 		}
 
-		$cuts = array();
+		$cuts = [];
 		// @codingStandardsIgnoreStart
 		for ( $i = 0; $i < count( $poss ); $i++ ) {
 		// @codingStandardsIgnoreEnd
@@ -597,7 +597,7 @@ class SpecialReplaceText extends SpecialPage {
 					break; // Can't merge, exit the inner loop
 				}
 			}
-			$cuts[] = array( $index, $len );
+			$cuts[] = [ $index, $len ];
 		}
 
 		$context = '';
@@ -635,8 +635,8 @@ class SpecialReplaceText extends SpecialPage {
 	function getMatchingTitles( $str, $namespaces, $category, $prefix, $use_regex = false ) {
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$tables = array( 'page' );
-		$vars = array( 'page_title', 'page_namespace' );
+		$tables = [ 'page' ];
+		$vars = [ 'page_title', 'page_namespace' ];
 
 		$str = str_replace( ' ', '_', $str );
 		if ( $use_regex ) {
@@ -645,14 +645,14 @@ class SpecialReplaceText extends SpecialPage {
 			$any = $dbr->anyString();
 			$comparisonCond = 'page_title ' . $dbr->buildLike( $any, $str, $any );
 		}
-		$conds = array(
+		$conds = [
 			$comparisonCond,
 			'page_namespace' => $namespaces,
-		);
+		];
 
 		ReplaceTextSearch::categoryCondition( $category, $tables, $conds );
 		ReplaceTextSearch::prefixCondition( $prefix, $conds );
-		$sort = array( 'ORDER BY' => 'page_namespace, page_title' );
+		$sort = [ 'ORDER BY' => 'page_namespace, page_title' ];
 
 		return $dbr->select( $tables, $vars, $conds, __METHOD__, $sort );
 	}
