@@ -48,7 +48,6 @@ $wgExtensionCredits['specialpage'][] = [
 ];
 
 $wgMessagesDirs['ReplaceText'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['ReplaceText'] = __DIR__ . '/ReplaceText.i18n.php';
 $wgExtensionMessagesFiles['ReplaceTextAlias'] = __DIR__ . '/ReplaceText.alias.php';
 $wgJobClasses['replaceText'] = 'ReplaceTextJob';
 
