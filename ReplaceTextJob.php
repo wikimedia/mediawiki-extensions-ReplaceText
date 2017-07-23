@@ -14,7 +14,7 @@ class ReplaceTextJob extends Job {
 
 	/**
 	 * Run a replaceText job
-	 * @return boolean success
+	 * @return bool success
 	 */
 	function run() {
 		wfProfileIn( __METHOD__ );
