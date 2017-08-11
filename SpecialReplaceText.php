@@ -363,7 +363,7 @@ class SpecialReplaceText extends SpecialPage {
 					Xml::element(
 						'input',
 						[
-							'type'=>'button',
+							'type' => 'button',
 							'id' => 'mw-search-toggleall',
 							// 'onclick' value needed for MW 1.16
 							'onclick' => 'mwToggleSearchCheckboxes("all");',
@@ -373,7 +373,7 @@ class SpecialReplaceText extends SpecialPage {
 					Xml::element(
 						'input',
 						[
-							'type'=>'button',
+							'type' => 'button',
 							'id' => 'mw-search-togglenone',
 							// 'onclick' value needed for MW 1.16
 							'onclick' => 'mwToggleSearchCheckboxes("none");',
