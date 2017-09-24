@@ -4,7 +4,7 @@ class ReplaceTextSearch {
 	public static function doSearchQuery(
 		$search, $namespaces, $category, $prefix, $use_regex = false
 	) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$tables = [ 'page', 'revision', 'text' ];
 		$vars = [ 'page_id', 'page_namespace', 'page_title', 'old_text' ];
 		if ( $use_regex ) {
@@ -41,7 +41,7 @@ class ReplaceTextSearch {
 			return;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$title = Title::newFromText( $prefix );
 		if ( !is_null( $title ) ) {
 			$prefix = $title->getDbKey();

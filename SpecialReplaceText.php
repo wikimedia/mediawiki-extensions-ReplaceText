@@ -633,7 +633,7 @@ class SpecialReplaceText extends SpecialPage {
 	}
 
 	function getMatchingTitles( $str, $namespaces, $category, $prefix, $use_regex = false ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$tables = [ 'page' ];
 		$vars = [ 'page_title', 'page_namespace' ];
