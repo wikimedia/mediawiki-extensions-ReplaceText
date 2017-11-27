@@ -278,8 +278,6 @@ class SpecialReplaceText extends SpecialPage {
 	}
 
 	function showForm( $warning_msg = null ) {
-		global $wgVersion;
-
 		$out = $this->getOutput();
 
 		$out->addHTML(
@@ -345,44 +343,14 @@ class SpecialReplaceText extends SpecialPage {
 		// message to see if we can use this functionality here.
 		if ( $this->msg( 'powersearch-togglelabel' )->isDisabled() ) {
 			// do nothing
-		} elseif ( version_compare( $wgVersion, '1.20', '>=' ) ) {
-			// In MediaWiki 1.20, this became a lot simpler after
-			// the main work was passed off to Javascript
+		} else {
 			$out->addHTML(
 				Html::element(
 					'div',
 					[ 'id' => 'mw-search-togglebox' ]
 				)
 			);
-		} else { // MW <= 1.19
-			$out->addHTML(
-				Xml::tags(
-					'div',
-					[ 'id' => 'mw-search-togglebox' ],
-					Xml::label( $this->msg( 'powersearch-togglelabel' )->text(), 'mw-search-togglelabel' ) .
-					Xml::element(
-						'input',
-						[
-							'type' => 'button',
-							'id' => 'mw-search-toggleall',
-							// 'onclick' value needed for MW 1.16
-							'onclick' => 'mwToggleSearchCheckboxes("all");',
-							'value' => $this->msg( 'powersearch-toggleall' )->text()
-						]
-					) .
-					Xml::element(
-						'input',
-						[
-							'type' => 'button',
-							'id' => 'mw-search-togglenone',
-							// 'onclick' value needed for MW 1.16
-							'onclick' => 'mwToggleSearchCheckboxes("none");',
-							'value' => $this->msg( 'powersearch-togglenone' )->text()
-						]
-					)
-				)
-			);
-		} // end if
+		}
 		$out->addHTML(
 			Xml::element( 'div', [ 'class' => 'divider' ], '', false ) .
 			"$tables\n</fieldset>"
