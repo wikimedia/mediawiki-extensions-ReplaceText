@@ -2,8 +2,8 @@
 
 class SpecialReplaceText extends SpecialPage {
 	private $target, $replacement, $use_regex,
-	$category, $prefix, $edit_pages, $move_pages,
-	$selected_namespaces;
+		$category, $prefix, $edit_pages, $move_pages,
+		$selected_namespaces, $doAnnounce;
 
 	public function __construct() {
 		parent::__construct( 'ReplaceText', 'replacetext' );
@@ -48,6 +48,7 @@ class SpecialReplaceText extends SpecialPage {
 		$this->prefix = $request->getText( 'prefix' );
 		$this->edit_pages = $request->getBool( 'edit_pages' );
 		$this->move_pages = $request->getBool( 'move_pages' );
+		$this->doAnnounce = $request->getBool( 'doAnnounce' );
 		$this->selected_namespaces = $this->getSelectedNamespaces();
 
 		if ( $request->getCheck( 'continue' ) && $this->target === '' ) {
@@ -74,6 +75,7 @@ class SpecialReplaceText extends SpecialPage {
 			)->inContentLanguage()->plain();
 			$replacement_params['create_redirect'] = false;
 			$replacement_params['watch_page'] = false;
+			$replacement_params['doAnnounce'] = $this->doAnnounce;
 			foreach ( $request->getValues() as $key => $value ) {
 				if ( $key == 'create-redirect' && $value == '1' ) {
 					$replacement_params['create_redirect'] = true;
@@ -371,7 +373,12 @@ class SpecialReplaceText extends SpecialPage {
 			Xml::checkLabel(
 				$this->msg( 'replacetext_editpages' )->text(), 'edit_pages', 'edit_pages', true
 			) . '<br />' .
-			Xml::checkLabel( $this->msg( 'replacetext_movepages' )->text(), 'move_pages', 'move_pages' ) .
+			Xml::checkLabel(
+				$this->msg( 'replacetext_movepages' )->text(), 'move_pages', 'move_pages'
+			) . '<br />' .
+			Xml::checkLabel(
+				$this->msg( 'replacetext_announce' )->text(), 'doAnnounce', 'doAnnounce', true
+			) .
 			"</p>\n" .
 			Xml::submitButton( $this->msg( 'replacetext_continue' )->text() ) .
 			Xml::closeElement( 'form' )
@@ -442,6 +449,7 @@ class SpecialReplaceText extends SpecialPage {
 			Html::hidden( 'use_regex', $this->use_regex ) .
 			Html::hidden( 'move_pages', $this->move_pages ) .
 			Html::hidden( 'edit_pages', $this->edit_pages ) .
+			Html::hidden( 'doAnnounce', $this->doAnnounce ) .
 			Html::hidden( 'replace', 1 )
 		);
 
@@ -490,8 +498,11 @@ class SpecialReplaceText extends SpecialPage {
 					$this->msg( 'replacetext_savemovedpages' )->text(),
 						'create-redirect', 'create-redirect', true ) . "<br />\n" .
 				Xml::checkLabel(
-					$this->msg( 'replacetext_watchmovedpages' )->text(), 'watch-pages', 'watch-pages', false
-				)
+					$this->msg( 'replacetext_watchmovedpages' )->text(),
+					'watch-pages', 'watch-pages', false ) . '<br />' .
+				Xml::checkLabel(
+					$this->msg( 'replacetext_announce' )->text(),
+					'doAnnounce', 'doAnnounce', true ) . '<br />'
 			);
 			$out->addHTML( '<br />' );
 		}

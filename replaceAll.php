@@ -4,7 +4,7 @@
  * Insert jobs into the job queue to replace text bits.
  * Or execute immediately... your choice.
  *
- * Copyright © 2014 Mark A. Hershberger <mah@nichework.com>
+ * Copyright © 2014 NicheWork, LLC
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,11 +32,15 @@
  *
  */
 // @codingStandardsIgnoreStart
-require_once ( dirname( __FILE__ ) . '/../../maintenance/Maintenance.php' );
+$IP = getenv( "MW_INSTALL_PATH" ) ? getenv( "MW_INSTALL_PATH" ) : "../..";
+if ( !is_readable( "$IP/maintenance/Maintenance.php" ) ) {
+	die( "MW_INSTALL_PATH needs to be set to your MediaWiki installation.\n" );
+}
+require_once ( "$IP/maintenance/Maintenance.php" );
 // @codingStandardsIgnoreEnd
 
 /**
- * Maintenance script that generates a plaintext link dump.
+ * Maintenance script that replaces text in pages
  *
  * @ingroup Maintenance
  * @SuppressWarnings(StaticAccess)
@@ -53,6 +57,7 @@ class ReplaceText extends Maintenance {
 	protected $useRegex;
 	protected $titles;
 	protected $defaultContinue;
+	protected $doAnnounce;
 
 	public function __construct() {
 		parent::__construct();
@@ -75,16 +80,16 @@ class ReplaceText extends Maintenance {
 			false, true, 's' );
 		$this->addOption( "nsall", "Search all canonical namespaces (false). " .
 			"If true, this option overrides the ns option.", false, false, 'a' );
-		$this->addOption( "ns", "Comma separated namespaces to search in (Main) .",
-			false, true );
-		$this->addOption( "replacements", "File containing the list of replacements to " .
-			"be made.  Fields in the file are tab-separated.  See --show-file-format " .
-			"for more information.",
-			false, true, "f" );
-		$this->addOption( "show-file-format", "Show a description of the file format to ".
-			"use with --replacements.", false, false );
+		$this->addOption( "ns", "Comma separated namespaces to search in " .
+			"(Main) .", false, true );
+		$this->addOption( "replacements", "File containing the list of " .
+			"replacements to be made.  Fields in the file are tab-separated. " .
+			"See --show-file-format for more information.", false, true, "f" );
+		$this->addOption( "show-file-format", "Show a description of the " .
+			"file format to use with --replacements.", false, false );
+		$this->addOption( "no-announce", "Do not announce edits on Special:RecentChanges or " .
+			"watchlists.", false, false, "m" );
 		$this->addOption( "debug", "Display replacements being made.", false, false );
-
 		$this->addOption( "listns", "List out the namespaces on this wiki.",
 			false, false );
 
@@ -133,7 +138,8 @@ class ReplaceText extends Maintenance {
 		}
 
 		if ( !is_readable( $file ) ) {
-			throw new MWException( "File does not exist or is not readable: $file\n" );
+			throw new MWException( "File does not exist or is not readable: "
+				. "$file\n" );
 		}
 
 		$handle = fopen( $file, "r" );
@@ -262,11 +268,9 @@ EOF;
 	}
 
 	protected function getTitles( $res ) {
-		if ( count( $this->titles ) == 0 ) {
+		if ( !$this->titles || count( $this->titles ) == 0 ) {
 			$this->titles = [];
-			// @codingStandardsIgnoreStart
-			while ( $row = $res->fetchObject() ) {
-			// @codingStandardsIgnoreEnd
+			foreach ( $res as $row ) {
 				$this->titles[] = Title::makeTitleSafe(
 					$row->page_namespace,
 					$row->page_title
@@ -293,6 +297,7 @@ EOF;
 				'use_regex'       => $useRegex,
 				'user_id'         => $this->user->getId(),
 				'edit_summary'    => $this->summaryMsg,
+				'doAnnounce'        => $this->doAnnounce
 			];
 			echo "Replacing on $title... ";
 			$job = new ReplaceTextJob( $title, $param, 0 );
@@ -341,6 +346,7 @@ EOF;
 		global $wgShowExceptionDetails;
 		$wgShowExceptionDetails = true;
 
+		$this->doAnnounce = true;
 		if ( $this->localSetup() ) {
 			if ( $this->namespaces === [] ) {
 				$this->error( "No matching namespaces.", true );
@@ -359,7 +365,8 @@ EOF;
 					echo "\n";
 				}
 				$res = ReplaceTextSearch::doSearchQuery( $target,
-					$this->namespaces, $this->category, $this->prefix, $useRegex );
+					$this->namespaces, $this->category, $this->prefix,
+					$useRegex );
 
 				if ( $res->numRows() === 0 ) {
 					$this->error( "No targets found to replace.", true );
@@ -368,8 +375,11 @@ EOF;
 					$this->listTitles( $res );
 					return;
 				}
-				if ( !$this->shouldContinueByDefault() && $this->listTitles( $res ) ) {
-					if ( !$this->getReply( "Replace instances on these pages?" ) ) {
+				if ( !$this->shouldContinueByDefault() &&
+					 $this->listTitles( $res ) ) {
+					if ( !$this->getReply(
+						"Replace instances on these pages?"
+					) ) {
 						return;
 					}
 				}
@@ -377,11 +387,18 @@ EOF;
 				if ( $this->getOption( "user", null ) === null ) {
 					$comment = " (Use --user to override)";
 				}
-				if ( !$this->getReply( "Attribute changes to the user '{$this->user}'?$comment" ) ) {
+				if ( $this->getOption( "no-announce", false ) ) {
+					$this->doAnnounce = false;
+				}
+				if ( !$this->getReply(
+					"Attribute changes to the user '{$this->user}'?$comment"
+				) ) {
 					return;
 				}
 				if ( $res->numRows() > 0 ) {
-					$this->replaceTitles( $res, $target, $replacement, $useRegex );
+					$this->replaceTitles(
+						$res, $target, $replacement, $useRegex
+					);
 				}
 			}
 		}

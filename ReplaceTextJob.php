@@ -95,6 +95,11 @@ class ReplaceTextJob extends Job {
 				if ( $wgUser->isAllowed( 'bot' ) ) {
 					$flags |= EDIT_FORCE_BOT;
 				}
+				if ( isset( $this->params['doAnnounce'] ) &&
+					 !$this->params['doAnnounce'] ) {
+					$flags |= EDIT_SUPPRESS_RC;
+					# fixme log this action
+				}
 				$new_content = new WikitextContent( $new_text );
 				$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
 				$wgUser = $actual_user;
