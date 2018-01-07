@@ -383,6 +383,9 @@ class SpecialReplaceText extends SpecialPage {
 	/**
 	 * Copied almost exactly from MediaWiki's SpecialSearch class, i.e.
 	 * the search page
+	 * @param string[] $namespaces
+	 * @param int $rowsPerTable
+	 * @return string HTML
 	 */
 	function namespaceTables( $namespaces, $rowsPerTable = 3 ) {
 		global $wgContLang;
@@ -529,6 +532,10 @@ class SpecialReplaceText extends SpecialPage {
 	 * Extract context and highlights search text
 	 *
 	 * @todo The bolding needs to be fixed for regular expressions.
+	 * @param string $text
+	 * @param string $target
+	 * @param bool $use_regex
+	 * @return string
 	 */
 	function extractContext( $text, $target, $use_regex = false ) {
 		global $wgLang;
