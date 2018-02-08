@@ -34,7 +34,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die();
 }
 
-define( 'REPLACE_TEXT_VERSION', '1.2' );
+define( 'REPLACE_TEXT_VERSION', '1.3' );
 
 // credits
 $wgExtensionCredits['specialpage'][] = [
