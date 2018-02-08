@@ -88,7 +88,10 @@ class ReplaceText extends Maintenance {
 		$this->addOption( "listns", "List out the namespaces on this wiki.",
 			false, false );
 
-		$this->requireExtension( 'Replace Text' );
+		// MW 1.28
+		if ( method_exists( $this, 'requireExtension' ) ) {
+			$this->requireExtension( 'Replace Text' );
+		}
 	}
 
 	protected function getUser() {
