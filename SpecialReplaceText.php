@@ -235,6 +235,11 @@ class SpecialReplaceText extends SpecialPage {
 
 				if ( $this->replacement === '' ) {
 					$warning_msg = $this->msg( 'replacetext_blankwarning' )->text();
+				} elseif ( $this->use_regex ) {
+					// If it's a regex, don't bother
+					// checking for existing pages - if
+					// the replacement string includes
+					// wildcards, it's a meaningless check.
 				} elseif ( count( $titles_for_edit ) > 0 ) {
 					$res = ReplaceTextSearch::doSearchQuery(
 						$this->replacement,
