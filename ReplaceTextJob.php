@@ -17,11 +17,8 @@ class ReplaceTextJob extends Job {
 	 * @return bool success
 	 */
 	function run() {
-		wfProfileIn( __METHOD__ );
-
 		if ( is_null( $this->title ) ) {
 			$this->error = "replaceText: Invalid title";
-			wfProfileOut( __METHOD__ );
 			return false;
 		}
 
@@ -56,7 +53,6 @@ class ReplaceTextJob extends Job {
 			if ( $this->title->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
 				$this->error = 'replaceText: Wiki page "' .
 					$this->title->getPrefixedDBkey() . '" does not hold regular wikitext.';
-				wfProfileOut( __METHOD__ );
 				return false;
 			}
 			$wikiPage = new WikiPage( $this->title );
@@ -64,19 +60,16 @@ class ReplaceTextJob extends Job {
 			if ( !$wikiPage ) {
 				$this->error =
 					'replaceText: Wiki page not found for "' . $this->title->getPrefixedDBkey() . '."';
-				wfProfileOut( __METHOD__ );
 				return false;
 			}
 			$wikiPageContent = $wikiPage->getContent();
 			if ( is_null( $wikiPageContent ) ) {
 				$this->error =
 					'replaceText: No contents found for wiki page at "' . $this->title->getPrefixedDBkey() . '."';
-				wfProfileOut( __METHOD__ );
 				return false;
 			}
 			$article_text = $wikiPageContent->getNativeData();
 
-			wfProfileIn( __METHOD__ . '-replace' );
 			$target_str = $this->params['target_str'];
 			$replacement_str = $this->params['replacement_str'];
 			$num_matches = 0;
@@ -106,9 +99,7 @@ class ReplaceTextJob extends Job {
 				$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
 				$wgUser = $actual_user;
 			}
-			wfProfileOut( __METHOD__ . '-replace' );
 		}
-		wfProfileOut( __METHOD__ );
 		return true;
 	}
 }

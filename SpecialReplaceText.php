@@ -38,7 +38,6 @@ class SpecialReplaceText extends SpecialPage {
 	}
 
 	function doSpecialReplaceText() {
-		wfProfileIn( __METHOD__ );
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 
@@ -53,7 +52,6 @@ class SpecialReplaceText extends SpecialPage {
 
 		if ( $request->getCheck( 'continue' ) && $this->target === '' ) {
 			$this->showForm( 'replacetext_givetarget' );
-			wfProfileOut( __METHOD__ );
 			return;
 		}
 
@@ -114,7 +112,6 @@ class SpecialReplaceText extends SpecialPage {
 					$this->msg( 'replacetext_return' )->escaped() )
 			);
 
-			wfProfileOut( __METHOD__ );
 			return;
 		} elseif ( $request->getCheck( 'target' ) ) { // very long elseif, look for "end elseif"
 			// first, check that at least one namespace has been
@@ -122,12 +119,10 @@ class SpecialReplaceText extends SpecialPage {
 			// has been selected
 			if ( count( $this->selected_namespaces ) == 0 ) {
 				$this->showForm( 'replacetext_nonamespace' );
-				wfProfileOut( __METHOD__ );
 				return;
 			}
 			if ( ! $this->edit_pages && ! $this->move_pages ) {
 				$this->showForm( 'replacetext_editormove' );
-				wfProfileOut( __METHOD__ );
 				return;
 			}
 
@@ -273,13 +268,11 @@ class SpecialReplaceText extends SpecialPage {
 
 				$this->pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles );
 			}
-			wfProfileOut( __METHOD__ );
 			return;
 		}
 
 		// If we're still here, show the starting form.
 		$this->showForm();
-		wfProfileOut( __METHOD__ );
 	}
 
 	function showForm( $warning_msg = null ) {
@@ -545,7 +538,6 @@ class SpecialReplaceText extends SpecialPage {
 	function extractContext( $text, $target, $use_regex = false ) {
 		global $wgLang;
 
-		wfProfileIn( __METHOD__ );
 		$cw = $this->getUser()->getOption( 'contextchars', 40 );
 
 		// Get all indexes
@@ -599,7 +591,6 @@ class SpecialReplaceText extends SpecialPage {
 				$wgLang->truncate( substr( $text, $index + $len ), $cw, '...', false )
 			);
 		}
-		wfProfileOut( __METHOD__ );
 		return $context;
 	}
 
