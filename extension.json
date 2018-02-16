@@ -41,6 +41,9 @@
 	"Hooks": {
 		"AdminLinks": [
 			"ReplaceTextHooks::addToAdminLinks"
+		],
+		"SpecialMovepageAfterMove": [
+			"ReplaceTextHooks::replaceTextReminder"
 		]
 	},
 	"config": {

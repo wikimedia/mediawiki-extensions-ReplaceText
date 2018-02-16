@@ -37,5 +37,6 @@
 	"replacetext_continue": "Continue",
 	"replacetext_editsummary": "Text replacement - \"$1\" to \"$2\"",
 	"right-replacetext": "Make string replacements on the entire wiki",
-	"action-replacetext": "make string replacements on the entire wiki"
+	"action-replacetext": "make string replacements on the entire wiki",
+	"replacetext_reminder": "To also modify links to this page in other pages, go to $1."
 }

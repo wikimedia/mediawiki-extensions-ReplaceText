@@ -17,5 +17,20 @@ class ReplaceTextHooks {
 
 		return true;
 	}
-
+	/**
+	 * Adds link to ReplaceText page at the end of successful regular page move message
+	 *
+	 * @param FormLayout &$form MovePageForm
+	 * @param Title &$ot Title object of the old article (moved from)
+	 * @param Title &$nt Title object of the new article (moved to)
+	 * @return bool
+	 */
+	public static function replaceTextReminder( &$form, &$ot , &$nt ) {
+		$out = $form->getOutput();
+		$page = SpecialPageFactory::getPage( 'ReplaceText' );
+		$pageLink = Linker::linkKnown( $page->getTitle() );
+		$out->addHTML( $form->msg( 'replacetext_reminder' )
+			->rawParams( $pageLink )->inContentLanguage()->parseAsBlock() );
+		return true;
+	}
 }
