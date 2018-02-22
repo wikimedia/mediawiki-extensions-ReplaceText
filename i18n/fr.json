@@ -47,5 +47,6 @@
 	"replacetext_continue": "Continuer",
 	"replacetext_editsummary": "Remplacement de texte — « $1 » par « $2 »",
 	"right-replacetext": "Faire des remplacements de texte dans tout le wiki",
-	"action-replacetext": "faire les remplacements de la chaîne dans tout le wiki"
+	"action-replacetext": "faire les remplacements de la chaîne dans tout le wiki",
+	"replacetext_reminder": "Pour modifier aussi les liens vers cette page dans d’autres pages, allez en $1."
 }

@@ -37,5 +37,6 @@
 	"replacetext_continue": "Продолжи",
 	"replacetext_editsummary": "Замена на текст — „$1“ со „$2“",
 	"right-replacetext": "Вршење замена на низи во целото вики",
-	"action-replacetext": "вршење замена на низи во целото вики"
+	"action-replacetext": "вршење замена на низи во целото вики",
+	"replacetext_reminder": "За воедно да ги измените до оваа страница на други страници, појдете на $1."
 }

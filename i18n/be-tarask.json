@@ -41,5 +41,6 @@
 	"replacetext_continue": "Працягваць",
 	"replacetext_editsummary": "Замена тэксту — «$1» на «$2»",
 	"right-replacetext": "замена тэксту ва ўсёй вікі",
-	"action-replacetext": "замяняць радкі ва ўсёй вікі"
+	"action-replacetext": "замяняць радкі ва ўсёй вікі",
+	"replacetext_reminder": "Каб таксама зьмяніць спасылкі на гэтую старонку зь іншых старонак, перайдзіце на $1."
 }
