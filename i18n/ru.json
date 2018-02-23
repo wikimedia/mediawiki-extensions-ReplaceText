@@ -9,7 +9,8 @@
 			"Okras",
 			"Rubin",
 			"Rubin16",
-			"Александр Сигачёв"
+			"Александр Сигачёв",
+			"Mouse21"
 		]
 	},
 	"replacetext": "Заменить текст",
@@ -45,5 +46,6 @@
 	"replacetext_continue": "Продолжить",
 	"replacetext_editsummary": "Замена текста — «$1» на «$2»",
 	"right-replacetext": "выполнение замен текста во всей вики",
-	"action-replacetext": "замену строк по всему проекту"
+	"action-replacetext": "замену строк по всему проекту",
+	"replacetext_reminder": "Чтобы изменить ссылки на эту страницу на других страницах, перейдите к $1."
 }
