@@ -44,7 +44,7 @@ $wgExtensionCredits['specialpage'][] = [
 	'author' => [ 'Yaron Koren', 'Niklas Laxström', '...' ],
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Replace_Text',
 	'descriptionmsg' => 'replacetext-desc',
-	'license-name' => 'GPL-2.0+'
+	'license-name' => 'GPL-2.0-or-later'
 ];
 
 $wgMessagesDirs['ReplaceText'] = __DIR__ . '/i18n';
