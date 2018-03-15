@@ -28,7 +28,7 @@ class ReplaceTextHooks {
 	public static function replaceTextReminder( &$form, &$ot , &$nt ) {
 		$out = $form->getOutput();
 		$page = SpecialPageFactory::getPage( 'ReplaceText' );
-		$pageLink = Linker::linkKnown( $page->getTitle() );
+		$pageLink = Linker::linkKnown( $page->getPageTitle() );
 		$out->addHTML( $form->msg( 'replacetext_reminder' )
 			->rawParams( $pageLink )->inContentLanguage()->parseAsBlock() );
 		return true;

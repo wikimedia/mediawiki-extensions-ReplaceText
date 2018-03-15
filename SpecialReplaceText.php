@@ -108,8 +108,10 @@ class SpecialReplaceText extends SpecialPage {
 
 			// Link back
 			$out->addHTML(
-				Linker::link( $this->getTitle(),
-					$this->msg( 'replacetext_return' )->escaped() )
+				Linker::link(
+					$this->getPageTitle(),
+					$this->msg( 'replacetext_return' )->escaped()
+				)
 			);
 
 			return;
@@ -217,7 +219,7 @@ class SpecialReplaceText extends SpecialPage {
 				$out->addHTML(
 					'<p>' .
 					Linker::link(
-					$this->getTitle(),
+					$this->getPageTitle(),
 					$this->msg( 'replacetext_return' )->escaped() )
 					. '</p>'
 				);
@@ -283,11 +285,11 @@ class SpecialReplaceText extends SpecialPage {
 				'form',
 				[
 					'id' => 'powersearch',
-					'action' => $this->getTitle()->getFullUrl(),
+					'action' => $this->getPageTitle()->getFullURL(),
 					'method' => 'post'
 				]
 			) . "\n" .
-			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'continue', 1 )
 		);
 		if ( is_null( $warning_msg ) ) {
@@ -430,11 +432,11 @@ class SpecialReplaceText extends SpecialPage {
 		$formOpts = [
 			'id' => 'choose_pages',
 			'method' => 'post',
-			'action' => $this->getTitle()->getFullUrl()
+			'action' => $this->getPageTitle()->getFullUrl()
 		];
 		$out->addHTML(
 			Xml::openElement( 'form', $formOpts ) . "\n" .
-			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'target', $this->target ) .
 			Html::hidden( 'replacement', $this->replacement ) .
 			Html::hidden( 'use_regex', $this->use_regex ) .
