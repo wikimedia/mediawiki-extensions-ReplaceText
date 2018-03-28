@@ -41,6 +41,7 @@
 	"replacetext_warning": "'''警告：'''有{{PLURAL:$1|$1个页面已经包含}}替换字符串“$2”。如果您进行此次替换，您将无法从这些字符串中分离您的替换文字。",
 	"replacetext_blankwarning": "'''警告：'''因为替换字串为空，此次操作将不可逆。",
 	"replacetext_continue": "继续",
+	"replacetext_announce": "通过Special:RecentChanges和监视列表通知这些编辑。",
 	"replacetext_editsummary": "文本替换 - 替换“$1”为“$2”",
 	"right-replacetext": "在整个wiki进行字符串替换",
 	"action-replacetext": "在整个wiki进行字符串替换",
