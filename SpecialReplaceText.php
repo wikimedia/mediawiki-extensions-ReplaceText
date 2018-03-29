@@ -360,6 +360,8 @@ class SpecialReplaceText extends SpecialPage {
 		// @todo FIXME: raw html messages
 		$category_search_label = $this->msg( 'replacetext_categorysearch' )->escaped();
 		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->escaped();
+		$rcPage = Title::makeTitleSafe( NS_SPECIAL, 'RecentChanges' );
+		$rcPageName = $rcPage->getPrefixedText();
 		$out->addHTML(
 			"<fieldset id=\"mw-searchoptions\">\n" .
 			Xml::tags( 'h4', null, $this->msg( 'replacetext_optionalfilters' )->parse() ) .
@@ -377,7 +379,7 @@ class SpecialReplaceText extends SpecialPage {
 				$this->msg( 'replacetext_movepages' )->text(), 'move_pages', 'move_pages'
 			) . '<br />' .
 			Xml::checkLabel(
-				$this->msg( 'replacetext_announce' )->text(), 'doAnnounce', 'doAnnounce', true
+				$this->msg( 'replacetext_announce', $rcPageName )->text(), 'doAnnounce', 'doAnnounce', true
 			) .
 			"</p>\n" .
 			Xml::submitButton( $this->msg( 'replacetext_continue' )->text() ) .
