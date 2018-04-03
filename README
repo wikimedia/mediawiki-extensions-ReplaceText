@@ -1,6 +1,6 @@
 Replace Text Extension
 
-        Version 1.3
+        Version 1.4
         Yaron Koren and Niklas Laxström
 
 This is free software licenced under the GNU General Public Licence. Please
@@ -33,9 +33,10 @@ This version of the Replace Text extension requires MediaWiki 1.23 or higher.
 == Installation ==
 
 To install the extension, place the entire 'ReplaceText' directory
-within your MediaWiki 'extensions' directory, then add the following
-line to your 'LocalSettings.php' file:
+within your MediaWiki 'extensions' directory, then add either of the
+following lines to your 'LocalSettings.php' file:
 
+     wfLoadExtension( 'ReplaceText' );
      require_once( "$IP/extensions/ReplaceText/ReplaceText.php" );
 
 In order to perform replacements, you must have the 'replacetext' permssion;

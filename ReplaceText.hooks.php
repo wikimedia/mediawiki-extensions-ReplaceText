@@ -1,5 +1,6 @@
 <?php
 /**
+ * Hook functions for the Replace Text extension.
  */
 
 class ReplaceTextHooks {
@@ -17,15 +18,17 @@ class ReplaceTextHooks {
 
 		return true;
 	}
+
 	/**
-	 * Adds link to ReplaceText page at the end of successful regular page move message
+	 * Adds a link to the Special:ReplaceText page at the end of a successful
+	 * regular page move message.
 	 *
 	 * @param FormLayout &$form MovePageForm
 	 * @param Title &$ot Title object of the old article (moved from)
 	 * @param Title &$nt Title object of the new article (moved to)
 	 * @return bool
 	 */
-	public static function replaceTextReminder( &$form, &$ot , &$nt ) {
+	public static function replaceTextReminder( &$form, &$ot, &$nt ) {
 		$out = $form->getOutput();
 		$page = SpecialPageFactory::getPage( 'ReplaceText' );
 		$pageLink = Linker::linkKnown( $page->getPageTitle() );
@@ -33,4 +36,5 @@ class ReplaceTextHooks {
 			->rawParams( $pageLink )->inContentLanguage()->parseAsBlock() );
 		return true;
 	}
+
 }
