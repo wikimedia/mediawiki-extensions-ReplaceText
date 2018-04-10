@@ -58,6 +58,13 @@ class SpecialReplaceText extends SpecialPage {
 		if ( $request->getCheck( 'replace' ) ) {
 			$replacement_params = array();
 			$replacement_params['user_id'] = $this->getUser()->getId();
+
+			// check for CSRF
+			$user = $this->getUser();
+			if ( !$user->matchEditToken( $request->getVal( 'token' ) ) ) {
+				$out->addWikiMsg( 'sessionfailure' );
+				return;
+			}
 			$replacement_params['target_str'] = $this->target;
 			$replacement_params['replacement_str'] = $this->replacement;
 			$replacement_params['use_regex'] = $this->use_regex;
@@ -112,6 +119,14 @@ class SpecialReplaceText extends SpecialPage {
 			wfProfileOut( __METHOD__ );
 			return;
 		} elseif ( $request->getCheck( 'target' ) ) { // very long elseif, look for "end elseif"
+
+			// check for CSRF
+			$user = $this->getUser();
+			if ( !$user->matchEditToken( $request->getVal( 'token' ) ) ) {
+				$out->addWikiMsg( 'sessionfailure' );
+				return;
+			}
+
 			// first, check that at least one namespace has been
 			// picked, and that either editing or moving pages
 			// has been selected
@@ -258,7 +273,8 @@ class SpecialReplaceText extends SpecialPage {
 				)
 			) . "\n" .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'continue', 1 )
+			Html::hidden( 'continue', 1 ) .
+			Html::hidden( 'token', $out->getUser()->getEditToken() )
 		);
 		if ( is_null( $warning_msg ) ) {
 			$out->addWikiMsg( 'replacetext_docu' );
@@ -427,7 +443,8 @@ class SpecialReplaceText extends SpecialPage {
 			Html::hidden( 'use_regex', $this->use_regex ) .
 			Html::hidden( 'move_pages', $this->move_pages ) .
 			Html::hidden( 'edit_pages', $this->edit_pages ) .
-			Html::hidden( 'replace', 1 )
+			Html::hidden( 'replace', 1 ) .
+			Html::hidden( 'token', $out->getUser()->getEditToken() )
 		);
 
 		foreach( $this->selected_namespaces as $ns ) {
