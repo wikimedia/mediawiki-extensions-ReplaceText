@@ -21,7 +21,7 @@ if ( function_exists( 'wfLoadExtension' ) ) {
 	wfLoadExtension( 'ReplaceText' );
 	// Keep i18n globals so mergeMessageFileList.php doesn't break
 	$wgMessagesDirs['ReplaceText'] = __DIR__ . '/i18n';
-	$wgExtensionMessagesFiles['ReplaceTextAlias'] = __DIR__ . '/ReplaceText.alias.php';
+	$wgExtensionMessagesFiles['ReplaceTextAlias'] = __DIR__ . '/ReplaceText.i18n.alias.php';
 	/* wfWarn(
 		'Deprecated PHP entry point used for Replace Text extension. ' .
 		'Please use wfLoadExtension instead, ' .
@@ -48,7 +48,7 @@ $wgExtensionCredits['specialpage'][] = [
 ];
 
 $wgMessagesDirs['ReplaceText'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['ReplaceTextAlias'] = __DIR__ . '/ReplaceText.alias.php';
+$wgExtensionMessagesFiles['ReplaceTextAlias'] = __DIR__ . '/ReplaceText.i18n.alias.php';
 $wgJobClasses['replaceText'] = 'ReplaceTextJob';
 
 // This extension uses its own permission type, 'replacetext'
@@ -58,10 +58,16 @@ $wgGroupPermissions['sysop']['replacetext'] = true;
 $wgHooks['AdminLinks'][] = 'ReplaceTextHooks::addToAdminLinks';
 
 $wgSpecialPages['ReplaceText'] = 'SpecialReplaceText';
-$wgAutoloadClasses['ReplaceTextHooks'] = __DIR__ . '/ReplaceText.hooks.php';
-$wgAutoloadClasses['SpecialReplaceText'] = __DIR__ . '/SpecialReplaceText.php';
-$wgAutoloadClasses['ReplaceTextJob'] = __DIR__ . '/ReplaceTextJob.php';
-$wgAutoloadClasses['ReplaceTextSearch'] = __DIR__ . '/ReplaceTextSearch.php';
+$wgAutoloadClasses['ReplaceTextHooks'] = __DIR__ . '/src/ReplaceTextHooks.php';
+$wgAutoloadClasses['SpecialReplaceText'] = __DIR__ . '/src/SpecialReplaceText.php';
+$wgAutoloadClasses['ReplaceTextJob'] = __DIR__ . '/src/ReplaceTextJob.php';
+$wgAutoloadClasses['ReplaceTextSearch'] = __DIR__ . '/src/ReplaceTextSearch.php';
+
+$wgResourceModules['ext.ReplaceText'] = [
+	'scripts' => 'ext.ReplaceText.js',
+	'localBasePath' => 'resources',
+	'remoteExtPath' => 'ReplaceText/resources',
+];
 
 // Global variables
 $wgReplaceTextUser = null;

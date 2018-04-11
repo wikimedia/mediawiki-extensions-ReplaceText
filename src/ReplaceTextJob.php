@@ -8,8 +8,13 @@
  * @author Ankit Garg
  */
 class ReplaceTextJob extends Job {
-	function __construct( $title, $params = '', $id = 0 ) {
-		parent::__construct( 'replaceText', $title, $params, $id );
+	/**
+	 * Constructor.
+	 * @param Title $title
+	 * @param array|bool $params Cannot be === true
+	 */
+	function __construct( $title, $params = '' ) {
+		parent::__construct( 'replaceText', $title, $params );
 	}
 
 	/**

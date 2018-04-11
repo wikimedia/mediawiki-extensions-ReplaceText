@@ -1,6 +1,15 @@
 <?php
 
 class ReplaceTextSearch {
+
+	/**
+	 * @param string $search
+	 * @param array $namespaces
+	 * @param string $category
+	 * @param string $prefix
+	 * @param bool $use_regex
+	 * @return IResultWrapper Resulting rows
+	 */
 	public static function doSearchQuery(
 		$search, $namespaces, $category, $prefix, $use_regex = false
 	) {
@@ -27,6 +36,11 @@ class ReplaceTextSearch {
 		return $dbr->select( $tables, $vars, $conds, __METHOD__, $sort );
 	}
 
+	/**
+	 * @param string $category
+	 * @param array &$tables
+	 * @param array &$conds
+	 */
 	public static function categoryCondition( $category, &$tables, &$conds ) {
 		if ( strval( $category ) !== '' ) {
 			$category = Title::newFromText( $category )->getDbKey();
@@ -36,6 +50,10 @@ class ReplaceTextSearch {
 		}
 	}
 
+	/**
+	 * @param string $prefix
+	 * @param array &$conds
+	 */
 	public static function prefixCondition( $prefix, &$conds ) {
 		if ( strval( $prefix ) === '' ) {
 			return;
@@ -50,6 +68,12 @@ class ReplaceTextSearch {
 		$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
 	}
 
+	/**
+	 * @param \Wikimedia\Rdbms\Database $dbr
+	 * @param string $column
+	 * @param string $regex
+	 * @return string query condition for regex
+	 */
 	public static function regexCond( $dbr, $column, $regex ) {
 		if ( $dbr instanceof DatabasePostgres ) {
 			$op = '~';

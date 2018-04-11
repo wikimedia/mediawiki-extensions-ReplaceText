@@ -27,7 +27,8 @@
  * @category Maintenance
  * @package  ReplaceText
  * @author   Mark A. Hershberger <mah@nichework.com>
- * @license  GPLv3 http://www.gnu.org/copyleft/gpl.html
+ * @license  GPL-3.0-or-later
+ *           http://www.gnu.org/copyleft/gpl.html
  * @link     https://www.mediawiki.org/wiki/Extension:Replace_Text
  *
  */
@@ -46,18 +47,18 @@ require_once ( "$IP/maintenance/Maintenance.php" );
  * @SuppressWarnings(StaticAccess)
  * @SuppressWarnings(LongVariable)
  */
-class ReplaceText extends Maintenance {
-	protected $user;
-	protected $target;
-	protected $replacement;
-	protected $summaryMsg;
-	protected $namespaces;
-	protected $category;
-	protected $prefix;
-	protected $useRegex;
-	protected $titles;
-	protected $defaultContinue;
-	protected $doAnnounce;
+class ReplaceAll extends Maintenance {
+	private $user;
+	private $target;
+	private $replacement;
+	private $summaryMsg;
+	private $namespaces;
+	private $category;
+	private $prefix;
+	private $useRegex;
+	private $titles;
+	private $defaultContinue;
+	private $doAnnounce;
 
 	public function __construct() {
 		parent::__construct();
@@ -99,7 +100,7 @@ class ReplaceText extends Maintenance {
 		}
 	}
 
-	protected function getUser() {
+	private function getUser() {
 		$userReplacing = $this->getOption( "user", 1 );
 
 		$user = is_numeric( $userReplacing ) ?
@@ -115,7 +116,7 @@ class ReplaceText extends Maintenance {
 		return $user;
 	}
 
-	protected function getTarget() {
+	private function getTarget() {
 		$ret = $this->getArg( 0 );
 		if ( !$ret ) {
 			$this->error( "You have to specify a target.", true );
@@ -123,7 +124,7 @@ class ReplaceText extends Maintenance {
 		return [ $ret ];
 	}
 
-	protected function getReplacement() {
+	private function getReplacement() {
 		$ret = $this->getArg( 1 );
 		if ( !$ret ) {
 			$this->error( "You have to specify replacement text.", true );
@@ -131,7 +132,7 @@ class ReplaceText extends Maintenance {
 		return [ $ret ];
 	}
 
-	protected function getReplacements() {
+	private function getReplacements() {
 		$file = $this->getOption( "replacements" );
 		if ( !$file ) {
 			return false;
@@ -164,7 +165,7 @@ class ReplaceText extends Maintenance {
 		return true;
 	}
 
-	protected function shouldContinueByDefault() {
+	private function shouldContinueByDefault() {
 		if ( !is_bool( $this->defaultContinue ) ) {
 			$this->defaultContinue =
 				$this->getOption( "yes" ) ?
@@ -174,7 +175,7 @@ class ReplaceText extends Maintenance {
 		return $this->defaultContinue;
 	}
 
-	protected function getSummary() {
+	private function getSummary() {
 		$msg = wfMessage( 'replacetext_editsummary' )->
 			rawParams( $this->target )->rawParams( $this->replacement );
 		if ( $this->getOption( "summary" ) !== null ) {
@@ -185,7 +186,7 @@ class ReplaceText extends Maintenance {
 		return $msg;
 	}
 
-	protected function listNamespaces() {
+	private function listNamespaces() {
 		echo "Index\tNamespace\n";
 		$nsList = MWNamespace::getCanonicalNamespaces();
 		ksort( $nsList );
@@ -197,7 +198,7 @@ class ReplaceText extends Maintenance {
 		}
 	}
 
-	protected function showFileFormat() {
+	private function showFileFormat() {
 echo <<<EOF
 
 The format of the replacements file is tab separated with three fields.
@@ -220,7 +221,7 @@ regex(p*)	Count the Ps; \\1	true
 EOF;
 	}
 
-	protected function getNamespaces() {
+	private function getNamespaces() {
 		$nsall = $this->getOption( "nsall" );
 		$ns = $this->getOption( "ns" );
 		if ( !$nsall && !$ns ) {
@@ -253,21 +254,21 @@ EOF;
 		return $namespaces;
 	}
 
-	protected function getCategory() {
+	private function getCategory() {
 		$cat = null;
 		return $cat;
 	}
 
-	protected function getPrefix() {
+	private function getPrefix() {
 		$prefix = null;
 		return $prefix;
 	}
 
-	protected function useRegex() {
+	private function useRegex() {
 		return [ $this->getOption( "regex" ) ];
 	}
 
-	protected function getTitles( $res ) {
+	private function getTitles( $res ) {
 		if ( !$this->titles || count( $this->titles ) == 0 ) {
 			$this->titles = [];
 			foreach ( $res as $row ) {
@@ -280,7 +281,7 @@ EOF;
 		return $this->titles;
 	}
 
-	protected function listTitles( $res ) {
+	private function listTitles( $res ) {
 		$ret = false;
 		foreach ( $this->getTitles( $res ) as $title ) {
 			$ret = true;
@@ -289,7 +290,7 @@ EOF;
 		return $ret;
 	}
 
-	protected function replaceTitles( $res, $target, $replacement, $useRegex ) {
+	private function replaceTitles( $res, $target, $replacement, $useRegex ) {
 		foreach ( $this->getTitles( $res ) as $title ) {
 			$param = [
 				'target_str'      => $target,
@@ -308,7 +309,7 @@ EOF;
 		}
 	}
 
-	protected function getReply( $question ) {
+	private function getReply( $question ) {
 		$reply = "";
 		if ( $this->shouldContinueByDefault() ) {
 			return true;
@@ -320,7 +321,7 @@ EOF;
 		return $reply === "y";
 	}
 
-	protected function localSetup() {
+	private function localSetup() {
 		if ( $this->getOption( "listns" ) ) {
 			$this->listNamespaces();
 			return false;
@@ -342,6 +343,9 @@ EOF;
 		return true;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function execute() {
 		global $wgShowExceptionDetails;
 		$wgShowExceptionDetails = true;
@@ -405,5 +409,5 @@ EOF;
 	}
 }
 
-$maintClass = "ReplaceText";
+$maintClass = "ReplaceAll";
 require_once RUN_MAINTENANCE_IF_MAIN;

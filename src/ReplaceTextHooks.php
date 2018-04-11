@@ -5,6 +5,12 @@
 
 class ReplaceTextHooks {
 
+	/**
+	 * Implements AdminLinks hook from Extension:Admin_Links.
+	 *
+	 * @param ALTree &$adminLinksTree
+	 * @return bool
+	 */
 	public static function addToAdminLinks( ALTree &$adminLinksTree ) {
 		$generalSection = $adminLinksTree->getSection( wfMessage( 'adminlinks_general' )->text() );
 		$extensionsRow = $generalSection->getRow( 'extensions' );
@@ -20,6 +26,8 @@ class ReplaceTextHooks {
 	}
 
 	/**
+	 * Implements SpecialMovepageAfterMove hook.
+	 *
 	 * Adds a link to the Special:ReplaceText page at the end of a successful
 	 * regular page move message.
 	 *

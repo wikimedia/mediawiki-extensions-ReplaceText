@@ -1,18 +1,30 @@
 <?php
 
 class SpecialReplaceText extends SpecialPage {
-	private $target, $replacement, $use_regex,
-		$category, $prefix, $edit_pages, $move_pages,
-		$selected_namespaces, $doAnnounce;
+	private $target;
+	private $replacement;
+	private $use_regex;
+	private $category;
+	private $prefix;
+	private $edit_pages;
+	private $move_pages;
+	private $selected_namespaces;
+	private $doAnnounce;
 
 	public function __construct() {
 		parent::__construct( 'ReplaceText', 'replacetext' );
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function doesWrites() {
 		return true;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	function execute( $query ) {
 		if ( !$this->getUser()->isAllowed( 'replacetext' ) ) {
 			throw new PermissionsError( 'replacetext' );
@@ -26,6 +38,9 @@ class SpecialReplaceText extends SpecialPage {
 		$this->doSpecialReplaceText();
 	}
 
+	/**
+	 * @return array namespaces selected for search
+	 */
 	function getSelectedNamespaces() {
 		$all_namespaces = SearchEngine::searchableNamespaces();
 		$selected_namespaces = [];
@@ -37,6 +52,9 @@ class SpecialReplaceText extends SpecialPage {
 		return $selected_namespaces;
 	}
 
+	/**
+	 * execute logic
+	 */
 	function doSpecialReplaceText() {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
@@ -123,7 +141,8 @@ class SpecialReplaceText extends SpecialPage {
 			);
 
 			return;
-		} elseif ( $request->getCheck( 'target' ) ) { // very long elseif, look for "end elseif"
+		} elseif ( $request->getCheck( 'target' ) ) {
+			// very long elseif, look for "end elseif"
 
 			// check for CSRF
 			$user = $this->getUser();
@@ -293,6 +312,9 @@ class SpecialReplaceText extends SpecialPage {
 		$this->showForm();
 	}
 
+	/**
+	 * @param string|null $warning_msg Message to be shown at top of form
+	 */
 	function showForm( $warning_msg = null ) {
 		$out = $this->getOutput();
 
@@ -448,8 +470,13 @@ class SpecialReplaceText extends SpecialPage {
 		return $tables;
 	}
 
+	/**
+	 * @param array $titles_for_edit
+	 * @param array $titles_for_move
+	 * @param array $unmoveable_titles
+	 */
 	function pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles ) {
-		global $wgLang, $wgScriptPath;
+		global $wgLang;
 
 		$out = $this->getOutput();
 
@@ -475,7 +502,7 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addHTML( Html::hidden( 'ns' . $ns, 1 ) );
 		}
 
-		$out->addScriptFile( "$wgScriptPath/extensions/ReplaceText/ReplaceText.js" );
+		$out->addModules( "ext.ReplaceText" );
 
 		if ( count( $titles_for_edit ) > 0 ) {
 			$out->addWikiMsg(
@@ -597,7 +624,8 @@ class SpecialReplaceText extends SpecialPage {
 					$len += $poss[$i + 1] - $poss[$i];
 					$i++;
 				} else {
-					break; // Can't merge, exit the inner loop
+					// Can't merge, exit the inner loop
+					break;
 				}
 			}
 			$cuts[] = [ $index, $len ];
@@ -634,7 +662,7 @@ class SpecialReplaceText extends SpecialPage {
 		return $msg;
 	}
 
-	function getMatchingTitles( $str, $namespaces, $category, $prefix, $use_regex = false ) {
+	private function getMatchingTitles( $str, $namespaces, $category, $prefix, $use_regex = false ) {
 		$dbr = wfGetDB( DB_REPLICA );
 
 		$tables = [ 'page' ];
@@ -659,6 +687,9 @@ class SpecialReplaceText extends SpecialPage {
 		return $dbr->select( $tables, $vars, $conds, __METHOD__, $sort );
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	protected function getGroupName() {
 		return 'wiki';
 	}
