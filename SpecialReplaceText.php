@@ -58,7 +58,6 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		if ( $request->getCheck( 'replace' ) ) {
-
 			// check for CSRF
 			$user = $this->getUser();
 			if ( !$user->matchEditToken( $request->getVal( 'token' ) ) ) {
@@ -123,7 +122,6 @@ class SpecialReplaceText extends SpecialPage {
 			wfProfileOut( __METHOD__ );
 			return;
 		} elseif ( $request->getCheck( 'target' ) ) { // very long elseif, look for "end elseif"
-
 			// check for CSRF
 			$user = $this->getUser();
 			if ( !$user->matchEditToken( $request->getVal( 'token' ) ) ) {
@@ -306,7 +304,7 @@ class SpecialReplaceText extends SpecialPage {
 				]
 			) . "\n" .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
-			Html::hidden( 'continue', 1 )
+			Html::hidden( 'continue', 1 ) .
 			Html::hidden( 'token', $out->getUser()->getEditToken() )
 		);
 		if ( is_null( $warning_msg ) ) {
@@ -486,7 +484,7 @@ class SpecialReplaceText extends SpecialPage {
 			Html::hidden( 'use_regex', $this->use_regex ) .
 			Html::hidden( 'move_pages', $this->move_pages ) .
 			Html::hidden( 'edit_pages', $this->edit_pages ) .
-			Html::hidden( 'replace', 1 )
+			Html::hidden( 'replace', 1 ) .
 			Html::hidden( 'token', $out->getUser()->getEditToken() )
 		);
 
