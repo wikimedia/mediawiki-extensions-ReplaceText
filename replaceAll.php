@@ -51,7 +51,6 @@ class ReplaceAll extends Maintenance {
 	private $user;
 	private $target;
 	private $replacement;
-	private $summaryMsg;
 	private $namespaces;
 	private $category;
 	private $prefix;
@@ -153,7 +152,7 @@ class ReplaceAll extends Maintenance {
 		// @codingStandardsIgnoreStart
 		while ( ( $line = fgets( $handle ) ) !== false ) {
 		// @codingStandardsIgnoreEnd
-			$field = explode( "\t", $line );
+			$field = explode( "\t", substr( $line, 0, -1 ) );
 			if ( !isset( $field[1] ) ) {
 				continue;
 			}
@@ -175,9 +174,9 @@ class ReplaceAll extends Maintenance {
 		return $this->defaultContinue;
 	}
 
-	private function getSummary() {
-		$msg = wfMessage( 'replacetext_editsummary' )->
-			rawParams( $this->target )->rawParams( $this->replacement );
+	private function getSummary( $target, $replacement ) {
+		$msg = wfMessage( 'replacetext_editsummary', $target, $replacement )->
+			plain();
 		if ( $this->getOption( "summary" ) !== null ) {
 			$msg = str_replace( [ '%f', '%r' ],
 				[ $this->target, $this->replacement ],
@@ -297,7 +296,7 @@ EOF;
 				'replacement_str' => $replacement,
 				'use_regex'       => $useRegex,
 				'user_id'         => $this->user->getId(),
-				'edit_summary'    => $this->summaryMsg,
+				'edit_summary'    => $this->getSummary( $target, $replacement ),
 				'doAnnounce'        => $this->doAnnounce
 			];
 			echo "Replacing on $title... ";
@@ -336,7 +335,6 @@ EOF;
 			$this->replacement = $this->getReplacement();
 			$this->useRegex = $this->useRegex();
 		}
-		$this->summaryMsg = $this->getSummary();
 		$this->namespaces = $this->getNamespaces();
 		$this->category = $this->getCategory();
 		$this->prefix = $this->getPrefix();

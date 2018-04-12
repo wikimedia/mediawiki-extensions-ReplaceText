@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ScopedCallback;
+
 /**
  * Background job to replace text in a given page
  * - based on /includes/RefreshLinksJob.php
@@ -22,6 +24,13 @@ class ReplaceTextJob extends Job {
 	 * @return bool success
 	 */
 	function run() {
+		if ( isset( $this->params['session'] ) ) {
+			$callback = RequestContext::importScopedSession( $this->params['session'] );
+			$this->addTeardownCallback( function () use ( &$callback ) {
+				ScopedCallback::consume( $callback );
+			} );
+		}
+
 		if ( is_null( $this->title ) ) {
 			$this->error = "replaceText: Invalid title";
 			return false;
