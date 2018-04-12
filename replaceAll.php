@@ -21,14 +21,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * PHP version 5
- *
  * @file
  * @category Maintenance
  * @package  ReplaceText
  * @author   Mark A. Hershberger <mah@nichework.com>
- * @license  GPL-3.0-or-later
- *           http://www.gnu.org/copyleft/gpl.html
+ * @license  http://www.gnu.org/copyleft/gpl.html GPL-2.0-or-later
  * @link     https://www.mediawiki.org/wiki/Extension:Replace_Text
  *
  */
