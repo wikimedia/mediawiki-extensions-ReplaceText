@@ -53,7 +53,7 @@ class SpecialReplaceText extends SpecialPage {
 	}
 
 	/**
-	 * execute logic
+	 * Do the actual display and logic of Special:ReplaceText.
 	 */
 	function doSpecialReplaceText() {
 		$out = $this->getOutput();
@@ -83,45 +83,7 @@ class SpecialReplaceText extends SpecialPage {
 				return;
 			}
 
-			global $wgReplaceTextUser;
-
-			$replacement_params = [];
-			if ( $wgReplaceTextUser != null ) {
-				$user = User::newFromName( $wgReplaceTextUser );
-			}
-			$replacement_params['user_id'] = $user->getId();
-			$replacement_params['target_str'] = $this->target;
-			$replacement_params['replacement_str'] = $this->replacement;
-			$replacement_params['use_regex'] = $this->use_regex;
-			$replacement_params['edit_summary'] = $this->msg(
-				'replacetext_editsummary',
-				$this->target, $this->replacement
-			)->inContentLanguage()->plain();
-			$replacement_params['create_redirect'] = false;
-			$replacement_params['watch_page'] = false;
-			$replacement_params['doAnnounce'] = $this->doAnnounce;
-			foreach ( $request->getValues() as $key => $value ) {
-				if ( $key == 'create-redirect' && $value == '1' ) {
-					$replacement_params['create_redirect'] = true;
-				} elseif ( $key == 'watch-pages' && $value == '1' ) {
-					$replacement_params['watch_page'] = true;
-				}
-			}
-			$jobs = [];
-			foreach ( $request->getValues() as $key => $value ) {
-				if ( $value == '1' && $key !== 'replace' && $key !== 'use_regex' ) {
-					if ( strpos( $key, 'move-' ) !== false ) {
-						$title = Title::newFromID( substr( $key, 5 ) );
-						$replacement_params['move_page'] = true;
-					} else {
-						$title = Title::newFromID( $key );
-					}
-					if ( $title !== null ) {
-						$jobs[] = new ReplaceTextJob( $title, $replacement_params );
-					}
-				}
-			}
-
+			$jobs = $this->createJobsForTextReplacements();
 			JobQueueGroup::singleton()->push( $jobs );
 
 			$count = $this->getLanguage()->formatNum( count( $jobs ) );
@@ -139,11 +101,10 @@ class SpecialReplaceText extends SpecialPage {
 					$this->msg( 'replacetext_return' )->escaped()
 				)
 			);
-
 			return;
-		} elseif ( $request->getCheck( 'target' ) ) {
-			// very long elseif, look for "end elseif"
+		}
 
+		if ( $request->getCheck( 'target' ) ) {
 			// check for CSRF
 			$user = $this->getUser();
 			if ( !$user->matchEditToken( $request->getVal( 'token' ) ) ) {
@@ -163,63 +124,13 @@ class SpecialReplaceText extends SpecialPage {
 				return;
 			}
 
-			$titles_for_edit = [];
-			$titles_for_move = [];
-			$unmoveable_titles = [];
-
-			// if user is replacing text within pages...
+			// If user is replacing text within pages...
+			$titles_for_edit = $titles_for_move = $unmoveable_titles = [];
 			if ( $this->edit_pages ) {
-				$res = ReplaceTextSearch::doSearchQuery(
-					$this->target,
-					$this->selected_namespaces,
-					$this->category,
-					$this->prefix,
-					$this->use_regex
-				);
-
-				foreach ( $res as $row ) {
-					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
-					if ( $title == null ) {
-						continue;
-					}
-					$context = $this->extractContext( $row->old_text, $this->target, $this->use_regex );
-					$titles_for_edit[] = [ $title, $context ];
-				}
+				$titles_for_edit = $this->getTitlesForEditingWithContext();
 			}
 			if ( $this->move_pages ) {
-				$res = $this->getMatchingTitles(
-					$this->target,
-					$this->selected_namespaces,
-					$this->category,
-					$this->prefix,
-					$this->use_regex
-				);
-
-				foreach ( $res as $row ) {
-					$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
-					if ( $title == null ) {
-						continue;
-					}
-					// See if this move can happen.
-					$cur_page_name = str_replace( '_', ' ', $row->page_title );
-
-					if ( $this->use_regex ) {
-						$new_page_name =
-							preg_replace( "/" . $this->target . "/Uu", $this->replacement, $cur_page_name );
-					} else {
-						$new_page_name =
-							str_replace( $this->target, $this->replacement, $cur_page_name );
-					}
-
-					$new_title = Title::makeTitleSafe( $row->page_namespace, $new_page_name );
-					$err = $title->isValidMoveOperation( $new_title );
-
-					if ( $title->userCan( 'move' ) && !is_array( $err ) ) {
-						$titles_for_move[] = $title;
-					} else {
-						$unmoveable_titles[] = $title;
-					}
-				}
+				list( $titles_for_move, $unmoveable_titles ) = $this->getTitlesForMoveAndUnmoveableTitles();
 			}
 
 			// If no results were found, check to see if a bad
@@ -259,46 +170,7 @@ class SpecialReplaceText extends SpecialPage {
 					. '</p>'
 				);
 			} else {
-				// Show a warning message if the replacement
-				// string is either blank or found elsewhere on
-				// the wiki (since undoing the replacement
-				// would be difficult in either case).
-				$warning_msg = null;
-
-				if ( $this->replacement === '' ) {
-					$warning_msg = $this->msg( 'replacetext_blankwarning' )->text();
-				} elseif ( $this->use_regex ) {
-					// If it's a regex, don't bother
-					// checking for existing pages - if
-					// the replacement string includes
-					// wildcards, it's a meaningless check.
-				} elseif ( count( $titles_for_edit ) > 0 ) {
-					$res = ReplaceTextSearch::doSearchQuery(
-						$this->replacement,
-						$this->selected_namespaces,
-						$this->category,
-						$this->prefix,
-						$this->use_regex
-					);
-					$count = $res->numRows();
-					if ( $count > 0 ) {
-						$warning_msg = $this->msg( 'replacetext_warning' )->numParams( $count )
-							->params( "<code><nowiki>{$this->replacement}</nowiki></code>" )->text();
-					}
-				} elseif ( count( $titles_for_move ) > 0 ) {
-					$res = $this->getMatchingTitles(
-						$this->replacement,
-						$this->selected_namespaces,
-						$this->category,
-						$this->prefix, $this->use_regex
-					);
-					$count = $res->numRows();
-					if ( $count > 0 ) {
-						$warning_msg = $this->msg( 'replacetext_warning' )->numParams( $count )
-							->params( $this->replacement )->text();
-					}
-				}
-
+				$warning_msg = $this->getAnyWarningMessageBeforeReplace( $titles_for_edit, $titles_for_move );
 				if ( ! is_null( $warning_msg ) ) {
 					$out->addWikiText( "<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />" );
 				}
@@ -310,6 +182,185 @@ class SpecialReplaceText extends SpecialPage {
 
 		// If we're still here, show the starting form.
 		$this->showForm();
+	}
+
+	/**
+	 * Returns the set of MediaWiki jobs that will do all the actual replacements.
+	 *
+	 * @return array jobs
+	 */
+	function createJobsForTextReplacements() {
+		global $wgReplaceTextUser;
+
+		$replacement_params = [];
+		if ( $wgReplaceTextUser != null ) {
+			$user = User::newFromName( $wgReplaceTextUser );
+		} else {
+			$user = $this->getUser();
+		}
+
+		$replacement_params['user_id'] = $user->getId();
+		$replacement_params['target_str'] = $this->target;
+		$replacement_params['replacement_str'] = $this->replacement;
+		$replacement_params['use_regex'] = $this->use_regex;
+		$replacement_params['edit_summary'] = $this->msg(
+			'replacetext_editsummary',
+			$this->target, $this->replacement
+		)->inContentLanguage()->plain();
+		$replacement_params['create_redirect'] = false;
+		$replacement_params['watch_page'] = false;
+		$replacement_params['doAnnounce'] = $this->doAnnounce;
+
+		$request = $this->getRequest();
+		foreach ( $request->getValues() as $key => $value ) {
+			if ( $key == 'create-redirect' && $value == '1' ) {
+				$replacement_params['create_redirect'] = true;
+			} elseif ( $key == 'watch-pages' && $value == '1' ) {
+				$replacement_params['watch_page'] = true;
+			}
+		}
+
+		$jobs = [];
+		foreach ( $request->getValues() as $key => $value ) {
+			if ( $value == '1' && $key !== 'replace' && $key !== 'use_regex' ) {
+				if ( strpos( $key, 'move-' ) !== false ) {
+					$title = Title::newFromID( substr( $key, 5 ) );
+					$replacement_params['move_page'] = true;
+				} else {
+					$title = Title::newFromID( $key );
+				}
+				if ( $title !== null ) {
+					$jobs[] = new ReplaceTextJob( $title, $replacement_params );
+				}
+			}
+		}
+
+		return $jobs;
+	}
+
+	/**
+	 * Returns the set of Titles whose contents would be modified by this
+	 * replacement, along with the "search context" string for each one.
+	 *
+	 * @return array The set of Titles and their search context strings
+	 */
+	function getTitlesForEditingWithContext() {
+		$titles_for_edit = [];
+
+		$res = ReplaceTextSearch::doSearchQuery(
+			$this->target,
+			$this->selected_namespaces,
+			$this->category,
+			$this->prefix,
+			$this->use_regex
+		);
+
+		foreach ( $res as $row ) {
+			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
+			if ( $title == null ) {
+				continue;
+			}
+			$context = $this->extractContext( $row->old_text, $this->target, $this->use_regex );
+			$titles_for_edit[] = [ $title, $context ];
+		}
+
+		return $titles_for_edit;
+	}
+
+	/**
+	 * Returns two lists: the set of titles that would be moved/renamed by
+	 * the current text replacement, and the set of titles that would
+	 * ordinarily be moved but are not moveable, due to permissions or any
+	 * other reason.
+	 *
+	 * @return array
+	 */
+	function getTitlesForMoveAndUnmoveableTitles() {
+		$titles_for_move = [];
+		$unmoveable_titles = [];
+
+		$res = $this->getMatchingTitles(
+			$this->target,
+			$this->selected_namespaces,
+			$this->category,
+			$this->prefix,
+			$this->use_regex
+		);
+
+		foreach ( $res as $row ) {
+			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
+			if ( $title == null ) {
+				continue;
+			}
+			// See if this move can happen.
+			$cur_page_name = str_replace( '_', ' ', $row->page_title );
+
+			if ( $this->use_regex ) {
+				$new_page_name =
+					preg_replace( "/" . $this->target . "/Uu", $this->replacement, $cur_page_name );
+			} else {
+				$new_page_name =
+					str_replace( $this->target, $this->replacement, $cur_page_name );
+			}
+
+			$new_title = Title::makeTitleSafe( $row->page_namespace, $new_page_name );
+			$err = $title->isValidMoveOperation( $new_title );
+
+			if ( $title->userCan( 'move' ) && !is_array( $err ) ) {
+				$titles_for_move[] = $title;
+			} else {
+				$unmoveable_titles[] = $title;
+			}
+		}
+
+		return [ $titles_for_move, $unmoveable_titles ];
+	}
+
+	/**
+	 * Get the warning message if the replacement string is either blank
+	 * or found elsewhere on the wiki (since undoing the replacement
+	 * would be difficult in either case).
+	 *
+	 * @param array $titles_for_edit
+	 * @param array $titles_for_move
+	 * @return string|null Warning message, if any
+	 */
+	function getAnyWarningMessageBeforeReplace( $titles_for_edit, $titles_for_move ) {
+		if ( $this->replacement === '' ) {
+			return $this->msg( 'replacetext_blankwarning' )->text();
+		} elseif ( $this->use_regex ) {
+			// If it's a regex, don't bother checking for existing
+			// pages - if the replacement string includes wildcards,
+			// it's a meaningless check.
+			return null;
+		} elseif ( count( $titles_for_edit ) > 0 ) {
+			$res = ReplaceTextSearch::doSearchQuery(
+				$this->replacement,
+				$this->selected_namespaces,
+				$this->category,
+				$this->prefix,
+				$this->use_regex
+			);
+			$count = $res->numRows();
+			if ( $count > 0 ) {
+				return $this->msg( 'replacetext_warning' )->numParams( $count )
+					->params( "<code><nowiki>{$this->replacement}</nowiki></code>" )->text();
+			}
+		} elseif ( count( $titles_for_move ) > 0 ) {
+			$res = $this->getMatchingTitles(
+				$this->replacement,
+				$this->selected_namespaces,
+				$this->category,
+				$this->prefix, $this->use_regex
+			);
+			$count = $res->numRows();
+			if ( $count > 0 ) {
+				return $this->msg( 'replacetext_warning' )->numParams( $count )
+					->params( $this->replacement )->text();
+			}
+		}
+
+		return null;
 	}
 
 	/**
