@@ -55,6 +55,9 @@
 		],
 		"SpecialMovepageAfterMove": [
 			"ReplaceTextHooks::replaceTextReminder"
+		],
+		"UserGetReservedNames": [
+			"ReplaceTextHooks::getReservedNames"
 		]
 	},
 	"config": {
