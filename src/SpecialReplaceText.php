@@ -96,7 +96,7 @@ class SpecialReplaceText extends SpecialPage {
 
 			// Link back
 			$out->addHTML(
-				Linker::link(
+				ReplaceTextUtils::link(
 					$this->getPageTitle(),
 					$this->msg( 'replacetext_return' )->escaped()
 				)
@@ -146,7 +146,8 @@ class SpecialReplaceText extends SpecialPage {
 				}
 
 				if ( $bad_cat_name ) {
-					$link = Linker::link( $category_title, htmlspecialchars( ucfirst( $this->category ) ) );
+					$link = ReplaceTextUtils::link( $category_title,
+						htmlspecialchars( ucfirst( $this->category ) ) );
 					$out->addHTML(
 						$this->msg( 'replacetext_nosuchcategory' )->rawParams( $link )->escaped()
 					);
@@ -164,7 +165,7 @@ class SpecialReplaceText extends SpecialPage {
 				// link back to starting form
 				$out->addHTML(
 					'<p>' .
-					Linker::link(
+					ReplaceTextUtils::link(
 					$this->getPageTitle(),
 					$this->msg( 'replacetext_return' )->escaped() )
 					. '</p>'
@@ -570,7 +571,8 @@ class SpecialReplaceText extends SpecialPage {
 				list( $title, $context ) = $title_and_context;
 				$out->addHTML(
 					Xml::check( $title->getArticleID(), true ) .
-					Linker::link( $title ) . " - <small>$context</small><br />\n"
+					ReplaceTextUtils::link( $title ) .
+					" - <small>$context</small><br />\n"
 				);
 			}
 			$out->addHTML( '<br />' );
@@ -584,7 +586,7 @@ class SpecialReplaceText extends SpecialPage {
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
 					Xml::check( 'move-' . $title->getArticleID(), true ) .
-					Linker::link( $title ) . "<br />\n"
+					ReplaceTextUtils::link( $title ) . "<br />\n"
 				);
 			}
 			$out->addHTML( '<br />' );
@@ -628,7 +630,7 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addWikiMsg( 'replacetext_cannotmove', $wgLang->formatNum( count( $unmoveable_titles ) ) );
 			$text = "<ul>\n";
 			foreach ( $unmoveable_titles as $title ) {
-				$text .= "<li>" . Linker::link( $title ) . "<br />\n";
+				$text .= "<li>" .  ReplaceTextUtils::link( $title ) . "<br />\n";
 			}
 			$text .= "</ul>\n";
 			$out->addHTML( $text );
