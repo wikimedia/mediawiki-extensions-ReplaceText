@@ -1,5 +1,9 @@
 <?php
 
+use Wikimedia\Rdbms\Database;
+use Wikimedia\Rdbms\DatabasePostgres;
+use Wikimedia\Rdbms\IResultWrapper;
+
 class ReplaceTextSearch {
 
 	/**
@@ -69,7 +73,7 @@ class ReplaceTextSearch {
 	}
 
 	/**
-	 * @param \Wikimedia\Rdbms\Database $dbr
+	 * @param Database $dbr
 	 * @param string $column
 	 * @param string $regex
 	 * @return string query condition for regex
