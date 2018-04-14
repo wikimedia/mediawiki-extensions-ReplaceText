@@ -31,7 +31,7 @@ class ReplaceTextHooks {
 	 * Adds a link to the Special:ReplaceText page at the end of a successful
 	 * regular page move message.
 	 *
-	 * @param FormLayout &$form MovePageForm
+	 * @param MovePageForm &$form
 	 * @param Title &$ot Title object of the old article (moved from)
 	 * @param Title &$nt Title object of the new article (moved to)
 	 */

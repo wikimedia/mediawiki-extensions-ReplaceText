@@ -23,7 +23,7 @@ class SpecialReplaceText extends SpecialPage {
 	}
 
 	/**
-	 * @inheritDoc
+	 * @param null|string $query
 	 */
 	function execute( $query ) {
 		global $wgCompressRevisions, $wgExternalStores;

@@ -55,12 +55,7 @@ class ReplaceTextJob extends Job {
 			$create_redirect = $this->params['create_redirect'];
 			$this->title->moveTo( $new_title, true, $reason, $create_redirect );
 			if ( $this->params['watch_page'] ) {
-				if ( class_exists( 'WatchAction' ) ) {
-					// Class was added in MW 1.19
-					WatchAction::doWatch( $new_title, $wgUser );
-				} else {
-					Action::factory( 'watch', new WikiPage( $new_title ) )->execute();
-				}
+				WatchAction::doWatch( $new_title, $wgUser );
 			}
 			$wgUser = $actual_user;
 		} else {
