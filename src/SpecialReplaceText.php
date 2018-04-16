@@ -26,8 +26,23 @@ class SpecialReplaceText extends SpecialPage {
 	 * @inheritDoc
 	 */
 	function execute( $query ) {
+		global $wgCompressRevisions, $wgExternalStores;
+
 		if ( !$this->getUser()->isAllowed( 'replacetext' ) ) {
 			throw new PermissionsError( 'replacetext' );
+		}
+
+		// Replace Text can't be run with certain settings, due to the
+		// changes they make to DB storage.
+		if ( $wgCompressRevisions ) {
+			$errorMsg = "Error: text replacements cannot be run if \$wgCompressRevisions is set to true.";
+			$this->getOutput()->addWikiText( "<div class=\"errorbox\">$errorMsg</div>" );
+			return;
+		}
+		if ( $wgExternalStores ) {
+			$errorMsg = "Error: text replacements cannot be run if \$wgExternalStores is set to true.";
+			$this->getOutput()->addWikiText( "<div class=\"errorbox\">$errorMsg</div>" );
+			return;
 		}
 
 		$this->setHeaders();
