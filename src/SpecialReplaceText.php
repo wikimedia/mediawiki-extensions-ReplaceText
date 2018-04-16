@@ -570,6 +570,8 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		$out->addModules( "ext.ReplaceText" );
+		// Needed for bolding of search term.
+		$out->addModuleStyles( "mediawiki.special.search.styles" );
 
 		if ( count( $titles_for_edit ) > 0 ) {
 			$out->addWikiMsg(
