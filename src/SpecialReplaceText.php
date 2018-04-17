@@ -608,6 +608,8 @@ class SpecialReplaceText extends SpecialPage {
 			}
 			$out->addHTML( '<br />' );
 			$out->addWikiMsg( 'replacetext_formovedpages' );
+			$rcPage = Title::makeTitleSafe( NS_SPECIAL, 'RecentChanges' );
+			$rcPageName = $rcPage->getPrefixedText();
 			$out->addHTML(
 				Xml::checkLabel(
 					$this->msg( 'replacetext_savemovedpages' )->text(),
@@ -616,7 +618,7 @@ class SpecialReplaceText extends SpecialPage {
 					$this->msg( 'replacetext_watchmovedpages' )->text(),
 					'watch-pages', 'watch-pages', false ) . '<br />' .
 				Xml::checkLabel(
-					$this->msg( 'replacetext_announce' )->text(),
+					$this->msg( 'replacetext_announce', $rcPageName )->text(),
 					'doAnnounce', 'doAnnounce', true ) . '<br />'
 			);
 			$out->addHTML( '<br />' );
