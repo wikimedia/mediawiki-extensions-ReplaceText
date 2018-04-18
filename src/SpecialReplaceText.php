@@ -464,7 +464,7 @@ class SpecialReplaceText extends SpecialPage {
 		// @todo FIXME: raw html messages
 		$category_search_label = $this->msg( 'replacetext_categorysearch' )->escaped();
 		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->escaped();
-		$rcPage = Title::makeTitleSafe( NS_SPECIAL, 'RecentChanges' );
+		$rcPage = SpecialPage::getTitleFor( 'Recentchanges' );
 		$rcPageName = $rcPage->getPrefixedText();
 		$out->addHTML(
 			"<fieldset id=\"mw-searchoptions\">\n" .
@@ -608,7 +608,7 @@ class SpecialReplaceText extends SpecialPage {
 			}
 			$out->addHTML( '<br />' );
 			$out->addWikiMsg( 'replacetext_formovedpages' );
-			$rcPage = Title::makeTitleSafe( NS_SPECIAL, 'RecentChanges' );
+			$rcPage = SpecialPage::getTitleFor( 'Recentchanges' );
 			$rcPageName = $rcPage->getPrefixedText();
 			$out->addHTML(
 				Xml::checkLabel(
