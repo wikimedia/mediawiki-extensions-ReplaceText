@@ -34,6 +34,11 @@
 			"scripts": [
 				"ext.ReplaceText.js"
 			]
+		},
+		"ext.ReplaceTextStyles": {
+			"styles": [
+				"ext.ReplaceText.css"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
