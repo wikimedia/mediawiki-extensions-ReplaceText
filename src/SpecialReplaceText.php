@@ -570,6 +570,7 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		$out->addModules( "ext.ReplaceText" );
+		$out->addModuleStyles( "ext.ReplaceTextStyles" );
 		// Needed for bolding of search term.
 		$out->addModuleStyles( "mediawiki.special.search.styles" );
 
@@ -635,7 +636,9 @@ class SpecialReplaceText extends SpecialPage {
 			$buttonOpts = [
 				'type' => 'button',
 				'value' => $this->msg( 'replacetext_invertselections' )->text(),
-				'onclick' => 'invertSelections(); return false;'
+				'disabled' => true,
+				'id' => 'replacetext-invert',
+				'class' => 'mw-replacetext-invert'
 			];
 
 			$out->addHTML(

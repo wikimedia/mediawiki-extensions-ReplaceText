@@ -15,3 +15,13 @@ window.invertSelections = function () {
 		}
 	}
 };
+
+( function ( $ ) {
+	$( function () {
+		$( '#replacetext-invert' )
+			.on( 'click', function () {
+				window.invertSelections();
+			} )
+			.prop( 'disabled', false );
+	} );
+}( jQuery ) );
