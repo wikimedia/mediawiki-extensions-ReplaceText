@@ -9,11 +9,7 @@ module.exports = function ( grunt ) {
 
 	grunt.initConfig( {
 		eslint: {
-			all: [
-				'**/*.js',
-				'!node_modules/**',
-				'!vendor/**'
-			]
+			all: '.'
 		},
 		stylelint: {
 			options: {
@@ -21,7 +17,6 @@ module.exports = function ( grunt ) {
 			},
 			all: [
 				'**/*.{css,less}',
-				'!node_modules/**',
 				'!vendor/**'
 			]
 		},
