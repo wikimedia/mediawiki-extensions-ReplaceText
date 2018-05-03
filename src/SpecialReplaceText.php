@@ -445,7 +445,7 @@ class SpecialReplaceText extends SpecialPage {
 		// SQLite unfortunately lacks a REGEXP function or operator by
 		// default, so disable regex(p) searches for SQLite.
 		$dbr = wfGetDB( DB_REPLICA );
-		if ( ! $dbr instanceof Wikimedia\Rdbms\DatabaseSqlite ) {
+		if ( $dbr->getType() != 'sqlite' ) {
 			$out->addHTML( Xml::tags( 'p', null,
 					Xml::checkLabel(
 						$this->msg( 'replacetext_useregex' )->text(),

@@ -19,7 +19,6 @@
  */
 
 use Wikimedia\Rdbms\Database;
-use Wikimedia\Rdbms\DatabasePostgres;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class ReplaceTextSearch {
@@ -102,7 +101,7 @@ class ReplaceTextSearch {
 	 * @return string query condition for regex
 	 */
 	public static function regexCond( $dbr, $column, $regex ) {
-		if ( $dbr instanceof DatabasePostgres ) {
+		if ( $dbr->getType() == 'postgres' ) {
 			$op = '~';
 		} else {
 			$op = 'REGEXP';
