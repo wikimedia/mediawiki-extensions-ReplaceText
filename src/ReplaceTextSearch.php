@@ -35,9 +35,14 @@ class ReplaceTextSearch {
 
 		self::categoryCondition( $category, $tables, $conds );
 		self::prefixCondition( $prefix, $conds );
-		$sort = [ 'ORDER BY' => 'page_namespace, page_title' ];
+		$options = [
+			'ORDER BY' => 'page_namespace, page_title',
+			// 250 seems like a reasonable limit for one screen.
+			// @TODO - should probably be a setting.
+			'LIMIT' => 250
+		];
 
-		return $dbr->select( $tables, $vars, $conds, __METHOD__, $sort );
+		return $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 	}
 
 	/**
