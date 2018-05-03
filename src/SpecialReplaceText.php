@@ -423,17 +423,23 @@ class SpecialReplaceText extends SpecialPage {
 			Xml::textarea( 'replacement', $this->replacement, 100, 5, [ 'style' => 'width: auto;' ] )
 		);
 		$out->addHTML( '</td></tr></table>' );
-		$out->addHTML( Xml::tags( 'p', null,
-				Xml::checkLabel(
-					$this->msg( 'replacetext_useregex' )->text(),
-					'use_regex', 'use_regex'
+
+		// SQLite unfortunately lacks a REGEXP function or operator by
+		// default, so disable regex(p) searches for SQLite.
+		$dbr = wfGetDB( DB_REPLICA );
+		if ( ! $dbr instanceof Wikimedia\Rdbms\DatabaseSqlite ) {
+			$out->addHTML( Xml::tags( 'p', null,
+					Xml::checkLabel(
+						$this->msg( 'replacetext_useregex' )->text(),
+						'use_regex', 'use_regex'
+					)
+				) . "\n" .
+				Xml::element( 'p',
+					[ 'style' => 'font-style: italic' ],
+					$this->msg( 'replacetext_regexdocu' )->text()
 				)
-			) . "\n" .
-			Xml::element( 'p',
-				[ 'style' => 'font-style: italic' ],
-				$this->msg( 'replacetext_regexdocu' )->text()
-			)
-		);
+			);
+		}
 
 		// The interface is heavily based on the one in Special:Search.
 		$namespaces = SearchEngine::searchableNamespaces();
