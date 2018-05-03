@@ -617,10 +617,7 @@ class SpecialReplaceText extends SpecialPage {
 						'create-redirect', 'create-redirect', true ) . "<br />\n" .
 				Xml::checkLabel(
 					$this->msg( 'replacetext_watchmovedpages' )->text(),
-					'watch-pages', 'watch-pages', false ) . '<br />' .
-				Xml::checkLabel(
-					$this->msg( 'replacetext_announce', $rcPageName )->text(),
-					'doAnnounce', 'doAnnounce', true ) . '<br />'
+					'watch-pages', 'watch-pages', false ) . '<br />'
 			);
 			$out->addHTML( '<br />' );
 		}
