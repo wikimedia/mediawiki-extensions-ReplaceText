@@ -30,7 +30,7 @@
  *
  */
 // @codingStandardsIgnoreStart
-$IP = getenv( "MW_INSTALL_PATH" ) ? getenv( "MW_INSTALL_PATH" ) : "../..";
+$IP = getenv( "MW_INSTALL_PATH" ) ? getenv( "MW_INSTALL_PATH" ) : __DIR__ . "/../../..";
 if ( !is_readable( "$IP/maintenance/Maintenance.php" ) ) {
 	die( "MW_INSTALL_PATH needs to be set to your MediaWiki installation.\n" );
 }
