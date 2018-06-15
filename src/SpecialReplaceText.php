@@ -731,9 +731,22 @@ class SpecialReplaceText extends SpecialPage {
 		$context = '';
 		foreach ( $cuts as $_ ) {
 			list( $index, $len, ) = $_;
-			$context .= $this->convertWhiteSpaceToHTML(
-				$wgLang->truncate( substr( $text, 0, $index ), - $cw, '...', false )
-			);
+			$contextBefore = substr( $text, 0, $index );
+			$contextAfter = substr( $text, $index + $len );
+			if ( !is_callable( [ $wgLang, 'truncateForDatabase' ] ) ) {
+				// Backwards compatibility code; remove once MW 1.30 is
+				// no longer supported.
+				$contextBefore =
+					$wgLang->truncate( $contextBefore, - $cw, '...', false );
+				$contextAfter =
+					$wgLang->truncate( $contextAfter, $cw, '...', false );
+			} else {
+				$contextBefore =
+					$wgLang->truncateForDatabase( $contextBefore, - $cw, '...', false );
+				$contextAfter =
+					$wgLang->truncateForDatabase( $contextAfter, $cw, '...', false );
+			}
+			$context .= $this->convertWhiteSpaceToHTML( $contextBefore );
 			$snippet = $this->convertWhiteSpaceToHTML( substr( $text, $index, $len ) );
 			if ( $use_regex ) {
 				$targetStr = "/$target/Uu";
@@ -743,9 +756,7 @@ class SpecialReplaceText extends SpecialPage {
 			}
 			$context .= preg_replace( $targetStr, '<span class="searchmatch">\0</span>', $snippet );
 
-			$context .= $this->convertWhiteSpaceToHTML(
-				$wgLang->truncate( substr( $text, $index + $len ), $cw, '...', false )
-			);
+			$context .= $this->convertWhiteSpaceToHTML( $contextAfter );
 		}
 		return $context;
 	}
