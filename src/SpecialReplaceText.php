@@ -674,7 +674,7 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addWikiMsg( 'replacetext_cannotmove', $wgLang->formatNum( count( $unmoveable_titles ) ) );
 			$text = "<ul>\n";
 			foreach ( $unmoveable_titles as $title ) {
-				$text .= "<li>" .  ReplaceTextUtils::link( $title ) . "<br />\n";
+				$text .= "<li>" . ReplaceTextUtils::link( $title ) . "<br />\n";
 			}
 			$text .= "</ul>\n";
 			$out->addHTML( $text );
