@@ -313,7 +313,7 @@ class SpecialReplaceText extends SpecialPage {
 		$titles_for_move = [];
 		$unmoveable_titles = [];
 
-		$res = $this->getMatchingTitles(
+		$res = ReplaceTextSearch::getMatchingTitles(
 			$this->target,
 			$this->selected_namespaces,
 			$this->category,
@@ -329,15 +329,13 @@ class SpecialReplaceText extends SpecialPage {
 			// See if this move can happen.
 			$cur_page_name = str_replace( '_', ' ', $row->page_title );
 
-			if ( $this->use_regex ) {
-				$new_page_name =
-					preg_replace( "/" . $this->target . "/Uu", $this->replacement, $cur_page_name );
-			} else {
-				$new_page_name =
-					str_replace( $this->target, $this->replacement, $cur_page_name );
-			}
+			$new_title = ReplaceTextSearch::getReplacedTitle(
+				$title,
+				$this->target,
+				$this->replacement,
+				$this->use_regex
+			);
 
-			$new_title = Title::makeTitleSafe( $row->page_namespace, $new_page_name );
 			$err = $title->isValidMoveOperation( $new_title );
 
 			if ( $title->userCan( 'move' ) && !is_array( $err ) ) {
@@ -381,11 +379,12 @@ class SpecialReplaceText extends SpecialPage {
 					->params( "<code><nowiki>{$this->replacement}</nowiki></code>" )->text();
 			}
 		} elseif ( count( $titles_for_move ) > 0 ) {
-			$res = $this->getMatchingTitles(
+			$res = ReplaceTextSearch::getMatchingTitles(
 				$this->replacement,
 				$this->selected_namespaces,
 				$this->category,
-				$this->prefix, $this->use_regex
+				$this->prefix,
+				$this->use_regex
 			);
 			$count = $res->numRows();
 			if ( $count > 0 ) {
@@ -768,31 +767,6 @@ class SpecialReplaceText extends SpecialPage {
 		$msg = preg_replace( '/  /', '&#160; ', $msg );
 		# $msg = str_replace( "\n", '<br />', $msg );
 		return $msg;
-	}
-
-	private function getMatchingTitles( $str, $namespaces, $category, $prefix, $use_regex = false ) {
-		$dbr = wfGetDB( DB_REPLICA );
-
-		$tables = [ 'page' ];
-		$vars = [ 'page_title', 'page_namespace' ];
-
-		$str = str_replace( ' ', '_', $str );
-		if ( $use_regex ) {
-			$comparisonCond = ReplaceTextSearch::regexCond( $dbr, 'page_title', $str );
-		} else {
-			$any = $dbr->anyString();
-			$comparisonCond = 'page_title ' . $dbr->buildLike( $any, $str, $any );
-		}
-		$conds = [
-			$comparisonCond,
-			'page_namespace' => $namespaces,
-		];
-
-		ReplaceTextSearch::categoryCondition( $category, $tables, $conds );
-		ReplaceTextSearch::prefixCondition( $prefix, $conds );
-		$sort = [ 'ORDER BY' => 'page_namespace, page_title' ];
-
-		return $dbr->select( $tables, $vars, $conds, __METHOD__, $sort );
 	}
 
 	/**
