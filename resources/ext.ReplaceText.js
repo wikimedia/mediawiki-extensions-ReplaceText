@@ -1,4 +1,4 @@
-( function ( $ ) {
+( function () {
 	'use strict';
 
 	function invertSelections() {
@@ -22,4 +22,4 @@
 			.on( 'click', invertSelections )
 			.prop( 'disabled', false );
 	} );
-}( jQuery ) );
+}() );
