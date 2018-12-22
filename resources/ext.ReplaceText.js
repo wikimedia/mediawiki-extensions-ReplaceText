@@ -18,8 +18,30 @@
 	}
 
 	$( function () {
+		var $checkboxes = $( '#powersearch input[id^=mw-search-ns]' );
+
 		$( '#replacetext-invert' )
 			.on( 'click', invertSelections )
 			.prop( 'disabled', false );
+
+		// Create check all/none button
+		$( '#mw-search-togglebox' ).append(
+			$( '<label>' )
+				.text( mw.msg( 'powersearch-togglelabel' ) )
+		).append(
+			$( '<input>' ).attr( 'type', 'button' )
+				.attr( 'id', 'mw-search-toggleall' )
+				.prop( 'value', mw.msg( 'powersearch-toggleall' ) )
+				.click( function () {
+					$checkboxes.prop( 'checked', true );
+				} )
+		).append(
+			$( '<input>' ).attr( 'type', 'button' )
+				.attr( 'id', 'mw-search-togglenone' )
+				.prop( 'value', mw.msg( 'powersearch-togglenone' ) )
+				.click( function () {
+					$checkboxes.prop( 'checked', false );
+				} )
+		);
 	} );
 }() );
