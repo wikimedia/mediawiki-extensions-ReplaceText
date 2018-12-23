@@ -36,14 +36,6 @@
 		"ext.ReplaceText": {
 			"scripts": [
 				"ext.ReplaceText.js"
-			],
-			"styles": [
-				"ext.ReplaceText.css"
-			],
-			"messages": [
-				"powersearch-togglelabel",
-				"powersearch-toggleall",
-				"powersearch-togglenone"
 			]
 		},
 		"ext.ReplaceTextStyles": {

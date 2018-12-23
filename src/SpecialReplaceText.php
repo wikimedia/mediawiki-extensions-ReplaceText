@@ -503,9 +503,22 @@ class SpecialReplaceText extends SpecialPage {
 			// do nothing
 		} else {
 			$out->addHTML(
-				Html::element(
+				Html::rawElement(
 					'div',
-					[ 'id' => 'mw-search-togglebox' ]
+					[ 'id' => 'mw-search-togglebox' ],
+					Html::element( 'label', [],
+						$this->msg( 'powersearch-togglelabel' )->text()
+					) .
+					Html::element( 'input', [
+						'id' => 'mw-search-toggleall',
+						'type' => 'button',
+						'value' => $this->msg( 'powersearch-toggleall' )->text(),
+					] ) .
+					Html::element( 'input', [
+						'id' => 'mw-search-togglenone',
+						'type' => 'button',
+						'value' => $this->msg( 'powersearch-togglenone' )->text()
+					] )
 				)
 			);
 		}
@@ -546,6 +559,7 @@ class SpecialReplaceText extends SpecialPage {
 			$continueButton .
 			Xml::closeElement( 'form' )
 		);
+		$out->addModuleStyles( 'ext.ReplaceTextStyles' );
 		$out->addModules( 'ext.ReplaceText' );
 	}
 
