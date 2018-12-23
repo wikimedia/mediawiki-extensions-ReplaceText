@@ -2,6 +2,44 @@
 	margin-top: 20px;
 }
 
+.searchmatch {
+	font-weight: bold;
+}
+
+#mw-searchoptions {
+	/* Support: Firefox, needs `clear: both` on `fieldset` when zoom level > 100%, see T176499 */
+	clear: both;
+	padding: 0.5em 0.75em 0.75em 0.75em;
+	background-color: #f8f9fa;
+	margin: -1px 0 0;
+	border: 1px solid #c8ccd1;
+	border-radius: 0 0 2px 2px;
+}
+
+#mw-searchoptions h4 {
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+#mw-searchoptions table {
+	float: left;
+	margin-right: 3em;
+	border-collapse: collapse;
+}
+
+#mw-searchoptions table td {
+	padding: 0 1em 0 0;
+	white-space: nowrap;
+}
+
+#mw-searchoptions .divider {
+	clear: both;
+	border-bottom: 1px solid #eaecf0;
+	padding-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
 #mw-search-togglebox {
 	float: right;
 }

@@ -662,8 +662,6 @@ class SpecialReplaceText extends SpecialPage {
 
 		$out->addModules( "ext.ReplaceText" );
 		$out->addModuleStyles( "ext.ReplaceTextStyles" );
-		// Needed for bolding of search term.
-		$out->addModuleStyles( "mediawiki.special.search.styles" );
 
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 
