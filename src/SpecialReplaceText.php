@@ -492,7 +492,7 @@ class SpecialReplaceText extends SpecialPage {
 		$tables = $this->namespaceTables( $namespaces );
 		$out->addHTML(
 			"<div class=\"mw-search-formheader\"></div>\n" .
-			"<fieldset id=\"mw-searchoptions\">\n" .
+			"<fieldset class=\"ext-replacetext-searchoptions\">\n" .
 			Xml::tags( 'h4', null, $this->msg( 'powersearch-ns' )->parse() )
 		);
 		// The ability to select/unselect groups of namespaces in the
@@ -505,7 +505,7 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addHTML(
 				Html::rawElement(
 					'div',
-					[ 'id' => 'mw-search-togglebox' ],
+					[ 'class' => 'ext-replacetext-search-togglebox' ],
 					Html::element( 'label', [],
 						$this->msg( 'powersearch-togglelabel' )->text()
 					) .
@@ -523,7 +523,7 @@ class SpecialReplaceText extends SpecialPage {
 			);
 		}
 		$out->addHTML(
-			Xml::element( 'div', [ 'class' => 'divider' ], '', false ) .
+			Xml::element( 'div', [ 'class' => 'ext-replacetext-divider' ], '', false ) .
 			"$tables\n</fieldset>"
 		);
 		// @todo FIXME: raw html messages
@@ -537,9 +537,9 @@ class SpecialReplaceText extends SpecialPage {
 			'flags' => [ 'primary', 'progressive' ]
 		] );
 		$out->addHTML(
-			"<fieldset id=\"mw-searchoptions\">\n" .
+			"<fieldset class=\"ext-replacetext-searchoptions\">\n" .
 			Xml::tags( 'h4', null, $this->msg( 'replacetext_optionalfilters' )->parse() ) .
-			Xml::element( 'div', [ 'class' => 'divider' ], '', false ) .
+			Xml::element( 'div', [ 'class' => 'ext-replacetext-divider' ], '', false ) .
 			"<p>$category_search_label\n" .
 			Xml::input( 'category', 20, $this->category, [ 'type' => 'text' ] ) . '</p>' .
 			"<p>$prefix_search_label\n" .
@@ -670,7 +670,7 @@ class SpecialReplaceText extends SpecialPage {
 		if ( count( $titles_for_edit ) + count( $titles_for_move ) > 5 ) {
 			$invertButton = new OOUI\ButtonWidget( [
 				'label' => $this->msg( 'replacetext_invertselections' )->text(),
-				'classes' => [ 'mw-replacetext-invert' ]
+				'classes' => [ 'ext-replacetext-invert' ]
 			] );
 			$out->addHTML( $invertButton );
 		}
@@ -814,7 +814,7 @@ class SpecialReplaceText extends SpecialPage {
 				$targetq = preg_quote( $this->convertWhiteSpaceToHTML( $target ), '/' );
 				$targetStr = "/$targetq/i";
 			}
-			$context .= preg_replace( $targetStr, '<span class="searchmatch">\0</span>', $snippet );
+			$context .= preg_replace( $targetStr, '<span class="ext-replacetext-searchmatch">\0</span>', $snippet );
 
 			$context .= $this->convertWhiteSpaceToHTML( $contextAfter );
 		}
