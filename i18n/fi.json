@@ -7,12 +7,13 @@
 			"Silvonen",
 			"Str4nd",
 			"Usp",
-			"Valtlait"
+			"Valtlait",
+			"Pyscowicz"
 		]
 	},
 	"replacetext": "Korvaa teksti",
 	"replacetext-desc": "Lisää [[Special:ReplaceText|toimintosivun]], jonka kautta ylläpitäjät voivat etsiä ja korvata wikin sisältämää tekstiä",
-	"replacetext_docu": "Korvataksesi yhden merkkijonon toisella kaikissa tämän wikin tavallisissa sivuissa, syötä molemmat kaksi tekstinpätkää tänne ja sitten napsauta kohtaa 'Jatka'. Tämän jälkeen sinulle näytetään luettelo sivuista, jotka sisältävät haetun tekstin, ja voit valita ne, joihin haluat korvata sen. Oma nimesi näkyy sivun historiassa käyttäjänä joka on vastuussa kaikista tehdyistä muutoksista.",
+	"replacetext_docu": "Korvataksesi yhden merkkijonon toisella kaikissa tämän wikin tavallisissa sivuissa, syötä molemmat kaksi tekstinpätkää tänne ja sitten napsauta \"{{int:replacetext_continue}}\". Tämän jälkeen sinulle näytetään luettelo sivuista, jotka sisältävät haetun tekstin, ja voit valita ne, joihin haluat korvata sen. Oma nimesi näkyy sivun historiassa käyttäjänä joka on vastuussa kaikista tehdyistä muutoksista.",
 	"replacetext_originaltext": "Alkuperäinen teksti",
 	"replacetext_replacementtext": "Korvaava teksti",
 	"replacetext_useregex": "Käytä säännöllisiä lausekkeita",
