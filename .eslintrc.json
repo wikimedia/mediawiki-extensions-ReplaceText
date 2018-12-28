@@ -5,6 +5,7 @@
 		"browser": true
 	},
 	"globals": {
+		"mw": false,
 		"$": false
 	}
 }

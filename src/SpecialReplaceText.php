@@ -513,8 +513,7 @@ class SpecialReplaceText extends SpecialPage {
 			Xml::submitButton( $this->msg( 'replacetext_continue' )->text() ) .
 			Xml::closeElement( 'form' )
 		);
-		// Add Javascript specific to Special:Search
-		$out->addModules( 'mediawiki.special.search' );
+		$out->addModules( 'ext.ReplaceText' );
 	}
 
 	/**
