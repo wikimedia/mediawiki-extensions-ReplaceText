@@ -6,5 +6,4 @@
 node_modules/
 vendor/
 composer.lock
-tests/phan/issues
 package-lock.json
