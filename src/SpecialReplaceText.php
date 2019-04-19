@@ -18,6 +18,8 @@
  * @file
  */
 
+use MediaWiki\MediaWikiServices;
+
 class SpecialReplaceText extends SpecialPage {
 	private $target;
 	private $replacement;
@@ -75,7 +77,14 @@ class SpecialReplaceText extends SpecialPage {
 	 * @return array namespaces selected for search
 	 */
 	function getSelectedNamespaces() {
-		$all_namespaces = SearchEngine::searchableNamespaces();
+		if ( class_exists( MediaWikiServices::class ) ) {
+			// MW 1.27+
+			$all_namespaces = MediaWikiServices::getInstance()->getSearchEngineConfig()
+				->searchableNamespaces();
+		} else {
+			/** @phan-suppress-next-line PhanUndeclaredStaticMethod */
+			$all_namespaces = SearchEngine::searchableNamespaces();
+		}
 		$selected_namespaces = [];
 		foreach ( $all_namespaces as $ns => $name ) {
 			if ( $this->getRequest()->getCheck( 'ns' . $ns ) ) {
@@ -460,7 +469,14 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		// The interface is heavily based on the one in Special:Search.
-		$namespaces = SearchEngine::searchableNamespaces();
+		if ( class_exists( MediaWikiServices::class ) ) {
+			// MW 1.27+
+			$namespaces = MediaWikiServices::getInstance()->getSearchEngineConfig()
+				->searchableNamespaces();
+		} else {
+			/** @phan-suppress-next-line PhanUndeclaredStaticMethod */
+			$namespaces = SearchEngine::searchableNamespaces();
+		}
 		$tables = $this->namespaceTables( $namespaces );
 		$out->addHTML(
 			"<div class=\"mw-search-formheader\"></div>\n" .
