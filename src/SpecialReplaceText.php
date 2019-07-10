@@ -52,21 +52,31 @@ class SpecialReplaceText extends SpecialPage {
 			throw new PermissionsError( 'replacetext' );
 		}
 
+		$out = $this->getOutput();
 		// Replace Text can't be run with certain settings, due to the
 		// changes they make to the DB storage setup.
 		if ( $wgCompressRevisions ) {
 			$errorMsg = "Error: text replacements cannot be run if \$wgCompressRevisions is set to true.";
-			$this->getOutput()->addWikiText( "<div class=\"errorbox\">$errorMsg</div>" );
+			if ( method_exists( $out, 'addWikiTextAsContent' ) ) {
+				$out->addWikiTextAsContent( "<div class=\"errorbox\">$errorMsg</div>" );
+			} else {
+				// @phan-suppress-next-line PhanUndeclaredMethod
+				$out->addWikiText( "<div class=\"errorbox\">$errorMsg</div>" );
+			}
 			return;
 		}
 		if ( !empty( $wgExternalStores ) ) {
 			$errorMsg = "Error: text replacements cannot be run if \$wgExternalStores is non-empty.";
-			$this->getOutput()->addWikiText( "<div class=\"errorbox\">$errorMsg</div>" );
+			if ( method_exists( $out, 'addWikiTextAsContent' ) ) {
+				$out->addWikiTextAsContent( "<div class=\"errorbox\">$errorMsg</div>" );
+			} else {
+				// @phan-suppress-next-line PhanUndeclaredMethod
+				$out->addWikiText( "<div class=\"errorbox\">$errorMsg</div>" );
+			}
 			return;
 		}
 
 		$this->setHeaders();
-		$out = $this->getOutput();
 		if ( !is_null( $out->getResourceLoader()->getModule( 'mediawiki.special' ) ) ) {
 			$out->addModuleStyles( 'mediawiki.special' );
 		}
@@ -140,7 +150,7 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addHTML(
 				ReplaceTextUtils::link(
 					$this->getPageTitle(),
-					$this->msg( 'replacetext_return' )->escaped()
+					$this->msg( 'replacetext_return' )->text()
 				)
 			);
 			return;
@@ -188,8 +198,10 @@ class SpecialReplaceText extends SpecialPage {
 				}
 
 				if ( $bad_cat_name ) {
-					$link = ReplaceTextUtils::link( $category_title,
-						htmlspecialchars( ucfirst( $this->category ) ) );
+					$link = ReplaceTextUtils::link(
+						$category_title,
+						ucfirst( $this->category )
+					);
 					$out->addHTML(
 						$this->msg( 'replacetext_nosuchcategory' )->rawParams( $link )->escaped()
 					);
@@ -208,14 +220,22 @@ class SpecialReplaceText extends SpecialPage {
 				$out->addHTML(
 					'<p>' .
 					ReplaceTextUtils::link(
-					$this->getPageTitle(),
-					$this->msg( 'replacetext_return' )->escaped() )
+						$this->getPageTitle(),
+						$this->msg( 'replacetext_return' )->text()
+					)
 					. '</p>'
 				);
 			} else {
 				$warning_msg = $this->getAnyWarningMessageBeforeReplace( $titles_for_edit, $titles_for_move );
 				if ( !is_null( $warning_msg ) ) {
-					$out->addWikiText( "<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />" );
+					if ( method_exists( $out, 'addWikiTextAsContent' ) ) {
+						$out->addWikiTextAsContent(
+							"<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />"
+						);
+					} else {
+						// @phan-suppress-next-line PhanUndeclaredMethod
+						$out->addWikiText( "<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />" );
+					}
 				}
 
 				$this->pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles );
@@ -775,8 +795,8 @@ class SpecialReplaceText extends SpecialPage {
 		return $context;
 	}
 
-	private function convertWhiteSpaceToHTML( $msg ) {
-		$msg = htmlspecialchars( $msg );
+	private function convertWhiteSpaceToHTML( $message ) {
+		$msg = htmlspecialchars( $message );
 		$msg = preg_replace( '/^ /m', '&#160; ', $msg );
 		$msg = preg_replace( '/ $/m', ' &#160;', $msg );
 		$msg = preg_replace( '/  /', '&#160; ', $msg );
