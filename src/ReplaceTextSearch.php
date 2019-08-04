@@ -18,7 +18,7 @@
  * @file
  */
 
-use Wikimedia\Rdbms\Database;
+use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class ReplaceTextSearch {
@@ -95,7 +95,7 @@ class ReplaceTextSearch {
 	}
 
 	/**
-	 * @param Database $dbr
+	 * @param IDatabase $dbr
 	 * @param string $column
 	 * @param string $regex
 	 * @return string query condition for regex
