@@ -57,17 +57,12 @@ class ReplaceTextJob extends Job {
 			global $wgUser;
 			$actual_user = $wgUser;
 			$wgUser = User::newFromId( $this->params['user_id'] );
-			$cur_page_name = $this->title->getText();
-			if ( $this->params['use_regex'] ) {
-				$new_page_name = preg_replace(
-					"/" . $this->params['target_str'] . "/Uu", $this->params['replacement_str'], $cur_page_name
-				);
-			} else {
-				$new_page_name =
-					str_replace( $this->params['target_str'], $this->params['replacement_str'], $cur_page_name );
-			}
-
-			$new_title = Title::newFromText( $new_page_name, $this->title->getNamespace() );
+			$new_title = ReplaceTextSearch::getReplacedTitle(
+				$this->title,
+				$this->params['target_str'],
+				$this->params['replacement_str'],
+				$this->params['use_regex']
+			);
 			$reason = $this->params['edit_summary'];
 			$create_redirect = $this->params['create_redirect'];
 			$this->title->moveTo( $new_title, true, $reason, $create_redirect );
