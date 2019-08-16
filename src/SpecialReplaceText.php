@@ -355,8 +355,6 @@ class SpecialReplaceText extends SpecialPage {
 			if ( $title == null ) {
 				continue;
 			}
-			// See if this move can happen.
-			$cur_page_name = str_replace( '_', ' ', $row->page_title );
 
 			$new_title = ReplaceTextSearch::getReplacedTitle(
 				$title,
@@ -365,9 +363,11 @@ class SpecialReplaceText extends SpecialPage {
 				$this->use_regex
 			);
 
-			$err = $title->isValidMoveOperation( $new_title );
+			$mvPage = new MovePage( $title, $new_title );
+			$moveStatus = $mvPage->isValidMove();
+			$permissionStatus = $mvPage->checkPermissions( $this->getUser(), null );
 
-			if ( $title->userCan( 'move' ) && !is_array( $err ) ) {
+			if ( $permissionStatus->isOK() && $moveStatus->isOK() ) {
 				$titles_for_move[] = $title;
 			} else {
 				$unmoveable_titles[] = $title;
