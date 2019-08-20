@@ -57,22 +57,12 @@ class SpecialReplaceText extends SpecialPage {
 		// changes they make to the DB storage setup.
 		if ( $wgCompressRevisions ) {
 			$errorMsg = "Error: text replacements cannot be run if \$wgCompressRevisions is set to true.";
-			if ( method_exists( $out, 'addWikiTextAsContent' ) ) {
-				$out->addWikiTextAsContent( "<div class=\"errorbox\">$errorMsg</div>" );
-			} else {
-				// @phan-suppress-next-line PhanUndeclaredMethod
-				$out->addWikiText( "<div class=\"errorbox\">$errorMsg</div>" );
-			}
+			$out->addWikiTextAsContent( "<div class=\"errorbox\">$errorMsg</div>" );
 			return;
 		}
 		if ( !empty( $wgExternalStores ) ) {
 			$errorMsg = "Error: text replacements cannot be run if \$wgExternalStores is non-empty.";
-			if ( method_exists( $out, 'addWikiTextAsContent' ) ) {
-				$out->addWikiTextAsContent( "<div class=\"errorbox\">$errorMsg</div>" );
-			} else {
-				// @phan-suppress-next-line PhanUndeclaredMethod
-				$out->addWikiText( "<div class=\"errorbox\">$errorMsg</div>" );
-			}
+			$out->addWikiTextAsContent( "<div class=\"errorbox\">$errorMsg</div>" );
 			return;
 		}
 
@@ -228,14 +218,9 @@ class SpecialReplaceText extends SpecialPage {
 			} else {
 				$warning_msg = $this->getAnyWarningMessageBeforeReplace( $titles_for_edit, $titles_for_move );
 				if ( !is_null( $warning_msg ) ) {
-					if ( method_exists( $out, 'addWikiTextAsContent' ) ) {
-						$out->addWikiTextAsContent(
-							"<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />"
-						);
-					} else {
-						// @phan-suppress-next-line PhanUndeclaredMethod
-						$out->addWikiText( "<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />" );
-					}
+					$out->addWikiTextAsContent(
+						"<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />"
+					);
 				}
 
 				$this->pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles );
