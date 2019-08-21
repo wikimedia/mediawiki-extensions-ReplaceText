@@ -54,22 +54,32 @@ class ReplaceTextJob extends Job {
 		}
 
 		if ( array_key_exists( 'move_page', $this->params ) ) {
-			global $wgUser;
-			$actual_user = $wgUser;
-			$wgUser = User::newFromId( $this->params['user_id'] );
+			$current_user = User::newFromId( $this->params['user_id'] );
 			$new_title = ReplaceTextSearch::getReplacedTitle(
 				$this->title,
 				$this->params['target_str'],
 				$this->params['replacement_str'],
 				$this->params['use_regex']
 			);
+
+			if ( is_null( $new_title ) ) {
+				$this->error = "replaceText: Invalid new title - " . $this->params['replacement_str'];
+				return false;
+			}
+
 			$reason = $this->params['edit_summary'];
 			$create_redirect = $this->params['create_redirect'];
-			$this->title->moveTo( $new_title, true, $reason, $create_redirect );
-			if ( $this->params['watch_page'] ) {
-				WatchAction::doWatch( $new_title, $wgUser );
+			$mvPage = new MovePage( $this->title, $new_title );
+			$mvStatus = $mvPage->move( $current_user, $reason, $create_redirect );
+			if ( !$mvStatus->isOK() ) {
+				$this->error = "replaceText: error while moving: " . $this->title->getPrefixedDBkey() .
+					". Errors: " . $mvStatus->getWikiText();
+				return false;
 			}
-			$wgUser = $actual_user;
+
+			if ( $this->params['watch_page'] ) {
+				WatchAction::doWatch( $new_title, $current_user );
+			}
 		} else {
 			if ( $this->title->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
 				$this->error = 'replaceText: Wiki page "' .
