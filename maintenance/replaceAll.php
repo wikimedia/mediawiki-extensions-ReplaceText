@@ -399,10 +399,8 @@ EOF;
 				continue;
 			}
 
-			if (
-				!$this->shouldContinueByDefault() &&
-					$this->listTitles( $titles, $target, $replacement, $useRegex, $this->rename )
-			) {
+			if ( !$this->shouldContinueByDefault() ) {
+				$this->listTitles( $titles, $target, $replacement, $useRegex, $this->rename );
 				if ( !$this->getReply( 'Replace instances on these pages?' ) ) {
 					return;
 				}

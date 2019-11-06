@@ -87,12 +87,6 @@ class ReplaceTextJob extends Job {
 				return false;
 			}
 			$wikiPage = new WikiPage( $this->title );
-			// Is this check necessary?
-			if ( !$wikiPage ) {
-				$this->error =
-					'replaceText: Wiki page not found for "' . $this->title->getPrefixedDBkey() . '."';
-				return false;
-			}
 			$wikiPageContent = $wikiPage->getContent();
 			if ( is_null( $wikiPageContent ) ) {
 				$this->error =
