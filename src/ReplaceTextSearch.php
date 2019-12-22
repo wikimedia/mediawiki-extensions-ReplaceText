@@ -26,8 +26,8 @@ class ReplaceTextSearch {
 	/**
 	 * @param string $search
 	 * @param array $namespaces
-	 * @param string $category
-	 * @param string $prefix
+	 * @param string|null $category
+	 * @param string|null $prefix
 	 * @param bool $use_regex
 	 * @return IResultWrapper Resulting rows
 	 */
@@ -65,7 +65,7 @@ class ReplaceTextSearch {
 	}
 
 	/**
-	 * @param string $category
+	 * @param string|null $category
 	 * @param array &$tables
 	 * @param array &$conds
 	 */
@@ -79,7 +79,7 @@ class ReplaceTextSearch {
 	}
 
 	/**
-	 * @param string $prefix
+	 * @param string|null $prefix
 	 * @param array &$conds
 	 */
 	public static function prefixCondition( $prefix, &$conds ) {
@@ -93,6 +93,7 @@ class ReplaceTextSearch {
 			$prefix = $title->getDbKey();
 		}
 		$any = $dbr->anyString();
+		// @phan-suppress-next-line PhanTypeMismatchArgumentNullable strval makes this non-null
 		$conds[] = 'page_title ' . $dbr->buildLike( $prefix, $any );
 	}
 
@@ -114,8 +115,8 @@ class ReplaceTextSearch {
 	/**
 	 * @param string $str
 	 * @param array $namespaces
-	 * @param string $category
-	 * @param string $prefix
+	 * @param string|null $category
+	 * @param string|null $prefix
 	 * @param bool $use_regex
 	 * @return IResultWrapper Resulting rows
 	 */
