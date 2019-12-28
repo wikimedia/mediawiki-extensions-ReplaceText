@@ -106,8 +106,8 @@ class ReplaceAll extends Maintenance {
 			User::newFromName( $userReplacing );
 
 		if ( get_class( $user ) !== 'User' ) {
-			$this->error(
-				"Couldn't translate '$userReplacing' to a user.", true
+			$this->fatalError(
+				"Couldn't translate '$userReplacing' to a user."
 			);
 		}
 
@@ -117,7 +117,7 @@ class ReplaceAll extends Maintenance {
 	private function getTarget() {
 		$ret = $this->getArg( 0 );
 		if ( !$ret ) {
-			$this->error( "You have to specify a target.", true );
+			$this->fatalError( "You have to specify a target." );
 		}
 		return [ $ret ];
 	}
@@ -125,7 +125,7 @@ class ReplaceAll extends Maintenance {
 	private function getReplacement() {
 		$ret = $this->getArg( 1 );
 		if ( !$ret ) {
-			$this->error( "You have to specify replacement text.", true );
+			$this->fatalError( "You have to specify replacement text." );
 		}
 		return [ $ret ];
 	}
@@ -354,7 +354,7 @@ EOF;
 		}
 
 		if ( $this->namespaces === [] ) {
-			$this->error( "No matching namespaces.", true );
+			$this->fatalError( "No matching namespaces." );
 		}
 
 		foreach ( array_keys( $this->target ) as $index ) {
@@ -391,7 +391,7 @@ EOF;
 			$titles = new TitleArrayFromResult( $res );
 
 			if ( count( $titles ) === 0 ) {
-				$this->error( 'No targets found to replace.', true );
+				$this->fatalError( 'No targets found to replace.' );
 			}
 
 			if ( $this->getOption( "dry-run" ) ) {
