@@ -32,7 +32,7 @@ class ReplaceTextJob extends Job {
 	 * @param Title $title
 	 * @param array|bool $params Cannot be === true
 	 */
-	function __construct( $title, $params = '' ) {
+	function __construct( $title, $params = [] ) {
 		parent::__construct( 'replaceText', $title, $params );
 	}
 

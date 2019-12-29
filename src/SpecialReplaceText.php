@@ -272,10 +272,10 @@ class SpecialReplaceText extends SpecialPage {
 		foreach ( $request->getValues() as $key => $value ) {
 			if ( $value == '1' && $key !== 'replace' && $key !== 'use_regex' ) {
 				if ( strpos( $key, 'move-' ) !== false ) {
-					$title = Title::newFromID( substr( $key, 5 ) );
+					$title = Title::newFromID( (int)substr( $key, 5 ) );
 					$replacement_params['move_page'] = true;
 				} else {
-					$title = Title::newFromID( $key );
+					$title = Title::newFromID( (int)$key );
 				}
 				if ( $title !== null ) {
 					$jobs[] = new ReplaceTextJob( $title, $replacement_params );
