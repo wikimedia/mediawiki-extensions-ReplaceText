@@ -48,7 +48,7 @@ class ReplaceTextJob extends Job {
 			} );
 		}
 
-		if ( is_null( $this->title ) ) {
+		if ( $this->title === null ) {
 			$this->error = "replaceText: Invalid title";
 			return false;
 		}
@@ -62,7 +62,7 @@ class ReplaceTextJob extends Job {
 				$this->params['use_regex']
 			);
 
-			if ( is_null( $new_title ) ) {
+			if ( $new_title === null ) {
 				$this->error = "replaceText: Invalid new title - " . $this->params['replacement_str'];
 				return false;
 			}
@@ -88,7 +88,7 @@ class ReplaceTextJob extends Job {
 			}
 			$wikiPage = new WikiPage( $this->title );
 			$wikiPageContent = $wikiPage->getContent();
-			if ( is_null( $wikiPageContent ) ) {
+			if ( $wikiPageContent === null ) {
 				$this->error =
 					'replaceText: No contents found for wiki page at "' . $this->title->getPrefixedDBkey() . '."';
 				return false;

@@ -67,7 +67,7 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		$this->setHeaders();
-		if ( !is_null( $out->getResourceLoader()->getModule( 'mediawiki.special' ) ) ) {
+		if ( $out->getResourceLoader()->getModule( 'mediawiki.special' ) !== null ) {
 			$out->addModuleStyles( 'mediawiki.special' );
 		}
 		$this->doSpecialReplaceText();
@@ -217,7 +217,7 @@ class SpecialReplaceText extends SpecialPage {
 				);
 			} else {
 				$warning_msg = $this->getAnyWarningMessageBeforeReplace( $titles_for_edit, $titles_for_move );
-				if ( !is_null( $warning_msg ) ) {
+				if ( $warning_msg !== null ) {
 					$out->addWikiTextAsContent(
 						"<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />"
 					);
@@ -429,7 +429,7 @@ class SpecialReplaceText extends SpecialPage {
 			Html::hidden( 'continue', 1 ) .
 			Html::hidden( 'token', $out->getUser()->getEditToken() )
 		);
-		if ( is_null( $warning_msg ) ) {
+		if ( $warning_msg === null ) {
 			$out->addWikiMsg( 'replacetext_docu' );
 		} else {
 			$out->wrapWikiMsg(

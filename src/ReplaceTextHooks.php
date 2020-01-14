@@ -36,7 +36,7 @@ class ReplaceTextHooks {
 		}
 		$extensionsRow = $generalSection->getRow( 'extensions' );
 
-		if ( is_null( $extensionsRow ) ) {
+		if ( $extensionsRow === null ) {
 			$extensionsRow = new ALRow( 'extensions' );
 			$generalSection->addRow( $extensionsRow );
 		}
@@ -70,7 +70,7 @@ class ReplaceTextHooks {
 	 */
 	public static function getReservedNames( &$names ) {
 		global $wgReplaceTextUser;
-		if ( !is_null( $wgReplaceTextUser ) ) {
+		if ( $wgReplaceTextUser !== null ) {
 			$names[] = $wgReplaceTextUser;
 		}
 	}

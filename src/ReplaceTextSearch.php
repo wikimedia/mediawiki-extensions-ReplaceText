@@ -89,7 +89,7 @@ class ReplaceTextSearch {
 
 		$dbr = wfGetDB( DB_REPLICA );
 		$title = Title::newFromText( $prefix );
-		if ( !is_null( $title ) ) {
+		if ( $title !== null ) {
 			$prefix = $title->getDbKey();
 		}
 		$any = $dbr->anyString();
