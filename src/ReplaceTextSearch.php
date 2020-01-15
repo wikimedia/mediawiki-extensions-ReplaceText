@@ -34,6 +34,8 @@ class ReplaceTextSearch {
 	public static function doSearchQuery(
 		$search, $namespaces, $category, $prefix, $use_regex = false
 	) {
+		global $wgReplaceTextResultsLimit;
+
 		$dbr = wfGetDB( DB_REPLICA );
 		$tables = [ 'page', 'revision', 'text', 'slots', 'content' ];
 		$vars = [ 'page_id', 'page_namespace', 'page_title', 'old_text' ];
@@ -56,9 +58,7 @@ class ReplaceTextSearch {
 		self::prefixCondition( $prefix, $conds );
 		$options = [
 			'ORDER BY' => 'page_namespace, page_title',
-			// 250 seems like a reasonable limit for one screen.
-			// @TODO - should probably be a setting.
-			'LIMIT' => 250
+			'LIMIT' => $wgReplaceTextResultsLimit
 		];
 
 		return $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
