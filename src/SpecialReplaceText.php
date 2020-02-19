@@ -178,16 +178,16 @@ class SpecialReplaceText extends SpecialPage {
 			// If no results were found, check to see if a bad
 			// category name was entered.
 			if ( count( $titles_for_edit ) == 0 && count( $titles_for_move ) == 0 ) {
-				$bad_cat_name = false;
+				$category_title = null;
 
 				if ( !empty( $this->category ) ) {
 					$category_title = Title::makeTitleSafe( NS_CATEGORY, $this->category );
 					if ( !$category_title->exists() ) {
-						$bad_cat_name = true;
+						$category_title = null;
 					}
 				}
 
-				if ( $bad_cat_name ) {
+				if ( $category_title !== null ) {
 					$link = ReplaceTextUtils::link(
 						$category_title,
 						ucfirst( $this->category )
