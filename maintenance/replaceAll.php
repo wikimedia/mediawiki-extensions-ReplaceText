@@ -185,19 +185,19 @@ class ReplaceAll extends Maintenance {
 	}
 
 	private function listNamespaces() {
-		echo "Index\tNamespace\n";
+		$this->output( "Index\tNamespace\n" );
 		$nsList = MWNamespace::getCanonicalNamespaces();
 		ksort( $nsList );
 		foreach ( $nsList as $int => $val ) {
 			if ( $val == "" ) {
 				$val = "(main)";
 			}
-			echo " $int\t$val\n";
+			$this->output( " $int\t$val\n" );
 		}
 	}
 
 	private function showFileFormat() {
-echo <<<EOF
+		$text = <<<EOF
 
 The format of the replacements file is tab separated with three fields.
 Any line that does not have a tab is ignored and can be considered a comment.
@@ -217,6 +217,7 @@ regex(p*)	Count the Ps; \\1	true
 
 
 EOF;
+		$this->output( $text );
 	}
 
 	private function getNamespaces() {
@@ -275,7 +276,7 @@ EOF;
 				// Implicit conversion of objects to strings
 				$this->output( "$title	->	$newTitle\n" );
 			} else {
-				echo "$title\n";
+				$this->output( "$title\n" );
 			}
 		}
 	}
@@ -297,12 +298,12 @@ EOF;
 				$params[ 'watch_page' ] = false;
 			}
 
-			echo "Replacing on $title... ";
+			$this->output( "Replacing on $title... " );
 			$job = new ReplaceTextJob( $title, $params );
 			if ( $job->run() !== true ) {
 				$this->error( "Trouble on the page '$title'." );
 			}
-			echo "done.\n";
+			$this->output( "done.\n" );
 		}
 	}
 
@@ -363,11 +364,11 @@ EOF;
 			$useRegex = $this->useRegex[$index];
 
 			if ( $this->getOption( "debug" ) ) {
-				echo "Replacing '$target' with '$replacement'";
+				$this->output( "Replacing '$target' with '$replacement'" );
 				if ( $useRegex ) {
-					echo " as regular expression.";
+					$this->output( " as regular expression." );
 				}
-				echo "\n";
+				$this->output( "\n" );
 			}
 
 			if ( $this->rename ) {
