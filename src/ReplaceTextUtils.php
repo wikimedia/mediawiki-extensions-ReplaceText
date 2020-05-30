@@ -18,7 +18,7 @@
  * @file
  */
 
-use \MediaWiki\MediaWikiServices;
+use MediaWiki\MediaWikiServices;
 
 class ReplaceTextUtils {
 

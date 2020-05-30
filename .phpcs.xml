@@ -2,7 +2,6 @@
 <ruleset>
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPrivate" />
-		<exclude name="PSR12.Files.ImportStatement.LeadingSlash" />
 		<exclude name="Squiz.PHP.NonExecutableCode.Unreachable" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
 	</rule>
