@@ -756,8 +756,10 @@ class SpecialReplaceText extends SpecialPage {
 				// Backwards compatibility code; remove once MW 1.30 is
 				// no longer supported.
 				$contextBefore =
+					// @phan-suppress-next-line PhanUndeclaredMethod
 					$wgLang->truncate( $contextBefore, - $cw, '...', false );
 				$contextAfter =
+					// @phan-suppress-next-line PhanUndeclaredMethod
 					$wgLang->truncate( $contextAfter, $cw, '...', false );
 			} else {
 				$contextBefore =
@@ -765,6 +767,7 @@ class SpecialReplaceText extends SpecialPage {
 				$contextAfter =
 					$wgLang->truncateForDatabase( $contextAfter, $cw, '...', false );
 			}
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			$context .= $this->convertWhiteSpaceToHTML( $contextBefore );
 			$snippet = $this->convertWhiteSpaceToHTML( substr( $text, $index, $len ) );
 			if ( $use_regex ) {
@@ -775,6 +778,7 @@ class SpecialReplaceText extends SpecialPage {
 			}
 			$context .= preg_replace( $targetStr, '<span class="searchmatch">\0</span>', $snippet );
 
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			$context .= $this->convertWhiteSpaceToHTML( $contextAfter );
 		}
 		return $context;
