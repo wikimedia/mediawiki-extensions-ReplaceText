@@ -14,7 +14,7 @@
 	"replacetext_useregex": "Normal ifadeler kullanın",
 	"replacetext_regexdocu": "(Örnek: \"a(.*)c\" değeri için \"{{int:replacetext_originaltext}}\" ve \"ac$1\" \"{{int:replacetext_replacementtext}}\", \"abc\", \"acb\" ile değiştirildi.)",
 	"replacetext_optionalfilters": "İsteğe bağlı filtreler:",
-	"replacetext_categorysearch": "Sadece kategoride değiştir:",
+	"replacetext_categorysearch": "Yalnızca kategoride değiştir:",
 	"replacetext_prefixsearch": "Sadece şu öneke sahip sayfalarda değiştir:",
 	"replacetext_editpages": "Sayfa içeriklerindeki metinleri değiştir",
 	"replacetext_movepages": "Sayfa başlıklarında metni değiştir, mümkün olduğunda",
