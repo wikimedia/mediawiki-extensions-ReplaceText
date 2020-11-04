@@ -757,13 +757,13 @@ class SpecialReplaceText extends SpecialPage {
 				// no longer supported.
 				$contextBefore =
 					// @phan-suppress-next-line PhanUndeclaredMethod
-					$wgLang->truncate( $contextBefore, - $cw, '...', false );
+					$wgLang->truncate( $contextBefore, -$cw, '...', false );
 				$contextAfter =
 					// @phan-suppress-next-line PhanUndeclaredMethod
 					$wgLang->truncate( $contextAfter, $cw, '...', false );
 			} else {
 				$contextBefore =
-					$wgLang->truncateForDatabase( $contextBefore, - $cw, '...', false );
+					$wgLang->truncateForDatabase( $contextBefore, -$cw, '...', false );
 				$contextAfter =
 					$wgLang->truncateForDatabase( $contextAfter, $cw, '...', false );
 			}
