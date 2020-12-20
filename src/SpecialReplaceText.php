@@ -303,6 +303,7 @@ class SpecialReplaceText extends SpecialPage {
 			if ( $title == null ) {
 				continue;
 			}
+			// @phan-suppress-next-line SecurityCheck-ReDoS target could be a regex from user
 			$context = $this->extractContext( $row->old_text, $this->target, $this->use_regex );
 			$titles_for_edit[] = [ $title, $context ];
 		}
