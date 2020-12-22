@@ -545,7 +545,6 @@ class SpecialReplaceText extends SpecialPage {
 	 * @return string HTML
 	 */
 	function namespaceTables( $namespaces, $rowsPerTable = 3 ) {
-		global $wgContLang;
 		// Group namespaces into rows according to subject.
 		// Try not to make too many assumptions about namespace numbering.
 		$rows = [];
@@ -568,7 +567,7 @@ class SpecialReplaceText extends SpecialPage {
 		// Lay out namespaces in multiple floating two-column tables so they'll
 		// be arranged nicely while still accommodating different screen widths
 		// Float to the right on RTL wikis
-		$tableStyle = $wgContLang->isRTL() ?
+		$tableStyle = MediaWikiServices::getInstance()->getContentLanguage()->isRTL() ?
 			'float: right; margin: 0 0 0em 1em' : 'float: left; margin: 0 1em 0em 0';
 		// Build the final HTML table...
 		for ( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
