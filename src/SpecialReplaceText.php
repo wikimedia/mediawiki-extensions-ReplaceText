@@ -77,14 +77,8 @@ class SpecialReplaceText extends SpecialPage {
 	 * @return array namespaces selected for search
 	 */
 	function getSelectedNamespaces() {
-		if ( class_exists( MediaWikiServices::class ) ) {
-			// MW 1.27+
-			$all_namespaces = MediaWikiServices::getInstance()->getSearchEngineConfig()
-				->searchableNamespaces();
-		} else {
-			/** @phan-suppress-next-line PhanUndeclaredStaticMethod */
-			$all_namespaces = SearchEngine::searchableNamespaces();
-		}
+		$all_namespaces = MediaWikiServices::getInstance()->getSearchEngineConfig()
+			->searchableNamespaces();
 		$selected_namespaces = [];
 		foreach ( $all_namespaces as $ns => $name ) {
 			if ( $this->getRequest()->getCheck( 'ns' . $ns ) ) {
@@ -111,6 +105,8 @@ class SpecialReplaceText extends SpecialPage {
 		$this->doAnnounce = $request->getBool( 'doAnnounce' );
 		$this->selected_namespaces = $this->getSelectedNamespaces();
 
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+
 		if ( $request->getCheck( 'continue' ) && $this->target === '' ) {
 			$this->showForm( 'replacetext_givetarget' );
 			return;
@@ -135,10 +131,9 @@ class SpecialReplaceText extends SpecialPage {
 				"<code><nowiki>{$this->replacement}</nowiki></code>",
 				$count
 			);
-
 			// Link back
 			$out->addHTML(
-				ReplaceTextUtils::link(
+				$linkRenderer->makeLink(
 					$this->getPageTitle(),
 					$this->msg( 'replacetext_return' )->text()
 				)
@@ -188,7 +183,7 @@ class SpecialReplaceText extends SpecialPage {
 				}
 
 				if ( $category_title !== null ) {
-					$link = ReplaceTextUtils::link(
+					$link = $linkRenderer->makeLink(
 						$category_title,
 						ucfirst( $this->category )
 					);
@@ -209,7 +204,7 @@ class SpecialReplaceText extends SpecialPage {
 				// link back to starting form
 				$out->addHTML(
 					'<p>' .
-					ReplaceTextUtils::link(
+					$linkRenderer->makeLink(
 						$this->getPageTitle(),
 						$this->msg( 'replacetext_return' )->text()
 					)
@@ -474,14 +469,8 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		// The interface is heavily based on the one in Special:Search.
-		if ( class_exists( MediaWikiServices::class ) ) {
-			// MW 1.27+
-			$namespaces = MediaWikiServices::getInstance()->getSearchEngineConfig()
-				->searchableNamespaces();
-		} else {
-			/** @phan-suppress-next-line PhanUndeclaredStaticMethod */
-			$namespaces = SearchEngine::searchableNamespaces();
-		}
+		$namespaces = MediaWikiServices::getInstance()->getSearchEngineConfig()
+			->searchableNamespaces();
 		$tables = $this->namespaceTables( $namespaces );
 		$out->addHTML(
 			"<div class=\"mw-search-formheader\"></div>\n" .
@@ -617,6 +606,8 @@ class SpecialReplaceText extends SpecialPage {
 		// Needed for bolding of search term.
 		$out->addModuleStyles( "mediawiki.special.search.styles" );
 
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+
 		if ( count( $titles_for_edit ) > 0 ) {
 			$out->addWikiMsg(
 				'replacetext_choosepagesforedit',
@@ -632,7 +623,7 @@ class SpecialReplaceText extends SpecialPage {
 				list( $title, $context ) = $title_and_context;
 				$out->addHTML(
 					Xml::check( $title->getArticleID(), true ) .
-					ReplaceTextUtils::link( $title ) .
+					$linkRenderer->makeLink( $title, null ) .
 					" - <small>$context</small><br />\n"
 				);
 			}
@@ -647,7 +638,7 @@ class SpecialReplaceText extends SpecialPage {
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
 					Xml::check( 'move-' . $title->getArticleID(), true ) .
-					ReplaceTextUtils::link( $title ) . "<br />\n"
+					$linkRenderer->makeLink( $title, null ) . "<br />\n"
 				);
 			}
 			$out->addHTML( '<br />' );
@@ -692,7 +683,7 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addWikiMsg( 'replacetext_cannotmove', $wgLang->formatNum( count( $unmoveable_titles ) ) );
 			$text = "<ul>\n";
 			foreach ( $unmoveable_titles as $title ) {
-				$text .= "<li>" . ReplaceTextUtils::link( $title ) . "<br />\n";
+				$text .= "<li>" . $linkRenderer->makeLink( $title, null ) . "<br />\n";
 			}
 			$text .= "</ul>\n";
 			$out->addHTML( $text );
