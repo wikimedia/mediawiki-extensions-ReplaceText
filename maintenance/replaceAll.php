@@ -144,7 +144,6 @@ class ReplaceAll extends Maintenance {
 		$handle = fopen( $file, "r" );
 		if ( $handle === false ) {
 			throw new MWException( "Trouble opening file: $file\n" );
-			return false;
 		}
 
 		$this->defaultContinue = true;
