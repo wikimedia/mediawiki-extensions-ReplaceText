@@ -545,7 +545,7 @@ class SpecialReplaceText extends SpecialPage {
 				$rows[$subj] = "";
 			}
 			$name = str_replace( '_', ' ', $name );
-			if ( '' == $name ) {
+			if ( $name == '' ) {
 				$name = $this->msg( 'blanknamespace' )->text();
 			}
 			$rows[$subj] .= Xml::openElement( 'td', [ 'style' => 'white-space: nowrap' ] ) .
