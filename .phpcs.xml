@@ -8,6 +8,7 @@
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
 	</rule>
 	<file>.</file>
+	<exclude-pattern>.phan</exclude-pattern>
 	<arg name="extensions" value="php" />
 	<arg name="encoding" value="UTF-8" />
 </ruleset>
