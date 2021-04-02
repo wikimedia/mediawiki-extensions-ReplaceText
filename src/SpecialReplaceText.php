@@ -714,7 +714,8 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		$poss = [];
-		foreach ( $matches[0] as $_ ) {
+		$match = $matches[0] ?? [];
+		foreach ( $match as $_ ) {
 			$poss[] = $_[1];
 		}
 
