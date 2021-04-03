@@ -720,9 +720,7 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		$cuts = [];
-		// @codingStandardsIgnoreStart
 		for ( $i = 0; $i < count( $poss ); $i++ ) {
-		// @codingStandardsIgnoreEnd
 			$index = $poss[$i];
 			$len = strlen( $target );
 
