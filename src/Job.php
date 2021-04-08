@@ -19,14 +19,23 @@
  * @author Yaron Koren
  * @author Ankit Garg
  */
+namespace MediaWiki\Extension\ReplaceText;
 
+use Job as JobParent;
+use MovePage;
+use RequestContext;
+use Title;
+use User;
+use WatchAction;
 use Wikimedia\ScopedCallback;
+use WikiPage;
+use WikitextContent;
 
 /**
  * Background job to replace text in a given page
  * - based on /includes/RefreshLinksJob.php
  */
-class ReplaceTextJob extends Job {
+class Job extends JobParent {
 	/**
 	 * Constructor.
 	 * @param Title $title
@@ -55,7 +64,7 @@ class ReplaceTextJob extends Job {
 
 		if ( array_key_exists( 'move_page', $this->params ) ) {
 			$current_user = User::newFromId( $this->params['user_id'] );
-			$new_title = ReplaceTextSearch::getReplacedTitle(
+			$new_title = Search::getReplacedTitle(
 				$this->title,
 				$this->params['target_str'],
 				$this->params['replacement_str'],

@@ -17,8 +17,19 @@
  *
  * @file
  */
+namespace MediaWiki\Extension\ReplaceText;
 
+use ErrorPageError;
+use Html;
+use JobQueueGroup;
 use MediaWiki\MediaWikiServices;
+use MovePage;
+use MWNamespace;
+use PermissionsError;
+use SpecialPage;
+use Title;
+use User;
+use Xml;
 
 class SpecialReplaceText extends SpecialPage {
 	private $target;
@@ -269,7 +280,7 @@ class SpecialReplaceText extends SpecialPage {
 					$title = Title::newFromID( (int)$key );
 				}
 				if ( $title !== null ) {
-					$jobs[] = new ReplaceTextJob( $title, $replacement_params );
+					$jobs[] = new Job( $title, $replacement_params );
 				}
 			}
 		}
@@ -286,7 +297,7 @@ class SpecialReplaceText extends SpecialPage {
 	function getTitlesForEditingWithContext() {
 		$titles_for_edit = [];
 
-		$res = ReplaceTextSearch::doSearchQuery(
+		$res = Search::doSearchQuery(
 			$this->target,
 			$this->selected_namespaces,
 			$this->category,
@@ -319,7 +330,7 @@ class SpecialReplaceText extends SpecialPage {
 		$titles_for_move = [];
 		$unmoveable_titles = [];
 
-		$res = ReplaceTextSearch::getMatchingTitles(
+		$res = Search::getMatchingTitles(
 			$this->target,
 			$this->selected_namespaces,
 			$this->category,
@@ -333,7 +344,7 @@ class SpecialReplaceText extends SpecialPage {
 				continue;
 			}
 
-			$new_title = ReplaceTextSearch::getReplacedTitle(
+			$new_title = Search::getReplacedTitle(
 				$title,
 				$this->target,
 				$this->replacement,
@@ -372,7 +383,7 @@ class SpecialReplaceText extends SpecialPage {
 			// it's a meaningless check.
 			return null;
 		} elseif ( count( $titles_for_edit ) > 0 ) {
-			$res = ReplaceTextSearch::doSearchQuery(
+			$res = Search::doSearchQuery(
 				$this->replacement,
 				$this->selected_namespaces,
 				$this->category,
@@ -385,7 +396,7 @@ class SpecialReplaceText extends SpecialPage {
 					->params( "<code><nowiki>{$this->replacement}</nowiki></code>" )->text();
 			}
 		} elseif ( count( $titles_for_move ) > 0 ) {
-			$res = ReplaceTextSearch::getMatchingTitles(
+			$res = Search::getMatchingTitles(
 				$this->replacement,
 				$this->selected_namespaces,
 				$this->category,

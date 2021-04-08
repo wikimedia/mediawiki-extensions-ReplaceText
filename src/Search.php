@@ -17,11 +17,13 @@
  *
  * @file
  */
+namespace MediaWiki\Extension\ReplaceText;
 
+use Title;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
-class ReplaceTextSearch {
+class Search {
 
 	/**
 	 * @param string $search

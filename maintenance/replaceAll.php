@@ -28,6 +28,14 @@
  * @link     https://www.mediawiki.org/wiki/Extension:Replace_Text
  *
  */
+namespace MediaWiki\Extension\ReplaceText;
+
+use Maintenance;
+use MWException;
+use MWNamespace;
+use TitleArrayFromResult;
+use User;
+
 $IP = getenv( "MW_INSTALL_PATH" ) ?: __DIR__ . "/../../..";
 if ( !is_readable( "$IP/maintenance/Maintenance.php" ) ) {
 	die( "MW_INSTALL_PATH needs to be set to your MediaWiki installation.\n" );
@@ -268,7 +276,7 @@ EOF;
 	private function listTitles( $titles, $target, $replacement, $regex, $rename ) {
 		foreach ( $titles as $title ) {
 			if ( $rename ) {
-				$newTitle = ReplaceTextSearch::getReplacedTitle( $title, $target, $replacement, $regex );
+				$newTitle = Search::getReplacedTitle( $title, $target, $replacement, $regex );
 				// Implicit conversion of objects to strings
 				$this->output( "$title	->	$newTitle\n" );
 			} else {
@@ -295,7 +303,7 @@ EOF;
 			}
 
 			$this->output( "Replacing on $title... " );
-			$job = new ReplaceTextJob( $title, $params );
+			$job = new Job( $title, $params );
 			if ( $job->run() !== true ) {
 				$this->error( "Trouble on the page '$title'." );
 			}
@@ -368,7 +376,7 @@ EOF;
 			}
 
 			if ( $this->rename ) {
-				$res = ReplaceTextSearch::getMatchingTitles(
+				$res = Search::getMatchingTitles(
 					$target,
 					$this->namespaces,
 					$this->category,
@@ -376,7 +384,7 @@ EOF;
 					$useRegex
 				);
 			} else {
-				$res = ReplaceTextSearch::doSearchQuery(
+				$res = Search::doSearchQuery(
 					$target,
 					$this->namespaces,
 					$this->category,
@@ -423,5 +431,5 @@ EOF;
 	}
 }
 
-$maintClass = "ReplaceAll";
+$maintClass = ReplaceAll::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

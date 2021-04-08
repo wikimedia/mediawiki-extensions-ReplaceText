@@ -19,10 +19,16 @@
  *
  * @file
  */
+namespace MediaWiki\Extension\ReplaceText;
 
+use ALItem;
+use ALRow;
+use ALTree;
 use MediaWiki\MediaWikiServices;
+use MovePageForm;
+use Title;
 
-class ReplaceTextHooks {
+class Hooks {
 
 	/**
 	 * Implements AdminLinks hook from Extension:Admin_Links.
