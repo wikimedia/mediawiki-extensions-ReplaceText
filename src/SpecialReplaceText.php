@@ -56,14 +56,10 @@ class SpecialReplaceText extends SpecialPage {
 		// Replace Text can't be run with certain settings, due to the
 		// changes they make to the DB storage setup.
 		if ( $wgCompressRevisions ) {
-			$errorMsg = "Error: text replacements cannot be run if \$wgCompressRevisions is set to true.";
-			$out->addWikiTextAsContent( "<div class=\"errorbox\">$errorMsg</div>" );
-			return;
+			throw new ErrorPageError( "replacetext_cfg_error", "replacetext_no_compress" );
 		}
 		if ( !empty( $wgExternalStores ) ) {
-			$errorMsg = "Error: text replacements cannot be run if \$wgExternalStores is non-empty.";
-			$out->addWikiTextAsContent( "<div class=\"errorbox\">$errorMsg</div>" );
-			return;
+			throw new ErrorPageError( "replacetext_cfg_error", "replacetext_no_external_stores" );
 		}
 
 		$this->setHeaders();
