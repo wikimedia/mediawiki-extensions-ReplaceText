@@ -31,10 +31,12 @@ class Search {
 	 * @param string|null $category
 	 * @param string|null $prefix
 	 * @param bool $use_regex
+	 * @param int|null $limit
+	 * @param int $offset
 	 * @return IResultWrapper Resulting rows
 	 */
 	public static function doSearchQuery(
-		$search, $namespaces, $category, $prefix, $use_regex = false
+		$search, $namespaces, $category, $prefix, $use_regex = false, $limit = null, $offset = 0
 	) {
 		global $wgReplaceTextResultsLimit;
 
@@ -60,7 +62,8 @@ class Search {
 		self::prefixCondition( $prefix, $conds );
 		$options = [
 			'ORDER BY' => 'page_namespace, page_title',
-			'LIMIT' => $wgReplaceTextResultsLimit
+			'LIMIT' => $limit == null ? $wgReplaceTextResultsLimit : $limit
+			'OFFSET' => $offset
 		];
 
 		return $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
