@@ -41,6 +41,14 @@ class ReplaceTextJob extends Job {
 	 * @return bool success
 	 */
 	function run() {
+		// T279090
+		$current_user = User::newFromId( $this->params['user_id'] );
+		if ( !$this->title->userCan( 'replacetext', $current_user ) ) {
+			$this->error = 'replacetext: permission no longer valid';
+			// T279090#6978214
+			return true;
+		}
+
 		if ( isset( $this->params['session'] ) ) {
 			$callback = RequestContext::importScopedSession( $this->params['session'] );
 			$this->addTeardownCallback( function () use ( &$callback ) {
