@@ -22,6 +22,7 @@
 namespace MediaWiki\Extension\ReplaceText;
 
 use Job as JobParent;
+use MediaWiki\MediaWikiServices;
 use MovePage;
 use RequestContext;
 use Title;
@@ -87,7 +88,13 @@ class Job extends JobParent {
 			}
 
 			if ( $this->params['watch_page'] ) {
-				WatchAction::doWatch( $new_title, $current_user );
+				if ( method_exists( \MediaWiki\Watchlist\WatchlistManager::class, 'addWatch' ) ) {
+					// MW 1.37+
+					MediaWikiServices::getInstance()->getWatchlistManager()->addWatch( $current_user, $new_title );
+				} else {
+					WatchAction::doWatch( $new_title, $current_user );
+				}
+
 			}
 		} else {
 			if ( $this->title->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
