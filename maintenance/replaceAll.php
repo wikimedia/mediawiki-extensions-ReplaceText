@@ -235,7 +235,7 @@ EOF;
 			$namespaces = array_flip( $canonical );
 			if ( !$nsall ) {
 				$namespaces = array_map(
-					function ( $n ) use ( $canonical, $namespaces ) {
+					static function ( $n ) use ( $canonical, $namespaces ) {
 						if ( is_numeric( $n ) ) {
 							if ( isset( $canonical[ $n ] ) ) {
 								return intval( $n );
@@ -249,7 +249,7 @@ EOF;
 					}, explode( ",", $ns ) );
 				$namespaces = array_filter(
 					$namespaces,
-					function ( $val ) {
+					static function ( $val ) {
 						return $val !== null;
 					} );
 			}
