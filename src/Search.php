@@ -53,7 +53,7 @@ class Search {
 			'rev_id = page_latest',
 			'rev_id = slot_revision_id',
 			'slot_content_id = content_id',
-			'CAST(SUBSTR(content_address, 4) AS SIGNED) = old_id'
+			$dbr->buildIntegerCast( 'SUBSTR(content_address, 4)' ) . ' = old_id'
 		];
 
 		self::categoryCondition( $category, $tables, $conds );
