@@ -458,11 +458,11 @@ class SpecialReplaceText extends SpecialPage {
 		);
 		$out->addHTML( '</td></tr></table>' );
 
-		// MSSQL/SQLServer and SQLite unfortunately lack a REGEXP
+		// SQLite unfortunately lack a REGEXP
 		// function or operator by default, so disable regex(p)
-		// searches for both these DB types.
+		// searches that DB type.
 		$dbr = wfGetDB( DB_REPLICA );
-		if ( $dbr->getType() != 'sqlite' && $dbr->getType() != 'mssql' ) {
+		if ( $dbr->getType() != 'sqlite' ) {
 			$out->addHTML( Xml::tags( 'p', null,
 					Xml::checkLabel(
 						$this->msg( 'replacetext_useregex' )->text(),
