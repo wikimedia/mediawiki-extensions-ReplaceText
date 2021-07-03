@@ -749,21 +749,9 @@ class SpecialReplaceText extends SpecialPage {
 			list( $index, $len, ) = $_;
 			$contextBefore = substr( $text, 0, $index );
 			$contextAfter = substr( $text, $index + $len );
-			if ( !is_callable( [ $wgLang, 'truncateForDatabase' ] ) ) {
-				// Backwards compatibility code; remove once MW 1.30 is
-				// no longer supported.
-				$contextBefore =
-					// @phan-suppress-next-line PhanUndeclaredMethod
-					$wgLang->truncate( $contextBefore, -$cw, '...', false );
-				$contextAfter =
-					// @phan-suppress-next-line PhanUndeclaredMethod
-					$wgLang->truncate( $contextAfter, $cw, '...', false );
-			} else {
-				$contextBefore =
-					$wgLang->truncateForDatabase( $contextBefore, -$cw, '...', false );
-				$contextAfter =
-					$wgLang->truncateForDatabase( $contextAfter, $cw, '...', false );
-			}
+
+			$contextBefore = $wgLang->truncateForDatabase( $contextBefore, -$cw, '...', false );
+			$contextAfter = $wgLang->truncateForDatabase( $contextAfter, $cw, '...', false );
 
 			$context .= $this->convertWhiteSpaceToHTML( $contextBefore );
 			$snippet = $this->convertWhiteSpaceToHTML( substr( $text, $index, $len ) );
