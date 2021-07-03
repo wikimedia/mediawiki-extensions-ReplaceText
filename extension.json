@@ -40,7 +40,7 @@
 		},
 		"ext.ReplaceTextStyles": {
 			"styles": [
-				"ext.ReplaceTextStyles.css"
+				"ext.ReplaceTextStyles.less"
 			]
 		}
 	},
