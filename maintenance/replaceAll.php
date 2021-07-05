@@ -98,10 +98,7 @@ class ReplaceAll extends Maintenance {
 		$this->addOption( 'rename', "Rename page titles instead of replacing contents.",
 			false, false );
 
-		// MW 1.28
-		if ( method_exists( $this, 'requireExtension' ) ) {
-			$this->requireExtension( 'Replace Text' );
-		}
+		$this->requireExtension( 'Replace Text' );
 	}
 
 	private function getUser() {
