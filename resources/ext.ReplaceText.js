@@ -12,7 +12,7 @@
 
 			if ( curElement.type === 'checkbox' && curElement.id !== 'create-redirect' &&
 				curElement.id !== 'watch-pages' && curElement.id !== 'doAnnounce' ) {
-				form.elements[ i ].checked = form.elements[ i ].checked !== true;
+				curElement.checked = !curElement.checked;
 			}
 		}
 	}
