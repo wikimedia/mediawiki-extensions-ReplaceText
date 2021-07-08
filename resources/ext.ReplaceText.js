@@ -20,9 +20,7 @@
 	$( function () {
 		var $checkboxes = $( '#powersearch input[id^=mw-search-ns]' );
 
-		$( '#replacetext-invert' )
-			.on( 'click', invertSelections )
-			.prop( 'disabled', false );
+		$( '.mw-replacetext-invert' ).on( 'click', invertSelections );
 
 		// Create check all/none button
 		$( '#mw-search-togglebox' ).append(

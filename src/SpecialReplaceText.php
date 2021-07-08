@@ -25,6 +25,7 @@ use JobQueueGroup;
 use MediaWiki\MediaWikiServices;
 use MovePage;
 use MWNamespace;
+use OOUI;
 use PermissionsError;
 use SpecialPage;
 use Title;
@@ -63,7 +64,6 @@ class SpecialReplaceText extends SpecialPage {
 			throw new PermissionsError( 'replacetext' );
 		}
 
-		$out = $this->getOutput();
 		// Replace Text can't be run with certain settings, due to the
 		// changes they make to the DB storage setup.
 		if ( $wgCompressRevisions ) {
@@ -73,6 +73,8 @@ class SpecialReplaceText extends SpecialPage {
 			throw new ErrorPageError( "replacetext_cfg_error", "replacetext_no_external_stores" );
 		}
 
+		$out = $this->getOutput();
+		$out->enableOOUI();
 		$this->setHeaders();
 		if ( $out->getResourceLoader()->getModule( 'mediawiki.special' ) !== null ) {
 			$out->addModuleStyles( 'mediawiki.special' );
@@ -220,9 +222,14 @@ class SpecialReplaceText extends SpecialPage {
 			} else {
 				$warning_msg = $this->getAnyWarningMessageBeforeReplace( $titles_for_edit, $titles_for_move );
 				if ( $warning_msg !== null ) {
-					$out->addWikiTextAsContent(
-						"<div class=\"errorbox\">$warning_msg</div><br clear=\"both\" />"
-					);
+					$warningLabel = new OOUI\LabelWidget( [
+						'label' => new OOUI\HtmlSnippet( $warning_msg )
+					] );
+					$warning = new OOUI\MessageWidget( [
+						'type' => 'warning',
+						'label' => $warningLabel
+					] );
+					$out->addHTML( $warning );
 				}
 
 				$this->pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles );
@@ -271,8 +278,11 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		$jobs = [];
+		// These are OOUI checkboxes - we don't determine whether they
+		// were checked by their value (which will be null), but rather
+		// by whether they were submitted at all.
 		foreach ( $request->getValues() as $key => $value ) {
-			if ( $value == '1' && $key !== 'replace' && $key !== 'use_regex' ) {
+			if ( $key !== 'replace' && $key !== 'use_regex' ) {
 				if ( strpos( $key, 'move-' ) !== false ) {
 					$title = Title::newFromID( (int)substr( $key, 5 ) );
 					$replacement_params['move_page'] = true;
@@ -376,7 +386,7 @@ class SpecialReplaceText extends SpecialPage {
 	 */
 	function getAnyWarningMessageBeforeReplace( $titles_for_edit, $titles_for_move ) {
 		if ( $this->replacement === '' ) {
-			return $this->msg( 'replacetext_blankwarning' )->text();
+			return $this->msg( 'replacetext_blankwarning' )->parse();
 		} elseif ( $this->use_regex ) {
 			// If it's a regex, don't bother checking for existing
 			// pages - if the replacement string includes wildcards,
@@ -393,7 +403,7 @@ class SpecialReplaceText extends SpecialPage {
 			$count = $res->numRows();
 			if ( $count > 0 ) {
 				return $this->msg( 'replacetext_warning' )->numParams( $count )
-					->params( "<code><nowiki>{$this->replacement}</nowiki></code>" )->text();
+					->params( "<code><nowiki>{$this->replacement}</nowiki></code>" )->parse();
 			}
 		} elseif ( count( $titles_for_move ) > 0 ) {
 			$res = Search::getMatchingTitles(
@@ -406,7 +416,7 @@ class SpecialReplaceText extends SpecialPage {
 			$count = $res->numRows();
 			if ( $count > 0 ) {
 				return $this->msg( 'replacetext_warning' )->numParams( $count )
-					->params( $this->replacement )->text();
+					->params( $this->replacement )->parse();
 			}
 		}
 
@@ -508,6 +518,11 @@ class SpecialReplaceText extends SpecialPage {
 		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->escaped();
 		$rcPage = SpecialPage::getTitleFor( 'Recentchanges' );
 		$rcPageName = $rcPage->getPrefixedText();
+		$continueButton = new OOUI\ButtonInputWidget( [
+			'type' => 'submit',
+			'label' => $this->msg( 'replacetext_continue' )->text(),
+			'flags' => [ 'primary', 'progressive' ]
+		] );
 		$out->addHTML(
 			"<fieldset id=\"mw-searchoptions\">\n" .
 			Xml::tags( 'h4', null, $this->msg( 'replacetext_optionalfilters' )->parse() ) .
@@ -528,10 +543,32 @@ class SpecialReplaceText extends SpecialPage {
 				$this->msg( 'replacetext_announce', $rcPageName )->text(), 'doAnnounce', 'doAnnounce', true
 			) .
 			"</p>\n" .
-			Xml::submitButton( $this->msg( 'replacetext_continue' )->text() ) .
+			$continueButton .
 			Xml::closeElement( 'form' )
 		);
 		$out->addModules( 'ext.ReplaceText' );
+	}
+
+	/**
+	 * This function is not currently used, but it may get used in the
+	 * future if the "1st screen" interface changes to use OOUI.
+	 *
+	 * @param string $label
+	 * @param string $name
+	 * @param bool $selected
+	 * @return string HTML
+	 */
+	function checkLabel( $label, $name, $selected = false ) {
+		$checkbox = new OOUI\CheckboxInputWidget( [
+			'name' => $name,
+			'value' => 1,
+			'selected' => $selected
+		] );
+		$layout = new OOUI\FieldLayout( $checkbox, [
+			'align' => 'inline',
+			'label' => $label
+		] );
+		return $layout;
 	}
 
 	/**
@@ -616,6 +653,16 @@ class SpecialReplaceText extends SpecialPage {
 
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 
+		// Only show "invert selections" link if there are more than
+		// five pages.
+		if ( count( $titles_for_edit ) + count( $titles_for_move ) > 5 ) {
+			$invertButton = new OOUI\ButtonWidget( [
+				'label' => $this->msg( 'replacetext_invertselections' )->text(),
+				'classes' => [ 'mw-replacetext-invert' ]
+			] );
+			$out->addHTML( $invertButton );
+		}
+
 		if ( count( $titles_for_edit ) > 0 ) {
 			$out->addWikiMsg(
 				'replacetext_choosepagesforedit',
@@ -629,11 +676,19 @@ class SpecialReplaceText extends SpecialPage {
 				 * @var $title Title
 				 */
 				list( $title, $context ) = $title_and_context;
-				$out->addHTML(
-					Xml::check( $title->getArticleID(), true ) .
-					$linkRenderer->makeLink( $title, null ) .
-					" - <small>$context</small><br />\n"
-				);
+				$checkbox = new OOUI\CheckboxInputWidget( [
+					'name' => $title->getArticleID(),
+					'selected' => true
+				] );
+				$labelText = $linkRenderer->makeLink( $title, null ) . "<br /><small>$context</small>";
+				$checkboxLabel = new OOUI\LabelWidget( [
+					'label' => new OOUI\HtmlSnippet( $labelText )
+				] );
+				$layout = new OOUI\FieldLayout( $checkbox, [
+					'align' => 'inline',
+					'label' => $checkboxLabel
+				] );
+				$out->addHTML( $layout );
 			}
 			$out->addHTML( '<br />' );
 		}
@@ -664,26 +719,12 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addHTML( '<br />' );
 		}
 
-		$out->addHTML(
-			"<br />\n" .
-			Xml::submitButton( $this->msg( 'replacetext_replace' )->text() ) . "\n"
-		);
-
-		// Only show "invert selections" link if there are more than
-		// five pages.
-		if ( count( $titles_for_edit ) + count( $titles_for_move ) > 5 ) {
-			$buttonOpts = [
-				'type' => 'button',
-				'value' => $this->msg( 'replacetext_invertselections' )->text(),
-				'disabled' => true,
-				'id' => 'replacetext-invert',
-				'class' => 'mw-replacetext-invert'
-			];
-
-			$out->addHTML(
-				Xml::element( 'input', $buttonOpts )
-			);
-		}
+		$submitButton = new OOUI\ButtonInputWidget( [
+			'type' => 'submit',
+			'flags' => [ 'primary', 'progressive' ],
+			'label' => $this->msg( 'replacetext_replace' )->text()
+		] );
+		$out->addHTML( $submitButton );
 
 		$out->addHTML( '</form>' );
 

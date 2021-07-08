@@ -1,3 +1,7 @@
+.mw-replacetext-invert {
+	margin-top: 20px;
+}
+
 .client-nojs .mw-replacetext-invert {
 	display: none;
 }
