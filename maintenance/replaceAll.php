@@ -159,7 +159,7 @@ class ReplaceAll extends Maintenance {
 
 			$this->target[] = $field[0];
 			$this->replacement[] = $field[1];
-			$this->useRegex[] = isset( $field[2] ) ? true : false;
+			$this->useRegex[] = isset( $field[2] );
 		}
 		return true;
 	}
