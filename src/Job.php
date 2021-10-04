@@ -102,6 +102,9 @@ class Job extends JobParent {
 					// MW 1.37+
 					MediaWikiServices::getInstance()->getWatchlistManager()->addWatch( $current_user, $new_title );
 				} else {
+					// Method was removed, but we only invoke it in versions its
+					// still available, suppress phan error
+					// @phan-suppress-next-line PhanUndeclaredStaticMethod
 					WatchAction::doWatch( $new_title, $current_user );
 				}
 
