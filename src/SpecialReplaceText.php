@@ -24,7 +24,6 @@ use Html;
 use JobQueueGroup;
 use MediaWiki\MediaWikiServices;
 use MovePage;
-use MWNamespace;
 use OOUI;
 use PermissionsError;
 use SpecialPage;
@@ -597,8 +596,9 @@ class SpecialReplaceText extends SpecialPage {
 		// Try not to make too many assumptions about namespace numbering.
 		$rows = [];
 		$tables = "";
+		$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
 		foreach ( $namespaces as $ns => $name ) {
-			$subj = MWNamespace::getSubject( $ns );
+			$subj = $namespaceInfo->getSubject( $ns );
 			if ( !array_key_exists( $subj, $rows ) ) {
 				$rows[$subj] = "";
 			}
