@@ -23,7 +23,6 @@ namespace MediaWiki\Extension\ReplaceText;
 
 use Job as JobParent;
 use MediaWiki\MediaWikiServices;
-use MovePage;
 use RequestContext;
 use Title;
 use User;
@@ -89,7 +88,7 @@ class Job extends JobParent {
 
 			$reason = $this->params['edit_summary'];
 			$create_redirect = $this->params['create_redirect'];
-			$mvPage = new MovePage( $this->title, $new_title );
+			$mvPage = MediaWikiServices::getInstance()->getMovePageFactory()->newMovePage( $this->title, $new_title );
 			$mvStatus = $mvPage->move( $current_user, $reason, $create_redirect );
 			if ( !$mvStatus->isOK() ) {
 				$this->error = "replaceText: error while moving: " . $this->title->getPrefixedDBkey() .

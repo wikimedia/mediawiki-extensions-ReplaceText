@@ -23,7 +23,6 @@ use ErrorPageError;
 use Html;
 use JobQueueGroup;
 use MediaWiki\MediaWikiServices;
-use MovePage;
 use OOUI;
 use PermissionsError;
 use SpecialPage;
@@ -347,6 +346,7 @@ class SpecialReplaceText extends SpecialPage {
 			$this->use_regex
 		);
 
+		$movePageFactory = MediaWikiServices::getInstance()->getMovePageFactory();
 		foreach ( $res as $row ) {
 			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 			if ( $title == null ) {
@@ -360,7 +360,7 @@ class SpecialReplaceText extends SpecialPage {
 				$this->use_regex
 			);
 
-			$mvPage = new MovePage( $title, $new_title );
+			$mvPage = $movePageFactory->newMovePage( $title, $new_title );
 			$moveStatus = $mvPage->isValidMove();
 			$permissionStatus = $mvPage->checkPermissions( $this->getUser(), null );
 
