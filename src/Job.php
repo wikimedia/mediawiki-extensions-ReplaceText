@@ -21,8 +21,10 @@
  */
 namespace MediaWiki\Extension\ReplaceText;
 
+use CommentStoreComment;
 use Job as JobParent;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use MovePage;
 use RequestContext;
 use Title;
@@ -135,15 +137,11 @@ class Job extends JobParent {
 			// If there's at least one replacement, modify the page,
 			// using the passed-in edit summary.
 			if ( $num_matches > 0 ) {
-				// Change global $wgUser variable to the one
-				// specified by the job only for the extent of
-				// this replacement.
-				global $wgUser;
-				$actual_user = $wgUser;
-				$wgUser = User::newFromId( $this->params['user_id'] );
-				$edit_summary = $this->params['edit_summary'];
+				$updater = $wikiPage->newPageUpdater( $current_user );
+				$updater->setContent( SlotRecord::MAIN, new WikitextContent( $new_text ) );
+				$edit_summary = CommentStoreComment::newUnsavedComment( $this->params['edit_summary'] );
 				$flags = EDIT_MINOR;
-				if ( $wgUser->isAllowed( 'bot' ) ) {
+				if ( $permissionManager->userHasRight( $current_user, 'bot' ) ) {
 					$flags |= EDIT_FORCE_BOT;
 				}
 				if ( isset( $this->params['doAnnounce'] ) &&
@@ -151,9 +149,7 @@ class Job extends JobParent {
 					$flags |= EDIT_SUPPRESS_RC;
 					# fixme log this action
 				}
-				$new_content = new WikitextContent( $new_text );
-				$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
-				$wgUser = $actual_user;
+				$updater->saveRevision( $edit_summary, $flags );
 			}
 		}
 		return true;
