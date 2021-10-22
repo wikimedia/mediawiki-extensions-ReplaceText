@@ -34,7 +34,6 @@ use Maintenance;
 use MediaWiki\MediaWikiServices;
 use MWException;
 use TitleArrayFromResult;
-use User;
 
 $IP = getenv( "MW_INSTALL_PATH" ) ?: __DIR__ . "/../../..";
 if ( !is_readable( "$IP/maintenance/Maintenance.php" ) ) {
@@ -104,9 +103,10 @@ class ReplaceAll extends Maintenance {
 	private function getUser() {
 		$userReplacing = $this->getOption( "user", 1 );
 
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		$user = is_numeric( $userReplacing ) ?
-			User::newFromId( $userReplacing ) :
-			User::newFromName( $userReplacing );
+			$userFactory->newFromId( $userReplacing ) :
+			$userFactory->newFromName( $userReplacing );
 
 		if ( get_class( $user ) !== 'User' ) {
 			$this->fatalError(

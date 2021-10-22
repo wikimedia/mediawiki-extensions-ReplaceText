@@ -27,7 +27,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use RequestContext;
 use Title;
-use User;
 use WatchAction;
 use Wikimedia\ScopedCallback;
 use WikiPage;
@@ -52,9 +51,10 @@ class Job extends JobParent {
 	 * @return bool success
 	 */
 	function run() {
+		$services = MediaWikiServices::getInstance();
 		// T279090
-		$current_user = User::newFromId( $this->params['user_id'] );
-		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		$current_user = $services->getUserFactory()->newFromId( $this->params['user_id'] );
+		$permissionManager = $services->getPermissionManager();
 		if ( !$permissionManager->userCan(
 			'replacetext', $current_user, $this->title
 		) ) {
@@ -90,7 +90,7 @@ class Job extends JobParent {
 
 			$reason = $this->params['edit_summary'];
 			$create_redirect = $this->params['create_redirect'];
-			$mvPage = MediaWikiServices::getInstance()->getMovePageFactory()->newMovePage( $this->title, $new_title );
+			$mvPage = $services->getMovePageFactory()->newMovePage( $this->title, $new_title );
 			$mvStatus = $mvPage->move( $current_user, $reason, $create_redirect );
 			if ( !$mvStatus->isOK() ) {
 				$this->error = "replaceText: error while moving: " . $this->title->getPrefixedDBkey() .
@@ -101,7 +101,7 @@ class Job extends JobParent {
 			if ( $this->params['watch_page'] ) {
 				if ( method_exists( \MediaWiki\Watchlist\WatchlistManager::class, 'addWatch' ) ) {
 					// MW 1.37+
-					MediaWikiServices::getInstance()->getWatchlistManager()->addWatch( $current_user, $new_title );
+					$services->getWatchlistManager()->addWatch( $current_user, $new_title );
 				} else {
 					// Method was removed, but we only invoke it in versions its
 					// still available, suppress phan error
