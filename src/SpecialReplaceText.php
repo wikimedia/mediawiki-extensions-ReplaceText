@@ -23,6 +23,7 @@ use ErrorPageError;
 use Html;
 use JobQueueGroup;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Storage\SlotRecord;
 use OOUI;
 use PermissionsError;
 use SpecialPage;
@@ -276,21 +277,35 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		$jobs = [];
+		$pages_to_edit = [];
 		// These are OOUI checkboxes - we don't determine whether they
 		// were checked by their value (which will be null), but rather
 		// by whether they were submitted at all.
 		foreach ( $request->getValues() as $key => $value ) {
-			if ( $key !== 'replace' && $key !== 'use_regex' ) {
-				if ( strpos( $key, 'move-' ) !== false ) {
-					$title = Title::newFromID( (int)substr( $key, 5 ) );
-					$replacement_params['move_page'] = true;
-				} else {
-					$title = Title::newFromID( (int)$key );
-				}
+			if ( $key === 'replace' || $key === 'use_regex' ) {
+				continue;
+			}
+			if ( strpos( $key, 'move-' ) !== false ) {
+				$title = Title::newFromID( (int)substr( $key, 5 ) );
+				$replacement_params['move_page'] = true;
 				if ( $title !== null ) {
 					$jobs[] = new Job( $title, $replacement_params );
 				}
+				unset( $replacement_params['move_page'] );
+			} else {
+				// Bundle multiple edits to the same page for a different slot into one job
+				list( $page_id, $role ) = explode( '|', $key, 2 );
+				$pages_to_edit[$page_id][] = $role;
 			}
+		}
+		// Create jobs for the bundled page edits
+		foreach ( $pages_to_edit as $page_id => $roles ) {
+			$title = Title::newFromID( (int)$page_id );
+			$replacement_params['roles'] = $roles;
+			if ( $title !== null ) {
+				$jobs[] = new Job( $title, $replacement_params );
+			}
+			unset( $replacement_params['roles'] );
 		}
 
 		return $jobs;
@@ -318,9 +333,11 @@ class SpecialReplaceText extends SpecialPage {
 			if ( $title == null ) {
 				continue;
 			}
+
 			// @phan-suppress-next-line SecurityCheck-ReDoS target could be a regex from user
 			$context = $this->extractContext( $row->old_text, $this->target, $this->use_regex );
-			$titles_for_edit[] = [ $title, $context ];
+			$role = $this->extractRole( (int)$row->slot_role_id );
+			$titles_for_edit[] = [ $title, $context, $role ];
 		}
 
 		return $titles_for_edit;
@@ -687,12 +704,16 @@ class SpecialReplaceText extends SpecialPage {
 				/**
 				 * @var $title Title
 				 */
-				list( $title, $context ) = $title_and_context;
+				list( $title, $context, $role ) = $title_and_context;
 				$checkbox = new OOUI\CheckboxInputWidget( [
-					'name' => $title->getArticleID(),
+					'name' => $title->getArticleID() . "|" . $role,
 					'selected' => true
 				] );
-				$labelText = $linkRenderer->makeLink( $title, null ) . "<br /><small>$context</small>";
+				if ( $role === SlotRecord::MAIN ) {
+					$labelText = $linkRenderer->makeLink( $title, null ) . "<br /><small>$context</small>";
+				} else {
+					$labelText = $linkRenderer->makeLink( $title, null ) . " ($role) <br /><small>$context</small>";
+				}
 				$checkboxLabel = new OOUI\LabelWidget( [
 					'label' => new OOUI\HtmlSnippet( $labelText )
 				] );
@@ -821,6 +842,17 @@ class SpecialReplaceText extends SpecialPage {
 			$context .= $this->convertWhiteSpaceToHTML( $contextAfter );
 		}
 		return $context;
+	}
+
+	/**
+	 * Extracts the role name
+	 *
+	 * @param int $role_id
+	 * @return string
+	 */
+	private function extractRole( $role_id ) {
+		$roleStore = MediaWikiServices::getInstance()->getSlotRoleStore();
+		return $roleStore->getName( $role_id );
 	}
 
 	private function convertWhiteSpaceToHTML( $message ) {
