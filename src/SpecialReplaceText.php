@@ -450,7 +450,7 @@ class SpecialReplaceText extends SpecialPage {
 				'form',
 				[
 					'id' => 'powersearch',
-					'action' => $this->getPageTitle()->getFullURL(),
+					'action' => $this->getPageTitle()->getLocalURL(),
 					'method' => 'post'
 				]
 			) . "\n" .
@@ -658,7 +658,7 @@ class SpecialReplaceText extends SpecialPage {
 		$formOpts = [
 			'id' => 'choose_pages',
 			'method' => 'post',
-			'action' => $this->getPageTitle()->getFullUrl()
+			'action' => $this->getPageTitle()->getLocalURL()
 		];
 		$out->addHTML(
 			Xml::openElement( 'form', $formOpts ) . "\n" .
