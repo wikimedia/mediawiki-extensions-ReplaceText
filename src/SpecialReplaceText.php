@@ -113,7 +113,8 @@ class SpecialReplaceText extends SpecialPage {
 		$this->doAnnounce = $request->getBool( 'doAnnounce' );
 		$this->selected_namespaces = $this->getSelectedNamespaces();
 
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$services = MediaWikiServices::getInstance();
+		$linkRenderer = $services->getLinkRenderer();
 
 		if ( $request->getCheck( 'continue' ) && $this->target === '' ) {
 			$this->showForm( 'replacetext_givetarget' );
@@ -130,7 +131,12 @@ class SpecialReplaceText extends SpecialPage {
 			}
 
 			$jobs = $this->createJobsForTextReplacements();
-			JobQueueGroup::singleton()->push( $jobs );
+			if ( method_exists( $services, 'getJobQueueGroup' ) ) {
+				// MW 1.37+
+				$services->getJobQueueGroup()->push( $jobs );
+			} else {
+				JobQueueGroup::singleton()->push( $jobs );
+			}
 
 			$count = $this->getLanguage()->formatNum( count( $jobs ) );
 			$out->addWikiMsg(
