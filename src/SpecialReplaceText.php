@@ -298,7 +298,7 @@ class SpecialReplaceText extends SpecialPage {
 					$jobs[] = new Job( $title, $replacement_params );
 				}
 				unset( $replacement_params['move_page'] );
-			} else {
+			} elseif ( strpos( $key, '|' ) !== false ) {
 				// Bundle multiple edits to the same page for a different slot into one job
 				list( $page_id, $role ) = explode( '|', $key, 2 );
 				$pages_to_edit[$page_id][] = $role;
