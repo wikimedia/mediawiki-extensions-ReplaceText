@@ -196,14 +196,8 @@ class SpecialReplaceText extends SpecialPage {
 					}
 				}
 
-				if ( $category_title !== null ) {
-					$link = $linkRenderer->makeLink(
-						$category_title,
-						ucfirst( $this->category )
-					);
-					$out->addHTML(
-						$this->msg( 'replacetext_nosuchcategory' )->rawParams( $link )->escaped()
-					);
+				if ( $category_title === null ) {
+					$out->addWikiMsg( 'replacetext_nosuchcategory', $this->category );
 				} else {
 					if ( $this->edit_pages ) {
 						$out->addWikiMsg(
