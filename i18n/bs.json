@@ -33,7 +33,7 @@
 	"replacetext_success": "'$1' će biti zamijenjeno sa '$2' na $3 {{PLURAL:$3|stranici|stranice|stranica}}.",
 	"replacetext_noreplacement": "Nije pronađena nijedna stranica koja sadrži '$1'.",
 	"replacetext_nomove": "Nijedna stranica nije pronađena čiji naslov sadrži '$1'.",
-	"replacetext_nosuchcategory": "Ne postoji nijedna kategorija pod nazivom \"$1\".",
+	"replacetext_nosuchcategory": "Ne postoji nijedna kategorija pod nazivom \"[[$1]]\".",
 	"replacetext_return": "Nazad na obrazac.",
 	"replacetext_warning": "'''Upozorenje:''' {{PLURAL:$1|Postoji $1 stranica koja već sadrži|Postoje $1 stranice koje već sadrže|Postoji $1 stranica koje već sadrže}} zamjenski tekst ''$2''.\nAko želite napraviti ovu zamjenu nećete biti u mogućnosti da razdvojite Vaše zamjene od ovih tekstova.",
 	"replacetext_blankwarning": "Pošto je zamjenski tekst prazan, ovu operaciju neće biti moguće vratiti.\nDa li želite nastaviti?",

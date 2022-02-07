@@ -31,7 +31,7 @@
 	"replacetext_success": "\"$1\" akan digantikan oleh \"$2\" di $3 laman.",
 	"replacetext_noreplacement": "Tiada laman yang mengandungi rentetan \"$1\".",
 	"replacetext_nomove": "Tiada laman yang mengandungi \"$1\" dalam tajuknya.",
-	"replacetext_nosuchcategory": "Tiada kategori dengan nama \"$1\".",
+	"replacetext_nosuchcategory": "Tiada kategori dengan nama \"[[$1]]\".",
 	"replacetext_return": "Kembali ke borang.",
 	"replacetext_warning": "'''Amaran:''' Terdapat $1 laman yang sudah mengandungi rentetan ganti \"$2\". Jika anda melakukan penggantian ini, anda tidak akan dapat mengasingkan gantian anda daripada rentetan-rentetan ini.",
 	"replacetext_blankwarning": "'''Amaran:''' Oleh sebab rentetan ganti adalah kosong, operasi ini tidak boleh dimansuhkan.",

@@ -36,7 +36,7 @@
 	"replacetext_success": "$3{{PLURAL:$3|ページ}}で「$1」が「$2」に置換されます。",
 	"replacetext_noreplacement": "文字列「$1」を含むページは見つかりませんでした。",
 	"replacetext_nomove": "「$1」を名前に含むページは見つかりませんでした。",
-	"replacetext_nosuchcategory": "「$1」という名前のカテゴリは存在しません。",
+	"replacetext_nosuchcategory": "「[[$1]]」という名前のカテゴリは存在しません。",
 	"replacetext_return": "フォームに戻る",
 	"replacetext_warning": "'''警告:''' 置換後の文字列「$2」を含むページが既に {{PLURAL:$1|$1 件あります。}}この置換を実行すると、これらの文字列と実際に置換された箇所を区別できなくなります。",
 	"replacetext_blankwarning": "'''警告:''' 置換後文字列が空であるため、この操作は取り消せません。",
