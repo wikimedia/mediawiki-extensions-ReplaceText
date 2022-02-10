@@ -187,27 +187,25 @@ class SpecialReplaceText extends SpecialPage {
 			// If no results were found, check to see if a bad
 			// category name was entered.
 			if ( count( $titles_for_edit ) == 0 && count( $titles_for_move ) == 0 ) {
-				$category_title = null;
+				$category_title_exists = true;
 
 				if ( !empty( $this->category ) ) {
 					$category_title = Title::makeTitleSafe( NS_CATEGORY, $this->category );
 					if ( !$category_title->exists() ) {
-						$category_title = null;
+						$category_title_exists = false;
+						$out->addWikiMsg( 'replacetext_nosuchcategory', $this->category );
 					}
 				}
 
-				if ( $category_title === null ) {
-					$out->addWikiMsg( 'replacetext_nosuchcategory', $this->category );
-				} else {
-					if ( $this->edit_pages ) {
-						$out->addWikiMsg(
-							'replacetext_noreplacement', "<code><nowiki>{$this->target}</nowiki></code>"
-						);
-					}
+				if ( $this->edit_pages && $category_title_exists ) {
+					$out->addWikiMsg(
+						'replacetext_noreplacement',
+						"<code><nowiki>{$this->target}</nowiki></code>"
+					);
+				}
 
-					if ( $this->move_pages ) {
-						$out->addWikiMsg( 'replacetext_nomove', "<code><nowiki>{$this->target}</nowiki></code>" );
-					}
+				if ( $this->move_pages && $category_title_exists ) {
+					$out->addWikiMsg( 'replacetext_nomove', "<code><nowiki>{$this->target}</nowiki></code>" );
 				}
 				// link back to starting form
 				$out->addHTML(
