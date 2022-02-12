@@ -825,7 +825,6 @@ class SpecialReplaceText extends SpecialPage {
 			$contextBefore = $wgLang->truncateForDatabase( $contextBefore, -$cw, '...', false );
 			$contextAfter = $wgLang->truncateForDatabase( $contextAfter, $cw, '...', false );
 
-			// @phan-suppress-next-line SecurityCheck-DoubleEscaped T290624
 			$context .= $this->convertWhiteSpaceToHTML( $contextBefore );
 			$snippet = $this->convertWhiteSpaceToHTML( substr( $text, $index, $len ) );
 			if ( $use_regex ) {
@@ -836,7 +835,6 @@ class SpecialReplaceText extends SpecialPage {
 			}
 			$context .= preg_replace( $targetStr, '<span class="ext-replacetext-searchmatch">\0</span>', $snippet );
 
-			// @phan-suppress-next-line SecurityCheck-DoubleEscaped T290624
 			$context .= $this->convertWhiteSpaceToHTML( $contextAfter );
 		}
 		return $context;
