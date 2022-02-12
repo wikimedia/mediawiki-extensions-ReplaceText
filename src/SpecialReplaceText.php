@@ -33,6 +33,7 @@ use Xml;
 
 class SpecialReplaceText extends SpecialPage {
 	private $target;
+	private $targetString;
 	private $replacement;
 	private $use_regex;
 	private $category;
@@ -104,6 +105,7 @@ class SpecialReplaceText extends SpecialPage {
 		$request = $this->getRequest();
 
 		$this->target = $request->getText( 'target' );
+		$this->targetString = preg_replace( "/\\n/", "&#8629;", $this->target );
 		$this->replacement = $request->getText( 'replacement' );
 		$this->use_regex = $request->getBool( 'use_regex' );
 		$this->category = $request->getText( 'category' );
@@ -141,7 +143,7 @@ class SpecialReplaceText extends SpecialPage {
 			$count = $this->getLanguage()->formatNum( count( $jobs ) );
 			$out->addWikiMsg(
 				'replacetext_success',
-				"<code><nowiki>{$this->target}</nowiki></code>",
+				"<code><nowiki>{$this->targetString}</nowiki></code>",
 				"<code><nowiki>{$this->replacement}</nowiki></code>",
 				$count
 			);
@@ -200,12 +202,12 @@ class SpecialReplaceText extends SpecialPage {
 				if ( $this->edit_pages && $category_title_exists ) {
 					$out->addWikiMsg(
 						'replacetext_noreplacement',
-						"<code><nowiki>{$this->target}</nowiki></code>"
+						"<code><nowiki>{$this->targetString}</nowiki></code>"
 					);
 				}
 
 				if ( $this->move_pages && $category_title_exists ) {
-					$out->addWikiMsg( 'replacetext_nomove', "<code><nowiki>{$this->target}</nowiki></code>" );
+					$out->addWikiMsg( 'replacetext_nomove', "<code><nowiki>{$this->targetString}</nowiki></code>" );
 				}
 				// link back to starting form
 				$out->addHTML(
@@ -259,7 +261,7 @@ class SpecialReplaceText extends SpecialPage {
 		$replacement_params['use_regex'] = $this->use_regex;
 		$replacement_params['edit_summary'] = $this->msg(
 			'replacetext_editsummary',
-			$this->target, $this->replacement
+			$this->targetString, $this->replacement
 		)->inContentLanguage()->plain();
 		$replacement_params['create_redirect'] = false;
 		$replacement_params['watch_page'] = false;
@@ -693,7 +695,7 @@ class SpecialReplaceText extends SpecialPage {
 		if ( count( $titles_for_edit ) > 0 ) {
 			$out->addWikiMsg(
 				'replacetext_choosepagesforedit',
-				"<code><nowiki>{$this->target}</nowiki></code>",
+				"<code><nowiki>{$this->targetString}</nowiki></code>",
 				"<code><nowiki>{$this->replacement}</nowiki></code>",
 				$wgLang->formatNum( count( $titles_for_edit ) )
 			);
@@ -727,7 +729,7 @@ class SpecialReplaceText extends SpecialPage {
 		if ( count( $titles_for_move ) > 0 ) {
 			$out->addWikiMsg(
 				'replacetext_choosepagesformove',
-				$this->target, $this->replacement, $wgLang->formatNum( count( $titles_for_move ) )
+				$this->targetString, $this->replacement, $wgLang->formatNum( count( $titles_for_move ) )
 			);
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
