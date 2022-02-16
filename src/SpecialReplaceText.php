@@ -839,6 +839,9 @@ class SpecialReplaceText extends SpecialPage {
 
 			$context .= $this->convertWhiteSpaceToHTML( $contextAfter );
 		}
+
+		// Display newlines as "line break" characters.
+		$context = str_replace( "\n", '&#8629;', $context );
 		return $context;
 	}
 
