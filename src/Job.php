@@ -24,6 +24,7 @@ namespace MediaWiki\Extension\ReplaceText;
 use CommentStoreComment;
 use Job as JobParent;
 use MediaWiki\MediaWikiServices;
+use RecentChange;
 use RequestContext;
 use TextContent;
 use Title;
@@ -188,6 +189,10 @@ class Job extends JobParent {
 					!$this->params['doAnnounce'] ) {
 					$flags |= EDIT_SUPPRESS_RC;
 					# fixme log this action
+				}
+				if ( $permissionManager->userHasRight( $current_user, 'patrol' ) ||
+					$permissionManager->userHasRight( $current_user, 'autopatrol' ) ) {
+					$updater->setRcPatrolStatus( RecentChange::PRC_PATROLLED );
 				}
 				$updater->saveRevision( $edit_summary, $flags );
 			}
