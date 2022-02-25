@@ -195,7 +195,13 @@ class SpecialReplaceText extends SpecialPage {
 					$category_title = Title::makeTitleSafe( NS_CATEGORY, $this->category );
 					if ( !$category_title->exists() ) {
 						$category_title_exists = false;
-						$out->addWikiMsg( 'replacetext_nosuchcategory', $this->category );
+						$link = $linkRenderer->makeLink(
+							$category_title,
+							ucfirst( $this->category )
+						);
+						$out->addHTML(
+							$this->msg( 'replacetext_nosuchcategory' )->rawParams( $link )->escaped()
+						);
 					}
 				}
 

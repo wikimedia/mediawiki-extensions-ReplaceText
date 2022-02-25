@@ -40,7 +40,7 @@
 	"replacetext_success": "Used as success message in [[Special:ReplaceText]]. Parameters:\n* $1 - target string\n* $2 - replacement string\n* $3 - number of affected pages",
 	"replacetext_noreplacement": "Used in [[Special:ReplaceText]]. Parameters:\n* $1 - target string\nSee also:\n* {{msg-mw|Replacetext nomove}}",
 	"replacetext_nomove": "Used in [[Special:ReplaceText]]. Parameters:\n* $1 - target string\nSee also:\n* {{msg-mw|Replacetext noreplacement}}",
-	"replacetext_nosuchcategory": "Used in [[Special:ReplaceText]]. Parameters:\n* $1 - category name",
+	"replacetext_nosuchcategory": "Used in [[Special:ReplaceText]]. Parameters:\n* $1 - category name (with link)",
 	"replacetext_return": "Used as text of a link on [[Special:ReplaceText]]",
 	"replacetext_warning": "Used in [[Special:ReplaceText]]. Parameters:\n* $1 - number of pages\n* $2 - replacement string",
 	"replacetext_blankwarning": "Used as warning message on [[Special:ReplaceText]]",
