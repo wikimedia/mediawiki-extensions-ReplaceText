@@ -23,7 +23,7 @@ use ErrorPageError;
 use Html;
 use JobQueueGroup;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Storage\SlotRecord;
+use MediaWiki\Revision\SlotRecord;
 use OOUI;
 use PermissionsError;
 use SpecialPage;
