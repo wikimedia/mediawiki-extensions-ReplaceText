@@ -30,7 +30,7 @@
 	"replacetext_success": "„$1“ wird dur „$2“ in $3 {{PLURAL:$3|Syten|Syten}} ersetzt.",
 	"replacetext_noreplacement": "S isch kei Syte gfunde wore, wu s dr Täxt „$1“ din het.",
 	"replacetext_nomove": "S sin kei Syte gfunde wore, wu '$1' im Titel hän",
-	"replacetext_nosuchcategory": "S git kei Kategorii mit em Name „[[$1]]“.",
+	"replacetext_nosuchcategory": "S git kei Kategorii mit em Name „$1“.",
 	"replacetext_return": "Zrugg zum Formular.",
 	"replacetext_warning": "'''Warnig:''' In $1 {{PLURAL:$1|Syte het s|Seite het s}} dr Täxtteil „$2“, wu ersetzt soll wäre, scho.\nE Trännig vu dr Ersetzige mit dr Täxtteil, wu s scho het, sich nit megli. Mechtsch einewäg wytermache?",
 	"replacetext_blankwarning": "Dr Täxtteil, wu soll ersetzt wären, isch läär. D Operation cha nit ruckgängig gmacht wäre, einewäg wytermache?",

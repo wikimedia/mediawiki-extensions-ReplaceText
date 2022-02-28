@@ -40,7 +40,7 @@
 	"replacetext_success": "'$1' será substituído por '$2' em $3 {{PLURAL:$3|página|páginas}}.",
 	"replacetext_noreplacement": "Não foram encontradas páginas que contenham o texto \"$1\".",
 	"replacetext_nomove": "Não foram encontradas páginas cujo título contenha \"$1\".",
-	"replacetext_nosuchcategory": "Não existe nenhuma categoria com o nome \"[[$1]]\".",
+	"replacetext_nosuchcategory": "Não existe nenhuma categoria com o nome \"$1\".",
 	"replacetext_return": "Voltar ao formulário.",
 	"replacetext_warning": "'''Aviso:''' Há {{PLURAL:$1|uma página que já contém|$1 páginas que já contêm}} o texto de substituição, \"$2\". Se fizer esta substituição não poderá distingui-las das suas substituições, nem desfazer a operação com uma simples substituição em ordem inversa.",
 	"replacetext_blankwarning": "'''Aviso:''' Como o texto de substituição foi deixado em branco, esta operação não será reversível.",

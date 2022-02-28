@@ -27,7 +27,7 @@
 	"replacetext_success": "\"$1\" word in $3 {{PLURAL:$3|bladsy|blaaie}} met \"$2\" vervang.",
 	"replacetext_noreplacement": "Daar was geen bladsye wat die teks '$1' bevat gevind nie.",
 	"replacetext_nomove": "Daar is geen bladsye met \"$1\" in die naam gevind nie.",
-	"replacetext_nosuchcategory": "Die kategorie \"[[$1]]\" bestaan nie.",
+	"replacetext_nosuchcategory": "Die kategorie \"$1\" bestaan nie.",
 	"replacetext_return": "Terug na die vorm.",
 	"replacetext_blankwarning": "Omdat u teks met niks vervang kan hierdie aksie nie ongedaan gemaak word nie.\nWil u voortgaan?",
 	"replacetext_continue": "Gaan voort",

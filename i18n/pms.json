@@ -31,7 +31,7 @@
 	"replacetext_success": "\"$1\" a sarà rimpiassà con \"$2\" an $3 {{PLURAL:$3|pàgina|pàgine}}.",
 	"replacetext_noreplacement": "Pa gnun-e pàgine trovà contenente la stringa \"$1\".",
 	"replacetext_nomove": "Pa gnun-e pàgine trovà con ij tìtoj contenent \"$1\".",
-	"replacetext_nosuchcategory": "A esisto gnun-e categorìe con ël nòm \"[[$1]]\".",
+	"replacetext_nosuchcategory": "A esisto gnun-e categorìe con ël nòm \"$1\".",
 	"replacetext_return": "Artorna al formolari.",
 	"replacetext_warning": "'''Atension:''' A-i {{PLURAL:$1|é $1 pàgina ch'a conten|son $1 pàgine ch'a conten-o}} già la stringa ëd rimpiassadura, \"$2\".\nS'it fas sta rimpiassadura-sì it saras pa bon a separé toe rimpiassadure da ste stringhe-sì.",
 	"replacetext_blankwarning": "Da già che la stringa ëd rimpiass a l'é veuida, st'operassion-sì a sarà pa reversìbil.\nVeul-lo continué?",

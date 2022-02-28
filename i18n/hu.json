@@ -31,7 +31,7 @@
 	"replacetext_success": "„$1” cseréje $3 lapon erre: „$2”.",
 	"replacetext_noreplacement": "Egy lap sem tartalmazza a(z) „$1” szöveget.",
 	"replacetext_nomove": "Nem található olyan lap, melynek címe tartalmazza a(z) „$1” keresőkifejezést.",
-	"replacetext_nosuchcategory": "Nincs „[[$1]]” nevű kategória.",
+	"replacetext_nosuchcategory": "Nincs „$1” nevű kategória.",
 	"replacetext_return": "Visszatérés az űrlapra.",
 	"replacetext_warning": "'''Figyelem:''' {{PLURAL:$1|egy|$1}} lap már tartalmazza a szöveget, amire cserélni szeretnél („$2”). Ha végrehajtod a cserét, utólag nem fogod tudni megkülönböztetni az újonnan bekerült szövegeket a már előtte is meglevő előfordulásoktól.",
 	"replacetext_blankwarning": "Mivel az új szöveg üres, ez a művelet nem lesz visszavonható.\nBiztosan folytatni szeretnéd?",

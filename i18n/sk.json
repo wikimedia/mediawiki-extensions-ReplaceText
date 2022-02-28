@@ -32,7 +32,7 @@
 	"replacetext_success": "Text „$1” bude nahradený textom „$2” na $3 {{PLURAL:$3|stránke|stránkach}}.",
 	"replacetext_noreplacement": "Nenašli sa žiadne stránky obsahujúce text „$1”.",
 	"replacetext_nomove": "Neboli nájdené žiadne stránky, ktorých názov obsahuje „$1“.",
-	"replacetext_nosuchcategory": "Žiadna kategória s názvom „[[$1]]“ neexistuje.",
+	"replacetext_nosuchcategory": "Žiadna kategória s názvom „$1“ neexistuje.",
 	"replacetext_return": "Späť na formulár.",
 	"replacetext_warning": "'''Upozornenie:''' $1 {{PLURAL:$1|stránka|stránky|stránok}} už obsahuje text „$2”, ktorým chcete pôvodný text nahradiť. Ak budete pokračovať a text nahradíte, nebudete môcť odlíšiť vaše nahradenia od existujúceho textu, ktorý tento reťazec už obsahuje.",
 	"replacetext_blankwarning": "Pretože text, ktorým text chcete nahradiť je prázdny, operácia bude nevratná. Pokračovať?",
