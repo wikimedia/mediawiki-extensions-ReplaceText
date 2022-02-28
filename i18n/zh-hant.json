@@ -38,7 +38,7 @@
 	"replacetext_success": "{{PLURAL:$3|1 個頁面|$3 個頁面}}中的 \"$1\" 將會被取代為 \"$2\"。",
 	"replacetext_noreplacement": "沒有任何頁面內容包含字串 \"$1\"。",
 	"replacetext_nomove": "沒有任何頁面標題包含字串 \"$1\"。",
-	"replacetext_nosuchcategory": "沒有任何分類名稱為 \"$1\"。",
+	"replacetext_nosuchcategory": "沒有任何分類名稱為 \"[[$1]]\"。",
 	"replacetext_return": "返回表單。",
 	"replacetext_warning": "'''警告：'''目前已有 $1 個頁面包含取代的字串 \"$2\"，若您進行取代將無法區別原本存在的字串以及取代的字串。",
 	"replacetext_blankwarning": "'''警告：'''因取代的字串為空白，此操作將無法還原。",

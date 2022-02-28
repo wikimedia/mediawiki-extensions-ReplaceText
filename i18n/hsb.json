@@ -31,7 +31,7 @@
 	"replacetext_success": "'$1' so w $3 {{PLURAL:$3|stronje|stronomaj|stronach|stronach}} přez '$2' naruna.",
 	"replacetext_noreplacement": "Njejsu so žane strony namakali, kotrež wuraz '$1' wobsahuja.",
 	"replacetext_nomove": "Strony, kotrychž titul '$1' wobsahuje, njebuchu namakane.",
-	"replacetext_nosuchcategory": "Kategorija z mjenom \"$1\" njeeksistuje.",
+	"replacetext_nosuchcategory": "Kategorija z mjenom \"[[$1]]\" njeeksistuje.",
 	"replacetext_return": "Wróćo k formularej",
 	"replacetext_warning": "'''Warnowanje:''' {{PLURAL:$1|Je hižo $1 strona, kotraž wobsahuje|Stej hižo $1 stronje, kotejž wobsahujetej|Su hižo $1 strony, kotrež wobsahuja|Je hižo $1 stronow, kotrež wobsahuje}} narunanski tekst, '$2'. Jeli tute narunanje činiš, njemóžeš swoje narunanja wot tutoho teksta rozdźělić.",
 	"replacetext_blankwarning": "Narunanski dźěl je prózdny, tohodla operacija njeda so cofnyć; njedźiwajo na to pokročować?",

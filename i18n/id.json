@@ -34,7 +34,7 @@
 	"replacetext_success": "\"$1\" akan diganti dengan \"$2\" pada $3 {{PLURAL:$3|halaman|halaman}}.",
 	"replacetext_noreplacement": "Tidak ada halaman yang ditemukan yang mengandung untaian \"$1\".",
 	"replacetext_nomove": "Tidak ada halaman yang ditemukan yang judulnya mengandung \"$1\".",
-	"replacetext_nosuchcategory": "Tidak ditemukan kategori bernama \"$1\".",
+	"replacetext_nosuchcategory": "Tidak ditemukan kategori bernama \"[[$1]]\".",
 	"replacetext_return": "Kembali ke isian.",
 	"replacetext_warning": "Ada {{PLURAL:$1|$1 halaman|$1 halaman}} yang telah berisi untaian pengganti, \"$2\". Jika Anda melakukan penggantian ini Anda tidak akan dapat memisahkan pengganti Anda dari untaian ini.",
 	"replacetext_blankwarning": "Karena untaian pengganti kosong, operasi ini tidak dapat dikembalikan.\nApakah ingin dilanjutkan?",

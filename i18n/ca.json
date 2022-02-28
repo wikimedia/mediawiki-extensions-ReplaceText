@@ -34,7 +34,7 @@
 	"replacetext_success": "\"$1\" serà substituït per \"$2\" en {{PLURAL:$3|una pàgina|$3 pàgines}}.",
 	"replacetext_noreplacement": "No s'ha trobat cap pàgina que contingui la cadena «$1».",
 	"replacetext_nomove": "No s'ha trobat cap pàgina que contingui el títol \"$1\".",
-	"replacetext_nosuchcategory": "No hi ha cap categoria de nom \"$1\".",
+	"replacetext_nosuchcategory": "No hi ha cap categoria de nom \"[[$1]]\".",
 	"replacetext_return": "Torna al formulari.",
 	"replacetext_warning": "'''Compte!:''' Hi ha {{PLURAL:$1|una pàgina que ja conté|$1 pàgines que ja contenen}} la cadena de reemplaçament, «$2». Si realitzeu aquesta substitució no podreu distingir els vostres reemplaçaments d'aquestes cadenes ja existents.",
 	"replacetext_blankwarning": "\"'Compte!:\"' Perquè la cadena de substitució és buida, aquesta operació no serà reversible.",

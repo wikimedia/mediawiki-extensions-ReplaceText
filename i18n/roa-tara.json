@@ -30,7 +30,7 @@
 	"replacetext_success": "\"$1\" avène sostituite cu \"$2\" jndr'à {{PLURAL:$3|'na pàgene|$3 pàggene}}.",
 	"replacetext_noreplacement": "Non g'onne state acchiate pàggene ca tènene 'a stringhe \"$1\".",
 	"replacetext_nomove": "Non g'onne state acchiate pàggene cu 'u titole ca tène \"$1\".",
-	"replacetext_nosuchcategory": "Non g'esiste nisciuna categorije cu 'u nome \"$1\".",
+	"replacetext_nosuchcategory": "Non g'esiste nisciuna categorije cu 'u nome \"[[$1]]\".",
 	"replacetext_return": "Tuèrne a 'u module.",
 	"replacetext_warning": "'''Iapre l'uecchije''': {{PLURAL:$1|Ste ggià $1 pàgene ca tène|Stonne ggià $1 pàggene ca tènene}} 'u teste da sostituì, \"$2\". Ce se face sta sostituzione non ge se pò essere in grade de separà le sostituziune da ste teste.",
 	"replacetext_blankwarning": "'''Iapre l'uecchije''': Purcé 'a stringhe de sostituzione jè vacande, sta operazione non g'è reversibbele.",
