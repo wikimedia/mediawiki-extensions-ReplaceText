@@ -30,7 +30,7 @@
 	"replacetext_success": "Ang '$1' ay mapapalitan ng '$2' sa loob ng $3 {{PLURAL:$3|pahina|mga pahina}}.",
 	"replacetext_noreplacement": "Walang natagpuang mga pahinang naglalaman ng bagting na '$1'.",
 	"replacetext_nomove": "Walang natagpuang mga pahina na naglalaman ang pamagat ng \"$1\".",
-	"replacetext_nosuchcategory": "Walang kategoryang umiiral na may pangalang \"[[$1]]\".",
+	"replacetext_nosuchcategory": "Walang kategoryang umiiral na may pangalang \"$1\".",
 	"replacetext_return": "Bumalik sa pormularyo.",
 	"replacetext_warning": "'''Babala:''' Mayroong {{PLURAL:$1|$1 pahinang naglalaman na|$1 mga pahinang naglalaman na}} ng pamalit na bagting, '$2'.\nKapag ginawa mo ang pagpapalit na ito hindi mo na maihihiwalay ang mga pamalit mo mula sa mga bagting na ito.",
 	"replacetext_blankwarning": "Dahil sa walang laman ang bagting ng pamalit, hindi na maibabalik pa sa dati ang gawaing ito/\nNaisa mo bang magpatuloy pa?",

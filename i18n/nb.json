@@ -34,7 +34,7 @@
 	"replacetext_success": "«$1» blir erstattet med «$2» på {{PLURAL:$3|én side|$3 sider}}.",
 	"replacetext_noreplacement": "Ingen sider ble funnet med strengen «$1».",
 	"replacetext_nomove": "Ingen sider ble funnet der tittelen inneholder «$1».",
-	"replacetext_nosuchcategory": "Det eksisterer ingen kategori med navnet «[[$1]]».",
+	"replacetext_nosuchcategory": "Det eksisterer ingen kategori med navnet «$1».",
 	"replacetext_return": "Tilbake til skjemaet.",
 	"replacetext_warning": "'''Advarsel:''' Det er {{PLURAL:$1|én side|$1 sider}} som allerede har erstatningsteksten «$2». Om du gjør denne erstatningen vil du ikke kunne skille ut dine erstatninger fra denne teksten.",
 	"replacetext_blankwarning": "Fordi erstatningsteksten er tom vil denne handlingen ikke kunne angres automatisk; fortsette?",

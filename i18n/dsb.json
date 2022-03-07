@@ -30,7 +30,7 @@
 	"replacetext_success": "'$1' wuměnja se pśez '$2' na $3 {{PLURAL:$3|boku|bokoma|bokach|bokach}}.",
 	"replacetext_noreplacement": "Njejsu se namakali žedne boki, kótarež wopśimuju tekst '$1'.",
 	"replacetext_nomove": "Boki, kótarychž titel wopśimujo '$1', njejsu se namakali.",
-	"replacetext_nosuchcategory": "Kategorija z mjenim \"[[$1]]\" njeeksistěrujo.",
+	"replacetext_nosuchcategory": "Kategorija z mjenim \"$1\" njeeksistěrujo.",
 	"replacetext_return": "Slědk k formularoju.",
 	"replacetext_warning": "'''Warnowanje:''' {{PLURAL:$1|Jo $1 bok, kótaryž južo wopśimujo|stej $1 boka, kótarejž južo wopśimujotej|su $1 boki, kótarež južo wopśimuju|jo $1 bokow, kótarež južo wopśimujo}} tekst, kótaryž ma se wuměniś, \"$2\".\nJolic wuwjedujoš toś tu wuměnu, njamóžoš rozeznaś swóje wuměny wót toś togo teksta.",
 	"replacetext_blankwarning": "Dokulaž njejo tekst za wuměnjenje, toś ta operacija njedajo se anulěrowaś. Coš weto pókšacowaś?",

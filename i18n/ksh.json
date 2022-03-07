@@ -30,7 +30,7 @@
 	"replacetext_success": "„$1“ soll en {{PLURAL:$3|eine Sigg|$3 Sigge|nix}} dorsch „$2“ ußjetuusch wääde.",
 	"replacetext_noreplacement": "Kein Sigge jefonge met däm Täxstöck „$1“ dren.",
 	"replacetext_nomove": "Mer han kei Sigge jefonge, woh „$1“ en de Övverschreff dren förkütt.",
-	"replacetext_nosuchcategory": "Mer han kein Saachjropp met dämm Name „[[$1]]“.",
+	"replacetext_nosuchcategory": "Mer han kein Saachjropp met dämm Name „$1“.",
 	"replacetext_return": "Jangk retuhr op dat Fommolaa.",
 	"replacetext_warning": "<strong>Opjepaß:<strong>\n{{PLURAL:$1|Ein Sigg enthält|$1 Sigge enthallde}} ald dat Täxstöck „$2“, wat bemm Tuusche ennjeföhsch wähde sull.\nWenn De dat jemaat häs, kam_mer di Ännderong nit esu leijsch automattesch retuhr maache, weil mer di ald do wohre, un de ennjetuuschte Täxschtöker nit ongerscheide kann.\nWells De verhafftesch trozdämm wigger maache?",
 	"replacetext_blankwarning": "Dat Täxstöck, wat beim Tuusche ennjföhsch weed, es läddesch, dröm kam_mer di Ännderong nidd esu leijsch automattesch retuhr maache.\nWells De trozdämm wigger maache?",
