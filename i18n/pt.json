@@ -48,6 +48,7 @@
 	"replacetext_announce": "Anunciar estas edições através da página $1 e das páginas vigiadas.",
 	"replacetext_editsummary": "Substituição de texto - \"$1\" por \"$2\"",
 	"replacetext_reminder": "Para alterar também as ligações para esta página nas páginas afluentes, vá a $1.",
+	"replacetext_cfg_error": "Erro de configuração da substituição de texto",
 	"right-replacetext": "Fazer substituições de texto em toda a wiki",
 	"action-replacetext": "fazer substituições de texto em toda a wiki"
 }
