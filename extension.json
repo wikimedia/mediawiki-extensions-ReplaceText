@@ -22,7 +22,19 @@
 		"replacetext"
 	],
 	"SpecialPages": {
-		"ReplaceText": "MediaWiki\\Extension\\ReplaceText\\SpecialReplaceText"
+		"ReplaceText": {
+			"class": "MediaWiki\\Extension\\ReplaceText\\SpecialReplaceText",
+			"services": [
+				"ContentLanguage",
+				"LinkRenderer",
+				"MovePageFactory",
+				"NamespaceInfo",
+				"SearchEngineConfig",
+				"SlotRoleStore",
+				"UserFactory",
+				"UserOptionsLookup"
+			]
+		}
 	},
 	"JobClasses": {
 		"replaceText": "MediaWiki\\Extension\\ReplaceText\\Job"
