@@ -96,7 +96,7 @@ class Hooks implements
 		$page = $this->specialPageFactory->getPage( 'ReplaceText' );
 		$pageLink = $form->getLinkRenderer()->makeLink( $page->getPageTitle() );
 		$out->addHTML( $form->msg( 'replacetext_reminder' )
-			->rawParams( $pageLink )->inContentLanguage()->parseAsBlock() );
+			->rawParams( $pageLink )->parseAsBlock() );
 	}
 
 	/**
