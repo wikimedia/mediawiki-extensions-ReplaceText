@@ -371,7 +371,7 @@ class SpecialReplaceText extends SpecialPage {
 		$movePageFactory = MediaWikiServices::getInstance()->getMovePageFactory();
 		foreach ( $res as $row ) {
 			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
-			if ( $title == null ) {
+			if ( !$title ) {
 				continue;
 			}
 
@@ -381,6 +381,11 @@ class SpecialReplaceText extends SpecialPage {
 				$this->replacement,
 				$this->use_regex
 			);
+			if ( !$new_title ) {
+				// New title is not valid because it contains invalid characters.
+				$unmoveable_titles[] = $title;
+				continue;
+			}
 
 			$mvPage = $movePageFactory->newMovePage( $title, $new_title );
 			$moveStatus = $mvPage->isValidMove();
