@@ -28,7 +28,6 @@ use OOUI;
 use PermissionsError;
 use SpecialPage;
 use Title;
-use User;
 use Xml;
 
 class SpecialReplaceText extends SpecialPage {
@@ -256,7 +255,7 @@ class SpecialReplaceText extends SpecialPage {
 
 		$replacement_params = [];
 		if ( $wgReplaceTextUser != null ) {
-			$user = User::newFromName( $wgReplaceTextUser );
+			$user = MediaWikiServices::getInstance()->getUserFactory()->newFromName( $wgReplaceTextUser );
 		} else {
 			$user = $this->getUser();
 		}
