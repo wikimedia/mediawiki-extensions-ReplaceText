@@ -82,6 +82,9 @@ class Hooks implements
 	 * @param Title $nt Title object of the new article (moved to)
 	 */
 	public function onSpecialMovepageAfterMove( $form, $ot, $nt ) {
+		if ( !$form->getUser()->isAllowed( 'replacetext' ) ) {
+			return;
+		}
 		$out = $form->getOutput();
 		$page = $this->specialPageFactory->getPage( 'ReplaceText' );
 		$pageLink = $form->getLinkRenderer()->makeLink( $page->getPageTitle(), null );
