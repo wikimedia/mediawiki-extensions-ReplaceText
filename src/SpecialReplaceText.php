@@ -105,7 +105,7 @@ class SpecialReplaceText extends SpecialPage {
 		$request = $this->getRequest();
 
 		$this->target = $request->getText( 'target' );
-		$this->targetString = preg_replace( "/\\n/", "&#8629;", $this->target );
+		$this->targetString = preg_replace( "/\\n/", "\u{21B5}", $this->target );
 		$this->replacement = $request->getText( 'replacement' );
 		$this->use_regex = $request->getBool( 'use_regex' );
 		$this->category = $request->getText( 'category' );
@@ -847,7 +847,7 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		// Display newlines as "line break" characters.
-		$context = str_replace( "\n", '&#8629;', $context );
+		$context = str_replace( "\n", "\u{21B5}", $context );
 		return $context;
 	}
 
@@ -864,9 +864,9 @@ class SpecialReplaceText extends SpecialPage {
 
 	private function convertWhiteSpaceToHTML( $message ) {
 		$msg = htmlspecialchars( $message );
-		$msg = preg_replace( '/^ /m', '&#160; ', $msg );
-		$msg = preg_replace( '/ $/m', ' &#160;', $msg );
-		$msg = preg_replace( '/  /', '&#160; ', $msg );
+		$msg = preg_replace( '/^ /m', "\u{00A0} ", $msg );
+		$msg = preg_replace( '/ $/m', " \u{00A0}", $msg );
+		$msg = preg_replace( '/  /', "\u{00A0} ", $msg );
 		# $msg = str_replace( "\n", '<br />', $msg );
 		return $msg;
 	}
