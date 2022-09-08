@@ -70,12 +70,16 @@
 		"AdminLinks": [
 			"MediaWiki\\Extension\\ReplaceText\\Hooks::addToAdminLinks"
 		],
-		"SpecialMovepageAfterMove": [
-			"MediaWiki\\Extension\\ReplaceText\\Hooks::replaceTextReminder"
-		],
-		"UserGetReservedNames": [
-			"MediaWiki\\Extension\\ReplaceText\\Hooks::getReservedNames"
-		]
+		"SpecialMovepageAfterMove": "main",
+		"UserGetReservedNames": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\ReplaceText\\Hooks",
+			"services": [
+				"SpecialPageFactory"
+			]
+		}
 	},
 	"config": {
 		"ReplaceTextResultsLimit": 250,

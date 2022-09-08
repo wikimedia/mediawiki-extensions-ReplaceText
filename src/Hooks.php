@@ -24,11 +24,28 @@ namespace MediaWiki\Extension\ReplaceText;
 use ALItem;
 use ALRow;
 use ALTree;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Hook\SpecialMovepageAfterMoveHook;
+use MediaWiki\SpecialPage\SpecialPageFactory;
+use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use MovePageForm;
 use Title;
 
-class Hooks {
+class Hooks implements
+	SpecialMovepageAfterMoveHook,
+	UserGetReservedNamesHook
+{
+
+	/** @var SpecialPageFactory */
+	private $specialPageFactory;
+
+	/**
+	 * @param SpecialPageFactory $specialPageFactory
+	 */
+	public function __construct(
+		SpecialPageFactory $specialPageFactory
+	) {
+		$this->specialPageFactory = $specialPageFactory;
+	}
 
 	/**
 	 * Implements AdminLinks hook from Extension:Admin_Links.
@@ -60,15 +77,14 @@ class Hooks {
 	 * Adds a link to the Special:ReplaceText page at the end of a successful
 	 * regular page move message.
 	 *
-	 * @param MovePageForm &$form
-	 * @param Title &$ot Title object of the old article (moved from)
-	 * @param Title &$nt Title object of the new article (moved to)
+	 * @param MovePageForm $form
+	 * @param Title $ot Title object of the old article (moved from)
+	 * @param Title $nt Title object of the new article (moved to)
 	 */
-	public static function replaceTextReminder( &$form, &$ot, &$nt ) {
+	public function onSpecialMovepageAfterMove( $form, $ot, $nt ) {
 		$out = $form->getOutput();
-		$services = MediaWikiServices::getInstance();
-		$page = $services->getSpecialPageFactory()->getPage( 'ReplaceText' );
-		$pageLink = $services->getLinkRenderer()->makeLink( $page->getPageTitle(), null );
+		$page = $this->specialPageFactory->getPage( 'ReplaceText' );
+		$pageLink = $form->getLinkRenderer()->makeLink( $page->getPageTitle(), null );
 		$out->addHTML( $form->msg( 'replacetext_reminder' )
 			->rawParams( $pageLink )->inContentLanguage()->parseAsBlock() );
 	}
@@ -77,7 +93,7 @@ class Hooks {
 	 * Implements UserGetReservedNames hook.
 	 * @param array &$names
 	 */
-	public static function getReservedNames( &$names ) {
+	public function onUserGetReservedNames( &$names ) {
 		global $wgReplaceTextUser;
 		if ( $wgReplaceTextUser !== null ) {
 			$names[] = $wgReplaceTextUser;
