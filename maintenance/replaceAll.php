@@ -123,7 +123,7 @@ class ReplaceAll extends Maintenance {
 
 	private function getTarget() {
 		$ret = $this->getArg( 0 );
-		if ( !$ret ) {
+		if ( $ret === null ) {
 			$this->fatalError( "You have to specify a target." );
 		}
 		return [ $ret ];
@@ -131,7 +131,7 @@ class ReplaceAll extends Maintenance {
 
 	private function getReplacement() {
 		$ret = $this->getArg( 1 );
-		if ( !$ret ) {
+		if ( $ret === null ) {
 			$this->fatalError( "You have to specify replacement text." );
 		}
 		return [ $ret ];
