@@ -105,7 +105,7 @@ class SpecialReplaceText extends SpecialPage {
 		$request = $this->getRequest();
 
 		$this->target = $request->getText( 'target' );
-		$this->targetString = preg_replace( "/\\n/", "\u{21B5}", $this->target );
+		$this->targetString = str_replace( "\n", "\u{21B5}", $this->target );
 		$this->replacement = $request->getText( 'replacement' );
 		$this->use_regex = $request->getBool( 'use_regex' );
 		$this->category = $request->getText( 'category' );
@@ -866,7 +866,7 @@ class SpecialReplaceText extends SpecialPage {
 		$msg = htmlspecialchars( $message );
 		$msg = preg_replace( '/^ /m', "\u{00A0} ", $msg );
 		$msg = preg_replace( '/ $/m', " \u{00A0}", $msg );
-		$msg = preg_replace( '/  /', "\u{00A0} ", $msg );
+		$msg = str_replace( '  ', "\u{00A0} ", $msg );
 		# $msg = str_replace( "\n", '<br />', $msg );
 		return $msg;
 	}
