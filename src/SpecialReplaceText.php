@@ -797,7 +797,7 @@ class SpecialReplaceText extends SpecialPage {
 			);
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
-					Xml::check( 'move-' . $title->getArticleID(), true ) . ' ' .
+					Xml::check( 'move-' . $title->getArticleID(), true ) . "\u{00A0}" .
 					$this->linkRenderer->makeLink( $title, null ) . "<br />\n"
 				);
 			}
@@ -829,7 +829,7 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addWikiMsg( 'replacetext_cannotmove', $wgLang->formatNum( count( $unmoveable_titles ) ) );
 			$text = "<ul>\n";
 			foreach ( $unmoveable_titles as $title ) {
-				$text .= "<li>" . $this->linkRenderer->makeLink( $title, null ) . "<br />\n";
+				$text .= "<li>" . $this->linkRenderer->makeLink( $title, null ) . "</li>\n";
 			}
 			$text .= "</ul>\n";
 			$out->addHTML( $text );
