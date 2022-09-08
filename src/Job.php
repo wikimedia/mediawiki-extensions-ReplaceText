@@ -72,7 +72,7 @@ class Job extends JobParent {
 		}
 
 		if ( $this->title === null ) {
-			$this->error = "replaceText: Invalid title";
+			$this->error = 'replaceText: Invalid title';
 			return false;
 		}
 
@@ -85,7 +85,7 @@ class Job extends JobParent {
 			);
 
 			if ( $new_title === null ) {
-				$this->error = "replaceText: Invalid new title - " . $this->params['replacement_str'];
+				$this->error = 'replaceText: Invalid new title - ' . $this->params['replacement_str'];
 				return false;
 			}
 
@@ -94,8 +94,8 @@ class Job extends JobParent {
 			$mvPage = $services->getMovePageFactory()->newMovePage( $this->title, $new_title );
 			$mvStatus = $mvPage->move( $current_user, $reason, $create_redirect );
 			if ( !$mvStatus->isOK() ) {
-				$this->error = "replaceText: error while moving: " . $this->title->getPrefixedDBkey() .
-					". Errors: " . $mvStatus->getWikiText();
+				$this->error = 'replaceText: error while moving: ' . $this->title->getPrefixedDBkey() .
+					'. Errors: ' . $mvStatus->getWikiText();
 				return false;
 			}
 

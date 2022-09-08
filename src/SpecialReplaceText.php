@@ -125,10 +125,10 @@ class SpecialReplaceText extends SpecialPage {
 		// Replace Text can't be run with certain settings, due to the
 		// changes they make to the DB storage setup.
 		if ( $wgCompressRevisions ) {
-			throw new ErrorPageError( "replacetext_cfg_error", "replacetext_no_compress" );
+			throw new ErrorPageError( 'replacetext_cfg_error', 'replacetext_no_compress' );
 		}
 		if ( !empty( $wgExternalStores ) ) {
-			throw new ErrorPageError( "replacetext_cfg_error", "replacetext_no_external_stores" );
+			throw new ErrorPageError( 'replacetext_cfg_error', 'replacetext_no_external_stores' );
 		}
 
 		$out = $this->getOutput();
