@@ -279,7 +279,7 @@ EOF;
 			if ( $rename ) {
 				$newTitle = Search::getReplacedTitle( $title, $target, $replacement, $regex );
 				// Implicit conversion of objects to strings
-				$this->output( "$title	->	$newTitle\n" );
+				$this->output( "$title\t->\t$newTitle\n" );
 			} else {
 				$this->output( "$title\n" );
 			}
