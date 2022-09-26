@@ -107,11 +107,12 @@ class Search {
 	 */
 	public static function regexCond( $dbr, $column, $regex ) {
 		if ( $dbr->getType() == 'postgres' ) {
-			$op = '~';
+			$cond = "$column ~ ";
 		} else {
-			$op = 'REGEXP';
+			$cond = "CAST($column AS BINARY) REGEXP BINARY ";
 		}
-		return "$column $op " . $dbr->addQuotes( $regex );
+		$cond .= $dbr->addQuotes( $regex );
+		return $cond;
 	}
 
 	/**
