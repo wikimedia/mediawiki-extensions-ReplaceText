@@ -28,9 +28,7 @@ use RecentChange;
 use RequestContext;
 use TextContent;
 use Title;
-use WatchAction;
 use Wikimedia\ScopedCallback;
-use WikiPage;
 use WikitextContent;
 
 /**
@@ -100,24 +98,10 @@ class Job extends JobParent {
 			}
 
 			if ( $this->params['watch_page'] ) {
-				if ( method_exists( \MediaWiki\Watchlist\WatchlistManager::class, 'addWatch' ) ) {
-					// MW 1.37+
-					$services->getWatchlistManager()->addWatch( $current_user, $new_title );
-				} else {
-					// Method was removed, but we only invoke it in versions its
-					// still available, suppress phan error
-					// @phan-suppress-next-line PhanUndeclaredStaticMethod
-					WatchAction::doWatch( $new_title, $current_user );
-				}
-
+				$services->getWatchlistManager()->addWatch( $current_user, $new_title );
 			}
 		} else {
-			if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
-				// MW 1.36+
-				$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $this->title );
-			} else {
-				$wikiPage = new WikiPage( $this->title );
-			}
+			$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $this->title );
 			$latestRevision = $wikiPage->getRevisionRecord();
 
 			if ( $latestRevision === null ) {

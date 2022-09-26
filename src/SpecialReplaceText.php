@@ -21,7 +21,6 @@ namespace MediaWiki\Extension\ReplaceText;
 
 use ErrorPageError;
 use Html;
-use JobQueueGroup;
 use Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
@@ -188,13 +187,7 @@ class SpecialReplaceText extends SpecialPage {
 
 			$jobs = $this->createJobsForTextReplacements();
 			$services = MediaWikiServices::getInstance();
-			if ( method_exists( $services, 'getJobQueueGroup' ) ) {
-				// MW 1.37+
-				$services->getJobQueueGroup()->push( $jobs );
-			} else {
-				// @phan-suppress-next-line PhanUndeclaredStaticMethod
-				JobQueueGroup::singleton()->push( $jobs );
-			}
+			$services->getJobQueueGroup()->push( $jobs );
 
 			$count = $this->getLanguage()->formatNum( count( $jobs ) );
 			$out->addWikiMsg(
