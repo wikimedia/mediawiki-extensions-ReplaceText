@@ -192,6 +192,7 @@ class SpecialReplaceText extends SpecialPage {
 				// MW 1.37+
 				$services->getJobQueueGroup()->push( $jobs );
 			} else {
+				// @phan-suppress-next-line PhanUndeclaredStaticMethod
 				JobQueueGroup::singleton()->push( $jobs );
 			}
 
