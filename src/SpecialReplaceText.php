@@ -797,7 +797,7 @@ class SpecialReplaceText extends SpecialPage {
 			);
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
-					Xml::check( 'move-' . $title->getArticleID(), true ) .
+					Xml::check( 'move-' . $title->getArticleID(), true ) . ' ' .
 					$this->linkRenderer->makeLink( $title, null ) . "<br />\n"
 				);
 			}
