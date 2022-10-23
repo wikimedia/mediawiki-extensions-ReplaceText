@@ -363,8 +363,7 @@ EOF;
 			$this->fatalError( "No matching namespaces." );
 		}
 
-		foreach ( array_keys( $this->target ) as $index ) {
-			$target = $this->target[$index];
+		foreach ( $this->target as $index => $target ) {
 			$replacement = $this->replacement[$index];
 			$useRegex = $this->useRegex[$index];
 
