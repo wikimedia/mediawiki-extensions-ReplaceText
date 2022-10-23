@@ -24,6 +24,7 @@ namespace MediaWiki\Extension\ReplaceText;
 use ALItem;
 use ALRow;
 use ALTree;
+use Config;
 use MediaWiki\Hook\SpecialMovepageAfterMoveHook;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\User\Hook\UserGetReservedNamesHook;
@@ -35,15 +36,21 @@ class Hooks implements
 	UserGetReservedNamesHook
 {
 
+	/** @var Config */
+	private $config;
+
 	/** @var SpecialPageFactory */
 	private $specialPageFactory;
 
 	/**
+	 * @param Config $config
 	 * @param SpecialPageFactory $specialPageFactory
 	 */
 	public function __construct(
+		Config $config,
 		SpecialPageFactory $specialPageFactory
 	) {
+		$this->config = $config;
 		$this->specialPageFactory = $specialPageFactory;
 	}
 
@@ -94,9 +101,9 @@ class Hooks implements
 	 * @param array &$names
 	 */
 	public function onUserGetReservedNames( &$names ) {
-		global $wgReplaceTextUser;
-		if ( $wgReplaceTextUser !== null ) {
-			$names[] = $wgReplaceTextUser;
+		$replaceTextUser = $this->config->get( 'ReplaceTextUser' );
+		if ( $replaceTextUser !== null ) {
+			$names[] = $replaceTextUser;
 		}
 	}
 }

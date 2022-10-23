@@ -115,18 +115,16 @@ class SpecialReplaceText extends SpecialPage {
 	 * @param null|string $query
 	 */
 	function execute( $query ) {
-		global $wgCompressRevisions, $wgExternalStores;
-
 		if ( !$this->getUser()->isAllowed( 'replacetext' ) ) {
 			throw new PermissionsError( 'replacetext' );
 		}
 
 		// Replace Text can't be run with certain settings, due to the
 		// changes they make to the DB storage setup.
-		if ( $wgCompressRevisions ) {
+		if ( $this->getConfig()->get( 'CompressRevisions' ) ) {
 			throw new ErrorPageError( 'replacetext_cfg_error', 'replacetext_no_compress' );
 		}
-		if ( !empty( $wgExternalStores ) ) {
+		if ( !empty( $this->getConfig()->get( 'ExternalStores' ) ) ) {
 			throw new ErrorPageError( 'replacetext_cfg_error', 'replacetext_no_external_stores' );
 		}
 
@@ -301,11 +299,11 @@ class SpecialReplaceText extends SpecialPage {
 	 * @return array jobs
 	 */
 	function createJobsForTextReplacements() {
-		global $wgReplaceTextUser;
+		$replaceTextUser = $this->getConfig()->get( 'ReplaceTextUser' );
 
 		$replacement_params = [];
-		if ( $wgReplaceTextUser != null ) {
-			$user = $this->userFactory->newFromName( $wgReplaceTextUser );
+		if ( $replaceTextUser !== null ) {
+			$user = $this->userFactory->newFromName( $replaceTextUser );
 		} else {
 			$user = $this->getUser();
 		}
