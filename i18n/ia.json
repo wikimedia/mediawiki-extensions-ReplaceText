@@ -35,7 +35,9 @@
 	"replacetext_warning": "'''Attention:''' Il ha $1 {{PLURAL:$1|pagina|paginas}} que contine ja le nove texto, \"$2\".\nSi tu face iste reimplaciamento, tu non potera distinguer inter tu reimplaciamentos e iste texto ja existente.",
 	"replacetext_blankwarning": "Post que le nove texto es vacue, iste operation non essera reversibile; continuar?",
 	"replacetext_continue": "Continuar",
+	"replacetext_announce": "Annunciar iste modificationes a transverso $1 e observatorios",
 	"replacetext_editsummary": "Substitution de texto – \"$1\" per \"$2\"",
 	"right-replacetext": "Reimplaciar catenas de texto in tote le wiki",
-	"action-replacetext": "reimplaciar catenas de texto in tote le wiki"
+	"action-replacetext": "reimplaciar catenas de texto in tote le wiki",
+	"replacetext_reminder": "Pro modificar tamben le ligamines a iste pagina in altere paginas, visita $1."
 }
