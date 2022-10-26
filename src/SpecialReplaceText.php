@@ -239,7 +239,7 @@ class SpecialReplaceText extends SpecialPage {
 				$titles_for_edit = $this->getTitlesForEditingWithContext();
 			}
 			if ( $this->move_pages ) {
-				list( $titles_for_move, $unmoveable_titles ) = $this->getTitlesForMoveAndUnmoveableTitles();
+				[ $titles_for_move, $unmoveable_titles ] = $this->getTitlesForMoveAndUnmoveableTitles();
 			}
 
 			// If no results were found, check to see if a bad
@@ -356,7 +356,7 @@ class SpecialReplaceText extends SpecialPage {
 				unset( $replacement_params['move_page'] );
 			} elseif ( strpos( $key, '|' ) !== false ) {
 				// Bundle multiple edits to the same page for a different slot into one job
-				list( $page_id, $role ) = explode( '|', $key, 2 );
+				[ $page_id, $role ] = explode( '|', $key, 2 );
 				$pages_to_edit[$page_id][] = $role;
 			}
 		}
@@ -766,7 +766,7 @@ class SpecialReplaceText extends SpecialPage {
 				/**
 				 * @var $title Title
 				 */
-				list( $title, $context, $role ) = $title_and_context;
+				[ $title, $context, $role ] = $title_and_context;
 				$checkbox = new OOUI\CheckboxInputWidget( [
 					'name' => $title->getArticleID() . "|" . $role,
 					'selected' => true
@@ -884,7 +884,7 @@ class SpecialReplaceText extends SpecialPage {
 
 		$context = '';
 		foreach ( $cuts as $_ ) {
-			list( $index, $len, ) = $_;
+			[ $index, $len, ] = $_;
 			$contextBefore = substr( $text, 0, $index );
 			$contextAfter = substr( $text, $index + $len );
 
