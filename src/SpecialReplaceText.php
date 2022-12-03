@@ -708,8 +708,6 @@ class SpecialReplaceText extends SpecialPage {
 	 * @param array $unmoveable_titles
 	 */
 	function pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles ) {
-		global $wgLang;
-
 		$out = $this->getOutput();
 
 		$formOpts = [
@@ -752,7 +750,7 @@ class SpecialReplaceText extends SpecialPage {
 				'replacetext_choosepagesforedit',
 				"<code><nowiki>{$this->targetString}</nowiki></code>",
 				"<code><nowiki>{$this->replacement}</nowiki></code>",
-				$wgLang->formatNum( count( $titles_for_edit ) )
+				$this->getLanguage()->formatNum( count( $titles_for_edit ) )
 			);
 
 			foreach ( $titles_for_edit as $title_and_context ) {
@@ -786,7 +784,9 @@ class SpecialReplaceText extends SpecialPage {
 		if ( count( $titles_for_move ) > 0 ) {
 			$out->addWikiMsg(
 				'replacetext_choosepagesformove',
-				$this->targetString, $this->replacement, $wgLang->formatNum( count( $titles_for_move ) )
+				$this->targetString,
+				$this->replacement,
+				$this->getLanguage()->formatNum( count( $titles_for_move ) )
 			);
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
@@ -819,7 +819,9 @@ class SpecialReplaceText extends SpecialPage {
 		$out->addHTML( '</form>' );
 
 		if ( count( $unmoveable_titles ) > 0 ) {
-			$out->addWikiMsg( 'replacetext_cannotmove', $wgLang->formatNum( count( $unmoveable_titles ) ) );
+			$out->addWikiMsg( 'replacetext_cannotmove',
+				$this->getLanguage()->formatNum( count( $unmoveable_titles ) )
+			);
 			$text = "<ul>\n";
 			foreach ( $unmoveable_titles as $title ) {
 				$text .= "<li>" . $this->linkRenderer->makeLink( $title, null ) . "</li>\n";
@@ -839,8 +841,6 @@ class SpecialReplaceText extends SpecialPage {
 	 * @return string
 	 */
 	function extractContext( $text, $target, $use_regex = false ) {
-		global $wgLang;
-
 		$cw = $this->userOptionsLookup->getOption( $this->getUser(), 'contextchars', 40 );
 
 		// Get all indexes
@@ -881,8 +881,8 @@ class SpecialReplaceText extends SpecialPage {
 			$contextBefore = substr( $text, 0, $index );
 			$contextAfter = substr( $text, $index + $len );
 
-			$contextBefore = $wgLang->truncateForDatabase( $contextBefore, -$cw, '...', false );
-			$contextAfter = $wgLang->truncateForDatabase( $contextAfter, $cw, '...', false );
+			$contextBefore = $this->getLanguage()->truncateForDatabase( $contextBefore, -$cw, '...', false );
+			$contextAfter = $this->getLanguage()->truncateForDatabase( $contextAfter, $cw, '...', false );
 
 			$context .= $this->convertWhiteSpaceToHTML( $contextBefore );
 			$snippet = $this->convertWhiteSpaceToHTML( substr( $text, $index, $len ) );
