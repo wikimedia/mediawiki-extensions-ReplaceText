@@ -22,6 +22,7 @@
 namespace MediaWiki\Extension\ReplaceText;
 
 use CommentStoreComment;
+use ContentHandler;
 use Job as JobParent;
 use MediaWiki\MediaWikiServices;
 use RecentChange;
@@ -29,7 +30,6 @@ use RequestContext;
 use TextContent;
 use Title;
 use Wikimedia\ScopedCallback;
-use WikitextContent;
 
 /**
  * Background job to replace text in a given page
@@ -130,14 +130,6 @@ class Job extends JobParent {
 
 				$slotContent = $revisionSlots->getContent( $role );
 
-				if ( $slotContent->getModel() !== CONTENT_MODEL_WIKITEXT ) {
-					// The slot does not contain wikitext, give an error.
-					$this->error =
-						'replaceText: Slot "' . $role .
-						'" does not hold regular wikitext for wiki page "' . $this->title->getPrefixedDBkey() . '".';
-					return false;
-				}
-
 				if ( !( $slotContent instanceof TextContent ) ) {
 					// Sanity check: Does the slot actually contain TextContent?
 					$this->error =
@@ -162,7 +154,10 @@ class Job extends JobParent {
 				// If there's at least one replacement, modify the slot.
 				if ( $num_matches > 0 ) {
 					$hasMatches = true;
-					$updater->setContent( $role, new WikitextContent( $new_text ) );
+					$updater->setContent(
+						$role,
+						ContentHandler::makeContent( $new_text, $this->title, $slotContent->getModel() )
+					);
 				}
 			}
 
