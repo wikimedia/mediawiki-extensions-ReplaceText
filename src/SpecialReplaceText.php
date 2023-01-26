@@ -758,10 +758,10 @@ class SpecialReplaceText extends SpecialPage {
 					'selected' => true
 				] );
 				if ( $role === SlotRecord::MAIN ) {
-					$labelText = $this->linkRenderer->makeLink( $title, null ) .
+					$labelText = $this->linkRenderer->makeLink( $title ) .
 						"<br /><small>$context</small>";
 				} else {
-					$labelText = $this->linkRenderer->makeLink( $title, null ) .
+					$labelText = $this->linkRenderer->makeLink( $title ) .
 						" ($role) <br /><small>$context</small>";
 				}
 				$checkboxLabel = new OOUI\LabelWidget( [
@@ -786,7 +786,7 @@ class SpecialReplaceText extends SpecialPage {
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
 					Xml::check( 'move-' . $title->getArticleID(), true ) . "\u{00A0}" .
-					$this->linkRenderer->makeLink( $title, null ) . "<br />\n"
+					$this->linkRenderer->makeLink( $title ) . "<br />\n"
 				);
 			}
 			$out->addHTML( '<br />' );
@@ -819,7 +819,7 @@ class SpecialReplaceText extends SpecialPage {
 			);
 			$text = "<ul>\n";
 			foreach ( $unmoveable_titles as $title ) {
-				$text .= "<li>" . $this->linkRenderer->makeLink( $title, null ) . "</li>\n";
+				$text .= "<li>" . $this->linkRenderer->makeLink( $title ) . "</li>\n";
 			}
 			$text .= "</ul>\n";
 			$out->addHTML( $text );

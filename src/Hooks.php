@@ -91,7 +91,7 @@ class Hooks implements
 	public function onSpecialMovepageAfterMove( $form, $ot, $nt ) {
 		$out = $form->getOutput();
 		$page = $this->specialPageFactory->getPage( 'ReplaceText' );
-		$pageLink = $form->getLinkRenderer()->makeLink( $page->getPageTitle(), null );
+		$pageLink = $form->getLinkRenderer()->makeLink( $page->getPageTitle() );
 		$out->addHTML( $form->msg( 'replacetext_reminder' )
 			->rawParams( $pageLink )->inContentLanguage()->parseAsBlock() );
 	}
