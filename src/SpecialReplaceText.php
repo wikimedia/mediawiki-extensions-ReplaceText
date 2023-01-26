@@ -131,9 +131,6 @@ class SpecialReplaceText extends SpecialPage {
 		$out = $this->getOutput();
 		$out->enableOOUI();
 		$this->setHeaders();
-		if ( $out->getResourceLoader()->getModule( 'mediawiki.special' ) !== null ) {
-			$out->addModuleStyles( 'mediawiki.special' );
-		}
 		$this->doSpecialReplaceText();
 	}
 
