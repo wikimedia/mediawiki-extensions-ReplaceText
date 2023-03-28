@@ -846,16 +846,18 @@ class SpecialReplaceText extends SpecialPage {
 			preg_match_all( "/$targetq/", $text, $matches, PREG_OFFSET_CAPTURE );
 		}
 
+		$strLengths = [];
 		$poss = [];
 		$match = $matches[0] ?? [];
 		foreach ( $match as $_ ) {
+			$strLengths[] = strlen( $_[0] );
 			$poss[] = $_[1];
 		}
 
 		$cuts = [];
 		for ( $i = 0; $i < count( $poss ); $i++ ) {
 			$index = $poss[$i];
-			$len = strlen( $target );
+			$len = $strLengths[$i];
 
 			// Merge to the next if possible
 			while ( isset( $poss[$i + 1] ) ) {
