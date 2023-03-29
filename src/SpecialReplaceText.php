@@ -872,6 +872,13 @@ class SpecialReplaceText extends SpecialPage {
 			$cuts[] = [ $index, $len ];
 		}
 
+		if ( $use_regex ) {
+			$targetStr = "/$target/Uu";
+		} else {
+			$targetq = preg_quote( $this->convertWhiteSpaceToHTML( $target ), '/' );
+			$targetStr = "/$targetq/i";
+		}
+
 		$context = '';
 		foreach ( $cuts as $_ ) {
 			[ $index, $len, ] = $_;
@@ -883,12 +890,6 @@ class SpecialReplaceText extends SpecialPage {
 
 			$context .= $this->convertWhiteSpaceToHTML( $contextBefore );
 			$snippet = $this->convertWhiteSpaceToHTML( substr( $text, $index, $len ) );
-			if ( $use_regex ) {
-				$targetStr = "/$target/Uu";
-			} else {
-				$targetq = preg_quote( $this->convertWhiteSpaceToHTML( $target ), '/' );
-				$targetStr = "/$targetq/i";
-			}
 			$context .= preg_replace( $targetStr, '<span class="ext-replacetext-searchmatch">\0</span>', $snippet );
 
 			$context .= $this->convertWhiteSpaceToHTML( $contextAfter );
