@@ -26,6 +26,7 @@
 			"class": "MediaWiki\\Extension\\ReplaceText\\SpecialReplaceText",
 			"services": [
 				"ContentLanguage",
+				"JobQueueGroup",
 				"LinkRenderer",
 				"MovePageFactory",
 				"NamespaceInfo",

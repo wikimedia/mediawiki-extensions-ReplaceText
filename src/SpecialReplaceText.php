@@ -21,9 +21,9 @@ namespace MediaWiki\Extension\ReplaceText;
 
 use ErrorPageError;
 use Html;
+use JobQueueGroup;
 use Language;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\NameTableStore;
@@ -52,6 +52,9 @@ class SpecialReplaceText extends SpecialPage {
 	/** @var Language */
 	private $contentLanguage;
 
+	/** @var JobQueueGroup */
+	private $jobQueueGroup;
+
 	/** @var LinkRenderer */
 	private $linkRenderer;
 
@@ -75,6 +78,7 @@ class SpecialReplaceText extends SpecialPage {
 
 	/**
 	 * @param Language $contentLanguage
+	 * @param JobQueueGroup $jobQueueGroup
 	 * @param LinkRenderer $linkRenderer
 	 * @param MovePageFactory $movePageFactory
 	 * @param NamespaceInfo $namespaceInfo
@@ -85,6 +89,7 @@ class SpecialReplaceText extends SpecialPage {
 	 */
 	public function __construct(
 		Language $contentLanguage,
+		JobQueueGroup $jobQueueGroup,
 		LinkRenderer $linkRenderer,
 		MovePageFactory $movePageFactory,
 		NamespaceInfo $namespaceInfo,
@@ -95,6 +100,7 @@ class SpecialReplaceText extends SpecialPage {
 	) {
 		parent::__construct( 'ReplaceText', 'replacetext' );
 		$this->contentLanguage = $contentLanguage;
+		$this->jobQueueGroup = $jobQueueGroup;
 		$this->linkRenderer = $linkRenderer;
 		$this->movePageFactory = $movePageFactory;
 		$this->namespaceInfo = $namespaceInfo;
@@ -181,8 +187,7 @@ class SpecialReplaceText extends SpecialPage {
 			}
 
 			$jobs = $this->createJobsForTextReplacements();
-			$services = MediaWikiServices::getInstance();
-			$services->getJobQueueGroup()->push( $jobs );
+			$this->jobQueueGroup->push( $jobs );
 
 			$count = $this->getLanguage()->formatNum( count( $jobs ) );
 			$out->addWikiMsg(
