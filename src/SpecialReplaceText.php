@@ -600,7 +600,6 @@ class SpecialReplaceText extends SpecialPage {
 			Xml::element( 'div', [ 'class' => 'ext-replacetext-divider' ], '', false ) .
 			"$tables\n</fieldset>"
 		);
-		// @todo FIXME: raw html messages
 		$category_search_label = $this->msg( 'replacetext_categorysearch' )->escaped();
 		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->escaped();
 		$rcPage = SpecialPage::getTitleFor( 'Recentchanges' );
