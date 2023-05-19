@@ -25,6 +25,7 @@
 		"ReplaceText": {
 			"class": "MediaWiki\\Extension\\ReplaceText\\SpecialReplaceText",
 			"services": [
+				"HookContainer",
 				"ContentLanguage",
 				"JobQueueGroup",
 				"LinkRenderer",

@@ -32,6 +32,7 @@
 	"replacetext_choosepagesforedit": "Displayed over the list of pages where the given text was found. Parameters:\n* $1 - target code\n* $2 - replacement code\n* $3 - number of pages for edit",
 	"replacetext_choosepagesformove": "Used in [[Special:ReplaceText]].\n\nThis message is followed by list of the pages.\n\nParameters:\n* $1 - target string\n* $2 - replacement string\n* $3 - number of pages",
 	"replacetext_cannotmove": "Used in [[Special:ReplaceText]].\n\nThis message is followed by list of the pages.\n\nParameters:\n* $1 - number of pages which cannot be moved",
+	"replacetext_cannotedit": "Used in [[Special:ReplaceText]].\n\nThis message is followed by list of the pages.\n\nParameters:\n* $1 - number of pages which cannot be edited",
 	"replacetext_formovedpages": "Used as label on [[Special:ReplaceText]]",
 	"replacetext_savemovedpages": "Used as label of a checkbox on [[Special:ReplaceText]]",
 	"replacetext_watchmovedpages": "Used as label message of a checkbox on [[Special:ReplaceText]]",

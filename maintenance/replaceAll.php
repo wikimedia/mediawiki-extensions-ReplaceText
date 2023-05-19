@@ -32,8 +32,8 @@ namespace MediaWiki\Extension\ReplaceText;
 
 use Maintenance;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\TitleArrayFromResult;
 use MWException;
-use TitleArrayFromResult;
 
 $IP = getenv( 'MW_INSTALL_PATH' ) ?: __DIR__ . '/../../..';
 if ( !is_readable( "$IP/maintenance/Maintenance.php" ) ) {
@@ -275,13 +275,26 @@ EOF;
 	}
 
 	private function listTitles( $titles, $target, $replacement, $regex, $rename ) {
-		foreach ( $titles as $title ) {
+		$skippedTitles = [];
+		foreach ( $titles as $prefixedText => $title ) {
+			if ( $title === null ) {
+				$skippedTitles[] = $prefixedText;
+				continue;
+			}
+
 			if ( $rename ) {
 				$newTitle = Search::getReplacedTitle( $title, $target, $replacement, $regex );
 				// Implicit conversion of objects to strings
 				$this->output( "$title\t->\t$newTitle\n" );
 			} else {
 				$this->output( "$title\n" );
+			}
+		}
+
+		if ( $skippedTitles ) {
+			$this->output( "\nExtension hook filtered out the following titles from being moved:\n" );
+			foreach ( $skippedTitles as $prefixedTitle ) {
+				$this->output( "$prefixedTitle\n" );
 			}
 		}
 	}
@@ -383,6 +396,7 @@ EOF;
 					$this->prefix,
 					$useRegex
 				);
+				$titlesToProcess = new TitleArrayFromResult( $res );
 			} else {
 				$res = Search::doSearchQuery(
 					$target,
@@ -391,21 +405,21 @@ EOF;
 					$this->prefix,
 					$useRegex
 				);
+				$hookRunner = new HookRunner( MediaWikiServices::getInstance()->getHookContainer() );
+				$titlesToProcess = $hookRunner->filterPageTitlesForEdit( $res );
 			}
 
-			$titles = new TitleArrayFromResult( $res );
-
-			if ( count( $titles ) === 0 ) {
+			if ( count( $titlesToProcess ) === 0 ) {
 				$this->fatalError( 'No targets found to replace.' );
 			}
 
 			if ( $this->getOption( 'dry-run' ) ) {
-				$this->listTitles( $titles, $target, $replacement, $useRegex, $this->rename );
+				$this->listTitles( $titlesToProcess, $target, $replacement, $useRegex, $this->rename );
 				continue;
 			}
 
 			if ( !$this->shouldContinueByDefault() ) {
-				$this->listTitles( $titles, $target, $replacement, $useRegex, $this->rename );
+				$this->listTitles( $titlesToProcess, $target, $replacement, $useRegex, $this->rename );
 				if ( !$this->getReply( 'Replace instances on these pages?' ) ) {
 					return;
 				}
@@ -424,9 +438,7 @@ EOF;
 				return;
 			}
 
-			$this->replaceTitles(
-				$titles, $target, $replacement, $useRegex, $this->rename
-			);
+			$this->replaceTitles( $titlesToProcess, $target, $replacement, $useRegex, $this->rename );
 		}
 	}
 }

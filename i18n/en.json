@@ -22,6 +22,7 @@
 	"replacetext_choosepagesforedit": "Replace \"$1\" with \"$2\" in the text of the following {{PLURAL:$3|page|$3 pages}}:",
 	"replacetext_choosepagesformove": "Replace \"$1\" with \"$2\" in the {{PLURAL:$3|title of the following page|titles of the following $3 pages}}:",
 	"replacetext_cannotmove": "The following {{PLURAL:$1|page|$1 pages}} cannot be moved:",
+	"replacetext_cannotedit": "The following {{PLURAL:$1|page|$1 pages}} cannot be edited:",
 	"replacetext_formovedpages": "For moved pages:",
 	"replacetext_savemovedpages": "Save the old titles as redirects to the new titles",
 	"replacetext_watchmovedpages": "Watch these pages",

@@ -23,6 +23,7 @@ use ErrorPageError;
 use Html;
 use JobQueueGroup;
 use Language;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\MovePageFactory;
@@ -49,6 +50,9 @@ class SpecialReplaceText extends SpecialPage {
 	private $move_pages;
 	private $selected_namespaces;
 	private $doAnnounce;
+
+	/** @var HookRunner */
+	private $hookRunner;
 
 	/** @var Language */
 	private $contentLanguage;
@@ -78,6 +82,7 @@ class SpecialReplaceText extends SpecialPage {
 	private $userOptionsLookup;
 
 	/**
+	 * @param HookContainer $hookContainer
 	 * @param Language $contentLanguage
 	 * @param JobQueueGroup $jobQueueGroup
 	 * @param LinkRenderer $linkRenderer
@@ -89,6 +94,7 @@ class SpecialReplaceText extends SpecialPage {
 	 * @param UserOptionsLookup $userOptionsLookup
 	 */
 	public function __construct(
+		HookContainer $hookContainer,
 		Language $contentLanguage,
 		JobQueueGroup $jobQueueGroup,
 		LinkRenderer $linkRenderer,
@@ -100,6 +106,7 @@ class SpecialReplaceText extends SpecialPage {
 		UserOptionsLookup $userOptionsLookup
 	) {
 		parent::__construct( 'ReplaceText', 'replacetext' );
+		$this->hookRunner = new HookRunner( $hookContainer );
 		$this->contentLanguage = $contentLanguage;
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->linkRenderer = $linkRenderer;
@@ -237,9 +244,9 @@ class SpecialReplaceText extends SpecialPage {
 			}
 
 			// If user is replacing text within pages...
-			$titles_for_edit = $titles_for_move = $unmoveable_titles = [];
+			$titles_for_edit = $titles_for_move = $unmoveable_titles = $uneditable_titles = [];
 			if ( $this->edit_pages ) {
-				$titles_for_edit = $this->getTitlesForEditingWithContext();
+				[ $titles_for_edit, $uneditable_titles ] = $this->getTitlesForEditingWithContext();
 			}
 			if ( $this->move_pages ) {
 				[ $titles_for_move, $unmoveable_titles ] = $this->getTitlesForMoveAndUnmoveableTitles();
@@ -296,7 +303,7 @@ class SpecialReplaceText extends SpecialPage {
 					$out->addHTML( $warning );
 				}
 
-				$this->pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles );
+				$this->pageListForm( $titles_for_edit, $titles_for_move, $uneditable_titles, $unmoveable_titles );
 			}
 			return;
 		}
@@ -393,9 +400,18 @@ class SpecialReplaceText extends SpecialPage {
 			$this->use_regex
 		);
 
+		$titles_to_process = $this->hookRunner->filterPageTitlesForEdit( $res );
+		$titles_to_skip = [];
+
 		foreach ( $res as $row ) {
 			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 			if ( $title == null ) {
+				continue;
+			}
+
+			if ( !isset( $titles_to_process[ $title->getPrefixedText() ] ) ) {
+				// Title has been filtered out by the hook: ReplaceTextFilterPageTitlesForEdit
+				$titles_to_skip[] = $title;
 				continue;
 			}
 
@@ -405,7 +421,7 @@ class SpecialReplaceText extends SpecialPage {
 			$titles_for_edit[] = [ $title, $context, $role ];
 		}
 
-		return $titles_for_edit;
+		return [ $titles_for_edit, $titles_to_skip ];
 	}
 
 	/**
@@ -485,7 +501,8 @@ class SpecialReplaceText extends SpecialPage {
 				$this->prefix,
 				$this->use_regex
 			);
-			$count = $res->numRows();
+			$titles = $this->hookRunner->filterPageTitlesForEdit( $res );
+			$count = count( $titles );
 			if ( $count > 0 ) {
 				return $this->msg( 'replacetext_warning' )->numParams( $count )
 					->params( "<code><nowiki>{$this->replacement}</nowiki></code>" )->parse();
@@ -714,9 +731,10 @@ class SpecialReplaceText extends SpecialPage {
 	/**
 	 * @param array $titles_for_edit
 	 * @param array $titles_for_move
+	 * @param array $uneditable_titles
 	 * @param array $unmoveable_titles
 	 */
-	function pageListForm( $titles_for_edit, $titles_for_move, $unmoveable_titles ) {
+	function pageListForm( $titles_for_edit, $titles_for_move, $uneditable_titles, $unmoveable_titles ) {
 		$out = $this->getOutput();
 
 		$formOpts = [
@@ -806,7 +824,6 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addHTML( '<br />' );
 			$out->addWikiMsg( 'replacetext_formovedpages' );
 			$rcPage = SpecialPage::getTitleFor( 'Recentchanges' );
-			$rcPageName = $rcPage->getPrefixedText();
 			$out->addHTML(
 				Xml::checkLabel(
 					$this->msg( 'replacetext_savemovedpages' )->text(),
@@ -827,16 +844,20 @@ class SpecialReplaceText extends SpecialPage {
 
 		$out->addHTML( '</form>' );
 
-		if ( count( $unmoveable_titles ) > 0 ) {
-			$out->addWikiMsg( 'replacetext_cannotmove',
+		if ( count( $uneditable_titles ) ) {
+			$out->addWikiMsg(
+				'replacetext_cannotedit',
+				$this->getLanguage()->formatNum( count( $uneditable_titles ) )
+			);
+			$out->addHTML( $this->displayTitles( $uneditable_titles ) );
+		}
+
+		if ( count( $unmoveable_titles ) ) {
+			$out->addWikiMsg(
+				'replacetext_cannotmove',
 				$this->getLanguage()->formatNum( count( $unmoveable_titles ) )
 			);
-			$text = "<ul>\n";
-			foreach ( $unmoveable_titles as $title ) {
-				$text .= "<li>" . $this->linkRenderer->makeLink( $title ) . "</li>\n";
-			}
-			$text .= "</ul>\n";
-			$out->addHTML( $text );
+			$out->addHTML( $this->displayTitles( $unmoveable_titles ) );
 		}
 	}
 
@@ -938,5 +959,14 @@ class SpecialReplaceText extends SpecialPage {
 	 */
 	protected function getGroupName() {
 		return 'wiki';
+	}
+
+	private function displayTitles( array $titlesToDisplay ): string {
+		$text = "<ul>\n";
+		foreach ( $titlesToDisplay as $title ) {
+			$text .= "<li>" . $this->linkRenderer->makeLink( $title ) . "</li>\n";
+		}
+		$text .= "</ul>\n";
+		return $text;
 	}
 }
