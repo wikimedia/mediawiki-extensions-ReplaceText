@@ -7,3 +7,6 @@ directory, and then find /docs/Hooks.md.
 
 ;ReplaceTextFilterPageTitlesForEdit: Provides other extension the ability to avoid editing content on pages based on their titles.
 \TitleArrayFromResult          &$titles: Array of page titles whose content will be edited
+
+;ReplaceTextFilterPageTitlesForRename: Provides other extension the ability to avoid renaming pages based on their titles.
+\TitleArrayFromResult          &$titles: Array of page titles being renamed

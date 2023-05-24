@@ -444,9 +444,16 @@ class SpecialReplaceText extends SpecialPage {
 			$this->use_regex
 		);
 
+		$titles_to_process = $this->hookRunner->filterPageTitlesForRename( $res );
+
 		foreach ( $res as $row ) {
 			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
 			if ( !$title ) {
+				continue;
+			}
+
+			if ( !isset( $titles_to_process[ $title->getPrefixedText() ] ) ) {
+				$unmoveable_titles[] = $title;
 				continue;
 			}
 
@@ -515,7 +522,8 @@ class SpecialReplaceText extends SpecialPage {
 				$this->prefix,
 				$this->use_regex
 			);
-			$count = $res->numRows();
+			$titles = $this->hookRunner->filterPageTitlesForRename( $res );
+			$count = count( $titles );
 			if ( $count > 0 ) {
 				return $this->msg( 'replacetext_warning' )->numParams( $count )
 					->params( $this->replacement )->parse();

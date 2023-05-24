@@ -32,7 +32,6 @@ namespace MediaWiki\Extension\ReplaceText;
 
 use Maintenance;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Title\TitleArrayFromResult;
 use MWException;
 
 $IP = getenv( 'MW_INSTALL_PATH' ) ?: __DIR__ . '/../../..';
@@ -388,6 +387,7 @@ EOF;
 				$this->output( ".\n" );
 			}
 
+			$hookRunner = new HookRunner( MediaWikiServices::getInstance()->getHookContainer() );
 			if ( $this->rename ) {
 				$res = Search::getMatchingTitles(
 					$target,
@@ -396,7 +396,7 @@ EOF;
 					$this->prefix,
 					$useRegex
 				);
-				$titlesToProcess = new TitleArrayFromResult( $res );
+				$titlesToProcess = $hookRunner->filterPageTitlesForRename( $res );
 			} else {
 				$res = Search::doSearchQuery(
 					$target,
@@ -405,7 +405,6 @@ EOF;
 					$this->prefix,
 					$useRegex
 				);
-				$hookRunner = new HookRunner( MediaWikiServices::getInstance()->getHookContainer() );
 				$titlesToProcess = $hookRunner->filterPageTitlesForEdit( $res );
 			}
 
