@@ -24,6 +24,7 @@ use Html;
 use JobQueueGroup;
 use Language;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\NameTableStore;
@@ -135,6 +136,15 @@ class SpecialReplaceText extends SpecialPage {
 		}
 
 		$out = $this->getOutput();
+
+		$readOnlyMode = MediaWikiServices::getInstance()->getReadOnlyMode();
+		if ( $readOnlyMode->isReadOnly() ) {
+			$permissionErrors = [ [ 'readonlytext', [ $readOnlyMode->getReason() ] ] ];
+			$out->setPageTitle( $this->msg( 'badaccess' )->text() );
+			$out->addWikiTextAsInterface( $out->formatPermissionsErrorMessage( $permissionErrors, 'replacetext' ) );
+			return;
+		}
+
 		$out->enableOOUI();
 		$this->setHeaders();
 		$this->doSpecialReplaceText();
