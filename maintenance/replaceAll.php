@@ -183,7 +183,7 @@ class ReplaceAll extends Maintenance {
 			plain();
 		if ( $this->getOption( 'summary' ) !== null ) {
 			$msg = str_replace( [ '%f', '%r' ],
-				[ $this->target, $this->replacement ],
+				[ $target, $replacement ],
 				$this->getOption( 'summary' ) );
 		}
 		return $msg;
