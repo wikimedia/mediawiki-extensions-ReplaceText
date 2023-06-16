@@ -25,7 +25,6 @@ use JobQueueGroup;
 use Language;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\NameTableStore;
@@ -37,6 +36,7 @@ use PermissionsError;
 use SearchEngineConfig;
 use SpecialPage;
 use Title;
+use Wikimedia\Rdbms\ReadOnlyMode;
 use Xml;
 
 class SpecialReplaceText extends SpecialPage {
@@ -69,6 +69,9 @@ class SpecialReplaceText extends SpecialPage {
 	/** @var NamespaceInfo */
 	private $namespaceInfo;
 
+	/** @var ReadOnlyMode */
+	private $readOnlyMode;
+
 	/** @var SearchEngineConfig */
 	private $searchEngineConfig;
 
@@ -88,6 +91,7 @@ class SpecialReplaceText extends SpecialPage {
 	 * @param LinkRenderer $linkRenderer
 	 * @param MovePageFactory $movePageFactory
 	 * @param NamespaceInfo $namespaceInfo
+	 * @param ReadOnlyMode $readOnlyMode
 	 * @param SearchEngineConfig $searchEngineConfig
 	 * @param NameTableStore $slotRoleStore
 	 * @param UserFactory $userFactory
@@ -100,6 +104,7 @@ class SpecialReplaceText extends SpecialPage {
 		LinkRenderer $linkRenderer,
 		MovePageFactory $movePageFactory,
 		NamespaceInfo $namespaceInfo,
+		ReadOnlyMode $readOnlyMode,
 		SearchEngineConfig $searchEngineConfig,
 		NameTableStore $slotRoleStore,
 		UserFactory $userFactory,
@@ -112,6 +117,7 @@ class SpecialReplaceText extends SpecialPage {
 		$this->linkRenderer = $linkRenderer;
 		$this->movePageFactory = $movePageFactory;
 		$this->namespaceInfo = $namespaceInfo;
+		$this->readOnlyMode = $readOnlyMode;
 		$this->searchEngineConfig = $searchEngineConfig;
 		$this->slotRoleStore = $slotRoleStore;
 		$this->userFactory = $userFactory;
@@ -144,9 +150,8 @@ class SpecialReplaceText extends SpecialPage {
 
 		$out = $this->getOutput();
 
-		$readOnlyMode = MediaWikiServices::getInstance()->getReadOnlyMode();
-		if ( $readOnlyMode->isReadOnly() ) {
-			$permissionErrors = [ [ 'readonlytext', [ $readOnlyMode->getReason() ] ] ];
+		if ( $this->readOnlyMode->isReadOnly() ) {
+			$permissionErrors = [ [ 'readonlytext', [ $this->readOnlyMode->getReason() ] ] ];
 			$out->setPageTitle( $this->msg( 'badaccess' )->text() );
 			$out->addWikiTextAsInterface( $out->formatPermissionsErrorMessage( $permissionErrors, 'replacetext' ) );
 			return;

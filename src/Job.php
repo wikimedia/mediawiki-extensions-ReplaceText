@@ -101,7 +101,7 @@ class Job extends JobParent {
 				$services->getWatchlistManager()->addWatch( $current_user, $new_title );
 			}
 		} else {
-			$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $this->title );
+			$wikiPage = $services->getWikiPageFactory()->newFromTitle( $this->title );
 			$latestRevision = $wikiPage->getRevisionRecord();
 
 			if ( $latestRevision === null ) {
