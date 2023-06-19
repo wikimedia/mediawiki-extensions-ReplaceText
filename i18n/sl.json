@@ -22,6 +22,7 @@
 	"replacetext_choosepagesforedit": "Zamenjaj »$1« z »$2« v besedilu {{PLURAL:$3|naslednje strani|naslednjih $3 strani}}:",
 	"replacetext_choosepagesformove": "Zamenjaj »$1« z »$2« v {{PLURAL:$3|naslovu naslednje strani|naslovih naslednjih $3 strani}}:",
 	"replacetext_cannotmove": "{{PLURAL:$1Naslednje strani|Naslednjih $1 strani}} ni mogoče prestaviti:",
+	"replacetext_cannotedit": "{{PLURAL:$1Naslednje strani|Naslednjih $1 strani}} ni mogoče prestaviti:",
 	"replacetext_formovedpages": "Za prestavljene strani:",
 	"replacetext_savemovedpages": "Shrani stare naslove kot preusmeritve na nove naslove",
 	"replacetext_watchmovedpages": "Opazuj te strani",

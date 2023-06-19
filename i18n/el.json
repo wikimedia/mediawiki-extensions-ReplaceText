@@ -7,6 +7,7 @@
 			"NikosLikomitros",
 			"Nikosgranturismogt",
 			"Protnet",
+			"Spyridon Eftychios Kokotos",
 			"ZaDiak",
 			"Απεργός"
 		]
@@ -29,6 +30,7 @@
 	"replacetext_choosepagesforedit": "Αντικατάσταση «$1» με «$2» στο κείμενο {{PLURAL:$3|της ακόλουθης σελίδας|των ακόλουθων $3 σελίδων}}:",
 	"replacetext_choosepagesformove": "Αντικατάσταση «$1» με «$2» στον τίτλο {{PLURAL:$3|της ακόλουθης σελίδας|των ακόλουθων $3 σελίδων}}:",
 	"replacetext_cannotmove": "{{PLURAL:$1|Η ακόλουθη σελίδα|Οι ακόλουθες $1 σελίδες}} δεν είναι δυνατό να μετακινηθούν:",
+	"replacetext_cannotedit": "Οι / Η ακόλουθες / ακόλουθη {{PLURAL:$1|σελίδα|$1 σελίδες}} δεν μπορεί / μπορούν να επεξεργαστούν / επεξεργαστεί:",
 	"replacetext_formovedpages": "Για τις σελίδες που θα μετακινηθούν:",
 	"replacetext_savemovedpages": "Αποθήκευση των παλιών τίτλων ως ανακατευθύνσεις προς τους νέους τίτλους",
 	"replacetext_watchmovedpages": "Παρακολούθηση αυτών των σελίδων",

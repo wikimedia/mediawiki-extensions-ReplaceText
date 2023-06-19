@@ -22,6 +22,7 @@
 	"replacetext_choosepagesforedit": "Per favor selige le {{PLURAL:$3|pagina in le qual|paginas in le quales}} tu vole reimplaciar '$1' per '$2':",
 	"replacetext_choosepagesformove": "Reimplaciar \"$1\" per \"$2\" in le {{PLURAL:$3|titulo del sequente pagina|titulos del sequente paginas}}:",
 	"replacetext_cannotmove": "Le sequente {{PLURAL:$1|pagina|paginas}} non pote esser renominate:",
+	"replacetext_cannotedit": "Le sequente {{PLURAL:$1|pagina|$1 paginas}} non pote esser modificate:",
 	"replacetext_formovedpages": "Pro pagina renominate:",
 	"replacetext_savemovedpages": "Preservar le ancian titulos como redirectiones verso le nove titulos",
 	"replacetext_watchmovedpages": "Observar iste paginas",
