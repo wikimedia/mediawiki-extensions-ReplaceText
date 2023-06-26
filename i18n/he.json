@@ -25,6 +25,7 @@
 	"replacetext_choosepagesforedit": "להחליף את המחרוזת \"$1\" במחרוזת \"$2\" בטקסט של {{PLURAL:$3|הדף הבא|$3 הדפים הבאים}}:",
 	"replacetext_choosepagesformove": "להחליף את המחרוזת \"$1\" במחרוזת \"$2\" {{PLURAL:$3|בכותרת של הדף הבא|בכותרות של $3 הדפים הבאים}}:",
 	"replacetext_cannotmove": "לא ניתן להעביר את {{PLURAL:$1|הדף הבא|הדפים הבאים}}:",
+	"replacetext_cannotedit": "לא ניתן לערוך את {{PLURAL:$1|הדף הבא|הדפים הבאים}}:",
 	"replacetext_formovedpages": "עבור דפים שיועברו:",
 	"replacetext_savemovedpages": "שמירת שמות הדפים הישנים כהפניות לשמות הדפים החדשים",
 	"replacetext_watchmovedpages": "מעקב אחרי הדפים האלה",
