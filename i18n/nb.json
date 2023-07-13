@@ -26,6 +26,7 @@
 	"replacetext_choosepagesforedit": "Velg {{PLURAL:$3|siden|sidene}} der du ønsker å bytte ut «$1» med «$2»:",
 	"replacetext_choosepagesformove": "Erstatt «$1» med «$2» i {{PLURAL:$3|tittelen på den følgende siden|titlene på de følgende sidene}}:",
 	"replacetext_cannotmove": "{{PLURAL:$1|Den følgende siden|De følgende sidene}} kan ikke flyttes:",
+	"replacetext_cannotedit": "Følgende {{PLURAL:$1|side|$1 sider}} kan ikke redigeres:",
 	"replacetext_formovedpages": "For flyttede sider:",
 	"replacetext_savemovedpages": "Lagre de gamle titlene som omdirigeringer til de nye",
 	"replacetext_watchmovedpages": "Overvåk disse sidene",
