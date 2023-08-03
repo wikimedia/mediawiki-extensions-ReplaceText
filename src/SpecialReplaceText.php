@@ -836,7 +836,6 @@ class SpecialReplaceText extends SpecialPage {
 			}
 			$out->addHTML( '<br />' );
 			$out->addWikiMsg( 'replacetext_formovedpages' );
-			$rcPage = SpecialPage::getTitleFor( 'Recentchanges' );
 			$out->addHTML(
 				Xml::checkLabel(
 					$this->msg( 'replacetext_savemovedpages' )->text(),
