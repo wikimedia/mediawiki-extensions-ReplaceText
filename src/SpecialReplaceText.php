@@ -323,26 +323,19 @@ class SpecialReplaceText extends SpecialPage {
 	 * @return array jobs
 	 */
 	function createJobsForTextReplacements() {
-		$replaceTextUser = $this->getConfig()->get( 'ReplaceTextUser' );
-
-		$replacement_params = [];
-		if ( $replaceTextUser !== null ) {
-			$user = $this->userFactory->newFromName( $replaceTextUser );
-		} else {
-			$user = $this->getUser();
-		}
-
-		$replacement_params['user_id'] = $user->getId();
-		$replacement_params['target_str'] = $this->target;
-		$replacement_params['replacement_str'] = $this->replacement;
-		$replacement_params['use_regex'] = $this->use_regex;
+		$replacement_params = [
+			'user_id' => $this->getReplaceTextUser()->getId(),
+			'target_str' => $this->target,
+			'replacement_str' => $this->replacement,
+			'use_regex' => $this->use_regex,
+			'create_redirect' => false,
+			'watch_page' => false,
+			'doAnnounce' => $this->doAnnounce
+		];
 		$replacement_params['edit_summary'] = $this->msg(
 			'replacetext_editsummary',
 			$this->targetString, $this->replacement
 		)->inContentLanguage()->plain();
-		$replacement_params['create_redirect'] = false;
-		$replacement_params['watch_page'] = false;
-		$replacement_params['doAnnounce'] = $this->doAnnounce;
 
 		$request = $this->getRequest();
 		foreach ( $request->getValues() as $key => $value ) {
@@ -964,6 +957,15 @@ class SpecialReplaceText extends SpecialPage {
 		$msg = str_replace( '  ', "\u{00A0} ", $msg );
 		# $msg = str_replace( "\n", '<br />', $msg );
 		return $msg;
+	}
+
+	private function getReplaceTextUser() {
+		$replaceTextUser = $this->getConfig()->get( 'ReplaceTextUser' );
+		if ( $replaceTextUser !== null ) {
+			return $this->userFactory->newFromName( $replaceTextUser );
+		}
+
+		return $this->getUser();
 	}
 
 	/**
