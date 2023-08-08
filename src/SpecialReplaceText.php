@@ -25,6 +25,7 @@ use JobQueueGroup;
 use Language;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\NameTableStore;
@@ -49,7 +50,7 @@ class SpecialReplaceText extends SpecialPage {
 	private $edit_pages;
 	private $move_pages;
 	private $selected_namespaces;
-	private $doAnnounce;
+	private $botEdit;
 
 	/** @var HookRunner */
 	private $hookRunner;
@@ -191,7 +192,7 @@ class SpecialReplaceText extends SpecialPage {
 		$this->prefix = $request->getText( 'prefix' );
 		$this->edit_pages = $request->getBool( 'edit_pages' );
 		$this->move_pages = $request->getBool( 'move_pages' );
-		$this->doAnnounce = $request->getBool( 'doAnnounce' );
+		$this->botEdit = $request->getBool( 'botEdit' );
 		$this->selected_namespaces = $this->getSelectedNamespaces();
 
 		if ( $request->getCheck( 'continue' ) && $this->target === '' ) {
@@ -330,7 +331,7 @@ class SpecialReplaceText extends SpecialPage {
 			'use_regex' => $this->use_regex,
 			'create_redirect' => false,
 			'watch_page' => false,
-			'doAnnounce' => $this->doAnnounce
+			'botEdit' => $this->botEdit
 		];
 		$replacement_params['edit_summary'] = $this->msg(
 			'replacetext_editsummary',
@@ -635,13 +636,6 @@ class SpecialReplaceText extends SpecialPage {
 		);
 		$category_search_label = $this->msg( 'replacetext_categorysearch' )->escaped();
 		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->escaped();
-		$rcPage = SpecialPage::getTitleFor( 'Recentchanges' );
-		$rcPageName = $rcPage->getPrefixedText();
-		$continueButton = new OOUI\ButtonInputWidget( [
-			'type' => 'submit',
-			'label' => $this->msg( 'replacetext_continue' )->text(),
-			'flags' => [ 'primary', 'progressive' ]
-		] );
 		$out->addHTML(
 			"<fieldset class=\"ext-replacetext-searchoptions\">\n" .
 			Xml::tags( 'h4', null, $this->msg( 'replacetext_optionalfilters' )->parse() ) .
@@ -657,10 +651,26 @@ class SpecialReplaceText extends SpecialPage {
 			) . '<br />' .
 			Xml::checkLabel(
 				$this->msg( 'replacetext_movepages' )->text(), 'move_pages', 'move_pages'
-			) . '<br />' .
-			Xml::checkLabel(
-				$this->msg( 'replacetext_announce', $rcPageName )->text(), 'doAnnounce', 'doAnnounce', true
-			) .
+			)
+		);
+
+		// If the user is a bot, don't even show the "Mark changes as bot edits" checkbox -
+		// presumably a bot user should never be allowed to make non-bot edits.
+		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		if ( !$permissionManager->userHasRight( $this->getReplaceTextUser(), 'bot' ) ) {
+			$out->addHTML(
+				'<br />' .
+				Xml::checkLabel(
+					$this->msg( 'replacetext_botedit' )->text(), 'botEdit', 'botEdit'
+				)
+			);
+		}
+		$continueButton = new OOUI\ButtonInputWidget( [
+			'type' => 'submit',
+			'label' => $this->msg( 'replacetext_continue' )->text(),
+			'flags' => [ 'primary', 'progressive' ]
+		] );
+		$out->addHTML(
 			"</p>\n" .
 			$continueButton .
 			Xml::closeElement( 'form' )
@@ -756,7 +766,7 @@ class SpecialReplaceText extends SpecialPage {
 			Html::hidden( 'use_regex', $this->use_regex ) .
 			Html::hidden( 'move_pages', $this->move_pages ) .
 			Html::hidden( 'edit_pages', $this->edit_pages ) .
-			Html::hidden( 'doAnnounce', $this->doAnnounce ) .
+			Html::hidden( 'botEdit', $this->botEdit ) .
 			Html::hidden( 'replace', 1 ) .
 			Html::hidden( 'token', $out->getUser()->getEditToken() )
 		);

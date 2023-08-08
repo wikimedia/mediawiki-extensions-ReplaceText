@@ -169,10 +169,8 @@ class Job extends JobParent {
 				if ( $permissionManager->userHasRight( $current_user, 'bot' ) ) {
 					$flags |= EDIT_FORCE_BOT;
 				}
-				if ( isset( $this->params['doAnnounce'] ) &&
-					!$this->params['doAnnounce'] ) {
-					$flags |= EDIT_SUPPRESS_RC;
-					# fixme log this action
+				if ( isset( $this->params['botEdit'] ) && $this->params['botEdit'] ) {
+					$flags |= EDIT_FORCE_BOT;
 				}
 				if ( $permissionManager->userHasRight( $current_user, 'patrol' ) ||
 					$permissionManager->userHasRight( $current_user, 'autopatrol' ) ) {

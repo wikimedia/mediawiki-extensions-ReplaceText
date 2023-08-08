@@ -57,7 +57,7 @@ class ReplaceAll extends Maintenance {
 	private $useRegex;
 	private $titles;
 	private $defaultContinue;
-	private $doAnnounce;
+	private $botEdit;
 	private $rename;
 
 	public function __construct() {
@@ -92,8 +92,8 @@ class ReplaceAll extends Maintenance {
 			'See --show-file-format for more information.', false, true, 'f' );
 		$this->addOption( 'show-file-format', 'Show a description of the ' .
 			'file format to use with --replacements.', false, false );
-		$this->addOption( 'no-announce', 'Do not announce edits on Special:RecentChanges or ' .
-			'watchlists.', false, false, 'm' );
+		$this->addOption( 'bot-edit', 'Mark changes as bot edits.',
+			false, false, 'b' );
 		$this->addOption( 'debug', 'Display replacements being made.', false, false );
 		$this->addOption( 'listns', 'List out the namespaces on this wiki.',
 			false, false );
@@ -306,7 +306,7 @@ EOF;
 				'use_regex'       => $useRegex,
 				'user_id'         => $this->user->getId(),
 				'edit_summary'    => $this->getSummary( $target, $replacement ),
-				'doAnnounce'      => $this->doAnnounce
+				'botEdit'         => $this->botEdit
 			];
 
 			if ( $rename ) {
@@ -366,7 +366,7 @@ EOF;
 		global $wgShowExceptionDetails;
 		$wgShowExceptionDetails = true;
 
-		$this->doAnnounce = true;
+		$this->botEdit = false;
 		if ( !$this->localSetup() ) {
 			return;
 		}
@@ -428,8 +428,8 @@ EOF;
 			if ( $this->getOption( 'user', null ) === null ) {
 				$comment = ' (Use --user to override)';
 			}
-			if ( $this->getOption( 'no-announce', false ) ) {
-				$this->doAnnounce = false;
+			if ( $this->getOption( 'bot-edit', false ) ) {
+				$this->botEdit = true;
 			}
 			if ( !$this->getReply(
 				"Attribute changes to the user '{$this->user}'?$comment"
