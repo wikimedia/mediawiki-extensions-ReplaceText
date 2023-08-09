@@ -49,7 +49,6 @@
 	"replacetext_warning": "'''Attention :''' il y a $1 fichier {{PLURAL:$1| qui contient|s qui contiennent}} déjà la chaîne de remplacement « $2 ».  Si vous effectuez ce remplacement, vous ne pourrez pas distinguer vos remplacements de ces chaînes d’origine.",
 	"replacetext_blankwarning": "'''Attention :''' puisque la chaîne de remplacement est vide, cette opération sera irréversible.",
 	"replacetext_continue": "Continuer",
-	"replacetext_announce": "Annoncer ces modifications via $1 et les listes de suivi",
 	"replacetext_editsummary": "Remplacement de texte : « $1 » par « $2 »",
 	"replacetext_reminder": "Pour modifier aussi les liens vers cette page dans d’autres pages, allez à $1.",
 	"replacetext_cfg_error": "Erreur de configuration de ReplaceText",
