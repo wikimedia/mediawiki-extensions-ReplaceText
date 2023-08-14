@@ -36,6 +36,7 @@
 	"replacetext_warning": "'''Opozorilo:''' Obstaja {{PLURAL:$1|ena stran, ki že vsebuje|$1 strani, ki že vsebujejo}} nadomestni niz, »$2«. Če boste opravili to zamenjavo, svojih zamenjav ne boste mogli ločiti od teh nizov.",
 	"replacetext_blankwarning": "'''Opozorilo:''' Ker je nadomestni niz prazen, te operacije ne bo mogoče razveljaviti.",
 	"replacetext_continue": "Nadaljuj",
+	"replacetext_botedit": "Označi spremembe kot urejanja botov",
 	"replacetext_editsummary": "Zamenjava besedila – »$1« z »$2«",
 	"replacetext_reminder": "Če želite spremeniti tudi povezave do te strani na drugih straneh, pojdite na $1.",
 	"replacetext_cfg_error": "Napaka konfiguracije ReplaceText",
