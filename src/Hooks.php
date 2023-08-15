@@ -21,9 +21,6 @@
  */
 namespace MediaWiki\Extension\ReplaceText;
 
-use ALItem;
-use ALRow;
-use ALTree;
 use Config;
 use MediaWiki\Hook\SpecialMovepageAfterMoveHook;
 use MediaWiki\SpecialPage\SpecialPageFactory;
@@ -52,30 +49,6 @@ class Hooks implements
 	) {
 		$this->config = $config;
 		$this->specialPageFactory = $specialPageFactory;
-	}
-
-	/**
-	 * Implements AdminLinks hook from Extension:Admin_Links.
-	 *
-	 * @param ALTree &$adminLinksTree
-	 * @return bool
-	 */
-	public static function addToAdminLinks( ALTree &$adminLinksTree ) {
-		$generalSection = $adminLinksTree->getSection( wfMessage( 'adminlinks_general' )->text() );
-
-		if ( !$generalSection ) {
-			return true;
-		}
-		$extensionsRow = $generalSection->getRow( 'extensions' );
-
-		if ( $extensionsRow === null ) {
-			$extensionsRow = new ALRow( 'extensions' );
-			$generalSection->addRow( $extensionsRow );
-		}
-
-		$extensionsRow->addItem( ALItem::newFromSpecialPage( 'ReplaceText' ) );
-
-		return true;
 	}
 
 	/**
