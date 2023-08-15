@@ -52,8 +52,8 @@ class SpecialReplaceText extends SpecialPage {
 	private $selected_namespaces;
 	private $botEdit;
 
-	/** @var HookRunner */
-	private $hookRunner;
+	/** @var HookHelper */
+	private $hookHelper;
 
 	/** @var Language */
 	private $contentLanguage;
@@ -112,7 +112,7 @@ class SpecialReplaceText extends SpecialPage {
 		UserOptionsLookup $userOptionsLookup
 	) {
 		parent::__construct( 'ReplaceText', 'replacetext' );
-		$this->hookRunner = new HookRunner( $hookContainer );
+		$this->hookHelper = new HookHelper( $hookContainer );
 		$this->contentLanguage = $contentLanguage;
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->linkRenderer = $linkRenderer;
@@ -399,7 +399,7 @@ class SpecialReplaceText extends SpecialPage {
 			$this->use_regex
 		);
 
-		$titles_to_process = $this->hookRunner->filterPageTitlesForEdit( $res );
+		$titles_to_process = $this->hookHelper->filterPageTitlesForEdit( $res );
 		$titles_to_skip = [];
 
 		foreach ( $res as $row ) {
@@ -443,7 +443,7 @@ class SpecialReplaceText extends SpecialPage {
 			$this->use_regex
 		);
 
-		$titles_to_process = $this->hookRunner->filterPageTitlesForRename( $res );
+		$titles_to_process = $this->hookHelper->filterPageTitlesForRename( $res );
 
 		foreach ( $res as $row ) {
 			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
@@ -507,7 +507,7 @@ class SpecialReplaceText extends SpecialPage {
 				$this->prefix,
 				$this->use_regex
 			);
-			$titles = $this->hookRunner->filterPageTitlesForEdit( $res );
+			$titles = $this->hookHelper->filterPageTitlesForEdit( $res );
 			$count = count( $titles );
 			if ( $count > 0 ) {
 				return $this->msg( 'replacetext_warning' )->numParams( $count )
@@ -521,7 +521,7 @@ class SpecialReplaceText extends SpecialPage {
 				$this->prefix,
 				$this->use_regex
 			);
-			$titles = $this->hookRunner->filterPageTitlesForRename( $res );
+			$titles = $this->hookHelper->filterPageTitlesForRename( $res );
 			$count = count( $titles );
 			if ( $count > 0 ) {
 				return $this->msg( 'replacetext_warning' )->numParams( $count )

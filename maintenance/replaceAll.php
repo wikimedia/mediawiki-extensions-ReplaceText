@@ -375,6 +375,7 @@ EOF;
 			$this->fatalError( 'No matching namespaces.' );
 		}
 
+		$hookHelper = new HookHelper( MediaWikiServices::getInstance()->getHookContainer() );
 		foreach ( $this->target as $index => $target ) {
 			$replacement = $this->replacement[$index];
 			$useRegex = $this->useRegex[$index];
@@ -387,7 +388,6 @@ EOF;
 				$this->output( ".\n" );
 			}
 
-			$hookRunner = new HookRunner( MediaWikiServices::getInstance()->getHookContainer() );
 			if ( $this->rename ) {
 				$res = Search::getMatchingTitles(
 					$target,
@@ -396,7 +396,7 @@ EOF;
 					$this->prefix,
 					$useRegex
 				);
-				$titlesToProcess = $hookRunner->filterPageTitlesForRename( $res );
+				$titlesToProcess = $hookHelper->filterPageTitlesForRename( $res );
 			} else {
 				$res = Search::doSearchQuery(
 					$target,
@@ -405,7 +405,7 @@ EOF;
 					$this->prefix,
 					$useRegex
 				);
-				$titlesToProcess = $hookRunner->filterPageTitlesForEdit( $res );
+				$titlesToProcess = $hookHelper->filterPageTitlesForEdit( $res );
 			}
 
 			if ( count( $titlesToProcess ) === 0 ) {
