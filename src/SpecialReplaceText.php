@@ -29,6 +29,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Storage\NameTableStore;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserOptionsLookup;
 use NamespaceInfo;
@@ -36,7 +37,6 @@ use OOUI;
 use PermissionsError;
 use SearchEngineConfig;
 use SpecialPage;
-use Title;
 use Wikimedia\Rdbms\ReadOnlyMode;
 use Xml;
 

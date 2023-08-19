@@ -19,7 +19,7 @@
  */
 namespace MediaWiki\Extension\ReplaceText;
 
-use Title;
+use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 

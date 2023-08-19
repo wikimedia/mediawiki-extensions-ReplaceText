@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\ReplaceText;
 
 use MediaWiki\Extension\ReplaceText\Hooks\HookRunner;
 use MediaWiki\HookContainer\HookContainer;
-use Title;
+use MediaWiki\Title\Title;
 use TitleArrayFromResult;
 use Wikimedia\Rdbms\IResultWrapper;
 

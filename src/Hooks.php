@@ -24,9 +24,9 @@ namespace MediaWiki\Extension\ReplaceText;
 use Config;
 use MediaWiki\Hook\SpecialMovepageAfterMoveHook;
 use MediaWiki\SpecialPage\SpecialPageFactory;
+use MediaWiki\Title\Title;
 use MediaWiki\User\Hook\UserGetReservedNamesHook;
 use MovePageForm;
-use Title;
 
 class Hooks implements
 	SpecialMovepageAfterMoveHook,

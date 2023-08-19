@@ -25,10 +25,10 @@ use CommentStoreComment;
 use ContentHandler;
 use Job as JobParent;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use RecentChange;
 use RequestContext;
 use TextContent;
-use Title;
 use Wikimedia\ScopedCallback;
 
 /**
