@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Func",
 			"Impersonator 1",
 			"Liangent",
 			"Liuxinyu970226",
@@ -44,6 +45,7 @@
 	"replacetext_warning": "'''警告：'''有{{PLURAL:$1|$1个页面已经包含}}替换字符串“$2”。如果您进行此次替换，您将无法从这些字符串中分离您的替换文字。",
 	"replacetext_blankwarning": "'''警告：'''因为替换字串为空，此次操作将不可逆。",
 	"replacetext_continue": "继续",
+	"replacetext_botedit": "将更改标记为机器人编辑",
 	"replacetext_editsummary": "文本替换 - 替换“$1”为“$2”",
 	"replacetext_reminder": "要同时修改其他页面中链入此页面的链接，请前往$1。",
 	"replacetext_cfg_error": "ReplaceText配置错误",
