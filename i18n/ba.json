@@ -12,7 +12,7 @@
 	"replacetext_originaltext": "Сығанаҡ текст:",
 	"replacetext_replacementtext": "Алмаш текст:",
 	"replacetext_useregex": "Регуляр аңлатмаларҙы ҡулланырға",
-	"replacetext_regexdocu": "(Миҫал: \"Сығанаҡ текст\" өсөн \"a(.*)c\" аңлатмаһы һәм \"Алмаш текст\" өсөн \"ac$1\" \"abc\" тексын \"acb\" тип алмаштырасаҡ.)",
+	"replacetext_regexdocu": "(Мәҫәлән: «{{int:replacetext_originaltext}}»\"  юлында \"a(.*)c\" аңлатмаһы һәм \"{{int:replacetext_replacementtext}}\" юлында \"ac$1\" һүҙбәйләнеше \"abc\" тексын \"acb\" тип алмаштырасаҡ.)",
 	"replacetext_optionalfilters": "Мөһим булмаған һөҙгөстәр:",
 	"replacetext_categorysearch": "Был категорияла ғына алмаштырырға:",
 	"replacetext_prefixsearch": "Ошо хәрефтәр менән башланған биттәрҙә генә алмаштырырға:",
