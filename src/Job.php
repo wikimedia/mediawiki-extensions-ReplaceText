@@ -53,6 +53,11 @@ class Job extends JobParent {
 		$services = MediaWikiServices::getInstance();
 		// T279090
 		$current_user = $services->getUserFactory()->newFromId( $this->params['user_id'] );
+		if ( !$current_user->isRegistered() ) {
+			$this->error = 'replacetext: the user ID ' . $this->params['user_id'] .
+				' does not belong to a registered user.';
+			return false;
+		}
 		$permissionManager = $services->getPermissionManager();
 		if ( !$permissionManager->userCan(
 			'replacetext', $current_user, $this->title
