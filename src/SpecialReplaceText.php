@@ -47,6 +47,7 @@ class SpecialReplaceText extends SpecialPage {
 	private $use_regex;
 	private $category;
 	private $prefix;
+	private $pageLimit;
 	private $edit_pages;
 	private $move_pages;
 	private $selected_namespaces;
@@ -190,6 +191,7 @@ class SpecialReplaceText extends SpecialPage {
 		$this->use_regex = $request->getBool( 'use_regex' );
 		$this->category = $request->getText( 'category' );
 		$this->prefix = $request->getText( 'prefix' );
+		$this->pageLimit = $request->getText( 'pageLimit' );
 		$this->edit_pages = $request->getBool( 'edit_pages' );
 		$this->move_pages = $request->getBool( 'move_pages' );
 		$this->botEdit = $request->getBool( 'botEdit' );
@@ -198,6 +200,12 @@ class SpecialReplaceText extends SpecialPage {
 		if ( $request->getCheck( 'continue' ) && $this->target === '' ) {
 			$this->showForm( 'replacetext_givetarget' );
 			return;
+		}
+
+		if ( $request->getCheck( 'continue' ) && $this->pageLimit === '' ) {
+			$this->pageLimit = $this->getConfig()->get( 'ReplaceTextResultsLimit' );
+		} else {
+			$this->pageLimit = (int)$this->pageLimit;
 		}
 
 		if ( $request->getCheck( 'replace' ) ) {
@@ -396,6 +404,7 @@ class SpecialReplaceText extends SpecialPage {
 			$this->selected_namespaces,
 			$this->category,
 			$this->prefix,
+			$this->pageLimit,
 			$this->use_regex
 		);
 
@@ -440,6 +449,7 @@ class SpecialReplaceText extends SpecialPage {
 			$this->selected_namespaces,
 			$this->category,
 			$this->prefix,
+			$this->pageLimit,
 			$this->use_regex
 		);
 
@@ -505,6 +515,7 @@ class SpecialReplaceText extends SpecialPage {
 				$this->selected_namespaces,
 				$this->category,
 				$this->prefix,
+				$this->pageLimit,
 				$this->use_regex
 			);
 			$titles = $this->hookHelper->filterPageTitlesForEdit( $res );
@@ -519,6 +530,7 @@ class SpecialReplaceText extends SpecialPage {
 				$this->selected_namespaces,
 				$this->category,
 				$this->prefix,
+				$this->pageLimit,
 				$this->use_regex
 			);
 			$titles = $this->hookHelper->filterPageTitlesForRename( $res );
@@ -636,6 +648,9 @@ class SpecialReplaceText extends SpecialPage {
 		);
 		$category_search_label = $this->msg( 'replacetext_categorysearch' )->escaped();
 		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->escaped();
+		$page_limit_label = $this->msg( 'replacetext_pagelimit' )->escaped();
+		$this->pageLimit = $this->pageLimit === 0 ? $this->getConfig()->get( 'ReplaceTextResultsLimit' )
+		: $this->pageLimit;
 		$out->addHTML(
 			"<fieldset class=\"ext-replacetext-searchoptions\">\n" .
 			Xml::tags( 'h4', null, $this->msg( 'replacetext_optionalfilters' )->parse() ) .
@@ -644,7 +659,9 @@ class SpecialReplaceText extends SpecialPage {
 			Xml::input( 'category', 20, $this->category, [ 'type' => 'text' ] ) . '</p>' .
 			"<p>$prefix_search_label\n" .
 			Xml::input( 'prefix', 20, $this->prefix, [ 'type' => 'text' ] ) . '</p>' .
-			"</fieldset>\n" .
+			"<p>$page_limit_label\n" .
+			Xml::input( 'pageLimit', 20, (string)$this->pageLimit,
+			[ 'type' => 'number', 'min' => 0 ] ) . "</p></fieldset>\n" .
 			"<p>\n" .
 			Xml::checkLabel(
 				$this->msg( 'replacetext_editpages' )->text(), 'edit_pages', 'edit_pages', true

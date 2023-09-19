@@ -14,6 +14,7 @@
 	"replacetext_optionalfilters": "Optional filters:",
 	"replacetext_categorysearch": "Replace only in category:",
 	"replacetext_prefixsearch": "Replace only in pages with the prefix:",
+	"replacetext_pagelimit": "Maximum number of pages to return from the search:",
 	"replacetext_editpages": "Replace text in page contents",
 	"replacetext_movepages": "Replace text in page titles, when possible",
 	"replacetext_givetarget": "You must specify the string to be replaced.",

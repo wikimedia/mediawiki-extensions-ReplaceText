@@ -54,6 +54,7 @@ class ReplaceAll extends Maintenance {
 	private $namespaces;
 	private $category;
 	private $prefix;
+	private $pageLimit;
 	private $useRegex;
 	private $titles;
 	private $defaultContinue;
@@ -86,6 +87,8 @@ class ReplaceAll extends Maintenance {
 		$this->addOption( 'category', 'Search only pages within this category.',
 			false, true, 'c' );
 		$this->addOption( 'prefix', 'Search only pages whose names start with this string.',
+			false, true, 'p' );
+		$this->addOption( 'pageLimit', 'Maximum number of pages to return from the search.',
 			false, true, 'p' );
 		$this->addOption( 'replacements', 'File containing the list of ' .
 			'replacements to be made.  Fields in the file are tab-separated. ' .
@@ -265,6 +268,10 @@ EOF;
 		return $this->getOption( 'prefix' );
 	}
 
+	private function getPageLimit() {
+		return $this->getOption( 'pageLimit' );
+	}
+
 	private function useRegex() {
 		return [ $this->getOption( 'regex' ) ];
 	}
@@ -354,6 +361,7 @@ EOF;
 		$this->namespaces = $this->getNamespaces();
 		$this->category = $this->getCategory();
 		$this->prefix = $this->getPrefix();
+		$this->pageLimit = $this->getPageLimit();
 		$this->rename = $this->getRename();
 
 		return true;
@@ -394,6 +402,7 @@ EOF;
 					$this->namespaces,
 					$this->category,
 					$this->prefix,
+					$this->pageLimit,
 					$useRegex
 				);
 				$titlesToProcess = $hookHelper->filterPageTitlesForRename( $res );
@@ -403,6 +412,7 @@ EOF;
 					$this->namespaces,
 					$this->category,
 					$this->prefix,
+					$this->pageLimit,
 					$useRegex
 				);
 				$titlesToProcess = $hookHelper->filterPageTitlesForEdit( $res );

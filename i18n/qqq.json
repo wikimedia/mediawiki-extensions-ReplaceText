@@ -24,6 +24,7 @@
 	"replacetext_optionalfilters": "Used as header on [[Special:ReplaceText]]",
 	"replacetext_categorysearch": "Used as label on [[Special:ReplaceText]]",
 	"replacetext_prefixsearch": "Used as label on [[Special:ReplaceText]]",
+	"replacetext_pagelimit": "Used as label on [[Special:ReplaceText]]",
 	"replacetext_editpages": "Used as label message of a checkbox on [[Special:ReplaceText]]",
 	"replacetext_movepages": "Used as label message of a checkbox on [[Special:ReplaceText]]",
 	"replacetext_givetarget": "Used as error message on [[Special:ReplaceText]]",
