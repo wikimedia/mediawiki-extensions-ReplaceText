@@ -14,6 +14,10 @@ class HookRunner implements
 {
 	private HookContainer $hookContainer;
 
+	/**
+	 * Constructor.
+	 * @param HookContainer $hookContainer
+	 */
 	public function __construct( HookContainer $hookContainer ) {
 		$this->hookContainer = $hookContainer;
 	}
