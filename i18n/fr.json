@@ -27,6 +27,7 @@
 	"replacetext_optionalfilters": "Filtres facultatifs :",
 	"replacetext_categorysearch": "Remplacer seulement dans la catégorie :",
 	"replacetext_prefixsearch": "Remplacer seulement dans les pages ayant le préfixe :",
+	"replacetext_pagelimit": "Nombre maximum de pages à renvoyer pour la recherche :",
 	"replacetext_editpages": "Remplacer le texte dans le contenu des pages",
 	"replacetext_movepages": "Remplacer le texte dans le titre des pages, si possible",
 	"replacetext_givetarget": "Vous devez spécifier la chaîne à remplacer.",
