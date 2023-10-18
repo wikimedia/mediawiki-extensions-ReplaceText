@@ -31,7 +31,6 @@
 namespace MediaWiki\Extension\ReplaceText;
 
 use Maintenance;
-use MediaWiki\MediaWikiServices;
 use MWException;
 
 $IP = getenv( 'MW_INSTALL_PATH' ) ?: __DIR__ . '/../../..';
@@ -109,7 +108,7 @@ class ReplaceAll extends Maintenance {
 	private function getUser() {
 		$userReplacing = $this->getOption( 'user', 1 );
 
-		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		$userFactory = $this->getServiceContainer()->getUserFactory();
 		$user = is_numeric( $userReplacing ) ?
 			$userFactory->newFromId( $userReplacing ) :
 			$userFactory->newFromName( $userReplacing );
@@ -193,7 +192,7 @@ class ReplaceAll extends Maintenance {
 
 	private function listNamespaces() {
 		$this->output( "Index\tNamespace\n" );
-		$nsList = MediaWikiServices::getInstance()->getNamespaceInfo()->getCanonicalNamespaces();
+		$nsList = $this->getServiceContainer()->getNamespaceInfo()->getCanonicalNamespaces();
 		ksort( $nsList );
 		foreach ( $nsList as $int => $val ) {
 			if ( $val == '' ) {
@@ -233,7 +232,7 @@ EOF;
 		if ( !$nsall && !$ns ) {
 			$namespaces = [ NS_MAIN ];
 		} else {
-			$canonical = MediaWikiServices::getInstance()->getNamespaceInfo()->getCanonicalNamespaces();
+			$canonical = $this->getServiceContainer()->getNamespaceInfo()->getCanonicalNamespaces();
 			$canonical[NS_MAIN] = '_';
 			$namespaces = array_flip( $canonical );
 			if ( !$nsall ) {
@@ -383,7 +382,7 @@ EOF;
 			$this->fatalError( 'No matching namespaces.' );
 		}
 
-		$hookHelper = new HookHelper( MediaWikiServices::getInstance()->getHookContainer() );
+		$hookHelper = new HookHelper( $this->getServiceContainer()->getHookContainer() );
 		foreach ( $this->target as $index => $target ) {
 			$replacement = $this->replacement[$index];
 			$useRegex = $this->useRegex[$index];
