@@ -25,8 +25,8 @@ use Language;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\MovePageFactory;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Storage\NameTableStore;
@@ -71,6 +71,9 @@ class SpecialReplaceText extends SpecialPage {
 	/** @var NamespaceInfo */
 	private $namespaceInfo;
 
+	/** @var PermissionManager */
+	private $permissionManager;
+
 	/** @var ReadOnlyMode */
 	private $readOnlyMode;
 
@@ -93,6 +96,7 @@ class SpecialReplaceText extends SpecialPage {
 	 * @param LinkRenderer $linkRenderer
 	 * @param MovePageFactory $movePageFactory
 	 * @param NamespaceInfo $namespaceInfo
+	 * @param PermissionManager $permissionManager
 	 * @param ReadOnlyMode $readOnlyMode
 	 * @param SearchEngineConfig $searchEngineConfig
 	 * @param NameTableStore $slotRoleStore
@@ -106,6 +110,7 @@ class SpecialReplaceText extends SpecialPage {
 		LinkRenderer $linkRenderer,
 		MovePageFactory $movePageFactory,
 		NamespaceInfo $namespaceInfo,
+		PermissionManager $permissionManager,
 		ReadOnlyMode $readOnlyMode,
 		SearchEngineConfig $searchEngineConfig,
 		NameTableStore $slotRoleStore,
@@ -119,6 +124,7 @@ class SpecialReplaceText extends SpecialPage {
 		$this->linkRenderer = $linkRenderer;
 		$this->movePageFactory = $movePageFactory;
 		$this->namespaceInfo = $namespaceInfo;
+		$this->permissionManager = $permissionManager;
 		$this->readOnlyMode = $readOnlyMode;
 		$this->searchEngineConfig = $searchEngineConfig;
 		$this->slotRoleStore = $slotRoleStore;
@@ -673,8 +679,7 @@ class SpecialReplaceText extends SpecialPage {
 
 		// If the user is a bot, don't even show the "Mark changes as bot edits" checkbox -
 		// presumably a bot user should never be allowed to make non-bot edits.
-		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-		if ( !$permissionManager->userHasRight( $this->getReplaceTextUser(), 'bot' ) ) {
+		if ( !$this->permissionManager->userHasRight( $this->getReplaceTextUser(), 'bot' ) ) {
 			$out->addHTML(
 				'<br />' .
 				Xml::checkLabel(
