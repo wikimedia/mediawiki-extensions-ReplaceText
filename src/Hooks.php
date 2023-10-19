@@ -21,7 +21,7 @@
  */
 namespace MediaWiki\Extension\ReplaceText;
 
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\Hook\SpecialMovepageAfterMoveHook;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\Title\Title;

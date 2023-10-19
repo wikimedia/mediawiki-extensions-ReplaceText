@@ -21,9 +21,9 @@
  */
 namespace MediaWiki\Extension\ReplaceText;
 
-use CommentStoreComment;
 use ContentHandler;
 use Job as JobParent;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use RecentChange;

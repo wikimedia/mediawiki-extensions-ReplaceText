@@ -20,23 +20,23 @@
 namespace MediaWiki\Extension\ReplaceText;
 
 use ErrorPageError;
-use Html;
 use JobQueueGroup;
 use Language;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Storage\NameTableStore;
+use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserOptionsLookup;
-use NamespaceInfo;
 use OOUI;
 use PermissionsError;
 use SearchEngineConfig;
-use SpecialPage;
 use Wikimedia\Rdbms\ReadOnlyMode;
 use Xml;
 
