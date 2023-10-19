@@ -37,6 +37,7 @@ use MediaWiki\User\UserOptionsLookup;
 use OOUI;
 use PermissionsError;
 use SearchEngineConfig;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\ReadOnlyMode;
 use Xml;
 
@@ -55,6 +56,9 @@ class SpecialReplaceText extends SpecialPage {
 
 	/** @var HookHelper */
 	private $hookHelper;
+
+	/** @var IConnectionProvider */
+	private $dbProvider;
 
 	/** @var Language */
 	private $contentLanguage;
@@ -91,6 +95,7 @@ class SpecialReplaceText extends SpecialPage {
 
 	/**
 	 * @param HookContainer $hookContainer
+	 * @param IConnectionProvider $dbProvider
 	 * @param Language $contentLanguage
 	 * @param JobQueueGroup $jobQueueGroup
 	 * @param LinkRenderer $linkRenderer
@@ -105,6 +110,7 @@ class SpecialReplaceText extends SpecialPage {
 	 */
 	public function __construct(
 		HookContainer $hookContainer,
+		IConnectionProvider $dbProvider,
 		Language $contentLanguage,
 		JobQueueGroup $jobQueueGroup,
 		LinkRenderer $linkRenderer,
@@ -119,6 +125,7 @@ class SpecialReplaceText extends SpecialPage {
 	) {
 		parent::__construct( 'ReplaceText', 'replacetext' );
 		$this->hookHelper = new HookHelper( $hookContainer );
+		$this->dbProvider = $dbProvider;
 		$this->contentLanguage = $contentLanguage;
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->linkRenderer = $linkRenderer;
@@ -598,8 +605,8 @@ class SpecialReplaceText extends SpecialPage {
 		// SQLite unfortunately lack a REGEXP
 		// function or operator by default, so disable regex(p)
 		// searches that DB type.
-		$dbr = wfGetDB( DB_REPLICA );
-		if ( $dbr->getType() != 'sqlite' ) {
+		$dbr = $this->dbProvider->getReplicaDatabase();
+		if ( $dbr->getType() !== 'sqlite' ) {
 			$out->addHTML( Xml::tags( 'p', null,
 					Xml::checkLabel(
 						$this->msg( 'replacetext_useregex' )->text(),

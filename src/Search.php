@@ -19,6 +19,7 @@
  */
 namespace MediaWiki\Extension\ReplaceText;
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -39,7 +40,7 @@ class Search {
 	) {
 		global $wgReplaceTextResultsLimit;
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
 		$tables = [ 'page', 'revision', 'text', 'slots', 'content' ];
 		$vars = [ 'page_id', 'page_namespace', 'page_title', 'old_text', 'slot_role_id' ];
 		if ( $use_regex ) {
@@ -92,7 +93,7 @@ class Search {
 			return;
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
 		$title = Title::newFromText( $prefix );
 		if ( $title !== null ) {
 			$prefix = $title->getDbKey();
@@ -137,7 +138,7 @@ class Search {
 	) {
 		global $wgReplaceTextResultsLimit;
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
 
 		$tables = [ 'page' ];
 		$vars = [ 'page_title', 'page_namespace' ];
