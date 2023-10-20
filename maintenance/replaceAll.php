@@ -370,9 +370,6 @@ EOF;
 	 * @inheritDoc
 	 */
 	public function execute() {
-		global $wgShowExceptionDetails;
-		$wgShowExceptionDetails = true;
-
 		$this->botEdit = false;
 		if ( !$this->localSetup() ) {
 			return;
