@@ -729,11 +729,11 @@ class SpecialReplaceText extends SpecialPage {
 		// Group namespaces into rows according to subject.
 		// Try not to make too many assumptions about namespace numbering.
 		$rows = [];
-		$tables = "";
+		$tables = '';
 		foreach ( $namespaces as $ns => $name ) {
 			$subj = $this->namespaceInfo->getSubject( $ns );
 			if ( !array_key_exists( $subj, $rows ) ) {
-				$rows[$subj] = "";
+				$rows[$subj] = '';
 			}
 			$name = str_replace( '_', ' ', $name );
 			if ( $name == '' ) {
@@ -792,8 +792,8 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addHTML( Html::hidden( 'ns' . $ns, 1 ) );
 		}
 
-		$out->addModules( "ext.ReplaceText" );
-		$out->addModuleStyles( "ext.ReplaceTextStyles" );
+		$out->addModules( 'ext.ReplaceText' );
+		$out->addModuleStyles( 'ext.ReplaceTextStyles' );
 
 		// Only show "invert selections" link if there are more than
 		// five pages.
@@ -819,7 +819,7 @@ class SpecialReplaceText extends SpecialPage {
 				 */
 				[ $title, $context, $role ] = $title_and_context;
 				$checkbox = new OOUI\CheckboxInputWidget( [
-					'name' => $title->getArticleID() . "|" . $role,
+					'name' => $title->getArticleID() . '|' . $role,
 					'selected' => true
 				] );
 				if ( $role === SlotRecord::MAIN ) {

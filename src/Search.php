@@ -56,7 +56,7 @@ class Search {
 			'slot_content_id = content_id',
 			$dbr->buildIntegerCast( 'SUBSTR(content_address, 4)' ) . ' = old_id'
 		];
-		if ( $pageLimit === null || $pageLimit === "" ) {
+		if ( $pageLimit === null || $pageLimit === '' ) {
 			$pageLimit = $wgReplaceTextResultsLimit;
 		}
 		self::categoryCondition( $category, $tables, $conds );
@@ -153,7 +153,7 @@ class Search {
 			$comparisonCond,
 			'page_namespace' => $namespaces,
 		];
-		if ( $pageLimit === null || $pageLimit === "" ) {
+		if ( $pageLimit === null || $pageLimit === '' ) {
 			$pageLimit = $wgReplaceTextResultsLimit;
 		}
 		self::categoryCondition( $category, $tables, $conds );
