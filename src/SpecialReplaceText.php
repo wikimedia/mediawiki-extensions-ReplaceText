@@ -759,12 +759,9 @@ class SpecialReplaceText extends SpecialPage {
 		$numRows = count( $rows );
 		// Lay out namespaces in multiple floating two-column tables so they'll
 		// be arranged nicely while still accommodating different screen widths
-		// Float to the right on RTL wikis
-		$tableStyle = $this->contentLanguage->isRTL() ?
-			'float: right; margin: 0 0 0em 1em' : 'float: left; margin: 0 1em 0em 0';
 		// Build the final HTML table...
 		for ( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
-			$tables .= Xml::openElement( 'table', [ 'style' => $tableStyle ] );
+			$tables .= Xml::openElement( 'table' );
 			for ( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
 				$tables .= "<tr>\n" . $rows[$j] . "</tr>";
 			}
