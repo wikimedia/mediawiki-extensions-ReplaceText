@@ -224,8 +224,7 @@ class SpecialReplaceText extends SpecialPage {
 		if ( $request->getCheck( 'replace' ) ) {
 
 			// check for CSRF
-			$user = $this->getUser();
-			if ( !$user->matchEditToken( $request->getVal( 'token' ) ) ) {
+			if ( !$this->checkToken() ) {
 				$out->addWikiMsg( 'sessionfailure' );
 				return;
 			}
@@ -252,8 +251,7 @@ class SpecialReplaceText extends SpecialPage {
 
 		if ( $request->getCheck( 'target' ) ) {
 			// check for CSRF
-			$user = $this->getUser();
-			if ( !$user->matchEditToken( $request->getVal( 'token' ) ) ) {
+			if ( !$this->checkToken() ) {
 				$out->addWikiMsg( 'sessionfailure' );
 				return;
 			}
@@ -574,7 +572,7 @@ class SpecialReplaceText extends SpecialPage {
 			) . "\n" .
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'continue', 1 ) .
-			Html::hidden( 'token', $out->getUser()->getEditToken() )
+			Html::hidden( 'token', $this->getToken() )
 		);
 		if ( $warning_msg === null ) {
 			$out->addWikiMsg( 'replacetext_docu' );
@@ -794,7 +792,7 @@ class SpecialReplaceText extends SpecialPage {
 			Html::hidden( 'edit_pages', $this->edit_pages ) .
 			Html::hidden( 'botEdit', $this->botEdit ) .
 			Html::hidden( 'replace', 1 ) .
-			Html::hidden( 'token', $out->getUser()->getEditToken() )
+			Html::hidden( 'token', $this->getToken() )
 		);
 
 		foreach ( $this->selected_namespaces as $ns ) {
@@ -1018,5 +1016,13 @@ class SpecialReplaceText extends SpecialPage {
 		}
 		$text .= "</ul>\n";
 		return $text;
+	}
+
+	private function getToken(): string {
+		return $this->getContext()->getCsrfTokenSet()->getToken();
+	}
+
+	private function checkToken(): bool {
+		return $this->getContext()->getCsrfTokenSet()->matchTokenField( 'token' );
 	}
 }
