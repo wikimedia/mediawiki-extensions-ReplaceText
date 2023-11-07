@@ -18,6 +18,7 @@
 	"replacetext_optionalfilters": "Valgfrie filter:",
 	"replacetext_categorysearch": "Erstatt kun i kategori:",
 	"replacetext_prefixsearch": "Erstatt kun i sider med prefikset:",
+	"replacetext_pagelimit": "Maksimalt antall sider som skal returneres fra søket:",
 	"replacetext_editpages": "Erstatt tekst i sideinnholdet",
 	"replacetext_movepages": "Erstatt tekst i sidetitler, der dette er mulig",
 	"replacetext_givetarget": "Du må spesifisere en streng som skal erstattes.",
