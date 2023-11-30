@@ -12,11 +12,12 @@
 			"Yfdyh000",
 			"飞小RAN",
 			"Func",
-			"LittlePaw365"
+			"LittlePaw365",
+			"阿南之人"
 		]
 	},
 	"replacetext": "替换文字",
-	"replacetext-desc": "提供[[Special:ReplaceText|特殊页面]]允许管理员在wiki的所有内容页面上进行全局字符串查找和替换",
+	"replacetext-desc": "提供[[Special:ReplaceText|特殊页面]]允许管理员在wiki的所有内容页面上进行全域字符串查找和替换",
 	"replacetext_docu": "要替换此wiki所有常规页面内的特定文字字符串，请输入以下两个文字字段，然后点击“{{int:replacetext_continue}}”。之后会显示含有搜索文字的页面列表，您可从中选择要进行替换的页面。您的用户名会在各页面历史内标注为所有更改的操作用户。",
 	"replacetext_originaltext": "原始文字：",
 	"replacetext_replacementtext": "替换文字：",
