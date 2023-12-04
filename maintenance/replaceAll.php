@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 /**
  * Replace text in pages or page titles.
