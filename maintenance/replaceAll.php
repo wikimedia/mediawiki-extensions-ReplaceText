@@ -30,6 +30,7 @@
 namespace MediaWiki\Extension\ReplaceText;
 
 use Maintenance;
+use MediaWiki\User\User;
 use MWException;
 
 $IP = getenv( 'MW_INSTALL_PATH' ) ?: __DIR__ . '/../../..';
@@ -112,7 +113,7 @@ class ReplaceAll extends Maintenance {
 			$userFactory->newFromId( $userReplacing ) :
 			$userFactory->newFromName( $userReplacing );
 
-		if ( get_class( $user ) !== 'User' ) {
+		if ( !$user instanceof User ) {
 			$this->fatalError(
 				"Couldn't translate '$userReplacing' to a user."
 			);
@@ -437,7 +438,7 @@ EOF;
 				$this->botEdit = true;
 			}
 			if ( !$this->getReply(
-				"Attribute changes to the user '{$this->user}'?$comment"
+				"Attribute changes to the user '{$this->user->getName()}'?$comment"
 			) ) {
 				return;
 			}
