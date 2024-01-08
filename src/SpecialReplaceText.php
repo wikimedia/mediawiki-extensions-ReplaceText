@@ -914,7 +914,8 @@ class SpecialReplaceText extends SpecialPage {
 
 		// Get all indexes
 		if ( $use_regex ) {
-			preg_match_all( "/$target/Uu", $text, $matches, PREG_OFFSET_CAPTURE );
+			$targetq = str_replace( "/", "\\/", $target );
+			preg_match_all( "/$targetq/Uu", $text, $matches, PREG_OFFSET_CAPTURE );
 		} else {
 			$targetq = preg_quote( $target, '/' );
 			preg_match_all( "/$targetq/", $text, $matches, PREG_OFFSET_CAPTURE );
