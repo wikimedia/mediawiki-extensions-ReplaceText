@@ -24,6 +24,7 @@
 	"replacetext_optionalfilters": "過濾條件選項：",
 	"replacetext_categorysearch": "僅取代頁面於分類：",
 	"replacetext_prefixsearch": "僅取代頁面含字首：",
+	"replacetext_pagelimit": "搜尋回傳的最多頁數：",
 	"replacetext_editpages": "取代頁面內容中的文字",
 	"replacetext_movepages": "取代頁面標題的文字 (當可以時)",
 	"replacetext_givetarget": "您必須指定要被取代的字串。",
