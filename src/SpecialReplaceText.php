@@ -159,7 +159,7 @@ class SpecialReplaceText extends SpecialPage {
 		if ( $this->getConfig()->get( 'CompressRevisions' ) ) {
 			throw new ErrorPageError( 'replacetext_cfg_error', 'replacetext_no_compress' );
 		}
-		if ( !empty( $this->getConfig()->get( 'ExternalStores' ) ) ) {
+		if ( $this->getConfig()->get( 'ExternalStores' ) ) {
 			throw new ErrorPageError( 'replacetext_cfg_error', 'replacetext_no_external_stores' );
 		}
 
@@ -282,7 +282,7 @@ class SpecialReplaceText extends SpecialPage {
 			if ( count( $titles_for_edit ) == 0 && count( $titles_for_move ) == 0 ) {
 				$category_title_exists = true;
 
-				if ( !empty( $this->category ) ) {
+				if ( $this->category ) {
 					$category_title = Title::makeTitleSafe( NS_CATEGORY, $this->category );
 					if ( !$category_title->exists() ) {
 						$category_title_exists = false;
