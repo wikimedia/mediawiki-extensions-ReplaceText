@@ -380,6 +380,10 @@ EOF;
 		}
 
 		$hookHelper = new HookHelper( $this->getServiceContainer()->getHookContainer() );
+		$search = new Search(
+			$this->getServiceContainer()->getMainConfig(),
+			$this->getServiceContainer()->getDBLoadBalancerFactory()
+		);
 		foreach ( $this->target as $index => $target ) {
 			$replacement = $this->replacement[$index];
 			$useRegex = $this->useRegex[$index];
@@ -393,7 +397,7 @@ EOF;
 			}
 
 			if ( $this->rename ) {
-				$res = Search::getMatchingTitles(
+				$res = $search->getMatchingTitles(
 					$target,
 					$this->namespaces,
 					$this->category,
@@ -403,7 +407,7 @@ EOF;
 				);
 				$titlesToProcess = $hookHelper->filterPageTitlesForRename( $res );
 			} else {
-				$res = Search::doSearchQuery(
+				$res = $search->doSearchQuery(
 					$target,
 					$this->namespaces,
 					$this->category,

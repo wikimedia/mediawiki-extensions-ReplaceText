@@ -93,6 +93,9 @@ class SpecialReplaceText extends SpecialPage {
 	/** @var UserOptionsLookup */
 	private $userOptionsLookup;
 
+	/** @var Search */
+	private $search;
+
 	/**
 	 * @param HookContainer $hookContainer
 	 * @param IConnectionProvider $dbProvider
@@ -137,6 +140,10 @@ class SpecialReplaceText extends SpecialPage {
 		$this->slotRoleStore = $slotRoleStore;
 		$this->userFactory = $userFactory;
 		$this->userOptionsLookup = $userOptionsLookup;
+		$this->search = new Search(
+			$this->getConfig(),
+			$dbProvider
+		);
 	}
 
 	/**
@@ -410,7 +417,7 @@ class SpecialReplaceText extends SpecialPage {
 	function getTitlesForEditingWithContext() {
 		$titles_for_edit = [];
 
-		$res = Search::doSearchQuery(
+		$res = $this->search->doSearchQuery(
 			$this->target,
 			$this->selected_namespaces,
 			$this->category,
@@ -455,7 +462,7 @@ class SpecialReplaceText extends SpecialPage {
 		$titles_for_move = [];
 		$unmoveable_titles = [];
 
-		$res = Search::getMatchingTitles(
+		$res = $this->search->getMatchingTitles(
 			$this->target,
 			$this->selected_namespaces,
 			$this->category,
@@ -521,7 +528,7 @@ class SpecialReplaceText extends SpecialPage {
 			// it's a meaningless check.
 			return null;
 		} elseif ( count( $titles_for_edit ) > 0 ) {
-			$res = Search::doSearchQuery(
+			$res = $this->search->doSearchQuery(
 				$this->replacement,
 				$this->selected_namespaces,
 				$this->category,
@@ -536,7 +543,7 @@ class SpecialReplaceText extends SpecialPage {
 					->params( "<code><nowiki>{$this->replacement}</nowiki></code>" )->parse();
 			}
 		} elseif ( count( $titles_for_move ) > 0 ) {
-			$res = Search::getMatchingTitles(
+			$res = $this->search->getMatchingTitles(
 				$this->replacement,
 				$this->selected_namespaces,
 				$this->category,
