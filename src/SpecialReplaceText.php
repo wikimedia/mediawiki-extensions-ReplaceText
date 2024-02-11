@@ -26,6 +26,7 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\MovePageFactory;
+use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -34,6 +35,7 @@ use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\UserFactory;
+use MediaWiki\Watchlist\WatchlistManager;
 use OOUI;
 use PermissionsError;
 use SearchEngineConfig;
@@ -93,6 +95,9 @@ class SpecialReplaceText extends SpecialPage {
 	/** @var UserOptionsLookup */
 	private $userOptionsLookup;
 
+	private WatchlistManager $watchlistManager;
+	private WikiPageFactory $wikiPageFactory;
+
 	/** @var Search */
 	private $search;
 
@@ -110,6 +115,8 @@ class SpecialReplaceText extends SpecialPage {
 	 * @param NameTableStore $slotRoleStore
 	 * @param UserFactory $userFactory
 	 * @param UserOptionsLookup $userOptionsLookup
+	 * @param WatchlistManager $watchlistManager
+	 * @param WikiPageFactory $wikiPageFactory
 	 */
 	public function __construct(
 		HookContainer $hookContainer,
@@ -124,7 +131,9 @@ class SpecialReplaceText extends SpecialPage {
 		SearchEngineConfig $searchEngineConfig,
 		NameTableStore $slotRoleStore,
 		UserFactory $userFactory,
-		UserOptionsLookup $userOptionsLookup
+		UserOptionsLookup $userOptionsLookup,
+		WatchlistManager $watchlistManager,
+		WikiPageFactory $wikiPageFactory
 	) {
 		parent::__construct( 'ReplaceText', 'replacetext' );
 		$this->hookHelper = new HookHelper( $hookContainer );
@@ -140,6 +149,8 @@ class SpecialReplaceText extends SpecialPage {
 		$this->slotRoleStore = $slotRoleStore;
 		$this->userFactory = $userFactory;
 		$this->userOptionsLookup = $userOptionsLookup;
+		$this->watchlistManager = $watchlistManager;
+		$this->wikiPageFactory = $wikiPageFactory;
 		$this->search = new Search(
 			$this->getConfig(),
 			$dbProvider
@@ -386,7 +397,13 @@ class SpecialReplaceText extends SpecialPage {
 				$title = Title::newFromID( (int)substr( $key, 5 ) );
 				$replacement_params['move_page'] = true;
 				if ( $title !== null ) {
-					$jobs[] = new Job( $title, $replacement_params );
+					$jobs[] = new Job( $title, $replacement_params,
+						$this->movePageFactory,
+						$this->permissionManager,
+						$this->userFactory,
+						$this->watchlistManager,
+						$this->wikiPageFactory
+					);
 				}
 				unset( $replacement_params['move_page'] );
 			} elseif ( strpos( $key, '|' ) !== false ) {
@@ -400,7 +417,13 @@ class SpecialReplaceText extends SpecialPage {
 			$title = Title::newFromID( (int)$page_id );
 			$replacement_params['roles'] = $roles;
 			if ( $title !== null ) {
-				$jobs[] = new Job( $title, $replacement_params );
+				$jobs[] = new Job( $title, $replacement_params,
+					$this->movePageFactory,
+					$this->permissionManager,
+					$this->userFactory,
+					$this->watchlistManager,
+					$this->wikiPageFactory
+				);
 			}
 			unset( $replacement_params['roles'] );
 		}

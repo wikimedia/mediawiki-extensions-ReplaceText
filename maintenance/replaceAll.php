@@ -322,7 +322,14 @@ EOF;
 			}
 
 			$this->output( "Replacing on $title... " );
-			$job = new Job( $title, $params );
+			$services = $this->getServiceContainer();
+			$job = new Job( $title, $params,
+				$services->getMovePageFactory(),
+				$services->getPermissionManager(),
+				$services->getUserFactory(),
+				$services->getWatchlistManager(),
+				$services->getWikiPageFactory()
+			);
 			if ( $job->run() !== true ) {
 				$this->error( "Trouble on the page '$title'." );
 			}

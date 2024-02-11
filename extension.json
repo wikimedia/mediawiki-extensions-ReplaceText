@@ -37,12 +37,23 @@
 				"SearchEngineConfig",
 				"SlotRoleStore",
 				"UserFactory",
-				"UserOptionsLookup"
+				"UserOptionsLookup",
+				"WatchlistManager",
+				"WikiPageFactory"
 			]
 		}
 	},
 	"JobClasses": {
-		"replaceText": "MediaWiki\\Extension\\ReplaceText\\Job"
+		"replaceText": {
+			"class": "MediaWiki\\Extension\\ReplaceText\\Job",
+			"services": [
+				"MovePageFactory",
+				"PermissionManager",
+				"UserFactory",
+				"WatchlistManager",
+				"WikiPageFactory"
+			]
+		}
 	},
 	"MessagesDirs": {
 		"ReplaceText": [
