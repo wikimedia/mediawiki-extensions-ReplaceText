@@ -28,6 +28,7 @@
 				"HookContainer",
 				"DBLoadBalancerFactory",
 				"ContentLanguage",
+				"JobFactory",
 				"JobQueueGroup",
 				"LinkRenderer",
 				"MovePageFactory",
@@ -37,9 +38,7 @@
 				"SearchEngineConfig",
 				"SlotRoleStore",
 				"UserFactory",
-				"UserOptionsLookup",
-				"WatchlistManager",
-				"WikiPageFactory"
+				"UserOptionsLookup"
 			]
 		}
 	},
