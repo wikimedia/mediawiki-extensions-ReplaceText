@@ -38,8 +38,6 @@ class Search {
 	public static function doSearchQuery(
 		$search, $namespaces, $category, $prefix, $pageLimit, $use_regex = false
 	) {
-		global $wgReplaceTextResultsLimit;
-
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
 		$tables = [ 'page', 'revision', 'text', 'slots', 'content' ];
 		$vars = [ 'page_id', 'page_namespace', 'page_title', 'old_text', 'slot_role_id' ];
@@ -58,7 +56,7 @@ class Search {
 			$dbr->buildIntegerCast( 'SUBSTR(content_address, 4)' ) . ' = old_id'
 		];
 		if ( $pageLimit === null || $pageLimit === '' ) {
-			$pageLimit = $wgReplaceTextResultsLimit;
+			$pageLimit = MediaWikiServices::getInstance()->getMainConfig()->get( 'ReplaceTextResultsLimit' );
 		}
 		self::categoryCondition( $category, $tables, $conds );
 		self::prefixCondition( $prefix, $conds );
@@ -136,8 +134,6 @@ class Search {
 		$pageLimit,
 		$use_regex = false
 	) {
-		global $wgReplaceTextResultsLimit;
-
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getReplicaDatabase();
 
 		$tables = [ 'page' ];
@@ -155,7 +151,7 @@ class Search {
 			'page_namespace' => $namespaces,
 		];
 		if ( $pageLimit === null || $pageLimit === '' ) {
-			$pageLimit = $wgReplaceTextResultsLimit;
+			$pageLimit = MediaWikiServices::getInstance()->getMainConfig()->get( 'ReplaceTextResultsLimit' );
 		}
 		self::categoryCondition( $category, $tables, $conds );
 		self::prefixCondition( $prefix, $conds );
