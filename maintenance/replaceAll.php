@@ -155,7 +155,7 @@ class ReplaceAll extends Maintenance {
 		}
 
 		$this->defaultContinue = true;
-		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures
+		// phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition
 		while ( ( $line = fgets( $handle ) ) !== false ) {
 			$field = explode( "\t", substr( $line, 0, -1 ) );
 			if ( !isset( $field[1] ) ) {
