@@ -379,10 +379,11 @@ EOF;
 			$this->fatalError( 'No matching namespaces.' );
 		}
 
-		$hookHelper = new HookHelper( $this->getServiceContainer()->getHookContainer() );
+		$services = $this->getServiceContainer();
+		$hookHelper = new HookHelper( $services->getHookContainer() );
 		$search = new Search(
-			$this->getServiceContainer()->getMainConfig(),
-			$this->getServiceContainer()->getDBLoadBalancerFactory()
+			$services->getMainConfig(),
+			$services->getDBLoadBalancerFactory()
 		);
 		foreach ( $this->target as $index => $target ) {
 			$replacement = $this->replacement[$index];
