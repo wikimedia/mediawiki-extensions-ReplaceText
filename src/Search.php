@@ -22,7 +22,7 @@ namespace MediaWiki\Extension\ReplaceText;
 use MediaWiki\Config\Config;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\IConnectionProvider;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class Search {
@@ -113,7 +113,7 @@ class Search {
 	}
 
 	/**
-	 * @param IDatabase $dbr
+	 * @param IReadableDatabase $dbr
 	 * @param string $column
 	 * @param string $regex
 	 * @return string query condition for regex
