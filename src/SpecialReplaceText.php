@@ -41,7 +41,6 @@ use PermissionsError;
 use SearchEngineConfig;
 use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\ReadOnlyMode;
-use Xml;
 
 class SpecialReplaceText extends SpecialPage {
 	private $target;
@@ -592,7 +591,7 @@ class SpecialReplaceText extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->addHTML(
-			Xml::openElement(
+			Html::openElement(
 				'form',
 				[
 					'id' => 'powersearch',
@@ -619,15 +618,15 @@ class SpecialReplaceText extends SpecialPage {
 		// 'width: auto' style is needed to override MediaWiki's
 		// normal 'width: 100%', which causes the textarea to get
 		// zero width in IE
-		$out->addHTML(
-			Xml::textarea( 'target', $this->target, 100, 5, [ 'style' => 'width: auto;' ] )
-		);
+		$out->addHTML( Html::textarea( 'target', $this->target,
+			[ 'cols' => 100, 'rows' => 5, 'style' => 'width: auto;' ]
+		) );
 		$out->addHTML( '</td></tr><tr><td style="vertical-align: top;">' );
 		$out->addWikiMsg( 'replacetext_replacementtext' );
 		$out->addHTML( '</td><td>' );
-		$out->addHTML(
-			Xml::textarea( 'replacement', $this->replacement, 100, 5, [ 'style' => 'width: auto;' ] )
-		);
+		$out->addHTML( Html::textarea( 'replacement', $this->replacement,
+			[ 'cols' => 100, 'rows' => 5, 'style' => 'width: auto;' ]
+		) );
 		$out->addHTML( '</td></tr></table>' );
 
 		// SQLite unfortunately lack a REGEXP
@@ -635,13 +634,13 @@ class SpecialReplaceText extends SpecialPage {
 		// searches that DB type.
 		$dbr = $this->dbProvider->getReplicaDatabase();
 		if ( $dbr->getType() !== 'sqlite' ) {
-			$out->addHTML( Xml::tags( 'p', null,
-					Xml::checkLabel(
-						$this->msg( 'replacetext_useregex' )->text(),
-						'use_regex', 'use_regex'
+			$out->addHTML( Html::rawElement( 'p', [],
+					Html::rawElement( 'label', [],
+						Html::input( 'use_regex', '1', 'checkbox' )
+						. ' ' . $this->msg( 'replacetext_useregex' )->escaped(),
 					)
 				) . "\n" .
-				Xml::element( 'p',
+				Html::element( 'p',
 					[ 'style' => 'font-style: italic' ],
 					$this->msg( 'replacetext_regexdocu' )->text()
 				)
@@ -654,7 +653,7 @@ class SpecialReplaceText extends SpecialPage {
 		$out->addHTML(
 			"<div class=\"mw-search-formheader\"></div>\n" .
 			"<fieldset class=\"ext-replacetext-searchoptions\">\n" .
-			Xml::tags( 'h4', null, $this->msg( 'powersearch-ns' )->parse() )
+			Html::element( 'h4', [], $this->msg( 'powersearch-ns' )->text() )
 		);
 		// The ability to select/unselect groups of namespaces in the
 		// search interface exists only in some skins, like Vector -
@@ -684,31 +683,34 @@ class SpecialReplaceText extends SpecialPage {
 			);
 		}
 		$out->addHTML(
-			Xml::element( 'div', [ 'class' => 'ext-replacetext-divider' ], '', false ) .
+			Html::element( 'div', [ 'class' => 'ext-replacetext-divider' ] ) .
 			"$tables\n</fieldset>"
 		);
 		$category_search_label = $this->msg( 'replacetext_categorysearch' )->escaped();
 		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->escaped();
 		$page_limit_label = $this->msg( 'replacetext_pagelimit' )->escaped();
-		$this->pageLimit = $this->pageLimit === 0 ? $this->getConfig()->get( 'ReplaceTextResultsLimit' )
-		: $this->pageLimit;
+		$this->pageLimit = $this->pageLimit === 0
+			? $this->getConfig()->get( 'ReplaceTextResultsLimit' )
+			: $this->pageLimit;
 		$out->addHTML(
 			"<fieldset class=\"ext-replacetext-searchoptions\">\n" .
-			Xml::tags( 'h4', null, $this->msg( 'replacetext_optionalfilters' )->parse() ) .
-			Xml::element( 'div', [ 'class' => 'ext-replacetext-divider' ], '', false ) .
+			Html::element( 'h4', [], $this->msg( 'replacetext_optionalfilters' )->text() ) .
+			Html::element( 'div', [ 'class' => 'ext-replacetext-divider' ] ) .
 			"<p>$category_search_label\n" .
-			Xml::input( 'category', 20, $this->category, [ 'type' => 'text' ] ) . '</p>' .
+			Html::element( 'input', [ 'name' => 'category', 'size' => 20, 'value' => $this->category ] ) . '</p>' .
 			"<p>$prefix_search_label\n" .
-			Xml::input( 'prefix', 20, $this->prefix, [ 'type' => 'text' ] ) . '</p>' .
+			Html::element( 'input', [ 'name' => 'prefix', 'size' => 20, 'value' => $this->prefix ] ) . '</p>' .
 			"<p>$page_limit_label\n" .
-			Xml::input( 'pageLimit', 20, (string)$this->pageLimit,
-			[ 'type' => 'number', 'min' => 0 ] ) . "</p></fieldset>\n" .
+			Html::element( 'input', [ 'name' => 'pageLimit', 'size' => 20, 'value' => (string)$this->pageLimit,
+				'type' => 'number', 'min' => 0 ] ) . "</p></fieldset>\n" .
 			"<p>\n" .
-			Xml::checkLabel(
-				$this->msg( 'replacetext_editpages' )->text(), 'edit_pages', 'edit_pages', true
+			Html::rawElement( 'label', [],
+				Html::input( 'edit_pages', '1', 'checkbox', [ 'checked' => true ] )
+				. ' ' . $this->msg( 'replacetext_editpages' )->escaped()
 			) . '<br />' .
-			Xml::checkLabel(
-				$this->msg( 'replacetext_movepages' )->text(), 'move_pages', 'move_pages'
+			Html::rawElement( 'label', [],
+				Html::input( 'move_pages', '1', 'checkbox' )
+				. ' ' . $this->msg( 'replacetext_movepages' )->escaped()
 			)
 		);
 
@@ -717,8 +719,8 @@ class SpecialReplaceText extends SpecialPage {
 		if ( !$this->permissionManager->userHasRight( $this->getReplaceTextUser(), 'bot' ) ) {
 			$out->addHTML(
 				'<br />' .
-				Xml::checkLabel(
-					$this->msg( 'replacetext_botedit' )->text(), 'botEdit', 'botEdit'
+				Html::rawElement( 'label', [],
+					Html::input( 'botEdit', '1', 'checkbox' ) . ' ' . $this->msg( 'replacetext_botedit' )->escaped()
 				)
 			);
 		}
@@ -730,7 +732,7 @@ class SpecialReplaceText extends SpecialPage {
 		$out->addHTML(
 			"</p>\n" .
 			$continueButton .
-			Xml::closeElement( 'form' )
+			Html::closeElement( 'form' )
 		);
 		$out->addModuleStyles( 'ext.ReplaceTextStyles' );
 		$out->addModules( 'ext.ReplaceText' );
@@ -779,9 +781,11 @@ class SpecialReplaceText extends SpecialPage {
 			if ( $name == '' ) {
 				$name = $this->msg( 'blanknamespace' )->text();
 			}
-			$rows[$subj] .= Xml::openElement( 'td', [ 'style' => 'white-space: nowrap' ] ) .
-				Xml::checkLabel( $name, "ns{$ns}", "mw-search-ns{$ns}", in_array( $ns, $namespaces ) ) .
-				Xml::closeElement( 'td' ) . "\n";
+			$id = "mw-search-ns{$ns}";
+			$rows[$subj] .= Html::openElement( 'td', [ 'style' => 'white-space: nowrap' ] ) .
+				Html::input( "ns{$ns}", '1', 'checkbox', [ 'id' => $id, 'checked' => in_array( $ns, $namespaces ) ] ) .
+				' ' . Html::label( $name, $id ) .
+				Html::closeElement( 'td' ) . "\n";
 		}
 		$rows = array_values( $rows );
 		$numRows = count( $rows );
@@ -789,11 +793,11 @@ class SpecialReplaceText extends SpecialPage {
 		// be arranged nicely while still accommodating different screen widths
 		// Build the final HTML table...
 		for ( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
-			$tables .= Xml::openElement( 'table' );
+			$tables .= Html::openElement( 'table' );
 			for ( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
 				$tables .= "<tr>\n" . $rows[$j] . "</tr>";
 			}
-			$tables .= Xml::closeElement( 'table' ) . "\n";
+			$tables .= Html::closeElement( 'table' ) . "\n";
 		}
 		return $tables;
 	}
@@ -813,7 +817,7 @@ class SpecialReplaceText extends SpecialPage {
 			'action' => $this->getPageTitle()->getLocalURL()
 		];
 		$out->addHTML(
-			Xml::openElement( 'form', $formOpts ) . "\n" .
+			Html::openElement( 'form', $formOpts ) . "\n" .
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'target', $this->target ) .
 			Html::hidden( 'replacement', $this->replacement ) .
@@ -887,19 +891,21 @@ class SpecialReplaceText extends SpecialPage {
 			);
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
-					Xml::check( 'move-' . $title->getArticleID(), true ) . "\u{00A0}" .
+					Html::check( 'move-' . $title->getArticleID(), true ) . "\u{00A0}" .
 					$this->linkRenderer->makeLink( $title ) . "<br />\n"
 				);
 			}
 			$out->addHTML( '<br />' );
 			$out->addWikiMsg( 'replacetext_formovedpages' );
 			$out->addHTML(
-				Xml::checkLabel(
-					$this->msg( 'replacetext_savemovedpages' )->text(),
-						'create-redirect', 'create-redirect', true ) . "<br />\n" .
-				Xml::checkLabel(
-					$this->msg( 'replacetext_watchmovedpages' )->text(),
-					'watch-pages', 'watch-pages', false ) . '<br />'
+				Html::rawElement( 'label', [],
+					Html::input( 'create-redirect', '1', 'checkbox', [ 'checked' => true ] )
+					. ' ' . $this->msg( 'replacetext_savemovedpages' )->escaped()
+				) . "<br />\n" .
+				Html::rawElement( 'label', [],
+					Html::input( 'watch-pages', '1', 'checkbox' )
+					. ' ' . $this->msg( 'replacetext_watchmovedpages' )->escaped()
+				) . '<br />'
 			);
 			$out->addHTML( '<br />' );
 		}
