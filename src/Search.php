@@ -74,6 +74,7 @@ class Search {
 		$this->prefixCondition( $prefix, $dbr, $queryBuilder );
 		return $queryBuilder->orderBy( [ 'page_namespace', 'page_title' ] )
 			->limit( $pageLimit )
+			->caller( __METHOD__ )
 			->fetchResultSet();
 	}
 
@@ -104,6 +105,7 @@ class Search {
 			$prefix = $title->getDbKey();
 		}
 		$any = $dbr->anyString();
+		// @phan-suppress-next-line PhanTypeMismatchArgumentNullable $prefix is checked for null
 		$queryBuilder->where( $dbr->expr( 'page_title', IExpression::LIKE, new LikeValue( $prefix, $any ) ) );
 	}
 
@@ -159,6 +161,7 @@ class Search {
 		$this->prefixCondition( $prefix, $dbr, $queryBuilder );
 		return $queryBuilder->orderBy( [ 'page_namespace', 'page_title' ] )
 			->limit( $pageLimit )
+			->caller( __METHOD__ )
 			->fetchResultSet();
 	}
 
