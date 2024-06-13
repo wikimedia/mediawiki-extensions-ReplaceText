@@ -184,7 +184,7 @@ class SpecialReplaceText extends SpecialPage {
 
 		if ( $this->readOnlyMode->isReadOnly() ) {
 			$permissionErrors = [ [ 'readonlytext', [ $this->readOnlyMode->getReason() ] ] ];
-			$out->setPageTitle( $this->msg( 'badaccess' )->text() );
+			$out->setPageTitleMsg( $this->msg( 'badaccess' ) );
 			$out->addWikiTextAsInterface( $out->formatPermissionsErrorMessage( $permissionErrors, 'replacetext' ) );
 			return;
 		}
