@@ -43,16 +43,27 @@ use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\ReadOnlyMode;
 
 class SpecialReplaceText extends SpecialPage {
+	/** @var string */
 	private $target;
+	/** @var string */
 	private $targetString;
+	/** @var string */
 	private $replacement;
+	/** @var bool */
 	private $use_regex;
+	/** @var string */
 	private $category;
+	/** @var string */
 	private $prefix;
+	/** @var string|int */
 	private $pageLimit;
+	/** @var bool */
 	private $edit_pages;
+	/** @var bool */
 	private $move_pages;
+	/** @var int[] */
 	private $selected_namespaces;
+	/** @var bool */
 	private $botEdit;
 
 	/** @var HookHelper */
