@@ -55,7 +55,6 @@ class ReplaceAll extends Maintenance {
 	private $prefix;
 	private $pageLimit;
 	private $useRegex;
-	private $titles;
 	private $defaultContinue;
 	private $botEdit;
 	private $rename;
