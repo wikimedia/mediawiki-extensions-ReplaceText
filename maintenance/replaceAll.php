@@ -48,28 +48,21 @@ require_once "$IP/maintenance/Maintenance.php";
  * @SuppressWarnings(LongVariable)
  */
 class ReplaceAll extends Maintenance {
-	/** @var User */
-	private $user;
+	private User $user;
 	/** @var string[] */
-	private $target;
+	private array $target;
 	/** @var string[] */
-	private $replacement;
+	private array $replacement;
 	/** @var int[] */
-	private $namespaces;
-	/** @var string */
-	private $category;
-	/** @var string */
-	private $prefix;
-	/** @var int */
-	private $pageLimit;
+	private array $namespaces;
+	private ?string $category;
+	private ?string $prefix;
+	private int $pageLimit;
 	/** @var bool[] */
-	private $useRegex;
-	/** @var bool */
-	private $defaultContinue;
-	/** @var bool */
-	private $botEdit;
-	/** @var bool */
-	private $rename;
+	private array $useRegex;
+	private ?bool $defaultContinue = null;
+	private bool $botEdit;
+	private bool $rename;
 
 	public function __construct() {
 		parent::__construct();
@@ -116,10 +109,7 @@ class ReplaceAll extends Maintenance {
 		$this->requireExtension( 'Replace Text' );
 	}
 
-	/**
-	 * @return User
-	 */
-	private function getUser() {
+	private function getUser(): User {
 		$userReplacing = $this->getOption( 'user', 1 );
 
 		$userFactory = $this->getServiceContainer()->getUserFactory();
@@ -139,7 +129,7 @@ class ReplaceAll extends Maintenance {
 	/**
 	 * @return string[]
 	 */
-	private function getTarget() {
+	private function getTarget(): array {
 		$ret = $this->getArg( 0 );
 		if ( $ret === null ) {
 			$this->fatalError( 'You have to specify a target.' );
@@ -150,7 +140,7 @@ class ReplaceAll extends Maintenance {
 	/**
 	 * @return string[]
 	 */
-	private function getReplacement() {
+	private function getReplacement(): array {
 		$ret = $this->getArg( 1 );
 		if ( $ret === null ) {
 			$this->fatalError( 'You have to specify replacement text.' );
@@ -158,10 +148,7 @@ class ReplaceAll extends Maintenance {
 		return [ $ret ];
 	}
 
-	/**
-	 * @return bool
-	 */
-	private function getReplacements() {
+	private function getReplacements(): bool {
 		$file = $this->getOption( 'replacements' );
 		if ( !$file ) {
 			return false;
@@ -193,21 +180,11 @@ class ReplaceAll extends Maintenance {
 	}
 
 	private function shouldContinueByDefault(): bool {
-		if ( !is_bool( $this->defaultContinue ) ) {
-			$this->defaultContinue =
-				$this->getOption( 'yes' ) ?
-				true :
-				false;
-		}
+		$this->defaultContinue ??= (bool)$this->getOption( 'yes' );
 		return $this->defaultContinue;
 	}
 
-	/**
-	 * @param string $target
-	 * @param string $replacement
-	 * @return string
-	 */
-	private function getSummary( $target, $replacement ) {
+	private function getSummary( string $target, string $replacement ): string {
 		$msg = wfMessage( 'replacetext_editsummary', $target, $replacement )->
 			plain();
 		if ( $this->getOption( 'summary' ) !== null ) {
@@ -218,7 +195,7 @@ class ReplaceAll extends Maintenance {
 		return $msg;
 	}
 
-	private function listNamespaces() {
+	private function listNamespaces(): void {
 		$this->output( "Index\tNamespace\n" );
 		$nsList = $this->getServiceContainer()->getNamespaceInfo()->getCanonicalNamespaces();
 		ksort( $nsList );
@@ -230,7 +207,7 @@ class ReplaceAll extends Maintenance {
 		}
 	}
 
-	private function showFileFormat() {
+	private function showFileFormat(): void {
 		$text = <<<EOF
 
 The format of the replacements file is tab separated with three fields.
@@ -257,7 +234,7 @@ EOF;
 	/**
 	 * @return int[]
 	 */
-	private function getNamespaces() {
+	private function getNamespaces(): array {
 		$nsall = $this->getOption( 'nsall' );
 		$ns = $this->getOption( 'ns' );
 		if ( !$nsall && !$ns ) {
@@ -290,24 +267,15 @@ EOF;
 		return $namespaces;
 	}
 
-	/**
-	 * @return string
-	 */
-	private function getCategory() {
+	private function getCategory(): ?string {
 		return $this->getOption( 'category' );
 	}
 
-	/**
-	 * @return string
-	 */
-	private function getPrefix() {
+	private function getPrefix(): ?string {
 		return $this->getOption( 'prefix' );
 	}
 
-	/**
-	 * @return int
-	 */
-	private function getPageLimit() {
+	private function getPageLimit(): int {
 		$pageLimit = (int)$this->getOption( 'pageLimit' );
 		if ( $pageLimit < 1 ) {
 			$pageLimit = $this->getServiceContainer()
@@ -319,14 +287,11 @@ EOF;
 	/**
 	 * @return bool[]
 	 */
-	private function useRegex() {
-		return [ $this->getOption( 'regex' ) ];
+	private function useRegex(): array {
+		return [ (bool)$this->getOption( 'regex' ) ];
 	}
 
-	/**
-	 * @return bool
-	 */
-	private function getRename() {
+	private function getRename(): bool {
 		return $this->hasOption( 'rename' );
 	}
 
@@ -337,7 +302,13 @@ EOF;
 	 * @param bool $regex
 	 * @param bool $rename
 	 */
-	private function listTitles( $titles, $target, $replacement, $regex, $rename ) {
+	private function listTitles(
+		array $titles,
+		string $target,
+		string $replacement,
+		bool $regex,
+		bool $rename
+	): void {
 		$skippedTitles = [];
 		foreach ( $titles as $prefixedText => $title ) {
 			if ( $title === null ) {
@@ -369,7 +340,13 @@ EOF;
 	 * @param bool $useRegex
 	 * @param bool $rename
 	 */
-	private function replaceTitles( $titles, $target, $replacement, $useRegex, $rename ) {
+	private function replaceTitles(
+		array $titles,
+		string $target,
+		string $replacement,
+		bool $useRegex,
+		bool $rename
+	): void {
 		foreach ( $titles as $title ) {
 			$params = [
 				'target_str'      => $target,
@@ -395,18 +372,14 @@ EOF;
 				$services->getWatchlistManager(),
 				$services->getWikiPageFactory()
 			);
-			if ( $job->run() !== true ) {
+			if ( !$job->run() ) {
 				$this->error( "Trouble on the page '$title'." );
 			}
 			$this->output( "done.\n" );
 		}
 	}
 
-	/**
-	 * @param string $question
-	 * @return bool
-	 */
-	private function getReply( $question ) {
+	private function getReply( string $question ): bool {
 		$reply = '';
 		if ( $this->shouldContinueByDefault() ) {
 			return true;
