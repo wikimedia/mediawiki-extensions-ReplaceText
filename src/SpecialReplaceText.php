@@ -21,9 +21,9 @@ namespace MediaWiki\Extension\ReplaceText;
 
 use ErrorPageError;
 use JobQueueGroup;
-use Language;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Page\WikiPageFactory;
