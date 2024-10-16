@@ -794,7 +794,7 @@ class SpecialReplaceText extends SpecialPage {
 			}
 			$id = "mw-search-ns{$ns}";
 			$rows[$subj] .= Html::openElement( 'td' ) .
-				Html::input( "ns{$ns}", '1', 'checkbox', [ 'id' => $id, 'checked' => in_array( $ns, $namespaces ) ] ) .
+				Html::input( "ns{$ns}", '1', 'checkbox', [ 'id' => $id, 'checked' => ( $ns == 0 ) ] ) .
 				' ' . Html::label( $name, $id ) .
 				Html::closeElement( 'td' ) . "\n";
 		}
