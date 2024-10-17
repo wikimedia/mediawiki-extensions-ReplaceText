@@ -957,7 +957,7 @@ class SpecialReplaceText extends SpecialPage {
 	 * @return string
 	 */
 	function extractContext( $text, $target, $use_regex = false ) {
-		$cw = $this->userOptionsLookup->getOption( $this->getUser(), 'contextchars', 40 );
+		$cw = $this->userOptionsLookup->getOption( $this->getUser(), 'contextchars', 40, true );
 
 		// Get all indexes
 		if ( $use_regex ) {
