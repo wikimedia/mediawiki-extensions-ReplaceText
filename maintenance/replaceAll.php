@@ -29,7 +29,7 @@
  */
 namespace MediaWiki\Extension\ReplaceText;
 
-use Maintenance;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\User\User;
 use MWException;
 
