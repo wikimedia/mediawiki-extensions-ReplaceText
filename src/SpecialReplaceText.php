@@ -1044,7 +1044,10 @@ class SpecialReplaceText extends SpecialPage {
 	private function getReplaceTextUser() {
 		$replaceTextUser = $this->getConfig()->get( 'ReplaceTextUser' );
 		if ( $replaceTextUser !== null ) {
-			return $this->userFactory->newFromName( $replaceTextUser );
+			$user = $this->userFactory->newFromName( $replaceTextUser );
+			if ( $user ) {
+				return $user;
+			}
 		}
 
 		return $this->getUser();
