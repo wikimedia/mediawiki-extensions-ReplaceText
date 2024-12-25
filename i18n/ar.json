@@ -28,6 +28,7 @@
 	"replacetext_choosepagesforedit": "استبدال النصّ '$1' بالنصّ '$2' في محتوى {{PLURAL:$3||الصفحة التالية|الصفحتين التاليتين|الصفحات التالية}}:",
 	"replacetext_choosepagesformove": "استبدل النصّ \"$1\" بالنصّ \"$2\" في {{PLURAL:$3||عنوان الصفحة التالية|عنواني الصفحتين التاليتين|عناوين الصفحات التالية}}:",
 	"replacetext_cannotmove": "لا يمكن نقل {{PLURAL:$1||الصفحة التالية|الصفحتين التاليتين|الصفحات التالية}}:",
+	"replacetext_cannotedit": "لا يمكن تحرير {{PLURAL:$1|الصفحة|ال$1 صفحة}} التالية:",
 	"replacetext_formovedpages": "للصفحات المنقولة:",
 	"replacetext_savemovedpages": "حفظ العناوين القديمة كتحويلات إلى العناوين الجديدة",
 	"replacetext_watchmovedpages": "راقب هذه الصفحات",
@@ -48,5 +49,5 @@
 	"replacetext_no_compress": "لن يعمل موقع wiki الخاص بك مع ReplaceText: لا يمكن تشغيل عمليات استبدال النص إذا تم تعيين $ wgCompressRevisions على \"true\".",
 	"replacetext_no_external_stores": "لن يعمل موقع wiki الخاص بك مع ReplaceText: لا يمكن تشغيل عمليات استبدال النص إذا كان $ wgExternalStores غير فارغ.",
 	"right-replacetext": "أجرِ استبدال النصّ في الويكي بأكملها",
-	"action-replacetext": "أجرِ استبدال النصّ في الويكي بأكملها"
+	"action-replacetext": "أجرِ استبدال النص في الويكي بأكملها"
 }
