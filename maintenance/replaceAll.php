@@ -30,6 +30,7 @@
 namespace MediaWiki\Extension\ReplaceText;
 
 use MediaWiki\Maintenance\Maintenance;
+use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MWException;
 
@@ -115,6 +116,9 @@ class ReplaceAll extends Maintenance {
 		$this->requireExtension( 'Replace Text' );
 	}
 
+	/**
+	 * @return User
+	 */
 	private function getUser() {
 		$userReplacing = $this->getOption( 'user', 1 );
 
@@ -132,6 +136,9 @@ class ReplaceAll extends Maintenance {
 		return $user;
 	}
 
+	/**
+	 * @return string[]
+	 */
 	private function getTarget() {
 		$ret = $this->getArg( 0 );
 		if ( $ret === null ) {
@@ -140,6 +147,9 @@ class ReplaceAll extends Maintenance {
 		return [ $ret ];
 	}
 
+	/**
+	 * @return string[]
+	 */
 	private function getReplacement() {
 		$ret = $this->getArg( 1 );
 		if ( $ret === null ) {
@@ -148,6 +158,9 @@ class ReplaceAll extends Maintenance {
 		return [ $ret ];
 	}
 
+	/**
+	 * @return bool
+	 */
 	private function getReplacements() {
 		$file = $this->getOption( 'replacements' );
 		if ( !$file ) {
@@ -189,6 +202,11 @@ class ReplaceAll extends Maintenance {
 		return $this->defaultContinue;
 	}
 
+	/**
+	 * @param string $target
+	 * @param string $replacement
+	 * @return string
+	 */
 	private function getSummary( $target, $replacement ) {
 		$msg = wfMessage( 'replacetext_editsummary', $target, $replacement )->
 			plain();
@@ -236,6 +254,9 @@ EOF;
 		$this->output( $text );
 	}
 
+	/**
+	 * @return int[]
+	 */
 	private function getNamespaces() {
 		$nsall = $this->getOption( 'nsall' );
 		$ns = $this->getOption( 'ns' );
@@ -269,26 +290,48 @@ EOF;
 		return $namespaces;
 	}
 
+	/**
+	 * @return string
+	 */
 	private function getCategory() {
 		return $this->getOption( 'category' );
 	}
 
+	/**
+	 * @return string
+	 */
 	private function getPrefix() {
 		return $this->getOption( 'prefix' );
 	}
 
+	/**
+	 * @return int
+	 */
 	private function getPageLimit() {
 		return $this->getOption( 'pageLimit' );
 	}
 
+	/**
+	 * @return bool[]
+	 */
 	private function useRegex() {
 		return [ $this->getOption( 'regex' ) ];
 	}
 
+	/**
+	 * @return bool
+	 */
 	private function getRename() {
 		return $this->hasOption( 'rename' );
 	}
 
+	/**
+	 * @param Title[] $titles
+	 * @param string $target
+	 * @param string $replacement
+	 * @param bool $regex
+	 * @param bool $rename
+	 */
 	private function listTitles( $titles, $target, $replacement, $regex, $rename ) {
 		$skippedTitles = [];
 		foreach ( $titles as $prefixedText => $title ) {
@@ -314,6 +357,13 @@ EOF;
 		}
 	}
 
+	/**
+	 * @param Title[] $titles
+	 * @param string $target
+	 * @param string $replacement
+	 * @param bool $useRegex
+	 * @param bool $rename
+	 */
 	private function replaceTitles( $titles, $target, $replacement, $useRegex, $rename ) {
 		foreach ( $titles as $title ) {
 			$params = [
@@ -347,6 +397,10 @@ EOF;
 		}
 	}
 
+	/**
+	 * @param string $question
+	 * @return bool
+	 */
 	private function getReply( $question ) {
 		$reply = '';
 		if ( $this->shouldContinueByDefault() ) {

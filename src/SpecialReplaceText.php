@@ -34,6 +34,7 @@ use MediaWiki\Storage\NameTableStore;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;
+use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MediaWiki\Watchlist\WatchlistManager;
 use OOUI;
@@ -1032,6 +1033,10 @@ class SpecialReplaceText extends SpecialPage {
 		return $this->slotRoleStore->getName( $role_id );
 	}
 
+	/**
+	 * @param string $message
+	 * @return string
+	 */
 	private function convertWhiteSpaceToHTML( $message ) {
 		$msg = htmlspecialchars( $message );
 		$msg = preg_replace( '/^ /m', "\u{00A0} ", $msg );
@@ -1041,6 +1046,9 @@ class SpecialReplaceText extends SpecialPage {
 		return $msg;
 	}
 
+	/**
+	 * @return User
+	 */
 	private function getReplaceTextUser() {
 		$replaceTextUser = $this->getConfig()->get( 'ReplaceTextUser' );
 		if ( $replaceTextUser !== null ) {
