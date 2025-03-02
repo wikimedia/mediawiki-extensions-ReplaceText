@@ -64,6 +64,9 @@
 		"ext.ReplaceText": {
 			"scripts": [
 				"ext.ReplaceText.js"
+			],
+			"dependencies": [
+				"oojs-ui-core"
 			]
 		},
 		"ext.ReplaceTextStyles": {

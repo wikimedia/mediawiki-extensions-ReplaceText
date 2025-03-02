@@ -21,6 +21,7 @@ namespace MediaWiki\Extension\ReplaceText;
 
 use ErrorPageError;
 use JobQueueGroup;
+use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
@@ -66,6 +67,8 @@ class SpecialReplaceText extends SpecialPage {
 	private $selected_namespaces;
 	/** @var bool */
 	private $botEdit;
+	/** @var string */
+	private $editSummary;
 
 	/** @var HookHelper */
 	private $hookHelper;
@@ -237,6 +240,7 @@ class SpecialReplaceText extends SpecialPage {
 		$this->edit_pages = $request->getBool( 'edit_pages' );
 		$this->move_pages = $request->getBool( 'move_pages' );
 		$this->botEdit = $request->getBool( 'botEdit' );
+		$this->editSummary = $request->getText( 'wpSummary' );
 		$this->selected_namespaces = $this->getSelectedNamespaces();
 
 		if ( $request->getCheck( 'continue' ) && $this->target === '' ) {
@@ -381,10 +385,15 @@ class SpecialReplaceText extends SpecialPage {
 			'watch_page' => false,
 			'botEdit' => $this->botEdit
 		];
-		$replacement_params['edit_summary'] = $this->msg(
-			'replacetext_editsummary',
-			$this->targetString, $this->replacement
-		)->inContentLanguage()->plain();
+
+		if ( $this->editSummary === '' ) {
+			$replacement_params['edit_summary'] = $this->msg(
+				'replacetext_editsummary',
+				$this->targetString, $this->replacement
+			)->inContentLanguage()->plain();
+		} else {
+			$replacement_params['edit_summary'] = $this->editSummary;
+		}
 
 		$request = $this->getRequest();
 		foreach ( $request->getValues() as $key => $value ) {
@@ -921,6 +930,17 @@ class SpecialReplaceText extends SpecialPage {
 			);
 			$out->addHTML( '<br />' );
 		}
+
+		$out->addWikiMsg( 'replacetext-summary-label' );
+		$out->addHTML( new OOUI\TextInputWidget( [
+				'name' => 'wpSummary',
+				'id' => 'wpSummary',
+				'class' => 'ext-replacetext-editSummary',
+				'maxLength' => CommentStore::COMMENT_CHARACTER_LIMIT,
+				'infusable' => true,
+			] )
+		);
+		$out->addHTML( '<br />' );
 
 		$submitButton = new OOUI\ButtonInputWidget( [
 			'type' => 'submit',

@@ -17,6 +17,35 @@
 		}
 	}
 
+	/**
+	 * Add a visible codepoint (character) limit label to a TextInputWidget.
+	 *
+	 * Uses jQuery#codePointLimit to enforce the limit.
+	 *
+	 * @param {OO.ui.TextInputWidget} textInputWidget Text input widget
+	 * @param {number} [limit] Code point limit, defaults to $input's maxlength
+	 * @param {Function} [filterFunction] Function to call on the string before assessing the length.
+	 */
+	var visibleCodePointLimit = function ( textInputWidget ) {
+		var limit = +textInputWidget.$input.attr( 'maxlength' );
+		var codePointLength = require( 'mediawiki.String' ).codePointLength;
+
+		function updateCount() {
+			var value = textInputWidget.getValue(),
+				remaining;
+			remaining = limit - codePointLength( value );
+			if ( remaining > 99 ) {
+				remaining = '';
+			} else {
+				remaining = mw.language.convertNumber( remaining );
+			}
+			textInputWidget.setLabel( remaining );
+		}
+		textInputWidget.on( 'change', updateCount );
+		// Initialise value
+		updateCount();
+	};
+
 	$( function () {
 		var $checkboxes = $( '#powersearch input[id^="mw-search-ns"]' );
 
@@ -29,5 +58,9 @@
 		$( '#mw-search-togglenone' ).on( 'click', function () {
 			$checkboxes.prop( 'checked', false );
 		} );
+
+		var $wpSummary = $( '#wpSummary' );
+		// Show a byte-counter to users with how many bytes are left for their edit summary.
+		visibleCodePointLimit( OO.ui.infuse( $wpSummary ) );
 	} );
 }() );
