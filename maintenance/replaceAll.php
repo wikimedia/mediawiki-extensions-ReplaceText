@@ -29,10 +29,10 @@
  */
 namespace MediaWiki\Extension\ReplaceText;
 
+use MediaWiki\Exception\MWException;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use MWException;
 
 $IP = getenv( 'MW_INSTALL_PATH' ) ?: __DIR__ . '/../../..';
 if ( !is_readable( "$IP/maintenance/Maintenance.php" ) ) {

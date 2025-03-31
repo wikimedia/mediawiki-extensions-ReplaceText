@@ -19,11 +19,12 @@
  */
 namespace MediaWiki\Extension\ReplaceText;
 
-use ErrorPageError;
-use JobQueueGroup;
 use MediaWiki\CommentStore\CommentStore;
+use MediaWiki\Exception\ErrorPageError;
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
+use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\MovePageFactory;
@@ -39,7 +40,6 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MediaWiki\Watchlist\WatchlistManager;
 use OOUI;
-use PermissionsError;
 use SearchEngineConfig;
 use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\ReadOnlyMode;
