@@ -192,7 +192,7 @@ class ReplaceAll extends Maintenance {
 		return true;
 	}
 
-	private function shouldContinueByDefault() {
+	private function shouldContinueByDefault(): bool {
 		if ( !is_bool( $this->defaultContinue ) ) {
 			$this->defaultContinue =
 				$this->getOption( 'yes' ) ?
@@ -413,7 +413,7 @@ EOF;
 		return $reply === 'y';
 	}
 
-	private function localSetup() {
+	private function localSetup(): bool {
 		if ( $this->getOption( 'listns' ) ) {
 			$this->listNamespaces();
 			return false;
