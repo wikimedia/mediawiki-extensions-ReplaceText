@@ -56,7 +56,7 @@ class Job extends JobParent {
 	 * @param WatchlistManager $watchlistManager
 	 * @param WikiPageFactory $wikiPageFactory
 	 */
-	function __construct( $title, $params,
+	public function __construct( $title, $params,
 		MovePageFactory $movePageFactory,
 		PermissionManager $permissionManager,
 		UserFactory $userFactory,
@@ -75,7 +75,7 @@ class Job extends JobParent {
 	 * Run a replaceText job
 	 * @return bool success
 	 */
-	function run() {
+	public function run() {
 		// T279090
 		$current_user = $this->userFactory->newFromId( $this->params['user_id'] );
 		if ( !$current_user->isRegistered() ) {

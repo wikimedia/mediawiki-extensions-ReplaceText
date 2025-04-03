@@ -181,7 +181,7 @@ class SpecialReplaceText extends SpecialPage {
 	/**
 	 * @param null|string $query
 	 */
-	function execute( $query ) {
+	public function execute( $query ) {
 		if ( !$this->getUser()->isAllowed( 'replacetext' ) ) {
 			throw new PermissionsError( 'replacetext' );
 		}
@@ -212,7 +212,7 @@ class SpecialReplaceText extends SpecialPage {
 	/**
 	 * @return array namespaces selected for search
 	 */
-	function getSelectedNamespaces() {
+	private function getSelectedNamespaces() {
 		$all_namespaces = $this->searchEngineConfig->searchableNamespaces();
 		$selected_namespaces = [];
 		foreach ( $all_namespaces as $ns => $name ) {
@@ -226,7 +226,7 @@ class SpecialReplaceText extends SpecialPage {
 	/**
 	 * Do the actual display and logic of Special:ReplaceText.
 	 */
-	function doSpecialReplaceText() {
+	private function doSpecialReplaceText() {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 
@@ -375,7 +375,7 @@ class SpecialReplaceText extends SpecialPage {
 	 *
 	 * @return array jobs
 	 */
-	function createJobsForTextReplacements() {
+	private function createJobsForTextReplacements() {
 		$replacement_params = [
 			'user_id' => $this->getReplaceTextUser()->getId(),
 			'target_str' => $this->target,
@@ -457,7 +457,7 @@ class SpecialReplaceText extends SpecialPage {
 	 *
 	 * @return array The set of Titles and their search context strings
 	 */
-	function getTitlesForEditingWithContext() {
+	private function getTitlesForEditingWithContext() {
 		$titles_for_edit = [];
 
 		$res = $this->search->doSearchQuery(
@@ -501,7 +501,7 @@ class SpecialReplaceText extends SpecialPage {
 	 *
 	 * @return array
 	 */
-	function getTitlesForMoveAndUnmoveableTitles() {
+	private function getTitlesForMoveAndUnmoveableTitles() {
 		$titles_for_move = [];
 		$unmoveable_titles = [];
 
@@ -562,7 +562,7 @@ class SpecialReplaceText extends SpecialPage {
 	 * @param array $titles_for_move
 	 * @return string|null Warning message, if any
 	 */
-	function getAnyWarningMessageBeforeReplace( $titles_for_edit, $titles_for_move ) {
+	private function getAnyWarningMessageBeforeReplace( $titles_for_edit, $titles_for_move ) {
 		if ( $this->replacement === '' ) {
 			return $this->msg( 'replacetext_blankwarning' )->parse();
 		} elseif ( $this->use_regex ) {
@@ -608,7 +608,7 @@ class SpecialReplaceText extends SpecialPage {
 	/**
 	 * @param string|null $warning_msg Message to be shown at top of form
 	 */
-	function showForm( $warning_msg = null ) {
+	private function showForm( $warning_msg = null ) {
 		$out = $this->getOutput();
 
 		$out->addHTML(
@@ -760,35 +760,13 @@ class SpecialReplaceText extends SpecialPage {
 	}
 
 	/**
-	 * This function is not currently used, but it may get used in the
-	 * future if the "1st screen" interface changes to use OOUI.
-	 *
-	 * @param string $label
-	 * @param string $name
-	 * @param bool $selected
-	 * @return string HTML
-	 */
-	function checkLabel( $label, $name, $selected = false ) {
-		$checkbox = new OOUI\CheckboxInputWidget( [
-			'name' => $name,
-			'value' => 1,
-			'selected' => $selected
-		] );
-		$layout = new OOUI\FieldLayout( $checkbox, [
-			'align' => 'inline',
-			'label' => $label
-		] );
-		return $layout;
-	}
-
-	/**
 	 * Copied almost exactly from MediaWiki's SpecialSearch class, i.e.
 	 * the search page
 	 * @param string[] $namespaces
 	 * @param int $rowsPerTable
 	 * @return string HTML
 	 */
-	function namespaceTables( $namespaces, $rowsPerTable = 3 ) {
+	private function namespaceTables( $namespaces, $rowsPerTable = 3 ) {
 		// Group namespaces into rows according to subject.
 		// Try not to make too many assumptions about namespace numbering.
 		$rows = [];
@@ -829,7 +807,7 @@ class SpecialReplaceText extends SpecialPage {
 	 * @param array $uneditable_titles
 	 * @param array $unmoveable_titles
 	 */
-	function pageListForm( $titles_for_edit, $titles_for_move, $uneditable_titles, $unmoveable_titles ) {
+	private function pageListForm( $titles_for_edit, $titles_for_move, $uneditable_titles, $unmoveable_titles ) {
 		$out = $this->getOutput();
 
 		$formOpts = [
@@ -977,7 +955,7 @@ class SpecialReplaceText extends SpecialPage {
 	 * @param bool $use_regex
 	 * @return string
 	 */
-	function extractContext( $text, $target, $use_regex = false ) {
+	private function extractContext( $text, $target, $use_regex = false ) {
 		$cw = $this->userOptionsLookup->getOption( $this->getUser(), 'contextchars', 40, true );
 
 		// Get all indexes
