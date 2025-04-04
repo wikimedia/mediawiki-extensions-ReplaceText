@@ -57,7 +57,7 @@ class SpecialReplaceText extends SpecialPage {
 	private $category;
 	/** @var string */
 	private $prefix;
-	/** @var string|int */
+	/** @var int */
 	private $pageLimit;
 	/** @var bool */
 	private $edit_pages;
@@ -236,7 +236,10 @@ class SpecialReplaceText extends SpecialPage {
 		$this->use_regex = $request->getBool( 'use_regex' );
 		$this->category = $request->getText( 'category' );
 		$this->prefix = $request->getText( 'prefix' );
-		$this->pageLimit = $request->getText( 'pageLimit' );
+		$pageLimit = $request->getInt( 'pageLimit' );
+		$this->pageLimit = $pageLimit >= 1
+			? $pageLimit
+			: $this->getConfig()->get( 'ReplaceTextResultsLimit' );
 		$this->edit_pages = $request->getBool( 'edit_pages' );
 		$this->move_pages = $request->getBool( 'move_pages' );
 		$this->botEdit = $request->getBool( 'botEdit' );
@@ -246,12 +249,6 @@ class SpecialReplaceText extends SpecialPage {
 		if ( $request->getCheck( 'continue' ) && $this->target === '' ) {
 			$this->showForm( 'replacetext_givetarget' );
 			return;
-		}
-
-		if ( $request->getCheck( 'continue' ) && $this->pageLimit === '' ) {
-			$this->pageLimit = $this->getConfig()->get( 'ReplaceTextResultsLimit' );
-		} else {
-			$this->pageLimit = (int)$this->pageLimit;
 		}
 
 		if ( $request->getCheck( 'replace' ) ) {
@@ -710,9 +707,6 @@ class SpecialReplaceText extends SpecialPage {
 		$category_search_label = $this->msg( 'replacetext_categorysearch' )->escaped();
 		$prefix_search_label = $this->msg( 'replacetext_prefixsearch' )->escaped();
 		$page_limit_label = $this->msg( 'replacetext_pagelimit' )->escaped();
-		$this->pageLimit = $this->pageLimit === 0
-			? $this->getConfig()->get( 'ReplaceTextResultsLimit' )
-			: $this->pageLimit;
 		$out->addHTML(
 			"<fieldset class=\"ext-replacetext-searchoptions\">\n" .
 			Html::element( 'h4', [], $this->msg( 'replacetext_optionalfilters' )->text() ) .

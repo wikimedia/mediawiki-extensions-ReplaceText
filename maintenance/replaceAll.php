@@ -308,7 +308,12 @@ EOF;
 	 * @return int
 	 */
 	private function getPageLimit() {
-		return $this->getOption( 'pageLimit' );
+		$pageLimit = (int)$this->getOption( 'pageLimit' );
+		if ( $pageLimit < 1 ) {
+			$pageLimit = $this->getServiceContainer()
+				->getMainConfig()->get( 'ReplaceTextResultsLimit' );
+		}
+		return $pageLimit;
 	}
 
 	/**

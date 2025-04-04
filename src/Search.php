@@ -45,7 +45,7 @@ class Search {
 	 * @param array $namespaces
 	 * @param string|null $category
 	 * @param string|null $prefix
-	 * @param int|null $pageLimit
+	 * @param int $pageLimit
 	 * @param bool $use_regex
 	 * @return IResultWrapper Resulting rows
 	 */
@@ -67,9 +67,6 @@ class Search {
 			$queryBuilder->where( $dbr->expr( 'old_text', IExpression::LIKE, new LikeValue( $any, $search, $any ) ) );
 		}
 		$queryBuilder->andWhere( [ 'page_namespace' => $namespaces ] );
-		if ( $pageLimit === null || $pageLimit === '' ) {
-			$pageLimit = $this->config->get( 'ReplaceTextResultsLimit' );
-		}
 		self::categoryCondition( $category, $queryBuilder );
 		$this->prefixCondition( $prefix, $dbr, $queryBuilder );
 		return $queryBuilder->orderBy( [ 'page_namespace', 'page_title' ] )
@@ -130,7 +127,7 @@ class Search {
 	 * @param array $namespaces
 	 * @param string|null $category
 	 * @param string|null $prefix
-	 * @param int|null $pageLimit
+	 * @param int $pageLimit
 	 * @param bool $use_regex
 	 * @return IResultWrapper Resulting rows
 	 */
@@ -154,9 +151,6 @@ class Search {
 			$queryBuilder->where( $dbr->expr( 'page_title', IExpression::LIKE, new LikeValue( $any, $str, $any ) ) );
 		}
 		$queryBuilder->andWhere( [ 'page_namespace' => $namespaces ] );
-		if ( $pageLimit === null || $pageLimit === '' ) {
-			$pageLimit = $this->config->get( 'ReplaceTextResultsLimit' );
-		}
 		self::categoryCondition( $category, $queryBuilder );
 		$this->prefixCondition( $prefix, $dbr, $queryBuilder );
 		return $queryBuilder->orderBy( [ 'page_namespace', 'page_title' ] )
