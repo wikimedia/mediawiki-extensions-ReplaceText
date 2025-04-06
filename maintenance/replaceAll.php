@@ -99,7 +99,7 @@ class ReplaceAll extends Maintenance {
 		$this->addOption( 'prefix', 'Search only pages whose names start with this string.',
 			false, true, 'p' );
 		$this->addOption( 'pageLimit', 'Maximum number of pages to return from the search.',
-			false, true, 'p' );
+			false, true, 'l' );
 		$this->addOption( 'replacements', 'File containing the list of ' .
 			'replacements to be made.  Fields in the file are tab-separated. ' .
 			'See --show-file-format for more information.', false, true, 'f' );
