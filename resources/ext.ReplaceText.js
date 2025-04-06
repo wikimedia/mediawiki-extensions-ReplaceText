@@ -60,7 +60,9 @@
 		} );
 
 		var $wpSummary = $( '#wpSummary' );
-		// Show a byte-counter to users with how many bytes are left for their edit summary.
-		visibleCodePointLimit( OO.ui.infuse( $wpSummary ) );
+		if ( $wpSummary.length ) {
+			// Show a byte-counter to users with how many bytes are left for their edit summary.
+			visibleCodePointLimit( OO.ui.infuse( $wpSummary ) );
+		}
 	} );
 }() );
