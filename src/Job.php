@@ -47,7 +47,6 @@ class Job extends JobParent {
 	private WikiPageFactory $wikiPageFactory;
 
 	/**
-	 * Constructor.
 	 * @param Title $title
 	 * @param array|bool $params Cannot be === true
 	 * @param MovePageFactory $movePageFactory
@@ -75,7 +74,7 @@ class Job extends JobParent {
 	 * Run a replaceText job
 	 * @return bool success
 	 */
-	public function run() {
+	public function run(): bool {
 		// T279090
 		$current_user = $this->userFactory->newFromId( $this->params['user_id'] );
 		if ( !$current_user->isRegistered() ) {
