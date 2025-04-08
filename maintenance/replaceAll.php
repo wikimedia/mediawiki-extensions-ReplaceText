@@ -185,12 +185,13 @@ class ReplaceAll extends Maintenance {
 	}
 
 	private function getSummary( string $target, string $replacement ): string {
-		$msg = wfMessage( 'replacetext_editsummary', $target, $replacement )->
-			plain();
 		if ( $this->getOption( 'summary' ) !== null ) {
 			$msg = str_replace( [ '%f', '%r' ],
 				[ $target, $replacement ],
 				$this->getOption( 'summary' ) );
+		} else {
+			$msg = wfMessage( 'replacetext_editsummary', $target, $replacement )
+				->plain();
 		}
 		return $msg;
 	}
