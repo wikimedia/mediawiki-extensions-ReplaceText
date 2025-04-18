@@ -30,6 +30,7 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Permissions\PermissionStatus;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Storage\NameTableStore;
@@ -141,9 +142,9 @@ class SpecialReplaceText extends SpecialPage {
 		$out = $this->getOutput();
 
 		if ( $this->readOnlyMode->isReadOnly() ) {
-			$permissionErrors = [ [ 'readonlytext', [ $this->readOnlyMode->getReason() ] ] ];
+			$permissionFailure = PermissionStatus::newFatal( 'readonlytext', [ $this->readOnlyMode->getReason() ] );
 			$out->setPageTitleMsg( $this->msg( 'badaccess' ) );
-			$out->addWikiTextAsInterface( $out->formatPermissionsErrorMessage( $permissionErrors, 'replacetext' ) );
+			$out->addWikiTextAsInterface( $out->formatPermissionStatus( $permissionFailure, 'replacetext' ) );
 			return;
 		}
 
