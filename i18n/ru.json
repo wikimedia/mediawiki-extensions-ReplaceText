@@ -15,7 +15,8 @@
 			"Rubin16",
 			"Tanzun",
 			"Vlad5250",
-			"Александр Сигачёв"
+			"Александр Сигачёв",
+			"MidnightLG"
 		]
 	},
 	"replacetext": "Заменить текст",
@@ -52,6 +53,9 @@
 	"replacetext_announce": "Сообщить об этих изменениях через $1 и списки наблюдения",
 	"replacetext_editsummary": "Замена текста — «$1» на «$2»",
 	"replacetext_reminder": "Чтобы изменить ссылки на эту страницу на других страницах, перейдите к $1.",
+	"replacetext_cfg_error": "Ошибка конфигурации ReplaceText",
+	"replacetext_no_compress": "Ваша вики не будет работать с ReplaceText: замена текста невозможна, если $wgCompressRevisions имеет значение true.",
+	"replacetext_no_external_stores": "Ваша вики не будет работать с ReplaceText: замена текста невозможна, если $wgExternalStores имеет непустое значение.",
 	"right-replacetext": "Выполнение замен текста во всей вики",
 	"action-replacetext": "замену строк по всему проекту"
 }
