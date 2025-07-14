@@ -59,56 +59,28 @@ class SpecialReplaceText extends SpecialPage {
 	private array $selected_namespaces;
 	private bool $botEdit;
 	private string $editSummary;
-	private HookHelper $hookHelper;
-	private IConnectionProvider $dbProvider;
-	private Language $contentLanguage;
-	private JobQueueGroup $jobQueueGroup;
-	private LinkRenderer $linkRenderer;
-	private MovePageFactory $movePageFactory;
-	private NamespaceInfo $namespaceInfo;
-	private PermissionManager $permissionManager;
-	private ReadOnlyMode $readOnlyMode;
-	private SearchEngineConfig $searchEngineConfig;
-	private NameTableStore $slotRoleStore;
-	private UserFactory $userFactory;
-	private UserOptionsLookup $userOptionsLookup;
-	private WatchlistManager $watchlistManager;
-	private WikiPageFactory $wikiPageFactory;
-	private Search $search;
+	private readonly HookHelper $hookHelper;
+	private readonly Search $search;
 
 	public function __construct(
 		HookContainer $hookContainer,
-		IConnectionProvider $dbProvider,
-		Language $contentLanguage,
-		JobQueueGroup $jobQueueGroup,
-		LinkRenderer $linkRenderer,
-		MovePageFactory $movePageFactory,
-		NamespaceInfo $namespaceInfo,
-		PermissionManager $permissionManager,
-		ReadOnlyMode $readOnlyMode,
-		SearchEngineConfig $searchEngineConfig,
-		NameTableStore $slotRoleStore,
-		UserFactory $userFactory,
-		UserOptionsLookup $userOptionsLookup,
-		WatchlistManager $watchlistManager,
-		WikiPageFactory $wikiPageFactory
+		private readonly IConnectionProvider $dbProvider,
+		private readonly Language $contentLanguage,
+		private readonly JobQueueGroup $jobQueueGroup,
+		private readonly LinkRenderer $linkRenderer,
+		private readonly MovePageFactory $movePageFactory,
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly PermissionManager $permissionManager,
+		private readonly ReadOnlyMode $readOnlyMode,
+		private readonly SearchEngineConfig $searchEngineConfig,
+		private readonly NameTableStore $slotRoleStore,
+		private readonly UserFactory $userFactory,
+		private readonly UserOptionsLookup $userOptionsLookup,
+		private readonly WatchlistManager $watchlistManager,
+		private readonly WikiPageFactory $wikiPageFactory,
 	) {
 		parent::__construct( 'ReplaceText', 'replacetext' );
 		$this->hookHelper = new HookHelper( $hookContainer );
-		$this->dbProvider = $dbProvider;
-		$this->contentLanguage = $contentLanguage;
-		$this->jobQueueGroup = $jobQueueGroup;
-		$this->linkRenderer = $linkRenderer;
-		$this->movePageFactory = $movePageFactory;
-		$this->namespaceInfo = $namespaceInfo;
-		$this->permissionManager = $permissionManager;
-		$this->readOnlyMode = $readOnlyMode;
-		$this->searchEngineConfig = $searchEngineConfig;
-		$this->slotRoleStore = $slotRoleStore;
-		$this->userFactory = $userFactory;
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->watchlistManager = $watchlistManager;
-		$this->wikiPageFactory = $wikiPageFactory;
 		$this->search = new Search(
 			$this->getConfig(),
 			$dbProvider

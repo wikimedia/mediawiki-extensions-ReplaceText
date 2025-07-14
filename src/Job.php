@@ -40,12 +40,6 @@ use Wikimedia\ScopedCallback;
  * - based on /includes/RefreshLinksJob.php
  */
 class Job extends JobParent {
-	private MovePageFactory $movePageFactory;
-	private PermissionManager $permissionManager;
-	private UserFactory $userFactory;
-	private WatchlistManager $watchlistManager;
-	private WikiPageFactory $wikiPageFactory;
-
 	/**
 	 * @param Title $title
 	 * @param array|bool $params Cannot be === true
@@ -56,18 +50,13 @@ class Job extends JobParent {
 	 * @param WikiPageFactory $wikiPageFactory
 	 */
 	public function __construct( $title, $params,
-		MovePageFactory $movePageFactory,
-		PermissionManager $permissionManager,
-		UserFactory $userFactory,
-		WatchlistManager $watchlistManager,
-		WikiPageFactory $wikiPageFactory
+		private readonly MovePageFactory $movePageFactory,
+		private readonly PermissionManager $permissionManager,
+		private readonly UserFactory $userFactory,
+		private readonly WatchlistManager $watchlistManager,
+		private readonly WikiPageFactory $wikiPageFactory,
 	) {
 		parent::__construct( 'replaceText', $title, $params );
-		$this->movePageFactory = $movePageFactory;
-		$this->permissionManager = $permissionManager;
-		$this->userFactory = $userFactory;
-		$this->watchlistManager = $watchlistManager;
-		$this->wikiPageFactory = $wikiPageFactory;
 	}
 
 	/**

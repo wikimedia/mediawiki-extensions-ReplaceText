@@ -29,15 +29,10 @@ use Wikimedia\Rdbms\LikeValue;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class Search {
-	private Config $config;
-	private IConnectionProvider $loadBalancer;
-
 	public function __construct(
-		Config $config,
-		IConnectionProvider $loadBalancer
+		private readonly Config $config,
+		private readonly IConnectionProvider $loadBalancer,
 	) {
-		$this->config = $config;
-		$this->loadBalancer = $loadBalancer;
 	}
 
 	/**
