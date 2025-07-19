@@ -539,20 +539,20 @@ class SpecialReplaceText extends SpecialPage {
 			);
 		}
 
-		$out->addHTML( '<table><tr><td style="vertical-align: top;">' );
-		$out->addWikiMsg( 'replacetext_originaltext' );
+		$out->addHTML( '<table role="presentation"><tr><td style="vertical-align: top;">' );
+		$out->addHTML( Html::label( $this->msg( 'replacetext_originaltext' )->text(), 'target' ) );
 		$out->addHTML( '</td><td>' );
 		// 'width: auto' style is needed to override MediaWiki's
 		// normal 'width: 100%', which causes the textarea to get
 		// zero width in IE
 		$out->addHTML( Html::textarea( 'target', $this->target,
-			[ 'cols' => 100, 'rows' => 5, 'style' => 'width: auto;' ]
+			[ 'id' => 'target', 'cols' => 100, 'rows' => 5, 'style' => 'width: auto;' ]
 		) );
 		$out->addHTML( '</td></tr><tr><td style="vertical-align: top;">' );
-		$out->addWikiMsg( 'replacetext_replacementtext' );
+		$out->addHTML( Html::label( $this->msg( 'replacetext_replacementtext' )->text(), 'replacement' ) );
 		$out->addHTML( '</td><td>' );
 		$out->addHTML( Html::textarea( 'replacement', $this->replacement,
-			[ 'cols' => 100, 'rows' => 5, 'style' => 'width: auto;' ]
+			[ 'id' => 'replacement', 'cols' => 100, 'rows' => 5, 'style' => 'width: auto;' ]
 		) );
 		$out->addHTML( '</td></tr></table>' );
 
@@ -580,7 +580,7 @@ class SpecialReplaceText extends SpecialPage {
 		$out->addHTML(
 			"<div class=\"mw-search-formheader\"></div>\n" .
 			"<fieldset class=\"ext-replacetext-searchoptions\">\n" .
-			Html::element( 'h4', [], $this->msg( 'powersearch-ns' )->text() )
+			Html::element( 'legend', [], $this->msg( 'powersearch-ns' )->text() )
 		);
 		// The ability to select/unselect groups of namespaces in the
 		// search interface exists only in some skins, like Vector -
@@ -618,15 +618,16 @@ class SpecialReplaceText extends SpecialPage {
 		$page_limit_label = $this->msg( 'replacetext_pagelimit' )->escaped();
 		$out->addHTML(
 			"<fieldset class=\"ext-replacetext-searchoptions\">\n" .
-			Html::element( 'h4', [], $this->msg( 'replacetext_optionalfilters' )->text() ) .
+			Html::element( 'legend', [], $this->msg( 'replacetext_optionalfilters' )->text() ) .
 			Html::element( 'div', [ 'class' => 'ext-replacetext-divider' ] ) .
-			"<p>$category_search_label\n" .
-			Html::element( 'input', [ 'name' => 'category', 'size' => 20, 'value' => $this->category ] ) . '</p>' .
-			"<p>$prefix_search_label\n" .
-			Html::element( 'input', [ 'name' => 'prefix', 'size' => 20, 'value' => $this->prefix ] ) . '</p>' .
-			"<p>$page_limit_label\n" .
+			"<p><label>$category_search_label\n" .
+			// phpcs:ignore Generic.Files.LineLength.TooLong -- it'd be much less readable with a line break
+			Html::element( 'input', [ 'name' => 'category', 'size' => 20, 'value' => $this->category ] ) . '</label></p>' .
+			"<p><label>$prefix_search_label\n" .
+			Html::element( 'input', [ 'name' => 'prefix', 'size' => 20, 'value' => $this->prefix ] ) . '</label></p>' .
+			"<p><label>$page_limit_label\n" .
 			Html::element( 'input', [ 'name' => 'pageLimit', 'size' => 20, 'value' => (string)$this->pageLimit,
-				'type' => 'number', 'min' => 0 ] ) . "</p></fieldset>\n" .
+				'type' => 'number', 'min' => 0 ] ) . "</label></p></fieldset>\n" .
 			"<p>\n" .
 			Html::rawElement( 'label', [],
 				Html::input( 'edit_pages', '1', 'checkbox', [ 'checked' => true ] )
@@ -695,7 +696,7 @@ class SpecialReplaceText extends SpecialPage {
 		// be arranged nicely while still accommodating different screen widths
 		// Build the final HTML table...
 		for ( $i = 0; $i < $numRows; $i += $rowsPerTable ) {
-			$tables .= Html::openElement( 'table' );
+			$tables .= Html::openElement( 'table', [ 'role' => 'presentation' ] );
 			for ( $j = $i; $j < $i + $rowsPerTable && $j < $numRows; $j++ ) {
 				$tables .= "<tr>\n" . $rows[$j] . "</tr>";
 			}
@@ -740,7 +741,7 @@ class SpecialReplaceText extends SpecialPage {
 		// Only show "invert selections" link if there are more than
 		// five pages.
 		if ( count( $titles_for_edit ) + count( $titles_for_move ) > 5 ) {
-			$invertButton = new OOUI\ButtonWidget( [
+			$invertButton = new OOUI\ButtonInputWidget( [
 				'label' => $this->msg( 'replacetext_invertselections' )->text(),
 				'classes' => [ 'ext-replacetext-invert' ]
 			] );
@@ -771,12 +772,9 @@ class SpecialReplaceText extends SpecialPage {
 					$labelText = $this->linkRenderer->makeLink( $title ) .
 						" ($role) <br /><small>$context</small>";
 				}
-				$checkboxLabel = new OOUI\LabelWidget( [
-					'label' => new OOUI\HtmlSnippet( $labelText )
-				] );
 				$layout = new OOUI\FieldLayout( $checkbox, [
 					'align' => 'inline',
-					'label' => $checkboxLabel
+					'label' => new OOUI\HtmlSnippet( $labelText ),
 				] );
 				$out->addHTML( $layout );
 			}
@@ -792,8 +790,10 @@ class SpecialReplaceText extends SpecialPage {
 			);
 			foreach ( $titles_for_move as $title ) {
 				$out->addHTML(
-					Html::check( 'move-' . $title->getArticleID(), true ) . "\u{00A0}" .
-					$this->linkRenderer->makeLink( $title ) . "<br />\n"
+					Html::rawElement( 'label', [],
+						Html::check( 'move-' . $title->getArticleID(), true ) . "\u{00A0}" .
+						$this->linkRenderer->makeLink( $title )
+					) . "<br />\n"
 				);
 			}
 			$out->addHTML( '<br />' );
@@ -811,15 +811,17 @@ class SpecialReplaceText extends SpecialPage {
 			$out->addHTML( '<br />' );
 		}
 
-		$out->addWikiMsg( 'replacetext-summary-label' );
-		$out->addHTML( new OOUI\TextInputWidget( [
-				'name' => 'wpSummary',
-				'id' => 'wpSummary',
-				'class' => 'ext-replacetext-editSummary',
-				'maxLength' => CommentStore::COMMENT_CHARACTER_LIMIT,
-				'infusable' => true,
-			] )
-		);
+		$summaryInput = new OOUI\TextInputWidget( [
+			'name' => 'wpSummary',
+			'id' => 'wpSummary',
+			'class' => 'ext-replacetext-editSummary',
+			'maxLength' => CommentStore::COMMENT_CHARACTER_LIMIT,
+			'infusable' => true,
+		] );
+		$out->addHTML( new OOUI\FieldLayout( $summaryInput, [
+			'align' => 'top',
+			'label' => new OOUI\HtmlSnippet( $this->msg( 'replacetext-summary-label' )->parse() ),
+		] ) );
 		$out->addHTML( '<br />' );
 
 		$submitButton = new OOUI\ButtonInputWidget( [
