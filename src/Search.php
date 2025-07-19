@@ -35,12 +35,6 @@ class Search {
 	}
 
 	/**
-	 * @param string $search
-	 * @param array $namespaces
-	 * @param string|null $category
-	 * @param string|null $prefix
-	 * @param int $pageLimit
-	 * @param bool $use_regex
 	 * @return IResultWrapper Resulting rows
 	 */
 	public function doSearchQuery(
@@ -101,8 +95,6 @@ class Search {
 	}
 
 	/**
-	 * @param string $column
-	 * @param string $regex
 	 * @return string query condition for regex
 	 */
 	private function regexCond( string $column, string $regex ): string {
@@ -117,12 +109,6 @@ class Search {
 	}
 
 	/**
-	 * @param string $str
-	 * @param array $namespaces
-	 * @param string|null $category
-	 * @param string|null $prefix
-	 * @param int $pageLimit
-	 * @param bool $use_regex
 	 * @return IResultWrapper Resulting rows
 	 */
 	public function getMatchingTitles(

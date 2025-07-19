@@ -463,8 +463,6 @@ class SpecialReplaceText extends SpecialPage {
 	 * or found elsewhere on the wiki (since undoing the replacement
 	 * would be difficult in either case).
 	 *
-	 * @param array $titles_for_edit
-	 * @param array $titles_for_move
 	 * @return string|null Warning message, if any
 	 */
 	private function getAnyWarningMessageBeforeReplace(

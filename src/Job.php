@@ -27,10 +27,10 @@ use MediaWiki\Content\TextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\JobQueue\Job as JobParent;
 use MediaWiki\Page\MovePageFactory;
+use MediaWiki\Page\PageReference;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\RecentChanges\RecentChange;
-use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\Watchlist\WatchlistManager;
 use Wikimedia\ScopedCallback;
@@ -40,16 +40,9 @@ use Wikimedia\ScopedCallback;
  * - based on /includes/RefreshLinksJob.php
  */
 class Job extends JobParent {
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 * @param MovePageFactory $movePageFactory
-	 * @param PermissionManager $permissionManager
-	 * @param UserFactory $userFactory
-	 * @param WatchlistManager $watchlistManager
-	 * @param WikiPageFactory $wikiPageFactory
-	 */
-	public function __construct( $title, $params,
+	public function __construct(
+		PageReference $title,
+		array $params,
 		private readonly MovePageFactory $movePageFactory,
 		private readonly PermissionManager $permissionManager,
 		private readonly UserFactory $userFactory,
