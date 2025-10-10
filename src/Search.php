@@ -78,7 +78,8 @@ class Search {
 		if ( $category !== null && $category !== '' ) {
 			$category = Title::newFromText( $category )->getDbKey();
 			$queryBuilder->join( 'categorylinks', null, 'page_id = cl_from' )
-				->where( [ 'cl_to' => $category ] );
+				->join( 'linktarget', null, 'cl_target_id = lt_id' )
+				->where( [ 'lt_title' => $category ] );
 		}
 	}
 
