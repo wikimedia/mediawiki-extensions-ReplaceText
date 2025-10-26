@@ -211,6 +211,7 @@ class Job extends JobParent {
 					$this->permissionManager->userHasRight( $current_user, 'autopatrol' ) ) {
 					$updater->setRcPatrolStatus( RecentChange::PRC_PATROLLED );
 				}
+				$updater->addTag( Hooks::TAG_NAME );
 				$updater->saveRevision( $edit_summary, $flags );
 			}
 		}
