@@ -47,5 +47,5 @@
 	"action-replacetext": "make string replacements on the entire wiki",
 	"replacetext-summary-label": "Summary for replacement edits (leave blank to use default summary)",
 	"tag-replacetext": "[[Special:ReplaceText|ReplaceText]]",
-	"tag-replacetext-description": "Automated edits made via [[Special:ReplaceText]]."
+	"tag-replacetext-description": "Automated edits made via [[{{#Special:ReplaceText}}]]."
 }
