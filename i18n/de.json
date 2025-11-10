@@ -53,5 +53,7 @@
 	"replacetext_no_external_stores": "Dein Wiki wird nicht mit ReplaceText funktionieren: Textersetzungen können nicht ausgeführt werden, wenn $wgExternalStores gesetzt ist.",
 	"right-replacetext": "Textersetzung für das gesamte Wiki durchführen",
 	"action-replacetext": "im gesamten Wiki Zeichenfolgeersetzungen durchzuführen",
-	"replacetext-summary-label": "Zusammenfassung für Ersetzungen (leer lassen, um Standardzusammenfassung zu verwenden)"
+	"replacetext-summary-label": "Zusammenfassung für Ersetzungen (leer lassen, um Standardzusammenfassung zu verwenden)",
+	"tag-replacetext": "[[Special:ReplaceText|Textersetzung]]",
+	"tag-replacetext-description": "Automatische Bearbeitungen wurden über [[Special:ReplaceText]] vorgenommen."
 }

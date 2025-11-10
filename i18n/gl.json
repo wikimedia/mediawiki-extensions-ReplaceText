@@ -48,5 +48,7 @@
 	"replacetext_no_external_stores": "O teu wiki non funcionará con ReplaceText: Non se poden executar substitucións de texto se $wgExternalStores non está baleiro.",
 	"right-replacetext": "Facer substitucións de texto en todo o wiki",
 	"action-replacetext": "facer substitucións de texto en todo o wiki",
-	"replacetext-summary-label": "Resumo para as edicións de substitución (déixao en branco para usar o resumo predeterminado)"
+	"replacetext-summary-label": "Resumo para as edicións de substitución (déixao en branco para usar o resumo predeterminado)",
+	"tag-replacetext": "[[Special:ReplaceText|Substitución de texto]]",
+	"tag-replacetext-description": "Edicións automatizadas feitas mediante [[Special:ReplaceText]]."
 }
