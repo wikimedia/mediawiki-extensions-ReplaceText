@@ -55,5 +55,5 @@
 	"action-replacetext": "im gesamten Wiki Zeichenfolgeersetzungen durchzuführen",
 	"replacetext-summary-label": "Zusammenfassung für Ersetzungen (leer lassen, um Standardzusammenfassung zu verwenden)",
 	"tag-replacetext": "[[Special:ReplaceText|Textersetzung]]",
-	"tag-replacetext-description": "Automatische Bearbeitungen wurden über [[Special:ReplaceText]] vorgenommen."
+	"tag-replacetext-description": "Automatische Bearbeitungen wurden über [[{{#Special:ReplaceText}}]] vorgenommen."
 }

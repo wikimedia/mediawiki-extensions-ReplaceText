@@ -50,5 +50,5 @@
 	"action-replacetext": "facer substitucións de texto en todo o wiki",
 	"replacetext-summary-label": "Resumo para as edicións de substitución (déixao en branco para usar o resumo predeterminado)",
 	"tag-replacetext": "[[Special:ReplaceText|Substitución de texto]]",
-	"tag-replacetext-description": "Edicións automatizadas feitas mediante [[Special:ReplaceText]]."
+	"tag-replacetext-description": "Edicións automatizadas feitas mediante «[[{{#Special:ReplaceText}}]]»."
 }

@@ -9,6 +9,7 @@
 			"Matěj Suchánek",
 			"Mormegil",
 			"Paxt",
+			"Polda18",
 			"Slepi",
 			"Vks"
 		]
@@ -48,5 +49,6 @@
 	"replacetext_reminder": "Pokud také chcete na jiných stránkách upravit odkazy na tuto stránku, jděte na $1.",
 	"right-replacetext": "Hledání a nahrazování textu na celé wiki",
 	"action-replacetext": "nahrazovat text na celé wiki",
-	"tag-replacetext-description": "Automatické úpravy byly provedeny pomocí [[Special:ReplaceText]]."
+	"tag-replacetext": "[[Special:ReplaceText|Nahradit text]]",
+	"tag-replacetext-description": "Automatické úpravy byly provedeny pomocí [[{{#Special:ReplaceText}}]]."
 }
