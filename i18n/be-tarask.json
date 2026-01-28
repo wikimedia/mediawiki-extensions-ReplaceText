@@ -5,7 +5,8 @@
 			"Jim-by",
 			"Red Winged Duck",
 			"Wizardist",
-			"Zedlik"
+			"Zedlik",
+			"Ucukor"
 		]
 	},
 	"replacetext": "Замяніць тэкст",
@@ -13,7 +14,7 @@
 	"replacetext_docu": "Каб замяніць адзін радок на іншы ва ўсіх звычайных старонках гэтай вікі, увядзіце два радкі тут, а потым націсьніце «{{int:replacetext_continue}}».\nБудзе паказаны сьпіс старонак, якія ўтрымліваюць тэкст, які Вы шукалі, і Вы зможаце выбраць старонкі, дзе Вы жадаеце зрабіць замену.\nВаша імя будзе запісанае ў гісторыю старонкі, таму што ўдзельнікі адказныя за ўсе зробленыя зьмены.",
 	"replacetext_originaltext": "Арыгінальны тэкст:",
 	"replacetext_replacementtext": "Тэкст на замену:",
-	"replacetext_useregex": "Выкарыстоўваць рэгулярныя выразы",
+	"replacetext_useregex": "Ужываць рэгулярныя выразы",
 	"replacetext_regexdocu": "(Напрыклад, выразы «a(.*)c» ў полі «{{int:replacetext_originaltext}}» і «ac$1» у полі «{{int:replacetext_replacementtext}}» прывядуць да замены «abc» на «acb».)",
 	"replacetext_optionalfilters": "Неабавязковыя фільтры:",
 	"replacetext_categorysearch": "Замяніць толькі ў катэгорыі:",
