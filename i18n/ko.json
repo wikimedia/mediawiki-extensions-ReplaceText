@@ -8,7 +8,8 @@
 			"Tensama0415",
 			"Yearning",
 			"Ykhwong",
-			"아라"
+			"아라",
+			"Bisang"
 		]
 	},
 	"replacetext": "문자열 찾아 바꾸기",
@@ -21,7 +22,7 @@
 	"replacetext_optionalfilters": "선택적 필터:",
 	"replacetext_categorysearch": "다음 분류에서만 바꾸기:",
 	"replacetext_prefixsearch": "다음 접두어로 시작하는 문서만 바꾸기:",
-	"replacetext_pagelimit": "검색 결과로부터 표시할 문서의 최대 개수:",
+	"replacetext_pagelimit": "검색 결과로 표시할 문서의 최대 개수:",
 	"replacetext_editpages": "문서 내용의 문자열을 바꾸기",
 	"replacetext_movepages": "가능하다면 문서 제목에 있는 문자열도 바꾸기",
 	"replacetext_givetarget": "찾을 문자열을 반드시 지정해야 합니다.",
