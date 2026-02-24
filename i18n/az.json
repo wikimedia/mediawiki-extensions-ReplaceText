@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Cekli829",
+			"Nemoralis",
 			"Serkanland"
 		]
 	},
+	"replacetext": "Mətni dəyişdir",
 	"replacetext_originaltext": "Orijinal mətn:",
 	"replacetext_replace": "Dəyiş"
 }
