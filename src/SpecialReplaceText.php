@@ -269,7 +269,7 @@ class SpecialReplaceText extends SpecialPage {
 						'type' => 'warning',
 						'label' => $warningLabel
 					] );
-					$out->addHTML( $warning );
+					$out->addHTML( (string)$warning );
 				}
 
 				$this->pageListForm( $titles_for_edit, $titles_for_move, $uneditable_titles, $unmoveable_titles );
@@ -745,7 +745,7 @@ class SpecialReplaceText extends SpecialPage {
 				'label' => $this->msg( 'replacetext_invertselections' )->text(),
 				'classes' => [ 'ext-replacetext-invert' ]
 			] );
-			$out->addHTML( $invertButton );
+			$out->addHTML( (string)$invertButton );
 		}
 
 		if ( count( $titles_for_edit ) > 0 ) {
@@ -776,7 +776,7 @@ class SpecialReplaceText extends SpecialPage {
 					'align' => 'inline',
 					'label' => new OOUI\HtmlSnippet( $labelText ),
 				] );
-				$out->addHTML( $layout );
+				$out->addHTML( (string)$layout );
 			}
 			$out->addHTML( '<br />' );
 		}
@@ -818,7 +818,7 @@ class SpecialReplaceText extends SpecialPage {
 			'maxLength' => CommentStore::COMMENT_CHARACTER_LIMIT,
 			'infusable' => true,
 		] );
-		$out->addHTML( new OOUI\FieldLayout( $summaryInput, [
+		$out->addHTML( (string)new OOUI\FieldLayout( $summaryInput, [
 			'align' => 'top',
 			'label' => new OOUI\HtmlSnippet( $this->msg( 'replacetext-summary-label' )->parse() ),
 		] ) );
@@ -829,7 +829,7 @@ class SpecialReplaceText extends SpecialPage {
 			'flags' => [ 'primary', 'progressive' ],
 			'label' => $this->msg( 'replacetext_replace' )->text()
 		] );
-		$out->addHTML( $submitButton );
+		$out->addHTML( (string)$submitButton );
 
 		$out->addHTML( '</form>' );
 
@@ -966,7 +966,7 @@ class SpecialReplaceText extends SpecialPage {
 	}
 
 	private function getToken(): string {
-		return $this->getContext()->getCsrfTokenSet()->getToken();
+		return $this->getContext()->getCsrfTokenSet()->getToken()->toString();
 	}
 
 	private function checkToken(): bool {
