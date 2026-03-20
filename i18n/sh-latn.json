@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Winston Sung"
 		]
 	},
@@ -18,7 +19,7 @@
 	"replacetext_movepages": "Zamijeni tekst u naslovima stranica, ako je moguće",
 	"replacetext_givetarget": "Morate navesti nisku koja treba da se zamijene.",
 	"replacetext_nonamespace": "Morate izabrati barem jedan imenski prostor.",
-	"replacetext_editormove": "Morate odabrati barem jednu od opcija za zamjenu.",
+	"replacetext_editormove": "Morate izabrati barem jednu od opcija za zamjenu.",
 	"replacetext_choosepagesforedit": "Zameni „$1“ sa „$2“ u tekstu {{PLURAL:$3|sljedeće stranice|sljedećih stranica}}:",
 	"replacetext_choosepagesformove": "Zamijeni \"$1\" sa \"$2\" u {{PLURAL:$3|naslovu slijedeće stranice|naslovima slijedećih stranica}}:",
 	"replacetext_cannotmove": "{{PLURAL:$1|Sljedeća stranica se može premjestiti|Sljedeće stranice se ne mogu premjestiti}}:",
