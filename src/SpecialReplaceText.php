@@ -21,7 +21,6 @@ namespace MediaWiki\Extension\ReplaceText;
 
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Exception\ErrorPageError;
-use MediaWiki\Exception\PermissionsError;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\JobQueue\JobFactory;
@@ -77,12 +76,17 @@ class SpecialReplaceText extends SpecialPage {
 		private readonly UserFactory $userFactory,
 		private readonly UserOptionsLookup $userOptionsLookup,
 	) {
-		parent::__construct( 'ReplaceText', 'replacetext' );
+		parent::__construct( 'ReplaceText' );
 		$this->hookHelper = new HookHelper( $hookContainer );
 		$this->search = new Search(
 			$this->getConfig(),
 			$dbProvider
 		);
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'replacetext';
 	}
 
 	/**
@@ -96,9 +100,7 @@ class SpecialReplaceText extends SpecialPage {
 	 * @param null|string $query
 	 */
 	public function execute( $query ): void {
-		if ( !$this->getUser()->isAllowed( 'replacetext' ) ) {
-			throw new PermissionsError( 'replacetext' );
-		}
+		$this->checkPermissions();
 
 		// Replace Text can't be run with certain settings, due to the
 		// changes they make to the DB storage setup.
