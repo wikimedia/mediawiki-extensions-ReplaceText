@@ -30,6 +30,7 @@ use MediaWiki\Page\MovePageFactory;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\RecentChanges\RecentChange;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\Watchlist\WatchlistManager;
 use Wikimedia\ScopedCallback;
@@ -40,7 +41,7 @@ use Wikimedia\ScopedCallback;
  */
 class Job extends JobParent {
 	/**
-	 * @param string $command
+	 * @param Title $title
 	 * @param array $params
 	 * @param MovePageFactory $movePageFactory
 	 * @param PermissionManager $permissionManager
@@ -48,7 +49,7 @@ class Job extends JobParent {
 	 * @param WatchlistManager $watchlistManager
 	 * @param WikiPageFactory $wikiPageFactory
 	 */
-	public function __construct( $command, $params,
+	public function __construct( $title, $params,
 		private readonly MovePageFactory $movePageFactory,
 		private readonly PermissionManager $permissionManager,
 		private readonly UserFactory $userFactory,
