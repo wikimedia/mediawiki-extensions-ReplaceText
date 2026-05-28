@@ -61,5 +61,7 @@
 	"replacetext_no_external_stores": "Ваша вики не будет работать с ReplaceText: замена текста невозможна, если $wgExternalStores имеет непустое значение.",
 	"right-replacetext": "Выполнение замен текста во всей вики",
 	"action-replacetext": "замену строк по всему проекту",
-	"replacetext-summary-label": "Краткое описание для заменяющих правок (оставьте поле пустым, чтобы использовать текст описания по умолчанию)"
+	"replacetext-summary-label": "Краткое описание для заменяющих правок (оставьте поле пустым, чтобы использовать текст описания по умолчанию)",
+	"tag-replacetext": "[[Special:ReplaceText|ReplaceText]]",
+	"tag-replacetext-description": "Автоматические правки, сделанные с помощью [[{{#Special:ReplaceText}}]]."
 }
