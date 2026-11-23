@@ -6,7 +6,8 @@
 			"Darth Kule",
 			"Malore",
 			"Marco 27",
-			"Nemo bis"
+			"Nemo bis",
+			"Selven"
 		]
 	},
 	"replacetext": "Sostituzione testo",
@@ -19,6 +20,7 @@
 	"replacetext_optionalfilters": "Filtri opzionali:",
 	"replacetext_categorysearch": "Sostituire solo nella categoria:",
 	"replacetext_prefixsearch": "Sostituire solo nelle pagine con il prefisso:",
+	"replacetext_pagelimit": "Numero massimo di pagine da restituire dalla ricerca:",
 	"replacetext_editpages": "Sostituire il testo nel contenuto delle pagine",
 	"replacetext_movepages": "Sostituisci il testo nei titoli delle pagine, quando possibile",
 	"replacetext_givetarget": "È necessario specificare il testo da sostituire.",
@@ -41,9 +43,15 @@
 	"replacetext_warning": "{{PLURAL:$1|C'è già $1 pagina che contiene|Ci sono già $1 pagine che contengono}} il testo di sostituzione, \"$2\". Se si effettua questa sostituzione non si sarà in grado di separare le sostituzioni da questi testi. Continuare con la sostituzione?",
 	"replacetext_blankwarning": "Poiché il testo di sostituzione è vuoto, l'operazione non sarà reversibile. Si desidera continuare?",
 	"replacetext_continue": "Continua",
+	"replacetext_botedit": "Contrassegna le modifiche come modifiche del bot",
 	"replacetext_editsummary": "Sostituzione testo - \"$1\" con \"$2\"",
+	"replacetext_reminder": "Per modificare anche i collegamenti a questa pagina in altre pagine, vai a $1 .",
+	"replacetext_cfg_error": "Errore di configurazione di ReplaceText",
+	"replacetext_no_compress": "La tua wiki non funzionerà con ReplaceText: le sostituzioni deli testo non possono essere eseguite se $wgCompressRevisions è impostato a true.",
+	"replacetext_no_external_stores": "La tua wiki non funzionerà con ReplaceText: le sostituzioni del testo non possono essere eseguite se $wgExternalStores non è vuoto.",
 	"right-replacetext": "Esegue sostituzioni di testo in tutto il sito",
 	"action-replacetext": "eseguire sostituzioni di testo in tutto il sito",
+	"replacetext-summary-label": "Riepilogo delle modifiche di sostituzione (lasciare vuoto per utilizzare quello predefinito)",
 	"tag-replacetext": "[[Special:ReplaceText|SostituisciTesto]]",
 	"tag-replacetext-description": "Modifiche automatiche effettuate tramite [[{{#Special:ReplaceText}}]]."
 }
